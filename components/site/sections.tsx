@@ -105,13 +105,13 @@ export function TrustStrip({ items }: { items: string[] }) {
   return (
     <div className="border-b border-hairline bg-porcelain">
       <Container>
-        {/* Fixed gap, not justify-between: the space after each label is the same however long it is. */}
-        <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:flex-wrap sm:gap-x-12 sm:gap-y-3">
-          {items.map((t) => (
-            <li
-              key={t}
-              className="flex items-start gap-3 text-[0.9375rem] font-medium leading-6 text-ink sm:whitespace-nowrap"
-            >
+  {/* One row with a fixed gap: the space after each label is the same, and a label too long for its share wraps inside its own item instead of dropping to a second row. */}
+  <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:gap-x-12">
+  {items.map((t) => (
+  <li
+  key={t}
+  className="flex min-w-0 items-start gap-3 text-[0.9375rem] font-medium leading-6 text-ink"
+  >
               <span aria-hidden className="mt-1 h-4 w-0.5 shrink-0 bg-sage" />
               {t}
             </li>
