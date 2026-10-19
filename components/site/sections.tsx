@@ -135,8 +135,8 @@ const routeIcon = { agencies: CircleUserRound, brands: Layers, training: Graduat
 const routeTone = {
   agencies: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt', action: 'text-cobalt' },
   brands: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt', action: 'text-cobalt' },
-  // Sage fails contrast as small text on white, so it carries the icon and arrow only.
-  training: { card: 'border-hairline bg-white hover:border-sage', icon: 'text-sage', action: 'text-ink' },
+  // The action label takes the same sage as its arrow so the pair reads as one link.
+  training: { card: 'border-hairline bg-white hover:border-sage', icon: 'text-sage', action: 'text-sage' },
 } as const
 
 export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary }) {
