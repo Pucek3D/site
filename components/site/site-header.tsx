@@ -80,7 +80,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
                     href={href(locale, k)}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-2 text-[0.9375rem] transition-colors',
+                      'inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 text-[0.9375rem] transition-colors',
                       active ? 'font-semibold text-ink' : 'text-slate hover:text-ink',
                     )}
                   >

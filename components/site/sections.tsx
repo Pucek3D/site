@@ -37,15 +37,21 @@ export function PageHero({
   breadcrumbs?: ReactNode
 }) {
   const asideLeft = Boolean(aside) && asidePosition === 'left'
-  const asideNode = aside ? <div className="lg:col-span-5">{aside}</div> : null
+  /* A left aside takes only its own width, so the copy sits a fixed gap from it instead of across a 5/12 column. */
+  const asideNode = aside ? <div className={asideLeft ? undefined : 'lg:col-span-5'}>{aside}</div> : null
+  const gridCols = asideLeft
+    ? 'lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center lg:gap-x-20'
+    : aside
+      ? 'lg:grid-cols-12 lg:items-center'
+      : undefined
   return (
     <section className="border-b border-hairline bg-white">
       <Container className="py-14 md:py-20 lg:py-24">
         {/* With the aside on the left, the trail belongs to the copy column it describes. */}
         {asideLeft ? null : breadcrumbs}
-        <div className={cn('grid gap-12', aside && 'lg:grid-cols-12 lg:items-center')}>
+        <div className={cn('grid gap-12', gridCols)}>
           {asideLeft ? asideNode : null}
-          <div className={cn('flex flex-col gap-6', aside ? 'lg:col-span-7' : 'max-w-4xl')}>
+          <div className={cn('flex flex-col gap-6', asideLeft ? 'max-w-3xl' : aside ? 'lg:col-span-7' : 'max-w-4xl')}>
             {asideLeft ? <div className="-mb-2">{breadcrumbs}</div> : null}
             <Eyebrow>{eyebrow}</Eyebrow>
             <h1 className="text-[2.5rem] font-semibold leading-[1.05] sm:text-5xl lg:text-[4rem]">{title}</h1>
@@ -99,7 +105,8 @@ export function TrustStrip({ items }: { items: string[] }) {
   return (
     <div className="border-b border-hairline bg-porcelain">
       <Container>
-        <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-x-10">
+        {/* Fixed gap, not justify-between: the space after each label is the same however long it is. */}
+        <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:flex-wrap sm:gap-x-12 sm:gap-y-3">
           {items.map((t) => (
             <li
               key={t}

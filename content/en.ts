@@ -26,7 +26,7 @@ export const en = {
         'Five launch products across Marketplace Delivery and Training and Team Enablement, three delivery modes, and one method from diagnosis to scale.',
     },
     about: {
-      title: 'About | Commercial Craft for Marketplace Growth | ADelier Commerce',
+      title: 'About Us | Commercial Craft for Marketplace Growth | ADelier Commerce',
       description:
         'Expert-led marketplace delivery from a Poland-based team, with international marketplace experience and European operating efficiency. How ADelier works, what we believe, and who we serve.',
     },
@@ -52,7 +52,7 @@ export const en = {
       brands: 'For Brands',
       training: 'Training',
       services: 'Services',
-      about: 'About',
+      about: 'About Us',
       contact: 'Contact',
       privacy: 'Privacy',
       legal: 'Legal / Imprint',
@@ -645,7 +645,7 @@ export const en = {
 
   about: {
     hero: {
-      eyebrow: 'About',
+      eyebrow: 'About Us',
       title: 'Commercial craft for marketplace growth.',
       support:
         'ADelier combines the care and judgment of an atelier with the discipline, speed, and evidence of a performance partner.',
