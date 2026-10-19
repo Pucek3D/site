@@ -23,6 +23,7 @@ export function PageHero({
   actions,
   note,
   aside,
+  asidePosition = 'right',
   breadcrumbs,
 }: {
   eyebrow: string
@@ -31,14 +32,21 @@ export function PageHero({
   actions?: ReactNode
   note?: string
   aside?: ReactNode
+  /** `left` puts the aside first, so on mobile it also sits above the copy. */
+  asidePosition?: 'left' | 'right'
   breadcrumbs?: ReactNode
 }) {
+  const asideLeft = Boolean(aside) && asidePosition === 'left'
+  const asideNode = aside ? <div className="lg:col-span-5">{aside}</div> : null
   return (
     <section className="border-b border-hairline bg-white">
       <Container className="py-14 md:py-20 lg:py-24">
-        {breadcrumbs}
+        {/* With the aside on the left, the trail belongs to the copy column it describes. */}
+        {asideLeft ? null : breadcrumbs}
         <div className={cn('grid gap-12', aside && 'lg:grid-cols-12 lg:items-center')}>
+          {asideLeft ? asideNode : null}
           <div className={cn('flex flex-col gap-6', aside ? 'lg:col-span-7' : 'max-w-4xl')}>
+            {asideLeft ? <div className="-mb-2">{breadcrumbs}</div> : null}
             <Eyebrow>{eyebrow}</Eyebrow>
             <h1 className="text-[2.5rem] font-semibold leading-[1.05] sm:text-5xl lg:text-[4rem]">{title}</h1>
             <p className="max-w-2xl text-lg leading-relaxed text-slate md:text-xl">{support}</p>
@@ -50,7 +58,7 @@ export function PageHero({
               </p>
             ) : null}
           </div>
-          {aside ? <div className="lg:col-span-5">{aside}</div> : null}
+          {asideLeft ? null : asideNode}
         </div>
       </Container>
     </section>
@@ -94,7 +102,7 @@ export function TrustStrip({ items }: { items: string[] }) {
         <ul className="grid grid-cols-1 gap-x-8 gap-y-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((t) => (
             <li key={t} className="flex items-center gap-3 text-[0.9375rem] font-medium text-ink">
-              <span aria-hidden className="h-4 w-px bg-ink/30" />
+              <span aria-hidden className="h-4 w-0.5 shrink-0 bg-sage" />
               {t}
             </li>
           ))}
@@ -108,6 +116,13 @@ export function TrustStrip({ items }: { items: string[] }) {
 
 const routeIcon = { agencies: CircleUserRound, brands: Layers, training: GraduationCap } as const
 
+/** Colour only — every card shares the same geometry, so hover changes the border, never the size. */
+const routeTone = {
+  agencies: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt' },
+  brands: { card: 'border-sage/35 bg-sage-tint hover:border-sage', icon: 'text-ink' },
+  training: { card: 'border-sage/35 bg-sage-tint hover:border-sage', icon: 'text-ink' },
+} as const
+
 export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const r = dict.home.routes
   return (
@@ -116,14 +131,15 @@ export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary 
       <ul className="mt-14 grid gap-6 md:grid-cols-3">
         {r.items.map((item) => {
           const Icon = routeIcon[item.key as keyof typeof routeIcon]
+          const tone = routeTone[item.key as keyof typeof routeTone]
           return (
             <li key={item.key} className="reveal">
               <Link
                 href={href(locale, item.key as PageKey)}
-                className="group flex h-full flex-col gap-5 rounded-xl border border-hairline bg-white p-7 transition-colors hover:border-ink"
+                className={cn('group flex h-full flex-col gap-5 rounded-xl border p-7 transition-colors', tone.card)}
               >
                 <span className="flex items-center gap-3 text-sm font-semibold text-ink">
-                  <Icon aria-hidden className="size-5 text-cobalt" />
+                  <Icon aria-hidden className={cn('size-5', tone.icon)} />
                   {item.label}
                 </span>
                 <span className="font-display text-2xl font-semibold leading-tight text-ink text-balance">
@@ -157,8 +173,14 @@ export function ProductFamilies({ dict, tone = 'porcelain' }: { dict: Dictionary
       {/* Equal columns on purpose: training is a peer product family, not an add-on. */}
       <div className="mt-14 grid gap-6 md:grid-cols-2">
         {families.map(({ id, Icon, body }) => (
-          <article key={id} className="reveal flex flex-col gap-5 rounded-xl border border-hairline bg-white p-8 md:p-10">
-            <Icon aria-hidden className="size-7 text-ink" />
+          <article
+            key={id}
+            className={cn(
+              'reveal flex flex-col gap-5 rounded-xl border p-8 md:p-10',
+              id === 'training' ? 'border-sage/35 bg-sage-tint' : 'border-hairline bg-white',
+            )}
+          >
+            <Icon aria-hidden className={cn('size-7', id === 'training' ? 'text-sage' : 'text-ink')} />
             <h3 className="font-display text-2xl font-semibold text-ink">{familyNames[id]}</h3>
             <p className="text-lg leading-relaxed text-slate">{body}</p>
           </article>
@@ -178,6 +200,7 @@ export function OfferList({
   eyebrow,
   tone = 'white',
   id,
+  copyOverrides,
 }: {
   dict: Dictionary
   ids?: readonly ProductId[]
@@ -186,8 +209,12 @@ export function OfferList({
   eyebrow?: string
   tone?: 'white' | 'porcelain'
   id?: string
+  /** Audience-specific copy for a page that addresses one audience (e.g. For Brands). */
+  copyOverrides?: Partial<Record<ProductId, { body?: string; bestFor?: string; receive?: string }>>
 }) {
-  const items = dict.products.items.filter((p) => !ids || ids.includes(p.id as ProductId))
+  const items = dict.products.items
+    .filter((p) => !ids || ids.includes(p.id as ProductId))
+    .map((p) => ({ ...p, ...copyOverrides?.[p.id as ProductId] }))
   return (
     <Section tone={tone} id={id} labelledBy="offers-title">
       <SectionHeading
@@ -427,9 +454,9 @@ export function ProgramCards({
       <SectionHeading id={`${id ?? 'programs'}-title`} eyebrow={familyNames.training} title={title} intro={intro} />
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         {programs.map(({ id: pid, data }, i) => (
-          <article key={pid} className="reveal flex flex-col gap-6 rounded-xl border border-hairline bg-white p-8 md:p-10">
+          <article key={pid} className="reveal flex flex-col gap-6 rounded-xl border border-sage/35 bg-sage-tint p-8 md:p-10">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-sage-tint px-3 py-1 text-xs font-semibold text-ink">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink">
                 <GraduationCap aria-hidden className="size-3.5" />
                 {c.standalone}
               </span>
@@ -592,14 +619,16 @@ export function FinalCta({
   body,
   button,
   to,
+  tone = 'porcelain',
 }: {
   title: string
   body: string
   button: string
   to: string
+  tone?: 'porcelain' | 'sage'
 }) {
   return (
-    <section aria-labelledby="final-cta-title" className="bg-porcelain">
+    <section aria-labelledby="final-cta-title" className={tone === 'sage' ? 'bg-sage-tint' : 'bg-porcelain'}>
       <Container className="py-20 md:py-28">
         <FocusFrame inset="lg" className="mx-auto max-w-3xl px-4 py-10 text-center md:px-10">
           <h2 id="final-cta-title" className="text-3xl font-semibold leading-tight md:text-[2.75rem]">

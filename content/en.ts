@@ -33,7 +33,7 @@ export const en = {
     about: {
       title: 'About | Commercial Craft for Marketplace Growth | ADelier Commerce',
       description:
-        'Senior-led marketplace delivery with US-market focus and European operating efficiency. How ADelier works, what we believe, and who we serve.',
+        'Senior-led marketplace delivery from a Poland-based team, with international marketplace experience and European operating efficiency. How ADelier works, what we believe, and who we serve.',
     },
     contact: {
       title: 'Contact | Start with the Real Decision | ADelier Commerce',
@@ -86,7 +86,7 @@ export const en = {
 
   footer: {
     description:
-      'Senior-led Amazon positioning, conversion execution, and standalone applied training for US marketing agencies and consumer brands.',
+      'Senior-led Amazon positioning, conversion execution, and standalone applied training for marketing agencies and consumer brands.',
     explore: 'Explore',
     languages: 'Languages',
     contact: 'Contact',
@@ -232,8 +232,8 @@ export const en = {
 
   operating: {
     eyebrow: 'Operating model',
-    title: 'US marketplace focus. Senior-led delivery. European operating efficiency.',
-    body: 'ADelier is built in Poland and focused on the US market. The operating model creates more specialist attention, faster iteration, and attractive economics without lowering the quality standard.',
+    title: 'International marketplace focus. Senior-led delivery. European operating efficiency.',
+    body: 'ADelier is built in Poland and works with agencies and consumer brands across markets. The operating model creates more specialist attention, faster iteration, and attractive economics without lowering the quality standard.',
   },
 
   quality: {
@@ -287,7 +287,7 @@ export const en = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier helps US marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through senior marketplace delivery and standalone applied training.',
+        'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through senior marketplace delivery and standalone applied training.',
       primary: 'Explore agency partnerships',
       secondary: 'Explore training',
       textLink: 'For consumer brands',
@@ -306,7 +306,7 @@ export const en = {
       'Senior-led marketplace delivery',
       'Human-accountable AI',
       'Protected agency relationships',
-      'Poland-based team, US-market focus',
+      'Poland-based team, international marketplace focus',
     ],
     routes: {
       title: 'Choose the path that matches your situation.',
@@ -451,6 +451,13 @@ export const en = {
   },
 
   brands: {
+    productOverrides: {
+      diagnostic: { bestFor: 'Consumer brands that see a performance problem but cannot yet name its cause.' },
+      foundations: {
+        body: 'A private applied program that gives brand teams one shared standard for shopper choice, message hierarchy, and conversion quality.',
+        bestFor: 'Brand teams that create or review Amazon product pages.',
+      },
+    },
     hero: {
       eyebrow: 'For Brands',
       title: 'Make your product the obvious choice.',
@@ -631,7 +638,7 @@ export const en = {
     hero: {
       eyebrow: 'Services',
       title: 'One system for stronger marketplace execution and capability.',
-      support: 'Start with delivery or training. Combine them only where the business problem requires both.',
+      support: 'Start with delivery or training. Combine them where the business problem requires both.',
       primary: 'Request a scope',
       secondary: 'Review the Choice System',
     },
@@ -757,13 +764,13 @@ export const en = {
     serve: {
       title: 'Who we serve',
       items: [
-        { title: 'US marketing agencies', body: 'That need Amazon specialist delivery or capability under their own brand.' },
+        { title: 'Marketing agencies', body: 'That need Amazon specialist delivery or capability under their own brand.' },
         { title: 'Consumer brands', body: 'That need stronger positioning, conversion execution, and internal capability.' },
         { title: 'Agency and brand teams', body: 'Buying standalone applied training, without a delivery engagement.' },
       ],
     },
     operatingBody:
-      'Our clients are in the US market, and that is where our attention goes. The team is based in Poland, which gives each engagement more senior specialist time and faster iteration. The efficiency is a consequence of the operating model, not the reason to choose us: the quality standard is the same either way.',
+      'ADelier is based in Poland and works with international clients. The operating model gives each engagement more senior specialist time and faster iteration. Efficiency is a consequence of the model, not the reason to choose us: the quality standard remains the same.',
     accountability: {
       title: 'Senior accountability',
       body: 'Every engagement has a named senior owner. That person owns the commercial recommendation, the review gates the work passes through, and the final quality of what is delivered. Accountability is a name, not a department.',
@@ -777,18 +784,6 @@ export const en = {
         { title: 'Transparent', body: 'The reasoning is visible, including where we are unsure.' },
         { title: 'Quietly confident', body: 'We let the work and the evidence carry the argument.' },
         { title: 'Generous with knowledge', body: 'We teach the method, so the client can repeat it.' },
-      ],
-    },
-    future: {
-      title: 'Future-ready, not overclaimed',
-      body: 'ADelier starts with Amazon. TikTok Shop and other marketplaces will be added only when our platform-specific capability and evidence are credible.',
-    },
-    team: {
-      title: 'The people accountable for the work',
-      body: 'Team profiles will be published here once they are approved.',
-      slots: [
-        { role: 'Founder', fields: ['Name', 'Role and responsibility', 'Marketplace background', 'Portrait'] },
-        { role: 'Senior lead', fields: ['Name', 'Role and responsibility', 'Marketplace background', 'Portrait'] },
       ],
     },
     finalCta: {
@@ -824,7 +819,7 @@ export const en = {
       },
       aboutYou: 'About you',
       name: 'Name',
-      email: 'Work email',
+      email: 'Email',
       company: 'Company',
       role: 'Role',
       website: 'Website',
@@ -939,7 +934,7 @@ export const en = {
       },
       {
         heading: 'What we collect',
-        body: 'Details submitted through the contact form: name, work email, company, role, website, preferred language, and the information you choose to share about your situation.',
+        body: 'Details submitted through the contact form: name, email address, company, role, website, preferred language, and the information you choose to share about your situation.',
         fields: [],
       },
       {

@@ -35,7 +35,7 @@ export const pl: Dictionary = {
     about: {
       title: 'O nas | Rzemiosło handlowe dla wzrostu na marketplace | ADelier Commerce',
       description:
-        'Realizacja marketplace prowadzona przez seniorów, z koncentracją na rynku USA i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
+        'Realizacja marketplace prowadzona przez seniorów przez zespół z Polski, z międzynarodowym doświadczeniem marketplace i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
     },
     contact: {
       title: 'Kontakt | Zacznij od rzeczywistej decyzji | ADelier Commerce',
@@ -88,7 +88,7 @@ export const pl: Dictionary = {
 
   footer: {
     description:
-      'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla amerykańskich agencji marketingowych i marek konsumenckich.',
+      'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
     explore: 'Odkryj',
     languages: 'Języki',
     contact: 'Kontakt',
@@ -240,8 +240,8 @@ export const pl: Dictionary = {
 
   operating: {
     eyebrow: 'Model operacyjny',
-    title: 'Koncentracja na rynku USA. Realizacja prowadzona przez seniorów. Europejska efektywność operacyjna.',
-    body: 'ADelier jest budowane w Polsce i skoncentrowane na rynku USA. Ten model operacyjny zapewnia więcej uwagi specjalistów, szybsze iteracje i atrakcyjną ekonomikę bez obniżania standardu jakości.',
+    title: 'Międzynarodowa perspektywa marketplace. Realizacja prowadzona przez seniorów. Europejska efektywność operacyjna.',
+    body: 'ADelier powstaje w Polsce i współpracuje z agencjami oraz markami konsumenckimi na różnych rynkach. Ten model operacyjny zapewnia więcej uwagi specjalistów, szybsze iteracje i atrakcyjną ekonomikę bez obniżania standardu jakości.',
   },
 
   quality: {
@@ -295,7 +295,7 @@ export const pl: Dictionary = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier pomaga amerykańskim agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, wykonanie materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
+        'ADelier pomaga agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, realizację materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
       primary: 'Poznaj współpracę z agencjami',
       secondary: 'Poznaj szkolenia',
       textLink: 'Dla marek konsumenckich',
@@ -314,7 +314,7 @@ export const pl: Dictionary = {
       'Marketplace prowadzony przez seniorów',
       'AI z odpowiedzialnością człowieka',
       'Chronione relacje agencji z klientami',
-      'Zespół w Polsce, koncentracja na rynku USA',
+      'Zespół w Polsce, międzynarodowa perspektywa marketplace',
     ],
     routes: {
       title: 'Wybierz ścieżkę dopasowaną do swojej sytuacji.',
@@ -330,7 +330,7 @@ export const pl: Dictionary = {
           key: 'brands',
           label: 'Dla marek',
           title: 'Spraw, by Twój produkt był oczywistym wyborem.',
-          body: 'Wyjaśnij, dlaczego kupujący powinni wybrać produkt, przebuduj doświadczenie marketplace i wzmocnij zespół, który za nim stoi.',
+          body: 'Wyjaśnij, dlaczego kupuj��cy powinni wybrać produkt, przebuduj doświadczenie marketplace i wzmocnij zespół, który za nim stoi.',
         },
         {
           key: 'training',
@@ -459,6 +459,13 @@ export const pl: Dictionary = {
   },
 
   brands: {
+    productOverrides: {
+      diagnostic: { bestFor: 'Marki konsumenckie, które widzą problem z wynikami, ale nie potrafią jeszcze wskazać jego przyczyny.' },
+      foundations: {
+        body: 'Prywatny, praktyczny program, który daje zespołom marek wspólny standard oceny wyboru kupującego, hierarchii komunikatu i jakości konwersji.',
+        bestFor: 'Zespoły marek tworzące lub oceniające strony produktowe na Amazon.',
+      },
+    },
     hero: {
       eyebrow: 'Dla marek',
       title: 'Spraw, by Twój produkt był oczywistym wyborem.',
@@ -639,7 +646,7 @@ export const pl: Dictionary = {
     hero: {
       eyebrow: 'Usługi',
       title: 'Jeden system dla lepszej realizacji marketplace i silniejszych kompetencji.',
-      support: 'Zacznij od realizacji albo szkolenia. Łącz je tylko wtedy, gdy problem biznesowy wymaga obu.',
+      support: 'Zacznij od realizacji albo szkolenia. Łącz je wtedy, gdy problem biznesowy wymaga obu.',
       primary: 'Poproś o zakres',
       secondary: 'Zobacz Choice System',
     },
@@ -765,13 +772,13 @@ export const pl: Dictionary = {
     serve: {
       title: 'Komu służymy',
       items: [
-        { title: 'Amerykańskim agencjom marketingowym', body: 'Które potrzebują specjalistycznej realizacji lub kompetencji Amazon pod własną marką.' },
+        { title: 'Agencje marketingowe', body: 'Które potrzebują specjalistycznej realizacji lub kompetencji Amazon pod własną marką.' },
         { title: 'Markom konsumenckim', body: 'Które potrzebują mocniejszego pozycjonowania, realizacji konwersyjnej i kompetencji wewnętrznych.' },
         { title: 'Zespołom agencji i marek', body: 'Kupującym samodzielne, praktyczne szkolenia, bez projektu realizacyjnego.' },
       ],
     },
     operatingBody:
-      'Nasi klienci działają na rynku USA i tam kierujemy naszą uwagę. Zespół pracuje w Polsce, co daje każdej współpracy więcej czasu doświadczonych specjalistów i szybsze iteracje. Efektywność jest konsekwencją modelu operacyjnego, a nie powodem wyboru: standard jakości pozostaje taki sam.',
+      'ADelier ma zespół w Polsce i współpracuje z klientami międzynarodowymi. Model operacyjny daje każdej współpracy więcej czasu doświadczonych specjalistów i szybsze iteracje. Efektywność jest konsekwencją modelu, a nie powodem wyboru: standard jakości pozostaje taki sam.',
     accountability: {
       title: 'Odpowiedzialność seniora',
       body: 'Każda współpraca ma wskazanego seniora. Ta osoba odpowiada za rekomendację biznesową, punkty kontroli, przez które przechodzi praca, i końcową jakość tego, co dostarczamy. Odpowiedzialność ma imię i nazwisko, a nie nazwę działu.',
@@ -785,18 +792,6 @@ export const pl: Dictionary = {
         { title: 'Transparentni', body: 'Uzasadnienie jest widoczne, także tam, gdzie nie mamy pewności.' },
         { title: 'Spokojnie pewni', body: 'Argumentem są praca i dowody.' },
         { title: 'Hojni w dzieleniu się wiedzą', body: 'Uczymy metody, aby klient mógł ją powtórzyć.' },
-      ],
-    },
-    future: {
-      title: 'Gotowi na przyszłość, bez przesadnych obietnic',
-      body: 'ADelier zaczyna od Amazon. TikTok Shop i inne marketplace’y dodamy dopiero wtedy, gdy nasze kompetencje i dowody dla danej platformy będą wiarygodne.',
-    },
-    team: {
-      title: 'Ludzie odpowiedzialni za pracę',
-      body: 'Profile zespołu opublikujemy tutaj po ich zatwierdzeniu.',
-      slots: [
-        { role: 'Założyciel', fields: ['Imię i nazwisko', 'Rola i odpowiedzialność', 'Doświadczenie marketplace', 'Portret'] },
-        { role: 'Senior', fields: ['Imię i nazwisko', 'Rola i odpowiedzialność', 'Doświadczenie marketplace', 'Portret'] },
       ],
     },
     finalCta: {
@@ -832,7 +827,7 @@ export const pl: Dictionary = {
       },
       aboutYou: 'O Tobie',
       name: 'Imię i nazwisko',
-      email: 'Służbowy e-mail',
+      email: 'E-mail',
       company: 'Firma',
       role: 'Stanowisko',
       website: 'Strona internetowa',
@@ -947,7 +942,7 @@ export const pl: Dictionary = {
       },
       {
         heading: 'Jakie dane zbieramy',
-        body: 'Dane przesłane przez formularz kontaktowy: imię i nazwisko, służbowy e-mail, firmę, stanowisko, stronę internetową, preferowany język i informacje, którymi zdecydujesz się podzielić.',
+        body: 'Dane przesłane przez formularz kontaktowy: imię i nazwisko, adres e-mail, firmę, stanowisko, stronę internetową, preferowany język i informacje, którymi zdecydujesz się podzielić.',
         fields: [],
       },
       {

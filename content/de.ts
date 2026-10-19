@@ -35,7 +35,7 @@ export const de: Dictionary = {
     about: {
       title: 'Über uns | Kaufmännisches Handwerk für Marketplace-Wachstum | ADelier Commerce',
       description:
-        'Seniorengeführte Marketplace-Umsetzung mit Fokus auf den US-Markt und europäischer operativer Effizienz. Wie ADelier arbeitet, woran wir glauben und für wen wir arbeiten.',
+        'Seniorengeführte Marketplace-Umsetzung durch ein in Polen ansässiges Team, mit internationaler Marketplace-Erfahrung und europäischer operativer Effizienz. Wie ADelier arbeitet, woran wir glauben und für wen wir arbeiten.',
     },
     contact: {
       title: 'Kontakt | Beginnen Sie mit der eigentlichen Entscheidung | ADelier Commerce',
@@ -88,7 +88,7 @@ export const de: Dictionary = {
 
   footer: {
     description:
-      'Seniorengeführte Amazon-Positionierung, Conversion-Umsetzung und eigenständig buchbare Praxistrainings für US-Marketingagenturen und Konsumgütermarken.',
+      'Seniorengeführte Amazon-Positionierung, Conversion-Umsetzung und eigenständig buchbare Praxistrainings für Marketingagenturen und Konsumgütermarken.',
     explore: 'Entdecken',
     languages: 'Sprachen',
     contact: 'Kontakt',
@@ -240,8 +240,8 @@ export const de: Dictionary = {
 
   operating: {
     eyebrow: 'Betriebsmodell',
-    title: 'Fokus auf den US-Markt. Seniorengeführte Umsetzung. Europäische operative Effizienz.',
-    body: 'ADelier ist in Polen aufgebaut und auf den US-Markt ausgerichtet. Das Betriebsmodell ermöglicht mehr Spezialistenaufmerksamkeit, schnellere Iterationen und attraktive Wirtschaftlichkeit, ohne den Qualitätsstandard zu senken.',
+    title: 'Internationaler Marketplace-Fokus. Seniorengeführte Umsetzung. Europäische operative Effizienz.',
+    body: 'ADelier ist in Polen aufgebaut und arbeitet marktübergreifend mit Agenturen und Konsumgütermarken. Das Betriebsmodell ermöglicht mehr Spezialistenaufmerksamkeit, schnellere Iterationen und attraktive Wirtschaftlichkeit, ohne den Qualitätsstandard zu senken.',
   },
 
   quality: {
@@ -295,7 +295,7 @@ export const de: Dictionary = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier hilft US-Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch seniorengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
+        'ADelier hilft Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch seniorengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
       primary: 'Agenturpartnerschaften entdecken',
       secondary: 'Trainings entdecken',
       textLink: 'Für Konsumgütermarken',
@@ -314,7 +314,7 @@ export const de: Dictionary = {
       'Seniorengeführte Marketplace-Umsetzung',
       'KI mit menschlicher Verantwortung',
       'Geschützte Agentur-Kundenbeziehungen',
-      'Team in Polen, Fokus auf den US-Markt',
+      'Team in Polen, internationaler Marketplace-Fokus',
     ],
     routes: {
       title: 'Wählen Sie den Weg, der zu Ihrer Situation passt.',
@@ -459,6 +459,13 @@ export const de: Dictionary = {
   },
 
   brands: {
+    productOverrides: {
+      diagnostic: { bestFor: 'Konsumgütermarken, die ein Leistungsproblem sehen, seine Ursache aber noch nicht benennen können.' },
+      foundations: {
+        body: 'Ein privates Praxisprogramm, das Markenteams einen gemeinsamen Standard für Kaufentscheidung, Botschaftshierarchie und Conversion-Qualität gibt.',
+        bestFor: 'Markenteams, die Amazon-Produktseiten erstellen oder prüfen.',
+      },
+    },
     hero: {
       eyebrow: 'Für Marken',
       title: 'Machen Sie Ihr Produkt zur naheliegenden Wahl.',
@@ -639,7 +646,7 @@ export const de: Dictionary = {
     hero: {
       eyebrow: 'Leistungen',
       title: 'Ein System für stärkere Marketplace-Umsetzung und Kompetenz.',
-      support: 'Starten Sie mit Umsetzung oder Training. Kombinieren Sie beides nur, wenn das Geschäftsproblem es erfordert.',
+      support: 'Starten Sie mit Umsetzung oder Training. Kombinieren Sie beides, wenn das Geschäftsproblem es erfordert.',
       primary: 'Umfang anfragen',
       secondary: 'Choice System ansehen',
     },
@@ -760,13 +767,13 @@ export const de: Dictionary = {
     serve: {
       title: 'Für wen wir arbeiten',
       items: [
-        { title: 'US-Marketingagenturen', body: 'Die Amazon-Spezialistenarbeit oder -Kompetenz unter eigener Marke benötigen.' },
+        { title: 'Marketingagenturen', body: 'Die Amazon-Spezialistenarbeit oder -Kompetenz unter eigener Marke benötigen.' },
         { title: 'Konsumgütermarken', body: 'Die stärkere Positionierung, Conversion-Umsetzung und interne Kompetenz benötigen.' },
         { title: 'Agentur- und Markenteams', body: 'Die eigenständige Praxistrainings buchen, ohne Umsetzungsprojekt.' },
       ],
     },
     operatingBody:
-      'Unsere Kunden sind im US-Markt tätig, und dorthin richtet sich unsere Aufmerksamkeit. Das Team arbeitet in Polen, was jedem Projekt mehr Zeit erfahrener Spezialisten und schnellere Iterationen gibt. Die Effizienz ist eine Folge des Betriebsmodells, nicht der Grund für die Wahl: Der Qualitätsstandard bleibt derselbe.',
+      'ADelier hat ein Team in Polen und arbeitet mit internationalen Kunden. Das Betriebsmodell gibt jedem Projekt mehr Zeit erfahrener Spezialisten und ermöglicht schnellere Iterationen. Effizienz ist eine Folge des Modells, nicht der Grund für die Wahl: Der Qualitätsstandard bleibt unverändert.',
     accountability: {
       title: 'Senior-Verantwortung',
       body: 'Jedes Projekt hat eine benannte verantwortliche Senior-Person. Sie verantwortet die kommerzielle Empfehlung, die Review Gates, die die Arbeit durchläuft, und die Endqualität des Ergebnisses. Verantwortung hat einen Namen, keine Abteilung.',
@@ -780,18 +787,6 @@ export const de: Dictionary = {
         { title: 'Transparent', body: 'Die Begründung ist sichtbar, auch dort, wo wir unsicher sind.' },
         { title: 'Ruhig selbstbewusst', body: 'Arbeit und Nachweise tragen das Argument.' },
         { title: 'Großzügig mit Wissen', body: 'Wir vermitteln die Methode, damit der Kunde sie wiederholen kann.' },
-      ],
-    },
-    future: {
-      title: 'Zukunftsfähig, ohne zu übertreiben',
-      body: 'ADelier beginnt mit Amazon. TikTok Shop und weitere Marketplaces kommen erst hinzu, wenn unsere plattformspezifische Kompetenz und unsere Nachweise glaubwürdig sind.',
-    },
-    team: {
-      title: 'Die Menschen, die für die Arbeit verantwortlich sind',
-      body: 'Teamprofile werden hier nach ihrer Freigabe veröffentlicht.',
-      slots: [
-        { role: 'Gründer', fields: ['Name', 'Rolle und Verantwortung', 'Marketplace-Erfahrung', 'Porträt'] },
-        { role: 'Senior Lead', fields: ['Name', 'Rolle und Verantwortung', 'Marketplace-Erfahrung', 'Porträt'] },
       ],
     },
     finalCta: {
@@ -827,7 +822,7 @@ export const de: Dictionary = {
       },
       aboutYou: 'Über Sie',
       name: 'Name',
-      email: 'Geschäftliche E-Mail',
+      email: 'E-Mail',
       company: 'Unternehmen',
       role: 'Funktion',
       website: 'Website',
@@ -943,7 +938,7 @@ export const de: Dictionary = {
       },
       {
         heading: 'Welche Daten wir erheben',
-        body: 'Angaben aus dem Kontaktformular: Name, geschäftliche E-Mail, Unternehmen, Funktion, Website, bevorzugte Sprache und die Informationen, die Sie zu Ihrer Situation teilen.',
+        body: 'Angaben aus dem Kontaktformular: Name, E-Mail-Adresse, Unternehmen, Funktion, Website, bevorzugte Sprache und die Informationen, die Sie zu Ihrer Situation teilen.',
         fields: [],
       },
       {

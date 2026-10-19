@@ -86,11 +86,13 @@ export function SectionHeading({
   )
 }
 
-type CtaVariant = 'primary' | 'secondary' | 'inverse' | 'text' | 'textInverse'
+type CtaVariant = 'primary' | 'sage' | 'secondary' | 'inverse' | 'text' | 'textInverse'
 
 const ctaStyles: Record<CtaVariant, string> = {
   primary:
     'inline-flex min-h-12 items-center justify-center gap-2 rounded-[9px] bg-cobalt px-6 text-[0.9375rem] font-semibold text-white transition-colors hover:bg-ink',
+  // Ink on Sage, never white: white on Sage fails contrast.
+  sage: 'inline-flex min-h-12 items-center justify-center gap-2 rounded-[9px] bg-sage px-6 text-[0.9375rem] font-semibold text-ink transition-colors hover:bg-ink hover:text-white',
   secondary:
     'inline-flex min-h-12 items-center justify-center gap-2 rounded-[9px] border border-ink px-6 text-[0.9375rem] font-semibold text-ink transition-colors hover:bg-porcelain',
   inverse:

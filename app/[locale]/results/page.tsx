@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
-import { DemoLabel, FocusFrame, Section, SectionHeading } from '@/components/site/primitives'
+import { DemoLabel, Section, SectionHeading } from '@/components/site/primitives'
 import { Breadcrumbs, CardGrid, FinalCta, PageHero, Sequence } from '@/components/site/sections'
 import { getDictionary } from '@/content'
 import { caseStudies } from '@/content/case-studies'
@@ -65,19 +65,12 @@ export default async function ResultsPage({ params }: Props) {
               <div>
                 <p className="mb-3 text-sm font-semibold text-ink">{d.hierarchy.improvedLabel}</p>
                 <ol className="flex flex-col gap-2">
-                  {d.hierarchy.improved.map((w, i) => {
-                    const row = (
-                      <span className="flex gap-3 px-3 py-2 text-[0.9375rem] text-ink">
-                        <span className="tabular-nums text-cobalt">{i + 1}</span>
-                        {w}
-                      </span>
-                    )
-                    return (
-                      <li key={w} className="rounded-md bg-cobalt-tint">
-                        {i === 0 ? <FocusFrame color="cobalt" inset="sm">{row}</FocusFrame> : row}
-                      </li>
-                    )
-                  })}
+                  {d.hierarchy.improved.map((w, i) => (
+                    <li key={w} className="flex gap-3 rounded-md bg-cobalt-tint px-3 py-2 text-[0.9375rem] text-ink">
+                      <span className="tabular-nums text-cobalt">{i + 1}</span>
+                      {w}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>
