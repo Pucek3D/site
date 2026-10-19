@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { CtaLink, FocusFrame, Section, SectionHeading } from '@/components/site/primitives'
+import { CtaLink, Section, SectionHeading } from '@/components/site/primitives'
 import {
   Breadcrumbs,
   CardGrid,
@@ -54,20 +54,12 @@ export default async function BrandsPage({ params }: Props) {
             <SectionHeading id="diagnose-title" title={b.diagnose.title} intro={b.diagnose.intro} />
           </div>
           <ol className="flex flex-col lg:col-span-7">
-            {b.diagnose.questions.map((q, i) => {
-              const row = (
-                <div className="flex gap-5 py-5">
-                  <span className="text-sm font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="font-serif text-xl leading-snug text-ink">{q}</span>
-                </div>
-              )
-              return (
-                <li key={q} className="border-b border-hairline px-1">
-                  {/* The first-screen question is the one most pages fail: it carries the frame. */}
-                  {i === 1 ? <FocusFrame inset="sm" color="cobalt">{row}</FocusFrame> : row}
-                </li>
-              )
-            })}
+            {b.diagnose.questions.map((q, i) => (
+              <li key={q} className="flex gap-5 border-b border-hairline px-1 py-5">
+                <span className="pt-1 text-sm font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
+                <span className="font-display text-lg font-semibold leading-snug text-ink md:text-xl">{q}</span>
+              </li>
+            ))}
           </ol>
         </div>
       </Section>
@@ -79,7 +71,12 @@ export default async function BrandsPage({ params }: Props) {
         </div>
       </Section>
 
-      <OfferList dict={dict} ids={['diagnostic', 'sprint', 'pod', 'foundations']} title={b.productsTitle} />
+      <OfferList
+        dict={dict}
+        ids={['diagnostic', 'sprint', 'foundations']}
+        title={b.productsTitle}
+        copyOverrides={b.productOverrides}
+      />
 
       <Section tone="porcelain" labelledBy="brand-training">
         <div className="grid gap-12 lg:grid-cols-12">

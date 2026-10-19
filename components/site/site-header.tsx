@@ -18,7 +18,6 @@ const ctaTarget: Record<PageKey, string> = {
   brands: '?topic=brand',
   training: '?topic=training',
   services: '',
-  results: '',
   about: '',
   contact: '',
   privacy: '',
@@ -50,7 +49,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
   // Navigating closes the menu.
   useEffect(() => setOpen(false), [pathname])
 
-  const items = mainNavKeys.filter((k) => k !== 'home')
+  const items = mainNavKeys
   const cta = page === 'contact' ? null : { label: nav.headerCta[page], to: href(locale, 'contact', ctaTarget[page]) }
 
   return (
@@ -66,13 +65,13 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
       >
         {nav.skip}
       </a>
-      <div className="mx-auto flex h-[72px] w-full max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-[82px] w-full max-w-[1360px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
         <Link href={href(locale, 'home')} aria-label={nav.homeLink} className="shrink-0 rounded-md">
-          <Logo variant="horizontal" height={40} alt="" priority />
+          <Logo variant="horizontal" height={50} alt="" priority />
         </Link>
 
         <nav aria-label={nav.primaryLabel} className="hidden xl:block">
-          <ul className="flex items-center gap-1">
+          <ul className="flex items-center">
             {items.map((k) => {
               const active = page === k
               return (
@@ -81,7 +80,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
                     href={href(locale, k)}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-2.5 text-[0.9375rem] transition-colors',
+                      'inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 text-[0.9375rem] transition-colors',
                       active ? 'font-semibold text-ink' : 'text-slate hover:text-ink',
                     )}
                   >
@@ -126,8 +125,8 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
         className="m-0 ml-auto h-dvh max-h-none w-full max-w-md bg-white p-0 text-ink backdrop:bg-ink/40"
       >
         <div className="flex h-full flex-col">
-          <div className="flex h-[72px] items-center justify-between border-b border-hairline px-5 sm:px-8">
-            <Logo variant="horizontal" height={36} alt="ADelier Commerce" />
+          <div className="flex h-[82px] items-center justify-between border-b border-hairline px-5 sm:px-8">
+            <Logo variant="horizontal" height={42} alt="ADelier Commerce" />
             <button
               type="button"
               onClick={() => setOpen(false)}

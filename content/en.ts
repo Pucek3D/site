@@ -3,12 +3,12 @@ export const en = {
     home: {
       title: 'ADelier Commerce | Marketplace Delivery and Applied Training',
       description:
-        'Senior-led Amazon positioning, conversion execution, white-label agency support, and standalone applied training for marketing agencies and consumer brands.',
+        'Expert-led Amazon positioning, conversion execution, white-label agency support, and standalone applied training for marketing agencies and consumer brands.',
     },
     agencies: {
       title: 'For Agencies | White-Label Amazon Delivery and Training | ADelier Commerce',
       description:
-        'Add Amazon strategy, listing optimization, conversion creative, and team training to your agency offer with defined senior review and protected client relationships.',
+        'Add Amazon strategy, listing optimization, conversion creative, and team training to your agency offer with defined expert review and protected client relationships.',
     },
     brands: {
       title: 'For Brands | Amazon Positioning and Conversion | ADelier Commerce',
@@ -25,15 +25,10 @@ export const en = {
       description:
         'Five launch products across Marketplace Delivery and Training and Team Enablement, three delivery modes, and one method from diagnosis to scale.',
     },
-    results: {
-      title: 'Results | How ADelier Documents Evidence | ADelier Commerce',
-      description:
-        'ADelier publishes outcomes only with permission and context. See how we document problems, decisions, outputs, and capability transfer.',
-    },
     about: {
-      title: 'About | Commercial Craft for Marketplace Growth | ADelier Commerce',
+      title: 'About Us | Commercial Craft for Marketplace Growth | ADelier Commerce',
       description:
-        'Senior-led marketplace delivery with US-market focus and European operating efficiency. How ADelier works, what we believe, and who we serve.',
+        'Expert-led marketplace delivery from a Poland-based team, with international marketplace experience and European operating efficiency. How ADelier works, what we believe, and who we serve.',
     },
     contact: {
       title: 'Contact | Start with the Real Decision | ADelier Commerce',
@@ -57,8 +52,7 @@ export const en = {
       brands: 'For Brands',
       training: 'Training',
       services: 'Services',
-      results: 'Results',
-      about: 'About',
+      about: 'About Us',
       contact: 'Contact',
       privacy: 'Privacy',
       legal: 'Legal / Imprint',
@@ -76,7 +70,6 @@ export const en = {
       brands: 'Get an ASIN diagnosis',
       training: 'Plan a private training program',
       services: 'Request a scope',
-      results: 'Discuss a similar challenge',
       about: 'Start the conversation',
       contact: 'Start the conversation',
       privacy: 'Start the conversation',
@@ -86,7 +79,7 @@ export const en = {
 
   footer: {
     description:
-      'Senior-led Amazon positioning, conversion execution, and standalone applied training for US marketing agencies and consumer brands.',
+      'Expert-led Amazon positioning, conversion execution, and standalone applied training for marketing agencies and consumer brands.',
     explore: 'Explore',
     languages: 'Languages',
     contact: 'Contact',
@@ -99,7 +92,6 @@ export const en = {
 
   common: {
     demo: 'Demonstration',
-    demoNotClient: 'Demonstration — not client work',
     proofSlot: 'Client-approved proof will appear here.',
     imageSlot: 'Image slot',
     breadcrumbLabel: 'Breadcrumb',
@@ -125,7 +117,7 @@ export const en = {
     title: 'Delivery and capability, built as one system.',
     eyebrow: 'Two launch product families',
     delivery: {
-      body: 'Senior-led diagnosis, positioning, listing direction, conversion content, creative briefing, and recurring specialist capacity.',
+      body: 'Expert-led diagnosis, positioning, listing direction, conversion content, creative briefing, and recurring specialist capacity.',
     },
     training: {
       body: 'Paid standalone programs that improve live work, create shared quality standards, and transfer repeatable capability into the team.',
@@ -150,7 +142,7 @@ export const en = {
       },
       {
         id: 'pod',
-        body: 'Recurring specialist capacity for agencies, with agreed priorities, service levels, and senior quality control.',
+        body: 'Recurring specialist capacity for agencies, with agreed priorities, service levels, and expert quality control.',
         bestFor: 'Agencies with recurring Amazon work and no wish to build a full internal team yet.',
         receive: 'A dedicated specialist pod working under your brand to agreed scope and review gates.',
       },
@@ -173,7 +165,7 @@ export const en = {
     title: 'Choose how much capability you want to own.',
     eyebrow: 'Three ways to work',
     items: [
-      { lead: 'Do it for us.', body: 'Specialist execution with clear scope, senior review, and reliable handoff.' },
+      { lead: 'Do it for us.', body: 'Specialist execution with clear scope, expert review, and reliable handoff.' },
       {
         lead: 'Build it with us.',
         body: 'Strategy and implementation developed together so decisions happen faster and the reasoning stays visible.',
@@ -207,7 +199,7 @@ export const en = {
       { title: 'Commercial clarity', body: 'We diagnose why shoppers do not choose before writing or designing.' },
       {
         title: 'Accountable execution',
-        body: 'A named senior lead owns the recommendation, review gates, and final quality.',
+        body: 'A named expert lead owns the recommendation, review gates, and final quality.',
       },
       {
         title: 'Capability transfer',
@@ -232,8 +224,8 @@ export const en = {
 
   operating: {
     eyebrow: 'Operating model',
-    title: 'US marketplace focus. Senior-led delivery. European operating efficiency.',
-    body: 'ADelier is built in Poland and focused on the US market. The operating model creates more specialist attention, faster iteration, and attractive economics without lowering the quality standard.',
+    title: 'International marketplace focus. Expert-led delivery. European operating efficiency.',
+    body: 'ADelier is built in Poland and works with agencies and consumer brands across markets. The operating model creates more specialist attention, faster iteration, and attractive economics without lowering the quality standard.',
   },
 
   quality: {
@@ -287,26 +279,18 @@ export const en = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier helps US marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through senior marketplace delivery and standalone applied training.',
-      primary: 'Explore agency partnerships',
-      secondary: 'Explore training',
-      textLink: 'For consumer brands',
-    },
-    visual: {
-      productPage: 'Product page',
-      productTitle: 'Insulated steel bottle, 750 ml',
-      reasonLabel: 'Reason to choose',
-      reason: 'Opens and closes with one hand, and does not leak in a bag.',
-      improved: 'Moved to the first line',
-      workflowTitle: 'Team review',
-      workflow: ['Brief agreed', 'Senior review', 'Quality checklist', 'Ready to repeat'],
-      alt: 'Demonstration composition: a product page whose reason to choose is framed, beside a team review checklist.',
+        'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through expert-led marketplace delivery and standalone applied training.',
+      actions: {
+        agencies: 'Explore agency partnerships',
+        brands: 'Explore brand services',
+        training: 'Explore training',
+      },
     },
     trust: [
-      'Senior-led marketplace delivery',
+      'Expert-led marketplace delivery',
       'Human-accountable AI',
       'Protected agency relationships',
-      'Poland-based team, US-market focus',
+      'Poland-based team, international marketplace focus',
     ],
     routes: {
       title: 'Choose the path that matches your situation.',
@@ -315,18 +299,21 @@ export const en = {
         {
           key: 'agencies',
           label: 'For Agencies',
+          action: 'Explore agency partnerships',
           title: 'Expand your Amazon offer. Keep the client relationship.',
           body: 'Add specialist strategy, conversion delivery, and training without immediately building a complete internal team.',
         },
         {
           key: 'brands',
           label: 'For Brands',
+          action: 'Explore brand services',
           title: 'Make your product the obvious choice.',
           body: 'Clarify why shoppers should choose, rebuild the marketplace experience, and strengthen the team behind it.',
         },
         {
           key: 'training',
           label: 'Training',
+          action: 'Explore training',
           title: 'Build the capability to repeat the gains.',
           body: 'Standalone private programs built around live products, client situations, workflows, and quality standards.',
         },
@@ -344,7 +331,7 @@ export const en = {
       eyebrow: 'For Agencies',
       title: 'Expand your Amazon offer. Keep the client relationship.',
       support:
-        'ADelier gives marketing agencies flexible access to marketplace strategy, listing optimization, conversion creative, AI-assisted production, and team training — with defined senior review and explicit protection of agency-introduced accounts.',
+        'ADelier gives marketing agencies flexible access to marketplace strategy, listing optimization, conversion creative, AI-assisted production, and team training — with defined expert review and explicit protection of agency-introduced accounts.',
       primary: 'Discuss an agency partnership',
       secondary: 'See white-label standards',
     },
@@ -405,7 +392,7 @@ export const en = {
         'Your client remains your client.',
         'Visibility is your choice.',
         'Scope, turnaround, revisions, and responsibilities are agreed before work begins.',
-        'Senior review is defined, not implied.',
+        'Expert review is defined, not implied.',
         'No client name, asset, or result is used publicly without written approval.',
       ],
     },
@@ -451,6 +438,13 @@ export const en = {
   },
 
   brands: {
+    productOverrides: {
+      diagnostic: { bestFor: 'Consumer brands that see a performance problem but cannot yet name its cause.' },
+      foundations: {
+        body: 'A private applied program that gives brand teams one shared standard for shopper choice, message hierarchy, and conversion quality.',
+        bestFor: 'Brand teams that create or review Amazon product pages.',
+      },
+    },
     hero: {
       eyebrow: 'For Brands',
       title: 'Make your product the obvious choice.',
@@ -631,7 +625,7 @@ export const en = {
     hero: {
       eyebrow: 'Services',
       title: 'One system for stronger marketplace execution and capability.',
-      support: 'Start with delivery or training. Combine them only where the business problem requires both.',
+      support: 'Start with delivery or training. Combine them where the business problem requires both.',
       primary: 'Request a scope',
       secondary: 'Review the Choice System',
     },
@@ -648,96 +642,10 @@ export const en = {
     },
   },
 
-  results: {
-    hero: {
-      eyebrow: 'Results',
-      title: 'Evidence before assertion.',
-      support:
-        'ADelier publishes outcomes only with permission and context. Until approved client evidence is available, this page shows how we document problems, decisions, outputs, and capability transfer.',
-    },
-    proof: {
-      title: 'What strong proof includes',
-      items: [
-        { title: 'Measured business outcome', body: 'A stated measure, a baseline, a period, and the conditions that could explain it.' },
-        { title: 'Before-and-after quality evidence', body: 'Both versions side by side, with the reason for every change.' },
-        { title: 'Process evidence', body: 'The brief, the decisions taken, and the gates the work passed.' },
-        { title: 'Client testimony', body: 'In the client’s own words, published only with written approval.' },
-        { title: 'Capability adoption', body: 'Work the client team produced independently after the engagement.' },
-      ],
-    },
-    structure: {
-      title: 'Case-study structure',
-      intro: 'Every case study we publish follows the same eight parts, including the limits.',
-      steps: [
-        'Situation',
-        'Baseline',
-        'Diagnosis',
-        'Decision',
-        'Work completed',
-        'Result and limits',
-        'Capability transferred',
-        'Next step',
-      ],
-    },
-    demos: {
-      title: 'Demonstration examples',
-      intro: 'Two illustrations of the method on an invented product. They show reasoning, not results.',
-      hierarchy: {
-        title: 'Message hierarchy',
-        weakLabel: 'Weak',
-        weak: [
-          'Premium quality stainless steel bottle',
-          'Perfect for everyone',
-          'Leak-proof lid',
-          'Keeps drinks cold',
-        ],
-        improvedLabel: 'Improved',
-        improved: [
-          'Opens with one hand and does not leak in a bag',
-          'Cold for the working day',
-          'Fits standard car cup holders',
-          'Stainless steel, dishwasher-safe lid',
-        ],
-        note: 'The reason to choose moves to the first line; generic claims are replaced with checkable ones.',
-      },
-      sequence: {
-        title: 'Image-sequence brief',
-        columns: ['Before', 'Reason', 'After'],
-        rows: [
-          {
-            before: 'Product on white, front view',
-            reason: 'Shows the object, not the choice',
-            after: 'One-hand opening, shown in use',
-          },
-          {
-            before: 'Lifestyle shot on a beach',
-            reason: 'Mood without an answer to an objection',
-            after: 'Bottle inside a bag, upright and dry',
-          },
-          {
-            before: 'Dimensions diagram',
-            reason: 'Right content, too late in the sequence',
-            after: 'Cup-holder fit, moved to position three',
-          },
-        ],
-      },
-    },
-    grid: {
-      title: 'Client case studies',
-      emptyTitle: 'No client case studies are published yet.',
-      emptyBody:
-        'We will publish client work here only once the client has approved the content, the figures, and the context. Until then, we would rather show nothing than show something invented.',
-    },
-    finalCta: {
-      title: 'Discuss a similar challenge.',
-      body: 'Describe the situation. We will tell you how we would approach it and what evidence we would collect.',
-      button: 'Discuss a similar challenge',
-    },
-  },
 
   about: {
     hero: {
-      eyebrow: 'About',
+      eyebrow: 'About Us',
       title: 'Commercial craft for marketplace growth.',
       support:
         'ADelier combines the care and judgment of an atelier with the discipline, speed, and evidence of a performance partner.',
@@ -757,16 +665,16 @@ export const en = {
     serve: {
       title: 'Who we serve',
       items: [
-        { title: 'US marketing agencies', body: 'That need Amazon specialist delivery or capability under their own brand.' },
+        { title: 'Marketing agencies', body: 'That need Amazon specialist delivery or capability under their own brand.' },
         { title: 'Consumer brands', body: 'That need stronger positioning, conversion execution, and internal capability.' },
         { title: 'Agency and brand teams', body: 'Buying standalone applied training, without a delivery engagement.' },
       ],
     },
     operatingBody:
-      'Our clients are in the US market, and that is where our attention goes. The team is based in Poland, which gives each engagement more senior specialist time and faster iteration. The efficiency is a consequence of the operating model, not the reason to choose us: the quality standard is the same either way.',
+      'ADelier is based in Poland and works with international clients. The operating model gives each engagement more expert involvement and faster iteration. Efficiency is a consequence of the model, not the reason to choose us: the quality standard remains the same.',
     accountability: {
-      title: 'Senior accountability',
-      body: 'Every engagement has a named senior owner. That person owns the commercial recommendation, the review gates the work passes through, and the final quality of what is delivered. Accountability is a name, not a department.',
+      title: 'Expert accountability',
+      body: 'Every engagement has a named expert lead. That person owns the commercial recommendation, the review gates the work passes through, and the final quality of what is delivered. Accountability is a name, not a department.',
     },
     traits: {
       title: 'Personality in practice',
@@ -777,18 +685,6 @@ export const en = {
         { title: 'Transparent', body: 'The reasoning is visible, including where we are unsure.' },
         { title: 'Quietly confident', body: 'We let the work and the evidence carry the argument.' },
         { title: 'Generous with knowledge', body: 'We teach the method, so the client can repeat it.' },
-      ],
-    },
-    future: {
-      title: 'Future-ready, not overclaimed',
-      body: 'ADelier starts with Amazon. TikTok Shop and other marketplaces will be added only when our platform-specific capability and evidence are credible.',
-    },
-    team: {
-      title: 'The people accountable for the work',
-      body: 'Team profiles will be published here once they are approved.',
-      slots: [
-        { role: 'Founder', fields: ['Name', 'Role and responsibility', 'Marketplace background', 'Portrait'] },
-        { role: 'Senior lead', fields: ['Name', 'Role and responsibility', 'Marketplace background', 'Portrait'] },
       ],
     },
     finalCta: {
@@ -824,7 +720,7 @@ export const en = {
       },
       aboutYou: 'About you',
       name: 'Name',
-      email: 'Work email',
+      email: 'Email',
       company: 'Company',
       role: 'Role',
       website: 'Website',
@@ -939,7 +835,7 @@ export const en = {
       },
       {
         heading: 'What we collect',
-        body: 'Details submitted through the contact form: name, work email, company, role, website, preferred language, and the information you choose to share about your situation.',
+        body: 'Details submitted through the contact form: name, email address, company, role, website, preferred language, and the information you choose to share about your situation.',
         fields: [],
       },
       {

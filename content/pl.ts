@@ -5,12 +5,12 @@ export const pl: Dictionary = {
     home: {
       title: 'ADelier Commerce | Realizacja marketplace i praktyczne szkolenia',
       description:
-        'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna, wsparcie white-label dla agencji oraz samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
+        'Prowadzone przez ekspertów pozycjonowanie na Amazon, realizacja konwersyjna, wsparcie white-label dla agencji oraz samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
     },
     agencies: {
       title: 'Dla agencji | Realizacja Amazon white-label i szkolenia | ADelier Commerce',
       description:
-        'Dodaj do oferty agencji strategię Amazon, optymalizację listingów, kreację konwersyjną i szkolenia zespołów — z określonym przeglądem seniora i chronionymi relacjami z klientami.',
+        'Dodaj do oferty agencji strategię Amazon, optymalizację listingów, kreację konwersyjną i szkolenia zespołów — z określonym przeglądem eksperckim i chronionymi relacjami z klientami.',
     },
     brands: {
       title: 'Dla marek | Pozycjonowanie i konwersja na Amazon | ADelier Commerce',
@@ -27,15 +27,10 @@ export const pl: Dictionary = {
       description:
         'Pięć produktów startowych w ramach Marketplace Delivery oraz Training and Team Enablement, trzy modele współpracy i jedna metoda od diagnozy do skalowania.',
     },
-    results: {
-      title: 'Rezultaty | Jak ADelier dokumentuje dowody | ADelier Commerce',
-      description:
-        'ADelier publikuje wyniki wyłącznie za zgodą i z kontekstem. Zobacz, jak dokumentujemy problemy, decyzje, materiały i transfer kompetencji.',
-    },
     about: {
       title: 'O nas | Rzemiosło handlowe dla wzrostu na marketplace | ADelier Commerce',
       description:
-        'Realizacja marketplace prowadzona przez seniorów, z koncentracją na rynku USA i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
+        'Realizacja marketplace prowadzona przez ekspertów z zespołu w Polsce, z międzynarodowym doświadczeniem marketplace i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
     },
     contact: {
       title: 'Kontakt | Zacznij od rzeczywistej decyzji | ADelier Commerce',
@@ -59,7 +54,6 @@ export const pl: Dictionary = {
       brands: 'Dla marek',
       training: 'Szkolenia',
       services: 'Usługi',
-      results: 'Rezultaty',
       about: 'O nas',
       contact: 'Kontakt',
       privacy: 'Prywatność',
@@ -78,7 +72,6 @@ export const pl: Dictionary = {
       brands: 'Zamów diagnozę ASIN',
       training: 'Zaplanuj prywatny program szkoleniowy',
       services: 'Poproś o zakres',
-      results: 'Omów podobne wyzwanie',
       about: 'Rozpocznij rozmowę',
       contact: 'Rozpocznij rozmowę',
       privacy: 'Rozpocznij rozmowę',
@@ -88,7 +81,7 @@ export const pl: Dictionary = {
 
   footer: {
     description:
-      'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla amerykańskich agencji marketingowych i marek konsumenckich.',
+      'Prowadzone przez ekspertów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
     explore: 'Odkryj',
     languages: 'Języki',
     contact: 'Kontakt',
@@ -101,7 +94,6 @@ export const pl: Dictionary = {
 
   common: {
     demo: 'Demonstracja',
-    demoNotClient: 'Demonstracja — nie jest to praca dla klienta',
     proofSlot: 'Tutaj pojawią się dowody zatwierdzone przez klienta.',
     imageSlot: 'Miejsce na zdjęcie',
     breadcrumbLabel: 'Ścieżka nawigacji',
@@ -127,7 +119,7 @@ export const pl: Dictionary = {
     title: 'Realizacja i kompetencje w jednym systemie.',
     eyebrow: 'Dwie rodziny produktów startowych',
     delivery: {
-      body: 'Prowadzone przez seniorów diagnoza, pozycjonowanie, kierunek listingu, treści konwersyjne, briefy kreatywne i cykliczna specjalistyczna realizacja.',
+      body: 'Prowadzone przez ekspertów diagnoza, pozycjonowanie, kierunek listingu, treści konwersyjne, briefy kreatywne i cykliczna specjalistyczna realizacja.',
     },
     training: {
       body: 'Płatne, samodzielne programy, które poprawiają realną pracę, tworzą wspólne standardy jakości i przenoszą powtarzalne kompetencje do zespołu.',
@@ -152,7 +144,7 @@ export const pl: Dictionary = {
       },
       {
         id: 'pod',
-        body: 'Cykliczna specjalistyczna realizacja dla agencji z ustalonymi priorytetami, poziomami obsługi i kontrolą jakości seniora.',
+        body: 'Cykliczna specjalistyczna realizacja dla agencji z ustalonymi priorytetami, poziomami obsługi i ekspercką kontrolą jakości.',
         bestFor: 'Agencje z powtarzalną pracą na Amazon, które nie chcą jeszcze budować pełnego zespołu wewnętrznego.',
         receive: 'Dedykowany zespół specjalistów pracujący pod Twoją marką według ustalonego zakresu i punktów kontroli.',
       },
@@ -177,7 +169,7 @@ export const pl: Dictionary = {
     items: [
       {
         lead: 'Zróbcie to za nas.',
-        body: 'Specjalistyczna realizacja z jasnym zakresem, przeglądem seniora i uporządkowanym przekazaniem.',
+        body: 'Specjalistyczna realizacja z jasnym zakresem, przeglądem eksperckim i uporządkowanym przekazaniem.',
       },
       {
         lead: 'Zbudujcie to z nami.',
@@ -215,7 +207,7 @@ export const pl: Dictionary = {
       },
       {
         title: 'Odpowiedzialna realizacja',
-        body: 'Wskazany senior odpowiada za rekomendację, punkty kontroli i końcową jakość.',
+        body: 'Wskazany ekspert prowadzący odpowiada za rekomendację, punkty kontroli i końcową jakość.',
       },
       {
         title: 'Transfer kompetencji',
@@ -240,8 +232,8 @@ export const pl: Dictionary = {
 
   operating: {
     eyebrow: 'Model operacyjny',
-    title: 'Koncentracja na rynku USA. Realizacja prowadzona przez seniorów. Europejska efektywność operacyjna.',
-    body: 'ADelier jest budowane w Polsce i skoncentrowane na rynku USA. Ten model operacyjny zapewnia więcej uwagi specjalistów, szybsze iteracje i atrakcyjną ekonomikę bez obniżania standardu jakości.',
+    title: 'Międzynarodowa perspektywa marketplace. Realizacja prowadzona przez ekspertów. Europejska efektywność operacyjna.',
+    body: 'ADelier powstaje w Polsce i współpracuje z agencjami oraz markami konsumenckimi na różnych rynkach. Ten model operacyjny zapewnia więcej uwagi specjalistów, szybsze iteracje i atrakcyjną ekonomikę bez obniżania standardu jakości.',
   },
 
   quality: {
@@ -295,26 +287,18 @@ export const pl: Dictionary = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier pomaga amerykańskim agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, wykonanie materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
-      primary: 'Poznaj współpracę z agencjami',
-      secondary: 'Poznaj szkolenia',
-      textLink: 'Dla marek konsumenckich',
-    },
-    visual: {
-      productPage: 'Strona produktu',
-      productTitle: 'Stalowa butelka termiczna, 750 ml',
-      reasonLabel: 'Powód wyboru',
-      reason: 'Otwiera się i zamyka jedną ręką i nie przecieka w torbie.',
-      improved: 'Przeniesione do pierwszej linii',
-      workflowTitle: 'Przegląd zespołu',
-      workflow: ['Brief uzgodniony', 'Przegląd seniora', 'Lista kontrolna jakości', 'Gotowe do powtórzenia'],
-      alt: 'Kompozycja demonstracyjna: strona produktu z wyróżnionym powodem wyboru obok listy kontrolnej przeglądu zespołu.',
+        'ADelier pomaga agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, realizację materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
+      actions: {
+        agencies: 'Poznaj współpracę z agencjami',
+        brands: 'Poznaj usługi dla marek',
+        training: 'Poznaj szkolenia',
+      },
     },
     trust: [
-      'Marketplace prowadzony przez seniorów',
+      'Ekspercka realizacja marketplace',
       'AI z odpowiedzialnością człowieka',
       'Chronione relacje agencji z klientami',
-      'Zespół w Polsce, koncentracja na rynku USA',
+      'Zespół w Polsce, międzynarodowa perspektywa marketplace',
     ],
     routes: {
       title: 'Wybierz ścieżkę dopasowaną do swojej sytuacji.',
@@ -323,18 +307,21 @@ export const pl: Dictionary = {
         {
           key: 'agencies',
           label: 'Dla agencji',
+          action: 'Poznaj współpracę z agencjami',
           title: 'Rozszerz ofertę Amazon. Zachowaj relację z klientem.',
           body: 'Dodaj specjalistyczną strategię, realizację konwersyjną i szkolenia bez natychmiastowego budowania pełnego zespołu wewnętrznego.',
         },
         {
           key: 'brands',
           label: 'Dla marek',
+          action: 'Poznaj usługi dla marek',
           title: 'Spraw, by Twój produkt był oczywistym wyborem.',
-          body: 'Wyjaśnij, dlaczego kupujący powinni wybrać produkt, przebuduj doświadczenie marketplace i wzmocnij zespół, który za nim stoi.',
+          body: 'Wyjaśnij, dlaczego kupuj��cy powinni wybrać produkt, przebuduj doświadczenie marketplace i wzmocnij zespół, który za nim stoi.',
         },
         {
           key: 'training',
           label: 'Szkolenia',
+          action: 'Poznaj szkolenia',
           title: 'Zbuduj kompetencje, które pozwalają powtarzać wyniki.',
           body: 'Samodzielne, prywatne programy oparte na realnych produktach, sytuacjach klientów, procesach i standardach jakości.',
         },
@@ -352,7 +339,7 @@ export const pl: Dictionary = {
       eyebrow: 'Dla agencji',
       title: 'Rozszerz ofertę Amazon. Zachowaj relację z klientem.',
       support:
-        'ADelier daje agencjom marketingowym elastyczny dostęp do strategii marketplace, optymalizacji listingów, kreacji konwersyjnej, produkcji wspieranej AI i szkoleń zespołów — z jasno określonym przeglądem seniora i ochroną klientów wprowadzonych przez agencję.',
+        'ADelier daje agencjom marketingowym elastyczny dostęp do strategii marketplace, optymalizacji listingów, kreacji konwersyjnej, produkcji wspieranej AI i szkoleń zespołów — z jasno określonym przeglądem eksperckim i ochroną klientów wprowadzonych przez agencję.',
       primary: 'Omów współpracę agencyjną',
       secondary: 'Zobacz standardy white-label',
     },
@@ -413,7 +400,7 @@ export const pl: Dictionary = {
         'Twój klient pozostaje Twoim klientem.',
         'O widoczności naszej roli decydujesz Ty.',
         'Zakres, czas realizacji, poprawki i odpowiedzialności są uzgadniane przed rozpoczęciem pracy.',
-        'Przegląd seniora jest określony, a nie domniemany.',
+        'Przegląd ekspercki jest określony, a nie domniemany.',
         'Żadna nazwa klienta, materiał ani wynik nie są używane publicznie bez pisemnej zgody.',
       ],
     },
@@ -459,6 +446,13 @@ export const pl: Dictionary = {
   },
 
   brands: {
+    productOverrides: {
+      diagnostic: { bestFor: 'Marki konsumenckie, które widzą problem z wynikami, ale nie potrafią jeszcze wskazać jego przyczyny.' },
+      foundations: {
+        body: 'Prywatny, praktyczny program, który daje zespołom marek wspólny standard oceny wyboru kupującego, hierarchii komunikatu i jakości konwersji.',
+        bestFor: 'Zespoły marek tworzące lub oceniające strony produktowe na Amazon.',
+      },
+    },
     hero: {
       eyebrow: 'Dla marek',
       title: 'Spraw, by Twój produkt był oczywistym wyborem.',
@@ -639,7 +633,7 @@ export const pl: Dictionary = {
     hero: {
       eyebrow: 'Usługi',
       title: 'Jeden system dla lepszej realizacji marketplace i silniejszych kompetencji.',
-      support: 'Zacznij od realizacji albo szkolenia. Łącz je tylko wtedy, gdy problem biznesowy wymaga obu.',
+      support: 'Zacznij od realizacji albo szkolenia. Łącz je wtedy, gdy problem biznesowy wymaga obu.',
       primary: 'Poproś o zakres',
       secondary: 'Zobacz Choice System',
     },
@@ -656,92 +650,6 @@ export const pl: Dictionary = {
     },
   },
 
-  results: {
-    hero: {
-      eyebrow: 'Rezultaty',
-      title: 'Najpierw dowody, potem twierdzenia.',
-      support:
-        'ADelier publikuje wyniki wyłącznie za zgodą i z kontekstem. Dopóki nie będzie dostępnych zatwierdzonych dowodów od klientów, ta strona pokazuje, jak dokumentujemy problemy, decyzje, materiały i transfer kompetencji.',
-    },
-    proof: {
-      title: 'Co obejmują mocne dowody',
-      items: [
-        { title: 'Zmierzony wynik biznesowy', body: 'Określony miernik, punkt wyjścia, okres i warunki, które mogą go wyjaśniać.' },
-        { title: 'Dowody jakości przed i po', body: 'Obie wersje obok siebie, z uzasadnieniem każdej zmiany.' },
-        { title: 'Dowody procesu', body: 'Brief, podjęte decyzje i punkty kontroli, przez które przeszła praca.' },
-        { title: 'Opinia klienta', body: 'Słowami klienta, publikowana wyłącznie za pisemną zgodą.' },
-        { title: 'Przyjęcie kompetencji', body: 'Praca, którą zespół klienta wykonał samodzielnie po zakończeniu współpracy.' },
-      ],
-    },
-    structure: {
-      title: 'Struktura case study',
-      intro: 'Każde publikowane case study ma tych samych osiem części, łącznie z ograniczeniami.',
-      steps: [
-        'Sytuacja',
-        'Punkt wyjścia',
-        'Diagnoza',
-        'Decyzja',
-        'Wykonana praca',
-        'Wynik i ograniczenia',
-        'Przekazane kompetencje',
-        'Kolejny krok',
-      ],
-    },
-    demos: {
-      title: 'Przykłady demonstracyjne',
-      intro: 'Dwie ilustracje metody na wymyślonym produkcie. Pokazują sposób rozumowania, nie wyniki.',
-      hierarchy: {
-        title: 'Hierarchia komunikatu',
-        weakLabel: 'Słaba',
-        weak: [
-          'Butelka ze stali nierdzewnej najwyższej jakości',
-          'Idealna dla każdego',
-          'Szczelna pokrywka',
-          'Utrzymuje chłód napojów',
-        ],
-        improvedLabel: 'Poprawiona',
-        improved: [
-          'Otwiera się jedną ręką i nie przecieka w torbie',
-          'Chłodny napój przez cały dzień pracy',
-          'Pasuje do standardowych uchwytów na kubki w samochodzie',
-          'Stal nierdzewna, pokrywka do zmywarki',
-        ],
-        note: 'Powód wyboru trafia do pierwszej linii; ogólniki zastępują twierdzenia, które da się sprawdzić.',
-      },
-      sequence: {
-        title: 'Brief sekwencji zdjęć',
-        columns: ['Przed', 'Powód', 'Po'],
-        rows: [
-          {
-            before: 'Produkt na białym tle, widok z przodu',
-            reason: 'Pokazuje przedmiot, a nie wybór',
-            after: 'Otwieranie jedną ręką, pokazane w użyciu',
-          },
-          {
-            before: 'Zdjęcie lifestyle na plaży',
-            reason: 'Nastrój bez odpowiedzi na obiekcję',
-            after: 'Butelka w torbie, pionowo i sucho',
-          },
-          {
-            before: 'Schemat wymiarów',
-            reason: 'Właściwa treść, ale za późno w sekwencji',
-            after: 'Dopasowanie do uchwytu na kubek, przeniesione na pozycję trzecią',
-          },
-        ],
-      },
-    },
-    grid: {
-      title: 'Case studies klientów',
-      emptyTitle: 'Nie opublikowaliśmy jeszcze żadnych case studies klientów.',
-      emptyBody:
-        'Pracę dla klientów opublikujemy tutaj dopiero wtedy, gdy klient zatwierdzi treść, liczby i kontekst. Do tego czasu wolimy nie pokazywać niczego, niż pokazać coś wymyślonego.',
-    },
-    finalCta: {
-      title: 'Omów podobne wyzwanie.',
-      body: 'Opisz sytuację. Powiemy, jak byśmy do niej podeszli i jakie dowody byśmy zebrali.',
-      button: 'Omów podobne wyzwanie',
-    },
-  },
 
   about: {
     hero: {
@@ -765,16 +673,16 @@ export const pl: Dictionary = {
     serve: {
       title: 'Komu służymy',
       items: [
-        { title: 'Amerykańskim agencjom marketingowym', body: 'Które potrzebują specjalistycznej realizacji lub kompetencji Amazon pod własną marką.' },
+        { title: 'Agencje marketingowe', body: 'Które potrzebują specjalistycznej realizacji lub kompetencji Amazon pod własną marką.' },
         { title: 'Markom konsumenckim', body: 'Które potrzebują mocniejszego pozycjonowania, realizacji konwersyjnej i kompetencji wewnętrznych.' },
         { title: 'Zespołom agencji i marek', body: 'Kupującym samodzielne, praktyczne szkolenia, bez projektu realizacyjnego.' },
       ],
     },
     operatingBody:
-      'Nasi klienci działają na rynku USA i tam kierujemy naszą uwagę. Zespół pracuje w Polsce, co daje każdej współpracy więcej czasu doświadczonych specjalistów i szybsze iteracje. Efektywność jest konsekwencją modelu operacyjnego, a nie powodem wyboru: standard jakości pozostaje taki sam.',
+      'ADelier ma zespół w Polsce i współpracuje z klientami międzynarodowymi. Model operacyjny daje każdej współpracy więcej czasu doświadczonych specjalistów i szybsze iteracje. Efektywność jest konsekwencją modelu, a nie powodem wyboru: standard jakości pozostaje taki sam.',
     accountability: {
-      title: 'Odpowiedzialność seniora',
-      body: 'Każda współpraca ma wskazanego seniora. Ta osoba odpowiada za rekomendację biznesową, punkty kontroli, przez które przechodzi praca, i końcową jakość tego, co dostarczamy. Odpowiedzialność ma imię i nazwisko, a nie nazwę działu.',
+      title: 'Odpowiedzialność ekspercka',
+      body: 'Każda współpraca ma wskazanego eksperta prowadzącego. Ta osoba odpowiada za rekomendację biznesową, punkty kontroli, przez które przechodzi praca, i końcową jakość tego, co dostarczamy. Odpowiedzialność ma imię i nazwisko, a nie nazwę działu.',
     },
     traits: {
       title: 'Osobowość w praktyce',
@@ -785,18 +693,6 @@ export const pl: Dictionary = {
         { title: 'Transparentni', body: 'Uzasadnienie jest widoczne, także tam, gdzie nie mamy pewności.' },
         { title: 'Spokojnie pewni', body: 'Argumentem są praca i dowody.' },
         { title: 'Hojni w dzieleniu się wiedzą', body: 'Uczymy metody, aby klient mógł ją powtórzyć.' },
-      ],
-    },
-    future: {
-      title: 'Gotowi na przyszłość, bez przesadnych obietnic',
-      body: 'ADelier zaczyna od Amazon. TikTok Shop i inne marketplace’y dodamy dopiero wtedy, gdy nasze kompetencje i dowody dla danej platformy będą wiarygodne.',
-    },
-    team: {
-      title: 'Ludzie odpowiedzialni za pracę',
-      body: 'Profile zespołu opublikujemy tutaj po ich zatwierdzeniu.',
-      slots: [
-        { role: 'Założyciel', fields: ['Imię i nazwisko', 'Rola i odpowiedzialność', 'Doświadczenie marketplace', 'Portret'] },
-        { role: 'Senior', fields: ['Imię i nazwisko', 'Rola i odpowiedzialność', 'Doświadczenie marketplace', 'Portret'] },
       ],
     },
     finalCta: {
@@ -832,7 +728,7 @@ export const pl: Dictionary = {
       },
       aboutYou: 'O Tobie',
       name: 'Imię i nazwisko',
-      email: 'Służbowy e-mail',
+      email: 'E-mail',
       company: 'Firma',
       role: 'Stanowisko',
       website: 'Strona internetowa',
@@ -947,7 +843,7 @@ export const pl: Dictionary = {
       },
       {
         heading: 'Jakie dane zbieramy',
-        body: 'Dane przesłane przez formularz kontaktowy: imię i nazwisko, służbowy e-mail, firmę, stanowisko, stronę internetową, preferowany język i informacje, którymi zdecydujesz się podzielić.',
+        body: 'Dane przesłane przez formularz kontaktowy: imię i nazwisko, adres e-mail, firmę, stanowisko, stronę internetową, preferowany język i informacje, którymi zdecydujesz się podzielić.',
         fields: [],
       },
       {

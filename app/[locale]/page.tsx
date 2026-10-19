@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
-import { ChoiceSystem } from '@/components/site/choice-system'
-import { HeroVisual } from '@/components/site/hero-visual'
 import { CtaLink } from '@/components/site/primitives'
 import {
   AiSection,
@@ -36,22 +34,22 @@ export default async function HomePage({ params }: Props) {
         support={h.hero.support}
         actions={
           <>
-            <CtaLink href={href(locale, 'agencies')}>{h.hero.primary}</CtaLink>
-            <CtaLink href={href(locale, 'training')} variant="secondary">
-              {h.hero.secondary}
+            <CtaLink href={href(locale, 'agencies')} className="w-full sm:w-auto">
+              {h.hero.actions.agencies}
             </CtaLink>
-            <CtaLink href={href(locale, 'brands')} variant="text">
-              {h.hero.textLink}
+            <CtaLink href={href(locale, 'brands')} className="w-full sm:w-auto">
+              {h.hero.actions.brands}
+            </CtaLink>
+            <CtaLink href={href(locale, 'training')} variant="sage" className="w-full sm:w-auto">
+              {h.hero.actions.training}
             </CtaLink>
           </>
         }
-        aside={<HeroVisual dict={dict} />}
       />
       <TrustStrip items={h.trust} />
       <RouteCards locale={locale} dict={dict} />
       <ProductFamilies dict={dict} />
-      <ChoiceSystem dict={dict} tone="white" />
-      <DeliveryModes dict={dict} tone="porcelain" />
+      <DeliveryModes dict={dict} tone="white" />
       <WhyAdelier dict={dict} />
       <AiSection dict={dict} />
       <OperatingModel dict={dict} />

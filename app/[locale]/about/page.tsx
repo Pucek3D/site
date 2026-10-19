@@ -1,4 +1,3 @@
-import { CircleUserRound } from 'lucide-react'
 import type { Metadata } from 'next'
 import { Logo } from '@/components/site/logo'
 import { FocusFrame, Section, SectionHeading } from '@/components/site/primitives'
@@ -24,9 +23,10 @@ export default async function AboutPage({ params }: Props) {
         eyebrow={a.hero.eyebrow}
         title={a.hero.title}
         support={a.hero.support}
+        asidePosition="left"
         aside={
-          <div className="flex justify-center lg:justify-end">
-            <Logo variant="stacked" height={220} alt="ADelier Commerce" />
+          <div className="flex justify-start">
+            <Logo variant="stacked" height={232} alt="ADelier Commerce" />
           </div>
         }
       />
@@ -77,34 +77,6 @@ export default async function AboutPage({ params }: Props) {
         <SectionHeading id="traits-title" title={a.traits.title} />
         <div className="mt-12">
           <CardGrid items={a.traits.items} columns={3} />
-        </div>
-      </Section>
-
-      <Section labelledBy="team-title">
-        <SectionHeading id="team-title" title={a.team.title} intro={a.team.body} />
-        <ul className="mt-12 grid gap-6 md:grid-cols-2">
-          {a.team.slots.map((slot) => (
-            <li key={slot.role} className="flex gap-5 rounded-xl border border-dashed border-input p-6">
-              <div className="flex size-20 shrink-0 items-center justify-center rounded-lg bg-porcelain">
-                <CircleUserRound aria-hidden className="size-8 text-mist" />
-              </div>
-              <div>
-                <p className="font-display font-semibold text-ink">{slot.role}</p>
-                <p className="mt-1 text-sm text-slate">{dict.common.toComplete}</p>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {slot.fields.map((f) => (
-                    <li key={f} className="rounded-full bg-porcelain px-3 py-1 text-xs text-slate">
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-14 max-w-3xl border-t border-hairline pt-10">
-          <h3 className="font-display text-xl font-semibold">{a.future.title}</h3>
-          <p className="mt-3 text-lg leading-relaxed text-slate">{a.future.body}</p>
         </div>
       </Section>
 
