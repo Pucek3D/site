@@ -99,10 +99,13 @@ export function TrustStrip({ items }: { items: string[] }) {
   return (
     <div className="border-b border-hairline bg-porcelain">
       <Container>
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-3 py-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-x-10">
           {items.map((t) => (
-            <li key={t} className="flex items-center gap-3 text-[0.9375rem] font-medium text-ink">
-              <span aria-hidden className="h-4 w-0.5 shrink-0 bg-sage" />
+            <li
+              key={t}
+              className="flex items-start gap-3 text-[0.9375rem] font-medium leading-6 text-ink sm:whitespace-nowrap"
+            >
+              <span aria-hidden className="mt-1 h-4 w-0.5 shrink-0 bg-sage" />
               {t}
             </li>
           ))}
