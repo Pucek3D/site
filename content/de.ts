@@ -5,12 +5,12 @@ export const de: Dictionary = {
     home: {
       title: 'ADelier Commerce | Marketplace-Umsetzung und praxisnahe Trainings',
       description:
-        'Seniorengeführte Amazon-Positionierung, Conversion-Umsetzung, White-Label-Unterstützung für Agenturen und eigenständig buchbare Praxistrainings für Marketingagenturen und Konsumgütermarken.',
+        'Expertengeführte Amazon-Positionierung, Conversion-Umsetzung, White-Label-Unterstützung für Agenturen und eigenständig buchbare Praxistrainings für Marketingagenturen und Konsumgütermarken.',
     },
     agencies: {
       title: 'Für Agenturen | White-Label-Umsetzung für Amazon und Trainings | ADelier Commerce',
       description:
-        'Ergänzen Sie Ihr Agenturangebot um Amazon-Strategie, Listing-Optimierung, Conversion-Creative und Teamtraining – mit definiertem Senior Review und geschützten Kundenbeziehungen.',
+        'Ergänzen Sie Ihr Agenturangebot um Amazon-Strategie, Listing-Optimierung, Conversion-Creative und Teamtraining – mit definiertem Expertenreview und geschützten Kundenbeziehungen.',
     },
     brands: {
       title: 'Für Marken | Amazon-Positionierung und Conversion | ADelier Commerce',
@@ -30,7 +30,7 @@ export const de: Dictionary = {
     about: {
       title: 'Über uns | Kaufmännisches Handwerk für Marketplace-Wachstum | ADelier Commerce',
       description:
-        'Seniorengeführte Marketplace-Umsetzung durch ein in Polen ansässiges Team, mit internationaler Marketplace-Erfahrung und europäischer operativer Effizienz. Wie ADelier arbeitet, woran wir glauben und für wen wir arbeiten.',
+        'Expertengeführte Marketplace-Umsetzung durch ein in Polen ansässiges Team, mit internationaler Marketplace-Erfahrung und europäischer operativer Effizienz. Wie ADelier arbeitet, woran wir glauben und für wen wir arbeiten.',
     },
     contact: {
       title: 'Kontakt | Beginnen Sie mit der eigentlichen Entscheidung | ADelier Commerce',
@@ -81,7 +81,7 @@ export const de: Dictionary = {
 
   footer: {
     description:
-      'Seniorengeführte Amazon-Positionierung, Conversion-Umsetzung und eigenständig buchbare Praxistrainings für Marketingagenturen und Konsumgütermarken.',
+      'Expertengeführte Amazon-Positionierung, Conversion-Umsetzung und eigenständig buchbare Praxistrainings für Marketingagenturen und Konsumgütermarken.',
     explore: 'Entdecken',
     languages: 'Sprachen',
     contact: 'Kontakt',
@@ -119,7 +119,7 @@ export const de: Dictionary = {
     title: 'Umsetzung und Kompetenz als ein System.',
     eyebrow: 'Zwei Produktfamilien zum Start',
     delivery: {
-      body: 'Seniorengeführte Diagnose, Positionierung, Listing-Ausrichtung, Conversion-Inhalte, Creative Briefings und wiederkehrende Spezialisten-Kapazität.',
+      body: 'Expertengeführte Diagnose, Positionierung, Listing-Ausrichtung, Conversion-Inhalte, Creative Briefings und wiederkehrende Spezialisten-Kapazität.',
     },
     training: {
       body: 'Eigenständig buchbare, bezahlte Programme, die reale Arbeit verbessern, gemeinsame Qualitätsstandards schaffen und wiederholbare Fähigkeiten ins Team übertragen.',
@@ -144,7 +144,7 @@ export const de: Dictionary = {
       },
       {
         id: 'pod',
-        body: 'Wiederkehrende Spezialisten-Kapazität für Agenturen mit vereinbarten Prioritäten, Service Levels und seniorengeführter Qualitätskontrolle.',
+        body: 'Wiederkehrende Spezialisten-Kapazität für Agenturen mit vereinbarten Prioritäten, Service Levels und fachlicher Qualitätskontrolle.',
         bestFor: 'Agenturen mit wiederkehrender Amazon-Arbeit, die noch kein vollständiges internes Team aufbauen möchten.',
         receive: 'Ein festes Spezialistenteam, das unter Ihrer Marke nach vereinbartem Umfang und Review Gates arbeitet.',
       },
@@ -169,7 +169,7 @@ export const de: Dictionary = {
     items: [
       {
         lead: 'Übernehmen Sie es für uns.',
-        body: 'Spezialisierte Umsetzung mit klarem Umfang, Senior Review und verlässlicher Übergabe.',
+        body: 'Spezialisierte Umsetzung mit klarem Umfang, Expertenreview und verlässlicher Übergabe.',
       },
       {
         lead: 'Entwickeln Sie es mit uns.',
@@ -207,7 +207,7 @@ export const de: Dictionary = {
       },
       {
         title: 'Verantwortliche Umsetzung',
-        body: 'Ein benannter Senior Lead verantwortet Empfehlung, Review Gates und Endqualität.',
+        body: 'Eine benannte fachlich verantwortliche Person verantwortet Empfehlung, Review Gates und Endqualität.',
       },
       {
         title: 'Kompetenztransfer',
@@ -232,7 +232,7 @@ export const de: Dictionary = {
 
   operating: {
     eyebrow: 'Betriebsmodell',
-    title: 'Internationaler Marketplace-Fokus. Seniorengeführte Umsetzung. Europäische operative Effizienz.',
+    title: 'Internationaler Marketplace-Fokus. Expertengeführte Umsetzung. Europäische operative Effizienz.',
     body: 'ADelier ist in Polen aufgebaut und arbeitet marktübergreifend mit Agenturen und Konsumgütermarken. Das Betriebsmodell ermöglicht mehr Spezialistenaufmerksamkeit, schnellere Iterationen und attraktive Wirtschaftlichkeit, ohne den Qualitätsstandard zu senken.',
   },
 
@@ -287,13 +287,15 @@ export const de: Dictionary = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier hilft Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch seniorengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
-      agencyCta: 'Agenturpartnerschaften entdecken',
-      trainingCta: 'Trainings entdecken',
-      brandsCta: 'Für Konsumgütermarken',
+        'ADelier hilft Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch expertengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
+      actions: {
+        agencies: 'Agenturpartnerschaften entdecken',
+        brands: 'Leistungen für Marken entdecken',
+        training: 'Trainings entdecken',
+      },
     },
     trust: [
-      'Seniorengeführte Marketplace-Umsetzung',
+      'Expertengeführte Marketplace-Umsetzung',
       'KI mit menschlicher Verantwortung',
       'Geschützte Agentur-Kundenbeziehungen',
       'Team in Polen, internationaler Marketplace-Fokus',
@@ -305,18 +307,21 @@ export const de: Dictionary = {
         {
           key: 'agencies',
           label: 'Für Agenturen',
+          action: 'Agenturpartnerschaften entdecken',
           title: 'Erweitern Sie Ihr Amazon-Angebot. Behalten Sie die Kundenbeziehung.',
           body: 'Ergänzen Sie spezialisierte Strategie, Conversion-Umsetzung und Training, ohne sofort ein vollständiges internes Team aufzubauen.',
         },
         {
           key: 'brands',
           label: 'Für Marken',
+          action: 'Leistungen für Marken entdecken',
           title: 'Machen Sie Ihr Produkt zur naheliegenden Wahl.',
           body: 'Klären Sie, warum Käufer sich entscheiden sollten, gestalten Sie das Marketplace-Erlebnis neu und stärken Sie das Team dahinter.',
         },
         {
           key: 'training',
           label: 'Trainings',
+          action: 'Trainings entdecken',
           title: 'Bauen Sie die Fähigkeit auf, Erfolge zu wiederholen.',
           body: 'Eigenständig buchbare private Programme auf Basis realer Produkte, Kundensituationen, Workflows und Qualitätsstandards.',
         },
@@ -334,7 +339,7 @@ export const de: Dictionary = {
       eyebrow: 'Für Agenturen',
       title: 'Erweitern Sie Ihr Amazon-Angebot. Behalten Sie die Kundenbeziehung.',
       support:
-        'ADelier bietet Marketingagenturen flexiblen Zugang zu Marketplace-Strategie, Listing-Optimierung, Conversion-Creative, KI-unterstützter Produktion und Teamtraining – mit definiertem Senior Review und ausdrücklichem Schutz der von der Agentur eingebrachten Kunden.',
+        'ADelier bietet Marketingagenturen flexiblen Zugang zu Marketplace-Strategie, Listing-Optimierung, Conversion-Creative, KI-unterstützter Produktion und Teamtraining – mit definiertem Expertenreview und ausdrücklichem Schutz der von der Agentur eingebrachten Kunden.',
       primary: 'Agenturpartnerschaft besprechen',
       secondary: 'White-Label-Standards ansehen',
     },
@@ -395,7 +400,7 @@ export const de: Dictionary = {
         'Ihr Kunde bleibt Ihr Kunde.',
         'Über die Sichtbarkeit entscheiden Sie.',
         'Umfang, Bearbeitungszeit, Korrekturen und Verantwortlichkeiten werden vor Arbeitsbeginn vereinbart.',
-        'Senior Review ist definiert, nicht nur angedeutet.',
+        'Das Expertenreview ist definiert, nicht nur angedeutet.',
         'Kein Kundenname, kein Asset und kein Ergebnis wird ohne schriftliche Freigabe öffentlich verwendet.',
       ],
     },
@@ -676,8 +681,8 @@ export const de: Dictionary = {
     operatingBody:
       'ADelier hat ein Team in Polen und arbeitet mit internationalen Kunden. Das Betriebsmodell gibt jedem Projekt mehr Zeit erfahrener Spezialisten und ermöglicht schnellere Iterationen. Effizienz ist eine Folge des Modells, nicht der Grund für die Wahl: Der Qualitätsstandard bleibt unverändert.',
     accountability: {
-      title: 'Senior-Verantwortung',
-      body: 'Jedes Projekt hat eine benannte verantwortliche Senior-Person. Sie verantwortet die kommerzielle Empfehlung, die Review Gates, die die Arbeit durchläuft, und die Endqualität des Ergebnisses. Verantwortung hat einen Namen, keine Abteilung.',
+      title: 'Expertenverantwortung',
+      body: 'Jedes Projekt hat eine benannte fachlich verantwortliche Person. Sie verantwortet die kommerzielle Empfehlung, die Review Gates, die die Arbeit durchläuft, und die Endqualität des Ergebnisses. Verantwortung hat einen Namen, keine Abteilung.',
     },
     traits: {
       title: 'Persönlichkeit in der Praxis',

@@ -121,9 +121,10 @@ const routeIcon = { agencies: CircleUserRound, brands: Layers, training: Graduat
  * Agencies and brands share Cobalt so neither reads as secondary; training alone takes Sage.
  */
 const routeTone = {
-  agencies: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt' },
-  brands: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt' },
-  training: { card: 'border-hairline bg-white hover:border-sage', icon: 'text-sage' },
+  agencies: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt', action: 'text-cobalt' },
+  brands: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt', action: 'text-cobalt' },
+  // Sage fails contrast as small text on white, so it carries the icon and arrow only.
+  training: { card: 'border-hairline bg-white hover:border-sage', icon: 'text-sage', action: 'text-ink' },
 } as const
 
 export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -149,9 +150,12 @@ export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary 
                   {item.title}
                 </span>
                 <span className="leading-relaxed text-slate">{item.body}</span>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-2 font-semibold text-cobalt">
-                  {dict.nav.items[item.key as PageKey]}
-                  <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-0.5" />
+                <span className={cn('mt-auto inline-flex items-center gap-1.5 pt-2 font-semibold', tone.action)}>
+                  {item.action}
+                  <ArrowRight
+                    aria-hidden
+                    className={cn('size-4 shrink-0 transition-transform group-hover:translate-x-0.5', tone.icon)}
+                  />
                 </span>
               </Link>
             </li>

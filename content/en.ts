@@ -3,12 +3,12 @@ export const en = {
     home: {
       title: 'ADelier Commerce | Marketplace Delivery and Applied Training',
       description:
-        'Senior-led Amazon positioning, conversion execution, white-label agency support, and standalone applied training for marketing agencies and consumer brands.',
+        'Expert-led Amazon positioning, conversion execution, white-label agency support, and standalone applied training for marketing agencies and consumer brands.',
     },
     agencies: {
       title: 'For Agencies | White-Label Amazon Delivery and Training | ADelier Commerce',
       description:
-        'Add Amazon strategy, listing optimization, conversion creative, and team training to your agency offer with defined senior review and protected client relationships.',
+        'Add Amazon strategy, listing optimization, conversion creative, and team training to your agency offer with defined expert review and protected client relationships.',
     },
     brands: {
       title: 'For Brands | Amazon Positioning and Conversion | ADelier Commerce',
@@ -28,7 +28,7 @@ export const en = {
     about: {
       title: 'About | Commercial Craft for Marketplace Growth | ADelier Commerce',
       description:
-        'Senior-led marketplace delivery from a Poland-based team, with international marketplace experience and European operating efficiency. How ADelier works, what we believe, and who we serve.',
+        'Expert-led marketplace delivery from a Poland-based team, with international marketplace experience and European operating efficiency. How ADelier works, what we believe, and who we serve.',
     },
     contact: {
       title: 'Contact | Start with the Real Decision | ADelier Commerce',
@@ -79,7 +79,7 @@ export const en = {
 
   footer: {
     description:
-      'Senior-led Amazon positioning, conversion execution, and standalone applied training for marketing agencies and consumer brands.',
+      'Expert-led Amazon positioning, conversion execution, and standalone applied training for marketing agencies and consumer brands.',
     explore: 'Explore',
     languages: 'Languages',
     contact: 'Contact',
@@ -117,7 +117,7 @@ export const en = {
     title: 'Delivery and capability, built as one system.',
     eyebrow: 'Two launch product families',
     delivery: {
-      body: 'Senior-led diagnosis, positioning, listing direction, conversion content, creative briefing, and recurring specialist capacity.',
+      body: 'Expert-led diagnosis, positioning, listing direction, conversion content, creative briefing, and recurring specialist capacity.',
     },
     training: {
       body: 'Paid standalone programs that improve live work, create shared quality standards, and transfer repeatable capability into the team.',
@@ -142,7 +142,7 @@ export const en = {
       },
       {
         id: 'pod',
-        body: 'Recurring specialist capacity for agencies, with agreed priorities, service levels, and senior quality control.',
+        body: 'Recurring specialist capacity for agencies, with agreed priorities, service levels, and expert quality control.',
         bestFor: 'Agencies with recurring Amazon work and no wish to build a full internal team yet.',
         receive: 'A dedicated specialist pod working under your brand to agreed scope and review gates.',
       },
@@ -165,7 +165,7 @@ export const en = {
     title: 'Choose how much capability you want to own.',
     eyebrow: 'Three ways to work',
     items: [
-      { lead: 'Do it for us.', body: 'Specialist execution with clear scope, senior review, and reliable handoff.' },
+      { lead: 'Do it for us.', body: 'Specialist execution with clear scope, expert review, and reliable handoff.' },
       {
         lead: 'Build it with us.',
         body: 'Strategy and implementation developed together so decisions happen faster and the reasoning stays visible.',
@@ -199,7 +199,7 @@ export const en = {
       { title: 'Commercial clarity', body: 'We diagnose why shoppers do not choose before writing or designing.' },
       {
         title: 'Accountable execution',
-        body: 'A named senior lead owns the recommendation, review gates, and final quality.',
+        body: 'A named expert lead owns the recommendation, review gates, and final quality.',
       },
       {
         title: 'Capability transfer',
@@ -224,7 +224,7 @@ export const en = {
 
   operating: {
     eyebrow: 'Operating model',
-    title: 'International marketplace focus. Senior-led delivery. European operating efficiency.',
+    title: 'International marketplace focus. Expert-led delivery. European operating efficiency.',
     body: 'ADelier is built in Poland and works with agencies and consumer brands across markets. The operating model creates more specialist attention, faster iteration, and attractive economics without lowering the quality standard.',
   },
 
@@ -279,13 +279,15 @@ export const en = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through senior marketplace delivery and standalone applied training.',
-      agencyCta: 'Explore agency partnerships',
-      trainingCta: 'Explore training',
-      brandsCta: 'For consumer brands',
+        'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through expert-led marketplace delivery and standalone applied training.',
+      actions: {
+        agencies: 'Explore agency partnerships',
+        brands: 'Explore brand services',
+        training: 'Explore training',
+      },
     },
     trust: [
-      'Senior-led marketplace delivery',
+      'Expert-led marketplace delivery',
       'Human-accountable AI',
       'Protected agency relationships',
       'Poland-based team, international marketplace focus',
@@ -297,18 +299,21 @@ export const en = {
         {
           key: 'agencies',
           label: 'For Agencies',
+          action: 'Explore agency partnerships',
           title: 'Expand your Amazon offer. Keep the client relationship.',
           body: 'Add specialist strategy, conversion delivery, and training without immediately building a complete internal team.',
         },
         {
           key: 'brands',
           label: 'For Brands',
+          action: 'Explore brand services',
           title: 'Make your product the obvious choice.',
           body: 'Clarify why shoppers should choose, rebuild the marketplace experience, and strengthen the team behind it.',
         },
         {
           key: 'training',
           label: 'Training',
+          action: 'Explore training',
           title: 'Build the capability to repeat the gains.',
           body: 'Standalone private programs built around live products, client situations, workflows, and quality standards.',
         },
@@ -326,7 +331,7 @@ export const en = {
       eyebrow: 'For Agencies',
       title: 'Expand your Amazon offer. Keep the client relationship.',
       support:
-        'ADelier gives marketing agencies flexible access to marketplace strategy, listing optimization, conversion creative, AI-assisted production, and team training — with defined senior review and explicit protection of agency-introduced accounts.',
+        'ADelier gives marketing agencies flexible access to marketplace strategy, listing optimization, conversion creative, AI-assisted production, and team training — with defined expert review and explicit protection of agency-introduced accounts.',
       primary: 'Discuss an agency partnership',
       secondary: 'See white-label standards',
     },
@@ -387,7 +392,7 @@ export const en = {
         'Your client remains your client.',
         'Visibility is your choice.',
         'Scope, turnaround, revisions, and responsibilities are agreed before work begins.',
-        'Senior review is defined, not implied.',
+        'Expert review is defined, not implied.',
         'No client name, asset, or result is used publicly without written approval.',
       ],
     },
@@ -666,10 +671,10 @@ export const en = {
       ],
     },
     operatingBody:
-      'ADelier is based in Poland and works with international clients. The operating model gives each engagement more senior specialist time and faster iteration. Efficiency is a consequence of the model, not the reason to choose us: the quality standard remains the same.',
+      'ADelier is based in Poland and works with international clients. The operating model gives each engagement more expert involvement and faster iteration. Efficiency is a consequence of the model, not the reason to choose us: the quality standard remains the same.',
     accountability: {
-      title: 'Senior accountability',
-      body: 'Every engagement has a named senior owner. That person owns the commercial recommendation, the review gates the work passes through, and the final quality of what is delivered. Accountability is a name, not a department.',
+      title: 'Expert accountability',
+      body: 'Every engagement has a named expert lead. That person owns the commercial recommendation, the review gates the work passes through, and the final quality of what is delivered. Accountability is a name, not a department.',
     },
     traits: {
       title: 'Personality in practice',

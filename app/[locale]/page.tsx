@@ -35,13 +35,13 @@ export default async function HomePage({ params }: Props) {
         actions={
           <>
             <CtaLink href={href(locale, 'agencies')} className="w-full sm:w-auto">
-              {h.hero.agencyCta}
+              {h.hero.actions.agencies}
             </CtaLink>
             <CtaLink href={href(locale, 'brands')} className="w-full sm:w-auto">
-              {h.hero.brandsCta}
+              {h.hero.actions.brands}
             </CtaLink>
             <CtaLink href={href(locale, 'training')} variant="sage" className="w-full sm:w-auto">
-              {h.hero.trainingCta}
+              {h.hero.actions.training}
             </CtaLink>
           </>
         }

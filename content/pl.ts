@@ -5,12 +5,12 @@ export const pl: Dictionary = {
     home: {
       title: 'ADelier Commerce | Realizacja marketplace i praktyczne szkolenia',
       description:
-        'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna, wsparcie white-label dla agencji oraz samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
+        'Prowadzone przez ekspertów pozycjonowanie na Amazon, realizacja konwersyjna, wsparcie white-label dla agencji oraz samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
     },
     agencies: {
       title: 'Dla agencji | Realizacja Amazon white-label i szkolenia | ADelier Commerce',
       description:
-        'Dodaj do oferty agencji strategię Amazon, optymalizację listingów, kreację konwersyjną i szkolenia zespołów — z określonym przeglądem seniora i chronionymi relacjami z klientami.',
+        'Dodaj do oferty agencji strategię Amazon, optymalizację listingów, kreację konwersyjną i szkolenia zespołów — z określonym przeglądem eksperckim i chronionymi relacjami z klientami.',
     },
     brands: {
       title: 'Dla marek | Pozycjonowanie i konwersja na Amazon | ADelier Commerce',
@@ -30,7 +30,7 @@ export const pl: Dictionary = {
     about: {
       title: 'O nas | Rzemiosło handlowe dla wzrostu na marketplace | ADelier Commerce',
       description:
-        'Realizacja marketplace prowadzona przez seniorów przez zespół z Polski, z międzynarodowym doświadczeniem marketplace i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
+        'Realizacja marketplace prowadzona przez ekspertów z zespołu w Polsce, z międzynarodowym doświadczeniem marketplace i europejską efektywnością operacyjną. Jak pracuje ADelier, w co wierzymy i komu służymy.',
     },
     contact: {
       title: 'Kontakt | Zacznij od rzeczywistej decyzji | ADelier Commerce',
@@ -81,7 +81,7 @@ export const pl: Dictionary = {
 
   footer: {
     description:
-      'Prowadzone przez seniorów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
+      'Prowadzone przez ekspertów pozycjonowanie na Amazon, realizacja konwersyjna i samodzielne, praktyczne szkolenia dla agencji marketingowych i marek konsumenckich.',
     explore: 'Odkryj',
     languages: 'Języki',
     contact: 'Kontakt',
@@ -119,7 +119,7 @@ export const pl: Dictionary = {
     title: 'Realizacja i kompetencje w jednym systemie.',
     eyebrow: 'Dwie rodziny produktów startowych',
     delivery: {
-      body: 'Prowadzone przez seniorów diagnoza, pozycjonowanie, kierunek listingu, treści konwersyjne, briefy kreatywne i cykliczna specjalistyczna realizacja.',
+      body: 'Prowadzone przez ekspertów diagnoza, pozycjonowanie, kierunek listingu, treści konwersyjne, briefy kreatywne i cykliczna specjalistyczna realizacja.',
     },
     training: {
       body: 'Płatne, samodzielne programy, które poprawiają realną pracę, tworzą wspólne standardy jakości i przenoszą powtarzalne kompetencje do zespołu.',
@@ -144,7 +144,7 @@ export const pl: Dictionary = {
       },
       {
         id: 'pod',
-        body: 'Cykliczna specjalistyczna realizacja dla agencji z ustalonymi priorytetami, poziomami obsługi i kontrolą jakości seniora.',
+        body: 'Cykliczna specjalistyczna realizacja dla agencji z ustalonymi priorytetami, poziomami obsługi i ekspercką kontrolą jakości.',
         bestFor: 'Agencje z powtarzalną pracą na Amazon, które nie chcą jeszcze budować pełnego zespołu wewnętrznego.',
         receive: 'Dedykowany zespół specjalistów pracujący pod Twoją marką według ustalonego zakresu i punktów kontroli.',
       },
@@ -169,7 +169,7 @@ export const pl: Dictionary = {
     items: [
       {
         lead: 'Zróbcie to za nas.',
-        body: 'Specjalistyczna realizacja z jasnym zakresem, przeglądem seniora i uporządkowanym przekazaniem.',
+        body: 'Specjalistyczna realizacja z jasnym zakresem, przeglądem eksperckim i uporządkowanym przekazaniem.',
       },
       {
         lead: 'Zbudujcie to z nami.',
@@ -207,7 +207,7 @@ export const pl: Dictionary = {
       },
       {
         title: 'Odpowiedzialna realizacja',
-        body: 'Wskazany senior odpowiada za rekomendację, punkty kontroli i końcową jakość.',
+        body: 'Wskazany ekspert prowadzący odpowiada za rekomendację, punkty kontroli i końcową jakość.',
       },
       {
         title: 'Transfer kompetencji',
@@ -232,7 +232,7 @@ export const pl: Dictionary = {
 
   operating: {
     eyebrow: 'Model operacyjny',
-    title: 'Międzynarodowa perspektywa marketplace. Realizacja prowadzona przez seniorów. Europejska efektywność operacyjna.',
+    title: 'Międzynarodowa perspektywa marketplace. Realizacja prowadzona przez ekspertów. Europejska efektywność operacyjna.',
     body: 'ADelier powstaje w Polsce i współpracuje z agencjami oraz markami konsumenckimi na różnych rynkach. Ten model operacyjny zapewnia więcej uwagi specjalistów, szybsze iteracje i atrakcyjną ekonomikę bez obniżania standardu jakości.',
   },
 
@@ -288,12 +288,14 @@ export const pl: Dictionary = {
       eyebrow: 'Marketplace Growth Partner',
       support:
         'ADelier pomaga agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, realizację materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
-      agencyCta: 'Poznaj współpracę z agencjami',
-      trainingCta: 'Poznaj szkolenia',
-      brandsCta: 'Dla marek konsumenckich',
+      actions: {
+        agencies: 'Poznaj współpracę z agencjami',
+        brands: 'Poznaj usługi dla marek',
+        training: 'Poznaj szkolenia',
+      },
     },
     trust: [
-      'Marketplace prowadzony przez seniorów',
+      'Ekspercka realizacja marketplace',
       'AI z odpowiedzialnością człowieka',
       'Chronione relacje agencji z klientami',
       'Zespół w Polsce, międzynarodowa perspektywa marketplace',
@@ -305,18 +307,21 @@ export const pl: Dictionary = {
         {
           key: 'agencies',
           label: 'Dla agencji',
+          action: 'Poznaj współpracę z agencjami',
           title: 'Rozszerz ofertę Amazon. Zachowaj relację z klientem.',
           body: 'Dodaj specjalistyczną strategię, realizację konwersyjną i szkolenia bez natychmiastowego budowania pełnego zespołu wewnętrznego.',
         },
         {
           key: 'brands',
           label: 'Dla marek',
+          action: 'Poznaj usługi dla marek',
           title: 'Spraw, by Twój produkt był oczywistym wyborem.',
           body: 'Wyjaśnij, dlaczego kupuj��cy powinni wybrać produkt, przebuduj doświadczenie marketplace i wzmocnij zespół, który za nim stoi.',
         },
         {
           key: 'training',
           label: 'Szkolenia',
+          action: 'Poznaj szkolenia',
           title: 'Zbuduj kompetencje, które pozwalają powtarzać wyniki.',
           body: 'Samodzielne, prywatne programy oparte na realnych produktach, sytuacjach klientów, procesach i standardach jakości.',
         },
@@ -334,7 +339,7 @@ export const pl: Dictionary = {
       eyebrow: 'Dla agencji',
       title: 'Rozszerz ofertę Amazon. Zachowaj relację z klientem.',
       support:
-        'ADelier daje agencjom marketingowym elastyczny dostęp do strategii marketplace, optymalizacji listingów, kreacji konwersyjnej, produkcji wspieranej AI i szkoleń zespołów — z jasno określonym przeglądem seniora i ochroną klientów wprowadzonych przez agencję.',
+        'ADelier daje agencjom marketingowym elastyczny dostęp do strategii marketplace, optymalizacji listingów, kreacji konwersyjnej, produkcji wspieranej AI i szkoleń zespołów — z jasno określonym przeglądem eksperckim i ochroną klientów wprowadzonych przez agencję.',
       primary: 'Omów współpracę agencyjną',
       secondary: 'Zobacz standardy white-label',
     },
@@ -395,7 +400,7 @@ export const pl: Dictionary = {
         'Twój klient pozostaje Twoim klientem.',
         'O widoczności naszej roli decydujesz Ty.',
         'Zakres, czas realizacji, poprawki i odpowiedzialności są uzgadniane przed rozpoczęciem pracy.',
-        'Przegląd seniora jest określony, a nie domniemany.',
+        'Przegląd ekspercki jest określony, a nie domniemany.',
         'Żadna nazwa klienta, materiał ani wynik nie są używane publicznie bez pisemnej zgody.',
       ],
     },
@@ -676,8 +681,8 @@ export const pl: Dictionary = {
     operatingBody:
       'ADelier ma zespół w Polsce i współpracuje z klientami międzynarodowymi. Model operacyjny daje każdej współpracy więcej czasu doświadczonych specjalistów i szybsze iteracje. Efektywność jest konsekwencją modelu, a nie powodem wyboru: standard jakości pozostaje taki sam.',
     accountability: {
-      title: 'Odpowiedzialność seniora',
-      body: 'Każda współpraca ma wskazanego seniora. Ta osoba odpowiada za rekomendację biznesową, punkty kontroli, przez które przechodzi praca, i końcową jakość tego, co dostarczamy. Odpowiedzialność ma imię i nazwisko, a nie nazwę działu.',
+      title: 'Odpowiedzialność ekspercka',
+      body: 'Każda współpraca ma wskazanego eksperta prowadzącego. Ta osoba odpowiada za rekomendację biznesową, punkty kontroli, przez które przechodzi praca, i końcową jakość tego, co dostarczamy. Odpowiedzialność ma imię i nazwisko, a nie nazwę działu.',
     },
     traits: {
       title: 'Osobowość w praktyce',
