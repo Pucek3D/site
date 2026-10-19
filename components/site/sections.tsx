@@ -105,12 +105,14 @@ export function TrustStrip({ items }: { items: string[] }) {
   return (
     <div className="border-b border-hairline bg-porcelain">
       <Container>
-  {/* One row with a fixed gap: the space after each label is the same, and a label too long for its share wraps inside its own item instead of dropping to a second row. */}
+  {/* One row, items at their natural width with one fixed gap between them, so every label is followed by the same space. Only the last item may shrink and wrap; the others never do. */}
   <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:gap-x-12">
-  {items.map((t) => (
+  {items.map((t, i) => (
   <li
   key={t}
-  className="flex min-w-0 items-start gap-3 text-[0.9375rem] font-medium leading-6 text-ink"
+  className={`flex items-start gap-3 text-[0.9375rem] font-medium leading-6 text-ink ${
+  i === items.length - 1 ? 'min-w-0' : 'sm:shrink-0 sm:whitespace-nowrap'
+  }`}
   >
               <span aria-hidden className="mt-1 h-4 w-0.5 shrink-0 bg-sage" />
               {t}
