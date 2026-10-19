@@ -106,7 +106,7 @@ export function TrustStrip({ items }: { items: string[] }) {
     <div className="border-b border-hairline bg-porcelain">
       <Container>
   {/* One row, items at their natural width with one fixed gap between them, so every label is followed by the same space. Only the last item may shrink and wrap; the others never do. */}
-  <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:gap-x-12">
+  <ul className="flex flex-col gap-3 py-6 sm:flex-row sm:items-start sm:gap-x-12">
   {items.map((t, i) => (
   <li
   key={t}
