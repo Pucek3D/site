@@ -67,7 +67,7 @@ export function SiteHeader({ locale, nav }: { locale: Locale; nav: Dictionary['n
       </a>
       <div className="mx-auto flex h-[82px] w-full max-w-[1360px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-10">
         <Link href={href(locale, 'home')} aria-label={nav.homeLink} className="shrink-0 rounded-md">
-          <Logo variant="horizontal" height={50} alt="" priority />
+          <Logo variant="horizontal" height={60} alt="" priority />
         </Link>
 
         <nav aria-label={nav.primaryLabel} className="hidden xl:block">
