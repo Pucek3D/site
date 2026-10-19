@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { HeroVisual } from '@/components/site/hero-visual'
 import { CtaLink } from '@/components/site/primitives'
 import {
   AiSection,
@@ -36,17 +35,16 @@ export default async function HomePage({ params }: Props) {
         actions={
           <>
             <CtaLink href={href(locale, 'agencies')} className="w-full sm:w-auto">
-              {h.hero.primary}
+              {h.hero.agencyCta}
             </CtaLink>
-            <CtaLink href={href(locale, 'brands')} variant="sage" className="w-full sm:w-auto">
-              {h.hero.textLink}
+            <CtaLink href={href(locale, 'brands')} className="w-full sm:w-auto">
+              {h.hero.brandsCta}
             </CtaLink>
             <CtaLink href={href(locale, 'training')} variant="sage" className="w-full sm:w-auto">
-              {h.hero.secondary}
+              {h.hero.trainingCta}
             </CtaLink>
           </>
         }
-        aside={<HeroVisual dict={dict} />}
       />
       <TrustStrip items={h.trust} />
       <RouteCards locale={locale} dict={dict} />
@@ -60,7 +58,6 @@ export default async function HomePage({ params }: Props) {
         body={h.finalCta.body}
         button={h.finalCta.button}
         to={href(locale, 'contact')}
-        tone="sage"
       />
     </>
   )

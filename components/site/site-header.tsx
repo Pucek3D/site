@@ -18,7 +18,6 @@ const ctaTarget: Record<PageKey, string> = {
   brands: '?topic=brand',
   training: '?topic=training',
   services: '',
-  results: '',
   about: '',
   contact: '',
   privacy: '',

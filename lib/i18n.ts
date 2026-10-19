@@ -25,7 +25,6 @@ export const pageKeys = [
   'brands',
   'training',
   'services',
-  'results',
   'about',
   'contact',
   'privacy',
@@ -39,7 +38,6 @@ export const mainNavKeys = [
   'brands',
   'training',
   'services',
-  'results',
   'about',
   'contact',
 ] as const satisfies readonly PageKey[]
@@ -50,7 +48,6 @@ export const pagePaths: Record<PageKey, string> = {
   brands: '/brands',
   training: '/training',
   services: '/services',
-  results: '/results',
   about: '/about',
   contact: '/contact',
   privacy: '/privacy',

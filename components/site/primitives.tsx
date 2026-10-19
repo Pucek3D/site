@@ -153,20 +153,6 @@ export function FocusFrame({
   )
 }
 
-export function DemoLabel({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
-  return (
-    <span
-      className={cn(
-        'inline-flex items-center gap-2 rounded-full border border-dashed px-3 py-1 text-xs font-medium',
-        dark ? 'border-mist text-mist' : 'border-slate/50 bg-white text-slate',
-      )}
-    >
-      <span aria-hidden className="size-1.5 rounded-full bg-cobalt" />
-      {children}
-    </span>
-  )
-}
-
 /** A visible "to be supplied" marker for owner-provided facts. */
 export function OwnerPlaceholder({ label, value }: { label: string; value: string }) {
   return (

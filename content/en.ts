@@ -25,11 +25,6 @@ export const en = {
       description:
         'Five launch products across Marketplace Delivery and Training and Team Enablement, three delivery modes, and one method from diagnosis to scale.',
     },
-    results: {
-      title: 'Results | How ADelier Documents Evidence | ADelier Commerce',
-      description:
-        'ADelier publishes outcomes only with permission and context. See how we document problems, decisions, outputs, and capability transfer.',
-    },
     about: {
       title: 'About | Commercial Craft for Marketplace Growth | ADelier Commerce',
       description:
@@ -57,7 +52,6 @@ export const en = {
       brands: 'For Brands',
       training: 'Training',
       services: 'Services',
-      results: 'Results',
       about: 'About',
       contact: 'Contact',
       privacy: 'Privacy',
@@ -76,7 +70,6 @@ export const en = {
       brands: 'Get an ASIN diagnosis',
       training: 'Plan a private training program',
       services: 'Request a scope',
-      results: 'Discuss a similar challenge',
       about: 'Start the conversation',
       contact: 'Start the conversation',
       privacy: 'Start the conversation',
@@ -99,7 +92,6 @@ export const en = {
 
   common: {
     demo: 'Demonstration',
-    demoNotClient: 'Demonstration — not client work',
     proofSlot: 'Client-approved proof will appear here.',
     imageSlot: 'Image slot',
     breadcrumbLabel: 'Breadcrumb',
@@ -288,19 +280,9 @@ export const en = {
       eyebrow: 'Marketplace Growth Partner',
       support:
         'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through senior marketplace delivery and standalone applied training.',
-      primary: 'Explore agency partnerships',
-      secondary: 'Explore training',
-      textLink: 'For consumer brands',
-    },
-    visual: {
-      productPage: 'Product page',
-      productTitle: 'Insulated steel bottle, 750 ml',
-      reasonLabel: 'Reason to choose',
-      reason: 'Opens and closes with one hand, and does not leak in a bag.',
-      improved: 'Moved to the first line',
-      workflowTitle: 'Team review',
-      workflow: ['Brief agreed', 'Senior review', 'Quality checklist', 'Ready to repeat'],
-      alt: 'Demonstration composition: a product page whose reason to choose is framed, beside a team review checklist.',
+      agencyCta: 'Explore agency partnerships',
+      trainingCta: 'Explore training',
+      brandsCta: 'For consumer brands',
     },
     trust: [
       'Senior-led marketplace delivery',
@@ -655,92 +637,6 @@ export const en = {
     },
   },
 
-  results: {
-    hero: {
-      eyebrow: 'Results',
-      title: 'Evidence before assertion.',
-      support:
-        'ADelier publishes outcomes only with permission and context. Until approved client evidence is available, this page shows how we document problems, decisions, outputs, and capability transfer.',
-    },
-    proof: {
-      title: 'What strong proof includes',
-      items: [
-        { title: 'Measured business outcome', body: 'A stated measure, a baseline, a period, and the conditions that could explain it.' },
-        { title: 'Before-and-after quality evidence', body: 'Both versions side by side, with the reason for every change.' },
-        { title: 'Process evidence', body: 'The brief, the decisions taken, and the gates the work passed.' },
-        { title: 'Client testimony', body: 'In the client’s own words, published only with written approval.' },
-        { title: 'Capability adoption', body: 'Work the client team produced independently after the engagement.' },
-      ],
-    },
-    structure: {
-      title: 'Case-study structure',
-      intro: 'Every case study we publish follows the same eight parts, including the limits.',
-      steps: [
-        'Situation',
-        'Baseline',
-        'Diagnosis',
-        'Decision',
-        'Work completed',
-        'Result and limits',
-        'Capability transferred',
-        'Next step',
-      ],
-    },
-    demos: {
-      title: 'Demonstration examples',
-      intro: 'Two illustrations of the method on an invented product. They show reasoning, not results.',
-      hierarchy: {
-        title: 'Message hierarchy',
-        weakLabel: 'Weak',
-        weak: [
-          'Premium quality stainless steel bottle',
-          'Perfect for everyone',
-          'Leak-proof lid',
-          'Keeps drinks cold',
-        ],
-        improvedLabel: 'Improved',
-        improved: [
-          'Opens with one hand and does not leak in a bag',
-          'Cold for the working day',
-          'Fits standard car cup holders',
-          'Stainless steel, dishwasher-safe lid',
-        ],
-        note: 'The reason to choose moves to the first line; generic claims are replaced with checkable ones.',
-      },
-      sequence: {
-        title: 'Image-sequence brief',
-        columns: ['Before', 'Reason', 'After'],
-        rows: [
-          {
-            before: 'Product on white, front view',
-            reason: 'Shows the object, not the choice',
-            after: 'One-hand opening, shown in use',
-          },
-          {
-            before: 'Lifestyle shot on a beach',
-            reason: 'Mood without an answer to an objection',
-            after: 'Bottle inside a bag, upright and dry',
-          },
-          {
-            before: 'Dimensions diagram',
-            reason: 'Right content, too late in the sequence',
-            after: 'Cup-holder fit, moved to position three',
-          },
-        ],
-      },
-    },
-    grid: {
-      title: 'Client case studies',
-      emptyTitle: 'No client case studies are published yet.',
-      emptyBody:
-        'We will publish client work here only once the client has approved the content, the figures, and the context. Until then, we would rather show nothing than show something invented.',
-    },
-    finalCta: {
-      title: 'Discuss a similar challenge.',
-      body: 'Describe the situation. We will tell you how we would approach it and what evidence we would collect.',
-      button: 'Discuss a similar challenge',
-    },
-  },
 
   about: {
     hero: {

@@ -116,11 +116,14 @@ export function TrustStrip({ items }: { items: string[] }) {
 
 const routeIcon = { agencies: CircleUserRound, brands: Layers, training: GraduationCap } as const
 
-/** Colour only — every card shares the same geometry, so hover changes the border, never the size. */
+/**
+ * Every card shares one white shell; only the icon and hover border carry the route's accent.
+ * Agencies and brands share Cobalt so neither reads as secondary; training alone takes Sage.
+ */
 const routeTone = {
   agencies: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt' },
-  brands: { card: 'border-sage/35 bg-sage-tint hover:border-sage', icon: 'text-ink' },
-  training: { card: 'border-sage/35 bg-sage-tint hover:border-sage', icon: 'text-ink' },
+  brands: { card: 'border-hairline bg-white hover:border-cobalt', icon: 'text-cobalt' },
+  training: { card: 'border-hairline bg-white hover:border-sage', icon: 'text-sage' },
 } as const
 
 export function RouteCards({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -173,14 +176,8 @@ export function ProductFamilies({ dict, tone = 'porcelain' }: { dict: Dictionary
       {/* Equal columns on purpose: training is a peer product family, not an add-on. */}
       <div className="mt-14 grid gap-6 md:grid-cols-2">
         {families.map(({ id, Icon, body }) => (
-          <article
-            key={id}
-            className={cn(
-              'reveal flex flex-col gap-5 rounded-xl border p-8 md:p-10',
-              id === 'training' ? 'border-sage/35 bg-sage-tint' : 'border-hairline bg-white',
-            )}
-          >
-            <Icon aria-hidden className={cn('size-7', id === 'training' ? 'text-sage' : 'text-ink')} />
+          <article key={id} className="reveal flex flex-col gap-5 rounded-xl border border-hairline bg-white p-8 md:p-10">
+            <Icon aria-hidden className={cn('size-7', id === 'training' ? 'text-sage' : 'text-cobalt')} />
             <h3 className="font-display text-2xl font-semibold text-ink">{familyNames[id]}</h3>
             <p className="text-lg leading-relaxed text-slate">{body}</p>
           </article>
@@ -454,9 +451,9 @@ export function ProgramCards({
       <SectionHeading id={`${id ?? 'programs'}-title`} eyebrow={familyNames.training} title={title} intro={intro} />
       <div className="mt-14 grid gap-6 lg:grid-cols-2">
         {programs.map(({ id: pid, data }, i) => (
-          <article key={pid} className="reveal flex flex-col gap-6 rounded-xl border border-sage/35 bg-sage-tint p-8 md:p-10">
+          <article key={pid} className="reveal flex flex-col gap-6 rounded-xl border border-hairline bg-white p-8 md:p-10">
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink">
+              <span className="inline-flex items-center gap-2 rounded-full bg-sage-tint px-3 py-1 text-xs font-semibold text-ink">
                 <GraduationCap aria-hidden className="size-3.5" />
                 {c.standalone}
               </span>
@@ -619,16 +616,14 @@ export function FinalCta({
   body,
   button,
   to,
-  tone = 'porcelain',
 }: {
   title: string
   body: string
   button: string
   to: string
-  tone?: 'porcelain' | 'sage'
 }) {
   return (
-    <section aria-labelledby="final-cta-title" className={tone === 'sage' ? 'bg-sage-tint' : 'bg-porcelain'}>
+    <section aria-labelledby="final-cta-title" className="bg-porcelain">
       <Container className="py-20 md:py-28">
         <FocusFrame inset="lg" className="mx-auto max-w-3xl px-4 py-10 text-center md:px-10">
           <h2 id="final-cta-title" className="text-3xl font-semibold leading-tight md:text-[2.75rem]">

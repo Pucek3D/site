@@ -27,11 +27,6 @@ export const de: Dictionary = {
       description:
         'Fünf Startprodukte in Marketplace Delivery sowie Training and Team Enablement, drei Arbeitsmodelle und eine Methode von der Diagnose bis zur Skalierung.',
     },
-    results: {
-      title: 'Ergebnisse | Wie ADelier Nachweise dokumentiert | ADelier Commerce',
-      description:
-        'ADelier veröffentlicht Ergebnisse nur mit Zustimmung und im Kontext. So dokumentieren wir Probleme, Entscheidungen, Ergebnisse und Kompetenztransfer.',
-    },
     about: {
       title: 'Über uns | Kaufmännisches Handwerk für Marketplace-Wachstum | ADelier Commerce',
       description:
@@ -59,7 +54,6 @@ export const de: Dictionary = {
       brands: 'Für Marken',
       training: 'Trainings',
       services: 'Leistungen',
-      results: 'Ergebnisse',
       about: 'Über uns',
       contact: 'Kontakt',
       privacy: 'Datenschutz',
@@ -78,7 +72,6 @@ export const de: Dictionary = {
       brands: 'ASIN-Diagnose anfragen',
       training: 'Privates Trainingsprogramm planen',
       services: 'Umfang anfragen',
-      results: 'Ähnliche Herausforderung besprechen',
       about: 'Gespräch starten',
       contact: 'Gespräch starten',
       privacy: 'Gespräch starten',
@@ -101,7 +94,6 @@ export const de: Dictionary = {
 
   common: {
     demo: 'Demonstration',
-    demoNotClient: 'Demonstration – keine Kundenarbeit',
     proofSlot: 'Hier erscheinen vom Kunden freigegebene Nachweise.',
     imageSlot: 'Bildplatz',
     breadcrumbLabel: 'Brotkrümelnavigation',
@@ -296,19 +288,9 @@ export const de: Dictionary = {
       eyebrow: 'Marketplace Growth Partner',
       support:
         'ADelier hilft Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch seniorengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
-      primary: 'Agenturpartnerschaften entdecken',
-      secondary: 'Trainings entdecken',
-      textLink: 'Für Konsumgütermarken',
-    },
-    visual: {
-      productPage: 'Produktseite',
-      productTitle: 'Isolierte Edelstahlflasche, 750 ml',
-      reasonLabel: 'Kaufgrund',
-      reason: 'Lässt sich mit einer Hand öffnen und schließen und läuft in der Tasche nicht aus.',
-      improved: 'In die erste Zeile verschoben',
-      workflowTitle: 'Team-Review',
-      workflow: ['Briefing vereinbart', 'Senior Review', 'Qualitäts-Checkliste', 'Bereit zur Wiederholung'],
-      alt: 'Demonstrationskomposition: eine Produktseite mit hervorgehobenem Kaufgrund neben einer Checkliste für das Team-Review.',
+      agencyCta: 'Agenturpartnerschaften entdecken',
+      trainingCta: 'Trainings entdecken',
+      brandsCta: 'Für Konsumgütermarken',
     },
     trust: [
       'Seniorengeführte Marketplace-Umsetzung',
@@ -663,87 +645,6 @@ export const de: Dictionary = {
     },
   },
 
-  results: {
-    hero: {
-      eyebrow: 'Ergebnisse',
-      title: 'Erst Nachweise, dann Behauptungen.',
-      support:
-        'ADelier veröffentlicht Ergebnisse nur mit Zustimmung und im Kontext. Bis freigegebene Kundennachweise vorliegen, zeigt diese Seite, wie wir Probleme, Entscheidungen, Arbeitsergebnisse und Kompetenztransfer dokumentieren.',
-    },
-    proof: {
-      title: 'Was starke Nachweise umfassen',
-      items: [
-        { title: 'Gemessenes Geschäftsergebnis', body: 'Eine benannte Kennzahl, ein Ausgangswert, ein Zeitraum und die Bedingungen, die das Ergebnis erklären könnten.' },
-        { title: 'Qualitätsnachweise vorher und nachher', body: 'Beide Versionen nebeneinander, mit der Begründung jeder Änderung.' },
-        { title: 'Prozessnachweise', body: 'Das Briefing, die getroffenen Entscheidungen und die Gates, die die Arbeit durchlaufen hat.' },
-        { title: 'Kundenstimme', body: 'In den Worten des Kunden, veröffentlicht nur mit schriftlicher Freigabe.' },
-        { title: 'Übernommene Kompetenz', body: 'Arbeit, die das Kundenteam nach dem Projekt selbstständig erstellt hat.' },
-      ],
-    },
-    structure: {
-      title: 'Aufbau einer Fallstudie',
-      intro: 'Jede veröffentlichte Fallstudie folgt denselben acht Teilen, einschließlich ihrer Grenzen.',
-      steps: [
-        'Ausgangslage',
-        'Ausgangswert',
-        'Diagnose',
-        'Entscheidung',
-        'Durchgeführte Arbeit',
-        'Ergebnis und Grenzen',
-        'Übertragene Kompetenz',
-        'Nächster Schritt',
-      ],
-    },
-    demos: {
-      title: 'Demonstrationsbeispiele',
-      intro: 'Zwei Illustrationen der Methode an einem erfundenen Produkt. Sie zeigen die Begründung, keine Ergebnisse.',
-      hierarchy: {
-        title: 'Botschaftshierarchie',
-        weakLabel: 'Schwach',
-        weak: ['Edelstahlflasche in Premiumqualität', 'Perfekt für alle', 'Auslaufsicherer Deckel', 'Hält Getränke kalt'],
-        improvedLabel: 'Verbessert',
-        improved: [
-          'Mit einer Hand zu öffnen und läuft in der Tasche nicht aus',
-          'Kalt über den ganzen Arbeitstag',
-          'Passt in gängige Becherhalter im Auto',
-          'Edelstahl, spülmaschinenfester Deckel',
-        ],
-        note: 'Der Kaufgrund rückt in die erste Zeile; allgemeine Aussagen werden durch überprüfbare ersetzt.',
-      },
-      sequence: {
-        title: 'Briefing für die Bildabfolge',
-        columns: ['Vorher', 'Begründung', 'Nachher'],
-        rows: [
-          {
-            before: 'Produkt auf Weiß, Frontansicht',
-            reason: 'Zeigt den Gegenstand, nicht die Wahl',
-            after: 'Öffnen mit einer Hand, in Benutzung gezeigt',
-          },
-          {
-            before: 'Lifestyle-Bild am Strand',
-            reason: 'Stimmung ohne Antwort auf einen Einwand',
-            after: 'Flasche in der Tasche, aufrecht und trocken',
-          },
-          {
-            before: 'Maßzeichnung',
-            reason: 'Richtiger Inhalt, zu spät in der Abfolge',
-            after: 'Passform im Becherhalter, auf Position drei verschoben',
-          },
-        ],
-      },
-    },
-    grid: {
-      title: 'Kundenfallstudien',
-      emptyTitle: 'Bisher sind keine Kundenfallstudien veröffentlicht.',
-      emptyBody:
-        'Kundenarbeit veröffentlichen wir hier erst, wenn der Kunde Inhalt, Zahlen und Kontext freigegeben hat. Bis dahin zeigen wir lieber nichts als etwas Erfundenes.',
-    },
-    finalCta: {
-      title: 'Besprechen Sie eine ähnliche Herausforderung.',
-      body: 'Beschreiben Sie die Situation. Wir sagen Ihnen, wie wir vorgehen würden und welche Nachweise wir sammeln würden.',
-      button: 'Ähnliche Herausforderung besprechen',
-    },
-  },
 
   about: {
     hero: {

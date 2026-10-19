@@ -27,11 +27,6 @@ export const pl: Dictionary = {
       description:
         'Pięć produktów startowych w ramach Marketplace Delivery oraz Training and Team Enablement, trzy modele współpracy i jedna metoda od diagnozy do skalowania.',
     },
-    results: {
-      title: 'Rezultaty | Jak ADelier dokumentuje dowody | ADelier Commerce',
-      description:
-        'ADelier publikuje wyniki wyłącznie za zgodą i z kontekstem. Zobacz, jak dokumentujemy problemy, decyzje, materiały i transfer kompetencji.',
-    },
     about: {
       title: 'O nas | Rzemiosło handlowe dla wzrostu na marketplace | ADelier Commerce',
       description:
@@ -59,7 +54,6 @@ export const pl: Dictionary = {
       brands: 'Dla marek',
       training: 'Szkolenia',
       services: 'Usługi',
-      results: 'Rezultaty',
       about: 'O nas',
       contact: 'Kontakt',
       privacy: 'Prywatność',
@@ -78,7 +72,6 @@ export const pl: Dictionary = {
       brands: 'Zamów diagnozę ASIN',
       training: 'Zaplanuj prywatny program szkoleniowy',
       services: 'Poproś o zakres',
-      results: 'Omów podobne wyzwanie',
       about: 'Rozpocznij rozmowę',
       contact: 'Rozpocznij rozmowę',
       privacy: 'Rozpocznij rozmowę',
@@ -101,7 +94,6 @@ export const pl: Dictionary = {
 
   common: {
     demo: 'Demonstracja',
-    demoNotClient: 'Demonstracja — nie jest to praca dla klienta',
     proofSlot: 'Tutaj pojawią się dowody zatwierdzone przez klienta.',
     imageSlot: 'Miejsce na zdjęcie',
     breadcrumbLabel: 'Ścieżka nawigacji',
@@ -296,19 +288,9 @@ export const pl: Dictionary = {
       eyebrow: 'Marketplace Growth Partner',
       support:
         'ADelier pomaga agencjom marketingowym i markom konsumenckim poprawiać pozycjonowanie produktów na Amazon, realizację materiałów konwersyjnych i kompetencje zespołów poprzez ekspercką realizację marketplace oraz samodzielne, praktyczne programy szkoleniowe.',
-      primary: 'Poznaj współpracę z agencjami',
-      secondary: 'Poznaj szkolenia',
-      textLink: 'Dla marek konsumenckich',
-    },
-    visual: {
-      productPage: 'Strona produktu',
-      productTitle: 'Stalowa butelka termiczna, 750 ml',
-      reasonLabel: 'Powód wyboru',
-      reason: 'Otwiera się i zamyka jedną ręką i nie przecieka w torbie.',
-      improved: 'Przeniesione do pierwszej linii',
-      workflowTitle: 'Przegląd zespołu',
-      workflow: ['Brief uzgodniony', 'Przegląd seniora', 'Lista kontrolna jakości', 'Gotowe do powtórzenia'],
-      alt: 'Kompozycja demonstracyjna: strona produktu z wyróżnionym powodem wyboru obok listy kontrolnej przeglądu zespołu.',
+      agencyCta: 'Poznaj współpracę z agencjami',
+      trainingCta: 'Poznaj szkolenia',
+      brandsCta: 'Dla marek konsumenckich',
     },
     trust: [
       'Marketplace prowadzony przez seniorów',
@@ -663,92 +645,6 @@ export const pl: Dictionary = {
     },
   },
 
-  results: {
-    hero: {
-      eyebrow: 'Rezultaty',
-      title: 'Najpierw dowody, potem twierdzenia.',
-      support:
-        'ADelier publikuje wyniki wyłącznie za zgodą i z kontekstem. Dopóki nie będzie dostępnych zatwierdzonych dowodów od klientów, ta strona pokazuje, jak dokumentujemy problemy, decyzje, materiały i transfer kompetencji.',
-    },
-    proof: {
-      title: 'Co obejmują mocne dowody',
-      items: [
-        { title: 'Zmierzony wynik biznesowy', body: 'Określony miernik, punkt wyjścia, okres i warunki, które mogą go wyjaśniać.' },
-        { title: 'Dowody jakości przed i po', body: 'Obie wersje obok siebie, z uzasadnieniem każdej zmiany.' },
-        { title: 'Dowody procesu', body: 'Brief, podjęte decyzje i punkty kontroli, przez które przeszła praca.' },
-        { title: 'Opinia klienta', body: 'Słowami klienta, publikowana wyłącznie za pisemną zgodą.' },
-        { title: 'Przyjęcie kompetencji', body: 'Praca, którą zespół klienta wykonał samodzielnie po zakończeniu współpracy.' },
-      ],
-    },
-    structure: {
-      title: 'Struktura case study',
-      intro: 'Każde publikowane case study ma tych samych osiem części, łącznie z ograniczeniami.',
-      steps: [
-        'Sytuacja',
-        'Punkt wyjścia',
-        'Diagnoza',
-        'Decyzja',
-        'Wykonana praca',
-        'Wynik i ograniczenia',
-        'Przekazane kompetencje',
-        'Kolejny krok',
-      ],
-    },
-    demos: {
-      title: 'Przykłady demonstracyjne',
-      intro: 'Dwie ilustracje metody na wymyślonym produkcie. Pokazują sposób rozumowania, nie wyniki.',
-      hierarchy: {
-        title: 'Hierarchia komunikatu',
-        weakLabel: 'Słaba',
-        weak: [
-          'Butelka ze stali nierdzewnej najwyższej jakości',
-          'Idealna dla każdego',
-          'Szczelna pokrywka',
-          'Utrzymuje chłód napojów',
-        ],
-        improvedLabel: 'Poprawiona',
-        improved: [
-          'Otwiera się jedną ręką i nie przecieka w torbie',
-          'Chłodny napój przez cały dzień pracy',
-          'Pasuje do standardowych uchwytów na kubki w samochodzie',
-          'Stal nierdzewna, pokrywka do zmywarki',
-        ],
-        note: 'Powód wyboru trafia do pierwszej linii; ogólniki zastępują twierdzenia, które da się sprawdzić.',
-      },
-      sequence: {
-        title: 'Brief sekwencji zdjęć',
-        columns: ['Przed', 'Powód', 'Po'],
-        rows: [
-          {
-            before: 'Produkt na białym tle, widok z przodu',
-            reason: 'Pokazuje przedmiot, a nie wybór',
-            after: 'Otwieranie jedną ręką, pokazane w użyciu',
-          },
-          {
-            before: 'Zdjęcie lifestyle na plaży',
-            reason: 'Nastrój bez odpowiedzi na obiekcję',
-            after: 'Butelka w torbie, pionowo i sucho',
-          },
-          {
-            before: 'Schemat wymiarów',
-            reason: 'Właściwa treść, ale za późno w sekwencji',
-            after: 'Dopasowanie do uchwytu na kubek, przeniesione na pozycję trzecią',
-          },
-        ],
-      },
-    },
-    grid: {
-      title: 'Case studies klientów',
-      emptyTitle: 'Nie opublikowaliśmy jeszcze żadnych case studies klientów.',
-      emptyBody:
-        'Pracę dla klientów opublikujemy tutaj dopiero wtedy, gdy klient zatwierdzi treść, liczby i kontekst. Do tego czasu wolimy nie pokazywać niczego, niż pokazać coś wymyślonego.',
-    },
-    finalCta: {
-      title: 'Omów podobne wyzwanie.',
-      body: 'Opisz sytuację. Powiemy, jak byśmy do niej podeszli i jakie dowody byśmy zebrali.',
-      button: 'Omów podobne wyzwanie',
-    },
-  },
 
   about: {
     hero: {
