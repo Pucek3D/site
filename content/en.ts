@@ -279,7 +279,7 @@ export const en = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier helps marketing agencies and consumer brands improve Amazon positioning, conversion execution, and team capability through expert-led marketplace delivery and standalone applied training.',
+        'ADelier helps brands and agencies improve Amazon advertising performance and the marketplace experience behind conversion. We combine hands-on PPC management, clear commercial decisions, expert-led execution and practical training that teams can apply independently.',
       actions: {
         agencies: 'Explore agency partnerships',
         brands: 'Explore brand services',
@@ -319,10 +319,167 @@ export const en = {
         },
       ],
     },
+    heroImageAlt: 'Curved concrete architecture against a cobalt sky',
+    autopilot: {
+      eyebrow: 'The autopilot problem',
+      title: 'Amazon advertising is too important to leave on autopilot.',
+      intro:
+        'Competition is rising, costs are rising and margins are under pressure. Raising bids or adding budget is rarely the answer on its own. Profitable growth means reading campaign data alongside search behavior, product-page conversion, margin and total sales.',
+      points: [
+        {
+          title: 'Competition',
+          body: 'More sellers bid on the same searches. Efficiency depends on where you compete, not only on how much you spend.',
+        },
+        {
+          title: 'Search behavior',
+          body: 'What shoppers actually type, and which terms convert, should shape targeting and negatives.',
+        },
+        {
+          title: 'Campaign structure',
+          body: 'Structure decides control. Without it, budget drifts toward terms that never convert.',
+        },
+        {
+          title: 'Product-page conversion',
+          body: 'Advertising earns the visit. The product page decides whether it becomes a sale.',
+        },
+      ],
+      accent: 'We do not just manage campaigns. We work to make them better.',
+    },
+    services: {
+      eyebrow: 'What we do',
+      title: 'Specialist services for brands and agencies.',
+      intro:
+        'Every engagement is scoped in a proposal. Access, cadence, responsibilities and reporting are agreed before work starts.',
+      imageAlt: 'A specialist reviewing work on a laptop in a bright office',
+      audience: { brands: 'For brands', agencies: 'For agencies', both: 'Brands and agencies' },
+      ownerLabel: 'Who owns the work',
+      items: [
+        {
+          id: 'ppc',
+          audience: 'brands',
+          body: 'Hands-on campaign management: structure, keyword and search-term analysis, bid and budget optimization, negative targeting and transparent reporting.',
+          owner: '',
+        },
+        {
+          id: 'whiteLabel',
+          audience: 'agencies',
+          body: 'Your clients, your brand. ADelier is accountable for agreed campaign execution and optimization behind your agency.',
+          owner: 'ADelier is accountable for execution.',
+        },
+        {
+          id: 'specialist',
+          audience: 'agencies',
+          body: 'A defined specialist joins your workflows under agreed supervision, reporting, access and responsibilities.',
+          owner: 'Your team directs the specialist.',
+        },
+        {
+          id: 'audits',
+          audience: 'brands',
+          body: 'An assessment of PPC structure, targeting, spend efficiency and listing health that ends in a prioritized list of actions.',
+          owner: '',
+        },
+        {
+          id: 'validation',
+          audience: 'brands',
+          body: 'Assess an existing or planned product using keyword demand, competitors, price, advertising competition and indicative commercial scenarios. Not a product-sourcing service.',
+          owner: '',
+        },
+        {
+          id: 'conversion',
+          audience: 'both',
+          body: 'Positioning, listing direction and conversion content that make a product easier to find, understand and choose.',
+          owner: '',
+        },
+        {
+          id: 'training',
+          audience: 'both',
+          body: 'Standalone applied programs that build Amazon PPC and conversion capability inside brand and agency teams.',
+          owner: '',
+        },
+      ],
+    },
+    approach: {
+      eyebrow: 'Our approach',
+      title: 'Better decisions. More deliberate execution.',
+      intro:
+        'The same six stages run through every engagement, from the first look at an account to capability your team keeps.',
+      steps: [
+        { title: 'Understand', body: 'The business, products, margin and goals.' },
+        { title: 'Analyze', body: 'Campaigns, search terms, competition and listings.' },
+        { title: 'Prioritize', body: 'The changes with the clearest commercial impact.' },
+        { title: 'Implement', body: 'Structure, bids, targeting and content.' },
+        { title: 'Measure', body: 'Results against agreed metrics, reported openly.' },
+        { title: 'Transfer', body: 'What works, as methods your team can reuse.' },
+      ],
+      conclusion: 'Recommendations only matter once they turn into action.',
+    },
+    beyond: {
+      eyebrow: 'Performance beyond ACOS',
+      title: 'ACOS and ROAS are signals, not the whole story.',
+      body: 'We read advertising efficiency together with the commercial context around it, so optimization serves the business rather than a single ratio.',
+      center: 'ACOS / ROAS',
+      factors: [
+        'Total sales',
+        'Profitability',
+        'Margin',
+        'Inventory',
+        'Price',
+        'Organic performance',
+        'Conversion context',
+      ],
+      diagramLabel: 'Advertising efficiency read in its commercial context',
+      illustrative: 'Illustrative framework. Not client data.',
+    },
+    modesImageAlt: 'A quiet meeting table with blue chairs in daylight',
+    training: {
+      eyebrow: 'Training and team capability',
+      body: 'Training is a standalone product. Teams can start here without a delivery engagement and work on their own live accounts and products.',
+      capabilities: [
+        'Live account and product exercises',
+        'Applied learning, not lectures',
+        'Practical tools and templates',
+        'Reusable workflows',
+        'Expert feedback on real work',
+        'Shared quality standards',
+        'An implementation plan',
+        'Capability that stays in the team',
+      ],
+      programsLabel: 'Programs',
+      programs: {
+        foundations: 'One conversion standard for agency and brand teams.',
+        enablement: 'Offer, scoping and delivery model for agency leaders.',
+        ppc: 'For in-house brand teams. Scope confirmed on request.',
+      },
+    },
+    why: {
+      eyebrow: 'Why ADelier',
+      title: 'Expert-led. Hands-on. Accountable.',
+      items: [
+        { title: 'Expert-led work', body: 'A named expert owns each recommendation and its final quality.' },
+        { title: 'Hands-on management', body: 'Campaigns are worked on actively, not set up and left running.' },
+        { title: 'Commercial relevance', body: 'Recommendations follow margin, stock, price and total sales.' },
+        { title: 'Individual attention', body: 'Strategy built around your products, competition and goals.' },
+        { title: 'Transparent reporting', body: 'You see what we did, what we found and what we recommend next.' },
+        { title: 'Flexible collaboration', body: 'Start with one scope and extend it as your needs change.' },
+        { title: 'Clear quality standards', body: 'Defined review gates before anything is published.' },
+        { title: 'Knowledge transfer', body: 'Methods and tools your team keeps using without us.' },
+      ],
+      poland: {
+        title: 'Poland-based. Internationally focused.',
+        body: 'ADelier operates from Poland and works with brands and agencies across international marketplaces. That gives each account more specialist attention without lowering the standard.',
+      },
+    },
     finalCta: {
       title: 'Bring one underperforming ASIN or one capability gap.',
       body: 'We will determine whether the most useful next step is diagnosis, delivery, co-building, or a standalone training program.',
       button: 'Start the conversation',
+      topicsLabel: 'Good starting points',
+      topics: [
+        'An Amazon advertising challenge',
+        'Agency delivery capacity',
+        'A marketplace conversion problem',
+        'A team capability gap',
+      ],
     },
   },
 
@@ -650,8 +807,8 @@ export const en = {
       support:
         'ADelier combines the care and judgment of an atelier with the discipline, speed, and evidence of a performance partner.',
     },
-    outcomeLabel: 'What we work toward',
     outcome: 'Make marketplace products easier to find, understand, and choose.',
+    outcomeLabel: 'What we work toward',
     beliefs: {
       title: 'What we believe',
       items: [

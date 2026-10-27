@@ -35,3 +35,19 @@ export const stageNames = ['Diagnose', 'Position', 'Build', 'Validate', 'Enable'
 export const modeNames = ['ADelier Delivers', 'ADelier Co-builds', 'ADelier Enables'] as const
 
 export const learningSteps = ['Learn', 'Apply', 'Review', 'Repeat'] as const
+
+/** The 2026 PPC-aligned service line-up (Commercial Playbook v1.7), in its approved order. */
+export const serviceIds = ['ppc', 'whiteLabel', 'specialist', 'audits', 'validation', 'conversion', 'training'] as const
+export type ServiceId = (typeof serviceIds)[number]
+
+export const serviceNames: Record<ServiceId, string> = {
+  ppc: 'Amazon PPC Management',
+  whiteLabel: 'White-Label PPC Management',
+  specialist: 'Dedicated PPC Specialists',
+  audits: 'Amazon Account and Advertising Audits',
+  validation: 'Product and Market Validation',
+  conversion: 'Marketplace Conversion Delivery',
+  training: 'Applied PPC and Conversion Training',
+}
+
+export const ppcPathwayName = 'Amazon PPC Fundamentals / Optimization'

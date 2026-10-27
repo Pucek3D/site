@@ -287,7 +287,7 @@ export const de: Dictionary = {
     hero: {
       eyebrow: 'Marketplace Growth Partner',
       support:
-        'ADelier hilft Marketingagenturen und Konsumgütermarken, die Positionierung auf Amazon, die Conversion-Umsetzung und die Fähigkeiten ihrer Teams zu verbessern – durch expertengeführte Marketplace-Umsetzung und eigenständig buchbare, praxisnahe Trainings.',
+        'ADelier hilft Marken und Agenturen, die Werbeleistung auf Amazon und das Marketplace-Erlebnis hinter der Conversion zu verbessern. Wir verbinden praktisches PPC-Management, klare kaufmännische Entscheidungen, expertengeführte Umsetzung und praxisnahe Trainings, die Teams eigenständig anwenden können.',
       actions: {
         agencies: 'Agenturpartnerschaften entdecken',
         brands: 'Leistungen für Marken entdecken',
@@ -331,6 +331,163 @@ export const de: Dictionary = {
       title: 'Bringen Sie eine schwache ASIN oder eine Kompetenzlücke mit.',
       body: 'Wir klären, ob Diagnose, Umsetzung, gemeinsamer Aufbau oder ein eigenständiges Trainingsprogramm der sinnvollste nächste Schritt ist.',
       button: 'Gespräch starten',
+      topicsLabel: 'Gute Ausgangspunkte',
+      topics: [
+        'Eine Herausforderung in der Amazon-Werbung',
+        'Umsetzungskapazität für Agenturen',
+        'Ein Conversion-Problem auf dem Marketplace',
+        'Eine Kompetenzlücke im Team',
+      ],
+    },
+    heroImageAlt: 'Geschwungene Betonarchitektur vor kobaltblauem Himmel',
+    autopilot: {
+      eyebrow: 'Das Autopilot-Problem',
+      title: 'Amazon-Werbung ist zu wichtig für den Autopiloten.',
+      intro:
+        'Der Wettbewerb wächst, die Kosten steigen und die Margen stehen unter Druck. Höhere Gebote oder mehr Budget sind selten allein die Antwort. Profitables Wachstum heißt, Kampagnendaten zusammen mit Suchverhalten, Conversion der Produktseite, Marge und Gesamtumsatz zu lesen.',
+      points: [
+        {
+          title: 'Wettbewerb',
+          body: 'Mehr Händler bieten auf dieselben Suchanfragen. Effizienz hängt davon ab, wo Sie konkurrieren, nicht nur davon, wie viel Sie ausgeben.',
+        },
+        {
+          title: 'Suchverhalten',
+          body: 'Was Käufer tatsächlich eingeben und welche Begriffe konvertieren, sollte Targeting und Ausschlüsse bestimmen.',
+        },
+        {
+          title: 'Kampagnenstruktur',
+          body: 'Struktur entscheidet über Kontrolle. Ohne sie wandert Budget zu Begriffen, die nie konvertieren.',
+        },
+        {
+          title: 'Conversion der Produktseite',
+          body: 'Werbung bringt den Besuch. Die Produktseite entscheidet, ob daraus ein Verkauf wird.',
+        },
+      ],
+      accent: 'Wir verwalten Kampagnen nicht nur. Wir arbeiten daran, sie besser zu machen.',
+    },
+    services: {
+      eyebrow: 'Was wir tun',
+      title: 'Spezialisierte Leistungen für Marken und Agenturen.',
+      intro:
+        'Jede Zusammenarbeit wird in einem Angebot festgelegt. Zugänge, Rhythmus, Verantwortlichkeiten und Reporting werden vor Arbeitsbeginn vereinbart.',
+      imageAlt: 'Eine Spezialistin prüft Arbeit am Laptop in einem hellen Büro',
+      audience: { brands: 'Für Marken', agencies: 'Für Agenturen', both: 'Marken und Agenturen' },
+      ownerLabel: 'Wer die Arbeit verantwortet',
+      items: [
+        {
+          id: 'ppc',
+          audience: 'brands',
+          body: 'Praktisches Kampagnenmanagement: Struktur, Keyword- und Suchbegriffsanalyse, Gebots- und Budgetoptimierung, Ausschlüsse und transparentes Reporting.',
+          owner: '',
+        },
+        {
+          id: 'whiteLabel',
+          audience: 'agencies',
+          body: 'Ihre Kunden, Ihre Marke. ADelier verantwortet die vereinbarte Umsetzung und Optimierung der Kampagnen hinter Ihrer Agentur.',
+          owner: 'ADelier verantwortet die Umsetzung.',
+        },
+        {
+          id: 'specialist',
+          audience: 'agencies',
+          body: 'Ein definierter Spezialist arbeitet in Ihren Abläufen mit vereinbarter Aufsicht, Reporting, Zugängen und Verantwortlichkeiten.',
+          owner: 'Ihr Team steuert den Spezialisten.',
+        },
+        {
+          id: 'audits',
+          audience: 'brands',
+          body: 'Eine Bewertung von PPC-Struktur, Targeting, Ausgabeneffizienz und Listing-Qualität, die mit einer priorisierten Maßnahmenliste endet.',
+          owner: '',
+        },
+        {
+          id: 'validation',
+          audience: 'brands',
+          body: 'Bewertung eines bestehenden oder geplanten Produkts anhand von Keyword-Nachfrage, Wettbewerbern, Preis, Werbewettbewerb und indikativen kaufmännischen Szenarien. Kein Product-Sourcing-Service.',
+          owner: '',
+        },
+        {
+          id: 'conversion',
+          audience: 'both',
+          body: 'Positionierung, Listing-Richtung und Conversion-Inhalte, die ein Produkt leichter auffindbar, verständlich und wählbar machen.',
+          owner: '',
+        },
+        {
+          id: 'training',
+          audience: 'both',
+          body: 'Eigenständige, praxisnahe Programme, die Amazon-PPC- und Conversion-Kompetenz in Marken- und Agenturteams aufbauen.',
+          owner: '',
+        },
+      ],
+    },
+    approach: {
+      eyebrow: 'Unser Ansatz',
+      title: 'Bessere Entscheidungen. Bewusstere Umsetzung.',
+      intro:
+        'Dieselben sechs Phasen ziehen sich durch jede Zusammenarbeit, vom ersten Blick auf ein Konto bis zur Kompetenz, die im Team bleibt.',
+      steps: [
+        { title: 'Verstehen', body: 'Geschäft, Produkte, Marge und Ziele.' },
+        { title: 'Analysieren', body: 'Kampagnen, Suchbegriffe, Wettbewerb und Listings.' },
+        { title: 'Priorisieren', body: 'Die Änderungen mit der klarsten kaufmännischen Wirkung.' },
+        { title: 'Umsetzen', body: 'Struktur, Gebote, Targeting und Inhalte.' },
+        { title: 'Messen', body: 'Ergebnisse gegen vereinbarte Kennzahlen, offen berichtet.' },
+        { title: 'Weitergeben', body: 'Was funktioniert, als wiederverwendbare Methoden.' },
+      ],
+      conclusion: 'Empfehlungen zählen erst, wenn sie zu Handlungen werden.',
+    },
+    beyond: {
+      eyebrow: 'Leistung jenseits von ACOS',
+      title: 'ACOS und ROAS sind Signale, nicht die ganze Geschichte.',
+      body: 'Wir lesen Werbeeffizienz zusammen mit dem kaufmännischen Kontext, damit die Optimierung dem Geschäft dient und nicht einer einzelnen Kennzahl.',
+      center: 'ACOS / ROAS',
+      factors: [
+        'Gesamtumsatz',
+        'Profitabilität',
+        'Marge',
+        'Lagerbestand',
+        'Preis',
+        'Organische Leistung',
+        'Conversion-Kontext',
+      ],
+      diagramLabel: 'Werbeeffizienz im kaufmännischen Kontext gelesen',
+      illustrative: 'Illustratives Modell. Keine Kundendaten.',
+    },
+    modesImageAlt: 'Ein ruhiger Besprechungstisch mit blauen Stühlen im Tageslicht',
+    training: {
+      eyebrow: 'Training und Teamkompetenz',
+      body: 'Training ist ein eigenständiges Produkt. Teams können ohne Umsetzungsauftrag hier beginnen und an ihren eigenen Konten und Produkten arbeiten.',
+      capabilities: [
+        'Übungen an echten Konten und Produkten',
+        'Angewandtes Lernen statt Vorträgen',
+        'Praktische Tools und Vorlagen',
+        'Wiederverwendbare Workflows',
+        'Expertenfeedback zu echter Arbeit',
+        'Gemeinsame Qualitätsstandards',
+        'Ein Umsetzungsplan',
+        'Kompetenz, die im Team bleibt',
+      ],
+      programsLabel: 'Programme',
+      programs: {
+        foundations: 'Ein Conversion-Standard für Agentur- und Markenteams.',
+        enablement: 'Angebot, Scoping und Umsetzungsmodell für Agenturleitungen.',
+        ppc: 'Für interne Markenteams. Umfang auf Anfrage bestätigt.',
+      },
+    },
+    why: {
+      eyebrow: 'Warum ADelier',
+      title: 'Expertengeführt. Praxisnah. Verantwortlich.',
+      items: [
+        { title: 'Expertengeführte Arbeit', body: 'Ein benannter Experte verantwortet jede Empfehlung und ihre finale Qualität.' },
+        { title: 'Aktives Management', body: 'Kampagnen werden aktiv bearbeitet, nicht eingerichtet und sich selbst überlassen.' },
+        { title: 'Kaufmännische Relevanz', body: 'Empfehlungen folgen Marge, Lagerbestand, Preis und Gesamtumsatz.' },
+        { title: 'Individuelle Betreuung', body: 'Strategie rund um Ihre Produkte, Ihren Wettbewerb und Ihre Ziele.' },
+        { title: 'Transparentes Reporting', body: 'Sie sehen, was wir getan, gefunden und als Nächstes empfohlen haben.' },
+        { title: 'Flexible Zusammenarbeit', body: 'Mit einem Umfang starten und ihn erweitern, wenn sich Bedarf ändert.' },
+        { title: 'Klare Qualitätsstandards', body: 'Definierte Prüfpunkte, bevor etwas veröffentlicht wird.' },
+        { title: 'Wissenstransfer', body: 'Methoden und Tools, die Ihr Team auch ohne uns weiter nutzt.' },
+      ],
+      poland: {
+        title: 'Aus Polen. International ausgerichtet.',
+        body: 'ADelier arbeitet von Polen aus mit Marken und Agenturen auf internationalen Marketplaces. So erhält jedes Konto mehr Spezialistenaufmerksamkeit, ohne den Standard zu senken.',
+      },
     },
   },
 
@@ -658,8 +815,8 @@ export const de: Dictionary = {
       support:
         'ADelier verbindet die Sorgfalt und das Urteilsvermögen eines Ateliers mit der Disziplin, dem Tempo und der Beweisführung eines leistungsorientierten Partners.',
     },
-    outcomeLabel: 'Worauf wir hinarbeiten',
     outcome: 'Marketplace-Produkte leichter auffindbar, verständlich und wählbar machen.',
+    outcomeLabel: 'Worauf wir hinarbeiten',
     beliefs: {
       title: 'Woran wir glauben',
       items: [
