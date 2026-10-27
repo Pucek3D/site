@@ -9,8 +9,8 @@ const placeholder = (value: string): Placeholder => ({ value, placeholder: true 
 
 export const siteConfig = {
   name: 'ADelier Commerce',
-  descriptor: 'Marketplace Growth Partner',
-  tagline: 'Positioned to sell. Equipped to scale.',
+  /** From the partner's sign-off line: "ADelier Commerce — Amazon Advertising & Growth." */
+  descriptor: 'Amazon Advertising & Growth',
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://adelier.example').replace(/\/$/, ''),
   email: placeholder(process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@adelier.example'),
   linkedin: placeholder(process.env.NEXT_PUBLIC_LINKEDIN_URL ?? 'https://www.linkedin.com/company/'),

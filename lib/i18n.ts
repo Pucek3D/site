@@ -19,40 +19,25 @@ export const ogLocale: Record<Locale, string> = {
   de: 'de_DE',
 }
 
-export const pageKeys = [
-  'home',
-  'agencies',
-  'brands',
-  'training',
-  'services',
-  'about',
-  'contact',
-  'privacy',
-  'legal',
-] as const
+/** The pages the partner's content document defines, plus the legal pages. */
+export const pageKeys = ['home', 'ppc', 'agencies', 'training', 'audits', 'about', 'contact', 'privacy', 'legal'] as const
 export type PageKey = (typeof pageKeys)[number]
-
-export const mainNavKeys = [
-  'home',
-  'agencies',
-  'brands',
-  'training',
-  'services',
-  'about',
-  'contact',
-] as const satisfies readonly PageKey[]
 
 export const pagePaths: Record<PageKey, string> = {
   home: '',
-  agencies: '/agencies',
-  brands: '/brands',
-  training: '/training',
-  services: '/services',
+  ppc: '/amazon-ppc-management',
+  agencies: '/agency-partnerships',
+  training: '/amazon-ppc-training',
+  audits: '/amazon-market-validation-audits',
   about: '/about',
   contact: '/contact',
   privacy: '/privacy',
   legal: '/legal',
 }
+
+/** Pages listed under the Services menu, grouped by audience as the partner's structure describes. */
+export const brandServiceKeys = ['ppc', 'audits', 'training'] as const satisfies readonly PageKey[]
+export const serviceKeys = [...brandServiceKeys, 'agencies'] as const satisfies readonly PageKey[]
 
 export function href(locale: Locale, page: PageKey, suffix = ''): string {
   return `/${locale}${pagePaths[page]}${suffix}`

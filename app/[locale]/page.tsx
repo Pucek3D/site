@@ -1,16 +1,6 @@
 import type { Metadata } from 'next'
-import {
-  ApproachSection,
-  AutopilotSection,
-  BeyondAcosSection,
-  HomeFinalCta,
-  HomeHero,
-  HomeTraining,
-  ServicesSection,
-  WhySection,
-} from '@/components/site/home'
-import { AiSection, RouteCards, TrustStrip } from '@/components/site/sections'
-import { getDictionary } from '@/content'
+import { HomePage } from '@/components/site/home'
+import { getCopy } from '@/content/partner'
 import type { Locale } from '@/lib/i18n'
 import { pageMetadata } from '@/lib/seo'
 
@@ -20,22 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata((await params).locale, 'home')
 }
 
-export default async function HomePage({ params }: Props) {
+export default async function Home({ params }: Props) {
   const { locale } = await params
-  const dict = getDictionary(locale)
-  return (
-    <>
-      <HomeHero locale={locale} dict={dict} />
-      <TrustStrip items={dict.home.trust} />
-      <AutopilotSection dict={dict} />
-      <ServicesSection dict={dict} />
-      <ApproachSection dict={dict} />
-      <BeyondAcosSection dict={dict} />
-      <RouteCards locale={locale} dict={dict} />
-      <HomeTraining locale={locale} dict={dict} />
-      <AiSection dict={dict} />
-      <WhySection dict={dict} />
-      <HomeFinalCta locale={locale} dict={dict} />
-    </>
-  )
+  return <HomePage locale={locale} copy={getCopy(locale)} />
 }

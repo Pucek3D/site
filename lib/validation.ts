@@ -13,19 +13,11 @@ export const formLanguages = ['en', 'pl', 'de'] as const
 export const agencyTypes = ['full-service', 'performance', 'ecommerce', 'creative', 'other'] as const
 export const clientCounts = ['1', '2-5', '6-15', '16+'] as const
 export const capabilityLevels = ['none', 'basic', 'established', 'advanced'] as const
-export const agencyModels = ['white-label', 'co-delivery', 'training', 'not-sure'] as const
+export const agencyModels = ['white-label', 'specialist', 'not-sure'] as const
 
 export const marketplaces = ['us', 'ca', 'uk', 'de', 'other-eu', 'other'] as const
 export const asinCounts = ['1', '2-5', '6-20', '21+'] as const
-export const brandProblems = [
-  'traffic',
-  'positioning',
-  'content',
-  'conversion',
-  'workflow',
-  'capability',
-  'not-sure',
-] as const
+export const brandProblems = ['ppc', 'audit', 'validation', 'not-sure'] as const
 
 export const teamSizes = ['1-5', '6-12', '13-25', '26+'] as const
 export const trainingFormats = ['remote', 'onsite', 'hybrid', 'not-sure'] as const

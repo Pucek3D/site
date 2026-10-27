@@ -3,7 +3,7 @@ import type { Dictionary } from '@/content'
 import type { Locale } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
 import { Container, Eyebrow, OwnerPlaceholder } from './primitives'
-import { Breadcrumbs } from './sections'
+import { Breadcrumbs } from './page-kit'
 
 type FieldKey = keyof Dictionary['legal']['fieldLabels']
 
@@ -28,7 +28,7 @@ export function LegalDocument({
   const labels = dict.legal.fieldLabels
   return (
     <Container className="py-14 md:py-20">
-      <Breadcrumbs locale={locale} dict={dict} page={page} />
+      <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items[page]} navLabel={dict.common.breadcrumbLabel} />
       <div className="max-w-3xl">
         <Eyebrow>{doc.eyebrow}</Eyebrow>
         <h1 className="mt-5 text-4xl font-semibold md:text-5xl">{doc.title}</h1>

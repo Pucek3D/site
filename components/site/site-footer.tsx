@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import type { Dictionary } from '@/content'
-import { href, mainNavKeys, type Locale } from '@/lib/i18n'
+import type { PartnerCopy } from '@/content/partner'
+import { href, serviceKeys, type Locale } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 import { Container } from './primitives'
 
-export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dictionary; copy: PartnerCopy }) {
   const { footer, nav } = dict
   const year = new Date().getFullYear()
   return (
@@ -15,14 +16,20 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
         <div className="grid gap-12 md:grid-cols-12">
           <div className="flex flex-col gap-6 md:col-span-5">
             <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
-            <p className="max-w-sm leading-relaxed text-mist">{footer.description}</p>
-            <p className="font-serif text-lg italic text-white">{siteConfig.tagline}</p>
+            <p className="max-w-sm leading-relaxed text-mist">{copy.signoff}</p>
           </div>
 
           <div className="md:col-span-3">
             <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-mist">{footer.explore}</h2>
             <ul className="flex flex-col">
-              {mainNavKeys.map((k) => (
+              {serviceKeys.map((k) => (
+                <li key={k}>
+                  <Link href={href(locale, k)} className="inline-flex min-h-10 items-center text-white/90 hover:text-white hover:underline">
+                    {copy.pageNames[k]}
+                  </Link>
+                </li>
+              ))}
+              {(['about', 'contact'] as const).map((k) => (
                 <li key={k}>
                   <Link href={href(locale, k)} className="inline-flex min-h-10 items-center text-white/90 hover:text-white hover:underline">
                     {nav.items[k]}
@@ -40,22 +47,13 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
                   <a href={`mailto:${siteConfig.email.value}`} className="inline-flex min-h-10 items-center hover:underline">
                     {siteConfig.email.value}
                   </a>
-                  {siteConfig.email.placeholder ? (
-                    <span className="ml-2 text-xs text-mist">({footer.placeholder})</span>
-                  ) : null}
+                  {siteConfig.email.placeholder ? <span className="ml-2 text-xs text-mist">({footer.placeholder})</span> : null}
                 </li>
                 <li>
-                  <a
-                    href={siteConfig.linkedin.value}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    className="inline-flex min-h-10 items-center hover:underline"
-                  >
+                  <a href={siteConfig.linkedin.value} rel="noopener noreferrer" target="_blank" className="inline-flex min-h-10 items-center hover:underline">
                     {footer.linkedin}
                   </a>
-                  {siteConfig.linkedin.placeholder ? (
-                    <span className="ml-2 text-xs text-mist">({footer.placeholder})</span>
-                  ) : null}
+                  {siteConfig.linkedin.placeholder ? <span className="ml-2 text-xs text-mist">({footer.placeholder})</span> : null}
                 </li>
               </ul>
             </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Logo } from '@/components/site/logo'
-import { FocusFrame, Section, SectionHeading } from '@/components/site/primitives'
-import { Breadcrumbs, CardGrid, FinalCta, OperatingModel, PageHero } from '@/components/site/sections'
+import { Breadcrumbs, PageHero, Paragraphs } from '@/components/site/page-kit'
+import { CtaLink, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
+import { getCopy } from '@/content/partner'
 import { href, type Locale } from '@/lib/i18n'
 import { pageMetadata } from '@/lib/seo'
 
@@ -14,73 +14,43 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params
-  const dict = getDictionary(locale)
-  const a = dict.about
+  const d = getDictionary(locale)
+  const c = getCopy(locale)
+  const a = c.about
   return (
     <>
       <PageHero
-        breadcrumbs={<Breadcrumbs locale={locale} dict={dict} page="about" />}
-        eyebrow={a.hero.eyebrow}
+        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.about} navLabel={d.common.breadcrumbLabel} />}
         title={a.hero.title}
-        support={a.hero.support}
-        asidePosition="left"
-        aside={
-          <div className="flex justify-start">
-            <Logo variant="stacked" height={232} alt="ADelier Commerce" />
-          </div>
-        }
+        subtitle={a.hero.subtitle}
+        paragraphs={a.hero.paragraphs}
       />
-
-      <Section tone="porcelain" labelledBy="outcome-title">
-        <FocusFrame inset="lg" className="mx-auto max-w-3xl px-4 py-8 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.12em] text-slate">{a.outcomeLabel}</p>
-          <h2 id="outcome-title" className="mt-4 font-serif text-3xl font-normal leading-snug md:text-4xl">
-            {a.outcome}
-          </h2>
-        </FocusFrame>
-      </Section>
-
-      <Section labelledBy="beliefs-title">
+      <Section>
         <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <SectionHeading id="beliefs-title" title={a.beliefs.title} />
+          <div className="lg:col-span-7">
+            <Paragraphs items={a.paragraphs} className="text-lg" />
           </div>
-          <ul className="flex flex-col lg:col-span-8">
-            {a.beliefs.items.map((b) => (
-              <li key={b} className="border-b border-hairline py-5 font-display text-xl font-medium leading-snug text-ink first:border-t">
-                {b}
-              </li>
+          <div className="flex flex-col gap-6 lg:col-span-5">
+            {[a.forBrands, a.forAgencies].map((t) => (
+              <p key={t} className="border-l-2 border-sage pl-5 text-pretty text-lg leading-relaxed text-ink">
+                {t}
+              </p>
             ))}
-          </ul>
-        </div>
-      </Section>
-
-      <Section tone="porcelain" labelledBy="serve-title">
-        <SectionHeading id="serve-title" title={a.serve.title} />
-        <div className="mt-12">
-          <CardGrid items={a.serve.items} columns={3} />
-        </div>
-      </Section>
-
-      <OperatingModel dict={dict} body={a.operatingBody} />
-
-      <Section labelledBy="accountability-title">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <SectionHeading id="accountability-title" title={a.accountability.title} />
           </div>
-          <p className="text-lg leading-relaxed text-slate lg:col-span-7">{a.accountability.body}</p>
         </div>
       </Section>
-
-      <Section tone="porcelain" labelledBy="traits-title">
-        <SectionHeading id="traits-title" title={a.traits.title} />
-        <div className="mt-12">
-          <CardGrid items={a.traits.items} columns={3} />
+      <Section tone="ink">
+        <div className="flex max-w-3xl flex-col gap-6">
+          <p className="text-pretty text-lg leading-relaxed text-mist">{a.goal}</p>
+          <p className="text-balance font-display text-3xl font-semibold leading-tight text-white md:text-4xl">{a.closing[0]}</p>
+          <p className="text-lg text-white">{a.closing[1]}</p>
+          <div className="mt-2">
+            <CtaLink href={href(locale, 'contact')} variant="sage">
+              {c.home.hero.primaryCta}
+            </CtaLink>
+          </div>
         </div>
       </Section>
-
-      <FinalCta title={a.finalCta.title} body={a.finalCta.body} button={a.finalCta.button} to={href(locale, 'contact')} />
     </>
   )
 }
