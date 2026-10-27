@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ChartPie, ChevronDown, MessagesSquare, RefreshCw, Route, UserRound } from 'lucide-react'
+import { ArrowRight, ArrowUp, ChartPie, Check, ChevronDown, MessagesSquare, Minus, Plus, RefreshCw, Route, UserRound } from 'lucide-react'
 import type { ReactNode } from 'react'
 import type { PartnerCopy } from '@/content/partner'
 import type { Dictionary } from '@/content/en'
@@ -72,9 +72,17 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               <span className="text-xs font-medium text-slate">{bullets[1]}</span>
               <span className="size-2 rounded-full bg-sage" />
             </div>
-            <div className="mt-4 flex h-16 items-end gap-1.5">
-              {[38, 52, 44, 66, 58, 74, 70, 88].map((v, i) => (
-                <span key={i} className={cn('flex-1 rounded-sm', i > 5 ? 'bg-cobalt' : 'bg-cobalt-tint')} style={{ height: `${v}%` }} />
+            {/* Search terms under review, not a performance trend: an ascending bar chart would imply a result. */}
+            <div className="mt-4 flex flex-col gap-2">
+              {[
+                { w: 'w-[78%]', Icon: Check, tone: 'text-sage' },
+                { w: 'w-[62%]', Icon: ArrowUp, tone: 'text-cobalt' },
+                { w: 'w-[70%]', Icon: Minus, tone: 'text-slate' },
+              ].map(({ w, Icon, tone }, i) => (
+                <div key={i} className="flex items-center gap-2 rounded-md bg-porcelain px-2.5 py-2">
+                  <span className={cn('h-1.5 rounded-full bg-ink/25', w)} />
+                  <Icon className={cn('ml-auto size-3.5 shrink-0', tone)} strokeWidth={3} />
+                </div>
               ))}
             </div>
           </div>
@@ -117,23 +125,25 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
 
 /* ------------------------------------------------------------ What we do */
 
-type Tone = 'ink' | 'porcelain' | 'cobalt' | 'sage' | 'white'
+type Tone = 'ink' | 'white' | 'sage'
 
-const tileTone: Record<Tone, { box: string; title: string; tag: string; body: string; num: string; link: string }> = {
-  ink: { box: 'bg-ink', title: 'text-white', tag: 'text-sage', body: 'text-mist', num: 'text-mist', link: 'text-white' },
-  porcelain: { box: 'bg-porcelain', title: 'text-ink', tag: 'text-cobalt', body: 'text-slate', num: 'text-slate', link: 'text-cobalt' },
-  cobalt: { box: 'bg-cobalt-tint', title: 'text-ink', tag: 'text-cobalt', body: 'text-slate', num: 'text-cobalt', link: 'text-cobalt' },
-  sage: { box: 'bg-sage-tint', title: 'text-ink', tag: 'text-ink', body: 'text-slate', num: 'text-ink', link: 'text-ink' },
-  white: { box: 'border border-hairline bg-white', title: 'text-ink', tag: 'text-cobalt', body: 'text-slate', num: 'text-slate', link: 'text-cobalt' },
+const tileTone: Record<Tone, { box: string; title: string; tag: string; num: string; link: string; panel: string }> = {
+  ink: { box: 'bg-ink', title: 'text-white', tag: 'text-sage', num: 'text-mist', link: 'text-white', panel: 'bg-white/[0.04] ring-1 ring-white/10' },
+  white: { box: 'border border-hairline bg-white', title: 'text-ink', tag: 'text-cobalt', num: 'text-slate', link: 'text-cobalt', panel: 'bg-porcelain' },
+  sage: { box: 'bg-sage-tint', title: 'text-ink', tag: 'text-ink', num: 'text-ink', link: 'text-ink', panel: 'bg-white/70' },
 }
 
-/** Layout and treatment per service, in the partner's order. `shown` = paragraphs visible before "show more". */
-const tiles: { tone: Tone; span: string; shown: number; visual: ReactNode }[] = [
-  { tone: 'ink', span: 'lg:col-span-4 lg:row-span-2', shown: Infinity, visual: <PpcVisual /> },
-  { tone: 'porcelain', span: 'lg:col-span-2', shown: 1, visual: <WhiteLabelVisual /> },
-  { tone: 'cobalt', span: 'lg:col-span-2', shown: 1, visual: <SpecialistsVisual /> },
-  { tone: 'sage', span: 'lg:col-span-2', shown: 1, visual: <TrainingVisual /> },
-  { tone: 'white', span: 'lg:col-span-4', shown: 2, visual: <AuditVisual /> },
+/**
+ * Layout per service, in the partner's order. No tile spans two rows: a row-spanning tile stretches to the
+ * height of whatever sits beside it, which is what left the PPC tile with a large empty band.
+ * Wide tiles put copy beside the illustration; narrow tiles share one illustration band height so they align.
+ */
+const tiles: { tone: Tone; wide: boolean; visual: ReactNode }[] = [
+  { tone: 'ink', wide: true, visual: <PpcVisual /> },
+  { tone: 'white', wide: false, visual: <WhiteLabelVisual /> },
+  { tone: 'white', wide: false, visual: <SpecialistsVisual /> },
+  { tone: 'sage', wide: false, visual: <TrainingVisual /> },
+  { tone: 'white', wide: true, visual: <AuditVisual /> },
 ]
 
 function WhatWeDo({ locale, copy, labels }: { locale: Locale; copy: PartnerCopy; labels: Labels }) {
@@ -179,34 +189,27 @@ function ServiceTile({
   featured: boolean
 }) {
   const t = tileTone[layout.tone]
-  const visible = service.paragraphs.slice(0, layout.shown)
-  const hidden = service.paragraphs.slice(layout.shown)
-  const bulletsInline = featured && service.bullets
-  const more = hidden.length > 0 || (!featured && service.bullets)
   const dark = layout.tone === 'ink'
+  // Every tile opens on its first paragraph; the rest of the partner's text stays one click away, never cut.
+  const [first, ...rest] = service.paragraphs
+  const bullets = service.bullets ?? []
 
-  return (
-    <li className={cn('group flex flex-col rounded-2xl p-7 transition-transform duration-300 md:p-9 motion-safe:hover:-translate-y-0.5', t.box, layout.span)}>
-      <div className="flex items-start justify-between gap-6">
-        <span className={cn('text-sm font-semibold tabular-nums', t.num)}>{service.number}</span>
-        <div className="shrink-0">{layout.visual}</div>
-      </div>
-
-      <h3 className={cn('mt-6 text-balance font-display font-semibold leading-tight', featured ? 'text-3xl md:text-[2.5rem]' : 'text-2xl', t.title)}>
+  const copyBlock = (
+    <div className="flex min-w-0 flex-1 flex-col">
+      <span className={cn('text-sm font-semibold tabular-nums', t.num)}>{service.number}</span>
+      <h3 className={cn('mt-4 text-balance font-display font-semibold leading-tight', featured ? 'text-3xl md:text-[2.5rem]' : 'text-2xl', t.title)}>
         {service.name}
       </h3>
       <p className={cn('mt-3 text-pretty font-medium', featured ? 'text-xl' : 'text-lg', t.tag)}>{service.tagline}</p>
-
-      <div className={cn('mt-6', featured && 'grid gap-8 md:grid-cols-2')}>
-        <Paragraphs items={visible} dark={dark} />
-        {bulletsInline ? <DarkChecks items={service.bullets ?? []} /> : null}
+      <div className="mt-5">
+        <Paragraphs items={[first]} dark={dark} />
       </div>
 
-      {more ? (
-        <details className="group/d mt-5">
+      {rest.length || bullets.length ? (
+        <details className="group/d mt-4">
           <summary
             className={cn(
-              'inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm font-semibold [&::-webkit-details-marker]:hidden',
+              'inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 rounded-md text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cobalt [&::-webkit-details-marker]:hidden',
               t.title,
             )}
           >
@@ -215,18 +218,36 @@ function ServiceTile({
             <ChevronDown aria-hidden className="size-4 transition-transform group-open/d:rotate-180" />
           </summary>
           <div className="mt-3 flex flex-col gap-5">
-            {hidden.length ? <Paragraphs items={hidden} dark={dark} /> : null}
-            {!featured && service.bullets ? <CheckList items={service.bullets} /> : null}
+            {rest.length ? <Paragraphs items={rest} dark={dark} /> : null}
+            {bullets.length ? dark ? <DarkChecks items={bullets} /> : <CheckList items={bullets} /> : null}
           </div>
         </details>
       ) : null}
 
-      <div className={cn('mt-auto pt-8', dark && 'border-t border-white/10')}>
+      <div className={cn('mt-auto pt-6', dark && 'mt-8 border-t border-white/10')}>
         <Link href={to} className={cn('inline-flex min-h-11 items-center gap-2 font-semibold hover:underline', t.link)}>
           {linkLabel}
           <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
+    </div>
+  )
+
+  if (layout.wide) {
+    return (
+      <li className={cn('group grid gap-8 rounded-2xl p-7 md:p-10 lg:col-span-6 lg:grid-cols-12 lg:gap-12', t.box)}>
+        <div className="flex lg:col-span-7">{copyBlock}</div>
+        <div className={cn('flex items-center justify-center rounded-xl p-6 md:p-8 lg:col-span-5 lg:self-start', t.panel)}>
+          {layout.visual}
+        </div>
+      </li>
+    )
+  }
+
+  return (
+    <li className={cn('group flex flex-col gap-7 rounded-2xl p-7 md:p-8 lg:col-span-2', t.box)}>
+      <div className={cn('flex h-28 items-center justify-center rounded-xl px-4', t.panel)}>{layout.visual}</div>
+      {copyBlock}
     </li>
   )
 }
@@ -244,53 +265,145 @@ function DarkChecks({ items }: { items: string[] }) {
   )
 }
 
-/* Tile visuals: decorative, aria-hidden, no figures. */
+/*
+ * Tile illustrations. Decorative and aria-hidden: each draws the shape of the work, never a result,
+ * so there are no figures, axes or trend lines anywhere in them.
+ */
 
+/** Campaign analysis: a campaign → ad groups → search terms, each term reviewed and given a decision. */
 function PpcVisual() {
+  const terms: { w: string; mark: 'keep' | 'raise' | 'negate' }[] = [
+    { w: 'w-[72%]', mark: 'keep' },
+    { w: 'w-[58%]', mark: 'raise' },
+    { w: 'w-[66%]', mark: 'negate' },
+    { w: 'w-[48%]', mark: 'keep' },
+  ]
   return (
-    <div aria-hidden className="flex h-20 w-40 items-end gap-1.5 md:w-56">
-      {[30, 46, 38, 58, 50, 68, 62, 80, 74, 92].map((v, i) => (
-        <span key={i} className={cn('flex-1 rounded-sm', i % 3 === 2 ? 'bg-sage' : 'bg-white/15')} style={{ height: `${v}%` }} />
-      ))}
+    <div aria-hidden className="flex w-full max-w-sm flex-col gap-3">
+      <div className="flex items-center gap-2.5 rounded-lg bg-white/10 px-3 py-2.5">
+        <span className="size-2.5 rounded-sm bg-cobalt" />
+        <span className="h-2 w-28 rounded-full bg-white/60" />
+      </div>
+      <div className="ml-4 flex flex-col gap-2 border-l border-white/15 pl-4">
+        {terms.map((r, i) => (
+          <div key={i} className="flex items-center gap-3 rounded-md bg-white/[0.06] px-3 py-2">
+            <span className={cn('h-1.5 rounded-full', r.w, r.mark === 'negate' ? 'bg-white/20' : 'bg-white/45')} />
+            <span className="ml-auto flex size-5 shrink-0 items-center justify-center rounded-full">
+              {r.mark === 'keep' ? <Check className="size-3.5 text-sage" strokeWidth={3} /> : null}
+              {r.mark === 'raise' ? <ArrowUp className="size-3.5 text-cobalt-tint" strokeWidth={3} /> : null}
+              {r.mark === 'negate' ? <Minus className="size-3.5 text-mist" strokeWidth={3} /> : null}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="ml-4 flex items-center gap-2 pl-4 pt-1">
+        <RefreshCw className="size-3.5 text-sage" strokeWidth={2.5} />
+        <span className="h-1.5 w-20 rounded-full bg-sage/50" />
+      </div>
     </div>
   )
 }
 
+/** Agency → specialist delivery: the client faces the agency only; the work runs behind it and returns. */
 function WhiteLabelVisual() {
   return (
-    <div aria-hidden className="relative h-14 w-20">
-      <span className="absolute right-0 top-0 h-10 w-14 rounded-md border border-hairline bg-white" />
-      <span className="absolute bottom-0 left-0 h-10 w-14 rounded-md bg-ink" />
-    </div>
+    <svg viewBox="0 0 220 72" className="h-16 w-auto" aria-hidden>
+      <circle cx="18" cy="36" r="11" className="fill-none stroke-slate" strokeWidth="2" />
+      <line x1="30" y1="36" x2="62" y2="36" className="stroke-slate" strokeWidth="2" />
+      <rect x="64" y="18" width="56" height="36" rx="7" className="fill-white stroke-ink" strokeWidth="2" />
+      <rect x="74" y="31" width="24" height="3" rx="1.5" className="fill-ink" />
+      <rect x="74" y="39" width="34" height="3" rx="1.5" className="fill-slate/50" />
+      <path d="M122 28 H158" className="stroke-cobalt" strokeWidth="2" strokeDasharray="4 4" />
+      <path d="M152 23 L158 28 L152 33" className="fill-none stroke-cobalt" strokeWidth="2" />
+      <path d="M158 46 H122" className="stroke-sage" strokeWidth="2" />
+      <path d="M128 41 L122 46 L128 51" className="fill-none stroke-sage" strokeWidth="2" />
+      <rect x="160" y="18" width="52" height="36" rx="7" className="fill-ink" />
+      <rect x="170" y="31" width="22" height="3" rx="1.5" className="fill-white/70" />
+      <rect x="170" y="39" width="30" height="3" rx="1.5" className="fill-white/35" />
+    </svg>
   )
 }
 
+/** Team integration: the existing team, one specialist joined in, and open slots for capacity on demand. */
 function SpecialistsVisual() {
   return (
-    <div aria-hidden className="flex items-center">
-      {['bg-white', 'bg-white', 'bg-white', 'bg-cobalt'].map((c, i) => (
-        <span key={i} className={cn('-ml-2 size-9 rounded-full border-2 border-cobalt-tint first:ml-0', c)} />
+    <div aria-hidden className="flex items-center gap-3">
+      <div className="flex items-center rounded-full bg-white p-1.5 ring-1 ring-hairline">
+        {[0, 1, 2].map((i) => (
+          <span key={i} className="-ml-1.5 flex size-9 items-center justify-center rounded-full bg-porcelain ring-2 ring-white first:ml-0">
+            <UserRound className="size-4 text-slate" />
+          </span>
+        ))}
+        <span className="-ml-1.5 flex size-9 items-center justify-center rounded-full bg-cobalt ring-2 ring-white">
+          <UserRound className="size-4 text-white" />
+        </span>
+      </div>
+      {[0, 1].map((i) => (
+        <span key={i} className="flex size-9 items-center justify-center rounded-full border-2 border-dashed border-cobalt/40">
+          <Plus className="size-3.5 text-cobalt/60" strokeWidth={2.5} />
+        </span>
       ))}
     </div>
   )
 }
 
+/** Applied learning: a path of modules, completed ones filled, the current one in progress. */
 function TrainingVisual() {
+  const steps = ['done', 'done', 'current', 'next', 'next'] as const
   return (
-    <div aria-hidden className="flex h-12 items-end gap-1.5">
-      {[25, 45, 65, 85].map((v, i) => (
-        <span key={i} className="w-3.5 rounded-sm bg-sage" style={{ height: `${v}%`, opacity: 0.35 + i * 0.2 }} />
+    <div aria-hidden className="flex w-full max-w-[15rem] items-center">
+      {steps.map((s, i) => (
+        <div key={i} className="flex flex-1 items-center last:flex-none">
+          <span
+            className={cn(
+              'flex size-8 shrink-0 items-center justify-center rounded-full',
+              s === 'done' && 'bg-sage',
+              s === 'current' && 'bg-white ring-2 ring-sage',
+              s === 'next' && 'bg-white ring-1 ring-sage/40',
+            )}
+          >
+            {s === 'done' ? <Check className="size-4 text-white" strokeWidth={3} /> : null}
+            {s === 'current' ? <span className="size-2.5 rounded-full bg-sage" /> : null}
+          </span>
+          {i < steps.length - 1 ? <span className={cn('h-0.5 flex-1', i < 2 ? 'bg-sage' : 'bg-sage/30')} /> : null}
+        </div>
       ))}
     </div>
   )
 }
 
+/** Structured evaluation: findings placed on impact × effort, the high-impact low-effort ones taken first. */
 function AuditVisual() {
+  const dots = [
+    { x: 22, y: 24, first: true },
+    { x: 34, y: 34, first: true },
+    { x: 70, y: 28, first: false },
+    { x: 28, y: 70, first: false },
+    { x: 62, y: 62, first: false },
+    { x: 80, y: 76, first: false },
+  ]
   return (
-    <div aria-hidden className="grid w-36 grid-cols-6 gap-1 md:w-44">
-      {Array.from({ length: 18 }, (_, i) => (
-        <span key={i} className={cn('aspect-square rounded-[3px]', i === 4 || i === 11 ? 'bg-cobalt' : i === 15 ? 'bg-sage' : 'bg-porcelain')} />
-      ))}
+    <div aria-hidden className="flex w-full max-w-sm items-stretch gap-5">
+      <div className="relative aspect-square w-40 shrink-0 rounded-lg bg-white ring-1 ring-hairline sm:w-44">
+        <span className="absolute inset-y-3 left-1/2 w-px bg-hairline" />
+        <span className="absolute inset-x-3 top-1/2 h-px bg-hairline" />
+        <span className="absolute left-3 top-3 h-[calc(50%-12px)] w-[calc(50%-12px)] rounded-md bg-cobalt-tint" />
+        {dots.map((d, i) => (
+          <span
+            key={i}
+            className={cn('absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-full', d.first ? 'bg-cobalt' : 'bg-slate/35')}
+            style={{ left: `${d.x}%`, top: `${d.y}%` }}
+          />
+        ))}
+      </div>
+      <ol className="flex flex-1 flex-col justify-center gap-2.5">
+        {['w-full', 'w-4/5', 'w-3/5'].map((w, i) => (
+          <li key={i} className="flex items-center gap-2.5">
+            <span className={cn('size-2 shrink-0 rounded-full', i < 2 ? 'bg-cobalt' : 'bg-slate/35')} />
+            <span className={cn('h-2 rounded-full', w, i < 2 ? 'bg-ink/70' : 'bg-slate/30')} />
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }
