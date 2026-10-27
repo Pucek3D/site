@@ -64,8 +64,9 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
     { title: copy.audiences.brands.title, summary: copy.audiences.brands.summary, keys: brandServiceKeys as readonly ServicePage[] },
     { title: copy.audiences.agencies.title, summary: copy.audiences.agencies.summary, keys: ['agencies'] as readonly ServicePage[] },
   ]
-  const inServices = (serviceKeys as readonly PageKey[]).includes(page)
-  const plain: PageKey[] = ['about', 'contact']
+  // For Agencies is its own top-level item (partner PDF nav), so it no longer lights up Services.
+  const inServices = (serviceKeys as readonly PageKey[]).includes(page) && page !== 'agencies'
+  const plain: PageKey[] = ['agencies', 'about', 'contact']
   const cta = page === 'contact' ? null : { label: copy.home.hero.primaryCta, to: href(locale, 'contact') }
 
   const linkClass = (active: boolean) =>
@@ -143,7 +144,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             {plain.map((k) => (
               <li key={k}>
                 <Link href={href(locale, k)} aria-current={page === k ? 'page' : undefined} className={linkClass(page === k)}>
-                  <span className={cn(page === k && 'border-b-2 border-cobalt pb-0.5')}>{nav.items[k as 'about' | 'contact']}</span>
+                  <span className={cn(page === k && 'border-b-2 border-cobalt pb-0.5')}>{nav.items[k as 'agencies' | 'about' | 'contact']}</span>
                 </Link>
               </li>
             ))}
@@ -227,7 +228,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
                 aria-current={page === k ? 'page' : undefined}
                 className={cn('flex min-h-12 items-center border-b border-hairline font-display text-xl', page === k && 'font-semibold')}
               >
-                {nav.items[k as 'about' | 'contact']}
+                {nav.items[k as 'agencies' | 'about' | 'contact']}
               </Link>
             ))}
             <div className="mt-8">

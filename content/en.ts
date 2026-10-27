@@ -38,7 +38,9 @@ export const en = {
     "disclaimer": "ADelier Commerce is an independent company and is not affiliated with or endorsed by Amazon."
   },
   "common": {
-    "breadcrumbLabel": "Breadcrumb"
+    "breadcrumbLabel": "Breadcrumb",
+    "showMore": "Read the full description",
+    "showLess": "Show less"
   },
   "contact": {
     "eyebrow": "Contact",
