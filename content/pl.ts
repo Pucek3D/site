@@ -40,6 +40,17 @@ export const pl: Dictionary = {
     "disclaimer": "ADelier Commerce jest niezależną firmą i nie jest powiązana z Amazon ani przez niego rekomendowana."
   },
   "common": {
+    "home": {
+      "tools": ["Optymalizacja stawek", "Analiza słów kluczowych", "Analiza wyszukiwanych fraz", "Raportowanie wyników"],
+      "campaignPerformance": "Wyniki kampanii",
+      "range": "Ostatnie 30 dni",
+      "sales": "Sprzedaż",
+      "acos": "ACOS",
+      "opportunities": "Obszary możliwości",
+      "opportunityItems": ["Większa widoczność na kluczowe frazy", "Lepsza konwersja kluczowych ASIN-ów", "Optymalizacja alokacji budżetu"],
+      "autopilotEyebrow": "Problem autopilota",
+      "approachEyebrow": "Nasze podejście"
+    },
     "breadcrumbLabel": "Ścieżka nawigacji",
     "showMore": "Przeczytaj pełny opis",
     "showLess": "Pokaż mniej"

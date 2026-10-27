@@ -38,6 +38,17 @@ export const en = {
     "disclaimer": "ADelier Commerce is an independent company and is not affiliated with or endorsed by Amazon."
   },
   "common": {
+    "home": {
+      "tools": ["Bid optimisation", "Keyword analysis", "Search term insights", "Performance reporting"],
+      "campaignPerformance": "Campaign performance",
+      "range": "Last 30 days",
+      "sales": "Sales",
+      "acos": "ACOS",
+      "opportunities": "Opportunity areas",
+      "opportunityItems": ["Increase top search term visibility", "Improve conversion on key ASINs", "Optimise budget allocation"],
+      "autopilotEyebrow": "The autopilot problem",
+      "approachEyebrow": "Our approach"
+    },
     "breadcrumbLabel": "Breadcrumb",
     "showMore": "Read the full description",
     "showLess": "Show less"
