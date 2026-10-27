@@ -3,7 +3,7 @@ import type { ComponentProps, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 export function Container({ className, children }: { className?: string; children: ReactNode }) {
-  return <div className={cn('mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12', className)}>{children}</div>
+  return <div className={cn('mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12 xl:px-16', className)}>{children}</div>
 }
 
 type Tone = 'white' | 'porcelain' | 'ink'
