@@ -6,6 +6,7 @@ import { siteConfig } from '@/lib/site-config'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 import { Container } from './primitives'
+import { Signoff } from './typeset'
 
 export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dictionary; copy: PartnerCopy }) {
   const { footer, nav } = dict
@@ -16,7 +17,7 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
         <div className="grid gap-12 md:grid-cols-12">
           <div className="flex flex-col gap-6 md:col-span-5">
             <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
-            <p className="max-w-sm leading-relaxed text-mist">{copy.signoff}</p>
+            <Signoff text={copy.signoff} />
           </div>
 
           <div className="md:col-span-3">

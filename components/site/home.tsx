@@ -8,6 +8,7 @@ import { href, type Locale, type PageKey } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { CheckList, FinalCta, Paragraphs } from './page-kit'
 import { Container, CtaLink, Eyebrow } from './primitives'
+import { Sentences } from './typeset'
 
 type Service = PartnerCopy['home']['whatWeDo']['items'][number]
 type Labels = Dictionary['common']
@@ -40,12 +41,14 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
         <div className="flex flex-col gap-7 lg:col-span-7 lg:pr-6">
           {hero.eyebrow ? <Eyebrow>{hero.eyebrow}</Eyebrow> : null}
           <h1 className="text-balance font-display text-[2.75rem] font-semibold leading-[1.02] tracking-tight text-ink sm:text-6xl lg:text-[4.25rem]">
-            {hero.title}
+            <Sentences text={hero.title} breakAt="always" />
           </h1>
           <div className="flex max-w-xl flex-col gap-4">
             <Paragraphs items={hero.paragraphs} className="text-lg" />
           </div>
-          <p className="max-w-xl border-l-2 border-sage pl-4 text-pretty text-lg font-semibold text-ink">{hero.closingLine}</p>
+          <p className="max-w-xl border-l-2 border-sage pl-4 text-pretty text-lg font-semibold text-ink">
+            <Sentences text={hero.closingLine} />
+          </p>
           <div className="flex flex-wrap gap-3 pt-1">
             <CtaLink href={href(locale, 'contact')}>{hero.primaryCta}</CtaLink>
             <CtaLink href="#what-we-do" variant="secondary">
@@ -116,7 +119,9 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
         </div>
         <div className="mt-14 rounded-2xl bg-ink px-8 py-10 md:px-14 md:py-14">
           <span aria-hidden className="block h-1 w-12 bg-sage" />
-          <p className="mt-6 max-w-3xl text-balance font-display text-3xl font-semibold leading-tight text-white md:text-[2.5rem]">{copy.closingLine}</p>
+          <p className="mt-6 max-w-3xl text-balance font-display text-3xl font-semibold leading-tight text-white md:text-[2.5rem]">
+            <Sentences text={copy.closingLine} />
+          </p>
         </div>
       </Container>
     </section>
