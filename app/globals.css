@@ -179,4 +179,12 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 0, 0.88) 20%, #000 28%);
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 0, 0.88) 20%, #000 28%);
   }
+  }
+  /* Past 1440px the photo widens and its pale wall makes a percentage fade too short to read as soft,
+  so the fade gets a fixed, longer run that never shrinks below the preview's look. */
+  @media (min-width: 1440px) {
+  .adelier-hero-photo {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.12) 70px, rgba(0, 0, 0, 0.35) 150px, rgba(0, 0, 0, 0.65) 240px, rgba(0, 0, 0, 0.9) 330px, #000 420px);
+  mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.12) 70px, rgba(0, 0, 0, 0.35) 150px, rgba(0, 0, 0, 0.65) 240px, rgba(0, 0, 0, 0.9) 330px, #000 420px);
+  }
 }
