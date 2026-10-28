@@ -65,7 +65,7 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
         'group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-hairline transition-colors duration-300',
         'hover:bg-ink hover:ring-ink focus-within:bg-ink focus-within:ring-ink data-[open=true]:bg-ink data-[open=true]:ring-ink',
         // 25rem = PPC's full description (six bullets) at xl, measured, so the overlay never clips.
-        'md:min-h-[25rem]',
+        'md:min-h-[22rem]',
       )}
     >
       <div
