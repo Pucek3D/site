@@ -17,6 +17,7 @@ type Props = {
   alt: string
   /** CSS object-position for the photo, when its subject is off-centre (e.g. "50% 20%"). */
   focus?: string
+  zoom?: number
   /** Accent for the headline's closing sentence and the number: cobalt for most, sage for Training. */
   accent: 'cobalt' | 'sage'
   to: string
@@ -45,7 +46,7 @@ function splitTagline(tagline: string) {
  * From xl up the panel overlays the card, whose floor is tall enough for the longest description
  * (PPC, six bullets); below xl the description replaces the front in flow, so it never scrolls.
  */
-export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, focus, accent, to, labels, imageLeft }: Props) {
+export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, focus, zoom, accent, to, labels, imageLeft }: Props) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const [excerpt] = paragraphs
@@ -123,14 +124,22 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
             imageLeft ? 'md:rounded-tr-[10rem]' : 'md:rounded-tl-[10rem]',
           )}
         >
-          <Image
-            src={art}
-            alt={alt}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            style={focus ? { objectPosition: focus } : undefined}
-            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-          />
+          {/* The photo's aspect ratio is close to the frame's, so object-position has
+              almost no slack to move. A zoom anchored on the focus point is what can
+              actually bring an off-centre subject into the middle. */}
+          <div
+            className="absolute inset-0"
+            style={zoom ? { transform: `scale(${zoom})`, transformOrigin: focus ?? 'center' } : undefined}
+          >
+            <Image
+              src={art}
+              alt={alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              style={focus ? { objectPosition: focus } : undefined}
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          </div>
         </div>
       </div>
 

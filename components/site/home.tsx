@@ -207,7 +207,7 @@ const services = [
   { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%' },
   { ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
   { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Two colleagues reviewing work together on a laptop' },
-  { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports', focus: '82% 55%' },
+  { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports', focus: '78% 60%', zoom: 1.45 },
 ]
 
 const TILE_LABELS: Record<Locale, { more: string; less: string; view: string }> = {
@@ -266,6 +266,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 art={v.art}
                 alt={v.alt}
                 focus={'focus' in v ? v.focus : undefined}
+                zoom={'zoom' in v ? v.zoom : undefined}
                 accent={i === TRAINING_INDEX ? 'sage' : 'cobalt'}
                 to={href(locale, serviceTarget[i])}
                 labels={TILE_LABELS[locale]}
