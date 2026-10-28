@@ -330,7 +330,7 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
 
 function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
   const panels = [
-    { ...copy.brands, to: href(locale, 'ppc'), image: '/images/svc/brands.png', alt: 'Consumer products beside an open shipping box', dark: false },
+    { ...copy.brands, to: href(locale, 'ppc'), image: '/images/svc/brands.png', alt: 'Stacked Amazon shipping boxes in front of a rising growth arrow', dark: false, focus: '100% 30%' },
     { ...copy.agencies, to: href(locale, 'agencies'), image: '/images/agency-team.png', alt: 'Two agency colleagues reviewing PPC work on a laptop', dark: true },
   ]
   return (
@@ -343,7 +343,7 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
           {panels.map((p) => (
             <article key={p.title} className="grid overflow-hidden rounded-2xl border border-hairline sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
               <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[270px]">
-                <Image src={p.image} alt={p.alt} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 45vw, 100vw" className="object-cover" />
+                <Image src={p.image} alt={p.alt} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 45vw, 100vw" className="object-cover" style={'focus' in p && p.focus ? { objectPosition: p.focus } : undefined} />
               </div>
               <div className={cn('flex flex-col gap-3 p-6 lg:p-6', p.dark ? 'bg-ink' : 'bg-cobalt-tint')}>
                 <h3 className={cn('font-display text-[1.375rem] font-semibold', p.dark ? 'text-white' : 'text-ink')}>{p.title}</h3>
