@@ -60,11 +60,8 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
   }, [servicesOpen])
 
   const serviceName = (k: ServicePage) => copy.pageNames[k]
-  const groups = [
-    { title: copy.audiences.brands.title, keys: brandServiceKeys as readonly ServicePage[] },
-    // Same page as the top-level "For Agencies" link: href(locale, 'agencies').
-    { title: copy.audiences.agencies.title, keys: ['agencies'] as readonly ServicePage[] },
-  ]
+  // Agency Partnerships is reached only through the top-level "For Agencies" item, never listed here too.
+  const servicePages = brandServiceKeys as readonly ServicePage[]
   // For Agencies is its own top-level item (partner PDF nav), so it no longer lights up Services.
   const inServices = (serviceKeys as readonly PageKey[]).includes(page) && page !== 'agencies'
   const plain: PageKey[] = ['agencies', 'about', 'contact']
@@ -116,29 +113,24 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
               {servicesOpen ? (
                 <div
                   id="services-menu"
-                  className="absolute left-1/2 top-full z-50 mt-2 flex w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 gap-10 rounded-xl border border-hairline bg-white px-6 py-5 shadow-[0_18px_40px_-20px_rgba(16,24,40,0.35)]"
+                  className="absolute left-1/2 top-full z-50 mt-2 w-max min-w-[300px] max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-[10px] border border-hairline bg-white p-2 shadow-[0_12px_28px_-18px_rgba(16,24,40,0.3)]"
                 >
-                  {groups.map((g) => (
-                    <div key={g.title} className="flex flex-col gap-1.5">
-                      <p className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
-                      <ul className="flex flex-col">
-                        {g.keys.map((k) => (
-                          <li key={k}>
-                            <Link
-                              href={href(locale, k)}
-                              aria-current={page === k ? 'page' : undefined}
-                              className={cn(
-                                'flex min-h-10 items-center whitespace-nowrap rounded-md font-sans text-sm leading-snug hover:text-cobalt',
-                                page === k ? 'font-medium text-cobalt' : 'text-ink',
-                              )}
-                            >
-                              {serviceName(k)}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                  <ul className="flex flex-col">
+                    {servicePages.map((k) => (
+                      <li key={k}>
+                        <Link
+                          href={href(locale, k)}
+                          aria-current={page === k ? 'page' : undefined}
+                          className={cn(
+                            'flex min-h-10 items-center whitespace-nowrap rounded-md px-3 font-sans text-sm leading-snug transition-colors hover:bg-porcelain hover:text-cobalt focus-visible:text-cobalt',
+                            page === k ? 'font-medium text-cobalt' : 'text-ink',
+                          )}
+                        >
+                          {serviceName(k)}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ) : null}
             </li>
@@ -204,24 +196,22 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             >
               {nav.items.home}
             </Link>
-            {groups.map((g) => (
-              <div key={g.title} className="border-b border-hairline py-4">
-                <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
-                <ul>
-                  {g.keys.map((k) => (
-                    <li key={k}>
-                      <Link
-                        href={href(locale, k)}
-                        aria-current={page === k ? 'page' : undefined}
-                        className={cn('flex min-h-11 items-center font-display text-lg', page === k ? 'font-semibold text-cobalt' : 'text-ink')}
-                      >
-                        {serviceName(k)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            <div className="border-b border-hairline py-4">
+              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{nav.items.services}</p>
+              <ul>
+                {servicePages.map((k) => (
+                  <li key={k}>
+                    <Link
+                      href={href(locale, k)}
+                      aria-current={page === k ? 'page' : undefined}
+                      className={cn('flex min-h-11 items-center font-display text-lg', page === k ? 'font-semibold text-cobalt' : 'text-ink')}
+                    >
+                      {serviceName(k)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
             {plain.map((k) => (
               <Link
                 key={k}
