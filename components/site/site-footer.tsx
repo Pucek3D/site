@@ -13,7 +13,8 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
   const year = new Date().getFullYear()
   return (
     <footer className="bg-ink text-white">
-      <Container className="py-16 md:py-20">
+      <Container className="pb-16 md:pb-20">
+        <hr className="mb-16 border-0 border-t border-white/20 md:mb-20" />
         <div className="grid gap-12 md:grid-cols-12">
           <div className="flex flex-col gap-6 md:col-span-5">
             <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />

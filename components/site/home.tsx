@@ -331,7 +331,7 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
   ]
   return (
     <section aria-labelledby="audiences" className="bg-white py-14 md:py-16">
-      <Container>
+      <div className="mx-auto w-full max-w-[1560px] px-5 sm:px-8 lg:px-6 xl:px-8">
         <h2 id="audiences" className="sr-only">
           {copy.title}
         </h2>
@@ -360,7 +360,7 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
             </article>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
