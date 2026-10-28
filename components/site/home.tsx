@@ -226,6 +226,10 @@ const EXPLORE_ALL: Record<Locale, string> = {
   de: 'Alle Leistungen ansehen',
 }
 
+/* Indexes into the content's own item order (01 PPC, 02 White-label, 03 Specialists, 04 Training, 05 Audits). */
+const TRAINING_INDEX = 3
+const TILE_ORDER = [0, 1, 2, 4, TRAINING_INDEX]
+
 function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const w = copy.home.whatWeDo
   return (
@@ -241,9 +245,10 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
             {EXPLORE_ALL[locale]} <ChevronRight aria-hidden className="size-4" />
           </Link>
         </div>
-        {/* Cards keep equal collapsed heights by reserving fixed line counts for each text slot. */}
-        <ul className="mt-7 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {w.items.map((s, i) => {
+        {/* Two tiles per row; Market Validation moves to 4th and Training takes the last row flat and full width. */}
+        <ul className="mt-7 grid gap-5 sm:grid-cols-2">
+          {TILE_ORDER.map((i) => {
+            const s = w.items[i]
             const v = services[i]
             return (
               <ServiceTile
@@ -267,6 +272,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 ground={v.ground}
                 to={href(locale, serviceTarget[i])}
                 labels={TILE_LABELS[locale]}
+                wide={i === TRAINING_INDEX}
               />
             )
           })}
