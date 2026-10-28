@@ -174,16 +174,9 @@
 /* The approved hero uses a separate photographic asset. Fade its left edge only
    when the live text and image share a horizontal desktop canvas. */
 @media (min-width: 1024px) {
+  /* A sharp photo shaded into the white ground, not blurred; the eased stops avoid a visible band. */
   .adelier-hero-photo {
-  -webkit-mask-image: linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.55) 22%, #000 36%);
-  mask-image: linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.55) 22%, #000 36%);
-  }
-  /* Scaled so the blur's soft border falls outside the frame instead of haloing the top/bottom edges. */
- .adelier-hero-photo-blur {
-  filter: blur(8px) saturate(1.03);
-  transform: scale(1.05);
-  /* Only feathers the outer edge; the shoulder sits in the sharp layer past ~36%. */
-  -webkit-mask-image: linear-gradient(to right, transparent 4%, rgba(0, 0, 0, 0.6) 12%, #000 20%, transparent 36%);
-  mask-image: linear-gradient(to right, transparent 4%, rgba(0, 0, 0, 0.6) 12%, #000 20%, transparent 36%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 0, 0.88) 20%, #000 28%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 6%, rgba(0, 0, 0, 0.6) 13%, rgba(0, 0, 0, 0.88) 20%, #000 28%);
   }
 }
