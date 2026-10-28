@@ -245,9 +245,9 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
             {EXPLORE_ALL[locale]} <ChevronRight aria-hidden className="size-4" />
           </Link>
         </div>
-        {/* Two tiles per row; Market Validation moves to 4th and Training takes the last row flat and full width. */}
-        <ul className="mt-7 grid gap-5 sm:grid-cols-2">
-          {TILE_ORDER.map((i) => {
+        {/* One flat full-width tile per row; the image alternates sides so the list reads as a sequence of rows, not a grid. */}
+        <ul className="mt-7 flex flex-col gap-5">
+          {TILE_ORDER.map((i, row) => {
             const s = w.items[i]
             const v = services[i]
             return (
@@ -272,7 +272,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 ground={v.ground}
                 to={href(locale, serviceTarget[i])}
                 labels={TILE_LABELS[locale]}
-                wide={i === TRAINING_INDEX}
+                imageLeft={row % 2 === 1}
               />
             )
           })}

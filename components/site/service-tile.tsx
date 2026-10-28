@@ -18,8 +18,8 @@ type Props = {
   ground: string
   to: string
   labels: { more: string; less: string; view: string }
-  /** Spans the full row with a flat, horizontal layout (text left, image right). */
-  wide?: boolean
+  /** Every tile is a flat full-width row; this puts the image on the left instead of the right. */
+  imageLeft?: boolean
 }
 
 /*
@@ -29,7 +29,7 @@ type Props = {
  * The panel never scrolls: from xl up the tiles are large enough to hold every description,
  * below xl (PPC's six bullets outgrow a narrow tile) the description replaces the front in flow.
  */
-export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, ground, to, labels, wide }: Props) {
+export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, ground, to, labels, imageLeft }: Props) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const [excerpt] = paragraphs
@@ -46,11 +46,19 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
         'group relative flex cursor-pointer overflow-hidden rounded-2xl transition-colors duration-200',
         ground,
         'hover:bg-ink focus-within:bg-ink data-[open=true]:bg-ink',
-        wide ? 'flex-col sm:col-span-2 md:flex-row' : 'flex-col',
+        // xl floor = PPC's full description (6 bullets) at 1280px, measured at 349px, so every row is equal and no panel clips.
+        'flex-col md:min-h-72 xl:min-h-[22rem]',
       )}
     >
-      <div aria-hidden={open} className={cn('flex flex-1', wide ? 'flex-col md:flex-row' : 'flex-col', open && 'max-xl:hidden xl:invisible')}>
-        <div className={cn('flex flex-col px-6 pt-6', wide ? 'pb-4 md:w-[46%] md:pb-6' : 'pb-4')}>
+      <div
+        aria-hidden={open}
+        className={cn(
+          'flex flex-1 flex-col',
+          imageLeft ? 'md:flex-row-reverse' : 'md:flex-row',
+          open && 'max-xl:hidden xl:invisible',
+        )}
+      >
+        <div className="flex flex-col px-6 pb-4 pt-6 md:w-[46%] md:px-8 md:pb-6 md:pt-7">
           <div className="flex items-center gap-3">
             <span className="text-xs font-semibold tabular-nums text-cobalt transition-colors group-hover:text-mist group-focus-within:text-mist">
               {number}
@@ -81,16 +89,13 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
           </button>
         </div>
         <div
-          className={cn(
-            'relative overflow-hidden',
-            wide ? 'aspect-[16/10] md:aspect-auto md:min-h-64 md:flex-1' : 'mt-auto aspect-[16/10]',
-          )}
+          className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:flex-1"
         >
           <Image
             src={art}
             alt={alt}
             fill
-            sizes={wide ? '(min-width: 768px) 55vw, 100vw' : '(min-width: 640px) 50vw, 100vw'}
+            sizes="(min-width: 768px) 55vw, 100vw"
             className="object-cover object-center"
           />
         </div>
@@ -99,7 +104,7 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
       <div
         id={panelId}
         hidden={!open}
-        className="flex w-full flex-col bg-ink px-6 pt-6 text-[0.95rem] leading-relaxed text-mist xl:absolute xl:inset-0"
+        className="flex w-full flex-col bg-ink px-6 pt-6 text-[0.95rem] leading-relaxed text-mist md:px-8 md:pt-7 xl:absolute xl:inset-0"
       >
         <h3 className="text-balance font-display text-xl font-semibold leading-tight text-white lg:text-[1.375rem]">{name}</h3>
         <div className="mt-3 flex flex-1 flex-col gap-3">
@@ -109,7 +114,7 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
             </p>
           ))}
           {bullets?.length ? (
-            <ul className="grid list-disc gap-x-8 gap-y-1 pl-5 sm:grid-cols-2">
+            <ul className="grid list-disc gap-x-8 gap-y-1 pl-5 sm:grid-cols-2 xl:grid-cols-3">
               {bullets.map((item) => (
                 <li key={item}>{item}</li>
               ))}
