@@ -3,7 +3,7 @@
 import { useId, useState, type ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 type Props = {
@@ -15,24 +15,40 @@ type Props = {
   icon: ReactNode
   art: string
   alt: string
-  ground: string
+  /** Accent for the headline's closing sentence and the number: cobalt for most, sage for Training. */
+  accent: 'cobalt' | 'sage'
   to: string
   labels: { more: string; less: string; view: string }
-  /** Every tile is a flat full-width row; this puts the image on the left instead of the right. */
+  /** Every tile is a full-width row; this puts the image on the left instead of the right. */
   imageLeft?: boolean
 }
 
+/** "Your clients. Your brand. Our expertise." -> lead "Your clients. Your brand." + accent "Our expertise." */
+function splitTagline(tagline: string) {
+  const parts = tagline.match(/[^.!?]+[.!?]?/g)?.map((s) => s.trim()).filter(Boolean) ?? [tagline]
+  if (parts.length < 2) {
+    // One sentence: accent its closing half, so a long headline never turns entirely blue.
+    const words = tagline.split(' ')
+    const cut = Math.ceil(words.length / 2)
+    return { lead: words.slice(0, cut).join(' '), accent: words.slice(cut).join(' ') }
+  }
+  return { lead: parts.slice(0, -1).join(' '), accent: parts[parts.length - 1] }
+}
+
 /*
- * Hover turns the tile dark; a click anywhere on it swaps the front for the description in
- * the same box (it never grows). Moving the pointer off the tile, or focus leaving it,
- * returns it to its resting state, so there is no close button.
- * The panel never scrolls: from xl up the tiles are large enough to hold every description,
- * below xl (PPC's six bullets outgrow a narrow tile) the description replaces the front in flow.
+ * Editorial service card: eyebrow, a large headline whose closing sentence carries the accent,
+ * a short excerpt, a pill CTA, and the photograph in an arched frame.
+ * Hover turns the card dark; a click anywhere swaps the front for the full description in the
+ * same box. Moving the pointer off (or focus leaving) returns it to rest, so there is no close button.
+ * From xl up the panel overlays the card, whose floor is tall enough for the longest description
+ * (PPC, six bullets); below xl the description replaces the front in flow, so it never scrolls.
  */
-export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, ground, to, labels, imageLeft }: Props) {
+export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, art, alt, accent, to, labels, imageLeft }: Props) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
   const [excerpt] = paragraphs
+  const { lead, accent: accentLine } = splitTagline(tagline)
+  const accentText = accent === 'sage' ? 'text-sage' : 'text-cobalt'
 
   return (
     <li
@@ -43,60 +59,74 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false)
       }}
       className={cn(
-        'group relative flex cursor-pointer overflow-hidden rounded-2xl transition-colors duration-200',
-        ground,
-        'hover:bg-ink focus-within:bg-ink data-[open=true]:bg-ink',
-        // xl floor = PPC's full description (6 bullets) at 1280px, measured at 349px, so every row is equal and no panel clips.
-        'flex-col md:min-h-72 xl:min-h-[22rem]',
+        'group relative flex cursor-pointer flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-hairline transition-colors duration-300',
+        'hover:bg-ink hover:ring-ink focus-within:bg-ink focus-within:ring-ink data-[open=true]:bg-ink data-[open=true]:ring-ink',
+        // 25rem = PPC's full description (six bullets) at xl, measured, so the overlay never clips.
+        'md:min-h-[25rem]',
       )}
     >
       <div
         aria-hidden={open}
         className={cn(
-          'flex flex-1 flex-col',
+          'flex flex-1 flex-col gap-3 p-3',
           imageLeft ? 'md:flex-row-reverse' : 'md:flex-row',
           open && 'max-xl:hidden xl:invisible',
         )}
       >
-        <div className="flex flex-col px-6 pb-4 pt-6 md:w-[46%] md:px-8 md:pb-6 md:pt-7">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold tabular-nums text-cobalt transition-colors group-hover:text-mist group-focus-within:text-mist">
-              {number}
-            </span>
-            {icon}
+        <div className="flex flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-7 md:pt-8 lg:px-10">
+          <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.14em] text-slate transition-colors group-hover:text-mist group-focus-within:text-mist">
+            <span className={cn('tabular-nums font-semibold', accentText)}>{number}</span>
+            <span aria-hidden className="h-px w-6 bg-hairline transition-colors group-hover:bg-white/20" />
+            <span className="truncate">{name}</span>
           </div>
-          <h3 className="mt-3 text-balance font-display text-xl font-semibold leading-tight text-ink transition-colors lg:text-[1.375rem] group-hover:text-white group-focus-within:text-white">
-            {name}
+
+          <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink transition-colors md:text-[2rem] lg:text-[2.375rem] group-hover:text-white group-focus-within:text-white">
+            {lead ? <span className="block">{lead}</span> : null}
+            <span className={cn('block', accentText)}>{accentLine}</span>
           </h3>
-          <p className="mt-2 text-pretty text-[0.95rem] font-medium leading-snug text-ink transition-colors group-hover:text-white/90 group-focus-within:text-white/90">
-            {tagline}
-          </p>
-          <p className="mt-2 line-clamp-2 text-pretty text-[0.9rem] leading-relaxed text-slate transition-colors group-hover:text-mist group-focus-within:text-mist">
+
+          <p className="mt-4 line-clamp-3 max-w-md text-pretty text-[0.95rem] leading-relaxed text-slate transition-colors group-hover:text-mist group-focus-within:text-mist">
             {excerpt}
           </p>
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-controls={panelId}
-            onClick={(e) => {
-              e.stopPropagation()
-              setOpen((v) => !v)
-            }}
-            className="mt-auto inline-flex items-center gap-2 self-start pt-4 text-sm font-semibold text-ink transition-colors group-hover:text-white group-focus-within:text-white focus-visible:outline-none"
-          >
-            {labels.more}
-            <ArrowRight aria-hidden className="size-4" />
-          </button>
+
+          <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-6">
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls={panelId}
+              onClick={(e) => {
+                e.stopPropagation()
+                setOpen((v) => !v)
+              }}
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors group-hover:bg-white group-hover:text-ink group-focus-within:bg-white group-focus-within:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2"
+            >
+              {labels.more}
+              <ArrowUpRight aria-hidden className="size-4" />
+            </button>
+            <Link
+              href={to}
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-ink transition-colors hover:underline group-hover:text-white group-focus-within:text-white"
+            >
+              {icon}
+              {labels.view}
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+          </div>
         </div>
+
         <div
-          className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:flex-1"
+          className={cn(
+            'relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:flex-1',
+            imageLeft ? 'md:rounded-tr-[10rem]' : 'md:rounded-tl-[10rem]',
+          )}
         >
           <Image
             src={art}
             alt={alt}
             fill
-            sizes="(min-width: 768px) 55vw, 100vw"
-            className="object-cover object-center"
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
       </div>
@@ -104,12 +134,19 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
       <div
         id={panelId}
         hidden={!open}
-        className="flex w-full flex-col bg-ink px-6 pt-6 text-[0.95rem] leading-relaxed text-mist md:px-8 md:pt-7 xl:absolute xl:inset-0"
+        className="flex w-full flex-col bg-ink px-7 pt-7 text-[0.95rem] leading-relaxed text-mist md:px-11 md:pt-9 xl:absolute xl:inset-0"
       >
-        <h3 className="text-balance font-display text-xl font-semibold leading-tight text-white lg:text-[1.375rem]">{name}</h3>
+        <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.14em] text-mist">
+          <span className={cn('tabular-nums font-semibold', accentText)}>{number}</span>
+          <span aria-hidden className="h-px w-6 bg-white/20" />
+          <span>{name}</span>
+        </div>
+        <p className="mt-4 text-balance font-display text-2xl font-semibold leading-tight tracking-tight text-white">
+          {tagline}
+        </p>
         <div className="mt-3 flex flex-1 flex-col gap-3">
           {paragraphs.map((p) => (
-            <p key={p} className="text-pretty">
+            <p key={p} className="max-w-4xl text-pretty">
               {p}
             </p>
           ))}
@@ -121,11 +158,11 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, icon, 
             </ul>
           ) : null}
         </div>
-        <div className="flex min-h-14 items-center">
+        <div className="flex min-h-16 items-center">
           <Link
             href={to}
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 font-semibold text-white hover:underline"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-mist"
           >
             {labels.view} <ArrowRight aria-hidden className="size-4" />
           </Link>

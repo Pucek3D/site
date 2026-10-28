@@ -265,7 +265,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 }
                 art={v.art}
                 alt={v.alt}
-                ground={v.ground}
+                accent={i === TRAINING_INDEX ? 'sage' : 'cobalt'}
                 to={href(locale, serviceTarget[i])}
                 labels={TILE_LABELS[locale]}
                 imageLeft={row % 2 === 1}
