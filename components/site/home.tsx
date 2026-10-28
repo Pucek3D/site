@@ -189,7 +189,7 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
             {p}
           </p>
         ))}
-  <div className="relative aspect-[1781/883] overflow-hidden rounded-2xl lg:col-span-6 xl:col-span-3 xl:col-start-4">
+  <div className="relative aspect-[1672/941] overflow-hidden rounded-2xl lg:col-span-6 xl:col-span-3 xl:col-start-4">
   <Image src="/images/parcels.png" alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
         <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-6">
