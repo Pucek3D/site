@@ -93,7 +93,8 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
           <Logo variant="horizontal" height={60} alt="" priority />
         </Link>
 
-        <nav aria-label={nav.primaryLabel} className="hidden lg:block">
+        {/* xl, not lg: at 1024px the PL and DE labels push the header 14–42px past the viewport. */}
+        <nav aria-label={nav.primaryLabel} className="hidden xl:block">
           <ul className="flex items-center gap-2">
             <li>
               <Link href={href(locale, 'home')} aria-current={page === 'home' ? 'page' : undefined} className={linkClass(page === 'home')}>
@@ -152,7 +153,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <LanguageSwitcher current={locale} label={nav.language} />
           </div>
           {cta ? (
@@ -166,7 +167,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             aria-label={nav.openMenu}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="inline-flex size-11 items-center justify-center rounded-md text-ink hover:bg-porcelain lg:hidden"
+            className="inline-flex size-11 items-center justify-center rounded-md text-ink hover:bg-porcelain xl:hidden"
           >
             <Menu className="size-6" aria-hidden />
           </button>

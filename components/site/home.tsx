@@ -48,38 +48,43 @@ export function HomePage({ locale, copy, labels }: { locale: Locale; copy: Partn
 function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const hero = copy.home.hero
   return (
-    <section className="relative overflow-hidden border-b border-hairline bg-white">
+    <section className="relative flex flex-col-reverse overflow-hidden border-b border-hairline bg-white lg:block">
       {/* Photo bleeds to the right viewport edge on desktop; the text column never sits under it. */}
-      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[56%]">
+      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%]">
         <Image
           src="/images/hero-analyst.png"
-          alt="Amazon PPC specialist reviewing campaign performance on her laptop"
+          alt="Professional reviewing advertising analysis at a laptop (illustrative photography)"
           fill
           priority
-          sizes="(min-width: 1024px) 56vw, 100vw"
-          className="object-cover object-[78%_center]"
-          style={{
-            maskImage: 'linear-gradient(to right, transparent 0%, #000 22%)',
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 22%)',
-          }}
+          sizes="(min-width: 1024px) 58vw, 100vw"
+          className="adelier-hero-photo object-cover object-[58%_center]"
         />
         <HeroInterface />
       </div>
 
       <Container className="relative">
-        <div className="flex flex-col gap-6 py-12 lg:min-h-[600px] lg:w-[46%] lg:justify-center lg:py-16 lg:pr-8">
+        <div className="flex flex-col gap-5 py-12 lg:min-h-[560px] lg:w-[48%] lg:justify-center lg:py-11 lg:pr-3">
           {hero.eyebrow ? <Eyebrow>{hero.eyebrow}</Eyebrow> : null}
-          <h1 className="max-w-[16ch] font-display text-[2.5rem] font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl xl:text-[3.5rem]">
-            <Sentences text={hero.title} breakAt="always" />
+          <h1 className="max-w-[17ch] font-display text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] lg:max-w-none lg:text-[2.35rem] xl:text-[2.75rem]">
+            {/* The middle line is the widest; nowrap only applies where the column is measured to hold it. */}
+            {locale === 'en' && hero.title === 'Smarter Amazon Advertising. More Control. Better Performance.' ? (
+              <>
+                <span className="lg:block lg:whitespace-nowrap">Smarter Amazon{' '}</span>
+                <span className="lg:block lg:whitespace-nowrap">Advertising. More Control.{' '}</span>
+                <span className="lg:block lg:whitespace-nowrap">Better Performance.</span>
+              </>
+            ) : (
+              <Sentences text={hero.title} breakAt="lg" />
+            )}
           </h1>
-          <div className="flex max-w-[58ch] flex-col gap-4 text-base leading-relaxed text-slate xl:text-[1.0625rem]">
+          <div className="flex max-w-[58ch] flex-col gap-3 text-[0.9375rem] leading-[1.65] text-slate xl:text-base">
             {hero.paragraphs.map((p) => (
               <p key={p} className="text-pretty">
                 {p}
               </p>
             ))}
           </div>
-          <p className="border-l-2 border-sage pl-4 text-pretty text-lg font-semibold leading-snug text-ink">
+          <p className="border-l-2 border-sage pl-4 text-pretty text-[1rem] font-semibold leading-snug text-ink">
             <Sentences text={hero.closingLine} />
           </p>
           <div className="flex flex-wrap gap-3 pt-1">
@@ -111,7 +116,7 @@ function HeroInterface() {
   const card = 'absolute rounded-xl border border-white/70 bg-white/95 shadow-[0_18px_40px_-18px_rgba(16,24,40,0.35)] backdrop-blur'
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-      <div className={cn(card, 'left-[6%] top-[30%] w-[30%] max-w-[220px] p-3 lg:left-[2%]')}>
+      <div className={cn(card, 'left-[9%] top-[31%] w-[30%] max-w-[220px] p-3 lg:left-[12%]')}>
         <ul className="flex flex-col gap-2.5">
           {capabilities.map(({ Icon, label, tone }) => (
             <li key={label} className="flex items-center gap-2.5 text-[0.8125rem] font-medium text-ink">
@@ -171,26 +176,26 @@ function HeroInterface() {
 function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; eyebrow: string }) {
   const [first, ...rest] = copy.paragraphs
   return (
-    <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-16 md:py-20">
-      <Container className="grid gap-8 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
-        <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-4">
+    <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
+      <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-6">
+        <div className="flex flex-col gap-4 lg:col-span-4">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.5rem]">
+          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem]">
             {copy.title}
           </h2>
         </div>
-        <p className="text-pretty text-base leading-relaxed text-slate lg:col-span-4 lg:pt-10 xl:col-span-3">{first}</p>
-        <div className="flex flex-col gap-4 text-base leading-relaxed text-slate lg:col-span-4 lg:pt-10 xl:col-span-3">
+        <p className="text-pretty text-base leading-relaxed text-slate lg:col-span-4 lg:pt-8 xl:col-span-3 xl:text-[0.9375rem]">{first}</p>
+        <div className="flex flex-col gap-3 text-base leading-relaxed text-slate lg:col-span-4 lg:pt-8 xl:col-span-3 xl:text-[0.9375rem]">
           {rest.map((p) => (
             <p key={p} className="text-pretty">
               {p}
             </p>
           ))}
         </div>
-        <div className="relative hidden aspect-[4/5] self-start overflow-hidden rounded-2xl xl:col-span-2 xl:block">
+        <div className="relative hidden aspect-[4/5] self-start overflow-hidden rounded-2xl xl:col-span-2 xl:mt-6 xl:block">
           <Image src="/images/parcels.png" alt="" fill sizes="16vw" className="object-cover object-center" />
         </div>
-        <p className="border-l-2 border-sage pl-4 text-xl font-semibold leading-snug text-ink md:col-span-2 lg:col-span-8 lg:col-start-5">
+        <p className="border-l-2 border-sage pl-4 text-[1.0625rem] font-semibold leading-snug text-ink lg:col-span-8 lg:col-start-5">
           <Sentences text={copy.closingLine} breakAt="always" />
         </p>
       </Container>
@@ -202,48 +207,55 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 
 const services = [
   { dark: true, ground: 'bg-ink', Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard' },
-  { dark: false, ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label.png', alt: 'Two professionals shaking hands over a desk' },
+  { dark: false, ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label.png', alt: 'Two business representatives greeting one another beside a laptop' },
   { dark: false, ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
   { dark: false, ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training.png', alt: 'Laptop showing an online training lesson' },
   { dark: false, ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
 ]
 
+const EXPLORE_ALL: Record<Locale, string> = {
+  en: 'Explore all services',
+  pl: 'Zobacz wszystkie usługi',
+  de: 'Alle Leistungen ansehen',
+}
+
 function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const w = copy.home.whatWeDo
   return (
-    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-porcelain py-16 md:py-20">
+    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-porcelain py-14 md:py-16">
       <Container>
         <div className="flex items-center justify-between gap-4">
           <h2 id="what-we-do-title" className="flex items-center gap-3 font-sans text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">
             <span aria-hidden className="h-px w-6 bg-sage" />
             {w.title}
           </h2>
-          <Link href={href(locale, 'services')} className="flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-ink hover:text-cobalt">
-            Explore all services <ChevronRight aria-hidden className="size-4" />
+          {/* No services index page exists (the header's Services item is a dropdown), so this opens the first service. */}
+          <Link href={href(locale, 'ppc')} className="flex items-center gap-1 whitespace-nowrap text-sm font-semibold text-ink hover:text-cobalt">
+            {EXPLORE_ALL[locale]} <ChevronRight aria-hidden className="size-4" />
           </Link>
         </div>
         {/* Cards keep equal collapsed heights by reserving fixed line counts for each text slot. */}
-        <ul className="mt-8 grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3 min-[85rem]:grid-cols-5">
+        <ul className="mt-7 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {w.items.map((s, i) => {
             const v = services[i]
             const [excerpt, ...more] = s.paragraphs
             return (
               <li key={s.number} className={cn('flex flex-col overflow-hidden rounded-2xl', v.ground)}>
-                <div className="flex flex-col p-5 pb-4">
+                <div className="flex flex-col px-5 pb-3 pt-5">
                   <div className="flex items-center gap-3">
                     <span className={cn('text-xs font-semibold tabular-nums', v.dark ? 'text-mist' : 'text-cobalt')}>{s.number}</span>
                     <v.Icon aria-hidden className={cn('size-5', v.dark ? 'text-mist' : i === 3 ? 'text-sage' : 'text-cobalt')} />
                   </div>
-                  <h3 className={cn('mt-3 min-h-[4.6875rem] text-balance font-display text-xl font-semibold leading-tight', v.dark ? 'text-white' : 'text-ink')}>
+                  <h3 className={cn('mt-3 text-balance sm:min-h-[4.75rem] font-display text-lg font-semibold leading-[1.22] xl:text-[1.125rem]', v.dark ? 'text-white' : 'text-ink')}>
                     {s.name}
                   </h3>
-                  <p className={cn('mt-2 min-h-[2.75rem] text-pretty text-[0.9375rem] font-medium leading-snug', v.dark ? 'text-white/90' : 'text-ink')}>{s.tagline}</p>
-                  <p className={cn('mt-2 line-clamp-3 min-h-[4.125rem] text-pretty text-sm leading-relaxed', v.dark ? 'text-mist' : 'text-slate')}>
+                  <p className={cn('mt-2 text-pretty sm:min-h-[3.65rem] text-[0.9rem] font-medium leading-snug', v.dark ? 'text-white/90' : 'text-ink')}>{s.tagline}</p>
+                  <p className={cn('mt-2 line-clamp-2 min-h-[3rem] text-pretty text-[0.875rem] leading-relaxed', v.dark ? 'text-mist' : 'text-slate')}>
                     {excerpt}
                   </p>
                 </div>
-                <div className="relative aspect-[16/10]">
-                  <Image src={v.art} alt={v.alt} fill sizes="(min-width: 1360px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover object-right" />
+                <div className="relative mt-auto aspect-[16/10] overflow-hidden">
+                  <Image src={v.art} alt={v.alt} fill sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover object-center" />
                 </div>
                 <details className="group/d">
                   <summary
@@ -261,6 +273,11 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                     {more.map((p) => (
                       <p key={p}>{p}</p>
                     ))}
+                    {s.bullets?.length ? (
+                      <ul className="list-disc space-y-1 pl-5">
+                        {s.bullets.map((item) => <li key={item}>{item}</li>)}
+                      </ul>
+                    ) : null}
                     <Link
                       href={href(locale, serviceTarget[i])}
                       className={cn('mt-1 inline-flex items-center gap-1.5 font-semibold', v.dark ? 'text-white' : 'text-cobalt')}
@@ -284,30 +301,31 @@ const approachIcons = [UserRound, RefreshCw, ChartPie, MessagesSquare, SlidersHo
 
 function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; eyebrow: string }) {
   return (
-    <section aria-labelledby="approach" className="border-b border-hairline bg-white py-16 md:py-20">
-      <Container className="flex flex-col gap-12">
-        <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
-          <div className="flex flex-col gap-4 lg:col-span-6">
+    <section aria-labelledby="approach" className="border-b border-hairline bg-white py-10 md:py-12">
+      {/* Wide desktop matches the approved layout: intro is the first of six columns, beside the five pillars. */}
+      <Container className="flex flex-col gap-9 xl:flex-row xl:gap-8">
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-end xl:flex xl:w-[21%] xl:shrink-0 xl:flex-col xl:items-start xl:gap-3">
+          <div className="flex flex-col gap-4 lg:col-span-6 xl:gap-3">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 id="approach" className="text-balance font-display text-3xl font-bold uppercase leading-tight tracking-tight text-ink md:text-[2.25rem]">
+            <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.14] tracking-tight text-ink md:text-[2rem] xl:text-[1.625rem]">
               {copy.title}
             </h2>
           </div>
           <div className="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
-            <p className="text-pretty text-lg font-semibold text-cobalt">{copy.subtitle}</p>
-            <p className="max-w-[56ch] text-pretty text-base leading-relaxed text-slate">{copy.intro}</p>
+            <p className="text-pretty text-lg font-semibold text-cobalt xl:text-base">{copy.subtitle}</p>
+            <p className="max-w-[56ch] text-pretty text-base leading-relaxed text-slate xl:text-[0.875rem]">{copy.intro}</p>
           </div>
         </div>
-        <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 min-[85rem]:grid-cols-5 min-[85rem]:gap-0 min-[85rem]:divide-x min-[85rem]:divide-hairline">
+        <ul className="grid min-w-0 flex-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-0 xl:divide-x xl:divide-hairline">
           {copy.items.map((it, i) => {
             const Icon = approachIcons[i]
             return (
-              <li key={it.title} className="flex flex-col gap-3 min-[85rem]:px-6 min-[85rem]:first:pl-0 min-[85rem]:last:pr-0">
+              <li key={it.title} className="flex min-w-0 flex-col gap-3 hyphens-auto break-words xl:px-5 xl:first:pl-0 xl:last:pr-0">
                 <span className="flex size-11 items-center justify-center rounded-lg bg-cobalt-tint text-cobalt">
                   <Icon aria-hidden className="size-5" />
                 </span>
                 <h3 className="text-base font-semibold leading-snug text-ink">{it.title}</h3>
-                <p className="text-pretty text-[0.9375rem] leading-relaxed text-slate">{it.body}</p>
+                <p className="text-pretty text-[0.875rem] leading-relaxed text-slate">{it.body}</p>
               </li>
             )
           })}
@@ -325,20 +343,20 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
     { ...copy.agencies, to: href(locale, 'agencies'), image: '/images/agency-team.png', alt: 'Two agency colleagues reviewing PPC work on a laptop', dark: true },
   ]
   return (
-    <section aria-labelledby="audiences" className="bg-white py-16 md:py-20">
+    <section aria-labelledby="audiences" className="bg-white py-14 md:py-16">
       <Container>
         <h2 id="audiences" className="sr-only">
           {copy.title}
         </h2>
-        <div className="grid gap-6 xl:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-2">
           {panels.map((p) => (
             <article key={p.title} className="grid overflow-hidden rounded-2xl border border-hairline sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-              <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[340px]">
+              <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[270px]">
                 <Image src={p.image} alt={p.alt} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 45vw, 100vw" className="object-cover" />
               </div>
-              <div className={cn('flex flex-col gap-4 p-7 lg:p-9', p.dark ? 'bg-ink' : 'bg-cobalt-tint')}>
-                <h3 className={cn('font-display text-2xl font-semibold', p.dark ? 'text-white' : 'text-ink')}>{p.title}</h3>
-                <div className={cn('flex flex-col gap-3 text-[0.9375rem] leading-relaxed', p.dark ? 'text-mist' : 'text-slate')}>
+              <div className={cn('flex flex-col gap-3 p-6 lg:p-6', p.dark ? 'bg-ink' : 'bg-cobalt-tint')}>
+                <h3 className={cn('font-display text-[1.375rem] font-semibold', p.dark ? 'text-white' : 'text-ink')}>{p.title}</h3>
+                <div className={cn('flex flex-col gap-3 text-[0.875rem] leading-relaxed', p.dark ? 'text-mist' : 'text-slate')}>
                   {p.paragraphs.map((para) => (
                     <p key={para} className="text-pretty">
                       {para}
@@ -346,7 +364,7 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
                   ))}
                 </div>
                 <div className="mt-auto pt-2">
-                  <CtaLink href={p.to} variant={p.dark ? 'sage' : 'primary'} className="min-h-11 whitespace-nowrap px-5 text-sm">
+                  <CtaLink href={p.to} variant={p.dark ? 'sage' : 'primary'} className="min-h-11 max-w-full px-5 text-left text-sm">
                     {p.cta}
                     <ArrowRight aria-hidden className="size-4" />
                   </CtaLink>

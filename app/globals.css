@@ -170,3 +170,12 @@
     animation: none !important;
   }
 }
+
+/* The approved hero uses a separate photographic asset. Fade its left edge only
+   when the live text and image share a horizontal desktop canvas. */
+@media (min-width: 1024px) {
+  .adelier-hero-photo {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 23%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 23%);
+  }
+}
