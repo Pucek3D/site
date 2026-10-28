@@ -61,8 +61,9 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
 
   const serviceName = (k: ServicePage) => copy.pageNames[k]
   const groups = [
-    { title: copy.audiences.brands.title, summary: copy.audiences.brands.summary, keys: brandServiceKeys as readonly ServicePage[] },
-    { title: copy.audiences.agencies.title, summary: copy.audiences.agencies.summary, keys: ['agencies'] as readonly ServicePage[] },
+    { title: copy.audiences.brands.title, keys: brandServiceKeys as readonly ServicePage[] },
+    // Same page as the top-level "For Agencies" link: href(locale, 'agencies').
+    { title: copy.audiences.agencies.title, keys: ['agencies'] as readonly ServicePage[] },
   ]
   // For Agencies is its own top-level item (partner PDF nav), so it no longer lights up Services.
   const inServices = (serviceKeys as readonly PageKey[]).includes(page) && page !== 'agencies'
@@ -115,11 +116,11 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
               {servicesOpen ? (
                 <div
                   id="services-menu"
-                  className="absolute left-1/2 top-full z-50 mt-2 grid w-[640px] -translate-x-1/2 grid-cols-2 gap-8 rounded-xl border border-hairline bg-white p-7 shadow-[0_18px_40px_-20px_rgba(16,24,40,0.35)]"
+                  className="absolute left-1/2 top-full z-50 mt-2 flex w-max max-w-[calc(100vw-2rem)] -translate-x-1/2 gap-10 rounded-xl border border-hairline bg-white px-6 py-5 shadow-[0_18px_40px_-20px_rgba(16,24,40,0.35)]"
                 >
                   {groups.map((g) => (
-                    <div key={g.title} className="flex flex-col gap-3">
-                      <p className="text-xs font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
+                    <div key={g.title} className="flex flex-col gap-1.5">
+                      <p className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
                       <ul className="flex flex-col">
                         {g.keys.map((k) => (
                           <li key={k}>
@@ -127,8 +128,8 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
                               href={href(locale, k)}
                               aria-current={page === k ? 'page' : undefined}
                               className={cn(
-                                'flex min-h-11 items-center rounded-md py-1 font-display text-[1.0625rem] leading-snug hover:text-cobalt',
-                                page === k ? 'font-semibold text-cobalt' : 'text-ink',
+                                'flex min-h-10 items-center whitespace-nowrap rounded-md font-sans text-sm leading-snug hover:text-cobalt',
+                                page === k ? 'font-medium text-cobalt' : 'text-ink',
                               )}
                             >
                               {serviceName(k)}
@@ -136,7 +137,6 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
                           </li>
                         ))}
                       </ul>
-                      <p className="text-pretty text-sm leading-relaxed text-slate">{g.summary}</p>
                     </div>
                   ))}
                 </div>
@@ -206,7 +206,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             </Link>
             {groups.map((g) => (
               <div key={g.title} className="border-b border-hairline py-4">
-                <p className="mb-1 text-xs font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
+                <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{g.title}</p>
                 <ul>
                   {g.keys.map((k) => (
                     <li key={k}>
