@@ -175,28 +175,24 @@ function HeroInterface() {
 /* ------------------------------------------------------------- Autopilot */
 
 function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; eyebrow: string }) {
-  const [first, ...rest] = copy.paragraphs
   return (
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
-      <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-6">
-        <div className="flex flex-col gap-4 lg:col-span-4">
+      <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8">
+        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem]">
+          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.125rem]">
             {copy.title}
           </h2>
         </div>
-        <p className="text-pretty text-base leading-relaxed text-slate lg:col-span-4 lg:pt-8 xl:col-span-3 xl:text-[0.9375rem]">{first}</p>
-        <div className="flex flex-col gap-3 text-base leading-relaxed text-slate lg:col-span-4 lg:pt-8 xl:col-span-3 xl:text-[0.9375rem]">
-          {rest.map((p) => (
-            <p key={p} className="text-pretty">
-              {p}
-            </p>
-          ))}
+        {copy.paragraphs.map((p) => (
+          <p key={p} className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:pt-8 xl:text-[0.9375rem]">
+            {p}
+          </p>
+        ))}
+        <div className="relative aspect-[16/7] overflow-hidden rounded-2xl lg:col-span-6 xl:col-span-3 xl:col-start-4">
+          <Image src="/images/parcels.png" alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw" className="object-cover object-center" />
         </div>
-        <div className="relative hidden aspect-[4/5] self-start overflow-hidden rounded-2xl xl:col-span-2 xl:mt-6 xl:block">
-          <Image src="/images/parcels.png" alt="" fill sizes="16vw" className="object-cover object-center" />
-        </div>
-        <p className="border-l-2 border-sage pl-4 text-[1.0625rem] font-semibold leading-snug text-ink lg:col-span-8 lg:col-start-5">
+        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-6">
           <Sentences text={copy.closingLine} breakAt="always" />
         </p>
       </Container>
