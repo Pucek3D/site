@@ -204,7 +204,7 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 
 const services = [
   { ground: 'bg-cobalt-tint', Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard' },
-  { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop' },
+  { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '50% 15%' },
   { ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
   { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training.png', alt: 'Laptop showing an online training lesson' },
   { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
@@ -265,6 +265,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 }
                 art={v.art}
                 alt={v.alt}
+                focus={'focus' in v ? v.focus : undefined}
                 accent={i === TRAINING_INDEX ? 'sage' : 'cobalt'}
                 to={href(locale, serviceTarget[i])}
                 labels={TILE_LABELS[locale]}
