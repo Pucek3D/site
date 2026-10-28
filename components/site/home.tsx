@@ -190,7 +190,7 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
           </p>
         ))}
         <div className="relative aspect-[16/7] overflow-hidden rounded-2xl lg:col-span-6 xl:col-span-3 xl:col-start-4">
-          <Image src="/images/parcels.png" alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw" className="object-cover object-center" />
+          <Image src="/images/parcels.png" alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw" className="object-cover object-[50%_30%]" />
         </div>
         <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-6">
           <Sentences text={copy.closingLine} breakAt="always" />
@@ -330,7 +330,7 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
 
 function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
   const panels = [
-    { ...copy.brands, to: href(locale, 'ppc'), image: '/images/svc/brands.png', alt: 'Stacked Amazon shipping boxes in front of a rising growth arrow', dark: false, focus: '100% 30%' },
+    { ...copy.brands, to: href(locale, 'ppc'), image: '/images/svc/brands.png', alt: 'Consumer products beside an open shipping box', dark: false },
     { ...copy.agencies, to: href(locale, 'agencies'), image: '/images/agency-team.png', alt: 'Two agency colleagues reviewing PPC work on a laptop', dark: true },
   ]
   return (
