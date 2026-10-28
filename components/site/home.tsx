@@ -107,17 +107,19 @@ function HeroInterface() {
   const capabilities = [
     { Icon: CircleCheck, label: 'Bid optimisation', tone: 'text-sage bg-sage-tint' },
     { Icon: SquareUserRound, label: 'Keyword analysis', tone: 'text-cobalt bg-cobalt-tint' },
-    { Icon: Search, label: 'Search term insights', tone: 'text-cobalt bg-cobalt-tint' },
+    { Icon: Search, label: 'Search term analysis', tone: 'text-cobalt bg-cobalt-tint' },
     { Icon: ChartColumn, label: 'Performance reporting', tone: 'text-sage bg-sage-tint' },
   ]
-  const sales = [30, 34, 33, 42, 40, 52, 50, 62, 70]
-  const acos = [18, 20, 19, 24, 23, 27, 30, 32, 38]
-  const bars = [14, 18, 16, 22, 20, 26, 30, 36, 44]
+  // Schematic series: the three move independently, so no line reads as the reward for another.
+  const sales = [36, 40, 37, 43, 41, 45, 42, 46, 44]
+  const acos = [24, 22, 25, 23, 21, 23, 22, 24, 22]
+  const bars = [17, 19, 18, 21, 19, 22, 20, 22, 21]
   const line = (pts: number[]) => pts.map((v, i) => `${(i / (pts.length - 1)) * 200},${80 - v}`).join(' ')
   const card = 'absolute rounded-xl border border-white/70 bg-white/95 shadow-[0_18px_40px_-18px_rgba(16,24,40,0.35)] backdrop-blur'
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-      <div className={cn(card, 'left-[9%] top-[31%] w-[30%] max-w-[220px] p-3 lg:left-[12%]')}>
+      {/* Sits low on the photo's faded left edge, clear of her face. */}
+      <div className={cn(card, 'bottom-[9%] left-[5%] w-[30%] max-w-[210px] p-3 lg:left-[10%]')}>
         <ul className="flex flex-col gap-2.5">
           {capabilities.map(({ Icon, label, tone }) => (
             <li key={label} className="flex items-center gap-2.5 text-[0.8125rem] font-medium text-ink">
@@ -144,7 +146,11 @@ function HeroInterface() {
           <polyline points={line(acos)} fill="none" strokeWidth="2" className="stroke-sage" />
           <polyline points={line(sales)} fill="none" strokeWidth="2" className="stroke-cobalt" />
         </svg>
-        <div className="mt-2 flex gap-4 text-[0.6875rem] text-slate">
+        <div className="mt-2 flex gap-3 text-[0.6875rem] text-slate">
+          <span className="flex items-center gap-1.5">
+            <span className="size-2 rounded-sm bg-cobalt-tint ring-1 ring-cobalt/30" />
+            Spend
+          </span>
           <span className="flex items-center gap-1.5">
             <span className="size-2 rounded-full bg-cobalt" />
             Sales
@@ -160,7 +166,7 @@ function HeroInterface() {
       <div className={cn(card, 'bottom-[9%] right-[6%] w-[34%] max-w-[270px] p-4')}>
         <p className="text-[0.8125rem] font-semibold text-ink">Opportunity areas</p>
         <ul className="mt-2.5 flex flex-col gap-2 text-[0.75rem] text-slate">
-          {['Increase top search term visibility', 'Improve conversion on key ASINs', 'Optimise budget allocation'].map((t, i) => (
+          {['Search term coverage and visibility', 'Listing conversion on key ASINs', 'Budget allocation across campaigns'].map((t, i) => (
             <li key={t} className="flex items-start gap-2">
               <span className={cn('mt-1 size-2 shrink-0 rounded-full', i === 0 ? 'bg-sage' : 'bg-cobalt')} />
               {t}
