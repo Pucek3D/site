@@ -23,6 +23,7 @@ import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
 import { Container, CtaLink, Eyebrow } from './primitives'
 import { Sentences } from './typeset'
+import { ServiceTile } from './service-tile'
 
 type Labels = Dictionary['common']
 
@@ -206,12 +207,18 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 /* ------------------------------------------------------------ What we do */
 
 const services = [
-  { dark: true, ground: 'bg-ink', Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard' },
-  { dark: false, ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label.png', alt: 'Two business representatives greeting one another beside a laptop' },
-  { dark: false, ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
-  { dark: false, ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training.png', alt: 'Laptop showing an online training lesson' },
-  { dark: false, ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
+  { ground: 'bg-cobalt-tint', Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard' },
+  { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label.png', alt: 'Two business representatives greeting one another beside a laptop' },
+  { ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
+  { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training.png', alt: 'Laptop showing an online training lesson' },
+  { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
 ]
+
+const TILE_LABELS: Record<Locale, { more: string; less: string; view: string }> = {
+  en: { more: 'Read more', less: 'Show less', view: 'View service' },
+  pl: { more: 'Czytaj więcej', less: 'Zwiń', view: 'Zobacz usługę' },
+  de: { more: 'Mehr lesen', less: 'Weniger anzeigen', view: 'Leistung ansehen' },
+}
 
 const EXPLORE_ALL: Record<Locale, string> = {
   en: 'Explore all services',
@@ -238,55 +245,29 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
         <ul className="mt-7 grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {w.items.map((s, i) => {
             const v = services[i]
-            const [excerpt, ...more] = s.paragraphs
             return (
-              <li key={s.number} className={cn('flex flex-col overflow-hidden rounded-2xl', v.ground)}>
-                <div className="flex flex-col px-5 pb-3 pt-5">
-                  <div className="flex items-center gap-3">
-                    <span className={cn('text-xs font-semibold tabular-nums', v.dark ? 'text-mist' : 'text-cobalt')}>{s.number}</span>
-                    <v.Icon aria-hidden className={cn('size-5', v.dark ? 'text-mist' : i === 3 ? 'text-sage' : 'text-cobalt')} />
-                  </div>
-                  <h3 className={cn('mt-3 text-balance sm:min-h-[4.75rem] font-display text-lg font-semibold leading-[1.22] xl:text-[1.125rem]', v.dark ? 'text-white' : 'text-ink')}>
-                    {s.name}
-                  </h3>
-                  <p className={cn('mt-2 text-pretty sm:min-h-[3.65rem] text-[0.9rem] font-medium leading-snug', v.dark ? 'text-white/90' : 'text-ink')}>{s.tagline}</p>
-                  <p className={cn('mt-2 line-clamp-2 min-h-[3rem] text-pretty text-[0.875rem] leading-relaxed', v.dark ? 'text-mist' : 'text-slate')}>
-                    {excerpt}
-                  </p>
-                </div>
-                <div className="relative mt-auto aspect-[16/10] overflow-hidden">
-                  <Image src={v.art} alt={v.alt} fill sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover object-center" />
-                </div>
-                <details className="group/d">
-                  <summary
+              <ServiceTile
+                key={s.number}
+                number={s.number}
+                name={s.name}
+                tagline={s.tagline}
+                paragraphs={s.paragraphs}
+                bullets={s.bullets}
+                icon={
+                  <v.Icon
+                    aria-hidden
                     className={cn(
-                      'flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 text-sm font-semibold [&::-webkit-details-marker]:hidden',
-                      v.dark ? 'text-white' : 'text-ink',
+                      'size-5 transition-colors group-hover:text-mist group-focus-within:text-mist group-data-[open=true]:text-mist',
+                      i === 3 ? 'text-sage' : 'text-cobalt',
                     )}
-                  >
-                    <span className="group-open/d:hidden">Read full description</span>
-                    <span className="hidden group-open/d:inline">Show less</span>
-                    <ChevronDown aria-hidden className="size-4 transition-transform group-open/d:rotate-180" />
-                  </summary>
-                  <div className={cn('flex flex-col gap-3 px-5 pb-5 text-sm leading-relaxed', v.dark ? 'text-mist' : 'text-slate')}>
-                    <p>{excerpt}</p>
-                    {more.map((p) => (
-                      <p key={p}>{p}</p>
-                    ))}
-                    {s.bullets?.length ? (
-                      <ul className="list-disc space-y-1 pl-5">
-                        {s.bullets.map((item) => <li key={item}>{item}</li>)}
-                      </ul>
-                    ) : null}
-                    <Link
-                      href={href(locale, serviceTarget[i])}
-                      className={cn('mt-1 inline-flex items-center gap-1.5 font-semibold', v.dark ? 'text-white' : 'text-cobalt')}
-                    >
-                      View service <ArrowRight aria-hidden className="size-4" />
-                    </Link>
-                  </div>
-                </details>
-              </li>
+                  />
+                }
+                art={v.art}
+                alt={v.alt}
+                ground={v.ground}
+                to={href(locale, serviceTarget[i])}
+                labels={TILE_LABELS[locale]}
+              />
             )
           })}
         </ul>
