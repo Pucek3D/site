@@ -175,7 +175,15 @@
    when the live text and image share a horizontal desktop canvas. */
 @media (min-width: 1024px) {
   .adelier-hero-photo {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 23%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 23%);
+    -webkit-mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.5) 38%, #000 56%);
+    mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.5) 38%, #000 56%);
+  }
+  /* Scaled so the blur's soft border falls outside the frame instead of haloing the top/bottom edges. */
+  .adelier-hero-photo-blur {
+    filter: blur(22px) saturate(1.05);
+    transform: scale(1.12);
+    /* The scale moves 0% outside the clipped frame, so transparency must hold past it or the edge shows. */
+    -webkit-mask-image: linear-gradient(to right, transparent 8%, rgba(0, 0, 0, 0.6) 22%, #000 34%, #000 42%, transparent 62%);
+    mask-image: linear-gradient(to right, transparent 8%, rgba(0, 0, 0, 0.6) 22%, #000 34%, #000 42%, transparent 62%);
   }
 }

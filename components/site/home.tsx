@@ -52,6 +52,16 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
     <section className="relative flex flex-col-reverse overflow-hidden border-b border-hairline bg-white lg:block">
       {/* Photo bleeds to the right viewport edge on desktop; the text column never sits under it. */}
       <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%]">
+        {/* Same photo, blurred, under the sharp copy: it carries the soft dissolve where the photo meets the text. */}
+        <div aria-hidden className="absolute inset-0 hidden overflow-hidden lg:block">
+          <Image
+            src="/images/hero-analyst.png"
+            alt=""
+            fill
+            sizes="58vw"
+            className="adelier-hero-photo-blur object-cover object-[58%_center]"
+          />
+        </div>
         <Image
           src="/images/hero-analyst.png"
           alt="Professional reviewing advertising analysis at a laptop (illustrative photography)"
