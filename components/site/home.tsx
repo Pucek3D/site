@@ -207,7 +207,7 @@ const services = [
   { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%' },
   { ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
   { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Two colleagues reviewing work together on a laptop' },
-  { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
+  { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports', focus: '82% 55%' },
 ]
 
 const TILE_LABELS: Record<Locale, { more: string; less: string; view: string }> = {
@@ -296,7 +296,13 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
             </h2>
           </div>
           <div className="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
-            <p className="text-pretty text-lg font-semibold text-cobalt xl:text-base">{copy.subtitle}</p>
+            <p className="text-pretty text-lg font-semibold text-cobalt xl:text-base">
+              {copy.subtitle.split(/(?<=\.)\s+/).map((sentence) => (
+                <span key={sentence} className="block">
+                  {sentence}
+                </span>
+              ))}
+            </p>
             <p className="max-w-[56ch] text-pretty text-base leading-relaxed text-slate xl:text-[0.875rem]">{copy.intro}</p>
           </div>
         </div>
