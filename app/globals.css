@@ -175,15 +175,15 @@
    when the live text and image share a horizontal desktop canvas. */
 @media (min-width: 1024px) {
   .adelier-hero-photo {
-    -webkit-mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.5) 38%, #000 56%);
-    mask-image: linear-gradient(to right, transparent 22%, rgba(0, 0, 0, 0.5) 38%, #000 56%);
+  -webkit-mask-image: linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.55) 22%, #000 36%);
+  mask-image: linear-gradient(to right, transparent 10%, rgba(0, 0, 0, 0.55) 22%, #000 36%);
   }
   /* Scaled so the blur's soft border falls outside the frame instead of haloing the top/bottom edges. */
-  .adelier-hero-photo-blur {
-    filter: blur(22px) saturate(1.05);
-    transform: scale(1.12);
-    /* The scale moves 0% outside the clipped frame, so transparency must hold past it or the edge shows. */
-    -webkit-mask-image: linear-gradient(to right, transparent 8%, rgba(0, 0, 0, 0.6) 22%, #000 34%, #000 42%, transparent 62%);
-    mask-image: linear-gradient(to right, transparent 8%, rgba(0, 0, 0, 0.6) 22%, #000 34%, #000 42%, transparent 62%);
+ .adelier-hero-photo-blur {
+  filter: blur(8px) saturate(1.03);
+  transform: scale(1.05);
+  /* Only feathers the outer edge; the shoulder sits in the sharp layer past ~36%. */
+  -webkit-mask-image: linear-gradient(to right, transparent 4%, rgba(0, 0, 0, 0.6) 12%, #000 20%, transparent 36%);
+  mask-image: linear-gradient(to right, transparent 4%, rgba(0, 0, 0, 0.6) 12%, #000 20%, transparent 36%);
   }
 }
