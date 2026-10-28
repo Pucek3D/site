@@ -206,7 +206,7 @@ const services = [
   { ground: 'bg-cobalt-tint', Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard' },
   { ground: 'bg-cobalt-tint', Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%' },
   { ground: 'bg-cobalt-tint', Icon: UserRound, art: '/images/svc/specialists.png', alt: 'PPC specialist with a headset working on a laptop' },
-  { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training.png', alt: 'Laptop showing an online training lesson' },
+  { ground: 'bg-sage-tint', Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Two colleagues reviewing work together on a laptop' },
   { ground: 'bg-cobalt-tint', Icon: ChartPie, art: '/images/svc/audits.png', alt: 'Magnifying glass over printed performance reports' },
 ]
 
