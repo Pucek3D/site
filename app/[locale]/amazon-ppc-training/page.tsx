@@ -90,9 +90,7 @@ export default async function TrainingPage({ params }: Props) {
                 <div className="flex items-center gap-3">
                   <span aria-hidden className="size-2.5 shrink-0 rotate-45 border-2 border-sage bg-white" />
                   <span className="font-display text-sm font-semibold tabular-nums text-sage">{num(i)}</span>
-                  {i < t.experience.steps.length - 1 ? (
-                    <span aria-hidden className="hidden h-px flex-1 bg-gradient-to-r from-sage/60 to-sage/10 md:block" />
-                  ) : null}
+                      <span aria-hidden className="hidden h-px flex-1 bg-gradient-to-r from-sage/60 to-sage/10 md:block" />
                 </div>
                 <h3 className="text-pretty font-display text-xl font-semibold leading-snug text-ink">{s.title}</h3>
                 <p className="text-pretty leading-relaxed text-slate">{s.body}</p>
