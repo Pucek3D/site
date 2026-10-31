@@ -91,9 +91,9 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                   href={href(locale, k)}
                   className={cn(
                     'inline-flex min-h-10 items-center gap-1.5 text-ink underline-offset-4 hover:underline',
-                    // Sage text on white fails contrast, so Training keeps ink text and takes Sage on the
-                    // underline instead; Tailwind's underline otherwise inherits the ink text colour.
-                    k === 'training' ? 'hover:text-ink decoration-sage decoration-2' : 'hover:text-cobalt',
+  // Sage is the Training accent, as Cobalt is for the other two routes. It applies on hover
+  // only: at rest the label stays ink, because Sage text on white is too light to read as body text.
+  k === 'training' ? 'hover:text-sage' : 'hover:text-cobalt',
                   )}
                 >
                   {hero.routes[k]}
