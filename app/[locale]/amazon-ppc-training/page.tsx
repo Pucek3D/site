@@ -119,37 +119,27 @@ export default async function TrainingPage({ params }: Props) {
       </Section>
 
       {/* Curriculum: narrow editorial column + five flat rows. Deliberately not a grid. */}
-      <section aria-labelledby="curriculum-title" id="curriculum" className="scroll-mt-24 bg-ink">
-        <Container className="py-16 md:py-20">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="flex min-w-0 flex-col gap-5 lg:col-span-4">
-              <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-sage">
-                <span aria-hidden className="h-px w-6 shrink-0 bg-sage" />
-                {t.curriculum.eyebrow}
-              </p>
-              <h2
-                id="curriculum-title"
-                className="text-balance font-display text-3xl font-semibold leading-[1.12] text-white md:text-4xl"
-              >
-                {t.curriculum.title}
-              </h2>
-              <p className="text-pretty leading-relaxed text-ink-body">{t.curriculum.intro}</p>
-            </div>
-            <ol className="min-w-0 border-b border-white/15 lg:col-span-8">
-              {t.curriculum.items.map((m, i) => (
-                <li
-                  key={m.title}
-                  className="grid gap-2 border-t border-white/15 py-6 sm:grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-[3rem_minmax(0,15rem)_minmax(0,1fr)] md:gap-x-8"
-                >
-                  <span className="font-display text-sm font-semibold tabular-nums text-sage md:pt-0.5">{num(i)}</span>
-                  <h3 className="text-pretty font-display text-lg font-semibold leading-snug text-white">{m.title}</h3>
-                  <p className="text-pretty leading-relaxed text-ink-body sm:col-start-2 md:col-start-auto">{m.body}</p>
-                </li>
-              ))}
-            </ol>
+      <Section tone="porcelain" labelledBy="curriculum-title" id="curriculum" className="scroll-mt-24 py-16 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="flex min-w-0 flex-col gap-5 lg:col-span-4">
+            <Eyebrow>{t.curriculum.eyebrow}</Eyebrow>
+            <H2 id="curriculum-title">{t.curriculum.title}</H2>
+            <p className="text-pretty leading-relaxed text-slate">{t.curriculum.intro}</p>
           </div>
-        </Container>
-      </section>
+          <ol className="min-w-0 border-b border-hairline lg:col-span-8">
+            {t.curriculum.items.map((m, i) => (
+              <li
+                key={m.title}
+                className="grid gap-2 border-t border-hairline py-6 sm:grid-cols-[3rem_minmax(0,1fr)] md:grid-cols-[3rem_minmax(0,15rem)_minmax(0,1fr)] md:gap-x-8"
+              >
+                <span className="font-display text-sm font-semibold tabular-nums text-sage md:pt-0.5">{num(i)}</span>
+                <h3 className="text-pretty font-display text-lg font-semibold leading-snug text-ink">{m.title}</h3>
+                <p className="text-pretty leading-relaxed text-slate sm:col-start-2 md:col-start-auto">{m.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
 
       <FinalCta
         id="formats"
