@@ -72,7 +72,7 @@ export default async function AgencyPage({ params }: Props) {
         </Container>
       </section>
 
-      <Section tone="porcelain" labelledBy="ways-title" id="ways" className="scroll-mt-24">
+      <Section tone="porcelain" labelledBy="ways-title" id="ways" className="scroll-mt-24 pb-14 pt-12 md:pb-16 md:pt-14">
         <div className="flex max-w-3xl flex-col gap-5">
           <Eyebrow accent="cobalt">{a.ways.eyebrow}</Eyebrow>
           <H2 id="ways-title">{a.ways.title}</H2>
@@ -195,7 +195,7 @@ export default async function AgencyPage({ params }: Props) {
       </section>
 
       <Section tone="porcelain" labelledBy="agency-training">
-        <div className="grid gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[3fr_2fr] md:gap-3">
+        <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[3fr_2fr] md:gap-3">
           <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:p-9 lg:p-11">
             <Eyebrow>{a.training.eyebrow}</Eyebrow>
             <h2 id="agency-training" className="text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
@@ -207,7 +207,7 @@ export default async function AgencyPage({ params }: Props) {
               <ArrowRight aria-hidden className="size-4" />
             </CtaLink>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[20rem] md:rounded-tl-[10rem]">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[28rem] md:rounded-tl-[10rem]">
             <Image
               src={TRAINING_PHOTO.src}
               alt={a.training.imageAlt}
