@@ -125,10 +125,11 @@ export default async function AgencyPage({ params }: Props) {
 
       {/*
         Process: ONE raised panel carrying a thin Cobalt rail with small square markers.
-        Sage appears exactly once, as the completion check on Report, so the last stage
-        reads as the outcome of the workflow and never as a second Training-style action.
-        Hover only strengthens the hovered stage's marker, number and outgoing segment;
-        nothing changes size, so the panel height is the same in every state.
+        Every stage rests as an empty Cobalt square; Report's square fills and shows its
+        tick only on hover, so a completion mark is never asserted at rest. Hover fills
+        the marker, strengthens the number and sweeps Cobalt along the outgoing segment
+        (left to right on desktop, top to bottom when stacked) via a transform, so
+        nothing changes size and the panel height is the same in every state.
       */}
       <section aria-labelledby="approach" className="border-b border-hairline bg-white">
         <Container className="py-14 md:py-16">
@@ -147,26 +148,29 @@ export default async function AgencyPage({ params }: Props) {
                   <li key={s.label} className="group flex min-w-0 gap-5 lg:flex-col lg:gap-5">
                     <div aria-hidden className="flex w-5 shrink-0 flex-col items-center lg:h-5 lg:w-auto lg:flex-row">
                       {report ? (
-                        <span className="grid size-5 shrink-0 place-items-center rounded-[4px] bg-sage text-ink">
-                          <Check className="size-3.5" strokeWidth={2.75} />
+                        <span className="grid size-5 shrink-0 place-items-center">
+                          <span className="grid size-2.5 place-items-center overflow-hidden bg-white text-white ring-[1.5px] ring-cobalt transition-all duration-200 group-hover:size-4 group-hover:rounded-[3px] group-hover:bg-cobalt motion-reduce:transition-none">
+                            <Check
+                              className="size-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none"
+                              strokeWidth={3}
+                            />
+                          </span>
                         </span>
                       ) : (
                         <span className="grid size-5 shrink-0 place-items-center">
                           <span className="size-2.5 bg-white ring-[1.5px] ring-cobalt transition-colors duration-200 group-hover:bg-cobalt motion-reduce:transition-none" />
                         </span>
                       )}
-                      {report ? (
-                        <span className="hidden h-0.5 w-10 bg-sage/60 lg:block" />
-                      ) : (
-                        <span className="mt-1 w-0.5 flex-1 bg-cobalt/20 transition-colors duration-200 group-hover:bg-cobalt motion-reduce:transition-none lg:mt-0 lg:ml-1 lg:h-0.5 lg:w-auto" />
-                      )}
-                    </div>
-                    <div className={`flex min-w-0 flex-col gap-1.5 [hyphens:auto] lg:pb-0 lg:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
                       <span
-                        className={`text-xs font-semibold tabular-nums tracking-[0.14em] transition-colors duration-200 motion-reduce:transition-none ${
-                          report ? 'text-ink/55' : 'text-cobalt/70 group-hover:text-cobalt'
+                        className={`relative overflow-hidden bg-cobalt/20 ${
+                          report ? 'hidden h-0.5 w-10 lg:ml-1 lg:block' : 'mt-1 w-0.5 flex-1 lg:mt-0 lg:ml-1 lg:h-0.5 lg:w-auto'
                         }`}
                       >
+                        <span className="absolute inset-0 origin-top scale-y-0 bg-cobalt transition-transform duration-500 ease-out group-hover:scale-y-100 motion-reduce:transition-none lg:origin-left lg:scale-x-0 lg:scale-y-100 lg:group-hover:scale-x-100" />
+                      </span>
+                    </div>
+                    <div className={`flex min-w-0 flex-col gap-1.5 [hyphens:auto] lg:pb-0 lg:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
+                      <span className="text-xs font-semibold tabular-nums tracking-[0.14em] text-cobalt/70 transition-colors duration-200 group-hover:text-cobalt motion-reduce:transition-none">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <h3 className="font-display text-lg font-semibold leading-snug text-ink">{s.label}</h3>
