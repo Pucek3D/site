@@ -142,8 +142,8 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 /* One tile per buyer route, in the content's own order: Agencies, Brands, Training. */
 const services = [
   { Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%', to: 'agencies' },
-  { Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Laptop showing an Amazon advertising dashboard', to: 'brands' },
-  { Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Two colleagues reviewing work together on a laptop', to: 'training' },
+  { Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Two colleagues discussing an illustrative advertising report on a screen', to: 'brands' },
+  { Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Trainer presenting a PPC programme outline to a small group', focus: '55% 40%', to: 'training' },
 ] as const satisfies readonly { Icon: unknown; art: string; alt: string; focus?: string; to: PageKey }[]
 
 const TILE_LABELS: Record<Locale, { more: string; less: string; view: string }> = {
@@ -252,7 +252,7 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
 
 function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
   const panels = [
-    { ...copy.brands, to: href(locale, 'brands'), image: '/images/svc/brands.png', alt: 'Consumer products beside an open shipping box', dark: false },
+    { ...copy.brands, to: href(locale, 'brands'), image: '/images/svc/brands.png', alt: 'Two business partners shaking hands over a desk', dark: false },
     { ...copy.agencies, to: href(locale, 'agencies'), image: '/images/agency-team.png', alt: 'Two agency colleagues reviewing PPC work on a laptop', dark: true },
   ]
   return (
