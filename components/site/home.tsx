@@ -251,43 +251,70 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
 
 /* ------------------------------------------------------------- Audiences */
 
+/**
+ * ADelier Signature Split: one composition, two equal pathways joined by a single Cobalt rule.
+ * Below md the rule runs vertically down the left edge; from md it runs across the top of both pathways.
+ * Hovering or focusing a pathway slides a heavier emphasis segment toward it — the only motion here.
+ */
 function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
-  const panels = [
-    { ...copy.brands, to: href(locale, 'brands'), image: '/images/svc/brands.png', alt: 'Two business partners shaking hands over a desk', dark: false },
-    { ...copy.agencies, to: href(locale, 'agencies'), image: '/images/agency-team.png', alt: 'Two agency colleagues reviewing PPC work on a laptop', dark: true },
-  ]
+  const paths = [
+    { key: 'brands', number: '01', ...copy.brands, to: href(locale, 'brands') },
+    { key: 'agencies', number: '02', ...copy.agencies, to: href(locale, 'agencies') },
+  ] as const
   return (
-    <section aria-labelledby="audiences" className="bg-white py-14 md:py-16">
-      <div className="mx-auto w-full max-w-[1560px] px-5 sm:px-8 lg:px-6 xl:px-8">
-        <h2 id="audiences" className="sr-only">
-          {copy.title}
-        </h2>
-        <div className="grid gap-5 lg:grid-cols-2">
-          {panels.map((p) => (
-            <article key={p.title} className="grid overflow-hidden rounded-2xl border border-hairline sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
-              <div className="relative aspect-[4/3] sm:aspect-auto sm:min-h-[270px]">
-                <Image src={p.image} alt={p.alt} fill sizes="(min-width: 1280px) 25vw, (min-width: 640px) 45vw, 100vw" className="object-cover" />
-              </div>
-              <div className={cn('flex flex-col gap-3 p-6 lg:p-6', p.dark ? 'bg-ink' : 'bg-cobalt-tint')}>
-                <h3 className={cn('font-display text-[1.375rem] font-semibold', p.dark ? 'text-white' : 'text-ink')}>{p.title}</h3>
-                <div className={cn('flex flex-col gap-3 text-[0.875rem] leading-relaxed', p.dark ? 'text-mist' : 'text-slate')}>
-                  {p.paragraphs.map((para) => (
-                    <p key={para} className="text-pretty">
-                      {para}
-                    </p>
-                  ))}
-                </div>
-                <div className="mt-auto pt-2">
-                  <CtaLink href={p.to} variant={p.dark ? 'sage' : 'primary'} className="min-h-11 max-w-full px-5 text-left text-sm">
-                    {p.cta}
-                    <ArrowRight aria-hidden className="size-4" />
-                  </CtaLink>
-                </div>
-              </div>
-            </article>
-          ))}
+    <section aria-labelledby="audiences" className="bg-porcelain py-16 md:py-24">
+      <Container>
+        <div className="relative pl-6 pt-6 sm:pl-10 sm:pt-10">
+          {/* The one open-corner detail, framing the composition as a whole. */}
+          <span aria-hidden className="pointer-events-none absolute left-0 top-0 size-8 border-l-2 border-t-2 border-cobalt sm:size-10" />
+
+          <header className="flex max-w-3xl flex-col gap-4">
+            <p className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-slate">{copy.eyebrow}</p>
+            <h2 id="audiences" className="text-balance font-display text-3xl font-semibold leading-[1.1] tracking-tight text-ink md:text-[2.75rem]">
+              {copy.title}
+            </h2>
+            <p className="text-pretty text-lg leading-relaxed text-slate">{copy.subtitle}</p>
+          </header>
+
+          <div className="group/split relative mt-12 grid gap-12 pl-8 md:mt-16 md:grid-cols-2 md:gap-16 md:pl-0 md:pt-12 lg:gap-24">
+            {/* Shared rule: vertical on mobile, horizontal from md. */}
+            <span aria-hidden className="absolute bottom-0 left-0 top-0 w-px bg-cobalt md:bottom-auto md:right-0 md:h-px md:w-auto" />
+            {/* Emphasis segment; rests at zero width in the centre and extends toward the active pathway. */}
+            <span
+              aria-hidden
+              className={cn(
+                'absolute -top-px right-1/2 left-1/2 hidden h-[3px] bg-cobalt transition-[left,right] duration-500 ease-out motion-reduce:transition-none md:block',
+                'group-has-[[data-path=brands]:hover]/split:left-0 group-has-[[data-path=brands]:focus-within]/split:left-0',
+                'group-has-[[data-path=agencies]:hover]/split:right-0 group-has-[[data-path=agencies]:focus-within]/split:right-0',
+              )}
+            />
+            {paths.map((p) => (
+              <article key={p.key} data-path={p.key} className="group/path relative flex flex-col gap-5">
+                <span aria-hidden className="absolute -left-8 top-1.5 size-2 -translate-x-1/2 bg-cobalt md:-top-12 md:left-0 md:-translate-y-1/2 md:translate-x-0" />
+                <p className="flex items-center gap-2 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt">
+                  <span>{p.number}</span>
+                  <span aria-hidden className="text-hairline">
+                    /
+                  </span>
+                  <span>{p.label}</span>
+                </p>
+                <h3 className="font-display text-[2.25rem] font-semibold leading-[1.05] tracking-tight text-ink md:text-[2.5rem] xl:text-[3.25rem]">
+                  <span className="block">{p.headline[0]}</span>
+                  <span className="block">{p.headline[1]}</span>
+                </h3>
+                <p className="max-w-[46ch] text-pretty text-base leading-relaxed text-slate md:text-[1.0625rem]">{p.description}</p>
+                <Link
+                  href={p.to}
+                  className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 font-display text-base font-semibold text-cobalt underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cobalt"
+                >
+                  {p.cta}
+                  <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform duration-300 group-hover/path:translate-x-1 motion-reduce:transition-none" />
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

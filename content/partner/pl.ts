@@ -102,21 +102,20 @@ export const pl: PartnerCopy = {
       ],
     },
     audiences: {
-      title: 'Stworzone dla marek. Zaprojektowane, by skalować agencje.',
-      agencies: {
-        title: 'Dla agencji Amazon',
-        paragraphs: [
-          'Zwiększ możliwości zarządzania kampaniami bez konieczności natychmiastowej rekrutacji i budowy całego zespołu wewnętrznego.',
-          'Od realizacji kampanii w modelu white-label po dedykowanych specjalistów PPC — pomagamy agencjom skalować się efektywnie, zachowując relacje z klientami.',
-        ],
-        cta: 'Poznaj współpracę z agencjami',
-      },
+      eyebrow: 'Z kim współpracujemy',
+      title: 'Różne biznesy. Jeden standard doskonałości.',
+      subtitle: 'Eksperckie wsparcie wzrostu na Amazonie, dopasowane do tego, jak pracujesz.',
       brands: {
-        title: 'Dla marek na Amazonie',
-        paragraphs: [
-          'Niezależnie od tego, czy chcesz poprawić istniejące konto reklamowe, uporządkować PPC, czy zbudować zespół wewnętrzny — zapewniamy eksperckie zarządzanie i praktyczne szkolenia, które pomogą Ci pójść naprzód.',
-        ],
+        label: 'Marki',
+        headline: ['Twoja marka.', 'Nasz priorytet.'],
+        description: 'Eksperckie zarządzanie PPC i praktyczne szkolenia dopasowane do Twoich produktów, wyników i zespołu.',
         cta: 'Poznaj usługi dla marek',
+      },
+      agencies: {
+        label: 'Agencje',
+        headline: ['Twoi klienci.', 'Nasza ekspertyza.'],
+        description: 'Realizacja PPC w modelu white-label i dedykowani specjaliści — bez uszczerbku dla Twoich relacji z klientami.',
+        cta: 'Poznaj współpracę z agencjami',
       },
     },
     final: {

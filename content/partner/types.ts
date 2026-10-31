@@ -9,6 +9,9 @@
 
 export type Titled = { title: string; body: string }
 
+/** One pathway of the homepage Signature Split. The headline is exactly two short lines. */
+export type AudiencePath = { label: string; headline: [string, string]; description: string; cta: string }
+
 export type Hero = {
   /** Small label above the headline, where the page has one. */
   eyebrow?: string
@@ -43,10 +46,13 @@ export type PartnerCopy = {
     }
     /** How campaign evidence becomes decisions. */
     approach: { title: string; subtitle: string; intro: string; items: Titled[] }
+    /** The Signature Split: two equal audience pathways, Brands first. */
     audiences: {
+      eyebrow: string
       title: string
-      agencies: { title: string; paragraphs: string[]; cta: string }
-      brands: { title: string; paragraphs: string[]; cta: string }
+      subtitle: string
+      brands: AudiencePath
+      agencies: AudiencePath
     }
     final: { title: string; paragraphs: string[]; cta: string }
   }

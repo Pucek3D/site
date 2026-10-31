@@ -105,21 +105,20 @@ export const en: PartnerCopy = {
       ],
     },
     audiences: {
-      title: 'Built for brands. Designed to scale agencies.',
-      agencies: {
-        title: 'For Amazon agencies',
-        paragraphs: [
-          'Expand your campaign management capacity without the immediate need to recruit and build an entire internal team.',
-          'From white-label campaign execution to dedicated PPC specialists, we help agencies scale efficiently while maintaining their client relationships.',
-        ],
-        cta: 'Explore agency partnerships',
-      },
+      eyebrow: 'Who we work with',
+      title: 'Different businesses. One standard of excellence.',
+      subtitle: 'Expert-led Amazon growth, built around how you work.',
       brands: {
-        title: 'For Amazon brands',
-        paragraphs: [
-          "Whether you're looking to improve an existing advertising account, bring more structure to PPC or develop an in-house team, we provide expert-led management and practical training to help you move forward.",
-        ],
+        label: 'Brands',
+        headline: ['Your brand.', 'Our focus.'],
+        description: 'Expert-led PPC management and practical training built around your products, performance and people.',
         cta: 'Explore brand services',
+      },
+      agencies: {
+        label: 'Agencies',
+        headline: ['Your clients.', 'Our expertise.'],
+        description: 'White-label PPC delivery and dedicated specialists, without compromising your client relationships.',
+        cta: 'Explore agency partnerships',
       },
     },
     final: {
