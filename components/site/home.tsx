@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -69,10 +70,10 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               <p key={p} className="text-pretty">
                 {/* A "\n" in the copy is a line break chosen by the partner; it applies from lg up, where the column is wide enough to hold each line, and reads as an ordinary space below that. */}
                 {p.split('\n').map((line, i) => (
-                  <span key={line} className="lg:block">
-                    {i > 0 && ' '}
-                    {line}
-                  </span>
+  <Fragment key={line}>
+  {i > 0 && ' '}
+  <span className="lg:block">{line}</span>
+  </Fragment>
                 ))}
               </p>
             ))}
