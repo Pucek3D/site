@@ -107,11 +107,10 @@ export default async function AgencyPage({ params }: Props) {
                 <li key={it.title} className="group flex min-w-0 flex-col gap-3 border-t border-white/15 pt-6 transition-colors duration-200 hover:border-cobalt-light motion-reduce:transition-none">
                   <span className="flex items-center gap-3">
                     <span className="font-display text-sm font-semibold tabular-nums text-cobalt-light">{String(i + 1).padStart(2, '0')}</span>
-                    {/* The one Sage detail: on the benefit about actively managed, expert-reviewed work. */}
-                    <span
-                      aria-hidden
-                      className={`h-0.5 w-6 transition-[width] duration-200 group-hover:w-10 motion-reduce:transition-none ${i === 1 ? 'bg-sage' : 'bg-cobalt-light/60'}`}
-                    />
+  <span
+  aria-hidden
+  className="h-0.5 w-6 bg-cobalt-light/60 transition-[width] duration-200 group-hover:w-10 motion-reduce:transition-none"
+  />
                   </span>
                   <h3 className="text-pretty font-display text-xl font-semibold leading-snug text-white [hyphens:auto]">{it.title}</h3>
                   <p className="text-pretty leading-relaxed text-ink-body">{it.body}</p>
