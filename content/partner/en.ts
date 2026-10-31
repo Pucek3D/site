@@ -17,8 +17,8 @@ export const en: PartnerCopy = {
       eyebrow: 'Amazon advertising, marketplace expertise and applied training',
       title: 'Improve Amazon performance. Build the capability behind it.',
       paragraphs: [
-        'ADelier combines expert-led Amazon PPC management, rigorous performance analysis and hands-on training for consumer brands and the agencies that serve them.',
-        'We turn campaign evidence into clear actions, stronger execution and skills your team can keep using.',
+      'ADelier combines expert-led Amazon PPC management,\nrigorous performance analysis and hands-on training\nfor consumer brands and the agencies that serve them.',
+      'We turn campaign evidence into clear actions, stronger execution\nand skills your team can keep using.',
       ],
       closingLine: 'Every account is different. Your advertising strategy should be, too.',
       primaryCta: "Let's Talk",

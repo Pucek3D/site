@@ -64,10 +64,16 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
           <h1 className="max-w-[17ch] font-display text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] lg:max-w-none lg:text-[2.35rem] xl:text-[2.75rem]">
             <Sentences text={hero.title} breakAt="lg" />
           </h1>
-          <div className="flex max-w-[58ch] flex-col gap-3 text-[0.9375rem] leading-[1.65] text-slate xl:text-base">
+          <div className="flex max-w-[58ch] flex-col gap-3 text-[0.9375rem] leading-[1.65] text-slate lg:max-w-none xl:text-base">
             {hero.paragraphs.map((p) => (
               <p key={p} className="text-pretty">
-                {p}
+                {/* A "\n" in the copy is a line break chosen by the partner; it applies from lg up, where the column is wide enough to hold each line, and reads as an ordinary space below that. */}
+                {p.split('\n').map((line, i) => (
+                  <span key={line} className="lg:block">
+                    {i > 0 && ' '}
+                    {line}
+                  </span>
+                ))}
               </p>
             ))}
           </div>
