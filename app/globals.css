@@ -19,6 +19,9 @@
   --color-sage-tint: #e7f5f0;
   --color-mist: #b8c1d6;
   --color-hairline: #d9dee8;
+  /* On Ink only: lighter Cobalt (7.4:1) and body neutral (11.9:1). */
+  --color-cobalt-light: #8fa6ff;
+  --color-ink-body: #c9cfdb;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

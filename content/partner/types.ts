@@ -111,8 +111,14 @@ export type PartnerCopy = {
       /** Reading order IS the numbering: [0] renders as 01 (white-label), [1] as 02 (specialist). */
       models: readonly [AgencyModel, AgencyModel]
     }
-    why: { title: string; items: Titled[] }
-    approach: { title: string; intro: string; steps: string[] }
+  /** `eyebrow` is the question; `title` is the headline, its second line in light Cobalt. */
+  why: { eyebrow: string; title: [string, string]; items: Titled[] }
+  /**
+   * Five milestones, in order. `label` is the short display verb; `text` keeps the
+   * full approved wording (incl. the "where the data is reliable" qualifier).
+   * The fifth is Report and always renders in Sage.
+   */
+  approach: { title: string; subtitle: string; intro: string; steps: { label: string; text: string }[] }
     training: { eyebrow: string; title: string; body: string; cta: string }
     final: { title: string; paragraphs: string[]; cta: string; trainingLink: string }
   }

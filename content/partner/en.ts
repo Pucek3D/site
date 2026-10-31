@@ -275,7 +275,8 @@ export const en: PartnerCopy = {
       ],
     },
     why: {
-      title: 'Why partner with us?',
+      eyebrow: 'Why partner with us?',
+    title: ['Built to extend your agency.', 'Not complicate it.'],
       items: [
         {
           title: 'A practical extension of your team',
@@ -296,15 +297,16 @@ export const en: PartnerCopy = {
       ],
     },
     approach: {
-      title: 'How the work is run',
-      intro: 'The same expert-led sequence sits behind both models.',
-      steps: [
-        'Account and setup assessment',
-        'Performance analysis: ACOS, ROAS and paid versus total sales, where the data is reliable',
-        'Prioritised actions',
-        'Expert-reviewed execution',
-        'Transparent reporting',
-      ],
+    title: 'A clear process. Expert accountability.',
+    subtitle: 'From account assessment to transparent reporting.',
+    intro: 'The same expert-led sequence sits behind both models.',
+    steps: [
+      { label: 'Assess', text: 'Account and setup assessment' },
+      { label: 'Analyse', text: 'Performance analysis: ACOS, ROAS and paid versus total sales, where the data is reliable' },
+      { label: 'Prioritise', text: 'Prioritised actions' },
+      { label: 'Execute', text: 'Expert-reviewed execution' },
+      { label: 'Report', text: 'Transparent reporting' },
+    ],
     },
     training: {
       eyebrow: 'PPC training for agency teams',

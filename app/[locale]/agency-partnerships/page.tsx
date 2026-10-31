@@ -91,41 +91,82 @@ export default async function AgencyPage({ params }: Props) {
         </ol>
       </Section>
 
-      <Section labelledBy="why">
-        {/* Side-by-side only from xl: at lg the 4-col heading track is too narrow for the PL/DE question. */}
-        <div className="grid gap-12 xl:grid-cols-12">
-          <div className="min-w-0 [hyphens:auto] xl:col-span-4">
-            <H2 id="why">{a.why.title}</H2>
+      {/* Benefits: the dark, benefit-led signature section. */}
+      <section aria-labelledby="why" className="bg-ink">
+        <Container className="py-16 md:py-20">
+          {/* Side-by-side only from xl: at lg the heading track is too narrow for the PL/DE headline. */}
+          <div className="grid gap-12 xl:grid-cols-12 xl:gap-16">
+            <div className="flex min-w-0 flex-col gap-5 [hyphens:auto] xl:col-span-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cobalt-light">{a.why.eyebrow}</p>
+              <h2 id="why" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-white md:text-4xl xl:text-[2.75rem]">
+                {a.why.title[0]} <span className="text-cobalt-light">{a.why.title[1]}</span>
+              </h2>
+            </div>
+            <ol className="grid min-w-0 gap-x-12 gap-y-10 sm:grid-cols-2 xl:col-span-7">
+              {a.why.items.map((it, i) => (
+                <li key={it.title} className="group flex min-w-0 flex-col gap-3 border-t border-white/15 pt-6 transition-colors duration-200 hover:border-cobalt-light motion-reduce:transition-none">
+                  <span className="flex items-center gap-3">
+                    <span className="font-display text-sm font-semibold tabular-nums text-cobalt-light">{String(i + 1).padStart(2, '0')}</span>
+                    {/* The one Sage detail: on the benefit about actively managed, expert-reviewed work. */}
+                    <span
+                      aria-hidden
+                      className={`h-0.5 w-6 transition-[width] duration-200 group-hover:w-10 motion-reduce:transition-none ${i === 1 ? 'bg-sage' : 'bg-cobalt-light/60'}`}
+                    />
+                  </span>
+                  <h3 className="text-pretty font-display text-xl font-semibold leading-snug text-white [hyphens:auto]">{it.title}</h3>
+                  <p className="text-pretty leading-relaxed text-ink-body">{it.body}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-          <ol className="grid min-w-0 gap-x-10 gap-y-10 sm:grid-cols-2 xl:col-span-8">
-            {a.why.items.map((it, i) => (
-              <li key={it.title} className="flex flex-col gap-3 border-t border-hairline pt-6">
-                <span className="text-sm font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="font-display text-xl font-semibold leading-snug text-ink">{it.title}</h3>
-                <p className="text-pretty leading-relaxed text-slate">{it.body}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        </Container>
+      </section>
 
-        <div className="mt-16 border-t border-hairline pt-10 md:mt-20">
-          <div className="flex max-w-2xl flex-col gap-3">
-            <h3 className="font-display text-2xl font-semibold leading-snug text-ink">{a.approach.title}</h3>
+      {/* Process: the light, analytical workflow. Steps 01–04 Cobalt, 05 Report Sage, in every language. */}
+      <section aria-labelledby="approach" className="border-b border-hairline bg-white">
+        <Container className="py-16 md:py-20">
+          <div className="flex max-w-2xl flex-col gap-3 [hyphens:auto]">
+            <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-ink md:text-4xl">
+              {a.approach.title}
+            </h2>
+            <p className="text-pretty text-lg leading-relaxed text-ink">{a.approach.subtitle}</p>
             <p className="text-pretty leading-relaxed text-slate">{a.approach.intro}</p>
           </div>
-          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {a.approach.steps.map((s, i) => (
-              <li key={s} className="flex min-w-0 flex-col gap-3">
-                <span className="flex items-center gap-3">
-                  <span className="text-sm font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
-                  <span aria-hidden className="h-px flex-1 bg-cobalt/30" />
-                </span>
-                <span className="text-pretty font-medium leading-snug text-ink">{s}</span>
-              </li>
-            ))}
+          <ol className="mt-12 grid lg:grid-cols-5">
+            {a.approach.steps.map((s, i) => {
+              const last = i === a.approach.steps.length - 1
+              const report = last
+              // The connector LEAVING step i: Cobalt between 01–04, Sage into Report.
+              const toReport = i === a.approach.steps.length - 2
+              return (
+                <li key={s.label} className="group flex min-w-0 gap-5 lg:flex-col lg:gap-6">
+                  <div className="flex shrink-0 flex-col items-center lg:flex-row">
+                    <span
+                      className={`grid size-11 shrink-0 place-items-center rounded-full font-display text-sm font-semibold tabular-nums ring-0 transition-shadow duration-200 group-hover:ring-4 motion-reduce:transition-none ${
+                        report ? 'bg-sage text-ink ring-sage/25' : 'bg-cobalt text-white ring-cobalt/20'
+                      }`}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    {!last && (
+                      <span
+                        aria-hidden
+                        className={`w-0.5 flex-1 opacity-40 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none lg:h-0.5 lg:w-auto ${
+                          toReport ? 'bg-sage' : 'bg-cobalt'
+                        }`}
+                      />
+                    )}
+                  </div>
+                  <div className={`flex min-w-0 flex-col gap-2 [hyphens:auto] lg:pb-0 lg:pr-6 ${last ? 'pb-0' : 'pb-10'}`}>
+                    <h3 className="font-display text-xl font-semibold leading-snug text-ink">{s.label}</h3>
+                    <p className="text-pretty leading-relaxed text-ink/75">{s.text}</p>
+                  </div>
+                </li>
+              )
+            })}
           </ol>
-        </div>
-      </Section>
+        </Container>
+      </section>
 
       <Section tone="porcelain" labelledBy="agency-training">
         <div className="flex flex-col gap-8 rounded-xl border border-hairline bg-white p-7 md:flex-row md:items-center md:justify-between md:p-10">

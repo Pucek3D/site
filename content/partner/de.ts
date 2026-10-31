@@ -272,7 +272,8 @@ export const de: PartnerCopy = {
       ],
     },
     why: {
-      title: 'Warum mit uns zusammen\u00ADarbeiten?',
+      eyebrow: 'Warum mit uns zusammen\u00ADarbeiten?',
+    title: ['Gemacht, um Ihre Agentur zu erweitern.', 'Nicht, um sie zu verkomplizieren.'],
       items: [
         {
           title: 'Eine praktische Erweiterung Ihres Teams',
@@ -293,15 +294,16 @@ export const de: PartnerCopy = {
       ],
     },
     approach: {
-      title: 'So läuft die Arbeit ab',
-      intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
-      steps: [
-        'Bewertung von Konto und Setup',
-        'Performance-Analyse: ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern die Daten belastbar sind',
-        'Priorisierte Maßnahmen',
-        'Von Experten geprüfte Umsetzung',
-        'Transparentes Reporting',
-      ],
+    title: 'Ein klarer Prozess. Verantwortung durch Experten.',
+    subtitle: 'Von der Kontobewertung bis zum transparenten Reporting.',
+    intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
+    steps: [
+      { label: 'Bewerten', text: 'Bewertung von Konto und Setup' },
+      { label: 'Analysieren', text: 'Performance-Analyse: ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern die Daten belastbar sind' },
+      { label: 'Priorisieren', text: 'Priorisierte Maßnahmen' },
+      { label: 'Umsetzen', text: 'Von Experten geprüfte Umsetzung' },
+      { label: 'Berichten', text: 'Transparentes Reporting' },
+    ],
     },
     training: {
       eyebrow: 'PPC-Training für Agenturteams',

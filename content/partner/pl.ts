@@ -272,7 +272,8 @@ export const pl: PartnerCopy = {
       ],
     },
     why: {
-      title: 'Dlaczego warto z nami współpracować?',
+      eyebrow: 'Dlaczego warto z nami współpracować?',
+    title: ['Wzmacniamy Twoją agencję.', 'Nie komplikujemy jej pracy.'],
       items: [
         {
           title: 'Praktyczne przedłużenie Twojego zespołu',
@@ -293,15 +294,16 @@ export const pl: PartnerCopy = {
       ],
     },
     approach: {
-      title: 'Jak prowadzimy pracę',
-      intro: 'Za oboma modelami stoi ta sama sekwencja prowadzona przez ekspertów.',
-      steps: [
-        'Ocena konta i konfiguracji',
-        'Analiza wyników: ACOS, ROAS oraz sprzedaż z reklam na tle sprzedaży całkowitej, gdy dane są wiarygodne',
-        'Działania uszeregowane według priorytetów',
-        'Realizacja weryfikowana przez ekspertów',
-        'Przejrzyste raportowanie',
-      ],
+    title: 'Jasny proces. Odpowiedzialność ekspertów.',
+    subtitle: 'Od oceny konta po przejrzyste raportowanie.',
+    intro: 'Za oboma modelami stoi ta sama sekwencja prowadzona przez ekspertów.',
+    steps: [
+      { label: 'Ocena', text: 'Ocena konta i konfiguracji' },
+      { label: 'Analiza', text: 'Analiza wyników: ACOS, ROAS oraz sprzedaż z reklam na tle sprzedaży całkowitej, gdy dane są wiarygodne' },
+      { label: 'Priorytety', text: 'Działania uszeregowane według priorytetów' },
+      { label: 'Realizacja', text: 'Realizacja weryfikowana przez ekspertów' },
+      { label: 'Raport', text: 'Przejrzyste raportowanie' },
+    ],
     },
     training: {
       eyebrow: 'Szkolenia PPC dla zespołów agencji',
