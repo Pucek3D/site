@@ -8,7 +8,6 @@ import { Logo } from './logo'
 import { Container } from './primitives'
 import { Signoff } from './typeset'
 
-import { brandDescriptor } from '@/content/shared'
 
 export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dictionary; copy: PartnerCopy }) {
   const { footer, nav } = dict
@@ -18,12 +17,9 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
       <Container className="pb-16 md:pb-20">
         <hr className="mb-16 border-0 border-t border-white/20 md:mb-20" />
         <div className="grid gap-12 md:grid-cols-12">
-          <div className="flex flex-col gap-6 md:col-span-5">
-            <div className="flex flex-col gap-3">
-              <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-mist">{brandDescriptor}</p>
-            </div>
-            <Signoff text={copy.signoff} />
+<div className="flex flex-col gap-4 md:col-span-5">
+<Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
+<Signoff text={copy.signoff} />
           </div>
 
           <div className="md:col-span-3">

@@ -4,7 +4,6 @@
  * no locale file can drift from them.
  */
 /** The official ADelier descriptor — English in every locale. */
-export const brandDescriptor = 'Marketplace Growth Partner'
 
 export const productIds = ['diagnostic', 'sprint', 'pod', 'foundations', 'enablement'] as const
 export type ProductId = (typeof productIds)[number]
