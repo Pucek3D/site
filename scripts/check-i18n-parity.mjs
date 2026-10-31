@@ -17,11 +17,19 @@ writeFileSync(
   `export { en } from ${JSON.stringify(join(root, 'content/en.ts'))}
 export { pl } from ${JSON.stringify(join(root, 'content/pl.ts'))}
 export { de } from ${JSON.stringify(join(root, 'content/de.ts'))}
+export { en as pen } from ${JSON.stringify(join(root, 'content/partner/en.ts'))}
+export { pl as ppl } from ${JSON.stringify(join(root, 'content/partner/pl.ts'))}
+export { de as pde } from ${JSON.stringify(join(root, 'content/partner/de.ts'))}
 export { mainNavKeys } from ${JSON.stringify(join(root, 'lib/i18n.ts'))}`,
 )
 const out = join(dir, 'bundle.mjs')
 await build({ entryPoints: [entry], bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'error', alias: { '@': root } })
-const { en, pl, de, mainNavKeys } = await import(pathToFileURL(out).href)
+const bundle = await import(pathToFileURL(out).href)
+const { mainNavKeys } = bundle
+// UI chrome (content/*.ts) and page copy (content/partner/*.ts) are two dictionaries; check both as one.
+const en = { ...bundle.en, page: bundle.pen }
+const pl = { ...bundle.pl, page: bundle.ppl }
+const de = { ...bundle.de, page: bundle.pde }
 
 const errors = []
 
@@ -56,10 +64,9 @@ compare(en, de, 'de')
 // Explicit counts the brief names, printed so a pass is visibly not vacuous.
 const counts = (d) => ({
   nav: mainNavKeys.filter((k) => k in d.nav.items).length,
-  routeCards: d.home.routes.items.length,
-  products: d.products.items.map((p) => p.id).join(','),
-  diagnosticQuestions: d.brands.diagnose.questions.length,
-  faqs: Object.values(d).reduce((n, s) => n + (Array.isArray(s?.faq) ? s.faq.length : 0), 0),
+  serviceCards: d.page.home.whatWeDo.items.length,
+  serviceShape: d.page.home.whatWeDo.items.map((s) => `${s.paragraphs.length}p${s.bullets?.length ?? 0}b`).join(','),
+  audiences: d.page.home.audiences.items?.length ?? Object.keys(d.page.home.audiences).length,
 })
 const ref = JSON.stringify(counts(en))
 // A zero here means a path no longer resolves, which would make the comparison pass on nothing.

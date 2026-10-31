@@ -3,14 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowRight,
-  ChartColumn,
   ChartPie,
-  GraduationCap,
   MessagesSquare,
   RefreshCw,
   SlidersHorizontal,
   UserRound,
-  Users,
 } from 'lucide-react'
 import type { PartnerCopy } from '@/content/partner'
 import type { Dictionary } from '@/content/en'
@@ -19,7 +16,7 @@ import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
 import { Container, CtaLink, Eyebrow } from './primitives'
 import { Sentences } from './typeset'
-import { ServiceTile } from './service-tile'
+import { ServiceTile, type TileLabels } from './service-tile'
 
 type Labels = Dictionary['common']
 
@@ -141,15 +138,28 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 
 /* One tile per buyer route, in the content's own order: Agencies, Brands, Training. */
 const services = [
-  { Icon: Users, art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%', to: 'agencies' },
-  { Icon: ChartColumn, art: '/images/svc/ppc.png', alt: 'Two colleagues discussing an illustrative advertising report on a screen', to: 'brands' },
-  { Icon: GraduationCap, art: '/images/svc/training-team.png', alt: 'Trainer presenting a PPC programme outline to a small group', focus: '55% 40%', to: 'training' },
-] as const satisfies readonly { Icon: unknown; art: string; alt: string; focus?: string; to: PageKey }[]
+  { art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%', to: 'agencies' },
+  { art: '/images/svc/ppc.png', alt: 'Two colleagues discussing an illustrative advertising report on a screen', to: 'brands' },
+  { art: '/images/svc/training-team.png', alt: 'Trainer presenting a PPC programme outline to a small group', focus: '55% 40%', to: 'training' },
+] as const satisfies readonly { art: string; alt: string; focus?: string; to: PageKey }[]
 
-const TILE_LABELS: Record<Locale, { more: string; less: string; view: string }> = {
-  en: { more: 'Read more', less: 'Show less', view: 'View service' },
-  pl: { more: 'Czytaj więcej', less: 'Zwiń', view: 'Zobacz usługę' },
-  de: { more: 'Mehr lesen', less: 'Weniger anzeigen', view: 'Leistung ansehen' },
+/* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
+const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
+  en: [
+    { expand: 'See how it works', collapse: 'Show less', explore: 'Explore agency partnerships' },
+    { expand: 'See what\u2019s included', collapse: 'Show less', explore: 'Explore PPC management' },
+    { expand: 'See the program', collapse: 'Show less', explore: 'Explore PPC training' },
+  ],
+  pl: [
+    { expand: 'Zobacz, jak to działa', collapse: 'Pokaż mniej', explore: 'Poznaj współpracę z agencjami' },
+    { expand: 'Zobacz, co obejmuje', collapse: 'Pokaż mniej', explore: 'Poznaj zarządzanie PPC' },
+    { expand: 'Zobacz program', collapse: 'Pokaż mniej', explore: 'Poznaj szkolenia PPC' },
+  ],
+  de: [
+    { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Agenturpartnerschaften entdecken' },
+    { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Management entdecken' },
+    { expand: 'Zum Programm', collapse: 'Weniger anzeigen', explore: 'PPC-Training entdecken' },
+  ],
 }
 
 const TRAINING_INDEX = 2
@@ -177,21 +187,12 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
                 tagline={s.tagline}
                 paragraphs={s.paragraphs}
                 bullets={s.bullets}
-                icon={
-                  <v.Icon
-                    aria-hidden
-                    className={cn(
-                      'size-5 transition-colors group-hover:text-mist group-focus-within:text-mist group-data-[open=true]:text-mist',
-                      i === TRAINING_INDEX ? 'text-sage' : 'text-cobalt',
-                    )}
-                  />
-                }
                 art={v.art}
                 alt={v.alt}
                 focus={'focus' in v ? v.focus : undefined}
                 accent={i === TRAINING_INDEX ? 'sage' : 'cobalt'}
                 to={href(locale, v.to)}
-                labels={TILE_LABELS[locale]}
+                labels={TILE_LABELS[locale][i]}
                 imageLeft={row % 2 === 1}
               />
             )
