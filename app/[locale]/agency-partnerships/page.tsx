@@ -194,9 +194,9 @@ export default async function AgencyPage({ params }: Props) {
         </Container>
       </section>
 
-      <Section tone="porcelain" labelledBy="agency-training">
-        <div className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[3fr_2fr] md:gap-3">
-          <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:p-9 lg:p-11">
+  <Section tone="porcelain" labelledBy="agency-training" className="py-12 md:py-16">
+  <div className="grid gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[7fr_5fr] md:gap-3">
+  <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:px-10 md:py-8 lg:px-12">
             <Eyebrow>{a.training.eyebrow}</Eyebrow>
             <h2 id="agency-training" className="text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
               {a.training.title}
@@ -207,7 +207,7 @@ export default async function AgencyPage({ params }: Props) {
               <ArrowRight aria-hidden className="size-4" />
             </CtaLink>
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[28rem] md:rounded-tl-[10rem]">
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[20rem] md:rounded-tl-[8rem]">
             <Image
               src={TRAINING_PHOTO.src}
               alt={a.training.imageAlt}
