@@ -38,12 +38,21 @@ export function Section({
 }
 
 /** Small label with a short Sage rule — Sage appears as a mark, never as body text on light. */
-export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
+export function Eyebrow({
+  children,
+  dark = false,
+  className,
+}: {
+  children: ReactNode
+  dark?: boolean
+  className?: string
+}) {
   return (
     <p
       className={cn(
         'flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em]',
         dark ? 'text-mist' : 'text-slate',
+        className,
       )}
     >
       <span aria-hidden className="h-px w-6 shrink-0 bg-sage" />

@@ -55,9 +55,10 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
       <Container className="relative">
         <div className="flex flex-col gap-5 py-12 lg:min-h-[560px] lg:w-[48%] lg:justify-center lg:py-11 lg:pr-3">
           {hero.eyebrow ? (
-  <Eyebrow>
-  <span className="xl:whitespace-nowrap">{hero.eyebrow}</span>
-  </Eyebrow>
+              <Eyebrow className="items-start [&>span:first-child]:mt-[0.6rem]">
+                {/* The copy carries a "\n" before the last clause, so it always sets as two lines. */}
+                <span className="whitespace-pre-line leading-relaxed">{hero.eyebrow}</span>
+              </Eyebrow>
   ) : null}
           <h1 className="max-w-[17ch] font-display text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] lg:max-w-none lg:text-[2.35rem] xl:text-[2.75rem]">
             <Sentences text={hero.title} breakAt="lg" />
