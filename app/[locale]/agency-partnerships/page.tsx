@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowDown, ArrowRight } from 'lucide-react'
+import { ArrowDown, ArrowRight, Check } from 'lucide-react'
 import { Breadcrumbs, CheckList, FinalCta, H2, ListLabel, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
@@ -122,9 +122,15 @@ export default async function AgencyPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* Process: the light, analytical workflow. Steps 01–04 Cobalt, 05 Report Sage, in every language. */}
+      {/*
+        Process: ONE raised panel carrying a thin Cobalt rail with small square markers.
+        Sage appears exactly once, as the completion check on Report, so the last stage
+        reads as the outcome of the workflow and never as a second Training-style action.
+        Hover only strengthens the hovered stage's marker, number and outgoing segment;
+        nothing changes size, so the panel height is the same in every state.
+      */}
       <section aria-labelledby="approach" className="border-b border-hairline bg-white">
-        <Container className="py-16 md:py-20">
+        <Container className="py-14 md:py-16">
           <div className="flex max-w-2xl flex-col gap-3 [hyphens:auto]">
             <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-ink md:text-4xl">
               {a.approach.title}
@@ -132,39 +138,44 @@ export default async function AgencyPage({ params }: Props) {
             <p className="text-pretty text-lg leading-relaxed text-ink">{a.approach.subtitle}</p>
             <p className="text-pretty leading-relaxed text-slate">{a.approach.intro}</p>
           </div>
-          <ol className="mt-12 grid lg:grid-cols-5">
-            {a.approach.steps.map((s, i) => {
-              const last = i === a.approach.steps.length - 1
-              const report = last
-              // The connector LEAVING step i: Cobalt between 01–04, Sage into Report.
-              const toReport = i === a.approach.steps.length - 2
-              return (
-                <li key={s.label} className="group flex min-w-0 gap-5 lg:flex-col lg:gap-6">
-                  <div className="flex shrink-0 flex-col items-center lg:flex-row">
-                    <span
-                      className={`grid size-11 shrink-0 place-items-center rounded-full font-display text-sm font-semibold tabular-nums ring-0 transition-shadow duration-200 group-hover:ring-4 motion-reduce:transition-none ${
-                        report ? 'bg-sage text-ink ring-sage/25' : 'bg-cobalt text-white ring-cobalt/20'
-                      }`}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    {!last && (
+          <div className="mt-10 rounded-xl border border-hairline bg-white p-6 shadow-[0_20px_50px_rgba(16,24,40,0.09),0_4px_14px_rgba(16,24,40,0.04)] md:p-8 lg:px-9 lg:py-8">
+            <ol className="grid lg:grid-cols-5">
+              {a.approach.steps.map((s, i) => {
+                const report = i === a.approach.steps.length - 1
+                return (
+                  <li key={s.label} className="group flex min-w-0 gap-5 lg:flex-col lg:gap-5">
+                    <div aria-hidden className="flex w-5 shrink-0 flex-col items-center lg:h-5 lg:w-auto lg:flex-row">
+                      {report ? (
+                        <span className="grid size-5 shrink-0 place-items-center rounded-[4px] bg-sage text-ink">
+                          <Check className="size-3.5" strokeWidth={2.75} />
+                        </span>
+                      ) : (
+                        <span className="grid size-5 shrink-0 place-items-center">
+                          <span className="size-2.5 bg-white ring-[1.5px] ring-cobalt transition-colors duration-200 group-hover:bg-cobalt motion-reduce:transition-none" />
+                        </span>
+                      )}
+                      {report ? (
+                        <span className="hidden h-0.5 w-10 bg-sage/60 lg:block" />
+                      ) : (
+                        <span className="mt-1 w-0.5 flex-1 bg-cobalt/20 transition-colors duration-200 group-hover:bg-cobalt motion-reduce:transition-none lg:mt-0 lg:ml-1 lg:h-0.5 lg:w-auto" />
+                      )}
+                    </div>
+                    <div className={`flex min-w-0 flex-col gap-1.5 [hyphens:auto] lg:pb-0 lg:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
                       <span
-                        aria-hidden
-                        className={`w-0.5 flex-1 opacity-40 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none lg:h-0.5 lg:w-auto ${
-                          toReport ? 'bg-sage' : 'bg-cobalt'
+                        className={`text-xs font-semibold tabular-nums tracking-[0.14em] transition-colors duration-200 motion-reduce:transition-none ${
+                          report ? 'text-ink/55' : 'text-cobalt/70 group-hover:text-cobalt'
                         }`}
-                      />
-                    )}
-                  </div>
-                  <div className={`flex min-w-0 flex-col gap-2 [hyphens:auto] lg:pb-0 lg:pr-6 ${last ? 'pb-0' : 'pb-10'}`}>
-                    <h3 className="font-display text-xl font-semibold leading-snug text-ink">{s.label}</h3>
-                    <p className="text-pretty leading-relaxed text-ink/75">{s.text}</p>
-                  </div>
-                </li>
-              )
-            })}
-          </ol>
+                      >
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="font-display text-lg font-semibold leading-snug text-ink">{s.label}</h3>
+                      <p className="text-pretty text-[0.9375rem] leading-relaxed text-ink/75">{s.text}</p>
+                    </div>
+                  </li>
+                )
+              })}
+            </ol>
+          </div>
         </Container>
       </section>
 

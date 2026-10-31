@@ -298,11 +298,11 @@ export const de: PartnerCopy = {
     subtitle: 'Von der Kontobewertung bis zum transparenten Reporting.',
     intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
     steps: [
-      { label: 'Bewerten', text: 'Bewertung von Konto und Setup' },
-      { label: 'Analysieren', text: 'Performance-Analyse: ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern die Daten belastbar sind' },
-      { label: 'Priorisieren', text: 'Priorisierte Maßnahmen' },
-      { label: 'Umsetzen', text: 'Von Experten geprüfte Umsetzung' },
-      { label: 'Berichten', text: 'Transparentes Reporting' },
+      { label: 'Bewerten', text: 'Bewertung von Konto und Setup.' },
+      { label: 'Analysieren', text: 'Performance-Analyse, einschließlich ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern belastbare Daten vorliegen.' },
+      { label: 'Priorisieren', text: 'Übersetzung der Erkenntnisse in einen klaren, priorisierten Maßnahmenplan.' },
+      { label: 'Umsetzen', text: 'Umsetzung der abgestimmten Maßnahmen mit Expertenprüfung und Qualitätskontrolle.' },
+      { label: 'Berichten', text: 'Transparentes Performance-Reporting, Erkenntnisse und empfohlene nächste Schritte.' },
     ],
     },
     training: {

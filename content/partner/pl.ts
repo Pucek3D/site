@@ -298,11 +298,11 @@ export const pl: PartnerCopy = {
     subtitle: 'Od oceny konta po przejrzyste raportowanie.',
     intro: 'Za oboma modelami stoi ta sama sekwencja prowadzona przez ekspertów.',
     steps: [
-      { label: 'Ocena', text: 'Ocena konta i konfiguracji' },
-      { label: 'Analiza', text: 'Analiza wyników: ACOS, ROAS oraz sprzedaż z reklam na tle sprzedaży całkowitej, gdy dane są wiarygodne' },
-      { label: 'Priorytety', text: 'Działania uszeregowane według priorytetów' },
-      { label: 'Realizacja', text: 'Realizacja weryfikowana przez ekspertów' },
-      { label: 'Raport', text: 'Przejrzyste raportowanie' },
+      { label: 'Ocena', text: 'Ocena konta i jego konfiguracji.' },
+      { label: 'Analiza', text: 'Analiza wyników, w tym ACOS, ROAS oraz sprzedaży z reklam na tle sprzedaży całkowitej, o ile dostępne są wiarygodne dane.' },
+      { label: 'Priorytety', text: 'Przełożenie wniosków na jasny plan działań uszeregowany według priorytetów.' },
+      { label: 'Realizacja', text: 'Wdrożenie uzgodnionych działań z weryfikacją ekspercką i kontrolą jakości.' },
+      { label: 'Raport', text: 'Przejrzyste raportowanie wyników, wnioski i rekomendowane kolejne kroki.' },
     ],
     },
     training: {

@@ -301,11 +301,11 @@ export const en: PartnerCopy = {
     subtitle: 'From account assessment to transparent reporting.',
     intro: 'The same expert-led sequence sits behind both models.',
     steps: [
-      { label: 'Assess', text: 'Account and setup assessment' },
-      { label: 'Analyse', text: 'Performance analysis: ACOS, ROAS and paid versus total sales, where the data is reliable' },
-      { label: 'Prioritise', text: 'Prioritised actions' },
-      { label: 'Execute', text: 'Expert-reviewed execution' },
-      { label: 'Report', text: 'Transparent reporting' },
+      { label: 'Assess', text: 'Account and setup assessment.' },
+      { label: 'Analyse', text: 'Performance analysis, including ACOS, ROAS and paid versus total sales where reliable data is available.' },
+      { label: 'Prioritise', text: 'Translate the findings into a clear, prioritised action plan.' },
+      { label: 'Execute', text: 'Implement agreed actions with expert review and quality control.' },
+      { label: 'Report', text: 'Transparent performance reporting, insights and recommended next actions.' },
     ],
     },
     training: {
