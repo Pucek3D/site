@@ -135,10 +135,18 @@ export type PartnerCopy = {
   }
 
   training: {
-    hero: Hero
-    howItWorks: { title: string; items: Titled[] }
-    tailored: { title: string; items: Titled[] }
-    formats: { title: string; paragraphs: string[]; cta: string }
+    hero: Hero & { standalone: string; primaryCta: string; secondaryCta: string; imageAlt: string }
+    /** Three-stage learning approach (not a fixed timetable) + compact practical facts. */
+    experience: {
+      eyebrow: string
+      title: string
+      intro: string
+      steps: { title: string; body: string; points?: string[] }[]
+      support: Titled[]
+    }
+    /** Five curriculum areas, adaptable per programme. */
+    curriculum: { eyebrow: string; title: string; intro: string; items: Titled[] }
+    formats: { eyebrow: string; title: string; paragraphs: string[]; cta: string }
   }
 
   about: {

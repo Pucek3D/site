@@ -311,75 +311,66 @@ export const en: PartnerCopy = {
 
   training: {
     hero: {
-      eyebrow: 'Amazon PPC training',
-      title: 'Build your in-house Amazon PPC expertise',
-      subtitle: 'Develop the Skills to Manage Amazon Advertising with Confidence.',
+      eyebrow: "Amazon PPC training",
+      title: "Build your in-house Amazon PPC expertise.",
+      subtitle: "Practical training. Real advertising decisions. Skills your team can apply.",
       paragraphs: [
-        'For brand and agency teams that want to manage advertising internally, we offer practical training designed to develop their employees into capable Amazon PPC specialists.',
-        'Our programmes combine advertising fundamentals, analytical skills and real-world optimisation techniques, helping your team understand not just what to change, but why. Training is a standalone offer: no PPC management contract is required.',
+        "Practical Amazon PPC training for brand, e-commerce, marketing and agency teams that want to strengthen their advertising knowledge and make more confident decisions.",
+        "Our sessions combine advertising fundamentals, performance analysis and hands-on optimisation exercises. Where appropriate access is available, teams can work with their own campaign data and apply what they learn to real advertising challenges.",
       ],
+      standalone: "Standalone training. No PPC management contract required.",
+      primaryCta: "Discuss your training needs",
+      secondaryCta: "Explore training topics",
+      imageAlt: "Trainer presenting a PPC programme outline to a small team",
     },
-    howItWorks: {
-      title: 'How the training works',
-      items: [
+    experience: {
+      eyebrow: "The learning experience",
+      title: "How the training works",
+      intro: "Every programme is scoped with your team. Format, curriculum and deliverables are agreed for each engagement; the three stages below describe our approach, not a fixed timetable.",
+      steps: [
         {
-          title: 'Who it is for',
-          body: 'Brand, e-commerce and marketing teams, and agency PPC teams, from new starters to experienced specialists.',
+          title: "Understand the starting point",
+          body: "Training is adapted to the audience and its current level of knowledge.",
+          points: [
+            "No prerequisites for foundation-level training.",
+            "Advanced workshops assume working knowledge of Amazon advertising.",
+          ],
         },
         {
-          title: 'Prerequisites',
-          body: 'None for foundation training. Advanced workshops assume working knowledge of Amazon advertising.',
+          title: "Practise on real decisions",
+          body: "Sessions work through practical PPC scenarios. Where appropriate access is available, exercises can use your team's own account or campaign data; live access is not required to take part.",
         },
         {
-          title: 'Live account exercises',
-          body: 'Where access is available, exercises use your own campaign data, so skills are practised on real decisions.',
-        },
-        {
-          title: 'What your team takes away',
-          body: 'Quality rubrics for reviewing campaign work and an implementation plan prioritised for your account.',
-        },
-        {
-          title: 'Follow-up',
-          body: 'Follow-up sessions or ongoing coaching can be agreed after the programme.',
-        },
-        {
-          title: 'Purchased on its own',
-          body: 'Training is scoped to your team and can be bought without PPC management.',
+          title: "Apply the learning",
+          body: "Teams work toward actionable next steps, with quality rubrics for reviewing campaign work and an implementation plan tailored to the agreed programme scope.",
         },
       ],
+      support: [
+        { title: "Who it is for", body: "Brand, marketing, e-commerce and agency PPC teams, at different experience levels." },
+        { title: "Follow-up", body: "Optional follow-up sessions or coaching can be agreed separately." },
+        { title: "Purchased on its own", body: "Training does not require PPC management." },
+      ],
     },
-    tailored: {
-      title: 'Training tailored to your team',
+    curriculum: {
+      eyebrow: "Training content",
+      title: "Training tailored to your team",
+      intro: "Five curriculum areas that can be included or adapted according to the agreed training programme. They are not separate mandatory courses.",
       items: [
-        {
-          title: 'Amazon PPC Fundamentals',
-          body: 'Understand advertising formats, campaign structures, targeting options, bidding strategies and core performance metrics.',
-        },
-        {
-          title: 'Campaign Optimisation',
-          body: 'Learn how to analyse performance, adjust bids and budgets, manage search terms and identify opportunities to improve advertising efficiency.',
-        },
-        {
-          title: 'Advanced Targeting Strategies',
-          body: 'Explore keyword harvesting, negative targeting, competitor targeting, keyword isolation and more sophisticated campaign approaches.',
-        },
-        {
-          title: 'Performance Analysis',
-          body: 'Develop the ability to interpret ACOS, ROAS, conversion rates, advertising sales and total sales performance to make better decisions.',
-        },
-        {
-          title: 'Practical Account Workshops',
-          body: 'Apply the concepts to real campaigns and account data, identifying specific opportunities and developing an actionable optimisation plan.',
-        },
+        { title: "Amazon PPC Fundamentals", body: "Advertising formats, campaign structures, targeting options, bidding strategies and core performance metrics." },
+        { title: "Campaign Optimisation", body: "Performance analysis, bid and budget adjustments, search-term management and opportunities to improve advertising efficiency." },
+        { title: "Advanced Targeting Strategies", body: "Keyword harvesting, negative targeting, competitor targeting, keyword isolation and more advanced campaign approaches." },
+        { title: "Performance Analysis", body: "Interpret ACOS, ROAS, conversion rates, advertising sales and total sales to make informed decisions." },
+        { title: "Practical Account Workshops", body: "Apply relevant concepts to real campaign scenarios and available account data, identify opportunities and develop prioritised optimisation actions." },
       ],
     },
     formats: {
-      title: 'Flexible training formats',
+      eyebrow: "Flexible training formats",
+      title: "Training that fits your team.",
       paragraphs: [
-        'We can tailor the format to your needs, from foundational training for new employees to advanced workshops for existing PPC specialists and ongoing coaching for in-house teams.',
-        'Our objective is simple: to help your employees develop practical skills they can apply to your business.',
+        "Training can be adapted to your team's experience and learning objectives, from foundational sessions for new employees to advanced workshops for existing PPC practitioners. Optional follow-up sessions or coaching may be agreed separately.",
+        "The objective is to help teams develop practical knowledge and working methods they can apply to their Amazon advertising responsibilities.",
       ],
-      cta: 'Discuss Your Training Needs',
+      cta: "Discuss your training needs",
     },
   },
 

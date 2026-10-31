@@ -169,9 +169,12 @@ export function FinalCta({
   variant = 'sage',
   secondary,
   eyebrow,
+  eyebrowAccent = 'cobalt',
 }: {
   id: string
   eyebrow?: string
+  /** Training uses Sage; every other page keeps the Cobalt default. */
+  eyebrowAccent?: 'cobalt' | 'sage'
   title: string
   paragraphs: string[]
   cta: string
@@ -184,8 +187,13 @@ export function FinalCta({
     <Section tone="ink" labelledBy={id}>
       <div className="flex max-w-3xl flex-col gap-6">
         {eyebrow ? (
-          <p className="flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-cobalt-light">
-            <span aria-hidden className="h-px w-6 shrink-0 bg-cobalt-light" />
+          <p
+            className={cn(
+              'flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em]',
+              eyebrowAccent === 'sage' ? 'text-sage' : 'text-cobalt-light',
+            )}
+          >
+            <span aria-hidden className={cn('h-px w-6 shrink-0', eyebrowAccent === 'sage' ? 'bg-sage' : 'bg-cobalt-light')} />
             {eyebrow}
           </p>
         ) : null}

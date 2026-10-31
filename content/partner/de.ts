@@ -308,75 +308,66 @@ export const de: PartnerCopy = {
 
   training: {
     hero: {
-      eyebrow: 'Amazon-PPC-Schulungen',
-      title: 'Bauen Sie interne Amazon-PPC-Expertise auf',
-      subtitle: 'Entwickeln Sie die Fähigkeiten, Amazon-Werbung souverän zu steuern.',
+      eyebrow: "Amazon-PPC-Schulungen",
+      title: "Bauen Sie interne Amazon-PPC-Expertise auf.",
+      subtitle: "Praxisnahe Schulungen. Echte Werbeentscheidungen. Fähigkeiten, die Ihr Team anwenden kann.",
       paragraphs: [
-        'Für Marken- und Agenturteams, die ihre Werbung intern steuern möchten, bieten wir praxisnahe Schulungen, die Mitarbeitende zu kompetenten Amazon-PPC-Spezialisten entwickeln.',
-        'Unsere Programme verbinden Werbegrundlagen, analytische Fähigkeiten und praxisnahe Optimierungstechniken – damit Ihr Team nicht nur versteht, was es ändern soll, sondern auch warum. Schulungen sind ein eigenständiges Angebot: Ein PPC-Management-Vertrag ist nicht erforderlich.',
+        "Praxisnahe Amazon-PPC-Schulungen für Marken-, E-Commerce-, Marketing- und Agenturteams, die ihr Werbewissen vertiefen und Entscheidungen sicherer treffen möchten.",
+        "Unsere Sessions verbinden Werbegrundlagen, Performance-Analyse und praktische Optimierungsübungen. Wenn ein passender Zugriff möglich ist, können Teams mit ihren eigenen Kampagnendaten arbeiten und das Gelernte direkt auf echte Werbeherausforderungen anwenden.",
       ],
+      standalone: "Eigenständige Schulung. Kein PPC-Management-Vertrag erforderlich.",
+      primaryCta: "Ihren Schulungsbedarf besprechen",
+      secondaryCta: "Schulungsthemen ansehen",
+      imageAlt: "Trainerin stellt einem kleinen Team den Ablauf eines PPC-Programms vor",
     },
-    howItWorks: {
-      title: 'So funktionieren die Schulungen',
-      items: [
+    experience: {
+      eyebrow: "Die Lernerfahrung",
+      title: "So funktionieren die Schulungen",
+      intro: "Jedes Programm wird mit Ihrem Team abgestimmt. Format, Inhalte und Ergebnisse werden für jedes Engagement vereinbart; die drei Stufen unten beschreiben unseren Ansatz, keinen festen Zeitplan.",
+      steps: [
         {
-          title: 'Für wen',
-          body: 'Für Marken-, E-Commerce- und Marketingteams sowie PPC-Teams in Agenturen – von Einsteigern bis zu erfahrenen Spezialisten.',
+          title: "Den Ausgangspunkt verstehen",
+          body: "Die Schulung wird auf die Teilnehmenden und ihren aktuellen Wissensstand zugeschnitten.",
+          points: [
+            "Keine Voraussetzungen für Grundlagenschulungen.",
+            "Fortgeschrittene Workshops setzen praktische Kenntnisse der Amazon-Werbung voraus.",
+          ],
         },
         {
-          title: 'Voraussetzungen',
-          body: 'Keine für Grundlagenschulungen. Fortgeschrittene Workshops setzen praktische Kenntnisse der Amazon-Werbung voraus.',
+          title: "An echten Entscheidungen üben",
+          body: "Die Sessions arbeiten mit praxisnahen PPC-Szenarien. Wenn ein passender Zugriff möglich ist, können Übungen die eigenen Konto- oder Kampagnendaten Ihres Teams nutzen; ein Live-Zugriff ist für die Teilnahme nicht erforderlich.",
         },
         {
-          title: 'Übungen am echten Konto',
-          body: 'Wenn Zugriff möglich ist, nutzen die Übungen Ihre eigenen Kampagnendaten – so werden Fähigkeiten an echten Entscheidungen trainiert.',
-        },
-        {
-          title: 'Was Ihr Team mitnimmt',
-          body: 'Qualitätskriterien zur Bewertung der Kampagnenarbeit und einen priorisierten Umsetzungsplan für Ihr Konto.',
-        },
-        {
-          title: 'Nachbetreuung',
-          body: 'Folgetermine oder laufendes Coaching können nach dem Programm vereinbart werden.',
-        },
-        {
-          title: 'Einzeln buchbar',
-          body: 'Die Schulung wird auf Ihr Team zugeschnitten und ist ohne PPC-Management buchbar.',
+          title: "Das Gelernte umsetzen",
+          body: "Teams erarbeiten konkrete nächste Schritte – mit Qualitätskriterien zur Bewertung der Kampagnenarbeit und einem Umsetzungsplan, der auf den vereinbarten Programmumfang zugeschnitten ist.",
         },
       ],
+      support: [
+        { title: "Für wen", body: "Marken-, Marketing-, E-Commerce- und Agentur-PPC-Teams mit unterschiedlicher Erfahrung." },
+        { title: "Nachbetreuung", body: "Optionale Folgetermine oder Coaching können separat vereinbart werden." },
+        { title: "Einzeln buchbar", body: "Die Schulung setzt kein PPC-Management voraus." },
+      ],
     },
-    tailored: {
-      title: 'Schulungen, zugeschnitten auf Ihr Team',
+    curriculum: {
+      eyebrow: "Schulungsinhalte",
+      title: "Schulungen, zugeschnitten auf Ihr Team",
+      intro: "Fünf Themenbereiche, die je nach vereinbartem Schulungsprogramm aufgenommen oder angepasst werden können. Es handelt sich nicht um separate Pflichtkurse.",
       items: [
-        {
-          title: 'Amazon-PPC-Grundlagen',
-          body: 'Verstehen Sie Werbeformate, Kampagnenstrukturen, Targeting-Optionen, Gebotsstrategien und zentrale Performance-Kennzahlen.',
-        },
-        {
-          title: 'Kampagnenoptimierung',
-          body: 'Lernen Sie, Performance zu analysieren, Gebote und Budgets anzupassen, Suchbegriffe zu steuern und Chancen zur Steigerung der Werbeeffizienz zu erkennen.',
-        },
-        {
-          title: 'Fortgeschrittene Targeting-Strategien',
-          body: 'Lernen Sie Keyword-Harvesting, negatives Targeting, Wettbewerber-Targeting, Keyword-Isolation und anspruchsvollere Kampagnenansätze kennen.',
-        },
-        {
-          title: 'Performance-Analyse',
-          body: 'Entwickeln Sie die Fähigkeit, ACOS, ROAS, Conversion-Raten, Werbeumsatz und Gesamtumsatz zu interpretieren, um bessere Entscheidungen zu treffen.',
-        },
-        {
-          title: 'Praktische Konto-Workshops',
-          body: 'Wenden Sie die Konzepte auf echte Kampagnen und Kontodaten an, erkennen Sie konkrete Chancen und entwickeln Sie einen umsetzbaren Optimierungsplan.',
-        },
+        { title: "Amazon-PPC-Grundlagen", body: "Werbeformate, Kampagnenstrukturen, Targeting-Optionen, Gebotsstrategien und zentrale Performance-Kennzahlen." },
+        { title: "Kampagnenoptimierung", body: "Performance-Analyse, Anpassung von Geboten und Budgets, Suchbegriff-Management und Chancen zur Steigerung der Werbeeffizienz." },
+        { title: "Fortgeschrittene Targeting-Strategien", body: "Keyword-Harvesting, negatives Targeting, Wettbewerber-Targeting, Keyword-Isolation und weiterführende Kampagnenansätze." },
+        { title: "Performance-Analyse", body: "ACOS, ROAS, Conversion-Raten, Werbeumsatz und Gesamtumsatz interpretieren, um fundierte Entscheidungen zu treffen." },
+        { title: "Praktische Konto-Workshops", body: "Relevante Konzepte auf echte Kampagnenszenarien und verfügbare Kontodaten anwenden, Chancen erkennen und priorisierte Optimierungsmaßnahmen entwickeln." },
       ],
     },
     formats: {
-      title: 'Flexible Schulungsformate',
+      eyebrow: "Flexible Schulungsformate",
+      title: "Schulungen, die zu Ihrem Team passen.",
       paragraphs: [
-        'Wir passen das Format an Ihren Bedarf an – von Grundlagenschulungen für neue Mitarbeitende über fortgeschrittene Workshops für erfahrene PPC-Spezialisten bis zu laufendem Coaching interner Teams.',
-        'Unser Ziel ist einfach: Ihren Mitarbeitenden helfen, praktische Fähigkeiten zu entwickeln, die sie in Ihrem Geschäft anwenden können.',
+        "Die Schulung lässt sich an Erfahrung und Lernziele Ihres Teams anpassen – von Grundlagensessions für neue Mitarbeitende bis zu fortgeschrittenen Workshops für erfahrene PPC-Praktiker. Optionale Folgetermine oder Coaching können separat vereinbart werden.",
+        "Ziel ist es, Teams praktisches Wissen und Arbeitsmethoden zu vermitteln, die sie in ihrer Verantwortung für Amazon-Werbung anwenden können.",
       ],
-      cta: 'Ihren Schulungsbedarf besprechen',
+      cta: "Ihren Schulungsbedarf besprechen",
     },
   },
 
