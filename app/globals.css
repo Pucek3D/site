@@ -188,3 +188,49 @@
   mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.12) 70px, rgba(0, 0, 0, 0.35) 150px, rgba(0, 0, 0, 0.65) 240px, rgba(0, 0, 0, 0.9) 330px, #000 420px);
   }
 }
+
+/* What-we-do cards. The light values ARE the approved card; hover (pointer devices only) and the
+   one expanded card swap them for Midnight Ink. Only colours move: the photo and geometry never do.
+   Dark-state tints are measured on #101828: body 11.9:1, muted 6.9:1, cobalt 7.4:1, sage 9.5:1. */
+.service-tile {
+  --tile-bg: #ffffff;
+  --tile-head: var(--color-ink);
+  --tile-body: var(--color-slate);
+  --tile-strong: var(--color-ink);
+  --tile-rule: var(--color-hairline);
+  --tile-cobalt: var(--color-cobalt);
+  --tile-sage: var(--color-sage);
+  background-color: var(--tile-bg);
+  transition: background-color 220ms ease-in-out, box-shadow 220ms ease-in-out;
+}
+.service-tile * {
+  transition-property: color, background-color, border-color;
+  transition-duration: 220ms;
+  transition-timing-function: ease-in-out;
+}
+.service-tile[data-active='true'] {
+  --tile-bg: var(--color-ink);
+  --tile-head: #ffffff;
+  --tile-body: #c9cfdb;
+  --tile-strong: #eef1f6;
+  --tile-rule: rgba(255, 255, 255, 0.16);
+  --tile-cobalt: #8fa6ff;
+  --tile-sage: #7fd3b9;
+}
+@media (hover: hover) {
+  .service-tile:hover {
+    --tile-bg: var(--color-ink);
+    --tile-head: #ffffff;
+    --tile-body: #c9cfdb;
+    --tile-strong: #eef1f6;
+    --tile-rule: rgba(255, 255, 255, 0.16);
+    --tile-cobalt: #8fa6ff;
+    --tile-sage: #7fd3b9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-tile,
+  .service-tile * {
+    transition: none;
+  }
+}

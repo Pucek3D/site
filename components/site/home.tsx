@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
 import { Container, CtaLink, Eyebrow } from './primitives'
 import { Sentences } from './typeset'
-import { ServiceTile, type TileLabels } from './service-tile'
+import { ServiceTileList, type TileLabels } from './service-tile'
 
 type Labels = Dictionary['common']
 
@@ -151,14 +151,14 @@ const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
     { expand: 'See the program', collapse: 'Show less', explore: 'Explore PPC training' },
   ],
   pl: [
-    { expand: 'Zobacz, jak to działa', collapse: 'Pokaż mniej', explore: 'Poznaj współpracę z agencjami' },
-    { expand: 'Zobacz, co obejmuje', collapse: 'Pokaż mniej', explore: 'Poznaj zarządzanie PPC' },
-    { expand: 'Zobacz program', collapse: 'Pokaż mniej', explore: 'Poznaj szkolenia PPC' },
+    { expand: 'Zobacz, jak to działa', collapse: 'Zwiń opis', explore: 'Poznaj współpracę z agencjami' },
+    { expand: 'Zobacz zakres usługi', collapse: 'Zwiń opis', explore: 'Poznaj zarządzanie PPC' },
+    { expand: 'Zobacz program', collapse: 'Zwiń opis', explore: 'Poznaj szkolenia PPC' },
   ],
   de: [
     { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Agenturpartnerschaften entdecken' },
     { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Management entdecken' },
-    { expand: 'Zum Programm', collapse: 'Weniger anzeigen', explore: 'PPC-Training entdecken' },
+    { expand: 'Programm ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Schulungen entdecken' },
   ],
 }
 
@@ -175,29 +175,26 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
           {w.title}
         </h2>
         {/* One flat full-width tile per row; the image alternates sides so the list reads as a sequence of rows, not a grid. */}
-        <ul className="mt-7 flex flex-col gap-5">
-          {w.items.map((s, i) => {
+        <ServiceTileList
+          tiles={w.items.map((s, i) => {
             const v = services[i]
-            const row = i
-            return (
-              <ServiceTile
-                key={s.number}
-                number={s.number}
-                name={s.name}
-                tagline={s.tagline}
-                paragraphs={s.paragraphs}
-                bullets={s.bullets}
-                art={v.art}
-                alt={v.alt}
-                focus={'focus' in v ? v.focus : undefined}
-                accent={i === TRAINING_INDEX ? 'sage' : 'cobalt'}
-                to={href(locale, v.to)}
-                labels={TILE_LABELS[locale][i]}
-                imageLeft={row % 2 === 1}
-              />
-            )
+            return {
+              id: v.to,
+              number: s.number,
+              name: s.name,
+              tagline: s.tagline,
+              paragraphs: s.paragraphs,
+              bullets: s.bullets,
+              art: v.art,
+              alt: v.alt,
+              focus: 'focus' in v ? v.focus : undefined,
+              accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
+              to: href(locale, v.to),
+              labels: TILE_LABELS[locale][i],
+              imageLeft: i % 2 === 1,
+            }
           })}
-        </ul>
+        />
       </Container>
     </section>
   )

@@ -14,7 +14,9 @@ export type TileLabels = {
   explore: string
 }
 
-type Props = {
+export type ServiceTileData = {
+  /** Stable identifier; the accordion keys on this, never on position. */
+  id: string
   number: string
   name: string
   tagline: string
@@ -33,6 +35,26 @@ type Props = {
   imageLeft?: boolean
 }
 
+/**
+ * The three cards as one accordion: a single `activeCardId` in the parent, so opening a card
+ * closes whichever was open. Hovering never changes it, and leaving an open card keeps it open.
+ */
+export function ServiceTileList({ tiles }: { tiles: ServiceTileData[] }) {
+  const [activeCardId, setActiveCardId] = useState<string | null>(null)
+  return (
+    <ul className="mt-7 flex flex-col gap-5">
+      {tiles.map((t) => (
+        <ServiceTile
+          key={t.id}
+          {...t}
+          open={activeCardId === t.id}
+          onToggle={() => setActiveCardId((current) => (current === t.id ? null : t.id))}
+        />
+      ))}
+    </ul>
+  )
+}
+
 /** "Your clients. Your brand. Our expertise." -> lead "Your clients. Your brand." + accent "Our expertise." */
 function splitTagline(tagline: string) {
   const parts = tagline.match(/[^.!?]+[.!?]?/g)?.map((s) => s.trim()).filter(Boolean) ?? [tagline]
@@ -47,40 +69,56 @@ function splitTagline(tagline: string) {
 
 /*
  * Editorial service card: eyebrow, headline, short description, and the photograph in an arched
- * frame. Expanding never replaces the card: the rest of the description opens inside the same
- * white text column, directly under the summary, and the card grows with it. Only the chevron
- * button expands; only the arrow link navigates, so the two can never be mistaken for each other.
+ * frame. Every colour reads a `--tile-*` variable (globals.css, `.service-tile`), so the light card
+ * is exactly the approved one and hover / the open card swap only those values for Midnight Ink.
+ * Only the chevron button expands; only the arrow link navigates.
  */
-export function ServiceTile({ number, name, tagline, paragraphs, bullets, art, alt, focus, zoom, accent, to, labels, imageLeft }: Props) {
-  const [open, setOpen] = useState(false)
+function ServiceTile({
+  number,
+  name,
+  tagline,
+  paragraphs,
+  bullets,
+  art,
+  alt,
+  focus,
+  zoom,
+  accent,
+  to,
+  labels,
+  imageLeft,
+  open,
+  onToggle,
+}: ServiceTileData & { open: boolean; onToggle: () => void }) {
   const panelId = useId()
   const [excerpt, ...rest] = paragraphs
   const { lead, accent: accentLine } = splitTagline(tagline)
-  const accentText = accent === 'sage' ? 'text-sage' : 'text-cobalt'
+  const accentText = accent === 'sage' ? 'text-[var(--tile-sage)]' : 'text-[var(--tile-cobalt)]'
   const hasMore = rest.length > 0 || Boolean(bullets?.length)
   const Chevron = open ? ChevronUp : ChevronDown
 
   return (
     <li
+      data-active={open}
       className={cn(
-        'group relative flex flex-col gap-3 overflow-hidden rounded-3xl bg-white p-3 ring-1 ring-hairline',
+        'service-tile group relative flex flex-col gap-3 overflow-hidden rounded-3xl p-3 ring-1 ring-[var(--tile-rule)]',
         imageLeft ? 'md:flex-row-reverse' : 'md:flex-row',
         'md:min-h-[22rem]',
       )}
     >
       <div className="flex min-w-0 flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-7 md:pt-8 lg:px-10">
-        <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.08em] text-slate sm:tracking-[0.14em]">
+        <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.08em] text-[var(--tile-body)] sm:tracking-[0.14em]">
           <span className={cn('tabular-nums font-semibold', accentText)}>{number}</span>
-          <span aria-hidden className="hidden h-px w-6 shrink-0 bg-hairline sm:block" />
+          <span aria-hidden className="hidden h-px w-6 shrink-0 bg-[var(--tile-rule)] sm:block" />
           <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{name}</span>
         </div>
 
-        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-ink md:text-[2rem] lg:text-[2.375rem]">
+        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-[var(--tile-head)] md:text-[2rem] lg:text-[2.375rem]">
           {lead ? <span className="block">{lead}</span> : null}
           <span className={cn('block', accentText)}>{accentLine}</span>
         </h3>
 
-        <p className={cn('mt-4 max-w-md text-pretty text-[0.95rem] leading-relaxed text-slate', !open && 'line-clamp-3')}>
+        <p className={cn('mt-4 max-w-md text-pretty text-[0.95rem] leading-relaxed text-[var(--tile-body)]', !open && 'line-clamp-3')}>
           {excerpt}
         </p>
 
@@ -88,7 +126,7 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, art, a
           <div
             id={panelId}
             hidden={!open}
-            className="mt-6 max-w-md border-t border-hairline pt-6 text-[0.95rem] leading-relaxed text-slate motion-safe:animate-in motion-safe:fade-in motion-safe:duration-300"
+            className="mt-6 max-w-md border-t border-[var(--tile-rule)] pt-6 text-[0.95rem] leading-relaxed text-[var(--tile-body)] motion-safe:animate-in motion-safe:fade-in motion-safe:duration-300"
           >
             <div className="flex flex-col gap-3">
               {rest.map((p) => (
@@ -103,9 +141,12 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, art, a
                   <li key={item} className="flex gap-3">
                     <span
                       aria-hidden
-                      className={cn('mt-[0.6rem] size-1.5 shrink-0 rounded-full', accent === 'sage' ? 'bg-sage' : 'bg-cobalt')}
+                      className={cn(
+                        'mt-[0.6rem] size-1.5 shrink-0 rounded-full',
+                        accent === 'sage' ? 'bg-[var(--tile-sage)]' : 'bg-[var(--tile-cobalt)]',
+                      )}
                     />
-                    <span className="text-pretty text-ink">{item}</span>
+                    <span className="text-pretty text-[var(--tile-strong)]">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -114,13 +155,15 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, art, a
         ) : null}
 
         <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-7">
+          {/* Brand fills keep AA on both grounds (white on cobalt 5.0:1, ink on sage 7.1:1), so the
+              primary action reads the same in every state; only the focus ring offset follows the card. */}
           <Link
             href={to}
             className={cn(
-              'inline-flex max-w-full items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold hyphens-auto [overflow-wrap:anywhere] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+              'inline-flex max-w-full items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold hyphens-auto [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]',
               accent === 'sage'
-                ? 'bg-sage text-ink hover:bg-sage/85 focus-visible:ring-sage'
-                : 'bg-cobalt text-white hover:bg-cobalt/90 focus-visible:ring-cobalt',
+                ? 'bg-sage text-ink hover:bg-sage/85 focus-visible:ring-[var(--tile-sage)]'
+                : 'bg-cobalt text-white hover:bg-cobalt/90 focus-visible:ring-[var(--tile-cobalt)]',
             )}
           >
             {labels.explore}
@@ -131,8 +174,8 @@ export function ServiceTile({ number, name, tagline, paragraphs, bullets, art, a
               type="button"
               aria-expanded={open}
               aria-controls={panelId}
-              onClick={() => setOpen((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-full py-2.5 text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2"
+              onClick={onToggle}
+              className="inline-flex items-center gap-1.5 rounded-full py-2.5 text-sm font-semibold text-[var(--tile-head)] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tile-cobalt)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]"
             >
               {open ? labels.collapse : labels.expand}
               <Chevron aria-hidden className="size-4" />
