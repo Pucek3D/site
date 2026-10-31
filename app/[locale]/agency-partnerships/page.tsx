@@ -77,10 +77,12 @@ export default async function AgencyPage({ params }: Props) {
         {/* Array order is the reading order: 01 left / first, 02 right / second, at every width. */}
         <ol className="mt-12 grid gap-6 lg:grid-cols-2">
           {a.ways.models.map((m, i) => (
-            <li key={m.name} className="flex min-w-0 flex-col gap-5 rounded-xl border border-hairline bg-white p-7 md:p-9">
-              <div className="flex items-center gap-4">
-                <span className="font-display text-3xl font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
-                <span aria-hidden className="h-px flex-1 bg-hairline" />
+              <li key={m.name} className="group flex min-w-0 flex-col gap-5 rounded-xl border border-hairline bg-white p-7 md:p-9">
+                <div className="flex items-center gap-4">
+                  <span className="font-display text-3xl font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
+                  <span aria-hidden className="relative h-px flex-1 overflow-hidden bg-hairline">
+                    <span className="absolute inset-0 origin-left scale-x-0 bg-cobalt transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none" />
+                  </span>
               </div>
               <h3 className="text-pretty font-display text-2xl font-semibold leading-snug text-ink [hyphens:auto]">{m.name}</h3>
               <p className="text-pretty text-lg font-medium leading-snug text-ink">{m.summary}</p>

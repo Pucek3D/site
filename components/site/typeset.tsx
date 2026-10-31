@@ -50,7 +50,17 @@ export function Signoff({ text }: { text: string }) {
   return (
     <p className="flex flex-col gap-1">
       <span className="whitespace-nowrap font-display text-lg font-semibold text-white">{name}</span>
-      <span className="font-serif text-base italic text-mist">{descriptor.replace(/\.$/, '')}</span>
+      {/* The last " and …" clause takes its own line. */}
+      <span className="font-serif text-base italic text-mist">
+        {descriptor
+          .replace(/\.$/, '')
+          .split(/\s+(?=and\s[^,]*$)/)
+          .map((line, i) => (
+            <span key={i} className="block">
+              {line}
+            </span>
+          ))}
+      </span>
     </p>
   )
 }

@@ -11,7 +11,7 @@ export const pl: PartnerCopy = {
 
   home: {
     hero: {
-      eyebrow: 'Reklama na Amazonie, wiedza o marketplace’ach\ni praktyczne szkolenia',
+      eyebrow: 'Reklama na Amazonie, wiedza o marketplace’ach i praktyczne szkolenia',
       title: 'Popraw wyniki na Amazonie. Zbuduj kompetencje, które za nimi stoją.',
       paragraphs: [
         'ADelier łączy eksperckie zarządzanie Amazon PPC, rzetelną analizę wyników i praktyczne szkolenia dla marek konsumenckich oraz agencji, które je obsługują.',

@@ -11,7 +11,7 @@ export const de: PartnerCopy = {
 
   home: {
     hero: {
-      eyebrow: 'Amazon-Werbung, Marketplace-Expertise\nund praxisnahe Schulungen',
+      eyebrow: 'Amazon-Werbung, Marketplace-Expertise und praxisnahe Schulungen',
       title: 'Amazon-Performance verbessern. Die Kompetenz dahinter aufbauen.',
       paragraphs: [
         'ADelier verbindet expertengeführtes Amazon-PPC-Management, gründliche Performance-Analyse und praxisnahe Schulungen für Konsumgütermarken und die Agenturen, die sie betreuen.',
