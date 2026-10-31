@@ -259,33 +259,33 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
     { key: 'agencies', number: '02', ...copy.agencies, to: href(locale, 'agencies') },
   ] as const
   return (
-    <section aria-labelledby="audiences" className="bg-porcelain py-16 md:py-24">
+    <section aria-labelledby="audiences" className="bg-porcelain py-12 md:py-14 lg:py-16">
       <Container>
-        <div className="relative pl-6 pt-6 sm:pl-10 sm:pt-10">
+        <div className="relative pl-5 pt-5 sm:pl-8 sm:pt-8">
           {/* The one open-corner detail, framing the composition as a whole. */}
-          <span aria-hidden className="pointer-events-none absolute left-0 top-0 size-8 border-l-2 border-t-2 border-cobalt sm:size-10" />
+          <span aria-hidden className="pointer-events-none absolute left-0 top-0 size-7 border-l-2 border-t-2 border-cobalt sm:size-8" />
 
-          <header className="flex max-w-3xl flex-col gap-4">
+          <header className="flex max-w-3xl flex-col gap-3">
             <p className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-slate">{copy.eyebrow}</p>
             <h2
               id="audiences"
-              className="text-balance font-display text-[2.25rem] font-bold leading-[1.04] tracking-tight text-ink md:text-[3.25rem] xl:text-[4rem]"
+              className="text-balance font-display text-[2rem] font-bold leading-[1.06] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.5rem]"
             >
               <span className="block">{copy.title[0]}</span>
               <span className="block text-cobalt">{copy.title[1]}</span>
             </h2>
-            <p className="text-pretty text-lg leading-relaxed text-slate md:text-xl">{copy.subtitle}</p>
+            <p className="text-pretty text-base leading-normal text-slate md:text-lg">{copy.subtitle}</p>
           </header>
 
           {/* One composition: an Ink rule across the top, an Ink divider between the halves, and a single
               Cobalt square where the two meet. On mobile the divider turns horizontal between the stacked halves. */}
-          <div className="relative mt-8 grid grid-cols-1 border-t border-ink md:mt-10 md:grid-cols-2">
+          <div className="relative mt-7 grid grid-cols-1 border-t border-ink md:mt-8 md:grid-cols-2">
             {paths.map((p, i) => (
               <article
                 key={p.key}
                 data-path={p.key}
                 className={cn(
-                  'split-path group/path relative flex min-w-0 flex-col gap-5 break-words [hyphens:auto] px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16',
+                  'split-path group/path relative flex min-w-0 flex-col gap-4 break-words [hyphens:auto] px-5 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-9',
                   i === 1 && 'border-t border-ink md:border-l md:border-t-0',
                 )}
               >
@@ -299,14 +299,14 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
                   </span>
                   <span>{p.label}</span>
                 </p>
-                <h3 className="font-display text-[2rem] font-semibold leading-[1.05] tracking-tight text-[var(--p-head)] sm:text-[2.25rem] md:text-[2.5rem] xl:text-[3.25rem]">
+                <h3 className="font-display text-[1.75rem] font-semibold leading-[1.08] tracking-tight text-[var(--p-head)] sm:text-[1.875rem] md:text-[2rem] xl:text-[2.125rem]">
                   <span className="block">{p.headline[0]}</span>
                   <span className="block text-[var(--p-accent)]">{p.headline[1]}</span>
                 </h3>
-                <p className="max-w-[46ch] text-pretty text-base leading-relaxed text-[var(--p-body)] md:text-[1.0625rem]">{p.description}</p>
+                <p className="max-w-[46ch] text-pretty text-base leading-normal text-[var(--p-body)]">{p.description}</p>
                 <Link
                   href={p.to}
-                  className="mt-3 inline-flex min-h-12 w-fit max-w-full items-center gap-2.5 rounded-md bg-[var(--p-btn-bg)] px-5 py-3 font-display text-[0.9375rem] font-semibold leading-tight text-[var(--p-btn-fg)] [hyphens:auto] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--p-accent)]"
+                  className="mt-auto inline-flex min-h-11 w-fit max-w-full items-center gap-2.5 rounded-md bg-[var(--p-btn-bg)] px-5 py-2.5 font-display text-[0.9375rem] font-semibold leading-tight text-[var(--p-btn-fg)] [hyphens:auto] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--p-accent)]"
                 >
                   <span className="min-w-0">{p.cta}</span>
                   <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform duration-[240ms] group-hover/path:translate-x-1 motion-reduce:transition-none" />
