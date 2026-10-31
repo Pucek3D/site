@@ -106,6 +106,7 @@ export type PartnerCopy = {
       imageAlt: string
     }
     ways: {
+      eyebrow: string
       title: string
       intro: string
       /** Reading order IS the numbering: [0] renders as 01 (white-label), [1] as 02 (specialist). */
@@ -118,8 +119,8 @@ export type PartnerCopy = {
    * full approved wording (incl. the "where the data is reliable" qualifier).
    * The fifth is Report and always renders in Sage.
    */
-  approach: { title: string; subtitle: string; intro: string; steps: { label: string; text: string }[] }
-    training: { eyebrow: string; title: string; body: string; cta: string }
+  approach: { eyebrow: string; title: string; subtitle: string; intro: string; steps: { label: string; text: string }[] }
+    training: { eyebrow: string; title: string; body: string; cta: string; imageAlt: string }
     final: { title: string; paragraphs: string[]; cta: string; trainingLink: string }
   }
 

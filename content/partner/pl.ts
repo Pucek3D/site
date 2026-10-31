@@ -233,6 +233,7 @@ export const pl: PartnerCopy = {
       imageAlt: 'Dwoje partnerów biznesowych podaje sobie ręce nad biurkiem z laptopem',
     },
     ways: {
+      eyebrow: 'Modele partnerstwa',
       title: 'Dwa sposoby współpracy',
       intro: 'Wybierz realizację kampanii po naszej stronie albo specjalistę włączonego w pracę Twojego zespołu. Zakres, odpowiedzialność, akceptacje i raportowanie ustalamy przed rozpoczęciem pracy.',
       models: [
@@ -294,6 +295,7 @@ export const pl: PartnerCopy = {
       ],
     },
     approach: {
+    eyebrow: 'Proces realizacji',
     title: 'Jasny proces. Odpowiedzialność ekspertów.',
     subtitle: 'Od oceny konta po przejrzyste raportowanie.',
     intro: 'Za oboma modelami stoi ta sama sekwencja prowadzona przez ekspertów.',
@@ -306,10 +308,11 @@ export const pl: PartnerCopy = {
     ],
     },
     training: {
-      eyebrow: 'Szkolenia PPC dla zespołów agencji',
+      eyebrow: 'Rozwijaj kompetencje zespołu',
       title: 'Buduj kompetencje PPC wewnątrz swojej agencji.',
       body: 'Praktyczne szkolenia z Amazon PPC dla zespołów obsługi klienta, strategii i realizacji w agencjach. Pracuj na realnych scenariuszach kampanii, wzmacniaj rutyny optymalizacyjne i wynieś standard, który Twój zespół zastosuje samodzielnie. Szkolenie można kupić osobno, bez współpracy w zakresie realizacji ani specjalisty.',
       cta: 'Poznaj szkolenia PPC',
+      imageAlt: 'Trenerka prezentuje niewielkiej grupie plan programu szkolenia PPC',
     },
     final: {
       title: 'Porozmawiajmy o Twoich potrzebach w zakresie Amazon PPC.',

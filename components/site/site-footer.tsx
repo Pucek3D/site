@@ -8,6 +8,8 @@ import { Logo } from './logo'
 import { Container } from './primitives'
 import { Signoff } from './typeset'
 
+import { brandDescriptor } from '@/content/shared'
+
 export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dictionary; copy: PartnerCopy }) {
   const { footer, nav } = dict
   const year = new Date().getFullYear()
@@ -17,7 +19,10 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
         <hr className="mb-16 border-0 border-t border-white/20 md:mb-20" />
         <div className="grid gap-12 md:grid-cols-12">
           <div className="flex flex-col gap-6 md:col-span-5">
-            <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
+            <div className="flex flex-col gap-3">
+              <Logo variant="horizontal" reverse height={48} alt="ADelier Commerce" />
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-mist">{brandDescriptor}</p>
+            </div>
             <Signoff text={copy.signoff} />
           </div>
 

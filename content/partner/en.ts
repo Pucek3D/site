@@ -236,6 +236,7 @@ export const en: PartnerCopy = {
       imageAlt: 'Two business partners shaking hands over a desk with a laptop',
     },
     ways: {
+      eyebrow: 'The partnership models',
       title: 'Two ways to work with us',
       intro: 'Choose managed campaign delivery or specialist capacity integrated with your team. Scope, ownership, approvals and reporting are agreed before work begins.',
       models: [
@@ -297,6 +298,7 @@ export const en: PartnerCopy = {
       ],
     },
     approach: {
+    eyebrow: 'The delivery process',
     title: 'A clear process. Expert accountability.',
     subtitle: 'From account assessment to transparent reporting.',
     intro: 'The same expert-led sequence sits behind both models.',
@@ -309,10 +311,11 @@ export const en: PartnerCopy = {
     ],
     },
     training: {
-      eyebrow: 'PPC training for agency teams',
+      eyebrow: "Build your team's capability",
       title: 'Build PPC capability inside your agency.',
       body: 'Practical Amazon PPC training for agency account, strategy and delivery teams. Work with real campaign scenarios, strengthen your optimisation routines and take away a reusable standard your team can apply independently. Training is available on its own, without a delivery or specialist engagement.',
       cta: 'Explore PPC training',
+      imageAlt: 'Trainer presenting a PPC programme outline to a small group',
     },
     final: {
       title: "Let's discuss your Amazon PPC capacity needs.",

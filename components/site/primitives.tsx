@@ -41,10 +41,13 @@ export function Section({
 export function Eyebrow({
   children,
   dark = false,
+  accent = 'sage',
   className,
 }: {
   children: ReactNode
   dark?: boolean
+  /** Rule colour: Sage by default (homepage, Training); Cobalt for agency-route sections. */
+  accent?: 'sage' | 'cobalt'
   className?: string
 }) {
   return (
@@ -55,7 +58,7 @@ export function Eyebrow({
         className,
       )}
     >
-      <span aria-hidden className="h-px w-6 shrink-0 bg-sage" />
+      <span aria-hidden className={cn('h-px w-6 shrink-0', accent === 'cobalt' ? 'bg-cobalt' : 'bg-sage')} />
       {children}
     </p>
   )

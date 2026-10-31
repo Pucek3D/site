@@ -233,6 +233,7 @@ export const de: PartnerCopy = {
       imageAlt: 'Zwei Geschäftspartner geben sich über einem Schreibtisch mit Laptop die Hand',
     },
     ways: {
+      eyebrow: 'Die Partnerschaftsmodelle',
       title: 'Zwei Wege der Zusammenarbeit',
       intro: 'Wählen Sie die Umsetzung Ihrer Kampagnen durch uns oder Spezialistenkapazität, die in Ihr Team eingebunden ist. Umfang, Verantwortung, Freigaben und Reporting werden vor Arbeitsbeginn vereinbart.',
       models: [
@@ -294,6 +295,7 @@ export const de: PartnerCopy = {
       ],
     },
     approach: {
+    eyebrow: 'Der Umsetzungsprozess',
     title: 'Ein klarer Prozess. Verantwortung durch Experten.',
     subtitle: 'Von der Kontobewertung bis zum transparenten Reporting.',
     intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
@@ -306,10 +308,11 @@ export const de: PartnerCopy = {
     ],
     },
     training: {
-      eyebrow: 'PPC-Training für Agenturteams',
+      eyebrow: 'Kompetenz im eigenen Team aufbauen',
       title: 'Bauen Sie PPC-Kompetenz in Ihrer Agentur auf.',
       body: 'Praxisnahes Amazon-PPC-Training für Account-, Strategie- und Umsetzungsteams in Agenturen. Arbeiten Sie mit echten Kampagnenszenarien, stärken Sie Ihre Optimierungsroutinen und nehmen Sie einen wiederverwendbaren Standard mit, den Ihr Team eigenständig anwenden kann. Das Training ist einzeln buchbar, ohne Umsetzungs- oder Spezialistenvertrag.',
       cta: 'PPC-Training ansehen',
+      imageAlt: 'Trainerin stellt einer kleinen Gruppe den Ablauf eines PPC-Trainingsprogramms vor',
     },
     final: {
       title: 'Sprechen wir über Ihren Bedarf an Amazon-PPC-Kapazität.',
@@ -424,7 +427,7 @@ export const de: PartnerCopy = {
           body: 'Wir prüfen die Zahlen, hinterfragen Annahmen und übersetzen Erkenntnisse in passgenaue, priorisierte Empfehlungen.',
         },
         {
-          title: 'Persönlicher, verantwortlicher Service',
+          title: 'Pers��nlicher, verantwortlicher Service',
           body: 'Expertengeführte Arbeit mit einem benannten Entscheidungsverantwortlichen, enger Zusammenarbeit und klarer Kommunikation.',
         },
         {

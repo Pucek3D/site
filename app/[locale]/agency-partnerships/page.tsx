@@ -17,6 +17,9 @@ type Props = { params: Promise<{ locale: Locale }> }
  */
 const AGENCY_PHOTO = { src: '/images/svc/white-label-handshake.png', width: 1536, height: 1024, focus: '58% 45%' }
 
+/** The SAME asset + focal point as the homepage "What We Do → Training" tile. */
+const TRAINING_PHOTO = { src: '/images/svc/training-team.png', focus: '55% 40%' }
+
 const contactAgency = (locale: Locale) => href(locale, 'contact', '?topic=agency')
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -71,6 +74,7 @@ export default async function AgencyPage({ params }: Props) {
 
       <Section tone="porcelain" labelledBy="ways-title" id="ways" className="scroll-mt-24">
         <div className="flex max-w-3xl flex-col gap-5">
+          <Eyebrow accent="cobalt">{a.ways.eyebrow}</Eyebrow>
           <H2 id="ways-title">{a.ways.title}</H2>
           <p className="text-pretty text-lg leading-relaxed text-slate">{a.ways.intro}</p>
         </div>
@@ -135,7 +139,8 @@ export default async function AgencyPage({ params }: Props) {
       */}
       <section aria-labelledby="approach" className="border-b border-hairline bg-white">
         <Container className="py-14 md:py-16">
-          <div className="flex max-w-2xl flex-col gap-3 [hyphens:auto]">
+          <div className="flex max-w-2xl flex-col gap-3">
+            <Eyebrow accent="cobalt" className="mb-2">{a.approach.eyebrow}</Eyebrow>
             <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-ink md:text-4xl">
               {a.approach.title}
             </h2>
@@ -143,12 +148,12 @@ export default async function AgencyPage({ params }: Props) {
             <p className="text-pretty leading-relaxed text-slate">{a.approach.intro}</p>
           </div>
           <div className="mt-10 rounded-xl border border-hairline bg-white p-6 shadow-[0_20px_50px_rgba(16,24,40,0.09),0_4px_14px_rgba(16,24,40,0.04)] md:p-8 lg:px-9 lg:py-8">
-            <ol className="grid lg:grid-cols-5">
+            <ol className="grid xl:grid-cols-5">
               {a.approach.steps.map((s, i) => {
                 const report = i === a.approach.steps.length - 1
                 return (
-                  <li key={s.label} className="group flex min-w-0 gap-5 lg:flex-col lg:gap-5">
-                    <div aria-hidden className="flex w-5 shrink-0 flex-col items-center lg:h-5 lg:w-auto lg:flex-row">
+                  <li key={s.label} className="group flex min-w-0 gap-5 xl:flex-col xl:gap-5">
+                    <div aria-hidden className="flex w-5 shrink-0 flex-col items-center xl:h-5 xl:w-auto xl:flex-row">
                       {report ? (
                         <span className="grid size-5 shrink-0 place-items-center">
                           <span className="grid size-2.5 place-items-center overflow-hidden bg-white text-white ring-[1.5px] ring-cobalt transition-all duration-200 group-hover:size-4 group-hover:rounded-[3px] group-hover:bg-cobalt motion-reduce:transition-none">
@@ -165,13 +170,13 @@ export default async function AgencyPage({ params }: Props) {
                       )}
                       <span
                         className={`relative overflow-hidden bg-cobalt/20 ${
-                          report ? 'hidden h-0.5 w-10 lg:ml-1 lg:block' : 'mt-1 w-0.5 flex-1 lg:mt-0 lg:ml-1 lg:h-0.5 lg:w-auto'
+                          report ? 'hidden h-0.5 w-10 xl:ml-1 xl:block' : 'mt-1 w-0.5 flex-1 xl:mt-0 xl:ml-1 xl:h-0.5 xl:w-auto'
                         }`}
                       >
-                        <span className="absolute inset-0 origin-top scale-y-0 bg-cobalt transition-transform duration-500 ease-out group-hover:scale-y-100 motion-reduce:transition-none lg:origin-left lg:scale-x-0 lg:scale-y-100 lg:group-hover:scale-x-100" />
+                        <span className="absolute inset-0 origin-top scale-y-0 bg-cobalt transition-transform duration-500 ease-out group-hover:scale-y-100 motion-reduce:transition-none xl:origin-left xl:scale-x-0 xl:scale-y-100 xl:group-hover:scale-x-100" />
                       </span>
                     </div>
-                    <div className={`flex min-w-0 flex-col gap-1.5 [hyphens:auto] lg:pb-0 lg:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
+                    <div className={`flex min-w-0 flex-col gap-1.5 xl:pb-0 xl:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
                       <span className="text-xs font-semibold tabular-nums tracking-[0.14em] text-cobalt/70 transition-colors duration-200 group-hover:text-cobalt motion-reduce:transition-none">
                         {String(i + 1).padStart(2, '0')}
                       </span>
@@ -187,18 +192,28 @@ export default async function AgencyPage({ params }: Props) {
       </section>
 
       <Section tone="porcelain" labelledBy="agency-training">
-        <div className="flex flex-col gap-8 rounded-xl border border-hairline bg-white p-7 md:flex-row md:items-center md:justify-between md:p-10">
-          <div className="flex max-w-2xl flex-col gap-4">
+        <div className="grid gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[3fr_2fr] md:gap-3">
+          <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:p-9 lg:p-11">
             <Eyebrow>{a.training.eyebrow}</Eyebrow>
             <h2 id="agency-training" className="text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
               {a.training.title}
             </h2>
-            <p className="text-pretty leading-relaxed text-slate">{a.training.body}</p>
+            <p className="max-w-xl text-pretty leading-relaxed text-slate">{a.training.body}</p>
+            <CtaLink href={href(locale, 'training')} variant="sage" className="mt-2">
+              {a.training.cta}
+              <ArrowRight aria-hidden className="size-4" />
+            </CtaLink>
           </div>
-          <CtaLink href={href(locale, 'training')} variant="sage" className="shrink-0 self-start md:self-center">
-            {a.training.cta}
-            <ArrowRight aria-hidden className="size-4" />
-          </CtaLink>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[20rem] md:rounded-tl-[10rem]">
+            <Image
+              src={TRAINING_PHOTO.src}
+              alt={a.training.imageAlt}
+              fill
+              sizes="(min-width: 768px) 40vw, 100vw"
+              className="object-cover"
+              style={{ objectPosition: TRAINING_PHOTO.focus }}
+            />
+          </div>
         </div>
       </Section>
 
