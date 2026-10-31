@@ -105,7 +105,10 @@ export default async function AgencyPage({ params }: Props) {
           {/* Side-by-side only from xl: at lg the heading track is too narrow for the PL/DE headline. */}
           <div className="grid gap-12 xl:grid-cols-12 xl:gap-16">
             <div className="flex min-w-0 flex-col gap-5 [hyphens:auto] xl:col-span-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cobalt-light">{a.why.eyebrow}</p>
+              <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-cobalt-light">
+                <span aria-hidden className="h-px w-6 shrink-0 bg-cobalt-light" />
+                {a.why.eyebrow}
+              </p>
               <h2 id="why" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-white md:text-4xl xl:text-[2.75rem]">
                 {a.why.title[0]} <span className="text-cobalt-light">{a.why.title[1]}</span>
               </h2>
