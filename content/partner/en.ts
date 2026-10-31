@@ -5,7 +5,7 @@ import type { PartnerCopy } from './types'
  * feedback notes. "[Agency Name]" is ADelier Commerce.
  */
 export const en: PartnerCopy = {
-  signoff: 'ADelier Commerce — Amazon Advertising & Growth.',
+  signoff: 'ADelier Commerce — Amazon advertising, marketplace expertise and applied training.',
   pageNames: {
     agencies: 'Amazon PPC Agency Partnerships',
     brands: 'Amazon PPC Management & Training for Brands',

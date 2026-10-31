@@ -2,7 +2,7 @@ import type { PartnerCopy } from './types'
 
 /** Translation of the English partner copy. Needs review by a native speaker before launch. */
 export const pl: PartnerCopy = {
-  signoff: 'ADelier Commerce — Amazon Advertising & Growth.',
+  signoff: 'ADelier Commerce — Amazon advertising, marketplace expertise and applied training.',
   pageNames: {
     agencies: 'Współpraca Amazon PPC z agencjami',
     brands: 'Zarządzanie reklamami Amazon PPC i szkolenia dla marek',
