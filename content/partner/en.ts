@@ -133,96 +133,77 @@ export const en: PartnerCopy = {
 
   brands: {
     hero: {
-      eyebrow: 'For Brands',
-      title: 'Amazon advertising, managed with you or built within your team',
-      subtitle: 'Two ways to work with us: Amazon PPC Management and PPC Training.',
+      eyebrow: "For Brands · Amazon PPC & Training",
+      title: "Amazon PPC expertise. Managed for you or built within your team.",
+      emphasis: "Two ways to move forward: Amazon PPC Management or practical PPC Training.",
       paragraphs: [
-        'For brand owners, CMOs, e-commerce leads and Amazon managers who want clearer control over advertising and better-informed decisions.',
-        'Choose expert-led management of your campaigns, practical training for your own team, or both. Each can be purchased on its own.',
+        "For brands that want stronger control over Amazon advertising, ADelier provides expert-led campaign management and practical training for in-house teams.",
+        "Choose ongoing PPC management, develop your team’s capability, or combine both. Each service is available independently, with an approach informed by your products, goals and advertising data.",
       ],
+      primaryCta: "Explore PPC management",
+      secondaryCta: "Explore PPC training",
+      imageAlt: "Two colleagues discussing an illustrative advertising report on a screen",
     },
     ppc: {
-      label: 'Amazon PPC Management',
-      title: 'Smarter Amazon Advertising. More Control, Better Performance',
+      label: "Amazon PPC Management",
+      title: "Smarter Amazon Advertising. More Control. Better Performance.",
       paragraphs: [
-        'Amazon advertising is increasingly competitive. Efficient growth requires more than increasing bids, raising budgets or applying the same optimisation rules to every account.',
-        'We help brands make better advertising decisions through hands-on management, tailored targeting strategies and continuous performance analysis.',
+        "Amazon advertising is increasingly competitive. Efficient growth requires more than increasing bids, raising budgets or applying the same optimisation rules to every account.",
+        "We help brands make better advertising decisions through hands-on management, tailored targeting strategies and continuous performance analysis.",
       ],
-      cycleTitle: 'How we manage your account',
+      cycleTitle: "How we manage your account",
       cycle: [
-        {
-          title: 'Account and campaign review',
-          body: 'We start with your current setup: campaign structure, keyword coverage, targeting, budget allocation and search-term signals, together with relevant listing and offer context.',
-        },
-        {
-          title: 'Goal-setting',
-          body: 'We agree objectives around your products, margins, competition, advertising history and commercial priorities, so every decision has a clear reference point.',
-        },
-        {
-          title: 'Campaign architecture',
-          body: 'We organise campaigns, targeting methods and advertising formats for better control and more effective budget allocation.',
-        },
-        {
-          title: 'Ongoing management',
-          body: 'We monitor performance, analyse search terms, adjust bids, manage budgets and identify opportunities to improve efficiency or capture additional demand.',
-        },
-        {
-          title: 'Performance reporting',
-          body: 'We provide transparent reporting, explain our decisions and discuss opportunities and challenges with you. You should always understand what is happening in your account and why.',
-        },
-        {
-          title: 'Expert-led optimisation',
-          body: 'A named expert owns the account. ACOS and ROAS matter, but we evaluate results against total sales, profitability, organic performance and your growth objectives.',
-        },
+        { title: "Account and campaign review", body: "Review account structure, keyword coverage, targeting, budget allocation and search-term signals, together with relevant listing and offer context." },
+        { title: "Goals and commercial context", body: "Agree objectives informed by products, margins, competition, advertising history and the brand’s commercial priorities." },
+        { title: "Campaign architecture", body: "Organise relevant campaign structures, targeting approaches and advertising formats to improve control and budget allocation." },
+        { title: "Active campaign management", body: "Monitor and manage campaigns at the agreed cadence, analysing search terms, bids, budgets and opportunities for improvement." },
+        { title: "Expert-led optimisation", body: "Review ACOS, ROAS and available total-sales information alongside profitability, organic performance and the brand’s wider growth objectives." },
+        { title: "Transparent reporting", body: "Explain performance, actions taken, findings, challenges and recommended next steps, according to the agreed reporting scope." },
       ],
+      // Amazon DSP is deliberately NOT listed: delivery capability is unverified and
+      // flagged for commercial review. Add it here only once it is confirmed.
       manage: {
-        title: 'What we manage',
+        title: "What we manage",
         items: [
-          'Sponsored Products',
-          'Sponsored Brands',
-          'Sponsored Display and other relevant available advertising solutions',
-          'Amazon DSP — scope and availability agreed per engagement',
-          'Keyword and product targeting',
-          'Competitor targeting',
-          'Bid and budget optimisation',
-          'Search term analysis and negative targeting',
-          'Campaign structure and performance reporting',
+          "Sponsored Products",
+          "Sponsored Brands",
+          "Sponsored Display, where relevant",
+          "Keyword, product and competitor targeting",
+          "Search-term analysis and negative targeting",
+          "Bids and budget management",
+          "Campaign structure and optimisation",
+          "Performance analysis and reporting",
         ],
-        note: 'The precise scope depends on your marketplace, account setup, products and advertising objectives.',
-      },
-      who: {
-        title: 'Who we work with',
-        paragraphs: [
-          'We work with Amazon brands that want a more involved advertising partner, whether they are looking to improve existing campaigns, expand into new opportunities or establish a more structured approach to PPC.',
-          'Our focus is on practical improvements, informed decision-making and long-term account development rather than simply spending the allocated budget.',
-        ],
+        note: "The precise scope depends on your marketplace, account setup, advertising goals and agreed engagement.",
       },
     },
     training: {
-      label: 'PPC Training',
-      title: 'Build Amazon PPC capability within your brand team',
+      label: "PPC Training for Brand Teams",
+      title: "Build Amazon PPC capability within your brand team.",
       paragraphs: [
-        'For brand, e-commerce and marketing teams that want to manage Amazon advertising in-house, or work more confidently with an external partner.',
-        'Training can be purchased on its own, without PPC management.',
+        "Practical Amazon PPC training for brand, e-commerce and marketing teams that want to manage advertising in-house or collaborate more confidently with an external partner.",
+        "Training is available independently of PPC management.",
       ],
-      listLabel: 'What the training includes:',
+      listLabel: "What the training includes:",
       items: [
-        'Work on your own campaign data, where access is available',
-        'Practical exercises built around real advertising decisions',
-        'Quality rubrics for reviewing campaign work consistently',
-        'An implementation plan your team can act on',
+        "Work with your own campaign data, where access is available",
+        "Practical exercises based on real advertising decisions",
+        "Quality rubrics for reviewing campaign work consistently",
+        "An implementation plan your team can act on",
       ],
-      cta: 'Explore PPC training',
+      cta: "Explore PPC training",
+      imageAlt: "Trainer presenting a PPC programme outline to a small group",
     },
     final: {
-      title: 'Ready for a more hands-on approach?',
+      eyebrow: "Let’s talk about your Amazon goals",
+      title: "Ready to take more control of your Amazon advertising?",
       paragraphs: [
-        "Let's review your current situation and discuss where expert Amazon PPC management or training could make a difference.",
+        "Let’s discuss your current account, advertising goals and whether expert-led PPC management or practical training would be the right next step.",
       ],
-      cta: 'Discuss Amazon PPC management',
+      cta: "Discuss your Amazon PPC goals",
+      trainingLink: "Explore PPC training",
     },
   },
-
   agencies: {
     hero: {
       eyebrow: 'For agencies · Amazon PPC partnerships',

@@ -130,96 +130,77 @@ export const pl: PartnerCopy = {
 
   brands: {
     hero: {
-      eyebrow: 'Dla marek',
-      title: 'Reklama na Amazonie prowadzona razem z Tobą lub budowana w Twoim zespole',
-      subtitle: 'Dwa sposoby współpracy: zarządzanie reklamami Amazon PPC i szkolenia PPC.',
+      eyebrow: "Dla marek · Amazon PPC i szkolenia",
+      title: "Ekspertyza Amazon PPC. Prowadzona za Ciebie lub budowana w Twoim zespole.",
+      emphasis: "Dwie drogi do celu: zarządzanie Amazon PPC lub praktyczne szkolenie PPC.",
       paragraphs: [
-        'Dla właścicieli marek, CMO, osób odpowiedzialnych za e-commerce i menedżerów Amazon, którzy chcą lepszej kontroli nad reklamą i lepiej uzasadnionych decyzji.',
-        'Wybierz eksperckie zarządzanie kampaniami, praktyczne szkolenie dla własnego zespołu albo jedno i drugie. Każdą z usług można kupić osobno.',
+        "Markom, które chcą mieć większą kontrolę nad reklamą na Amazon, ADelier zapewnia eksperckie zarządzanie kampaniami oraz praktyczne szkolenia dla zespołów wewnętrznych.",
+        "Wybierz bieżące zarządzanie PPC, rozwój kompetencji swojego zespołu lub połączenie obu. Każda usługa jest dostępna niezależnie, a podejście opiera się na Twoich produktach, celach i danych reklamowych.",
       ],
+      primaryCta: "Poznaj zarządzanie PPC",
+      secondaryCta: "Poznaj szkolenie PPC",
+      imageAlt: "Dwoje współpracowników omawiających przykładowy raport reklamowy na ekranie",
     },
     ppc: {
-      label: 'Zarządzanie reklamami Amazon PPC',
-      title: 'Mądrzejsza reklama na Amazonie. Większa kontrola, lepsze wyniki',
+      label: "Zarządzanie Amazon PPC",
+      title: "Mądrzejsza reklama na Amazon. Większa kontrola. Lepsze wyniki.",
       paragraphs: [
-        'Reklama na Amazonie jest coraz bardziej konkurencyjna. Efektywny wzrost wymaga czegoś więcej niż podnoszenia stawek, zwiększania budżetów czy stosowania tych samych reguł optymalizacji na każdym koncie.',
-        'Pomagamy markom podejmować lepsze decyzje reklamowe dzięki praktycznemu zarządzaniu, dopasowanym strategiom targetowania i stałej analizie wyników.',
+        "Reklama na Amazon jest coraz bardziej konkurencyjna. Efektywny wzrost wymaga czegoś więcej niż podnoszenia stawek, zwiększania budżetów czy stosowania tych samych reguł optymalizacji na każdym koncie.",
+        "Pomagamy markom podejmować lepsze decyzje reklamowe dzięki praktycznemu zarządzaniu, dopasowanym strategiom targetowania i stałej analizie wyników.",
       ],
-      cycleTitle: 'Jak zarządzamy Twoim kontem',
+      cycleTitle: "Jak zarządzamy Twoim kontem",
       cycle: [
-        {
-          title: 'Przegląd konta i kampanii',
-          body: 'Zaczynamy od obecnej konfiguracji: struktury kampanii, pokrycia słów kluczowych, targetowania, alokacji budżetu i sygnałów z wyszukiwanych fraz, razem z istotnym kontekstem oferty i listingu.',
-        },
-        {
-          title: 'Ustalenie celów',
-          body: 'Uzgadniamy cele wokół Twoich produktów, marż, konkurencji, historii reklamowej i priorytetów handlowych, aby każda decyzja miała jasny punkt odniesienia.',
-        },
-        {
-          title: 'Architektura kampanii',
-          body: 'Porządkujemy kampanie, metody targetowania i formaty reklamowe, aby zapewnić lepszą kontrolę i skuteczniejszą alokację budżetu.',
-        },
-        {
-          title: 'Bieżące zarządzanie',
-          body: 'Monitorujemy wyniki, analizujemy wyszukiwane frazy, dostosowujemy stawki, zarządzamy budżetami i szukamy możliwości poprawy efektywności lub przechwycenia dodatkowego popytu.',
-        },
-        {
-          title: 'Raportowanie wyników',
-          body: 'Zapewniamy przejrzyste raportowanie, wyjaśniamy nasze decyzje i omawiamy z Tobą szanse oraz wyzwania. Zawsze rozumiesz, co dzieje się na Twoim koncie i dlaczego.',
-        },
-        {
-          title: 'Optymalizacja prowadzona przez eksperta',
-          body: 'Za konto odpowiada konkretny ekspert. ACOS i ROAS są ważne, ale wyniki oceniamy w odniesieniu do całkowitej sprzedaży, rentowności, wyników organicznych i Twoich celów wzrostu.',
-        },
+        { title: "Przegląd konta i kampanii", body: "Przegląd struktury konta, pokrycia słów kluczowych, targetowania, alokacji budżetu i sygnałów z wyszukiwanych fraz, wraz z kontekstem ofert i listingów." },
+        { title: "Cele i kontekst biznesowy", body: "Uzgodnienie celów w oparciu o produkty, marże, konkurencję, historię reklam i priorytety biznesowe marki." },
+        { title: "Architektura kampanii", body: "Uporządkowanie struktur kampanii, metod targetowania i formatów reklamowych dla lepszej kontroli i alokacji budżetu." },
+        { title: "Aktywne zarządzanie kampaniami", body: "Monitorowanie i zarządzanie kampaniami w uzgodnionym rytmie, z analizą fraz, stawek, budżetów i możliwości poprawy." },
+        { title: "Optymalizacja prowadzona przez ekspertów", body: "Analiza ACOS, ROAS i dostępnych danych o sprzedaży całkowitej w kontekście rentowności, wyników organicznych i szerszych celów wzrostu marki." },
+        { title: "Przejrzyste raportowanie", body: "Wyjaśnienie wyników, podjętych działań, wniosków, wyzwań i rekomendowanych kroków, zgodnie z uzgodnionym zakresem raportowania." },
       ],
+      // Amazon DSP is deliberately NOT listed: delivery capability is unverified and
+      // flagged for commercial review. Add it here only once it is confirmed.
       manage: {
-        title: 'Czym zarządzamy',
+        title: "Czym zarządzamy",
         items: [
-          'Sponsored Products',
-          'Sponsored Brands',
-          'Sponsored Display i inne dostępne, odpowiednie rozwiązania reklamowe',
-          'Amazon DSP — zakres i dostępność ustalane indywidualnie',
-          'Targetowanie słów kluczowych i produktów',
-          'Targetowanie konkurencji',
-          'Optymalizacja stawek i budżetu',
-          'Analiza wyszukiwanych fraz i targetowanie wykluczające',
-          'Struktura kampanii i raportowanie wyników',
+          "Sponsored Products",
+          "Sponsored Brands",
+          "Sponsored Display, gdy ma to zastosowanie",
+          "Targetowanie słów kluczowych, produktów i konkurencji",
+          "Analiza wyszukiwanych fraz i targetowanie negatywne",
+          "Zarządzanie stawkami i budżetami",
+          "Struktura i optymalizacja kampanii",
+          "Analiza wyników i raportowanie",
         ],
-        note: 'Dokładny zakres zależy od Twojego marketplace’u, konfiguracji konta, produktów i celów reklamowych.',
-      },
-      who: {
-        title: 'Z kim współpracujemy',
-        paragraphs: [
-          'Współpracujemy z markami na Amazonie, które chcą bardziej zaangażowanego partnera reklamowego — czy to w celu poprawy istniejących kampanii, wykorzystania nowych możliwości, czy wprowadzenia bardziej uporządkowanego podejścia do PPC.',
-          'Skupiamy się na praktycznych usprawnieniach, świadomych decyzjach i długoterminowym rozwoju konta, a nie na samym wydawaniu przydzielonego budżetu.',
-        ],
+        note: "Dokładny zakres zależy od marketplace’u, konfiguracji konta, celów reklamowych i uzgodnionej współpracy.",
       },
     },
     training: {
-      label: 'Szkolenia PPC',
-      title: 'Zbuduj kompetencje Amazon PPC w zespole Twojej marki',
+      label: "Szkolenie PPC dla zespołów marek",
+      title: "Zbuduj kompetencje Amazon PPC w zespole swojej marki.",
       paragraphs: [
-        'Dla zespołów marki, e-commerce i marketingu, które chcą prowadzić reklamę na Amazonie we własnym zakresie lub pewniej współpracować z zewnętrznym partnerem.',
-        'Szkolenie można kupić osobno, bez zarządzania PPC.',
+        "Praktyczne szkolenie Amazon PPC dla zespołów brandowych, e-commerce i marketingowych, które chcą prowadzić reklamy samodzielnie lub pewniej współpracować z zewnętrznym partnerem.",
+        "Szkolenie jest dostępne niezależnie od zarządzania PPC.",
       ],
-      listLabel: 'Co obejmuje szkolenie:',
+      listLabel: "Co obejmuje szkolenie:",
       items: [
-        'Pracę na danych z Twoich kampanii, o ile dostęp jest możliwy',
-        'Praktyczne ćwiczenia oparte na prawdziwych decyzjach reklamowych',
-        'Kryteria jakości do spójnej oceny pracy nad kampaniami',
-        'Plan wdrożenia, który zespół może zrealizować',
+        "Praca na danych z Twoich kampanii, jeśli dostęp jest możliwy",
+        "Praktyczne ćwiczenia oparte na rzeczywistych decyzjach reklamowych",
+        "Rubryki jakości do spójnej oceny pracy nad kampaniami",
+        "Plan wdrożenia, który Twój zespół może zrealizować",
       ],
-      cta: 'Poznaj szkolenia PPC',
+      cta: "Poznaj szkolenie PPC",
+      imageAlt: "Trenerka prezentująca program szkolenia PPC niewielkiej grupie",
     },
     final: {
-      title: 'Gotowy na bardziej praktyczne podejście?',
+      eyebrow: "Porozmawiajmy o Twoich celach na Amazon",
+      title: "Gotowy, by przejąć większą kontrolę nad reklamą na Amazon?",
       paragraphs: [
-        'Przyjrzyjmy się Twojej obecnej sytuacji i omówmy, gdzie eksperckie zarządzanie Amazon PPC lub szkolenie może coś zmienić.',
+        "Porozmawiajmy o Twoim obecnym koncie, celach reklamowych oraz o tym, czy kolejnym krokiem powinno być eksperckie zarządzanie PPC, czy praktyczne szkolenie.",
       ],
-      cta: 'Omów zarządzanie Amazon PPC',
+      cta: "Omów swoje cele Amazon PPC",
+      trainingLink: "Poznaj szkolenie PPC",
     },
   },
-
   agencies: {
     hero: {
       eyebrow: 'Dla agencji · Partnerstwa Amazon PPC',

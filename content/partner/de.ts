@@ -130,96 +130,77 @@ export const de: PartnerCopy = {
 
   brands: {
     hero: {
-      eyebrow: 'Für Marken',
-      title: 'Amazon-Werbung, gemeinsam gemanagt oder im eigenen Team aufgebaut',
-      subtitle: 'Zwei Wege der Zusammenarbeit: Amazon-PPC-Management und PPC-Schulungen.',
+      eyebrow: "Für Marken · Amazon PPC & Training",
+      title: "Amazon-PPC-Expertise. Für Sie betreut oder in Ihrem Team aufgebaut.",
+      emphasis: "Zwei Wege nach vorn: Amazon PPC Management oder praxisnahes PPC-Training.",
       paragraphs: [
-        'Für Markeninhaber, CMOs, E-Commerce-Verantwortliche und Amazon-Manager, die mehr Kontrolle über ihre Werbung und fundiertere Entscheidungen wollen.',
-        'Wählen Sie expertengeführtes Management Ihrer Kampagnen, praxisnahe Schulungen für Ihr eigenes Team oder beides. Beides ist einzeln buchbar.',
+        "Für Marken, die mehr Kontrolle über ihre Amazon-Werbung wollen, bietet ADelier expertengeführtes Kampagnenmanagement und praxisnahes Training für interne Teams.",
+        "Wählen Sie laufendes PPC Management, den Kompetenzaufbau in Ihrem Team oder beides. Jede Leistung ist einzeln buchbar, mit einem Ansatz, der sich an Ihren Produkten, Zielen und Werbedaten orientiert.",
       ],
+      primaryCta: "PPC Management entdecken",
+      secondaryCta: "PPC-Training entdecken",
+      imageAlt: "Zwei Kollegen besprechen einen beispielhaften Werbebericht auf einem Bildschirm",
     },
     ppc: {
-      label: 'Amazon-PPC-Management',
-      title: 'Klügere Amazon-Werbung. Mehr Kontrolle, bessere Performance',
+      label: "Amazon PPC Management",
+      title: "Smartere Amazon-Werbung. Mehr Kontrolle. Bessere Performance.",
       paragraphs: [
-        'Amazon-Werbung wird immer wettbewerbsintensiver. Effizientes Wachstum erfordert mehr, als Gebote zu erhöhen, Budgets aufzustocken oder auf jedes Konto dieselben Optimierungsregeln anzuwenden.',
-        'Wir helfen Marken, bessere Werbeentscheidungen zu treffen – durch praxisnahes Management, maßgeschneiderte Targeting-Strategien und kontinuierliche Performance-Analyse.',
+        "Amazon-Werbung wird immer wettbewerbsintensiver. Effizientes Wachstum erfordert mehr, als Gebote zu erhöhen, Budgets aufzustocken oder auf jedes Konto dieselben Optimierungsregeln anzuwenden.",
+        "Wir helfen Marken, bessere Werbeentscheidungen zu treffen – durch praxisnahes Management, maßgeschneiderte Targeting-Strategien und kontinuierliche Performance-Analyse.",
       ],
-      cycleTitle: 'So betreuen wir Ihr Konto',
+      cycleTitle: "So betreuen wir Ihr Konto",
       cycle: [
-        {
-          title: 'Konto- und Kampagnenprüfung',
-          body: 'Wir beginnen mit Ihrem aktuellen Setup: Kampagnenstruktur, Keyword-Abdeckung, Targeting, Budgetverteilung und Suchbegriffssignale, zusammen mit relevanten Listing- und Angebotsfaktoren.',
-        },
-        {
-          title: 'Zielsetzung',
-          body: 'Wir vereinbaren Ziele rund um Ihre Produkte, Margen, Ihren Wettbewerb, Ihre Werbehistorie und Ihre kommerziellen Prioritäten, damit jede Entscheidung einen klaren Bezugspunkt hat.',
-        },
-        {
-          title: 'Kampagnenarchitektur',
-          body: 'Wir ordnen Kampagnen, Targeting-Methoden und Werbeformate für bessere Kontrolle und eine effektivere Budgetverteilung.',
-        },
-        {
-          title: 'Laufendes Management',
-          body: 'Wir überwachen die Performance, analysieren Suchbegriffe, passen Gebote an, steuern Budgets und finden Möglichkeiten, die Effizienz zu verbessern oder zusätzliche Nachfrage zu erschließen.',
-        },
-        {
-          title: 'Performance-Reporting',
-          body: 'Wir liefern transparentes Reporting, erklären unsere Entscheidungen und besprechen Chancen und Herausforderungen mit Ihnen. Sie verstehen jederzeit, was in Ihrem Konto passiert und warum.',
-        },
-        {
-          title: 'Expertengeführte Optimierung',
-          body: 'Ein benannter Experte verantwortet das Konto. ACOS und ROAS sind wichtig, doch wir bewerten Ergebnisse an Gesamtumsatz, Profitabilität, organischer Performance und Ihren Wachstumszielen.',
-        },
+        { title: "Konto- und Kampagnenanalyse", body: "Prüfung von Kontostruktur, Keyword-Abdeckung, Targeting, Budgetverteilung und Suchbegriff-Signalen, zusammen mit relevantem Listing- und Angebotskontext." },
+        { title: "Ziele und kommerzieller Kontext", body: "Abstimmung der Ziele auf Basis von Produkten, Margen, Wettbewerb, Werbehistorie und den kommerziellen Prioritäten der Marke." },
+        { title: "Kampagnenarchitektur", body: "Strukturierung relevanter Kampagnen, Targeting-Ansätze und Werbeformate für mehr Kontrolle und eine bessere Budgetverteilung." },
+        { title: "Aktives Kampagnenmanagement", body: "Überwachung und Steuerung der Kampagnen im vereinbarten Rhythmus, mit Analyse von Suchbegriffen, Geboten, Budgets und Optimierungspotenzial." },
+        { title: "Expertengeführte Optimierung", body: "Bewertung von ACOS, ROAS und verfügbaren Gesamtumsatzdaten im Kontext von Profitabilität, organischer Performance und den Wachstumszielen der Marke." },
+        { title: "Transparentes Reporting", body: "Erläuterung von Performance, Maßnahmen, Erkenntnissen, Herausforderungen und empfohlenen nächsten Schritten im vereinbarten Reporting-Umfang." },
       ],
+      // Amazon DSP is deliberately NOT listed: delivery capability is unverified and
+      // flagged for commercial review. Add it here only once it is confirmed.
       manage: {
-        title: 'Was wir betreuen',
+        title: "Was wir betreuen",
         items: [
-          'Sponsored Products',
-          'Sponsored Brands',
-          'Sponsored Display und weitere passende verfügbare Werbelösungen',
-          'Amazon DSP – Umfang und Verfügbarkeit nach Vereinbarung',
-          'Keyword- und Produkt-Targeting',
-          'Wettbewerber-Targeting',
-          'Gebots- und Budgetoptimierung',
-          'Suchbegriffsanalyse und negatives Targeting',
-          'Kampagnenstruktur und Performance-Reporting',
+          "Sponsored Products",
+          "Sponsored Brands",
+          "Sponsored Display, sofern relevant",
+          "Keyword-, Produkt- und Wettbewerber-Targeting",
+          "Suchbegriffanalyse und negatives Targeting",
+          "Gebots- und Budgetmanagement",
+          "Kampagnenstruktur und Optimierung",
+          "Performance-Analyse und Reporting",
         ],
-        note: 'Der genaue Umfang hängt von Ihrem Marketplace, Ihrer Kontoeinrichtung, Ihren Produkten und Werbezielen ab.',
-      },
-      who: {
-        title: 'Mit wem wir arbeiten',
-        paragraphs: [
-          'Wir arbeiten mit Amazon-Marken, die sich einen engagierteren Werbepartner wünschen – ob sie bestehende Kampagnen verbessern, neue Chancen erschließen oder einen strukturierteren PPC-Ansatz etablieren möchten.',
-          'Unser Fokus liegt auf praktischen Verbesserungen, fundierten Entscheidungen und langfristiger Kontoentwicklung statt darauf, einfach das zugeteilte Budget auszugeben.',
-        ],
+        note: "Der genaue Umfang hängt von Ihrem Marktplatz, Ihrer Kontostruktur, Ihren Werbezielen und der vereinbarten Zusammenarbeit ab.",
       },
     },
     training: {
-      label: 'PPC-Schulungen',
-      title: 'Amazon-PPC-Kompetenz im Markenteam aufbauen',
+      label: "PPC-Training für Markenteams",
+      title: "Bauen Sie Amazon-PPC-Kompetenz in Ihrem Markenteam auf.",
       paragraphs: [
-        'Für Marken-, E-Commerce- und Marketingteams, die Amazon-Werbung intern steuern oder sicherer mit einem externen Partner zusammenarbeiten möchten.',
-        'Die Schulung ist einzeln buchbar, ohne PPC-Management.',
+        "Praxisnahes Amazon-PPC-Training für Marken-, E-Commerce- und Marketingteams, die Werbung intern steuern oder sicherer mit einem externen Partner zusammenarbeiten möchten.",
+        "Das Training ist unabhängig vom PPC Management buchbar.",
       ],
-      listLabel: 'Was die Schulung umfasst:',
+      listLabel: "Das Training umfasst:",
       items: [
-        'Arbeit mit Ihren eigenen Kampagnendaten, sofern Zugriff möglich ist',
-        'Praktische Übungen anhand echter Werbeentscheidungen',
-        'Qualitätskriterien für eine einheitliche Bewertung der Kampagnenarbeit',
-        'Einen Umsetzungsplan, mit dem Ihr Team arbeiten kann',
+        "Arbeit mit Ihren eigenen Kampagnendaten, sofern Zugriff besteht",
+        "Praxisübungen auf Basis realer Werbeentscheidungen",
+        "Qualitätsrubriken zur einheitlichen Bewertung von Kampagnenarbeit",
+        "Ein Umsetzungsplan, mit dem Ihr Team arbeiten kann",
       ],
-      cta: 'PPC-Schulungen entdecken',
+      cta: "PPC-Training entdecken",
+      imageAlt: "Trainerin stellt einer kleinen Gruppe einen PPC-Programmüberblick vor",
     },
     final: {
-      title: 'Bereit für einen praxisnaheren Ansatz?',
+      eyebrow: "Sprechen wir über Ihre Amazon-Ziele",
+      title: "Bereit für mehr Kontrolle über Ihre Amazon-Werbung?",
       paragraphs: [
-        'Lassen Sie uns Ihre aktuelle Situation betrachten und besprechen, wo expertengeführtes Amazon-PPC-Management oder eine Schulung einen Unterschied machen kann.',
+        "Lassen Sie uns über Ihr aktuelles Konto, Ihre Werbeziele und die Frage sprechen, ob expertengeführtes PPC Management oder praxisnahes Training der richtige nächste Schritt ist.",
       ],
-      cta: 'Amazon-PPC-Management besprechen',
+      cta: "Ihre Amazon-PPC-Ziele besprechen",
+      trainingLink: "PPC-Training entdecken",
     },
   },
-
   agencies: {
     hero: {
       eyebrow: 'Für Agenturen · Amazon-PPC-Partnerschaften',

@@ -72,16 +72,25 @@ export type PartnerCopy = {
 
   /** The For Brands page: two core offers, PPC Management and PPC Training. */
   brands: {
-    hero: Hero
+    hero: {
+      eyebrow: string
+      title: string
+      /** Cobalt supporting line under the headline. */
+      emphasis: string
+      paragraphs: string[]
+      primaryCta: string
+      secondaryCta: string
+      imageAlt: string
+    }
     ppc: {
       label: string
-      /** The service headline. It belongs here, never on the homepage hero. */
+      /** The service headline. It belongs here, never on the page or homepage hero. */
       title: string
       paragraphs: string[]
       cycleTitle: string
       cycle: Titled[]
+      /** Verified capabilities only — Amazon DSP stays out until its delivery is confirmed. */
       manage: { title: string; items: string[]; note: string }
-      who: { title: string; paragraphs: string[] }
     }
     training: {
       label: string
@@ -90,8 +99,9 @@ export type PartnerCopy = {
       listLabel: string
       items: string[]
       cta: string
+      imageAlt: string
     }
-    final: { title: string; paragraphs: string[]; cta: string }
+    final: { eyebrow: string; title: string; paragraphs: string[]; cta: string; trainingLink: string }
   }
 
   agencies: {

@@ -168,8 +168,10 @@ export function FinalCta({
   to,
   variant = 'sage',
   secondary,
+  eyebrow,
 }: {
   id: string
+  eyebrow?: string
   title: string
   paragraphs: string[]
   cta: string
@@ -181,6 +183,12 @@ export function FinalCta({
   return (
     <Section tone="ink" labelledBy={id}>
       <div className="flex max-w-3xl flex-col gap-6">
+        {eyebrow ? (
+          <p className="flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-cobalt-light">
+            <span aria-hidden className="h-px w-6 shrink-0 bg-cobalt-light" />
+            {eyebrow}
+          </p>
+        ) : null}
         <H2 id={id} dark>
           {title}
         </H2>
