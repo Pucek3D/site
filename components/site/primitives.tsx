@@ -46,7 +46,7 @@ export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?
         dark ? 'text-mist' : 'text-slate',
       )}
     >
-      <span aria-hidden className="h-px w-6 bg-sage" />
+      <span aria-hidden className="h-px w-6 shrink-0 bg-sage" />
       {children}
     </p>
   )
