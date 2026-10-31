@@ -258,8 +258,8 @@ function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; ey
  */
 function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
   const paths = [
-    { key: 'brands', number: '01', ...copy.brands, to: href(locale, 'brands') },
-    { key: 'agencies', number: '02', ...copy.agencies, to: href(locale, 'agencies') },
+    { key: 'agencies', number: '01', ...copy.agencies, to: href(locale, 'agencies') },
+    { key: 'brands', number: '02', ...copy.brands, to: href(locale, 'brands') },
   ] as const
   return (
     <section aria-labelledby="audiences" className="bg-porcelain py-12 md:py-14 lg:py-16">

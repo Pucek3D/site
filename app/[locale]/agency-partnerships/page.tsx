@@ -30,11 +30,24 @@ export default async function AgencyPage({ params }: Props) {
 
   return (
     <>
-      <section className="border-b border-hairline bg-white">
-        <Container className="pb-14 pt-8 md:pb-20 md:pt-10">
+      {/* Same composition as the Home hero: the photo bleeds to the right viewport edge and fades into
+          the white ground on desktop; below lg it sits full-width under the text. */}
+      <section className="relative flex flex-col-reverse overflow-hidden border-b border-hairline bg-white lg:block">
+        <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[52%]">
+          <Image
+            src={AGENCY_PHOTO.src}
+            alt={a.hero.imageAlt}
+            fill
+            priority
+            sizes="(min-width: 1024px) 52vw, 100vw"
+            className="adelier-hero-photo object-cover"
+            style={{ objectPosition: AGENCY_PHOTO.focus }}
+          />
+        </div>
+        <Container className="relative pb-14 pt-8 md:pb-20 md:pt-10">
           <Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.agencies} navLabel={d.common.breadcrumbLabel} />
-          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="flex min-w-0 flex-col gap-6 lg:col-span-6">
+          <div className="lg:flex lg:min-h-[520px] lg:items-center">
+            <div className="flex min-w-0 flex-col gap-6 lg:w-[48%] lg:pr-3">
               <Eyebrow>{a.hero.eyebrow}</Eyebrow>
               <h1 className="text-balance text-[2rem] font-semibold leading-[1.08] text-ink [hyphens:auto] min-[400px]:text-[2.25rem] sm:text-5xl xl:text-[3.5rem]">
                 {a.hero.title}
@@ -51,17 +64,6 @@ export default async function AgencyPage({ params }: Props) {
                   <ArrowDown aria-hidden className="size-4" />
                 </CtaLink>
               </div>
-            </div>
-            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl rounded-tl-[5rem] bg-porcelain md:rounded-tl-[8rem] lg:col-span-6">
-              <Image
-                src={AGENCY_PHOTO.src}
-                alt={a.hero.imageAlt}
-                fill
-                priority
-                sizes="(min-width: 1400px) 640px, (min-width: 1024px) 46vw, 100vw"
-                className="object-cover"
-                style={{ objectPosition: AGENCY_PHOTO.focus }}
-              />
             </div>
           </div>
         </Container>
