@@ -106,7 +106,7 @@ export const en: PartnerCopy = {
     },
     audiences: {
       eyebrow: 'Who we work with',
-      title: 'Different businesses. One standard of excellence.',
+      title: ['Two paths.', 'One performance standard.'],
       subtitle: 'Expert-led Amazon growth, built around how you work.',
       brands: {
         label: 'Brands',

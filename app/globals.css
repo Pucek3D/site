@@ -189,6 +189,51 @@
   }
 }
 
+/* Signature Split pathways. Same dark tints as the what-we-do cards (measured on #101828). Only the
+   hovered or keyboard-focused half turns Ink; touch devices keep the light state and tap the button. */
+.split-path {
+  --p-bg: #ffffff;
+  --p-head: var(--color-ink);
+  --p-body: var(--color-slate);
+  --p-accent: var(--color-cobalt);
+  --p-mute: var(--color-mist);
+  --p-btn-bg: var(--color-cobalt);
+  --p-btn-fg: #ffffff;
+  background-color: var(--p-bg);
+  transition: background-color 240ms ease-in-out;
+}
+.split-path * {
+  transition-property: color, background-color, border-color;
+  transition-duration: 240ms;
+  transition-timing-function: ease-in-out;
+}
+.split-path:has(a:focus-visible) {
+  --p-bg: var(--color-ink);
+  --p-head: #ffffff;
+  --p-body: #c9cfdb;
+  --p-accent: #8fa6ff;
+  --p-mute: rgba(255, 255, 255, 0.32);
+  --p-btn-bg: #ffffff;
+  --p-btn-fg: var(--color-ink);
+}
+@media (hover: hover) {
+  .split-path:hover {
+    --p-bg: var(--color-ink);
+    --p-head: #ffffff;
+    --p-body: #c9cfdb;
+    --p-accent: #8fa6ff;
+    --p-mute: rgba(255, 255, 255, 0.32);
+    --p-btn-bg: #ffffff;
+    --p-btn-fg: var(--color-ink);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .split-path,
+  .split-path * {
+    transition: none;
+  }
+}
+
 /* What-we-do cards. The light values ARE the approved card; hover (pointer devices only) and the
    one expanded card swap them for Midnight Ink. Only colours move: the photo and geometry never do.
    Dark-state tints are measured on #101828: body 11.9:1, muted 6.9:1, cobalt 7.4:1, sage 9.5:1. */

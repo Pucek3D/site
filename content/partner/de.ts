@@ -103,7 +103,7 @@ export const de: PartnerCopy = {
     },
     audiences: {
       eyebrow: 'Mit wem wir arbeiten',
-      title: 'Unterschiedliche Unternehmen. Ein Anspruch an Exzellenz.',
+      title: ['Zwei Wege.', 'Ein Anspruch an Performance.'],
       subtitle: 'Expertengeführtes Amazon-Wachstum, abgestimmt auf Ihre Arbeitsweise.',
       brands: {
         label: 'Marken',

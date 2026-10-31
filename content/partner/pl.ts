@@ -103,7 +103,7 @@ export const pl: PartnerCopy = {
     },
     audiences: {
       eyebrow: 'Z kim współpracujemy',
-      title: 'Różne biznesy. Jeden standard doskonałości.',
+      title: ['Dwie ścieżki.', 'Jeden standard skuteczności.'],
       subtitle: 'Eksperckie wsparcie wzrostu na Amazonie, dopasowane do tego, jak pracujesz.',
       brands: {
         label: 'Marki',

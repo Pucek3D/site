@@ -49,7 +49,8 @@ export type PartnerCopy = {
     /** The Signature Split: two equal audience pathways, Brands first. */
     audiences: {
       eyebrow: string
-      title: string
+      /** Two lines: the second renders in Cobalt. */
+      title: [string, string]
       subtitle: string
       brands: AudiencePath
       agencies: AudiencePath

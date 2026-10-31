@@ -267,45 +267,49 @@ function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']
 
           <header className="flex max-w-3xl flex-col gap-4">
             <p className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-slate">{copy.eyebrow}</p>
-            <h2 id="audiences" className="text-balance font-display text-3xl font-semibold leading-[1.1] tracking-tight text-ink md:text-[2.75rem]">
-              {copy.title}
+            <h2
+              id="audiences"
+              className="text-balance font-display text-[2.25rem] font-bold leading-[1.04] tracking-tight text-ink md:text-[3.25rem] xl:text-[4rem]"
+            >
+              <span className="block">{copy.title[0]}</span>
+              <span className="block text-cobalt">{copy.title[1]}</span>
             </h2>
-            <p className="text-pretty text-lg leading-relaxed text-slate">{copy.subtitle}</p>
+            <p className="text-pretty text-lg leading-relaxed text-slate md:text-xl">{copy.subtitle}</p>
           </header>
 
-          <div className="group/split relative mt-12 grid gap-12 pl-8 md:mt-16 md:grid-cols-2 md:gap-16 md:pl-0 md:pt-12 lg:gap-24">
-            {/* Shared rule: vertical on mobile, horizontal from md. */}
-            <span aria-hidden className="absolute bottom-0 left-0 top-0 w-px bg-cobalt md:bottom-auto md:right-0 md:h-px md:w-auto" />
-            {/* Emphasis segment; rests at zero width in the centre and extends toward the active pathway. */}
-            <span
-              aria-hidden
-              className={cn(
-                'absolute -top-px right-1/2 left-1/2 hidden h-[3px] bg-cobalt transition-[left,right] duration-500 ease-out motion-reduce:transition-none md:block',
-                'group-has-[[data-path=brands]:hover]/split:left-0 group-has-[[data-path=brands]:focus-within]/split:left-0',
-                'group-has-[[data-path=agencies]:hover]/split:right-0 group-has-[[data-path=agencies]:focus-within]/split:right-0',
-              )}
-            />
-            {paths.map((p) => (
-              <article key={p.key} data-path={p.key} className="group/path relative flex flex-col gap-5">
-                <span aria-hidden className="absolute -left-8 top-1.5 size-2 -translate-x-1/2 bg-cobalt md:-top-12 md:left-0 md:-translate-y-1/2 md:translate-x-0" />
-                <p className="flex items-center gap-2 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-cobalt">
+          {/* One composition: an Ink rule across the top, an Ink divider between the halves, and a single
+              Cobalt square where the two meet. On mobile the divider turns horizontal between the stacked halves. */}
+          <div className="relative mt-8 grid grid-cols-1 border-t border-ink md:mt-10 md:grid-cols-2">
+            {paths.map((p, i) => (
+              <article
+                key={p.key}
+                data-path={p.key}
+                className={cn(
+                  'split-path group/path relative flex min-w-0 flex-col gap-5 break-words [hyphens:auto] px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-16',
+                  i === 1 && 'border-t border-ink md:border-l md:border-t-0',
+                )}
+              >
+                {i === 1 && (
+                  <span aria-hidden className="absolute -left-[5px] -top-[5px] z-10 size-2.5 bg-cobalt" />
+                )}
+                <p className="flex items-center gap-2 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-[var(--p-accent)]">
                   <span>{p.number}</span>
-                  <span aria-hidden className="text-hairline">
+                  <span aria-hidden className="text-[var(--p-mute)]">
                     /
                   </span>
                   <span>{p.label}</span>
                 </p>
-                <h3 className="font-display text-[2.25rem] font-semibold leading-[1.05] tracking-tight text-ink md:text-[2.5rem] xl:text-[3.25rem]">
+                <h3 className="font-display text-[2rem] font-semibold leading-[1.05] tracking-tight text-[var(--p-head)] sm:text-[2.25rem] md:text-[2.5rem] xl:text-[3.25rem]">
                   <span className="block">{p.headline[0]}</span>
-                  <span className="block">{p.headline[1]}</span>
+                  <span className="block text-[var(--p-accent)]">{p.headline[1]}</span>
                 </h3>
-                <p className="max-w-[46ch] text-pretty text-base leading-relaxed text-slate md:text-[1.0625rem]">{p.description}</p>
+                <p className="max-w-[46ch] text-pretty text-base leading-relaxed text-[var(--p-body)] md:text-[1.0625rem]">{p.description}</p>
                 <Link
                   href={p.to}
-                  className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 font-display text-base font-semibold text-cobalt underline-offset-4 hover:underline focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cobalt"
+                  className="mt-3 inline-flex min-h-12 w-fit max-w-full items-center gap-2.5 rounded-md bg-[var(--p-btn-bg)] px-5 py-3 font-display text-[0.9375rem] font-semibold leading-tight text-[var(--p-btn-fg)] [hyphens:auto] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--p-accent)]"
                 >
-                  {p.cta}
-                  <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform duration-300 group-hover/path:translate-x-1 motion-reduce:transition-none" />
+                  <span className="min-w-0">{p.cta}</span>
+                  <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform duration-[240ms] group-hover/path:translate-x-1 motion-reduce:transition-none" />
                 </Link>
               </article>
             ))}
