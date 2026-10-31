@@ -351,7 +351,7 @@ export const de: PartnerCopy = {
     curriculum: {
       eyebrow: "Schulungsinhalte",
       title: "Schulungen, zugeschnitten auf Ihr Team",
-      intro: "Fünf Themenbereiche, die je nach vereinbartem Schulungsprogramm aufgenommen oder angepasst werden können. Es handelt sich nicht um separate Pflichtkurse.",
+      intro: "Wir konzentrieren uns auf das, was Ihr Team wirklich braucht. Von den Grundlagen des Amazon PPC bis zur fortgeschrittenen Optimierung passen wir die Schulungsinhalte an die Erfahrung Ihres Teams, seine Werbeherausforderungen und seine Ziele an.",
       items: [
         { title: "Amazon-PPC-Grundlagen", body: "Werbeformate, Kampagnenstrukturen, Targeting-Optionen, Gebotsstrategien und zentrale Performance-Kennzahlen." },
         { title: "Kampagnenoptimierung", body: "Performance-Analyse, Anpassung von Geboten und Budgets, Suchbegriff-Management und Chancen zur Steigerung der Werbeeffizienz." },
@@ -364,10 +364,27 @@ export const de: PartnerCopy = {
       eyebrow: "Flexible Schulungsformate",
       title: "Schulungen, die zu Ihrem Team passen.",
       paragraphs: [
-        "Die Schulung lässt sich an Erfahrung und Lernziele Ihres Teams anpassen – von Grundlagensessions für neue Mitarbeitende bis zu fortgeschrittenen Workshops für erfahrene PPC-Praktiker. Optionale Folgetermine oder Coaching können separat vereinbart werden.",
-        "Ziel ist es, Teams praktisches Wissen und Arbeitsmethoden zu vermitteln, die sie in ihrer Verantwortung für Amazon-Werbung anwenden können.",
+        "Die Schulung lässt sich an Erfahrung und Lernziele Ihres Teams anpassen – von Grundlagensessions für neue Mitarbeitende bis zu fortgeschrittenen Workshops für erfahrene PPC-Praktiker.",
+        "Unser Ziel ist es, Ihrem Team praktisches Wissen und Arbeitsmethoden zu vermitteln, die es bei realen Entscheidungen in der Amazon-Werbung anwenden kann.",
       ],
       cta: "Ihren Schulungsbedarf besprechen",
+      options: [
+        {
+          label: "Grundlagen",
+          title: "Eine gemeinsame PPC-Wissensbasis aufbauen.",
+          body: "Grundlagenschulung für Teammitglieder, die Aufbau, Targeting, Gebotsstrategien und zentrale Leistungskennzahlen der Amazon-Werbung verstehen müssen.",
+        },
+        {
+          label: "Fortgeschrittene Workshops",
+          title: "Analyse- und Optimierungskompetenz stärken.",
+          body: "Praxisnahe Workshops zu anspruchsvolleren Kampagnenentscheidungen und zur Problemlösung.",
+        },
+        {
+          label: "Optionale Nachbetreuung",
+          title: "Die Anwendung im Alltag unterstützen.",
+          body: "Zusätzliches Coaching oder Review-Sessions können nach dem Schulungsprogramm separat vereinbart werden.",
+        },
+      ],
     },
   },
 

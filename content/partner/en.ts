@@ -354,7 +354,7 @@ export const en: PartnerCopy = {
     curriculum: {
       eyebrow: "Training content",
       title: "Training tailored to your team",
-      intro: "Five curriculum areas that can be included or adapted according to the agreed training programme. They are not separate mandatory courses.",
+      intro: "Focused on what your team needs most. From PPC fundamentals to advanced optimisation, we tailor the training content to your team's experience, advertising challenges and goals.",
       items: [
         { title: "Amazon PPC Fundamentals", body: "Advertising formats, campaign structures, targeting options, bidding strategies and core performance metrics." },
         { title: "Campaign Optimisation", body: "Performance analysis, bid and budget adjustments, search-term management and opportunities to improve advertising efficiency." },
@@ -367,10 +367,27 @@ export const en: PartnerCopy = {
       eyebrow: "Flexible training formats",
       title: "Training that fits your team.",
       paragraphs: [
-        "Training can be adapted to your team's experience and learning objectives, from foundational sessions for new employees to advanced workshops for existing PPC practitioners. Optional follow-up sessions or coaching may be agreed separately.",
-        "The objective is to help teams develop practical knowledge and working methods they can apply to their Amazon advertising responsibilities.",
+        "Training can be adapted to your team's experience and learning objectives, from foundational sessions for new employees to advanced workshops for existing PPC practitioners.",
+        "Our aim is to help your team develop practical knowledge and working methods they can apply to real Amazon advertising decisions.",
       ],
       cta: "Discuss your training needs",
+      options: [
+        {
+          label: "Foundations",
+          title: "Build a shared PPC knowledge base.",
+          body: "Foundational learning for team members who need to understand Amazon advertising structures, targeting, bidding and core performance metrics.",
+        },
+        {
+          label: "Advanced workshops",
+          title: "Strengthen analytical and optimisation skills.",
+          body: "Practical workshops focused on more advanced campaign decisions and problem-solving.",
+        },
+        {
+          label: "Optional follow-up",
+          title: "Support continued application.",
+          body: "Additional coaching or review sessions may be agreed separately after the training programme.",
+        },
+      ],
     },
   },
 

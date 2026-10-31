@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowDown, ArrowRight, Check } from 'lucide-react'
-import { Breadcrumbs, FinalCta, H2, Paragraphs } from '@/components/site/page-kit'
+import { Breadcrumbs, H2, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -141,15 +141,40 @@ export default async function TrainingPage({ params }: Props) {
         </div>
       </Section>
 
-      <FinalCta
-        id="formats"
-        eyebrow={t.formats.eyebrow}
-        eyebrowAccent="sage"
-        title={t.formats.title}
-        paragraphs={t.formats.paragraphs}
-        cta={t.formats.cta}
-        to={contact}
-      />
+      {/* Closing: copy + CTA left, the three format possibilities right — not packages, so no cards. */}
+      <Section tone="ink" labelledBy="formats" className="py-16 md:py-20">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-0">
+          <div className="flex min-w-0 flex-col gap-6 lg:pr-14">
+            <p className="flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-sage">
+              <span aria-hidden className="h-px w-6 shrink-0 bg-sage" />
+              {t.formats.eyebrow}
+            </p>
+            <H2 id="formats" dark>
+              {t.formats.title}
+            </H2>
+            <Paragraphs items={t.formats.paragraphs} className="text-lg" dark />
+            <div className="mt-2">
+              <CtaLink href={contact} variant="sage">
+                {t.formats.cta}
+                <ArrowRight aria-hidden className="size-4" />
+              </CtaLink>
+            </div>
+          </div>
+          <ol className="flex min-w-0 flex-col divide-y divide-white/10 lg:border-l lg:border-white/10 lg:pl-14">
+            {t.formats.options.map((o, i) => (
+              <li key={o.label} className="flex flex-col gap-2 py-6 first:pt-0 last:pb-0">
+                <p className="text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-sage">
+                  <span className="tabular-nums">{num(i)}</span>
+                  <span aria-hidden className="px-2 text-sage/50">/</span>
+                  {o.label}
+                </p>
+                <h3 className="text-pretty font-display text-lg font-semibold leading-snug text-white">{o.title}</h3>
+                <p className="text-pretty text-[0.9375rem] leading-relaxed text-white/70">{o.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </Section>
     </>
   )
 }

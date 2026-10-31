@@ -146,7 +146,14 @@ export type PartnerCopy = {
     }
     /** Five curriculum areas, adaptable per programme. */
     curriculum: { eyebrow: string; title: string; intro: string; items: Titled[] }
-    formats: { eyebrow: string; title: string; paragraphs: string[]; cta: string }
+    /** `options` are format possibilities, not packages or fixed programme phases. */
+    formats: {
+      eyebrow: string
+      title: string
+      paragraphs: string[]
+      cta: string
+      options: { label: string; title: string; body: string }[]
+    }
   }
 
   about: {

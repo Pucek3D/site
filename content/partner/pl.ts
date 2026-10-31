@@ -267,7 +267,7 @@ export const pl: PartnerCopy = {
         },
         {
           title: 'Elastyczna współpraca',
-          body: 'Zacznij od jednego modelu i dostosowuj współpracę w porozumieniu z nami, gdy zmieniają się Twoje potrzeby.',
+          body: 'Zacznij od jednego modelu i dostosowuj wsp��łpracę w porozumieniu z nami, gdy zmieniają się Twoje potrzeby.',
         },
         {
           title: 'Poufność i kontrola',
@@ -351,7 +351,7 @@ export const pl: PartnerCopy = {
     curriculum: {
       eyebrow: "Zakres szkoleń",
       title: "Szkolenia dopasowane do Twojego zespołu",
-      intro: "Pięć obszarów programowych, które można włączyć lub dostosować w ramach uzgodnionego programu szkolenia. Nie są to osobne, obowiązkowe kursy.",
+      intro: "Skupiamy się na tym, czego Twój zespół najbardziej potrzebuje. Od podstaw Amazon PPC po zaawansowaną optymalizację — dopasowujemy zakres szkolenia do doświadczenia zespołu, wyzwań reklamowych i celów biznesowych.",
       items: [
         { title: "Podstawy Amazon PPC", body: "Formaty reklamowe, struktury kampanii, opcje targetowania, strategie stawek i kluczowe wskaźniki wyników." },
         { title: "Optymalizacja kampanii", body: "Analiza wyników, dostosowanie stawek i budżetów, zarządzanie wyszukiwanymi frazami i możliwości poprawy efektywności reklamy." },
@@ -364,10 +364,27 @@ export const pl: PartnerCopy = {
       eyebrow: "Elastyczne formy szkoleń",
       title: "Szkolenie dopasowane do Twojego zespołu.",
       paragraphs: [
-        "Szkolenie dopasujemy do doświadczenia i celów Twojego zespołu — od sesji podstawowych dla nowych pracowników po zaawansowane warsztaty dla praktyków PPC. Opcjonalne sesje uzupełniające lub coaching można uzgodnić osobno.",
-        "Celem jest pomoc zespołom w rozwinięciu praktycznej wiedzy i metod pracy, które zastosują w swoich obowiązkach związanych z reklamą na Amazonie.",
+        "Szkolenie dopasujemy do doświadczenia i celów Twojego zespołu — od sesji podstawowych dla nowych pracowników po zaawansowane warsztaty dla praktyków PPC.",
+        "Naszym celem jest pomóc Twojemu zespołowi rozwinąć praktyczną wiedzę i metody pracy, które zastosuje w rzeczywistych decyzjach dotyczących reklamy na Amazonie.",
       ],
       cta: "Omów swoje potrzeby szkoleniowe",
+      options: [
+        {
+          label: "Podstawy",
+          title: "Wspólna baza wiedzy o PPC.",
+          body: "Szkolenie podstawowe dla osób, które potrzebują zrozumieć strukturę reklam na Amazonie, targetowanie, ustalanie stawek i kluczowe wskaźniki efektywności.",
+        },
+        {
+          label: "Warsztaty zaawansowane",
+          title: "Rozwój umiejętności analizy i optymalizacji.",
+          body: "Praktyczne warsztaty skupione na bardziej zaawansowanych decyzjach kampanijnych i rozwiązywaniu problemów.",
+        },
+        {
+          label: "Opcjonalne wsparcie po szkoleniu",
+          title: "Wsparcie we wdrażaniu wiedzy.",
+          body: "Dodatkowy coaching lub sesje przeglądowe po zakończeniu programu szkoleniowego można uzgodnić osobno.",
+        },
+      ],
     },
   },
 
