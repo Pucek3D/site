@@ -160,7 +160,24 @@ export function ListLabel({ children }: { children: ReactNode }) {
 }
 
 /** The closing band every page ends on. */
-export function FinalCta({ id, title, paragraphs, cta, to }: { id: string; title: string; paragraphs: string[]; cta: string; to: string }) {
+export function FinalCta({
+  id,
+  title,
+  paragraphs,
+  cta,
+  to,
+  variant = 'sage',
+  secondary,
+}: {
+  id: string
+  title: string
+  paragraphs: string[]
+  cta: string
+  to: string
+  /** Defaults to Sage so existing pages keep their button; agency/brand pages pass 'primary' (Cobalt). */
+  variant?: 'sage' | 'primary'
+  secondary?: { label: string; to: string }
+}) {
   return (
     <Section tone="ink" labelledBy={id}>
       <div className="flex max-w-3xl flex-col gap-6">
@@ -168,11 +185,16 @@ export function FinalCta({ id, title, paragraphs, cta, to }: { id: string; title
           {title}
         </H2>
         <Paragraphs items={paragraphs} className="text-lg" dark />
-        <div className="mt-2">
-          <CtaLink href={to} variant="sage">
+        <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <CtaLink href={to} variant={variant}>
             {cta}
             <ArrowRight aria-hidden className="size-4" />
           </CtaLink>
+          {secondary ? (
+            <CtaLink href={secondary.to} variant="textInverse">
+              {secondary.label}
+            </CtaLink>
+          ) : null}
         </div>
       </div>
     </Section>

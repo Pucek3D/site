@@ -222,83 +222,101 @@ export const pl: PartnerCopy = {
 
   agencies: {
     hero: {
-      title: 'Skaluj swoją agencję Amazon bez skalowania kosztów stałych',
-      subtitle: 'Zespół PPC Twojej agencji, rozszerzony.',
+      eyebrow: 'Dla agencji · Partnerstwa Amazon PPC',
+      title: 'Rozwijaj ofertę Amazon. Zachowaj relację z klientem.',
+      emphasis: 'Twoi klienci. Twoja marka. Nasza wiedza.',
       paragraphs: [
-        'Rozwijaj działania reklamowe na Amazonie dzięki dedykowanym specjalistom PPC i zarządzaniu kampaniami w modelu white-label z Polski.',
-        'Pomagamy agencjom Amazon obsługującym rynki USA, Wielkiej Brytanii i inne zwiększać moce realizacyjne, obsługiwać więcej kont klientów i poprawiać efektywność operacyjną bez natychmiastowych kosztów i złożoności rozbudowy lokalnych zespołów.',
+        'ADelier pomaga agencjom marketingowym i mediowym zwiększać możliwości realizacji kampanii Amazon PPC w dwóch odrębnych modelach współpracy: zarządzania kampaniami white-label oraz wsparcia dedykowanego specjalisty PPC. Nasi eksperci z Polski pracują według uzgodnionych procesów, standardów jakości i zasad komunikacji, a relacje z klientami pozostają pod Twoją kontrolą.',
       ],
+      primaryCta: 'Porozmawiajmy o współpracy z agencją',
+      secondaryCta: 'Poznaj modele współpracy',
+      imageAlt: 'Dwoje partnerów biznesowych podaje sobie ręce nad biurkiem z laptopem',
     },
     ways: {
-      title: 'Dwa sposoby współpracy z nami',
-      whiteLabel: {
-        name: '1. Zarządzanie PPC w modelu white-label',
-        tagline: 'Ty zarządzasz relacją z klientem. My zarządzamy kampaniami.',
-        paragraphs: [
-          'Odpowiedzialne zarządzanie kampaniami realizowane pod Twoją marką. Nasz zespół działa jako przedłużenie Twojej agencji: prowadzi codzienną obsługę reklam, a Ty zachowujesz kontrolę nad strategią i relacją z klientem.',
-        ],
-        listLabel: 'W czym możemy pomóc:',
-        items: [
-          'Codzienne monitorowanie i optymalizacja kampanii',
-          'Zarządzanie stawkami i budżetem',
-          'Analiza słów kluczowych i wyszukiwanych fraz',
-          'Usprawnienia struktury kampanii',
-          'Analiza wyników i raportowanie',
-          'Wdrażanie strategii reklamowych Twojego zespołu',
-        ],
-        idealFor:
-          'Idealne dla agencji, które mają klientów, strategie kont i ambicje wzrostu, ale potrzebują dodatkowych mocy realizacyjnych.',
-      },
-      specialists: {
-        name: '2. Dedykowany specjalista / wbudowane moce PPC',
-        tagline: 'Konkretny specjalista, pracujący w uzgodnionych procesach.',
-        paragraphs: [
-          'Buduj moce operacyjne dzięki dedykowanemu specjaliście z Polski, który pracuje w ramach procesów, struktur raportowania i kanałów komunikacji Twojej agencji.',
-          'Zakres obowiązków ustalamy na początku. W zależności od współpracy specjalista może wspierać realizację kampanii, monitorowanie kont, raportowanie, optymalizację i inne uzgodnione zadania PPC.',
-        ],
-        listLabel: 'Korzyści dla Twojej agencji:',
-        items: [
-          'Konkurencyjna ekonomika współpracy bez kompromisów w jakości',
-          'Dodatkowe moce bez budowy całego lokalnego zespołu',
-          'Elastyczne zasoby w miarę rozwoju portfela klientów',
-          'Komunikacja w języku angielskim',
-          'Dedykowane wsparcie dopasowane do Twoich wewnętrznych procesów',
-        ],
-      },
+      title: 'Dwa sposoby współpracy',
+      intro: 'Wybierz realizację kampanii po naszej stronie albo specjalistę włączonego w pracę Twojego zespołu. Zakres, odpowiedzialność, akceptacje i raportowanie ustalamy przed rozpoczęciem pracy.',
+      models: [
+        {
+          name: 'Zarządzanie kampaniami PPC white-label',
+          summary: 'Ty zachowujesz relację z klientem. My realizujemy uzgodniony zakres kampanii.',
+          paragraphs: [
+            'ADelier realizuje uzgodniony zakres kampanii Amazon PPC pod Twoją marką i raportuje wybranymi przez Ciebie kanałami. Agencja zachowuje relację z klientem, własność handlową, komunikację z klientem i ostateczną akceptację, zgodnie z ustaleniami.',
+          ],
+          listLabel: 'Możliwy zakres, jeśli zostanie uzgodniony:',
+          items: [
+            'Monitorowanie i optymalizacja kampanii w uzgodnionym rytmie',
+            'Zarządzanie stawkami i budżetami',
+            'Analiza wyszukiwanych fraz i słów kluczowych',
+            'Usprawnienia struktury kampanii i targetowania',
+            'Raportowanie wyników',
+            'Wdrażanie strategii zaakceptowanej przez agencję',
+          ],
+          note: 'Nie kontaktujemy się bezpośrednio z Twoimi klientami bez Twojej zgody.',
+        },
+        {
+          name: 'Dedykowany specjalista PPC',
+          summary: 'Imiennie wskazany specjalista, pracujący w uzgodnionych procesach.',
+          paragraphs: [
+            'Dedykowany specjalista z Polski pracuje w uzgodnionych procesach Twojej agencji: na jej narzędziach, w jej rytmie, z przydzielonymi zadaniami, uprawnieniami dostępu i strukturą raportowania. Obowiązki, dostępność, weryfikacja, eskalacja i akceptacje są ustalane w umowie.',
+          ],
+          listLabel: 'Co może dać Twojej agencji:',
+          items: [
+            'Elastyczne zasoby specjalistyczne przy zmieniającym się portfelu klientów',
+            'Mniejsza potrzeba natychmiastowej rekrutacji na miejscu',
+            'Ciągłość operacyjna na obsługiwanych kontach',
+            'Współpraca w języku angielskim',
+            'Planowanie zasobów i nadzór jakości po stronie ADelier',
+          ],
+          note: 'Odrębny model wsparcia w Twoim zespole: to nie realizacja kampanii przez ADelier ani pośrednictwo pracy.',
+        },
+      ],
     },
     why: {
       title: 'Dlaczego warto z nami współpracować?',
       items: [
         {
-          title: 'Praktyczne rozszerzenie Twojego zespołu',
-          body: 'Skupiamy się na pracy operacyjnej potrzebnej do sprawnego prowadzenia kont reklamowych, dzięki czemu Twoi strategowie i opiekunowie kont mogą skoncentrować się na strategii, relacjach z klientami i rozwoju biznesu.',
+          title: 'Praktyczne przedłużenie Twojego zespołu',
+          body: 'Przejmujemy pracę operacyjną, dzięki której konta reklamowe działają sprawnie, a Twoi stratedzy i opiekunowie klientów mogą skupić się na strategii, relacjach z klientami i rozwoju biznesu.',
         },
         {
           title: 'Praktyczne podejście',
-          body: 'Nie wierzymy w ustawianie kampanii i zostawianie ich bez nadzoru. Stawiamy na aktywne zarządzanie, ekspercki przegląd i stałą optymalizację.',
+          body: 'Nie konfigurujemy kampanii, by potem zostawić je bez opieki. Praca jest aktywnie prowadzona i weryfikowana przez ekspertów.',
         },
         {
           title: 'Elastyczna współpraca',
-          body: 'Zacznij od zarządzania w modelu white-label lub od dedykowanego specjalisty, a następnie rozszerzaj współpracę wraz ze zmianą potrzeb.',
+          body: 'Zacznij od jednego modelu i dostosowuj współpracę w porozumieniu z nami, gdy zmieniają się Twoje potrzeby.',
         },
         {
           title: 'Poufność i kontrola',
-          body: 'Pracujemy w warunkach poufności, według Twoich standardów i w uzgodnionym zakresie, z wbudowanym prawem do przeglądu, eskalacji i akceptacji. Relacje z klientami pozostają Twoje.',
+          body: 'Działamy w ramach warunków poufności, zakazu podbierania klientów i ochrony relacji z klientem uzgodnionych w umowie, według Twoich standardów i w ustalonym zakresie. Relacje z klientami i prawo akceptacji pozostają po Twojej stronie.',
         },
       ],
     },
+    approach: {
+      title: 'Jak prowadzimy pracę',
+      intro: 'Za oboma modelami stoi ta sama sekwencja prowadzona przez ekspertów.',
+      steps: [
+        'Ocena konta i konfiguracji',
+        'Analiza wyników: ACOS, ROAS oraz sprzedaż z reklam na tle sprzedaży całkowitej, gdy dane są wiarygodne',
+        'Działania uszeregowane według priorytetów',
+        'Realizacja weryfikowana przez ekspertów',
+        'Przejrzyste raportowanie',
+      ],
+    },
     training: {
-      title: 'Szkolenia PPC dla zespołów agencji',
-      body: 'Szkolenia są dostępne także osobno — dla zespołów agencji, które chcą wzmocnić własne kompetencje Amazon PPC.',
-      cta: 'Poznaj szkolenia',
+      eyebrow: 'Szkolenia PPC dla zespołów agencji',
+      title: 'Buduj kompetencje PPC wewnątrz swojej agencji.',
+      body: 'Praktyczne szkolenia z Amazon PPC dla zespołów obsługi klienta, strategii i realizacji w agencjach. Pracuj na realnych scenariuszach kampanii, wzmacniaj rutyny optymalizacyjne i wynieś standard, który Twój zespół zastosuje samodzielnie. Szkolenie można kupić osobno, bez współpracy w zakresie realizacji ani specjalisty.',
+      cta: 'Poznaj szkolenia PPC',
     },
     final: {
-      title: 'Porozmawiajmy o Twoich potrzebach.',
+      title: 'Porozmawiajmy o Twoich potrzebach w zakresie Amazon PPC.',
       paragraphs: [
-        'Opowiedz nam o swojej agencji, liczbie obsługiwanych kont i rodzaju wsparcia, którego szukasz.',
-        'Omówimy model dopasowany do Twoich potrzeb operacyjnych i planów rozwoju.',
+        'Opowiedz nam o zapotrzebowaniu Twoich klientów, obecnym zespole PPC i wsparciu, którego szukasz.',
+        'Wspólnie ustalimy, który model pasuje i co obejmie zakres.',
       ],
-      cta: 'Omów współpracę z agencją',
+      cta: 'Porozmawiajmy o współpracy z agencją',
+      trainingLink: 'Albo poznaj szkolenia PPC dla swojego zespołu',
     },
   },
 

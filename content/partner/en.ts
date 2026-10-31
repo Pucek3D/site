@@ -225,83 +225,101 @@ export const en: PartnerCopy = {
 
   agencies: {
     hero: {
-      title: 'Scale your Amazon agency without scaling your overhead',
-      subtitle: "Your Agency's PPC Team, Extended.",
+      eyebrow: 'For agencies · Amazon PPC partnerships',
+      title: 'Expand your Amazon offer. Keep the client relationship.',
+      emphasis: 'Your clients. Your brand. Our expertise.',
       paragraphs: [
-        'Grow your Amazon advertising operations with dedicated PPC specialists and white-label campaign management from Poland.',
-        'We help Amazon agencies serving the US, UK and other markets increase delivery capacity, manage more client accounts and improve operational efficiency without the immediate cost and complexity of expanding their local teams.',
+        'ADelier helps marketing and media agencies grow Amazon PPC delivery capacity through two distinct partnership models: white-label campaign management and dedicated PPC specialist support. Our Poland-based experts work within agreed workflows, quality standards and communication rules, while you remain in control of your client relationships.',
       ],
+      primaryCta: 'Discuss an agency partnership',
+      secondaryCta: 'Explore partnership models',
+      imageAlt: 'Two business partners shaking hands over a desk with a laptop',
     },
     ways: {
       title: 'Two ways to work with us',
-      whiteLabel: {
-        name: '1. White-label managed PPC delivery',
-        tagline: 'You manage the client relationship. We manage the campaigns.',
-        paragraphs: [
-          'Accountable campaign management delivered behind your brand. Our team works as an extension of your agency, handling day-to-day advertising operations while you retain control over the client strategy and relationship.',
-        ],
-        listLabel: 'What we can support:',
-        items: [
-          'Daily campaign monitoring and optimisation',
-          'Bid and budget management',
-          'Keyword and search term analysis',
-          'Campaign structure improvements',
-          'Performance analysis and reporting',
-          "Implementation of your team's advertising strategies",
-        ],
-        idealFor:
-          'Ideal for agencies that have clients, account strategies and growth ambitions but need additional execution capacity.',
-      },
-      specialists: {
-        name: '2. Dedicated specialist / embedded PPC capacity',
-        tagline: 'A named specialist, working within your agreed workflows.',
-        paragraphs: [
-          "Build your operational capacity with a dedicated specialist based in Poland who works within your agency's processes, reporting structures and communication channels.",
-          'Responsibilities are agreed up front. Depending on the engagement, the specialist can support campaign execution, account monitoring, reporting, optimisation and other agreed PPC tasks.',
-        ],
-        listLabel: 'Benefits for your agency:',
-        items: [
-          'Competitive operating economics without compromising quality',
-          'Additional capacity without building an entire local team',
-          'Flexible resourcing as your client portfolio grows',
-          'English-language communication',
-          'Dedicated support aligned with your internal workflows',
-        ],
-      },
+      intro: 'Choose managed campaign delivery or specialist capacity integrated with your team. Scope, ownership, approvals and reporting are agreed before work begins.',
+      models: [
+        {
+          name: 'White-label managed PPC delivery',
+          summary: 'You keep the client relationship. We deliver the agreed campaign scope.',
+          paragraphs: [
+            'ADelier manages the agreed scope of Amazon PPC campaign delivery behind your brand and reports through the channels you choose. Your agency keeps the client relationship, commercial ownership, client communication and final approval, as agreed.',
+          ],
+          listLabel: 'Possible scope, where agreed:',
+          items: [
+            'Campaign monitoring and optimisation at the agreed cadence',
+            'Bid and budget management',
+            'Search-term and keyword analysis',
+            'Campaign structure and targeting improvements',
+            'Performance reporting',
+            'Implementation of your agency-approved strategy',
+          ],
+          note: 'We do not contact your clients directly unless you have agreed to it.',
+        },
+        {
+          name: 'Dedicated PPC specialist',
+          summary: 'A named specialist, working within your agreed workflows.',
+          paragraphs: [
+            "A dedicated specialist based in Poland works within your agency's agreed workflows, tools, cadence, task allocation, access permissions and reporting structure. Responsibilities, availability, review, escalation and approvals are agreed in the contract.",
+          ],
+          listLabel: 'What it can give your agency:',
+          items: [
+            'Flexible specialist capacity as your client portfolio changes',
+            'Less need for immediate local recruitment',
+            'Operational continuity on the accounts they support',
+            'English-language collaboration',
+            'Capacity planning and quality oversight from ADelier',
+          ],
+          note: 'A distinct embedded-capacity model: not ADelier-managed delivery, and not an employment placement.',
+        },
+      ],
     },
     why: {
       title: 'Why partner with us?',
       items: [
         {
           title: 'A practical extension of your team',
-          body: 'We focus on the operational work required to keep advertising accounts running efficiently, freeing your strategists and account leads to concentrate on strategy, client relationships and business development.',
+          body: 'We take on the operational work that keeps advertising accounts running, so your strategists and account leads can concentrate on strategy, client relationships and business development.',
         },
         {
           title: 'A hands-on approach',
-          body: "We don't believe in setting campaigns up and leaving them unattended. We focus on active management, expert review and continuous optimisation.",
+          body: "We don't set campaigns up and leave them unattended. Work is actively managed and reviewed by experts.",
         },
         {
           title: 'Flexible collaboration',
-          body: 'Start with managed delivery or a dedicated specialist, then expand the engagement as your requirements evolve.',
+          body: 'Start with one model and adjust the engagement by agreement as your requirements change.',
         },
         {
           title: 'Confidentiality and control',
-          body: "We work under confidentiality, to your standards and within an agreed scope, with your review, escalation and approval rights built in. Your client relationships stay yours.",
+          body: 'We work within the confidentiality, non-solicitation and client-protection terms agreed in your contract, to your standards and within an agreed scope. Your client relationships and approval rights stay with you.',
         },
       ],
     },
+    approach: {
+      title: 'How the work is run',
+      intro: 'The same expert-led sequence sits behind both models.',
+      steps: [
+        'Account and setup assessment',
+        'Performance analysis: ACOS, ROAS and paid versus total sales, where the data is reliable',
+        'Prioritised actions',
+        'Expert-reviewed execution',
+        'Transparent reporting',
+      ],
+    },
     training: {
-      title: 'PPC training for agency teams',
-      body: 'Training is also available on its own, for agency teams that want to strengthen their in-house Amazon PPC capability.',
-      cta: 'Explore training',
+      eyebrow: 'PPC training for agency teams',
+      title: 'Build PPC capability inside your agency.',
+      body: 'Practical Amazon PPC training for agency account, strategy and delivery teams. Work with real campaign scenarios, strengthen your optimisation routines and take away a reusable standard your team can apply independently. Training is available on its own, without a delivery or specialist engagement.',
+      cta: 'Explore PPC training',
     },
     final: {
-      title: "Let's discuss your capacity needs.",
+      title: "Let's discuss your Amazon PPC capacity needs.",
       paragraphs: [
-        "Tell us about your agency, the number of accounts you manage and the kind of support you're looking for.",
-        "We'll discuss a model that fits your operational needs and growth plans.",
+        'Tell us about your client demand, how your PPC team is set up today and the support you are looking for.',
+        "We'll talk through which model fits and what the scope would cover.",
       ],
-      cta: 'Discuss an Agency Partnership',
+      cta: 'Discuss an agency partnership',
+      trainingLink: 'Or explore PPC training for your team',
     },
   },
 

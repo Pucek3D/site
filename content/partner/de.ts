@@ -222,83 +222,101 @@ export const de: PartnerCopy = {
 
   agencies: {
     hero: {
-      title: 'Skalieren Sie Ihre Amazon-Agentur, ohne Ihre Fixkosten zu skalieren',
-      subtitle: 'Das PPC-Team Ihrer Agentur, erweitert.',
+      eyebrow: 'Für Agenturen · Amazon-PPC-Partnerschaften',
+      title: 'Erweitern Sie Ihr Amazon-Angebot. Behalten Sie die Kundenbeziehung.',
+      emphasis: 'Ihre Kunden. Ihre Marke. Unsere Expertise.',
       paragraphs: [
-        'Bauen Sie Ihre Amazon-Werbeaktivitäten aus – mit dedizierten PPC-Spezialisten und White-Label-Kampagnenmanagement aus Polen.',
-        'Wir helfen Amazon-Agenturen, die Märkte wie die USA und Großbritannien betreuen, ihre Lieferkapazität zu erhöhen, mehr Kundenkonten zu betreuen und die operative Effizienz zu steigern – ohne die unmittelbaren Kosten und die Komplexität eines Ausbaus lokaler Teams.',
+        'ADelier hilft Marketing- und Mediaagenturen, ihre Amazon-PPC-Umsetzungskapazität in zwei klar getrennten Partnerschaftsmodellen auszubauen: White-Label-Kampagnenmanagement und Unterstützung durch einen dedizierten PPC-Spezialisten. Unsere Expertinnen und Experten mit Sitz in Polen arbeiten nach vereinbarten Abläufen, Qualitätsstandards und Kommunikationsregeln, während Sie die Kontrolle über Ihre Kundenbeziehungen behalten.',
       ],
+      primaryCta: 'Agenturpartnerschaft besprechen',
+      secondaryCta: 'Partnerschaftsmodelle ansehen',
+      imageAlt: 'Zwei Geschäftspartner geben sich über einem Schreibtisch mit Laptop die Hand',
     },
     ways: {
       title: 'Zwei Wege der Zusammenarbeit',
-      whiteLabel: {
-        name: '1. White-Label-PPC-Umsetzung',
-        tagline: 'Sie führen die Kundenbeziehung. Wir führen die Kampagnen.',
-        paragraphs: [
-          'Verantwortliches Kampagnenmanagement unter der Marke Ihrer Agentur. Unser Team arbeitet als Erweiterung Ihrer Agentur und übernimmt den täglichen Werbebetrieb, während Sie die Kontrolle über Kundenstrategie und Kundenbeziehung behalten.',
-        ],
-        listLabel: 'Wobei wir unterstützen können:',
-        items: [
-          'Tägliches Monitoring und Optimierung der Kampagnen',
-          'Gebots- und Budgetmanagement',
-          'Keyword- und Suchbegriffsanalyse',
-          'Verbesserungen der Kampagnenstruktur',
-          'Performance-Analyse und Reporting',
-          'Umsetzung der Werbestrategien Ihres Teams',
-        ],
-        idealFor:
-          'Ideal für Agenturen mit Kunden, Kontostrategien und Wachstumsambitionen, die zusätzliche Umsetzungskapazität brauchen.',
-      },
-      specialists: {
-        name: '2. Dedizierter Spezialist / eingebettete PPC-Kapazität',
-        tagline: 'Ein benannter Spezialist, eingebunden in Ihre vereinbarten Abläufe.',
-        paragraphs: [
-          'Bauen Sie operative Kapazität auf – mit einem dedizierten Spezialisten aus Polen, der innerhalb der Prozesse, Reporting-Strukturen und Kommunikationskanäle Ihrer Agentur arbeitet.',
-          'Die Verantwortlichkeiten werden vorab vereinbart. Je nach Zusammenarbeit unterstützt der Spezialist bei Kampagnenumsetzung, Kontoüberwachung, Reporting, Optimierung und weiteren vereinbarten PPC-Aufgaben.',
-        ],
-        listLabel: 'Vorteile für Ihre Agentur:',
-        items: [
-          'Wettbewerbsfähige Wirtschaftlichkeit ohne Abstriche bei der Qualität',
-          'Zusätzliche Kapazität ohne Aufbau eines ganzen lokalen Teams',
-          'Flexible Ressourcen, während Ihr Kundenportfolio wächst',
-          'Kommunikation auf Englisch',
-          'Dedizierte Unterstützung, abgestimmt auf Ihre internen Abläufe',
-        ],
-      },
+      intro: 'Wählen Sie die Umsetzung Ihrer Kampagnen durch uns oder Spezialistenkapazität, die in Ihr Team eingebunden ist. Umfang, Verantwortung, Freigaben und Reporting werden vor Arbeitsbeginn vereinbart.',
+      models: [
+        {
+          name: 'White-Label-PPC-Management',
+          summary: 'Sie behalten die Kundenbeziehung. Wir setzen den vereinbarten Kampagnenumfang um.',
+          paragraphs: [
+            'ADelier setzt den vereinbarten Umfang Ihrer Amazon-PPC-Kampagnen unter Ihrer Marke um und berichtet über die Kanäle Ihrer Wahl. Ihre Agentur behält die Kundenbeziehung, die kaufmännische Verantwortung, die Kundenkommunikation und die finale Freigabe, wie vereinbart.',
+          ],
+          listLabel: 'Möglicher Umfang, sofern vereinbart:',
+          items: [
+            'Kampagnen-Monitoring und -Optimierung im vereinbarten Rhythmus',
+            'Gebots- und Budgetsteuerung',
+            'Suchbegriff- und Keyword-Analyse',
+            'Verbesserung von Kampagnenstruktur und Targeting',
+            'Performance-Reporting',
+            'Umsetzung der von Ihrer Agentur freigegebenen Strategie',
+          ],
+          note: 'Wir kontaktieren Ihre Kunden nicht direkt, sofern Sie dem nicht zugestimmt haben.',
+        },
+        {
+          name: 'Dedizierter PPC-Spezialist',
+          summary: 'Ein namentlich benannter Spezialist, der in Ihren vereinbarten Abläufen arbeitet.',
+          paragraphs: [
+            'Ein dedizierter Spezialist mit Sitz in Polen arbeitet innerhalb der vereinbarten Abläufe Ihrer Agentur: mit Ihren Tools, in Ihrem Rhythmus, mit zugewiesenen Aufgaben, Zugriffsrechten und Ihrer Reporting-Struktur. Verantwortlichkeiten, Verfügbarkeit, Prüfung, Eskalation und Freigaben werden vertraglich vereinbart.',
+          ],
+          listLabel: 'Was es Ihrer Agentur bringen kann:',
+          items: [
+            'Flexible Spezialistenkapazität bei wechselndem Kundenportfolio',
+            'Weniger Bedarf an sofortiger lokaler Rekrutierung',
+            'Operative Kontinuität auf den betreuten Konten',
+            'Zusammenarbeit auf Englisch',
+            'Kapazitätsplanung und Qualitätsaufsicht durch ADelier',
+          ],
+          note: 'Ein eigenständiges Modell eingebundener Kapazität: keine von ADelier gesteuerte Umsetzung und keine Personalvermittlung.',
+        },
+      ],
     },
     why: {
-      title: 'Warum mit uns zusammenarbeiten?',
+      title: 'Warum mit uns zusammen\u00ADarbeiten?',
       items: [
         {
           title: 'Eine praktische Erweiterung Ihres Teams',
-          body: 'Wir konzentrieren uns auf die operative Arbeit, die Werbekonten effizient am Laufen hält – damit sich Ihre Strategen und Account-Leads auf Strategie, Kundenbeziehungen und Geschäftsentwicklung konzentrieren können.',
+          body: 'Wir übernehmen die operative Arbeit, die Werbekonten am Laufen hält, damit sich Ihre Strateginnen und Strategen sowie Account Leads auf Strategie, Kundenbeziehungen und Geschäftsentwicklung konzentrieren können.',
         },
         {
           title: 'Ein praxisnaher Ansatz',
-          body: 'Wir halten nichts davon, Kampagnen aufzusetzen und sich selbst zu überlassen. Wir setzen auf aktives Management, Expertenprüfung und kontinuierliche Optimierung.',
+          body: 'Wir richten Kampagnen nicht ein, um sie dann sich selbst zu überlassen. Die Arbeit wird aktiv gesteuert und von Experten geprüft.',
         },
         {
           title: 'Flexible Zusammenarbeit',
-          body: 'Starten Sie mit White-Label-Umsetzung oder einem dedizierten Spezialisten und erweitern Sie die Zusammenarbeit, wenn sich Ihre Anforderungen entwickeln.',
+          body: 'Starten Sie mit einem Modell und passen Sie die Zusammenarbeit nach Absprache an, wenn sich Ihre Anforderungen ändern.',
         },
         {
           title: 'Vertraulichkeit und Kontrolle',
-          body: 'Wir arbeiten vertraulich, nach Ihren Standards und in einem vereinbarten Umfang – mit Ihren Prüf-, Eskalations- und Freigaberechten. Ihre Kundenbeziehungen bleiben Ihre.',
+          body: 'Wir arbeiten im Rahmen der vertraglich vereinbarten Vertraulichkeits-, Abwerbe- und Kundenschutzregelungen, nach Ihren Standards und in einem vereinbarten Umfang. Ihre Kundenbeziehungen und Freigaberechte bleiben bei Ihnen.',
         },
       ],
     },
+    approach: {
+      title: 'So läuft die Arbeit ab',
+      intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
+      steps: [
+        'Bewertung von Konto und Setup',
+        'Performance-Analyse: ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern die Daten belastbar sind',
+        'Priorisierte Maßnahmen',
+        'Von Experten geprüfte Umsetzung',
+        'Transparentes Reporting',
+      ],
+    },
     training: {
-      title: 'PPC-Schulungen für Agenturteams',
-      body: 'Schulungen sind auch einzeln buchbar – für Agenturteams, die ihre eigene Amazon-PPC-Kompetenz stärken möchten.',
-      cta: 'Schulungen entdecken',
+      eyebrow: 'PPC-Training für Agenturteams',
+      title: 'Bauen Sie PPC-Kompetenz in Ihrer Agentur auf.',
+      body: 'Praxisnahes Amazon-PPC-Training für Account-, Strategie- und Umsetzungsteams in Agenturen. Arbeiten Sie mit echten Kampagnenszenarien, stärken Sie Ihre Optimierungsroutinen und nehmen Sie einen wiederverwendbaren Standard mit, den Ihr Team eigenständig anwenden kann. Das Training ist einzeln buchbar, ohne Umsetzungs- oder Spezialistenvertrag.',
+      cta: 'PPC-Training ansehen',
     },
     final: {
-      title: 'Sprechen wir über Ihren Kapazitätsbedarf.',
+      title: 'Sprechen wir über Ihren Bedarf an Amazon-PPC-Kapazität.',
       paragraphs: [
-        'Erzählen Sie uns von Ihrer Agentur, der Zahl der betreuten Konten und der Art von Unterstützung, die Sie suchen.',
-        'Wir besprechen ein Modell, das zu Ihren operativen Anforderungen und Wachstumsplänen passt.',
+        'Erzählen Sie uns von der Nachfrage Ihrer Kunden, dem Aufbau Ihres PPC-Teams und der Unterstützung, die Sie suchen.',
+        'Gemeinsam klären wir, welches Modell passt und was der Umfang abdecken würde.',
       ],
       cta: 'Agenturpartnerschaft besprechen',
+      trainingLink: 'Oder PPC-Training für Ihr Team ansehen',
     },
   },
 

@@ -20,6 +20,18 @@ export type Hero = {
   paragraphs: string[]
 }
 
+/** One agency partnership model. Both models share this shape so the two cards stay structurally parallel. */
+export type AgencyModel = {
+  name: string
+  /** One-line value summary under the name. */
+  summary: string
+  paragraphs: string[]
+  listLabel: string
+  items: string[]
+  /** The contractual boundary of the model, stated once at the card foot. */
+  note: string
+}
+
 export type PartnerCopy = {
   /** Sign-off line under the homepage, reused in the footer. */
   signoff: string
@@ -83,28 +95,26 @@ export type PartnerCopy = {
   }
 
   agencies: {
-    hero: Hero
+    hero: {
+      eyebrow: string
+      title: string
+      /** Echoes the homepage Agency Partnerships card, so the two read as one proposition. */
+      emphasis: string
+      paragraphs: string[]
+      primaryCta: string
+      secondaryCta: string
+      imageAlt: string
+    }
     ways: {
       title: string
-      whiteLabel: {
-        name: string
-        tagline: string
-        paragraphs: string[]
-        listLabel: string
-        items: string[]
-        idealFor: string
-      }
-      specialists: {
-        name: string
-        tagline: string
-        paragraphs: string[]
-        listLabel: string
-        items: string[]
-      }
+      intro: string
+      /** Reading order IS the numbering: [0] renders as 01 (white-label), [1] as 02 (specialist). */
+      models: readonly [AgencyModel, AgencyModel]
     }
     why: { title: string; items: Titled[] }
-    training: { title: string; body: string; cta: string }
-    final: { title: string; paragraphs: string[]; cta: string }
+    approach: { title: string; intro: string; steps: string[] }
+    training: { eyebrow: string; title: string; body: string; cta: string }
+    final: { title: string; paragraphs: string[]; cta: string; trainingLink: string }
   }
 
   training: {
