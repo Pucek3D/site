@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs, CheckList, FinalCta, H2, ListLabel, PageHero, Paragraphs, PointGrid } from '@/components/site/page-kit'
-import { Section } from '@/components/site/primitives'
+import { ArrowRight } from 'lucide-react'
+import { CtaLink, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { href, type Locale } from '@/lib/i18n'
@@ -21,7 +22,7 @@ export default async function AgencyPage({ params }: Props) {
   return (
     <>
       <PageHero
-        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={c.pageNames.agencies} navLabel={d.common.breadcrumbLabel} />}
+        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.agencies} navLabel={d.common.breadcrumbLabel} />}
         title={a.hero.title}
         subtitle={a.hero.subtitle}
         paragraphs={a.hero.paragraphs}
@@ -49,6 +50,20 @@ export default async function AgencyPage({ params }: Props) {
         <H2 id="why">{a.why.title}</H2>
         <div className="mt-12">
           <PointGrid items={a.why.items} columns={2} />
+        </div>
+      </Section>
+      <Section tone="porcelain" labelledBy="agency-training">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex max-w-2xl flex-col gap-3">
+            <h2 id="agency-training" className="font-display text-2xl font-semibold leading-snug text-ink">
+              {a.training.title}
+            </h2>
+            <p className="text-pretty leading-relaxed text-slate">{a.training.body}</p>
+          </div>
+          <CtaLink href={href(locale, 'training')} variant="sage" className="shrink-0">
+            {a.training.cta}
+            <ArrowRight aria-hidden className="size-4" />
+          </CtaLink>
         </div>
       </Section>
       <FinalCta id="final" title={a.final.title} paragraphs={a.final.paragraphs} cta={a.final.cta} to={href(locale, 'contact', '?topic=agency')} />

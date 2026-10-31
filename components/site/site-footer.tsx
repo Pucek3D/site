@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Dictionary } from '@/content'
 import type { PartnerCopy } from '@/content/partner'
-import { href, serviceKeys, type Locale } from '@/lib/i18n'
+import { href, mainNavKeys, type Locale } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
@@ -24,14 +24,7 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
           <div className="md:col-span-3">
             <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-mist">{footer.explore}</h2>
             <ul className="flex flex-col">
-              {serviceKeys.map((k) => (
-                <li key={k}>
-                  <Link href={href(locale, k)} className="inline-flex min-h-10 items-center text-white/90 hover:text-white hover:underline">
-                    {copy.pageNames[k]}
-                  </Link>
-                </li>
-              ))}
-              {(['about', 'contact'] as const).map((k) => (
+              {mainNavKeys.filter((k) => k !== 'home').map((k) => (
                 <li key={k}>
                   <Link href={href(locale, k)} className="inline-flex min-h-10 items-center text-white/90 hover:text-white hover:underline">
                     {nav.items[k]}

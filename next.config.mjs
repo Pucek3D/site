@@ -3,6 +3,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Retired routes (see legacyRedirects in lib/i18n.ts). Kept here as literals: next.config cannot import TS.
+  async redirects() {
+    const retired = ['amazon-ppc-management', 'amazon-market-validation-audits', 'services']
+    return retired.flatMap((slug) => [
+      { source: `/:locale(en|pl|de)/${slug}`, destination: '/:locale/brands', permanent: true },
+      { source: `/${slug}`, destination: '/en/brands', permanent: true },
+    ])
+  },
   async headers() {
     return [
       {

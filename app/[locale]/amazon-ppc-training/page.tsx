@@ -20,12 +20,19 @@ export default async function TrainingPage({ params }: Props) {
   return (
     <>
       <PageHero
-        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={c.pageNames.training} navLabel={d.common.breadcrumbLabel} />}
+        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.training} navLabel={d.common.breadcrumbLabel} />}
+        eyebrow={t.hero.eyebrow}
         title={t.hero.title}
         subtitle={t.hero.subtitle}
         paragraphs={t.hero.paragraphs}
         image={{ src: '/images/notebook.webp', alt: '' }}
       />
+      <Section labelledBy="how-it-works">
+        <H2 id="how-it-works">{t.howItWorks.title}</H2>
+        <div className="mt-12">
+          <PointGrid items={t.howItWorks.items} />
+        </div>
+      </Section>
       <Section tone="porcelain" labelledBy="tailored">
         <H2 id="tailored">{t.tailored.title}</H2>
         <div className="mt-12">

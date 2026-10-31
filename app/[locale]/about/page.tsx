@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Breadcrumbs, PageHero, Paragraphs } from '@/components/site/page-kit'
+import { Breadcrumbs, H2, PageHero, Paragraphs, PointGrid } from '@/components/site/page-kit'
 import { CtaLink, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -37,6 +37,12 @@ export default async function AboutPage({ params }: Props) {
               </p>
             ))}
           </div>
+        </div>
+      </Section>
+      <Section tone="porcelain" labelledBy="pillars">
+        <H2 id="pillars">{a.pillars.title}</H2>
+        <div className="mt-12">
+          <PointGrid items={a.pillars.items} columns={2} />
         </div>
       </Section>
       <Section tone="ink">

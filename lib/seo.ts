@@ -12,14 +12,12 @@ function pageMeta(locale: Locale, page: PageKey): { title: string; description: 
   switch (page) {
     case 'home':
       return { title: `${siteConfig.name} — ${siteConfig.descriptor}`, description: c.home.hero.paragraphs[0] }
-    case 'ppc':
-      return { title: named(c.pageNames.ppc), description: c.ppc.hero.paragraphs[1] }
     case 'agencies':
       return { title: named(c.pageNames.agencies), description: c.agencies.hero.paragraphs[0] }
+    case 'brands':
+      return { title: named(c.pageNames.brands), description: c.brands.hero.paragraphs[0] }
     case 'training':
       return { title: named(c.pageNames.training), description: c.training.hero.paragraphs[0] }
-    case 'audits':
-      return { title: named(c.pageNames.audits), description: c.audits.hero.paragraphs[0] }
     case 'about':
       return { title: named(d.nav.items.about), description: c.about.hero.paragraphs[0] }
     case 'contact':

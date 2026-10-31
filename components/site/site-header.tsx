@@ -1,27 +1,24 @@
 'use client'
 
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import type { Dictionary } from '@/content'
 import type { PartnerCopy } from '@/content/partner'
-import { brandServiceKeys, href, pageFromPath, serviceKeys, type Locale, type PageKey } from '@/lib/i18n'
+import { href, mainNavKeys, pageFromPath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 import { ctaClass } from './primitives'
 
-type ServicePage = (typeof serviceKeys)[number]
-
+/** Flat navigation, no Services menu: Home, For Agencies, For Brands, Training, About, Contact. */
 export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Dictionary['nav']; copy: PartnerCopy }) {
   const pathname = usePathname() ?? `/${locale}`
   const page = pageFromPath(pathname)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
-  const servicesRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -38,40 +35,10 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
     document.documentElement.style.overflow = open ? 'hidden' : ''
   }, [open])
 
-  useEffect(() => {
-    setOpen(false)
-    setServicesOpen(false)
-  }, [pathname])
+  useEffect(() => setOpen(false), [pathname])
 
-  useEffect(() => {
-    if (!servicesOpen) return
-    const onDown = (e: PointerEvent) => {
-      if (!servicesRef.current?.contains(e.target as Node)) setServicesOpen(false)
-    }
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setServicesOpen(false)
-    }
-    document.addEventListener('pointerdown', onDown)
-    document.addEventListener('keydown', onKey)
-    return () => {
-      document.removeEventListener('pointerdown', onDown)
-      document.removeEventListener('keydown', onKey)
-    }
-  }, [servicesOpen])
-
-  const serviceName = (k: ServicePage) => copy.pageNames[k]
-  // Agency Partnerships is reached only through the top-level "For Agencies" item, never listed here too.
-  const servicePages = brandServiceKeys as readonly ServicePage[]
-  // For Agencies is its own top-level item (partner PDF nav), so it no longer lights up Services.
-  const inServices = (serviceKeys as readonly PageKey[]).includes(page) && page !== 'agencies'
-  const plain: PageKey[] = ['agencies', 'about', 'contact']
+  // Contact is already in the nav, so the button is the call to action, not a duplicate route.
   const cta = page === 'contact' ? null : { label: copy.home.hero.primaryCta, to: href(locale, 'contact') }
-
-  const linkClass = (active: boolean) =>
-    cn(
-      'inline-flex min-h-11 items-center gap-1 whitespace-nowrap rounded-md px-3 text-[0.9375rem] transition-colors',
-      active ? 'font-semibold text-ink' : 'text-slate hover:text-ink',
-    )
 
   return (
     <header
@@ -91,53 +58,20 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
           <Logo variant="horizontal" height={60} alt="" priority />
         </Link>
 
-        {/* xl, not lg: at 1024px the PL and DE labels push the header 14–42px past the viewport. */}
+        {/* xl, not lg: at 1024px the PL and DE labels push the header past the viewport. */}
         <nav aria-label={nav.primaryLabel} className="hidden xl:block">
-          <ul className="flex items-center gap-2">
-            <li>
-              <Link href={href(locale, 'home')} aria-current={page === 'home' ? 'page' : undefined} className={linkClass(page === 'home')}>
-                <span className={cn(page === 'home' && 'border-b-2 border-cobalt pb-0.5')}>{nav.items.home}</span>
-              </Link>
-            </li>
-            <li ref={servicesRef} className="relative">
-              <button
-                type="button"
-                aria-expanded={servicesOpen}
-                aria-controls="services-menu"
-                onClick={() => setServicesOpen((v) => !v)}
-                className={linkClass(inServices)}
-              >
-                <span className={cn(inServices && 'border-b-2 border-cobalt pb-0.5')}>{nav.items.services}</span>
-                <ChevronDown aria-hidden className={cn('size-4 transition-transform', servicesOpen && 'rotate-180')} />
-              </button>
-              {servicesOpen ? (
-                <div
-                  id="services-menu"
-                  className="absolute left-1/2 top-full z-50 mt-2 w-max min-w-[300px] max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-[10px] border border-hairline bg-white p-2 shadow-[0_12px_28px_-18px_rgba(16,24,40,0.3)]"
-                >
-                  <ul className="flex flex-col">
-                    {servicePages.map((k) => (
-                      <li key={k}>
-                        <Link
-                          href={href(locale, k)}
-                          aria-current={page === k ? 'page' : undefined}
-                          className={cn(
-                            'flex min-h-10 items-center whitespace-nowrap rounded-md px-3 font-sans text-sm leading-snug transition-colors hover:bg-porcelain hover:text-cobalt focus-visible:text-cobalt',
-                            page === k ? 'font-medium text-cobalt' : 'text-ink',
-                          )}
-                        >
-                          {serviceName(k)}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </li>
-            {plain.map((k) => (
+          <ul className="flex items-center gap-1">
+            {mainNavKeys.map((k) => (
               <li key={k}>
-                <Link href={href(locale, k)} aria-current={page === k ? 'page' : undefined} className={linkClass(page === k)}>
-                  <span className={cn(page === k && 'border-b-2 border-cobalt pb-0.5')}>{nav.items[k as 'agencies' | 'about' | 'contact']}</span>
+                <Link
+                  href={href(locale, k)}
+                  aria-current={page === k ? 'page' : undefined}
+                  className={cn(
+                    'inline-flex min-h-11 items-center whitespace-nowrap rounded-md px-3 text-[0.9375rem] transition-colors',
+                    page === k ? 'font-semibold text-ink' : 'text-slate hover:text-ink',
+                  )}
+                >
+                  <span className={cn(page === k && 'border-b-2 border-cobalt pb-0.5')}>{nav.items[k]}</span>
                 </Link>
               </li>
             ))}
@@ -189,37 +123,14 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             </button>
           </div>
           <nav aria-label={nav.primaryLabel} className="flex-1 overflow-y-auto px-5 py-6 sm:px-8">
-            <Link
-              href={href(locale, 'home')}
-              aria-current={page === 'home' ? 'page' : undefined}
-              className={cn('flex min-h-12 items-center border-b border-hairline font-display text-xl', page === 'home' && 'font-semibold')}
-            >
-              {nav.items.home}
-            </Link>
-            <div className="border-b border-hairline py-4">
-              <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.12em] text-slate">{nav.items.services}</p>
-              <ul>
-                {servicePages.map((k) => (
-                  <li key={k}>
-                    <Link
-                      href={href(locale, k)}
-                      aria-current={page === k ? 'page' : undefined}
-                      className={cn('flex min-h-11 items-center font-display text-lg', page === k ? 'font-semibold text-cobalt' : 'text-ink')}
-                    >
-                      {serviceName(k)}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {plain.map((k) => (
+            {mainNavKeys.map((k) => (
               <Link
                 key={k}
                 href={href(locale, k)}
                 aria-current={page === k ? 'page' : undefined}
-                className={cn('flex min-h-12 items-center border-b border-hairline font-display text-xl', page === k && 'font-semibold')}
+                className={cn('flex min-h-12 items-center border-b border-hairline font-display text-xl', page === k && 'font-semibold text-cobalt')}
               >
-                {nav.items[k as 'agencies' | 'about' | 'contact']}
+                {nav.items[k]}
               </Link>
             ))}
             <div className="mt-8">

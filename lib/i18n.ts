@@ -19,25 +19,26 @@ export const ogLocale: Record<Locale, string> = {
   de: 'de_DE',
 }
 
-/** The pages the partner's content document defines, plus the legal pages. */
-export const pageKeys = ['home', 'ppc', 'agencies', 'training', 'audits', 'about', 'contact', 'privacy', 'legal'] as const
+export const pageKeys = ['home', 'agencies', 'brands', 'training', 'about', 'contact', 'privacy', 'legal'] as const
 export type PageKey = (typeof pageKeys)[number]
 
 export const pagePaths: Record<PageKey, string> = {
   home: '',
-  ppc: '/amazon-ppc-management',
   agencies: '/agency-partnerships',
+  brands: '/brands',
   training: '/amazon-ppc-training',
-  audits: '/amazon-market-validation-audits',
   about: '/about',
   contact: '/contact',
   privacy: '/privacy',
   legal: '/legal',
 }
 
-/** Pages listed under the Services menu, grouped by audience as the partner's structure describes. */
-export const brandServiceKeys = ['ppc', 'audits', 'training'] as const satisfies readonly PageKey[]
-export const serviceKeys = [...brandServiceKeys, 'agencies'] as const satisfies readonly PageKey[]
+// Retired routes (/amazon-ppc-management, /amazon-market-validation-audits, /services)
+// redirect permanently to For Brands; see redirects() in next.config.mjs.
+
+/** Main navigation, in order. Header, mobile menu and footer all read this one list. */
+export const mainNavKeys = ['home', 'agencies', 'brands', 'training', 'about', 'contact'] as const satisfies readonly PageKey[]
+export type MainNavKey = (typeof mainNavKeys)[number]
 
 export function href(locale: Locale, page: PageKey, suffix = ''): string {
   return `/${locale}${pagePaths[page]}${suffix}`

@@ -15,8 +15,9 @@ export const de: Dictionary = {
   "nav": {
     "items": {
       "home": "Startseite",
-      "services": "Leistungen",
       "agencies": "Für Agenturen",
+      "brands": "Für Marken",
+      "training": "Schulungen",
       "about": "Über uns",
       "contact": "Kontakt",
       "privacy": "Datenschutz",

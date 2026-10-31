@@ -13,9 +13,10 @@ export const en = {
   "nav": {
     "items": {
       "home": "Home",
-      "services": "Services",
       "agencies": "For Agencies",
-      "about": "About Us",
+      "brands": "For Brands",
+      "training": "Training",
+      "about": "About",
       "contact": "Contact",
       "privacy": "Privacy",
       "legal": "Legal / Imprint"

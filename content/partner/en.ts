@@ -1,30 +1,32 @@
 import type { PartnerCopy } from './types'
 
-/** Verbatim from "website content.pdf". "[Agency Name]" is ADelier Commerce. */
+/**
+ * Partner copy ("website content.pdf"), revised per the October 2026 website
+ * feedback notes. "[Agency Name]" is ADelier Commerce.
+ */
 export const en: PartnerCopy = {
   signoff: 'ADelier Commerce — Amazon Advertising & Growth.',
-  audiences: {
-    brands: { title: 'Amazon Brands', summary: 'PPC management, audits, market validation and training.' },
-    agencies: { title: 'Amazon Agencies', summary: 'White-label campaign management and dedicated PPC specialists.' },
-  },
   pageNames: {
-    ppc: 'Amazon PPC Management',
-    agencies: 'Agency Partnerships',
+    agencies: 'Amazon PPC Agency Partnerships',
+    brands: 'Amazon PPC Management & Training for Brands',
     training: 'Amazon PPC Training',
-    audits: 'Amazon Market Validation & Audits',
   },
 
   home: {
     hero: {
-      eyebrow: 'Amazon advertising & growth',
-      title: 'Smarter Amazon Advertising. More Control. Better Performance.',
+      eyebrow: 'Amazon advertising, marketplace expertise and applied training',
+      title: 'Improve Amazon performance. Build the capability behind it.',
       paragraphs: [
-        'We help Amazon brands grow through hands-on PPC management, tailored advertising strategies and continuous performance optimisation.',
-        'We also help Amazon agencies scale their operations with white-label campaign management and dedicated PPC specialists.',
+        'ADelier combines expert-led Amazon PPC management, rigorous performance analysis and hands-on training for consumer brands and the agencies that serve them.',
+        'We turn campaign evidence into clear actions, stronger execution and skills your team can keep using.',
       ],
       closingLine: 'Every account is different. Your advertising strategy should be, too.',
       primaryCta: "Let's Talk",
-      secondaryCta: 'Explore Our Services',
+      routes: {
+        agencies: 'Explore agency partnerships',
+        brands: 'Explore brand services',
+        training: 'Explore training',
+      },
     },
     autopilot: {
       title: 'Amazon advertising is too important to leave on autopilot.',
@@ -40,11 +42,20 @@ export const en: PartnerCopy = {
       items: [
         {
           number: '01',
+          name: 'Agency Partnerships',
+          tagline: 'Your clients. Your brand. Our expertise.',
+          paragraphs: [
+            'We support Amazon agencies in two distinct ways: white-label managed PPC delivery behind your brand, or a dedicated specialist embedded in your agreed workflows.',
+            'You keep the client relationship and the approval rights. We bring expert-led execution, quality control and confidentiality.',
+          ],
+        },
+        {
+          number: '02',
           name: 'Amazon PPC Management',
           tagline: 'Your advertising. Actively managed.',
           paragraphs: [
             'We manage Amazon advertising campaigns with a focus on efficiency, profitability and sustainable growth.',
-            'From campaign structure and keyword targeting to bid optimisation, budget allocation and performance reporting, we take care of the daily work required to keep your advertising moving in the right direction.',
+            'Every engagement starts with a review of the current setup and leads to prioritised recommendations tailored to your products, margins and goals. From there, we take care of the daily work required to keep your advertising moving in the right direction.',
           ],
           bullets: [
             'Sponsored Products, Sponsored Brands and Sponsored Display campaigns, where appropriate',
@@ -56,88 +67,59 @@ export const en: PartnerCopy = {
           ],
         },
         {
-          number: '02',
-          name: 'White-Label PPC Management for Agencies',
-          tagline: 'Your clients. Your brand. Our expertise.',
-          paragraphs: [
-            'We partner with Amazon advertising agencies that need reliable campaign execution without expanding their internal teams.',
-            "We work behind the scenes, managing day-to-day campaign operations, monitoring performance and implementing optimisation strategies under your agency's brand.",
-            'You maintain the client relationship. We help you deliver the work.',
-          ],
-        },
-        {
           number: '03',
-          name: 'Dedicated Amazon PPC Specialists',
-          tagline: 'Grow your team without the full cost of local hiring.',
-          paragraphs: [
-            'We help Amazon agencies build operational capacity with dedicated, Poland-based PPC specialists who integrate into their existing teams and workflows.',
-            'Whether you need one specialist or additional campaign management capacity across multiple accounts, we provide a flexible way to scale your operations while keeping costs competitive.',
-          ],
-        },
-        {
-          number: '04',
           name: 'Amazon PPC Training',
           tagline: 'Build expertise within your own team.',
           paragraphs: [
-            'For brands that prefer to manage Amazon advertising in-house, we provide practical training designed to develop confident, capable PPC specialists.',
-            'Our training covers campaign structure, keyword targeting, bidding strategies, performance analysis and advanced optimisation techniques, with an emphasis on applying knowledge to real advertising accounts.',
-          ],
-        },
-        {
-          number: '05',
-          name: 'Amazon Market Validation & Account Audits',
-          tagline: 'Make better decisions before investing more.',
-          paragraphs: [
-            'Considering launching a product on Amazon? Already advertising but unsure whether your account is performing as it should?',
-            'We provide independent analysis to help you understand the opportunity, identify inefficiencies and prioritise your next steps.',
-            'Our services include pre-launch market and product validation, listing health audits, advertising efficiency audits and actionable recommendations.',
+            'For brand and agency teams that prefer to manage Amazon advertising in-house, we provide practical training designed to develop confident, capable PPC specialists.',
+            'Our training covers campaign structure, keyword targeting, bidding strategies, performance analysis and advanced optimisation techniques, applied to real advertising accounts. It can be purchased on its own, without PPC management.',
           ],
         },
       ],
     },
     approach: {
-      title: 'A more hands-on approach to Amazon PPC',
+      title: 'How campaign evidence becomes decisions',
       subtitle: 'No autopilot. No one-size-fits-all strategies.',
-      intro: 'We believe effective Amazon advertising requires attention, analysis and ongoing adjustment.',
+      intro: 'Every recommendation starts with the data in your account and ends with a named expert accountable for the decision.',
       items: [
         {
-          title: 'Individual attention',
-          body: 'Every brand, product and market has different challenges. We develop strategies around your specific goals, margins, competition and growth opportunities.',
+          title: 'In-depth performance analysis',
+          body: 'We analyse campaign performance and the KPIs underneath it, including ACOS, ROAS, conversion and the relationship between advertising and total sales.',
         },
         {
-          title: 'Active optimisation',
-          body: 'We continuously monitor campaign performance and make informed adjustments to bids, budgets, targeting and campaign structure.',
+          title: 'Review of the current setup',
+          body: 'We review account and campaign structure, targeting, budget allocation, search-term signals and efficiency, where the data is available.',
         },
         {
-          title: 'Performance beyond ACOS',
-          body: 'ACOS and ROAS matter, but they are not the whole picture. We consider advertising performance alongside total sales, profitability and the wider business objectives.',
+          title: 'Diagnosis before action',
+          body: 'We identify what is underperforming and why, including relevant listing and offer context, before changing bids or budgets.',
         },
         {
-          title: 'Clear communication',
-          body: "You know what we're working on, what we're seeing and what we recommend. We believe in accessible expertise, regular communication and transparent reporting.",
+          title: 'Tailored, prioritised recommendations',
+          body: 'Recommendations are built around your products, margins, competition and goals, and ordered so you know what to address first.',
         },
         {
-          title: 'Strategy backed by execution',
-          body: 'Recommendations are only valuable when they translate into action. We combine analytical thinking with hands-on campaign management.',
+          title: 'Human ownership of decisions',
+          body: 'AI can speed up research and reporting. Decisions stay with a named expert, who explains what changed and why.',
         },
       ],
     },
     audiences: {
       title: 'Built for brands. Designed to scale agencies.',
-      brands: {
-        title: 'For Amazon brands',
-        paragraphs: [
-          "Whether you're preparing to launch on Amazon, looking to improve an existing advertising account or developing an in-house team, we provide the expertise and practical support to help you move forward.",
-        ],
-        cta: 'Explore Brand Services',
-      },
       agencies: {
         title: 'For Amazon agencies',
         paragraphs: [
           'Expand your campaign management capacity without the immediate need to recruit and build an entire internal team.',
           'From white-label campaign execution to dedicated PPC specialists, we help agencies scale efficiently while maintaining their client relationships.',
         ],
-        cta: 'Explore Agency Partnerships',
+        cta: 'Explore agency partnerships',
+      },
+      brands: {
+        title: 'For Amazon brands',
+        paragraphs: [
+          "Whether you're looking to improve an existing advertising account, bring more structure to PPC or develop an in-house team, we provide expert-led management and practical training to help you move forward.",
+        ],
+        cta: 'Explore brand services',
       },
     },
     final: {
@@ -150,67 +132,95 @@ export const en: PartnerCopy = {
     },
   },
 
-  ppc: {
+  brands: {
     hero: {
-      title: 'Amazon PPC management that goes beyond the basics',
-      subtitle: 'Active Management. Individual Strategies. Measurable Progress.',
+      eyebrow: 'For Brands',
+      title: 'Amazon advertising, managed with you or built within your team',
+      subtitle: 'Two ways to work with us: Amazon PPC Management and PPC Training.',
+      paragraphs: [
+        'For brand owners, CMOs, e-commerce leads and Amazon managers who want clearer control over advertising and better-informed decisions.',
+        'Choose expert-led management of your campaigns, practical training for your own team, or both. Each can be purchased on its own.',
+      ],
+    },
+    ppc: {
+      label: 'Amazon PPC Management',
+      title: 'Smarter Amazon Advertising. More Control, Better Performance',
       paragraphs: [
         'Amazon advertising is increasingly competitive. Efficient growth requires more than increasing bids, raising budgets or applying the same optimisation rules to every account.',
         'We help brands make better advertising decisions through hands-on management, tailored targeting strategies and continuous performance analysis.',
       ],
-    },
-    approach: {
-      title: 'Our approach',
-      items: [
+      cycleTitle: 'How we manage your account',
+      cycle: [
         {
-          title: 'Understand the Business First',
-          body: 'We start by understanding your products, margins, competition, advertising history and business objectives. This helps us build an approach aligned with your commercial priorities.',
+          title: 'Account and campaign review',
+          body: 'We start with your current setup: campaign structure, keyword coverage, targeting, budget allocation and search-term signals, together with relevant listing and offer context.',
         },
         {
-          title: 'Build the Right Campaign Structure',
-          body: 'We review campaign organisation, keyword coverage, targeting methods and advertising formats to identify opportunities for better control and more effective budget allocation.',
+          title: 'Goal-setting',
+          body: 'We agree objectives around your products, margins, competition, advertising history and commercial priorities, so every decision has a clear reference point.',
         },
         {
-          title: 'Optimise Continuously',
+          title: 'Campaign architecture',
+          body: 'We organise campaigns, targeting methods and advertising formats for better control and more effective budget allocation.',
+        },
+        {
+          title: 'Ongoing management',
           body: 'We monitor performance, analyse search terms, adjust bids, manage budgets and identify opportunities to improve efficiency or capture additional demand.',
         },
         {
-          title: 'Look Beyond Advertising Metrics',
-          body: 'ACOS and ROAS are important, but advertising should support the wider business. We consider total sales, profitability, organic performance and growth objectives when evaluating results.',
+          title: 'Performance reporting',
+          body: 'We provide transparent reporting, explain our decisions and discuss opportunities and challenges with you. You should always understand what is happening in your account and why.',
         },
         {
-          title: 'Communicate Clearly',
-          body: 'We provide transparent reporting, explain our decisions and discuss opportunities and challenges with you. You should always understand what is happening in your advertising account and why.',
+          title: 'Expert-led optimisation',
+          body: 'A named expert owns the account. ACOS and ROAS matter, but we evaluate results against total sales, profitability, organic performance and your growth objectives.',
         },
       ],
+      manage: {
+        title: 'What we manage',
+        items: [
+          'Sponsored Products',
+          'Sponsored Brands',
+          'Sponsored Display and other relevant available advertising solutions',
+          'Amazon DSP — scope and availability agreed per engagement',
+          'Keyword and product targeting',
+          'Competitor targeting',
+          'Bid and budget optimisation',
+          'Search term analysis and negative targeting',
+          'Campaign structure and performance reporting',
+        ],
+        note: 'The precise scope depends on your marketplace, account setup, products and advertising objectives.',
+      },
+      who: {
+        title: 'Who we work with',
+        paragraphs: [
+          'We work with Amazon brands that want a more involved advertising partner, whether they are looking to improve existing campaigns, expand into new opportunities or establish a more structured approach to PPC.',
+          'Our focus is on practical improvements, informed decision-making and long-term account development rather than simply spending the allocated budget.',
+        ],
+      },
     },
-    manage: {
-      title: 'What we manage',
-      items: [
-        'Sponsored Products',
-        'Sponsored Brands',
-        'Sponsored Display and other relevant available advertising solutions',
-        'Keyword and product targeting',
-        'Competitor targeting',
-        'Bid and budget optimisation',
-        'Search term analysis and negative targeting',
-        'Campaign structure and performance reporting',
-      ],
-      note: 'The precise scope depends on your marketplace, account setup, products and advertising objectives.',
-    },
-    who: {
-      title: 'Who we work with',
+    training: {
+      label: 'PPC Training',
+      title: 'Build Amazon PPC capability within your brand team',
       paragraphs: [
-        'We work with Amazon brands that want a more involved advertising partner, whether they are looking to improve existing campaigns, expand into new opportunities or establish a more structured approach to PPC.',
-        'Our focus is on practical improvements, informed decision-making and long-term account development rather than simply spending the allocated budget.',
+        'For brand, e-commerce and marketing teams that want to manage Amazon advertising in-house, or work more confidently with an external partner.',
+        'Training can be purchased on its own, without PPC management.',
       ],
+      listLabel: 'What the training includes:',
+      items: [
+        'Work on your own campaign data, where access is available',
+        'Practical exercises built around real advertising decisions',
+        'Quality rubrics for reviewing campaign work consistently',
+        'An implementation plan your team can act on',
+      ],
+      cta: 'Explore PPC training',
     },
     final: {
       title: 'Ready for a more hands-on approach?',
       paragraphs: [
-        "Let's review your current situation and discuss where specialist Amazon PPC support could make a difference.",
+        "Let's review your current situation and discuss where expert Amazon PPC management or training could make a difference.",
       ],
-      cta: 'Discuss Your Advertising Goals',
+      cta: 'Discuss Amazon PPC management',
     },
   },
 
@@ -220,16 +230,16 @@ export const en: PartnerCopy = {
       subtitle: "Your Agency's PPC Team, Extended.",
       paragraphs: [
         'Grow your Amazon advertising operations with dedicated PPC specialists and white-label campaign management from Poland.',
-        'We help US and UK Amazon agencies increase delivery capacity, manage more client accounts and improve operational efficiency without the immediate cost and complexity of expanding their local teams.',
+        'We help Amazon agencies serving the US, UK and other markets increase delivery capacity, manage more client accounts and improve operational efficiency without the immediate cost and complexity of expanding their local teams.',
       ],
     },
     ways: {
       title: 'Two ways to work with us',
       whiteLabel: {
-        name: '1. White-Label Amazon PPC Management',
+        name: '1. White-label managed PPC delivery',
         tagline: 'You manage the client relationship. We manage the campaigns.',
         paragraphs: [
-          'Our team works behind the scenes as an extension of your agency, handling day-to-day advertising operations while you retain control over the client strategy and relationship.',
+          'Accountable campaign management delivered behind your brand. Our team works as an extension of your agency, handling day-to-day advertising operations while you retain control over the client strategy and relationship.',
         ],
         listLabel: 'What we can support:',
         items: [
@@ -244,16 +254,15 @@ export const en: PartnerCopy = {
           'Ideal for agencies that have clients, account strategies and growth ambitions but need additional execution capacity.',
       },
       specialists: {
-        name: '2. Dedicated Poland-Based PPC Specialists',
-        tagline: 'Skilled PPC support. More competitive employment costs.',
+        name: '2. Dedicated specialist / embedded PPC capacity',
+        tagline: 'A named specialist, working within your agreed workflows.',
         paragraphs: [
-          "Build your operational capacity with dedicated specialists based in Poland who work within your agency's processes, reporting structures and communication channels.",
-          "Rather than recruiting every role locally, you can access PPC talent from Poland's labour market and integrate dedicated specialists into your existing team.",
-          'Depending on the engagement, specialists can support campaign execution, account monitoring, reporting, optimisation and other agreed PPC responsibilities.',
+          "Build your operational capacity with a dedicated specialist based in Poland who works within your agency's processes, reporting structures and communication channels.",
+          'Responsibilities are agreed up front. Depending on the engagement, the specialist can support campaign execution, account monitoring, reporting, optimisation and other agreed PPC tasks.',
         ],
         listLabel: 'Benefits for your agency:',
         items: [
-          'Competitive staffing costs compared with US-based hiring',
+          'Competitive operating economics without compromising quality',
           'Additional capacity without building an entire local team',
           'Flexible resourcing as your client portfolio grows',
           'English-language communication',
@@ -266,21 +275,26 @@ export const en: PartnerCopy = {
       items: [
         {
           title: 'A practical extension of your team',
-          body: 'We focus on the operational work required to keep advertising accounts running efficiently, freeing your senior team to concentrate on strategy, client relationships and business development.',
+          body: 'We focus on the operational work required to keep advertising accounts running efficiently, freeing your strategists and account leads to concentrate on strategy, client relationships and business development.',
         },
         {
           title: 'A hands-on approach',
-          body: "We don't believe in setting campaigns up and leaving them unattended. We focus on active management, performance monitoring and continuous optimisation.",
+          body: "We don't believe in setting campaigns up and leaving them unattended. We focus on active management, expert review and continuous optimisation.",
         },
         {
           title: 'Flexible collaboration',
-          body: 'Start with campaign management support or a dedicated specialist, then expand the engagement as your requirements evolve.',
+          body: 'Start with managed delivery or a dedicated specialist, then expand the engagement as your requirements evolve.',
         },
         {
-          title: 'A partnership mindset',
-          body: "We aim to become a reliable part of your delivery operation, working to your standards, respecting your client relationships and supporting your agency's long-term growth.",
+          title: 'Confidentiality and control',
+          body: "We work under confidentiality, to your standards and within an agreed scope, with your review, escalation and approval rights built in. Your client relationships stay yours.",
         },
       ],
+    },
+    training: {
+      title: 'PPC training for agency teams',
+      body: 'Training is also available on its own, for agency teams that want to strengthen their in-house Amazon PPC capability.',
+      cta: 'Explore training',
     },
     final: {
       title: "Let's discuss your capacity needs.",
@@ -294,11 +308,41 @@ export const en: PartnerCopy = {
 
   training: {
     hero: {
+      eyebrow: 'Amazon PPC training',
       title: 'Build your in-house Amazon PPC expertise',
       subtitle: 'Develop the Skills to Manage Amazon Advertising with Confidence.',
       paragraphs: [
-        'For brands that want to manage their advertising internally, we offer practical training designed to develop their employees into capable Amazon PPC specialists.',
-        'Our programmes combine advertising fundamentals, analytical skills and real-world optimisation techniques, helping your team understand not just what to change, but why.',
+        'For brand and agency teams that want to manage advertising internally, we offer practical training designed to develop their employees into capable Amazon PPC specialists.',
+        'Our programmes combine advertising fundamentals, analytical skills and real-world optimisation techniques, helping your team understand not just what to change, but why. Training is a standalone offer: no PPC management contract is required.',
+      ],
+    },
+    howItWorks: {
+      title: 'How the training works',
+      items: [
+        {
+          title: 'Who it is for',
+          body: 'Brand, e-commerce and marketing teams, and agency PPC teams, from new starters to experienced specialists.',
+        },
+        {
+          title: 'Prerequisites',
+          body: 'None for foundation training. Advanced workshops assume working knowledge of Amazon advertising.',
+        },
+        {
+          title: 'Live account exercises',
+          body: 'Where access is available, exercises use your own campaign data, so skills are practised on real decisions.',
+        },
+        {
+          title: 'What your team takes away',
+          body: 'Quality rubrics for reviewing campaign work and an implementation plan prioritised for your account.',
+        },
+        {
+          title: 'Follow-up',
+          body: 'Follow-up sessions or ongoing coaching can be agreed after the programme.',
+        },
+        {
+          title: 'Purchased on its own',
+          body: 'Training is scoped to your team and can be bought without PPC management.',
+        },
       ],
     },
     tailored: {
@@ -336,57 +380,6 @@ export const en: PartnerCopy = {
     },
   },
 
-  audits: {
-    hero: {
-      title: 'Make informed decisions about your Amazon business',
-      subtitle: 'Understand the Opportunity. Identify the Gaps. Plan Your Next Move.',
-      paragraphs: [
-        "Whether you're preparing to launch a product or looking to improve an existing Amazon business, we provide independent analysis to help you make informed decisions.",
-      ],
-    },
-    validation: {
-      title: 'Amazon product & market validation',
-      tagline: 'Assess the opportunity before you invest.',
-      intro: 'Already have a product and considering selling it on Amazon? We help you assess its potential in your chosen marketplace.',
-      listLabel: 'Our analysis can cover:',
-      items: [
-        'Relevant keyword demand and search behaviour',
-        'Competitive landscape and market positioning',
-        'Competitor pricing and potential selling price',
-        'Estimated sales opportunity based on available market data',
-        'Advertising competition and potential acquisition costs',
-        'Indicative revenue, cost and profitability scenarios',
-        'Practical requirements and next steps for entering Amazon',
-      ],
-      paragraphs: [
-        'We focus on evaluating products you already have or are developing, rather than sourcing product ideas for you.',
-        'The outcome is a clearer picture of the opportunity, key risks and the assumptions that need validating before launch.',
-      ],
-    },
-    audits: {
-      title: 'Amazon account & advertising audits',
-      tagline: "Understand what's working, what's not and what could improve.",
-      intro: "If you're already selling on Amazon, we assess your current account and advertising setup to identify inefficiencies, structural issues and opportunities for improvement.",
-      items: [
-        {
-          title: 'Advertising efficiency audit',
-          body: 'We examine campaign structure, keyword coverage, targeting, bids, budget allocation, search term performance and the use of relevant advertising formats.',
-        },
-        {
-          title: 'Listing health audit',
-          body: 'We review important listing elements such as product titles, images, bullet points, content quality and other factors that can affect conversion and advertising performance.',
-        },
-        {
-          title: 'Actionable recommendations',
-          body: 'You receive a prioritised set of findings and recommendations to help you determine what to address first and where to focus your efforts.',
-        },
-      ],
-      closing:
-        "Our goal is not simply to deliver an audit document. It's to help you understand your account and make better decisions about what to do next.",
-      cta: 'Request an Amazon Audit',
-    },
-  },
-
   about: {
     hero: {
       title: 'A more personal approach to Amazon advertising',
@@ -395,11 +388,35 @@ export const en: PartnerCopy = {
         'Amazon advertising is not a one-size-fits-all exercise. Every product, market, competitive environment and business objective presents a different set of challenges.',
       ],
     },
+    // TODO: owner approval / specific accurate wording — experience with major brands and within
+    // large media agencies. Publish only once the founders confirm how it may be attributed.
     paragraphs: [
+      'ADelier Commerce is a Poland-based marketplace partner working with consumer brands and marketing agencies internationally. We combine focused Amazon advertising expertise, detailed performance analysis, practical training and direct expert accountability.',
+      'We help with the problems that hold Amazon advertising back: campaigns left on autopilot, budget spent without a clear rationale, and teams that lack the time or specialist knowledge to make confident decisions.',
       "We believe effective PPC management requires curiosity, analytical thinking, attention to detail and a genuine interest in understanding each client's business.",
-      'Our approach combines structured performance analysis with hands-on campaign execution. We look at the numbers, question assumptions, identify opportunities and translate our findings into practical actions.',
-      'We value close collaboration, straightforward communication and a clear understanding of what success means for each client.',
+      'Our operating model is designed to deliver attentive, tailored work and competitive economics without reducing the standard of review.',
     ],
+    pillars: {
+      title: 'What makes our model different',
+      items: [
+        {
+          title: 'Specialist expertise',
+          body: 'Deep focus on Amazon advertising and marketplace commerce, rather than a broad catalogue of unrelated services.',
+        },
+        {
+          title: 'Data-led diagnosis',
+          body: 'We look at the numbers, question assumptions and translate our findings into tailored, prioritised recommendations.',
+        },
+        {
+          title: 'Personal, accountable service',
+          body: 'Expert-led work with a named decision owner, close collaboration and straightforward communication.',
+        },
+        {
+          title: 'Competitive operating economics',
+          body: 'A highly skilled team based in Poland, giving strong value without compromising the quality of the work.',
+        },
+      ],
+    },
     forBrands: 'For brands, that means an advertising partner who takes the time to understand their business.',
     forAgencies: 'For agencies, it means a dependable extension of their team, committed to quality execution and operational efficiency.',
     goal: 'Our goal is to help businesses make better advertising decisions, use their resources more effectively and build a stronger foundation for growth on Amazon.',
