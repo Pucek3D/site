@@ -42,13 +42,22 @@ export const de: Dictionary = {
   },
   "common": {
     "home": {
-      "tools": ["Gebotsoptimierung", "Keyword-Analyse", "Suchbegriff-Einblicke", "Performance-Reporting"],
+      "tools": [
+        "Gebotsoptimierung",
+        "Keyword-Analyse",
+        "Suchbegriff-Einblicke",
+        "Performance-Reporting"
+      ],
       "campaignPerformance": "Kampagnen-Performance",
       "range": "Letzte 30 Tage",
       "sales": "Umsatz",
       "acos": "ACOS",
       "opportunities": "Chancen",
-      "opportunityItems": ["Mehr Sichtbarkeit für Top-Suchbegriffe", "Bessere Conversion bei wichtigen ASINs", "Budgetverteilung optimieren"],
+      "opportunityItems": [
+        "Mehr Sichtbarkeit für Top-Suchbegriffe",
+        "Bessere Conversion bei wichtigen ASINs",
+        "Budgetverteilung optimieren"
+      ],
       "autopilotEyebrow": "Das Autopilot-Problem",
       "approachEyebrow": "Unser Ansatz"
     },
@@ -57,8 +66,13 @@ export const de: Dictionary = {
     "showLess": "Weniger anzeigen"
   },
   "contact": {
-    "eyebrow": "Kontakt",
+    "eyebrow": "Sprechen wir",
+    "intro": [
+      "Ob Sie eine bessere Werbeleistung, zusätzliche Amazon-PPC-Kapazität oder praxisnahes Training für Ihr Team benötigen – wir möchten Ihre Ziele verstehen.",
+      "Erzählen Sie uns, wo Sie heute stehen und was Sie erreichen möchten. Wir besprechen, welche Form der Unterstützung für Ihr Unternehmen am besten passen könnte."
+    ],
     "emailLabel": "Lieber per E-Mail?",
+    "emailPending": "E-Mail-Adresse wird noch bestätigt",
     "form": {
       "topicLegend": "Worum geht es?",
       "topics": {
@@ -79,113 +93,31 @@ export const de: Dictionary = {
         "pl": "Polski",
         "de": "Deutsch"
       },
-      "improve": "Was soll besser werden?",
-      "improveHint": "Ein paar Sätze genügen. Mindestens 20 Zeichen.",
+      "improve": "Erzählen Sie uns von Ihrem Bedarf",
+      "improveHint": "Ein paar Sätze genügen. Beschreiben Sie, was Sie suchen, und relevanten Kontext.",
       "optional": "optional",
-      "select": "Option auswählen",
       "consentBefore": "Ich bin einverstanden, dass ADelier diese Angaben zur Beantwortung meiner Anfrage nutzt, wie in der",
       "consentLink": "Datenschutzerklärung",
       "consentAfter": " beschrieben.",
       "honeypot": "Dieses Feld bitte leer lassen",
-      "agency": {
-        "legend": "Über Ihre Agentur",
-        "type": "Agenturtyp",
-        "typeOptions": {
-          "full-service": "Full-Service",
-          "performance": "Performance oder Paid Media",
-          "ecommerce": "E-Commerce oder Marketplace",
-          "creative": "Kreation oder Marke",
-          "other": "Sonstige"
-        },
-        "clients": "Anzahl relevanter Kunden",
-        "clientOptions": {
-          "1": "1",
-          "2-5": "2–5",
-          "6-15": "6–15",
-          "16+": "16 oder mehr"
-        },
-        "capability": "Aktuelle Amazon-Kompetenz",
-        "capabilityOptions": {
-          "none": "Noch keine",
-          "basic": "Grundlegend, nach Bedarf",
-          "established": "Etabliert, mit kleinem Team",
-          "advanced": "Fortgeschritten, Skalierung geplant"
-        },
-        "model": "Bevorzugtes Modell",
-        "modelOptions": {
-          "white-label": "White-Label-PPC-Management",
-          "specialist": "Dedizierter PPC-Spezialist",
-          "not-sure": "Noch unklar"
-        }
-      },
-      "brand": {
-        "legend": "Über Ihr Produkt",
-        "category": "Produktkategorie",
-        "marketplace": "Amazon-Marketplace",
-        "marketplaceOptions": {
-          "us": "Vereinigte Staaten",
-          "ca": "Kanada",
-          "uk": "Vereinigtes Königreich",
-          "de": "Deutschland",
-          "other-eu": "Anderer EU-Marketplace",
-          "other": "Sonstiger"
-        },
-        "asins": "Anzahl priorisierter ASINs",
-        "asinOptions": {
-          "1": "1",
-          "2-5": "2–5",
-          "6-20": "6–20",
-          "21+": "21 oder mehr"
-        },
-        "problem": "Wobei brauchen Sie Unterstützung?",
-        "problemOptions": {
-          "ppc": "Amazon-PPC-Management",
-          "audit": "Konto- oder Werbe-Audit",
-          "validation": "Produkt- und Marktvalidierung",
-          "not-sure": "Noch unklar"
-        }
-      },
-      "training": {
-        "legend": "Über das Programm",
-        "teamSize": "Teamgröße",
-        "teamOptions": {
-          "1-5": "1–5",
-          "6-12": "6–12",
-          "13-25": "13–25",
-          "26+": "26 oder mehr"
-        },
-        "roles": "Rollen der Teilnehmenden",
-        "rolesHint": "Zum Beispiel: Account Manager, Texter, Marketplace-Spezialisten.",
-        "capability": "Aufzubauende Kompetenz",
-        "format": "Bevorzugtes Format",
-        "formatOptions": {
-          "remote": "Remote",
-          "onsite": "Vor Ort",
-          "hybrid": "Hybrid",
-          "not-sure": "Noch unklar"
-        },
-        "timing": "Geplanter Zeitraum",
-        "timingOptions": {
-          "month": "Innerhalb eines Monats",
-          "quarter": "In diesem Quartal",
-          "half-year": "Innerhalb von sechs Monaten",
-          "exploring": "Wir prüfen Optionen"
-        }
-      },
       "submit": "Anfrage senden",
       "submitting": "Wird gesendet…",
       "errorSummary": "Bitte korrigieren Sie die markierten Felder vor dem Senden.",
-      "successTitle": "Anfrage erhalten",
-      "success": "Vielen Dank. Wir prüfen die Situation und antworten innerhalb eines Werktags mit dem passendsten nächsten Schritt und den Informationen, die wir vor dem Gespräch benötigen.",
-      "failureTitle": "Ihre Anfrage wurde nicht gesendet",
-      "failure": "Auf unserer Seite ist ein Fehler aufgetreten. Ihre Angaben sind noch hier – bitte versuchen Sie es erneut oder schreiben Sie uns direkt.",
+      "successTitle": "Danke für Ihre Nachricht.",
+      "success": "Wir haben Ihre Anfrage erhalten und melden uns bei Ihnen.",
+      "failureTitle": "Ihre Nachricht konnte nicht gesendet werden.",
+      "failure": "Bitte versuchen Sie es erneut. Falls das Problem bestehen bleibt, nutzen Sie unsere verifizierte E-Mail-Adresse, sobald sie verfügbar ist.",
       "errors": {
         "required": "Dieses Feld ist erforderlich.",
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "url": "Bitte geben Sie eine gültige Website-Adresse ein, zum Beispiel example.com.",
         "consent": "Bitte bestätigen Sie Ihre Einwilligung, damit wir antworten können.",
-        "tooShort": "Bitte ergänzen Sie etwas mehr Details (mindestens 20 Zeichen).",
+        "tooShort": "Bitte ergänzen Sie etwas mehr Details – mindestens 20 Zeichen.",
         "tooLong": "Dieser Eintrag ist zu lang."
+      },
+      "fieldErrors": {
+        "name": "Bitte geben Sie Ihren Namen ein.",
+        "improve": "Bitte erzählen Sie uns kurz von Ihrer Anfrage."
       }
     }
   },

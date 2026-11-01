@@ -40,13 +40,22 @@ export const en = {
   },
   "common": {
     "home": {
-      "tools": ["Bid optimisation", "Keyword analysis", "Search term insights", "Performance reporting"],
+      "tools": [
+        "Bid optimisation",
+        "Keyword analysis",
+        "Search term insights",
+        "Performance reporting"
+      ],
       "campaignPerformance": "Campaign performance",
       "range": "Last 30 days",
       "sales": "Sales",
       "acos": "ACOS",
       "opportunities": "Opportunity areas",
-      "opportunityItems": ["Increase top search term visibility", "Improve conversion on key ASINs", "Optimise budget allocation"],
+      "opportunityItems": [
+        "Increase top search term visibility",
+        "Improve conversion on key ASINs",
+        "Optimise budget allocation"
+      ],
       "autopilotEyebrow": "The autopilot problem",
       "approachEyebrow": "Our approach"
     },
@@ -55,8 +64,13 @@ export const en = {
     "showLess": "Show less"
   },
   "contact": {
-    "eyebrow": "Contact",
+    "eyebrow": "Let's talk",
+    "intro": [
+      "Whether you need better advertising performance, additional Amazon PPC capacity or practical training for your team, we'd like to understand your goals.",
+      "Tell us where you are today and what you're looking to achieve. We'll discuss which form of support may be most suitable for your business."
+    ],
     "emailLabel": "Prefer email?",
+    "emailPending": "Email address to be confirmed",
     "form": {
       "topicLegend": "What brings you here?",
       "topics": {
@@ -77,113 +91,31 @@ export const en = {
         "pl": "Polski",
         "de": "Deutsch"
       },
-      "improve": "What needs to improve?",
-      "improveHint": "A few sentences are enough. At least 20 characters.",
+      "improve": "Tell us about your needs",
+      "improveHint": "A few sentences are enough. Tell us what you're looking for and any relevant context.",
       "optional": "optional",
-      "select": "Select an option",
       "consentBefore": "I agree that ADelier may use these details to respond to my inquiry, as described in the",
       "consentLink": "privacy notice",
       "consentAfter": ".",
       "honeypot": "Leave this field empty",
-      "agency": {
-        "legend": "About your agency",
-        "type": "Agency type",
-        "typeOptions": {
-          "full-service": "Full-service",
-          "performance": "Performance or paid media",
-          "ecommerce": "Ecommerce or marketplace",
-          "creative": "Creative or brand",
-          "other": "Other"
-        },
-        "clients": "Number of relevant clients",
-        "clientOptions": {
-          "1": "1",
-          "2-5": "2–5",
-          "6-15": "6–15",
-          "16+": "16 or more"
-        },
-        "capability": "Current Amazon capability",
-        "capabilityOptions": {
-          "none": "None yet",
-          "basic": "Basic, handled ad hoc",
-          "established": "Established, with a small team",
-          "advanced": "Advanced, looking to scale"
-        },
-        "model": "Preferred model",
-        "modelOptions": {
-          "white-label": "White-label PPC management",
-          "specialist": "Dedicated PPC specialist",
-          "not-sure": "Not sure yet"
-        }
-      },
-      "brand": {
-        "legend": "About your product",
-        "category": "Product category",
-        "marketplace": "Amazon marketplace",
-        "marketplaceOptions": {
-          "us": "United States",
-          "ca": "Canada",
-          "uk": "United Kingdom",
-          "de": "Germany",
-          "other-eu": "Other EU marketplace",
-          "other": "Other"
-        },
-        "asins": "Number of priority ASINs",
-        "asinOptions": {
-          "1": "1",
-          "2-5": "2–5",
-          "6-20": "6–20",
-          "21+": "21 or more"
-        },
-        "problem": "What do you need help with?",
-        "problemOptions": {
-          "ppc": "Amazon PPC management",
-          "audit": "Account or advertising audit",
-          "validation": "Product and market validation",
-          "not-sure": "Not sure yet"
-        }
-      },
-      "training": {
-        "legend": "About the program",
-        "teamSize": "Team size",
-        "teamOptions": {
-          "1-5": "1–5",
-          "6-12": "6–12",
-          "13-25": "13–25",
-          "26+": "26 or more"
-        },
-        "roles": "Participant roles",
-        "rolesHint": "For example: account managers, content writers, marketplace specialists.",
-        "capability": "Capability to build",
-        "format": "Preferred format",
-        "formatOptions": {
-          "remote": "Remote",
-          "onsite": "Onsite",
-          "hybrid": "Hybrid",
-          "not-sure": "Not sure"
-        },
-        "timing": "Target timing",
-        "timingOptions": {
-          "month": "Within a month",
-          "quarter": "This quarter",
-          "half-year": "Within six months",
-          "exploring": "Exploring options"
-        }
-      },
       "submit": "Send inquiry",
       "submitting": "Sending…",
       "errorSummary": "Please correct the highlighted fields before sending.",
-      "successTitle": "Inquiry received",
-      "success": "Thank you. We will review the situation and respond within one business day with the most relevant next step and any information needed before the conversation.",
-      "failureTitle": "Your inquiry was not sent",
-      "failure": "Something went wrong on our side. Your answers are still here — please try again, or email us directly.",
+      "successTitle": "Thanks for getting in touch.",
+      "success": "We've received your inquiry and will be in touch.",
+      "failureTitle": "Your message couldn't be sent.",
+      "failure": "Please try again. If the problem continues, use our verified email contact method when available.",
       "errors": {
         "required": "This field is required.",
         "email": "Enter a valid email address.",
         "url": "Enter a valid website address, for example example.com.",
         "consent": "Please confirm your consent so we can reply.",
-        "tooShort": "Please add a little more detail (at least 20 characters).",
+        "tooShort": "Please add a little more detail — at least 20 characters.",
         "tooLong": "This entry is too long."
+      },
+      "fieldErrors": {
+        "name": "Please enter your name.",
+        "improve": "Please tell us a little about your inquiry."
       }
     }
   },
