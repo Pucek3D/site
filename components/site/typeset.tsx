@@ -28,9 +28,18 @@ export function Sentences({
   if (sentences.length < 2) return <>{text}</>
   return (
     <>
-      {sentences.map((sentence, i) => (
-        <span key={i} className={cn(BREAK_CLASS[breakAt], className)}>
-          {sentence}
+  {sentences.map((sentence, i) => (
+  <span key={i} className={cn(BREAK_CLASS[breakAt], className)}>
+  {/* A "\n" in the copy is an authored line break inside a sentence; it
+     applies from the same width as the sentence breaks and is a space below it. */}
+  {sentence.includes('\n')
+  ? sentence.split('\n').map((part, j, parts) => (
+  <span key={j} className={BREAK_CLASS[breakAt]}>
+  {part}
+  {j < parts.length - 1 ? ' ' : null}
+  </span>
+  ))
+  : sentence}
           {i < sentences.length - 1 ? ' ' : null}
         </span>
       ))}
