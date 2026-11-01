@@ -4,14 +4,22 @@ import { getCopy } from '@/content/partner'
 import { href, locales, ogLocale, type Locale, type PageKey } from './i18n'
 import { siteConfig } from './site-config'
 
-/** Titles and descriptions are read off the partner's own copy, so a page's metadata cannot say something the page doesn't. */
+/** Copy strings can carry line breaks and runs of spaces from authoring; metadata must be a single clean line. */
+const clean = (value: string) => value.replace(/\s+/g, ' ').trim()
+
 function pageMeta(locale: Locale, page: PageKey): { title: string; description: string } {
+  const { title, description } = rawPageMeta(locale, page)
+  return { title: clean(title), description: clean(description) }
+}
+
+/** Titles and descriptions are read off the partner's own copy, so a page's metadata cannot say something the page doesn't. The home page carries a dedicated short description, since its hero paragraph is too long for a link preview. */
+function rawPageMeta(locale: Locale, page: PageKey): { title: string; description: string } {
   const c = getCopy(locale)
   const d = getDictionary(locale)
   const named = (name: string) => `${name} | ${siteConfig.name}`
   switch (page) {
     case 'home':
-      return { title: `${siteConfig.name} — ${siteConfig.descriptor}`, description: c.home.hero.paragraphs[0] }
+      return { title: `${siteConfig.name} — ${siteConfig.descriptor}`, description: d.meta.home.description }
     case 'agencies':
       return { title: named(c.pageNames.agencies), description: c.agencies.hero.paragraphs[0] }
     case 'brands':

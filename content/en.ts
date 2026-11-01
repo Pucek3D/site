@@ -1,6 +1,9 @@
 /** Interface strings only. Marketing copy lives in content/partner/. */
 export const en = {
   "meta": {
+    "home": {
+      "description": "Expert-led Amazon PPC management, white-label agency support and practical PPC training for brands and agencies."
+    },
     "privacy": {
       "title": "Privacy Notice | ADelier Commerce",
       "description": "How ADelier Commerce handles personal data. Draft pending owner and legal review."

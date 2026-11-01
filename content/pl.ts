@@ -3,6 +3,9 @@ import type { Dictionary } from './en'
 /** Interface strings only. Marketing copy lives in content/partner/. */
 export const pl: Dictionary = {
   "meta": {
+    "home": {
+      "description": "Eksperckie zarządzanie kampaniami Amazon PPC, wsparcie white-label dla agencji i praktyczne szkolenia PPC dla marek i agencji."
+    },
     "privacy": {
       "title": "Polityka prywatności | ADelier Commerce",
       "description": "Jak ADelier Commerce przetwarza dane osobowe. Wersja robocza do uzupełnienia przez właściciela i weryfikacji prawnej."
