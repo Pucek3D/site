@@ -51,10 +51,21 @@ export function pageFromPath(pathname: string): PageKey {
   return match ?? 'home'
 }
 
-/** Swap the locale segment and keep everything after it, so switching language keeps the reader on the same page. */
-export function switchLocalePath(pathname: string, target: Locale): string {
+/** Inquiry categories the Contact page accepts. Mirrors `topics` in lib/validation.ts. */
+const contactTopics = ['agency', 'brand', 'training', 'general'] as const
+
+/**
+ * Swap the locale segment and keep everything after it, so switching language keeps the reader on the same page.
+ * On Contact the inquiry category travels too — and ONLY that: other query parameters are dropped rather than
+ * forwarded blindly. `?inquiry=` is normalised to the canonical `?topic=`; an unknown value is dropped, which the
+ * Contact page already reads as General.
+ */
+export function switchLocalePath(pathname: string, target: Locale, search?: URLSearchParams | null): string {
   const rest = pathname.replace(/^\/(en|pl|de)(?=\/|$)/, '')
-  return `/${target}${rest}`
+  const base = `/${target}${rest}`
+  if (!search || pageFromPath(pathname) !== 'contact') return base
+  const topic = search.get('topic') ?? search.get('inquiry')
+  return topic && (contactTopics as readonly string[]).includes(topic) ? `${base}?topic=${topic}` : base
 }
 
 /** Pick the best supported locale from an Accept-Language header; English is the fallback. */

@@ -131,7 +131,12 @@ export function ContactForm({
                 name="topicChoice"
                 value={t}
                 checked={topic === t}
-                onChange={() => setTopic(t)}
+                onChange={() => {
+                  setTopic(t)
+                  // Keep the URL's inquiry category current so switching language preserves the reader's choice.
+                  // Only the category goes in the URL — never anything typed into the form.
+                  window.history.replaceState(null, '', `${window.location.pathname}?topic=${t}`)
+                }}
                 className={cn('size-4 shrink-0 focus:outline-none', t === 'training' ? 'accent-[var(--color-sage)]' : 'accent-[var(--color-cobalt)]')}
               />
               <span className="font-medium text-ink">{f.topics[t]}</span>

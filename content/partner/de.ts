@@ -2,7 +2,13 @@ import type { PartnerCopy } from './types'
 
 /** Translation of the English partner copy. Needs review by a native speaker before launch. */
 export const de: PartnerCopy = {
-  signoff: 'ADelier Commerce — Amazon advertising, marketplace expertise and applied training.',
+  signoff: 'ADelier Commerce — Amazon-Werbung, Marketplace-Expertise und praxisorientierte Schulungen.',
+  homeImageAlts: {
+    hero: 'Fachkraft analysiert Werbeergebnisse am Laptop (Illustrationsfoto)',
+    agencies: 'Zwei Geschäftspartner reichen sich über einem Schreibtisch mit Laptop die Hand',
+    brands: 'Zwei Kollegen besprechen einen beispielhaften Werbebericht auf einem Bildschirm',
+    training: 'Trainerin stellt einer kleinen Gruppe den Ablauf eines PPC-Programms vor',
+  },
   pageNames: {
     agencies: 'Amazon-PPC-Agenturpartnerschaften',
     brands: 'Amazon-PPC-Management & Schulungen für Marken',
@@ -103,7 +109,7 @@ export const de: PartnerCopy = {
     },
     audiences: {
       eyebrow: 'Mit wem wir arbeiten',
-      title: ['Zwei Wege.', 'Ein Anspruch an Performance.'],
+      title: ['Zwei Wege.', 'Ein einheitlicher Performance-Standard.'],
       subtitle: 'Expertengeführtes Amazon-Wachstum, abgestimmt auf Ihre Arbeitsweise.',
       brands: {
         label: 'Marken',
@@ -185,7 +191,7 @@ export const de: PartnerCopy = {
       items: [
         "Arbeit mit Ihren eigenen Kampagnendaten, sofern Zugriff besteht",
         "Praxisübungen auf Basis realer Werbeentscheidungen",
-        "Qualitätsrubriken zur einheitlichen Bewertung von Kampagnenarbeit",
+        "Einheitliche Qualitätskriterien zur Bewertung der Kampagnenarbeit",
         "Ein Umsetzungsplan, mit dem Ihr Team arbeiten kann",
       ],
       cta: "PPC-Training entdecken",
@@ -282,7 +288,7 @@ export const de: PartnerCopy = {
     intro: 'Hinter beiden Modellen steht derselbe expertengeführte Ablauf.',
     steps: [
       { label: 'Bewerten', text: 'Bewertung von Konto und Setup.' },
-      { label: 'Analysieren', text: 'Performance-Analyse, einschließlich ACOS, ROAS sowie Werbe- im Verhältnis zum Gesamtumsatz, sofern belastbare Daten vorliegen.' },
+      { label: 'Analysieren', text: 'Performance-Analyse einschließlich ACOS und ROAS sowie des Werbeumsatzes im Verhältnis zum Gesamtumsatz, sofern verlässliche Daten verfügbar sind.' },
       { label: 'Priorisieren', text: 'Übersetzung der Erkenntnisse in einen klaren, priorisierten Maßnahmenplan.' },
       { label: 'Umsetzen', text: 'Umsetzung der abgestimmten Maßnahmen mit Expertenprüfung und Qualitätskontrolle.' },
       { label: 'Berichten', text: 'Transparentes Performance-Reporting, Erkenntnisse und empfohlene nächste Schritte.' },
@@ -339,7 +345,7 @@ export const de: PartnerCopy = {
         },
         {
           title: "Das Gelernte umsetzen",
-          body: "Teams erarbeiten konkrete nächste Schritte. Je nach vereinbartem Programmumfang kann dies Qualitätskriterien zur Bewertung der Kampagnenarbeit und einen Umsetzungsplan umfassen.",
+          body: "Teams erarbeiten konkrete nächste Schritte. Je nach vereinbartem Programmumfang kann dies einheitliche Qualitätskriterien zur Bewertung der Kampagnenarbeit und einen Umsetzungsplan umfassen.",
         },
       ],
       support: [

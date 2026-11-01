@@ -44,7 +44,7 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
       <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%]">
   <Image
           src="/images/hero-analyst.png"
-          alt="Professional reviewing advertising analysis at a laptop (illustrative photography)"
+          alt={copy.homeImageAlts.hero}
           fill
           priority
           sizes="(min-width: 1024px) 58vw, 100vw"
@@ -140,10 +140,10 @@ function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; 
 
 /* One tile per buyer route, in the content's own order: Agencies, Brands, Training. */
 const services = [
-  { art: '/images/svc/white-label-handshake.png', alt: 'Two business partners shaking hands over a desk with a laptop', focus: '58% 45%', to: 'agencies' },
-  { art: '/images/svc/ppc.png', alt: 'Two colleagues discussing an illustrative advertising report on a screen', to: 'brands' },
-  { art: '/images/svc/training-team.png', alt: 'Trainer presenting a PPC programme outline to a small group', focus: '55% 40%', to: 'training' },
-] as const satisfies readonly { art: string; alt: string; focus?: string; to: PageKey }[]
+  { art: '/images/svc/white-label-handshake.png', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
+  { art: '/images/svc/ppc.png', alt: 'brands', to: 'brands' },
+  { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 40%', to: 'training' },
+] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; to: PageKey }[]
 
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
 const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
@@ -188,7 +188,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               paragraphs: s.paragraphs,
               bullets: s.bullets,
               art: v.art,
-              alt: v.alt,
+              alt: copy.homeImageAlts[v.alt],
               focus: 'focus' in v ? v.focus : undefined,
               accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
               to: href(locale, v.to),

@@ -35,6 +35,8 @@ export type AgencyModel = {
 export type PartnerCopy = {
   /** Sign-off line under the homepage, reused in the footer. */
   signoff: string
+  /** Descriptions of the four homepage photographs, localised like every other image description. */
+  homeImageAlts: { hero: string; agencies: string; brands: string; training: string }
   /** SEO page titles. Navigation labels live in the interface dictionary. */
   pageNames: {
     agencies: string

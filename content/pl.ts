@@ -12,6 +12,11 @@ export const pl: Dictionary = {
       "description": "Nota prawna i dane firmy ADelier Commerce. Wersja robocza do uzupełnienia przez właściciela."
     }
   },
+  "notFound": {
+    "heading": "Nie znaleziono strony",
+    "description": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
+    "cta": "Wróć na stronę główną"
+  },
   "nav": {
     "items": {
       "home": "Strona główna",
@@ -74,7 +79,7 @@ export const pl: Dictionary = {
     "emailLabel": "Wolisz e-mail?",
     "emailPending": "Adres e-mail do potwierdzenia",
     "form": {
-      "topicLegend": "Z czym przychodzisz?",
+      "topicLegend": "W jakiej sprawie się kontaktujesz?",
       "topics": {
         "agency": "Współpraca agencyjna",
         "brand": "Projekt dla marki",

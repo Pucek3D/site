@@ -6,6 +6,12 @@ import type { PartnerCopy } from './types'
  */
 export const en: PartnerCopy = {
   signoff: 'ADelier Commerce — Amazon advertising, marketplace expertise and applied training.',
+  homeImageAlts: {
+    hero: 'Professional reviewing advertising analysis at a laptop (illustrative photography)',
+    agencies: 'Two business partners shaking hands over a desk with a laptop',
+    brands: 'Two colleagues discussing an illustrative advertising report on a screen',
+    training: 'Trainer presenting a PPC programme outline to a small group',
+  },
   pageNames: {
     agencies: 'Amazon PPC Agency Partnerships',
     brands: 'Amazon PPC Management & Training for Brands',

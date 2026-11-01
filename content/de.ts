@@ -12,6 +12,11 @@ export const de: Dictionary = {
       "description": "Impressum und Unternehmensangaben von ADelier Commerce. Entwurf, vorbehaltlich Ergänzung durch den Inhaber."
     }
   },
+  "notFound": {
+    "heading": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde möglicherweise verschoben.",
+    "cta": "Zur Startseite"
+  },
   "nav": {
     "items": {
       "home": "Startseite",

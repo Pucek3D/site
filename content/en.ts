@@ -10,6 +10,11 @@ export const en = {
       "description": "Legal notice and company information for ADelier Commerce. Draft pending owner input."
     }
   },
+  "notFound": {
+    "heading": "Page not found",
+    "description": "The page you're looking for doesn't exist or may have moved.",
+    "cta": "Back to home"
+  },
   "nav": {
     "items": {
       "home": "Home",

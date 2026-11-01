@@ -1,21 +1,43 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 import { localeNames, locales, switchLocalePath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
-export function LanguageSwitcher({
-  current,
-  label,
-  layout = 'inline',
-  dark = false,
-}: {
+type SwitcherProps = {
   current: Locale
   label: string
   layout?: 'inline' | 'stacked'
   dark?: boolean
-}) {
+}
+
+/**
+ * Reading the query string opts the subtree out of static rendering, so it sits behind a
+ * Suspense boundary whose fallback is the same switcher without the query — identical markup,
+ * just without the Contact inquiry category until the client reads it.
+ */
+export function LanguageSwitcher(props: SwitcherProps) {
+  return (
+    <Suspense fallback={<SwitcherList {...props} search={null} />}>
+      <SwitcherWithQuery {...props} />
+    </Suspense>
+  )
+}
+
+function SwitcherWithQuery(props: SwitcherProps) {
+  const search = useSearchParams()
+  return <SwitcherList {...props} search={search} />
+}
+
+function SwitcherList({
+  current,
+  label,
+  layout = 'inline',
+  dark = false,
+  search,
+}: SwitcherProps & { search: URLSearchParams | null }) {
   const pathname = usePathname() ?? `/${current}`
   return (
     <nav aria-label={label}>
@@ -25,7 +47,7 @@ export function LanguageSwitcher({
           return (
             <li key={l}>
               <Link
-                href={switchLocalePath(pathname, l)}
+                href={switchLocalePath(pathname, l, search)}
                 hrefLang={l}
                 lang={l}
                 aria-current={active ? 'true' : undefined}

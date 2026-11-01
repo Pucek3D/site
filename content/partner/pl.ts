@@ -2,7 +2,13 @@ import type { PartnerCopy } from './types'
 
 /** Translation of the English partner copy. Needs review by a native speaker before launch. */
 export const pl: PartnerCopy = {
-  signoff: 'ADelier Commerce — Amazon advertising, marketplace expertise and applied training.',
+  signoff: 'ADelier Commerce — Reklama na Amazon, wiedza o marketplace i praktyczne szkolenia.',
+  homeImageAlts: {
+    hero: 'Specjalistka analizująca wyniki reklam przy laptopie (zdjęcie ilustracyjne)',
+    agencies: 'Dwoje partnerów biznesowych podaje sobie ręce nad biurkiem z laptopem',
+    brands: 'Dwoje współpracowników omawia ilustracyjny raport reklamowy na ekranie',
+    training: 'Trenerka przedstawia małej grupie plan programu szkoleniowego PPC',
+  },
   pageNames: {
     agencies: 'Współpraca Amazon PPC z agencjami',
     brands: 'Zarządzanie reklamami Amazon PPC i szkolenia dla marek',
@@ -52,7 +58,7 @@ export const pl: PartnerCopy = {
           tagline: 'Twoja reklama. Aktywnie zarządzana.',
           paragraphs: [
             'Zarządzamy kampaniami reklamowymi na Amazonie z naciskiem na efektywność, rentowność i trwały wzrost.',
-            'Każdą współpracę zaczynamy od przeglądu obecnej konfiguracji, a kończymy uporządkowanymi rekomendacjami dopasowanymi do Twoich produktów, marż i celów. Potem prowadzimy bieżącą pracę, w uzgodnionym rytmie, dzięki której Twoja reklama zmierza we właściwym kierunku.',
+            'Każdą współpracę zaczynamy od przeglądu obecnej konfiguracji i przygotowania rekomendacji uporządkowanych według priorytetów, dopasowanych do Twoich produktów, marż i celów. Następnie prowadzimy bieżące działania w uzgodnionym rytmie, aby konsekwentnie doskonalić wyniki reklam.',
           ],
           bullets: [
             'Kampanie Sponsored Products, Sponsored Brands i Sponsored Display, tam gdzie to zasadne',
@@ -131,7 +137,7 @@ export const pl: PartnerCopy = {
   brands: {
     hero: {
       eyebrow: "Dla marek · Amazon PPC i szkolenia",
-      title: "Ekspertyza Amazon PPC. Prowadzona za Ciebie lub budowana w Twoim zespole.",
+      title: "Specjalistyczne wsparcie Amazon PPC. Zarządzanie kampaniami dla Twojej marki lub rozwój kompetencji Twojego zespołu.",
       emphasis: "Dwie drogi do celu: zarządzanie Amazon PPC lub praktyczne szkolenie PPC.",
       paragraphs: [
         "Markom, które chcą mieć większą kontrolę nad reklamą na Amazon, ADelier zapewnia eksperckie zarządzanie kampaniami oraz praktyczne szkolenia dla zespołów wewnętrznych.",
@@ -185,7 +191,7 @@ export const pl: PartnerCopy = {
       items: [
         "Praca na danych z Twoich kampanii, jeśli dostęp jest możliwy",
         "Praktyczne ćwiczenia oparte na rzeczywistych decyzjach reklamowych",
-        "Rubryki jakości do spójnej oceny pracy nad kampaniami",
+        "Kryteria oceny jakości umożliwiające spójny przegląd pracy nad kampaniami",
         "Plan wdrożenia, który Twój zespół może zrealizować",
       ],
       cta: "Poznaj szkolenie PPC",
@@ -339,7 +345,7 @@ export const pl: PartnerCopy = {
         },
         {
           title: "Wdrażamy wiedzę",
-          body: "Zespół wypracowuje konkretne kolejne kroki. W zależności od uzgodnionego zakresu programu mogą one obejmować kryteria jakości do oceny pracy nad kampaniami i plan wdrożenia.",
+          body: "Zespół wypracowuje konkretne kolejne kroki. W zależności od uzgodnionego zakresu programu mogą one obejmować kryteria oceny jakości umożliwiające spójny przegląd pracy nad kampaniami oraz plan wdrożenia.",
         },
       ],
       support: [

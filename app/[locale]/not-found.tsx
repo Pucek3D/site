@@ -1,18 +1,16 @@
-import { Container, CtaLink, Eyebrow } from '@/components/site/primitives'
+import { getDictionary } from '@/content'
+import { locales } from '@/lib/i18n'
+import { NotFoundBody } from './not-found-body'
 
+/**
+ * Next.js passes no params to not-found, so the locale is read from the URL on the client.
+ * All three locales' strings come from the dictionaries and are handed down, keeping the
+ * copy in the translation files rather than in this component.
+ */
 export default function NotFound() {
-  return (
-    <Container className="py-24 md:py-32">
-      <div className="max-w-2xl">
-        <Eyebrow>404</Eyebrow>
-        <h1 className="mt-5 text-4xl font-semibold md:text-5xl">This page does not exist.</h1>
-        <p className="mt-5 text-lg text-slate">
-          The link may be out of date. Strona nie istnieje. Diese Seite existiert nicht.
-        </p>
-        <div className="mt-8">
-          <CtaLink href="/">ADelier Commerce</CtaLink>
-        </div>
-      </div>
-    </Container>
-  )
+  const copy = Object.fromEntries(locales.map((l) => [l, getDictionary(l).notFound])) as Record<
+    (typeof locales)[number],
+    ReturnType<typeof getDictionary>['notFound']
+  >
+  return <NotFoundBody copy={copy} />
 }
