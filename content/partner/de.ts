@@ -52,7 +52,7 @@ export const de: PartnerCopy = {
           tagline: 'Ihre Werbung. Aktiv gemanagt.',
           paragraphs: [
             'Wir managen Amazon-Werbekampagnen mit Fokus auf Effizienz, Profitabilität und nachhaltiges Wachstum.',
-            'Jede Zusammenarbeit beginnt mit einer Prüfung des aktuellen Setups und führt zu priorisierten Empfehlungen, zugeschnitten auf Ihre Produkte, Margen und Ziele. Danach übernehmen wir die tägliche Arbeit, die Ihre Werbung in die richtige Richtung bewegt.',
+            'Jede Zusammenarbeit beginnt mit einer Prüfung des aktuellen Setups und führt zu priorisierten Empfehlungen, zugeschnitten auf Ihre Produkte, Margen und Ziele. Danach übernehmen wir die laufende Arbeit im vereinbarten Rhythmus, die Ihre Werbung in die richtige Richtung bewegt.',
           ],
           bullets: [
             'Sponsored-Products-, Sponsored-Brands- und Sponsored-Display-Kampagnen, wo sinnvoll',
@@ -69,7 +69,7 @@ export const de: PartnerCopy = {
           tagline: 'Bauen Sie Expertise im eigenen Team auf.',
           paragraphs: [
             'Für Marken- und Agenturteams, die ihre Amazon-Werbung lieber intern steuern, bieten wir praxisnahe Schulungen, die sichere und kompetente PPC-Spezialisten entwickeln.',
-            'Unsere Schulungen behandeln Kampagnenstruktur, Keyword-Targeting, Gebotsstrategien, Performance-Analyse und fortgeschrittene Optimierungstechniken – angewendet auf echte Werbekonten. Sie sind auch ohne PPC-Management buchbar.',
+            'Unsere Schulungen behandeln Kampagnenstruktur, Keyword-Targeting, Gebotsstrategien, Performance-Analyse und fortgeschrittene Optimierungstechniken – angewendet auf praxisnahe Kampagnenszenarien und, sofern Zugriff besteht, auf Ihre eigenen Kontodaten. Sie sind auch ohne PPC-Management buchbar.',
           ],
         },
       ],
@@ -181,7 +181,7 @@ export const de: PartnerCopy = {
         "Praxisnahes Amazon-PPC-Training für Marken-, E-Commerce- und Marketingteams, die Werbung intern steuern oder sicherer mit einem externen Partner zusammenarbeiten möchten.",
         "Das Training ist unabhängig vom PPC Management buchbar.",
       ],
-      listLabel: "Das Training umfasst:",
+      listLabel: "Je nach vereinbartem Programm kann das Training Folgendes umfassen:",
       items: [
         "Arbeit mit Ihren eigenen Kampagnendaten, sofern Zugriff besteht",
         "Praxisübungen auf Basis realer Werbeentscheidungen",
@@ -291,7 +291,7 @@ export const de: PartnerCopy = {
     training: {
       eyebrow: 'Kompetenz im eigenen Team aufbauen',
       title: 'Bauen Sie PPC-Kompetenz in Ihrer Agentur auf.',
-      body: 'Praxisnahes Amazon-PPC-Training für Account-, Strategie- und Umsetzungsteams in Agenturen. Arbeiten Sie mit echten Kampagnenszenarien, stärken Sie Ihre Optimierungsroutinen und nehmen Sie einen wiederverwendbaren Standard mit, den Ihr Team eigenständig anwenden kann. Das Training ist einzeln buchbar, ohne Umsetzungs- oder Spezialistenvertrag.',
+      body: 'Praxisnahes Amazon-PPC-Training für Account-, Strategie- und Umsetzungsteams in Agenturen. Arbeiten Sie mit echten Kampagnenszenarien, stärken Sie Ihre Optimierungsroutinen und entwickeln Sie, je nach vereinbartem Programm, Arbeitsstandards, die Ihr Team eigenständig anwenden kann. Das Training ist einzeln buchbar, ohne Umsetzungs- oder Spezialistenvertrag.',
       cta: 'PPC-Training ansehen',
       imageAlt: 'Trainerin stellt einer kleinen Gruppe den Ablauf eines PPC-Trainingsprogramms vor',
     },
@@ -339,7 +339,7 @@ export const de: PartnerCopy = {
         },
         {
           title: "Das Gelernte umsetzen",
-          body: "Teams erarbeiten konkrete nächste Schritte – mit Qualitätskriterien zur Bewertung der Kampagnenarbeit und einem Umsetzungsplan, der auf den vereinbarten Programmumfang zugeschnitten ist.",
+          body: "Teams erarbeiten konkrete nächste Schritte. Je nach vereinbartem Programmumfang kann dies Qualitätskriterien zur Bewertung der Kampagnenarbeit und einen Umsetzungsplan umfassen.",
         },
       ],
       support: [
@@ -416,7 +416,7 @@ export const de: PartnerCopy = {
           body: 'Wir prüfen die Zahlen, hinterfragen Annahmen und übersetzen Erkenntnisse in passgenaue, priorisierte Empfehlungen.',
         },
         {
-          title: 'Pers��nlicher, verantwortlicher Service',
+          title: 'Persönlicher, verantwortlicher Service',
           body: 'Expertengeführte Arbeit mit einem benannten Entscheidungsverantwortlichen, enger Zusammenarbeit und klarer Kommunikation.',
         },
         {

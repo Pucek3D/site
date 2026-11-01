@@ -52,7 +52,7 @@ export const pl: PartnerCopy = {
           tagline: 'Twoja reklama. Aktywnie zarządzana.',
           paragraphs: [
             'Zarządzamy kampaniami reklamowymi na Amazonie z naciskiem na efektywność, rentowność i trwały wzrost.',
-            'Każdą współpracę zaczynamy od przeglądu obecnej konfiguracji, a kończymy uporządkowanymi rekomendacjami dopasowanymi do Twoich produktów, marż i celów. Potem wykonujemy codzienną pracę, dzięki której Twoja reklama zmierza we właściwym kierunku.',
+            'Każdą współpracę zaczynamy od przeglądu obecnej konfiguracji, a kończymy uporządkowanymi rekomendacjami dopasowanymi do Twoich produktów, marż i celów. Potem prowadzimy bieżącą pracę, w uzgodnionym rytmie, dzięki której Twoja reklama zmierza we właściwym kierunku.',
           ],
           bullets: [
             'Kampanie Sponsored Products, Sponsored Brands i Sponsored Display, tam gdzie to zasadne',
@@ -69,7 +69,7 @@ export const pl: PartnerCopy = {
           tagline: 'Zbuduj kompetencje we własnym zespole.',
           paragraphs: [
             'Zespołom marek i agencji, które wolą prowadzić reklamę na Amazonie we własnym zakresie, oferujemy praktyczne szkolenia, które rozwijają pewnych siebie, kompetentnych specjalistów PPC.',
-            'Szkolenia obejmują strukturę kampanii, targetowanie słów kluczowych, strategie stawek, analizę wyników i zaawansowane techniki optymalizacji, stosowane na prawdziwych kontach reklamowych. Można je kupić osobno, bez zarządzania PPC.',
+            'Szkolenia obejmują strukturę kampanii, targetowanie słów kluczowych, strategie stawek, analizę wyników i zaawansowane techniki optymalizacji, stosowane na realnych scenariuszach kampanii oraz, gdy dostęp jest możliwy, na danych z Twojego konta. Można je kupić osobno, bez zarządzania PPC.',
           ],
         },
       ],
@@ -181,7 +181,7 @@ export const pl: PartnerCopy = {
         "Praktyczne szkolenie Amazon PPC dla zespołów brandowych, e-commerce i marketingowych, które chcą prowadzić reklamy samodzielnie lub pewniej współpracować z zewnętrznym partnerem.",
         "Szkolenie jest dostępne niezależnie od zarządzania PPC.",
       ],
-      listLabel: "Co obejmuje szkolenie:",
+      listLabel: "W zależności od uzgodnionego programu szkolenie może obejmować:",
       items: [
         "Praca na danych z Twoich kampanii, jeśli dostęp jest możliwy",
         "Praktyczne ćwiczenia oparte na rzeczywistych decyzjach reklamowych",
@@ -267,7 +267,7 @@ export const pl: PartnerCopy = {
         },
         {
           title: 'Elastyczna współpraca',
-          body: 'Zacznij od jednego modelu i dostosowuj wsp��łpracę w porozumieniu z nami, gdy zmieniają się Twoje potrzeby.',
+          body: 'Zacznij od jednego modelu i dostosowuj współpracę w porozumieniu z nami, gdy zmieniają się Twoje potrzeby.',
         },
         {
           title: 'Poufność i kontrola',
@@ -291,7 +291,7 @@ export const pl: PartnerCopy = {
     training: {
       eyebrow: 'Rozwijaj kompetencje zespołu',
       title: 'Buduj kompetencje PPC wewnątrz swojej agencji.',
-      body: 'Praktyczne szkolenia z Amazon PPC dla zespołów obsługi klienta, strategii i realizacji w agencjach. Pracuj na realnych scenariuszach kampanii, wzmacniaj rutyny optymalizacyjne i wynieś standard, który Twój zespół zastosuje samodzielnie. Szkolenie można kupić osobno, bez współpracy w zakresie realizacji ani specjalisty.',
+      body: 'Praktyczne szkolenia z Amazon PPC dla zespołów obsługi klienta, strategii i realizacji w agencjach. Pracuj na realnych scenariuszach kampanii, wzmacniaj rutyny optymalizacyjne i wypracuj standardy, które Twój zespół zastosuje samodzielnie, w zależności od uzgodnionego programu. Szkolenie można kupić osobno, bez współpracy w zakresie realizacji ani specjalisty.',
       cta: 'Poznaj szkolenia PPC',
       imageAlt: 'Trenerka prezentuje niewielkiej grupie plan programu szkolenia PPC',
     },
@@ -339,7 +339,7 @@ export const pl: PartnerCopy = {
         },
         {
           title: "Wdrażamy wiedzę",
-          body: "Zespół wypracowuje konkretne kolejne kroki — z kryteriami jakości do oceny pracy nad kampaniami i planem wdrożenia dopasowanym do uzgodnionego zakresu programu.",
+          body: "Zespół wypracowuje konkretne kolejne kroki. W zależności od uzgodnionego zakresu programu mogą one obejmować kryteria jakości do oceny pracy nad kampaniami i plan wdrożenia.",
         },
       ],
       support: [

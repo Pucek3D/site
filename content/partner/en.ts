@@ -55,7 +55,7 @@ export const en: PartnerCopy = {
           tagline: 'Your advertising. Actively managed.',
           paragraphs: [
             'We manage Amazon advertising campaigns with a focus on efficiency, profitability and sustainable growth.',
-            'Every engagement starts with a review of the current setup and leads to prioritised recommendations tailored to your products, margins and goals. From there, we take care of the daily work required to keep your advertising moving in the right direction.',
+            'Every engagement starts with a review of the current setup and leads to prioritised recommendations tailored to your products, margins and goals. From there, we handle the ongoing work, at the agreed cadence, to keep your advertising moving in the right direction.',
           ],
           bullets: [
             'Sponsored Products, Sponsored Brands and Sponsored Display campaigns, where appropriate',
@@ -72,7 +72,7 @@ export const en: PartnerCopy = {
           tagline: 'Build expertise within your own team.',
           paragraphs: [
             'For brand and agency teams that prefer to manage Amazon advertising in-house, we provide practical training designed to develop confident, capable PPC specialists.',
-            'Our training covers campaign structure, keyword targeting, bidding strategies, performance analysis and advanced optimisation techniques, applied to real advertising accounts. It can be purchased on its own, without PPC management.',
+            'Our training covers campaign structure, keyword targeting, bidding strategies, performance analysis and advanced optimisation techniques, applied to real campaign scenarios and, where appropriate access is available, your own account data. It can be purchased on its own, without PPC management.',
           ],
         },
       ],
@@ -184,7 +184,7 @@ export const en: PartnerCopy = {
         "Practical Amazon PPC training for brand, e-commerce and marketing teams that want to manage advertising in-house or collaborate more confidently with an external partner.",
         "Training is available independently of PPC management.",
       ],
-      listLabel: "What the training includes:",
+      listLabel: "Depending on the agreed programme, training may include:",
       items: [
         "Work with your own campaign data, where access is available",
         "Practical exercises based on real advertising decisions",
@@ -294,7 +294,7 @@ export const en: PartnerCopy = {
     training: {
       eyebrow: "Build your team's capability",
       title: 'Build PPC capability inside your agency.',
-      body: 'Practical Amazon PPC training for agency account, strategy and delivery teams. Work with real campaign scenarios, strengthen your optimisation routines and take away a reusable standard your team can apply independently. Training is available on its own, without a delivery or specialist engagement.',
+      body: 'Practical Amazon PPC training for agency account, strategy and delivery teams. Work with real campaign scenarios, strengthen your optimisation routines and develop working standards your team can apply independently, depending on the agreed programme. Training is available on its own, without a delivery or specialist engagement.',
       cta: 'Explore PPC training',
       imageAlt: 'Trainer presenting a PPC programme outline to a small group',
     },
@@ -342,7 +342,7 @@ export const en: PartnerCopy = {
         },
         {
           title: "Apply the learning",
-          body: "Teams work toward actionable next steps, with quality rubrics for reviewing campaign work and an implementation plan tailored to the agreed programme scope.",
+          body: "Teams work toward actionable next steps. Depending on the agreed programme scope, this may include quality rubrics for reviewing campaign work and an implementation plan.",
         },
       ],
       support: [
