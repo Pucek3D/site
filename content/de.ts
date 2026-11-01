@@ -99,7 +99,7 @@ export const de: Dictionary = {
         "de": "Deutsch"
       },
       "improve": "Erzählen Sie uns von Ihrem Bedarf",
-      "improveHint": "Ein paar Sätze genügen. Beschreiben Sie, was Sie suchen, und relevanten Kontext.",
+      "improveHint": "Beschreiben Sie, was Sie suchen, und relevanten Kontext.",
       "optional": "optional",
       "consentBefore": "Ich bin einverstanden, dass ADelier diese Angaben zur Beantwortung meiner Anfrage nutzt, wie in der",
       "consentLink": "Datenschutzerklärung",

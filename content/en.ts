@@ -97,7 +97,7 @@ export const en = {
         "de": "Deutsch"
       },
       "improve": "Tell us about your needs",
-      "improveHint": "A few sentences are enough. Tell us what you're looking for and any relevant context.",
+      "improveHint": "Tell us what you're looking for and any relevant context.",
       "optional": "optional",
       "consentBefore": "I agree that ADelier may use these details to respond to my inquiry, as described in the",
       "consentLink": "privacy notice",
