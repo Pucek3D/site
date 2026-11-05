@@ -12,7 +12,7 @@ export const siteConfig = {
   /** The official brand descriptor. A brand identifier, so it stays in English in every locale (home title, JSON-LD). */
   descriptor: 'Marketplace Growth Partner',
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://adelier.example').replace(/\/$/, ''),
-  email: placeholder(process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@adelier.example'),
+  email: { value: 'contact@deliercommerce.com', placeholder: false } as Placeholder,
   linkedin: placeholder(process.env.NEXT_PUBLIC_LINKEDIN_URL ?? 'https://www.linkedin.com/company/'),
   legal: {
     companyName: placeholder('[Registered legal company name]'),
