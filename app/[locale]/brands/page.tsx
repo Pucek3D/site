@@ -25,7 +25,7 @@ export default async function BrandsPage({ params }: Props) {
   const { locale } = await params
   const d = getDictionary(locale)
   const b = getCopy(locale).brands
-  const { ppc, training } = b
+  const { ppc, training, opportunity: opp } = b
 
   return (
     <>
@@ -67,6 +67,31 @@ export default async function BrandsPage({ params }: Props) {
         </Container>
       </section>
 
+      {/* Amazon's scale. The footnote states the figures' basis and source and never renders apart from them. */}
+      <Section tone="white" labelledBy="opportunity-title" id="opportunity" className="pb-14 pt-12 md:pb-16 md:pt-14">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="flex min-w-0 flex-col gap-5 lg:col-span-5">
+            <H2 id="opportunity-title">{opp.title}</H2>
+            <Paragraphs items={opp.paragraphs} className="text-lg" />
+          </div>
+          <div className="flex min-w-0 flex-col gap-4 lg:col-span-7">
+            <Eyebrow accent="cobalt">{opp.lead}</Eyebrow>
+            <div className="grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2">
+              {opp.figures.map((f) => (
+                <div key={f.value} className="flex min-w-0 flex-col gap-2 bg-white p-6 md:p-7">
+                  <p className="font-display text-4xl font-semibold tabular-nums leading-none tracking-tight text-ink md:text-[2.75rem]">
+                    {f.value}
+                  </p>
+                  <p className="text-pretty text-[0.9375rem] leading-relaxed text-slate">{f.label}</p>
+                </div>
+              ))}
+              <p className="text-pretty bg-white p-6 font-medium leading-relaxed text-cobalt sm:col-span-2 md:px-7">{opp.growth}</p>
+            </div>
+            <p className="text-pretty text-sm leading-relaxed text-slate">{opp.footnote}</p>
+          </div>
+        </div>
+      </Section>
+
       {/* Offer A: Amazon PPC Management. The service headline lives here, not in the hero. */}
       <Section tone="porcelain" labelledBy="ppc-title" id="ppc" className="scroll-mt-24 pb-14 pt-12 md:pb-16 md:pt-14">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
@@ -104,6 +129,10 @@ export default async function BrandsPage({ params }: Props) {
           <div className="flex min-w-0 flex-col gap-4 lg:col-span-4">
             <Eyebrow accent="cobalt">{ppc.manage.title}</Eyebrow>
             <p className="text-pretty leading-relaxed text-slate">{ppc.manage.note}</p>
+            <CtaLink href={href(locale, 'contact', '?topic=brand')} className="mt-2 self-start">
+              {ppc.cta}
+              <ArrowRight aria-hidden className="size-4" />
+            </CtaLink>
           </div>
           <div className="min-w-0 lg:col-span-8">
             <CheckList items={ppc.manage.items} columns={2} />

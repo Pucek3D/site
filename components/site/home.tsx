@@ -75,9 +75,11 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               </p>
             ))}
           </div>
-          <p className="border-l-2 border-sage pl-4 text-pretty text-[1rem] font-semibold leading-snug text-ink">
-            <Sentences text={hero.closingLine} />
-          </p>
+          {hero.closingLine ? (
+            <p className="border-l-2 border-sage pl-4 text-pretty text-[1rem] font-semibold leading-snug text-ink">
+              <Sentences text={hero.closingLine} />
+            </p>
+          ) : null}
           <div className="flex flex-wrap gap-3 pt-1">
             <CtaLink href={href(locale, 'contact')} className="whitespace-nowrap">
               {hero.primaryCta}

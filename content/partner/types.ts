@@ -50,7 +50,8 @@ export type PartnerCopy = {
       primaryCta: string
       /** One action per buyer route, in route order. */
       routes: { agencies: string; brands: string; training: string }
-      closingLine: string
+      /** Optional sage-ruled line under the paragraphs; the current copy has none. */
+      closingLine?: string
     }
     autopilot: { title: string; paragraphs: string[]; closingLine: string }
     /** One tile per buyer route, in route order: agencies, brands, training. */
@@ -84,6 +85,19 @@ export type PartnerCopy = {
       secondaryCta: string
       imageAlt: string
     }
+    /**
+     * Amazon's scale, between the hero and PPC Management. Figures are Amazon's
+     * country-attributed net sales from its 10-K; `footnote` carries that basis and
+     * source and must always render with them.
+     */
+    opportunity: {
+      title: string
+      paragraphs: string[]
+      lead: string
+      figures: { value: string; label: string }[]
+      growth: string
+      footnote: string
+    }
     ppc: {
       label: string
       /** The service headline. It belongs here, never on the page or homepage hero. */
@@ -93,6 +107,8 @@ export type PartnerCopy = {
       cycle: Titled[]
       /** Verified capabilities only — Amazon DSP stays out until its delivery is confirmed. */
       manage: { title: string; items: string[]; note: string }
+      /** Contact button under the service list (?topic=brand). */
+      cta: string
     }
     training: {
       label: string
