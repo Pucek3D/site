@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowDown, ArrowRight, Check } from 'lucide-react'
-import { Breadcrumbs, CheckList, FinalCta, H2, ListLabel, Paragraphs } from '@/components/site/page-kit'
+import { ArrowDown, ArrowRight } from 'lucide-react'
+import { Breadcrumbs, FinalCta, H2, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -16,9 +16,6 @@ type Props = { params: Promise<{ locale: Locale }> }
  * is 3:2 — never the old portrait box, which cropped the handshake out.
  */
 const AGENCY_PHOTO = { src: '/images/svc/white-label-handshake.png', width: 1536, height: 1024, focus: '58% 45%' }
-
-/** The SAME asset + focal point as the homepage "What We Do → Training" tile. */
-const TRAINING_PHOTO = { src: '/images/svc/training-team.png', focus: '55% 40%' }
 
 const contactAgency = (locale: Locale) => href(locale, 'contact', '?topic=agency')
 
@@ -76,7 +73,6 @@ export default async function AgencyPage({ params }: Props) {
         <div className="flex max-w-3xl flex-col gap-5">
           <Eyebrow accent="cobalt">{a.ways.eyebrow}</Eyebrow>
           <H2 id="ways-title">{a.ways.title}</H2>
-          <p className="text-pretty text-lg leading-relaxed text-slate">{a.ways.intro}</p>
         </div>
         {/* Array order is the reading order: 01 left / first, 02 right / second, at every width. */}
         <ol className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -91,133 +87,9 @@ export default async function AgencyPage({ params }: Props) {
               <h3 className="text-pretty font-display text-2xl font-semibold leading-snug text-ink [hyphens:auto]">{m.name}</h3>
               <p className="text-pretty text-lg font-medium leading-snug text-ink">{m.summary}</p>
               <Paragraphs items={m.paragraphs} />
-              <ListLabel>{m.listLabel}</ListLabel>
-              <CheckList items={m.items} />
-              <p className="mt-auto border-t border-hairline pt-5 text-pretty text-sm leading-relaxed text-slate">{m.note}</p>
             </li>
           ))}
         </ol>
-      </Section>
-
-      {/* Benefits: the dark, benefit-led signature section. */}
-      <section aria-labelledby="why" className="bg-ink">
-        <Container className="py-16 md:py-20">
-          {/* Side-by-side only from xl: at lg the heading track is too narrow for the PL/DE headline. */}
-          <div className="grid gap-12 xl:grid-cols-12 xl:gap-16">
-            <div className="flex min-w-0 flex-col gap-5 [hyphens:auto] xl:col-span-5">
-              <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-cobalt-light">
-                <span aria-hidden className="h-px w-6 shrink-0 bg-cobalt-light" />
-                {a.why.eyebrow}
-              </p>
-              <h2 id="why" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-white md:text-4xl xl:text-[2.75rem]">
-                {a.why.title[0]} <span className="text-cobalt-light">{a.why.title[1]}</span>
-              </h2>
-            </div>
-            <ol className="grid min-w-0 gap-x-12 gap-y-10 sm:grid-cols-2 xl:col-span-7">
-              {a.why.items.map((it, i) => (
-                <li key={it.title} className="group flex min-w-0 flex-col gap-3 border-t border-white/15 pt-6">
-                  <span className="flex items-center gap-3">
-                    <span className="font-display text-sm font-semibold tabular-nums text-cobalt-light">{String(i + 1).padStart(2, '0')}</span>
-                    <span
-                      aria-hidden
-                      className="h-0.5 w-6 bg-cobalt-light/60 transition-[width,background-color] duration-200 group-hover:w-10 group-hover:bg-cobalt-light motion-reduce:transition-none"
-                    />
-                  </span>
-                  <h3 className="text-pretty font-display text-xl font-semibold leading-snug text-white [hyphens:auto]">{it.title}</h3>
-                  <p className="text-pretty leading-relaxed text-ink-body">{it.body}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </Container>
-      </section>
-
-      {/*
-        Process: ONE raised panel carrying a thin Cobalt rail with small square markers.
-        Every stage rests as an empty Cobalt square; Report's square fills and shows its
-        tick only on hover, so a completion mark is never asserted at rest. Hover fills
-        the marker, strengthens the number and sweeps Cobalt along the outgoing segment
-        (left to right on desktop, top to bottom when stacked) via a transform, so
-        nothing changes size and the panel height is the same in every state.
-      */}
-      <section aria-labelledby="approach" className="border-b border-hairline bg-white">
-        <Container className="py-14 md:py-16">
-          <div className="flex max-w-2xl flex-col gap-3">
-            <Eyebrow accent="cobalt" className="mb-2">{a.approach.eyebrow}</Eyebrow>
-            <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.12] text-ink md:text-4xl">
-              {a.approach.title}
-            </h2>
-            <p className="text-pretty text-lg leading-relaxed text-ink">{a.approach.subtitle}</p>
-            <p className="text-pretty leading-relaxed text-slate">{a.approach.intro}</p>
-          </div>
-          <div className="mt-10 rounded-xl border border-hairline bg-white p-6 shadow-[0_20px_50px_rgba(16,24,40,0.09),0_4px_14px_rgba(16,24,40,0.04)] md:p-8 lg:px-9 lg:py-8">
-            <ol className="grid xl:grid-cols-5">
-              {a.approach.steps.map((s, i) => {
-                const report = i === a.approach.steps.length - 1
-                return (
-                  <li key={s.label} className="group flex min-w-0 gap-5 xl:flex-col xl:gap-5">
-                    <div aria-hidden className="flex w-5 shrink-0 flex-col items-center xl:h-5 xl:w-auto xl:flex-row">
-                      {report ? (
-                        <span className="grid size-5 shrink-0 place-items-center">
-                          <span className="grid size-2.5 place-items-center overflow-hidden bg-white text-white ring-[1.5px] ring-cobalt transition-all duration-200 group-hover:size-4 group-hover:rounded-[3px] group-hover:bg-cobalt motion-reduce:transition-none">
-                            <Check
-                              className="size-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none"
-                              strokeWidth={3}
-                            />
-                          </span>
-                        </span>
-                      ) : (
-                        <span className="grid size-5 shrink-0 place-items-center">
-                          <span className="size-2.5 bg-white ring-[1.5px] ring-cobalt transition-colors duration-200 group-hover:bg-cobalt motion-reduce:transition-none" />
-                        </span>
-                      )}
-                      <span
-                        className={`relative overflow-hidden bg-cobalt/20 ${
-                          report ? 'hidden h-0.5 w-10 xl:ml-1 xl:block' : 'mt-1 w-0.5 flex-1 xl:mt-0 xl:ml-1 xl:h-0.5 xl:w-auto'
-                        }`}
-                      >
-                        <span className="absolute inset-0 origin-top scale-y-0 bg-cobalt transition-transform duration-500 ease-out group-hover:scale-y-100 motion-reduce:transition-none xl:origin-left xl:scale-x-0 xl:scale-y-100 xl:group-hover:scale-x-100" />
-                      </span>
-                    </div>
-                    <div className={`flex min-w-0 flex-col gap-1.5 xl:pb-0 xl:pr-6 ${report ? 'pb-0' : 'pb-8'}`}>
-                      <span className="text-xs font-semibold tabular-nums tracking-[0.14em] text-cobalt/70 transition-colors duration-200 group-hover:text-cobalt motion-reduce:transition-none">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                      <h3 className="font-display text-lg font-semibold leading-snug text-ink">{s.label}</h3>
-                      <p className="text-pretty text-[0.9375rem] leading-relaxed text-ink/75">{s.text}</p>
-                    </div>
-                  </li>
-                )
-              })}
-            </ol>
-          </div>
-        </Container>
-      </section>
-
-  <Section tone="porcelain" labelledBy="agency-training" className="py-12 md:py-16">
-  <div className="grid gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[7fr_5fr] md:gap-3">
-  <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:px-10 md:py-8 lg:px-12">
-            <Eyebrow>{a.training.eyebrow}</Eyebrow>
-            <h2 id="agency-training" className="text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
-              {a.training.title}
-            </h2>
-            <p className="max-w-xl text-pretty leading-relaxed text-slate">{a.training.body}</p>
-            <CtaLink href={href(locale, 'training')} variant="sage" className="mt-2">
-              {a.training.cta}
-              <ArrowRight aria-hidden className="size-4" />
-            </CtaLink>
-          </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[20rem] md:rounded-tl-[8rem]">
-            <Image
-              src={TRAINING_PHOTO.src}
-              alt={a.training.imageAlt}
-              fill
-              sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover"
-              style={{ objectPosition: TRAINING_PHOTO.focus }}
-            />
-          </div>
-        </div>
       </Section>
 
       <FinalCta
@@ -227,7 +99,6 @@ export default async function AgencyPage({ params }: Props) {
         cta={a.final.cta}
         to={contactAgency(locale)}
         variant="primary"
-        secondary={{ label: a.final.trainingLink, to: href(locale, 'training') }}
       />
     </>
   )

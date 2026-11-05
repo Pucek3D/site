@@ -1,34 +1,22 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  ArrowRight,
-  ChartPie,
-  MessagesSquare,
-  RefreshCw,
-  SlidersHorizontal,
-  UserRound,
-} from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import type { PartnerCopy } from '@/content/partner'
-import type { Dictionary } from '@/content/en'
 import { href, type Locale, type PageKey } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
-import { Container, CtaLink, Eyebrow } from './primitives'
+import { Container, CtaLink } from './primitives'
 import { Sentences } from './typeset'
 import { ServiceTileList, type TileLabels } from './service-tile'
 
-type Labels = Dictionary['common']
-
-export function HomePage({ locale, copy, labels }: { locale: Locale; copy: PartnerCopy; labels: Labels }) {
+export function HomePage({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const h = copy.home
   return (
     <>
       <Hero locale={locale} copy={copy} />
-      <Autopilot copy={h.autopilot} eyebrow={labels.home.autopilotEyebrow} />
+      <Autopilot copy={h.autopilot} />
       <WhatWeDo locale={locale} copy={copy} />
-      <Approach copy={h.approach} eyebrow={labels.home.approachEyebrow} />
-      <Audiences locale={locale} copy={h.audiences} />
       <FinalCta id="final" title={h.final.title} paragraphs={h.final.paragraphs} cta={h.final.cta} to={href(locale, 'contact')} />
     </>
   )
@@ -54,11 +42,6 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
 
       <Container className="relative">
         <div className="flex flex-col gap-5 py-12 lg:min-h-[560px] lg:w-[48%] lg:justify-center lg:py-11 lg:pr-3">
-          {hero.eyebrow ? (
-              <Eyebrow>
-                <span className="xl:whitespace-nowrap">{hero.eyebrow}</span>
-              </Eyebrow>
-  ) : null}
           <h1 className="max-w-[17ch] font-display text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] lg:max-w-none lg:text-[2.35rem] xl:text-[2.75rem]">
             <Sentences text={hero.title} breakAt="lg" />
           </h1>
@@ -112,12 +95,11 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
 
 /* ------------------------------------------------------------- Autopilot */
 
-function Autopilot({ copy, eyebrow }: { copy: PartnerCopy['home']['autopilot']; eyebrow: string }) {
+function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
   return (
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8">
         <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3">
-          <Eyebrow>{eyebrow}</Eyebrow>
           <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.125rem]">
             {copy.title}
           </h2>
@@ -184,9 +166,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
             const v = services[i]
             return {
               id: v.to,
-              number: s.number,
               name: s.name,
-              tagline: s.tagline,
               paragraphs: s.paragraphs,
               bullets: s.bullets,
               art: v.art,
@@ -199,126 +179,6 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
             }
           })}
         />
-      </Container>
-    </section>
-  )
-}
-
-/* -------------------------------------------------------------- Approach */
-
-const approachIcons = [UserRound, RefreshCw, ChartPie, MessagesSquare, SlidersHorizontal]
-
-function Approach({ copy, eyebrow }: { copy: PartnerCopy['home']['approach']; eyebrow: string }) {
-  return (
-    <section aria-labelledby="approach" className="border-b border-hairline bg-white py-10 md:py-12">
-      {/* Wide desktop matches the approved layout: intro is the first of six columns, beside the five pillars. */}
-      <Container className="flex flex-col gap-9 xl:flex-row xl:gap-8">
-        <div className="grid gap-6 lg:grid-cols-12 lg:items-end xl:flex xl:w-[21%] xl:shrink-0 xl:flex-col xl:items-start xl:gap-3">
-          <div className="flex flex-col gap-4 lg:col-span-6 xl:gap-3">
-            <Eyebrow>{eyebrow}</Eyebrow>
-            <h2 id="approach" className="text-balance font-display text-3xl font-semibold leading-[1.14] tracking-tight text-ink md:text-[2rem] xl:text-[1.625rem]">
-              {copy.title}
-            </h2>
-          </div>
-          <div className="flex flex-col gap-3 lg:col-span-5 lg:col-start-8">
-            <p className="text-pretty text-lg font-semibold text-cobalt xl:text-base">
-              {copy.subtitle.split(/(?<=\.)\s+/).map((sentence) => (
-                <span key={sentence} className="block">
-                  {sentence}
-                </span>
-              ))}
-            </p>
-            <p className="max-w-[56ch] text-pretty text-base leading-relaxed text-slate xl:text-[0.875rem]">{copy.intro}</p>
-          </div>
-        </div>
-        <ul className="grid min-w-0 flex-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-0 xl:divide-x xl:divide-hairline">
-          {copy.items.map((it, i) => {
-            const Icon = approachIcons[i]
-            return (
-              <li key={it.title} className="flex min-w-0 flex-col gap-3 hyphens-auto break-words xl:px-5 xl:first:pl-0 xl:last:pr-0">
-                <span className="flex size-11 items-center justify-center rounded-lg bg-cobalt-tint text-cobalt">
-                  <Icon aria-hidden className="size-5" />
-                </span>
-                <h3 className="text-base font-semibold leading-snug text-ink">{it.title}</h3>
-                <p className="text-pretty text-[0.875rem] leading-relaxed text-slate">{it.body}</p>
-              </li>
-            )
-          })}
-        </ul>
-      </Container>
-    </section>
-  )
-}
-
-/* ------------------------------------------------------------- Audiences */
-
-/**
- * ADelier Signature Split: one composition, two equal pathways joined by a single Cobalt rule.
- * Below md the rule runs vertically down the left edge; from md it runs across the top of both pathways.
- * Hovering or focusing a pathway slides a heavier emphasis segment toward it — the only motion here.
- */
-function Audiences({ locale, copy }: { locale: Locale; copy: PartnerCopy['home']['audiences'] }) {
-  const paths = [
-    { key: 'agencies', number: '01', ...copy.agencies, to: href(locale, 'agencies') },
-    { key: 'brands', number: '02', ...copy.brands, to: href(locale, 'brands') },
-  ] as const
-  return (
-    <section aria-labelledby="audiences" className="bg-porcelain py-12 md:py-14 lg:py-16">
-      <Container>
-        <div className="relative pl-5 pt-5 sm:pl-8 sm:pt-8">
-          {/* The one open-corner detail, framing the composition as a whole. */}
-          <span aria-hidden className="pointer-events-none absolute left-0 top-0 size-7 border-l-2 border-t-2 border-cobalt sm:size-8" />
-
-          <header className="flex max-w-3xl flex-col gap-3">
-            <p className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-slate">{copy.eyebrow}</p>
-            <h2
-              id="audiences"
-              className="text-balance font-display text-[2rem] font-bold leading-[1.06] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.5rem]"
-            >
-              <span className="block">{copy.title[0]}</span>
-              <span className="block text-cobalt">{copy.title[1]}</span>
-            </h2>
-            <p className="text-pretty text-base leading-normal text-slate md:text-lg">{copy.subtitle}</p>
-          </header>
-
-          {/* One composition: an Ink rule across the top, an Ink divider between the halves, and a single
-              Cobalt square where the two meet. On mobile the divider turns horizontal between the stacked halves. */}
-          <div className="relative mt-7 grid grid-cols-1 border-t border-ink md:mt-8 md:grid-cols-2">
-            {paths.map((p, i) => (
-              <article
-                key={p.key}
-                data-path={p.key}
-                className={cn(
-                  'split-path group/path relative flex min-w-0 flex-col gap-4 break-words [hyphens:auto] px-5 py-7 sm:px-8 sm:py-8 lg:px-9 lg:py-9',
-                  i === 1 && 'border-t border-ink md:border-l md:border-t-0',
-                )}
-              >
-                {i === 1 && (
-                  <span aria-hidden className="absolute -left-[5px] -top-[5px] z-10 size-2.5 bg-cobalt" />
-                )}
-                <p className="flex items-center gap-2 font-display text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-[var(--p-accent)]">
-                  <span>{p.number}</span>
-                  <span aria-hidden className="text-[var(--p-mute)]">
-                    /
-                  </span>
-                  <span>{p.label}</span>
-                </p>
-                <h3 className="font-display text-[1.75rem] font-semibold leading-[1.08] tracking-tight text-[var(--p-head)] sm:text-[1.875rem] md:text-[2rem] xl:text-[2.125rem]">
-                  <span className="block">{p.headline[0]}</span>
-                  <span className="block text-[var(--p-accent)]">{p.headline[1]}</span>
-                </h3>
-                <p className="max-w-[46ch] text-pretty text-base leading-normal text-[var(--p-body)]">{p.description}</p>
-                <Link
-                  href={p.to}
-                  className="mt-auto inline-flex min-h-11 w-fit max-w-full items-center gap-2.5 rounded-md bg-[var(--p-btn-bg)] px-5 py-2.5 font-display text-[0.9375rem] font-semibold leading-tight text-[var(--p-btn-fg)] [hyphens:auto] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--p-accent)]"
-                >
-                  <span className="min-w-0">{p.cta}</span>
-                  <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform duration-[240ms] group-hover/path:translate-x-1 motion-reduce:transition-none" />
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
       </Container>
     </section>
   )

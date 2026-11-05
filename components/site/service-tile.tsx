@@ -17,9 +17,10 @@ export type TileLabels = {
 export type ServiceTileData = {
   /** Stable identifier; the accordion keys on this, never on position. */
   id: string
-  number: string
+  number?: string
   name: string
-  tagline: string
+  /** Optional: a tile without one shows its name and description only. */
+  tagline?: string
   paragraphs: string[]
   bullets?: string[]
   art: string
@@ -92,7 +93,7 @@ function ServiceTile({
 }: ServiceTileData & { open: boolean; onToggle: () => void }) {
   const panelId = useId()
   const [excerpt, ...rest] = paragraphs
-  const { lead, accent: accentLine } = splitTagline(tagline)
+  const headline = tagline ? splitTagline(tagline) : null
   const accentText = accent === 'sage' ? 'text-[var(--tile-sage)]' : 'text-[var(--tile-cobalt)]'
   const hasMore = rest.length > 0 || Boolean(bullets?.length)
   const Chevron = open ? ChevronUp : ChevronDown
@@ -108,14 +109,25 @@ function ServiceTile({
     >
       <div className="flex min-w-0 flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-7 md:pt-8 lg:px-10">
         <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.08em] text-[var(--tile-body)] sm:tracking-[0.14em]">
-          <span className={cn('tabular-nums font-semibold', accentText)}>{number}</span>
-          <span aria-hidden className="hidden h-px w-6 shrink-0 bg-[var(--tile-rule)] sm:block" />
-          <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{name}</span>
+          {number ? (
+            <>
+              <span className={cn('tabular-nums font-semibold', accentText)}>{number}</span>
+              <span aria-hidden className="hidden h-px w-6 shrink-0 bg-[var(--tile-rule)] sm:block" />
+            </>
+          ) : null}
+          {headline ? <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{name}</span> : null}
         </div>
 
-        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-[var(--tile-head)] md:text-[2rem] lg:text-[2.375rem]">
-          {lead ? <span className="block">{lead}</span> : null}
-          <span className={cn('block', accentText)}>{accentLine}</span>
+        {/* With no tagline, the service name itself is the tile heading. */}
+        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-[var(--tile-head)] [hyphens:auto] md:text-[2rem] lg:text-[2.375rem]">
+          {headline ? (
+            <>
+              {headline.lead ? <span className="block">{headline.lead}</span> : null}
+              <span className={cn('block', accentText)}>{headline.accent}</span>
+            </>
+          ) : (
+            name
+          )}
         </h3>
 
         <p className={cn('mt-4 max-w-md text-pretty text-[0.95rem] leading-relaxed text-[var(--tile-body)]', !open && 'line-clamp-3')}>

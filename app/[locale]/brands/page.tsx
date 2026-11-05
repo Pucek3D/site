@@ -46,11 +46,9 @@ export default async function BrandsPage({ params }: Props) {
           <Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.brands} navLabel={d.common.breadcrumbLabel} />
           <div className="lg:flex lg:min-h-[520px] lg:items-center">
             <div className="flex min-w-0 flex-col gap-6 lg:w-[48%] lg:pr-3">
-              <Eyebrow accent="cobalt">{b.hero.eyebrow}</Eyebrow>
               <h1 className="text-balance text-[2rem] font-semibold leading-[1.08] text-ink [hyphens:auto] min-[400px]:text-[2.25rem] sm:text-5xl xl:text-[3.5rem]">
                 {b.hero.title}
               </h1>
-              <p className="text-pretty text-xl font-medium leading-snug text-cobalt">{b.hero.emphasis}</p>
               <Paragraphs items={b.hero.paragraphs} className="text-lg" />
               <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <CtaLink href="#ppc">
@@ -67,7 +65,7 @@ export default async function BrandsPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* Amazon's scale. The footnote states the figures' basis and source and never renders apart from them. */}
+      {/* Amazon's scale. The footnote states the figures' basis and never renders apart from them. */}
       <Section tone="white" labelledBy="opportunity-title" id="opportunity" className="pb-14 pt-12 md:pb-16 md:pt-14">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="flex min-w-0 flex-col gap-5 lg:col-span-5">
@@ -104,31 +102,10 @@ export default async function BrandsPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Six-stage methodology: one panel, 3×2 on desktop, hairline dividers, no per-stage shadows. */}
-        <div className="mt-12">
-          <Eyebrow accent="cobalt">{ppc.cycleTitle}</Eyebrow>
-          <ol className="mt-6 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-            {ppc.cycle.map((s, i) => (
-              <li key={s.title} className="group flex min-w-0 flex-col gap-3 bg-white p-6 md:p-7">
-                <span className="flex items-center gap-3">
-                  <span className="font-display text-sm font-semibold tabular-nums text-cobalt">{String(i + 1).padStart(2, '0')}</span>
-                  <span
-                    aria-hidden
-                    className="h-0.5 w-6 bg-cobalt/40 transition-[width,background-color] duration-200 group-hover:w-10 group-hover:bg-cobalt motion-reduce:transition-none"
-                  />
-                </span>
-                <h3 className="text-pretty font-display text-lg font-semibold leading-snug text-ink">{s.title}</h3>
-                <p className="text-pretty text-[0.9375rem] leading-relaxed text-slate">{s.body}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        {/* Compact service coverage. Verified capabilities only (no Amazon DSP until confirmed). */}
+        {/* Service coverage, exactly the list in the approved copy. */}
         <div className="mt-12 grid gap-6 border-t border-hairline pt-10 lg:grid-cols-12 lg:gap-12">
           <div className="flex min-w-0 flex-col gap-4 lg:col-span-4">
             <Eyebrow accent="cobalt">{ppc.manage.title}</Eyebrow>
-            <p className="text-pretty leading-relaxed text-slate">{ppc.manage.note}</p>
             <CtaLink href={href(locale, 'contact', '?topic=brand')} className="mt-2 self-start">
               {ppc.cta}
               <ArrowRight aria-hidden className="size-4" />
@@ -171,7 +148,6 @@ export default async function BrandsPage({ params }: Props) {
 
       <FinalCta
         id="final"
-        eyebrow={b.final.eyebrow}
         title={b.final.title}
         paragraphs={b.final.paragraphs}
         cta={b.final.cta}
