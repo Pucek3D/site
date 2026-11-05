@@ -164,7 +164,7 @@ export const de: PartnerCopy = {
       footnote: "Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze. Quelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
     },
     ppc: {
-      label: "Amazon PPC Management",
+      label: "Amazon-PPC-Management",
       title: "Stärkere Werbung. Klügere Entscheidungen. Bessere Performance.",
       paragraphs: [
         "Wir steuern und optimieren Ihre Amazon-Kampagnen mit Fokus auf Werbeeffizienz und nachhaltiges Umsatzwachstum.",
