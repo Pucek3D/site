@@ -97,13 +97,19 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
             {copy.title}
           </h2>
         </div>
-        {copy.paragraphs.map((p) => (
-          <p key={p} className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:pt-2 xl:text-[0.9375rem]">
-            {p}
-          </p>
-        ))}
-        {/* The takeaway closes the section on its own row, flush with the title's left edge, so it reads as the conclusion of everything above rather than a caption beside a picture. */}
-        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-12 lg:col-start-1 lg:mt-2">
+        {/* The problem and the answer to it read as one stacked argument in the second column. */}
+        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3 xl:pt-2">
+          {copy.paragraphs.slice(0, -1).map((p) => (
+            <p key={p} className="text-pretty text-base leading-relaxed text-slate xl:text-[0.9375rem]">
+              {p}
+            </p>
+          ))}
+        </div>
+        <p className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:pt-2 xl:text-[0.9375rem]">
+          {copy.paragraphs.at(-1)}
+        </p>
+        {/* The takeaway ends the row in the last column, so the section reads left to right: claim, problem, approach, conclusion. */}
+        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-3 xl:pt-1 xl:text-[1.5rem]">
           <Sentences text={copy.closingLine} breakAt="always" />
         </p>
       </Container>
