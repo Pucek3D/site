@@ -131,23 +131,26 @@ const services = [
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
 const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
   en: [
-    { expand: 'See how it works', collapse: 'Show less', explore: 'Explore agency partnerships' },
-    { expand: 'See what\u2019s included', collapse: 'Show less', explore: 'Explore PPC management' },
-    { expand: 'See the program', collapse: 'Show less', explore: 'Explore PPC training' },
+    { expand: 'See how it works', collapse: 'Show less', explore: 'Explore' },
+    { expand: 'See what\u2019s included', collapse: 'Show less', explore: 'Explore' },
+    { expand: 'See the program', collapse: 'Show less', explore: 'Explore' },
   ],
   pl: [
-    { expand: 'Zobacz, jak to działa', collapse: 'Zwiń opis', explore: 'Poznaj współpracę z agencjami' },
-    { expand: 'Zobacz zakres usługi', collapse: 'Zwiń opis', explore: 'Poznaj zarządzanie PPC' },
-    { expand: 'Zobacz program', collapse: 'Zwiń opis', explore: 'Poznaj szkolenia PPC' },
+    { expand: 'Zobacz, jak to działa', collapse: 'Zwiń opis', explore: 'Poznaj' },
+    { expand: 'Zobacz zakres usługi', collapse: 'Zwiń opis', explore: 'Poznaj' },
+    { expand: 'Zobacz program', collapse: 'Zwiń opis', explore: 'Poznaj' },
   ],
   de: [
-    { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Agenturpartnerschaften entdecken' },
-    { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Management entdecken' },
-    { expand: 'Programm ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Schulungen entdecken' },
+    { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
+    { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
+    { expand: 'Programm ansehen', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
   ],
 }
 
 const TRAINING_INDEX = 2
+
+/* Display order of the tiles (indexes into `services`): PPC management first, then agencies, then training. */
+const DISPLAY_ORDER = [1, 0, 2] as const
 
 function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const w = copy.home.whatWeDo
@@ -161,7 +164,8 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
         </h2>
         {/* One flat full-width tile per row; the image alternates sides so the list reads as a sequence of rows, not a grid. */}
         <ServiceTileList
-          tiles={w.items.map((s, i) => {
+          tiles={DISPLAY_ORDER.map((i, row) => {
+            const s = w.items[i]
             const v = services[i]
             return {
               id: v.to,
@@ -174,7 +178,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
               to: v.to === 'training' ? undefined : href(locale, v.to),
               labels: TILE_LABELS[locale][i],
-              imageLeft: i % 2 === 1,
+              imageLeft: row % 2 === 1,
             }
           })}
         />

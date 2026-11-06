@@ -37,7 +37,7 @@ export const pagePaths: Record<PageKey, string> = {
 // redirect permanently to For Brands; see redirects() in next.config.mjs.
 
 /** Main navigation, in order. Header, mobile menu and footer all read this one list. */
-export const mainNavKeys = ['home', 'agencies', 'brands', 'about', 'contact'] as const satisfies readonly PageKey[]
+export const mainNavKeys = ['home', 'brands', 'agencies', 'about', 'contact'] as const satisfies readonly PageKey[]
 export type MainNavKey = (typeof mainNavKeys)[number]
 
 export function href(locale: Locale, page: PageKey, suffix = ''): string {
