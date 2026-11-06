@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
+import type { Hero } from '@/content/partner/types'
 import { href, locales, ogLocale, type Locale, type PageKey } from './i18n'
 import { siteConfig } from './site-config'
 
@@ -12,6 +13,9 @@ function pageMeta(locale: Locale, page: PageKey): { title: string; description: 
   return { title: clean(title), description: clean(description) }
 }
 
+/** A hero may carry its lead as a subtitle with no paragraphs (the about page does), so read whichever is present. */
+const heroDescription = (hero: Hero) => hero.subtitle ?? hero.paragraphs[0] ?? siteConfig.descriptor
+
 /** Titles and descriptions are read off the partner's own copy, so a page's metadata cannot say something the page doesn't. The home page carries a dedicated short description, since its hero paragraph is too long for a link preview. */
 function rawPageMeta(locale: Locale, page: PageKey): { title: string; description: string } {
   const c = getCopy(locale)
@@ -21,13 +25,13 @@ function rawPageMeta(locale: Locale, page: PageKey): { title: string; descriptio
     case 'home':
       return { title: `${siteConfig.name} — ${siteConfig.descriptor}`, description: d.meta.home.description }
     case 'agencies':
-      return { title: named(c.pageNames.agencies), description: c.agencies.hero.paragraphs[0] }
+      return { title: named(c.pageNames.agencies), description: heroDescription(c.agencies.hero) }
     case 'brands':
-      return { title: named(c.pageNames.brands), description: c.brands.hero.paragraphs[0] }
+      return { title: named(c.pageNames.brands), description: heroDescription(c.brands.hero) }
     case 'training':
-      return { title: named(c.pageNames.training), description: c.training.hero.paragraphs[0] }
+      return { title: named(c.pageNames.training), description: heroDescription(c.training.hero) }
     case 'about':
-      return { title: named(d.nav.items.about), description: c.about.hero.paragraphs[0] }
+      return { title: named(d.nav.items.about), description: heroDescription(c.about.hero) }
     case 'contact':
       return { title: named(d.nav.items.contact), description: c.home.final.paragraphs[0] }
     case 'privacy':
