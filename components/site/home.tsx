@@ -98,8 +98,9 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
   <span className="text-pretty">{copy.title}</span>
   </h2>
         </div>
-        {/* The problem and the answer to it read as one stacked argument in the second column. */}
-        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3 xl:pt-2">
+        {/* The problem and the answer to it read as one stacked argument in the second column.
+            On xl the paragraph gap closes so its last line ends level with the approach column beside it. */}
+        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3 xl:gap-0 xl:pt-2">
           {copy.paragraphs.slice(0, -1).map((p) => (
             <p key={p} className="text-pretty text-base leading-relaxed text-slate xl:text-[0.9375rem]">
               {p}
