@@ -456,7 +456,7 @@ export const en: PartnerCopy = {
   about: {
     hero: {
       title: 'A more personal approach to Amazon advertising',
-      subtitle: 'We Believe Every Brand Deserves More Than an Autopilot Approach.',
+      subtitle: 'We believe every brand deserves more than an autopilot approach.',
       paragraphs: [
         'Amazon advertising is not a one-size-fits-all exercise. Every product, market, competitive environment and business objective presents a different set of challenges.',
       ],
