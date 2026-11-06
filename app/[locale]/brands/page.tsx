@@ -71,7 +71,7 @@ export default async function BrandsPage({ params }: Props) {
   <div className="md:w-7/12 md:shrink-0 md:pr-12">
   <Paragraphs items={b.intro.paragraphs} className="text-lg" />
   </div>
-  <div className="border-t-2 border-cobalt pt-8 md:flex md:items-center md:border-l-2 md:border-t-0 md:pl-12 md:pt-0">
+  <div className="border-t-2 border-cobalt pt-8 md:border-l-2 md:border-t-0 md:pl-12 md:pt-0">
   <H2 id="brands-intro-title">{b.intro.title}</H2>
   </div>
           </div>
