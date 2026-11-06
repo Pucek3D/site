@@ -36,7 +36,7 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {SHOW_FOUNDER_EXPERIENCE ? (
-        <Section tone={tone(1)} labelledBy="experience">
+        <Section tone={tone(1)} labelledBy="experience" className="pb-12 md:pb-14">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="flex flex-col gap-4 lg:col-span-5">
               <Eyebrow as="h2" id="experience" accent="cobalt">{a.experience.title}</Eyebrow>
@@ -61,7 +61,7 @@ export default async function AboutPage({ params }: Props) {
         </Section>
       ) : null}
 
-      <Section tone={tone(1 + offset)} labelledBy="process">
+      <Section tone={tone(1 + offset)} labelledBy="process" className="pt-12 md:pt-14">
         <Eyebrow as="h2" id="process" accent="cobalt">{a.process.title}</Eyebrow>
         <div className="mt-8">
           <PointGrid items={a.process.steps} numbered columns={3} />
