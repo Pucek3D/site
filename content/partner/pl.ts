@@ -229,7 +229,8 @@ export const pl: PartnerCopy = {
       label: "Szkolenia Amazon PPC dla zespołów marek",
       title: "Rozwijaj kompetencje i zarządzaj reklamami samodzielnie.",
       paragraphs: [
-        "Wolisz prowadzić kampanie we własnym zakresie? Prowadzimy praktyczne szkolenia dla zespołów marketingowych, e-commerce i osób odpowiedzialnych za rozwój marki. Pokazujemy, jak efektywnie zarządzać kampaniami i podejmować lepsze decyzje na podstawie danych.",
+        "Wolisz prowadzić kampanie we własnym zakresie? Pomożemy Twojemu zespołowi zdobyć wiedzę i umiejętności niezbędne do skuteczniejszego zarządzania reklamą na Amazonie.",
+        "Prowadzimy praktyczne szkolenia dla zespołów marketingowych, e-commerce i osób odpowiedzialnych za rozwój marki. Pokazujemy, jak efektywnie zarządzać kampaniami i podejmować lepsze decyzje na podstawie danych.",
         "Szkolenia są dostępne jako samodzielna usługa lub uzupełnienie zarządzania kampaniami przez nasz zespół.",
       ],
       listLabel: "Szkolenia mogą obejmować:",
