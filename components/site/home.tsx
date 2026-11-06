@@ -155,7 +155,7 @@ const DISPLAY_ORDER = [1, 0, 2] as const
 function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const w = copy.home.whatWeDo
   return (
-    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-porcelain py-14 md:py-16">
+    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-porcelain pt-8 pb-14 md:pt-10 md:pb-16">
       <Container>
         {/* No "explore all" link: each tile already opens its own route page, and there is no services index. */}
         <h2 id="what-we-do-title" className="flex items-center gap-3 font-sans text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">

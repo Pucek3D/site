@@ -55,6 +55,10 @@ export default async function BrandsPage({ params }: Props) {
                   {b.hero.primaryCta}
                   <ArrowDown aria-hidden className="size-4" />
                 </CtaLink>
+                <CtaLink href="#training" variant="sage">
+                  {b.hero.secondaryCta}
+                  <ArrowDown aria-hidden className="size-4" />
+                </CtaLink>
               </div>
             </div>
           </div>
