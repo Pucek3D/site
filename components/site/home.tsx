@@ -66,7 +66,7 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
 
           {/* The buyer routes, in route order. Training has no page in the navigation, so it is not linked here. */}
           <ul className="flex flex-wrap gap-3 text-sm font-semibold">
-            {(['agencies', 'brands'] as const).map((k) => (
+            {(['brands', 'agencies'] as const).map((k) => (
               <li key={k}>
                 <Link
                   href={href(locale, k)}
