@@ -6,7 +6,7 @@ import type { PartnerCopy } from '@/content/partner'
 import { href, type Locale, type PageKey } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
-import { Container, CtaLink } from './primitives'
+import { Container } from './primitives'
 import { Sentences } from './typeset'
 import { ServiceTileList, type TileLabels } from './service-tile'
 
@@ -63,11 +63,7 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               <Sentences text={hero.closingLine} />
             </p>
           ) : null}
-          <div className="flex flex-wrap gap-3 pt-1">
-            <CtaLink href={href(locale, 'contact')} className="whitespace-nowrap">
-              {hero.primaryCta}
-            </CtaLink>
-          </div>
+
           {/* The three buyer routes, in route order. Training carries the Sage accent. */}
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
             {(['agencies', 'brands', 'training'] as const).map((k) => (
