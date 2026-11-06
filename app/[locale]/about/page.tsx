@@ -61,14 +61,14 @@ export default async function AboutPage({ params }: Props) {
         </Section>
       ) : null}
 
-      <Section tone={tone(1 + offset)} labelledBy="process" className="pt-12 md:pt-14">
+      <Section tone={tone(1 + offset)} labelledBy="process" className="pt-12 pb-12 md:pt-14 md:pb-14">
         <Eyebrow as="h2" id="process" accent="cobalt">{a.process.title}</Eyebrow>
         <div className="mt-8">
           <PointGrid items={a.process.steps} numbered columns={3} />
         </div>
       </Section>
 
-      <Section tone={tone(2 + offset)} labelledBy="evidence">
+      <Section tone={tone(2 + offset)} labelledBy="evidence" className="pt-12 md:pt-14">
         <Eyebrow as="h2" id="evidence" accent="cobalt">{a.evidence.title}</Eyebrow>
         <table className="mt-8 block w-full border-collapse overflow-hidden rounded-xl border border-hairline md:table">
           <thead className="hidden md:table-header-group">
