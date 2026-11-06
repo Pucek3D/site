@@ -64,21 +64,18 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
             </p>
           ) : null}
 
-          {/* The three buyer routes, in route order. Training carries the Sage accent. */}
+          {/* The buyer routes, in route order. Training has no page in the navigation, so it is not linked here. */}
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
-            {(['agencies', 'brands', 'training'] as const).map((k) => (
+            {(['agencies', 'brands'] as const).map((k) => (
               <li key={k}>
                 <Link
                   href={href(locale, k)}
                   className={cn(
-                    'inline-flex min-h-10 items-center gap-1.5 text-ink underline-offset-4 hover:underline',
-  // Sage is the Training accent, as Cobalt is for the other two routes. It applies on hover
-  // only: at rest the label stays ink, because Sage text on white is too light to read as body text.
-  k === 'training' ? 'hover:text-sage' : 'hover:text-cobalt',
+                    'inline-flex min-h-10 items-center gap-1.5 text-ink underline-offset-4 hover:text-cobalt hover:underline',
                   )}
                 >
                   {hero.routes[k]}
-                  <ArrowRight aria-hidden className={cn('size-4', k === 'training' ? 'text-sage' : 'text-cobalt')} />
+                  <ArrowRight aria-hidden className="size-4 text-cobalt" />
                 </Link>
               </li>
             ))}
@@ -169,7 +166,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               alt: copy.homeImageAlts[v.alt],
               focus: 'focus' in v ? v.focus : undefined,
               accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
-              to: href(locale, v.to),
+              to: v.to === 'training' ? undefined : href(locale, v.to),
               labels: TILE_LABELS[locale][i],
               imageLeft: i % 2 === 1,
             }

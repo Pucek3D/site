@@ -55,10 +55,6 @@ export default async function BrandsPage({ params }: Props) {
                   {b.hero.primaryCta}
                   <ArrowDown aria-hidden className="size-4" />
                 </CtaLink>
-                <CtaLink href="#training" variant="text">
-                  {b.hero.secondaryCta}
-                  <ArrowDown aria-hidden className="size-4" />
-                </CtaLink>
               </div>
             </div>
           </div>
@@ -128,10 +124,6 @@ export default async function BrandsPage({ params }: Props) {
             <Paragraphs items={training.paragraphs} />
             <ListLabel>{training.listLabel}</ListLabel>
             <CheckList items={training.items} />
-            <CtaLink href={href(locale, 'training')} variant="sage" className="mt-2">
-              {training.cta}
-              <ArrowRight aria-hidden className="size-4" />
-            </CtaLink>
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[22rem] md:rounded-tl-[8rem]">
             <Image
@@ -153,7 +145,6 @@ export default async function BrandsPage({ params }: Props) {
         cta={b.final.cta}
         to={href(locale, 'contact', '?topic=brand')}
         variant="primary"
-        secondary={{ label: b.final.trainingLink, to: href(locale, 'training') }}
       />
     </>
   )

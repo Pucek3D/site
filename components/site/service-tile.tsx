@@ -30,7 +30,8 @@ export type ServiceTileData = {
   zoom?: number
   /** Cobalt for the audience routes (Agencies, Brands), sage for Training. */
   accent: 'cobalt' | 'sage'
-  to: string
+  /** Omitted when the service has no page of its own, so the tile renders no explore link. */
+  to?: string
   labels: TileLabels
   /** Every tile is a full-width row; this puts the image on the left instead of the right. */
   imageLeft?: boolean
@@ -169,6 +170,7 @@ function ServiceTile({
         <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-7">
           {/* Brand fills keep AA on both grounds (white on cobalt 5.0:1, ink on sage 7.1:1), so the
               primary action reads the same in every state; only the focus ring offset follows the card. */}
+          {to ? (
           <Link
             href={to}
             className={cn(
@@ -181,6 +183,7 @@ function ServiceTile({
             {labels.explore}
             <ArrowRight aria-hidden className="size-4" />
           </Link>
+          ) : null}
           {hasMore ? (
             <button
               type="button"
