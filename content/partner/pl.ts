@@ -139,8 +139,8 @@ export const pl: PartnerCopy = {
         "Niezależnie od tego, czy dopiero wprowadzasz markę na Amazon, czy chcesz rozwijać już istniejącą sprzedaż, pomożemy Ci wykorzystać potencjał tej platformy dzięki profesjonalnemu zarządzaniu kampaniami PPC i praktycznym szkoleniom.",
         "Możesz powierzyć nam zarządzanie reklamami, przeszkolić własny zespół lub połączyć oba rozwiązania — w zależności od potrzeb i celów Twojego biznesu.",
       ],
-      primaryCta: "Poznaj zarządzanie PPC",
-      secondaryCta: "Poznaj szkolenie PPC",
+    primaryCta: "Poznaj nasze usługi PPC",
+    secondaryCta: "Poznaj ofertę szkoleń",
       imageAlt: "Dwoje współpracowników omawiających przykładowy raport reklamowy na ekranie",
     },
     opportunity: {
