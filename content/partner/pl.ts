@@ -180,7 +180,6 @@ export const pl: PartnerCopy = {
       title: "Skuteczniejsze reklamy. Lepsze decyzje. Wyższe wyniki.",
       paragraphs: [
         "Zarządzamy kampaniami reklamowymi na Amazonie, koncentrując się na efektywności, rentowności i długofalowym wzroście sprzedaży.",
-        "Analizujemy dane, identyfikujemy możliwości i podejmujemy świadome decyzje, aby poprawiać wyniki. Skuteczna reklama to coś więcej niż samo wydawanie budżetu.",
       ],
       cycleTitle: "Jak zarządzamy Twoim kontem",
       cycle: [
