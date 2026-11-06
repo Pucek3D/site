@@ -176,7 +176,7 @@ export const pl: PartnerCopy = {
       footnote: "Uwaga: dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach.\nŹródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
     },
     ppc: {
-      label: "Zarządzanie Amazon PPC",
+      label: "Zarządzanie reklamami Amazon PPC",
       title: "Skuteczniejsze reklamy. Lepsze decyzje. Wyższe wyniki.",
       paragraphs: [
         "Zarządzamy kampaniami reklamowymi na Amazonie, koncentrując się na efektywności, rentowności i długofalowym wzroście sprzedaży.",
