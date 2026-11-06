@@ -13,7 +13,7 @@ export const siteConfig = {
   descriptor: 'Marketplace Growth Partner',
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://adelier.example').replace(/\/$/, ''),
   email: { value: 'contact@deliercommerce.com', placeholder: false } as Placeholder,
-  linkedin: placeholder(process.env.NEXT_PUBLIC_LINKEDIN_URL ?? 'https://www.linkedin.com/company/'),
+  linkedin: { value: 'https://www.linkedin.com/company/adelier-commerce/', placeholder: false } as Placeholder,
   legal: {
     companyName: placeholder('[Registered legal company name]'),
     registrationNumber: placeholder('[Registration number / KRS]'),

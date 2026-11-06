@@ -170,7 +170,13 @@ export function OwnerPlaceholder({ label, value }: { label: string; value: strin
   return (
     <span className="inline-flex flex-wrap items-baseline gap-x-2 rounded-md border border-dashed border-input bg-porcelain px-2 py-0.5 text-[0.9375rem]">
       <span className="font-medium text-ink">{label}:</span>
-      <span className="text-slate">{value}</span>
+      {value.includes('@') && !value.startsWith('[') ? (
+        <a href={`mailto:${value}`} className="font-medium text-cobalt underline underline-offset-4">
+          {value}
+        </a>
+      ) : (
+        <span className="text-slate">{value}</span>
+      )}
     </span>
   )
 }
