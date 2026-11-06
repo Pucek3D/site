@@ -48,15 +48,21 @@ export function Eyebrow({
   dark = false,
   accent = 'sage',
   className,
+  as: Tag = 'p',
+  id,
 }: {
   children: ReactNode
   dark?: boolean
   /** Rule colour: Sage by default (homepage, Training); Cobalt for agency-route sections. */
   accent?: 'sage' | 'cobalt'
   className?: string
+  /** `h2` when the label is the section's only title, so the outline still has a heading. */
+  as?: 'p' | 'h2'
+  id?: string
 }) {
   return (
-    <p
+    <Tag
+      id={id}
       className={cn(
         'flex items-center gap-3 text-[0.8125rem] font-medium uppercase tracking-[0.12em]',
         dark ? 'text-mist' : 'text-slate',
@@ -65,7 +71,7 @@ export function Eyebrow({
     >
       <span aria-hidden className={cn('h-px w-6 shrink-0', accent === 'cobalt' ? 'bg-cobalt' : 'bg-sage')} />
       {typeof children === 'string' ? labelText(children) : children}
-    </p>
+    </Tag>
   )
 }
 

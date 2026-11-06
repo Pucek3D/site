@@ -35,7 +35,9 @@ export function PageHero({
   closingLine,
   actions,
   image,
+  compact,
 }: {
+  compact?: boolean
   crumbs?: ReactNode
   eyebrow?: string
   title: string
@@ -47,7 +49,7 @@ export function PageHero({
 }) {
   return (
     <section className="border-b border-hairline">
-      <Container className="py-14 md:py-20">
+      <Container className={compact ? 'pt-14 pb-10 md:pt-20 md:pb-12' : 'py-14 md:py-20'}>
         {crumbs}
         <div className={cn('grid items-center gap-12', image && 'lg:grid-cols-12')}>
           <div className={cn('flex flex-col gap-6', image ? 'lg:col-span-7' : 'max-w-3xl')}>

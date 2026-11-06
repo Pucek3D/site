@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs, H2, PageHero, PointGrid } from '@/components/site/page-kit'
-import { CtaLink, Section } from '@/components/site/primitives'
+import { CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { SHOW_FOUNDER_EXPERIENCE } from '@/lib/config'
@@ -28,9 +28,10 @@ export default async function AboutPage({ params }: Props) {
         title={a.hero.title}
         subtitle={a.hero.subtitle}
         paragraphs={a.hero.paragraphs}
+        compact
       />
 
-      <Section tone={tone(0)}>
+      <Section tone={tone(0)} className="py-10 md:py-12">
         <p className="max-w-3xl text-pretty text-lg leading-relaxed text-ink">{a.who.body}</p>
       </Section>
 
@@ -38,7 +39,7 @@ export default async function AboutPage({ params }: Props) {
         <Section tone={tone(1)} labelledBy="experience">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="flex flex-col gap-4 lg:col-span-5">
-              <H2 id="experience">{a.experience.title}</H2>
+              <Eyebrow as="h2" id="experience" accent="cobalt">{a.experience.title}</Eyebrow>
               <p className="text-pretty text-lg leading-relaxed text-slate">{a.experience.sub}</p>
             </div>
             <div className="flex flex-col gap-5 lg:col-span-7">
@@ -49,7 +50,11 @@ export default async function AboutPage({ params }: Props) {
               ))}
               <p className="text-pretty leading-relaxed text-slate">{a.experience.p3}</p>
               <p className="mt-2 border-l-2 border-sage pl-5 text-pretty font-serif text-2xl italic leading-snug text-ink">
-                {a.experience.closing}
+                {a.experience.closing.split(/(?<=\.)\s+/).map((s) => (
+                  <span key={s} className="block">
+                    {s}
+                  </span>
+                ))}
               </p>
             </div>
           </div>
@@ -57,15 +62,15 @@ export default async function AboutPage({ params }: Props) {
       ) : null}
 
       <Section tone={tone(1 + offset)} labelledBy="process">
-        <H2 id="process">{a.process.title}</H2>
-        <div className="mt-12">
+        <Eyebrow as="h2" id="process" accent="cobalt">{a.process.title}</Eyebrow>
+        <div className="mt-8">
           <PointGrid items={a.process.steps} numbered columns={3} />
         </div>
       </Section>
 
       <Section tone={tone(2 + offset)} labelledBy="evidence">
-        <H2 id="evidence">{a.evidence.title}</H2>
-        <table className="mt-12 block w-full border-collapse overflow-hidden rounded-xl border border-hairline md:table">
+        <Eyebrow as="h2" id="evidence" accent="cobalt">{a.evidence.title}</Eyebrow>
+        <table className="mt-8 block w-full border-collapse overflow-hidden rounded-xl border border-hairline md:table">
           <thead className="hidden md:table-header-group">
             <tr className="bg-ink text-left text-white">
               <th scope="col" className="w-2/5 px-6 py-4 font-display font-semibold">
@@ -95,8 +100,8 @@ export default async function AboutPage({ params }: Props) {
       <Section tone={tone(3 + offset)}>
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div aria-labelledby="dont" role="region">
-            <H2 id="dont">{a.dont.title}</H2>
-            <ul className="mt-8 flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-ink marker:text-sage">
+            <Eyebrow as="h2" id="dont" accent="cobalt">{a.dont.title}</Eyebrow>
+            <ul className="mt-6 flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-ink marker:text-sage">
               {a.dont.items.map((it) => (
                 <li key={it} className="pl-1">
                   {it}
@@ -105,8 +110,8 @@ export default async function AboutPage({ params }: Props) {
             </ul>
           </div>
           <div aria-labelledby="operating" role="region">
-            <H2 id="operating">{a.operating.title}</H2>
-            <p className="mt-8 text-pretty text-lg leading-relaxed text-ink">{a.operating.body}</p>
+            <Eyebrow as="h2" id="operating" accent="cobalt">{a.operating.title}</Eyebrow>
+            <p className="mt-6 text-pretty text-lg leading-relaxed text-ink">{a.operating.body}</p>
           </div>
         </div>
       </Section>
