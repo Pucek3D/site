@@ -156,7 +156,7 @@ export const pl: PartnerCopy = {
   title: "Twoja marka. Twoje możliwości na Amazonie.",
       paragraphs: [
         "Amazon daje dostęp do milionów klientów i otwiera możliwości rozwoju na rynkach międzynarodowych.",
-        "Niezależnie od tego, czy dopiero planujesz rozpocząć sprzeda��, czy chcesz poprawić dotychczasowe wyniki, pomożemy Ci podejmować świadome decyzje i budować strategię dopasowaną do celów Twojego biznesu.",
+        "Niezależnie od tego, czy dopiero planujesz rozpocząć sprzedaż, czy chcesz poprawić dotychczasowe wyniki, pomożemy Ci podejmować świadome decyzje i budować strategię dopasowaną do celów Twojego biznesu.",
       ],
       lead: "Skala Amazona mówi sama za siebie",
       figures: [
@@ -173,7 +173,7 @@ export const pl: PartnerCopy = {
   title: "Możliwości międzynarodowego rozwoju",
   text: "Szansa na dotarcie do nowych klientów w kraju i za granicą.",
   },
-      footnote: "Uwaga: dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach. Źródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
+      footnote: "Uwaga: dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach.\nŹródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
     },
     ppc: {
       label: "Zarządzanie Amazon PPC",

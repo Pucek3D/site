@@ -108,7 +108,7 @@ export default async function BrandsPage({ params }: Props) {
   <p className="text-pretty font-medium leading-relaxed text-cobalt">{opp.growth.text}</p>
   </div>
             </div>
-            <p className="text-pretty text-sm italic leading-relaxed text-slate">{opp.footnote}</p>
+            <p className="whitespace-pre-line text-pretty text-sm italic leading-relaxed text-slate">{opp.footnote}</p>
           </div>
         </div>
       </Section>

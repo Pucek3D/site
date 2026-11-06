@@ -164,7 +164,7 @@ export const de: PartnerCopy = {
   title: "Wachsende Chancen",
   text: "Polnische Marken können Kundinnen und Kunden im In- und Ausland erreichen.",
   },
-      footnote: "Hinweis: Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze. Quelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
+      footnote: "Hinweis: Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze.\nQuelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
     },
     ppc: {
       label: "Amazon-PPC-Management",
@@ -221,7 +221,7 @@ export const de: PartnerCopy = {
       title: "Lieber intern steuern? Wir helfen Ihnen, die nötigen Fähigkeiten aufzubauen.",
       paragraphs: [
         "Nicht jedes Unternehmen möchte eine Agentur beauftragen. Wir schulen Marken-, E-Commerce- und Marketingteams darin, Amazon PPC sicher zu steuern und bessere Werbeentscheidungen zu treffen.",
-        "Schulungen sind eigenständig oder erg��nzend zu unserem Kampagnenmanagement buchbar.",
+        "Schulungen sind eigenständig oder ergänzend zu unserem Kampagnenmanagement buchbar.",
       ],
       listLabel: "Je nach Bedarf kann die Schulung Folgendes umfassen:",
       items: [
