@@ -36,7 +36,7 @@ export default async function AboutPage({ params }: Props) {
       </Section>
 
       {SHOW_FOUNDER_EXPERIENCE ? (
-        <Section tone={tone(1)} labelledBy="experience" className="pb-12 md:pb-14">
+        <Section tone={tone(1)} labelledBy="experience" className="pt-12 pb-12 md:pt-14 md:pb-14">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="flex flex-col gap-4 lg:col-span-5">
               <Eyebrow as="h2" id="experience" accent="cobalt">{a.experience.title}</Eyebrow>
