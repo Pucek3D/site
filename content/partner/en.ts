@@ -15,7 +15,7 @@ export const en: PartnerCopy = {
   pageNames: {
     agencies: 'Amazon PPC Agency Partnerships',
     brands: 'Amazon PPC Management & Training for Brands',
-    training: 'Amazon PPC Training',
+    training: 'Training & Capability Building',
   },
 
   home: {
@@ -63,7 +63,7 @@ export const en: PartnerCopy = {
         },
         {
           number: "03",
-          name: "Amazon PPC Training",
+          name: "Training & Capability Building",
           tagline: "Build expertise within your own team.",
           paragraphs: [
             "Practical, expert-led training that equips your team with the knowledge and skills to manage Amazon advertising more effectively.",
