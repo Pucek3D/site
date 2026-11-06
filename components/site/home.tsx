@@ -92,7 +92,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
   return (
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8 xl:gap-y-3">
-        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3">
+        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-2">
   <h2 id="autopilot" className="flex items-start gap-3 text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.12em] text-slate">
   <span aria-hidden className="mt-[0.6875rem] h-px w-6 shrink-0 bg-sage" />
   <span className="text-pretty">{copy.title}</span>
@@ -111,7 +111,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
           {copy.paragraphs.at(-1)}
         </p>
         {/* The takeaway ends the row in the last column, so the section reads left to right: claim, problem, approach, conclusion. */}
-        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-3 xl:pt-1 xl:text-[1.5rem]">
+        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-4 xl:pt-1 xl:text-[1.5rem]">
           <Sentences text={copy.closingLine} breakAt="always" />
         </p>
       </Container>
