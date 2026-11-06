@@ -161,7 +161,7 @@ export const de: PartnerCopy = {
         },
       ],
       growth: "Wachsende Chancen – polnische Marken können Kundinnen und Kunden im In- und Ausland erreichen.",
-      footnote: "Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze. Quelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
+      footnote: "Hinweis: Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze. Quelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
     },
     ppc: {
       label: "Amazon-PPC-Management",

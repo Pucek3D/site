@@ -144,9 +144,11 @@ export function PointGrid({ items, numbered = false, columns = 3 }: { items: Tit
 
 export function CheckList({ items, columns = 1 }: { items: string[]; columns?: 1 | 2 }) {
   return (
-    <ul className={cn('grid gap-x-8 gap-y-3', columns === 2 && 'sm:grid-cols-2')}>
-      {items.map((it) => (
-        <li key={it} className="flex gap-3 leading-relaxed text-ink">
+  // Columns, not a grid: a grid row takes its tallest cell's height, so one wrapped
+  // item opened a gap under its neighbour. Columns let each side stack on its own.
+  <ul className={cn('gap-x-8', columns === 2 && 'sm:columns-2')}>
+  {items.map((it) => (
+  <li key={it} className="mb-3 flex break-inside-avoid gap-3 leading-relaxed text-ink last:mb-0">
           <Check aria-hidden className="mt-1 size-4 shrink-0 text-sage" strokeWidth={2.5} />
           <span>{it}</span>
         </li>

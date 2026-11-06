@@ -164,7 +164,7 @@ export const en: PartnerCopy = {
         },
       ],
       growth: "Growing opportunity — Polish brands can reach customers at home and abroad.",
-      footnote: "Germany and UK figures are Amazon's country-attributed net sales, not marketplace sales alone. Source: Amazon.com, Inc., Form 10-K for fiscal year 2025.",
+      footnote: "Note: Germany and UK figures are Amazon's country-attributed net sales, not marketplace sales alone. Source: Amazon.com, Inc., Form 10-K for fiscal year 2025.",
     },
     ppc: {
       label: "Amazon PPC Management",
