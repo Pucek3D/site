@@ -25,8 +25,8 @@ export const pl: PartnerCopy = {
       ],
       primaryCta: "Porozmawiajmy",
       routes: {
-        agencies: "Dla agencji",
-        brands: "Dla marek",
+        agencies: "Poznaj współpracę z agencjami",
+        brands: "Poznaj usługi dla marek",
         training: "Poznaj szkolenia",
       },
     },
@@ -164,7 +164,7 @@ export const pl: PartnerCopy = {
   title: "Możliwości międzynarodowego rozwoju",
   text: "Szansa na dotarcie do nowych klientów w kraju i za granicą.",
   },
-      footnote: "Uwaga: dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach. Źródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
+      footnote: "Dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach. Źródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
     },
     ppc: {
       label: "Zarządzanie Amazon PPC",

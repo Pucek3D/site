@@ -26,10 +26,10 @@ export const en: PartnerCopy = {
         "Expert Amazon PPC management, data-driven optimisation\nand practical training for consumer brands and the agencies that\nserve them.",
         "We turn campaign data into smarter decisions, stronger performance\nand skills that last.",
       ],
-      primaryCta: "Let's Talk",
+      primaryCta: "Let's talk",
       routes: {
-        agencies: "For Agencies",
-        brands: "For Brands",
+        agencies: "Explore agency partnerships",
+        brands: "Explore brand services",
         training: "Explore training",
       },
     },
@@ -167,7 +167,7 @@ export const en: PartnerCopy = {
   title: "Growing opportunity",
   text: "Polish brands can reach customers at home and abroad.",
   },
-      footnote: "Note: Germany and UK figures are Amazon's country-attributed net sales, not marketplace sales alone. Source: Amazon.com, Inc., Form 10-K for fiscal year 2025.",
+      footnote: "Germany and UK figures are Amazon's country-attributed net sales, not marketplace sales alone. Source: Amazon.com, Inc., Form 10-K for fiscal year 2025.",
     },
     ppc: {
       label: "Amazon PPC Management",
