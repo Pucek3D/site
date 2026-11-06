@@ -85,6 +85,8 @@ export type PartnerCopy = {
       secondaryCta: string
       imageAlt: string
     }
+    /** Optional lead-in directly above `opportunity`; a locale omits it to render nothing. */
+    intro?: { title: string; paragraphs: string[] }
     /**
      * Amazon's scale, between the hero and PPC Management. Figures are Amazon's
      * country-attributed net sales from its 10-K; `footnote` carries that basis and

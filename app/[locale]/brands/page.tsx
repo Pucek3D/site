@@ -65,6 +65,15 @@ export default async function BrandsPage({ params }: Props) {
         </Container>
       </section>
 
+      {b.intro && (
+        <Section tone="white" labelledBy="brands-intro-title" className="pb-0 pt-12 md:pb-0 md:pt-14">
+          <div className="flex max-w-3xl flex-col gap-5">
+            <H2 id="brands-intro-title">{b.intro.title}</H2>
+            <Paragraphs items={b.intro.paragraphs} className="text-lg" />
+          </div>
+        </Section>
+      )}
+
       {/* Amazon's scale. The footnote states the figures' basis and never renders apart from them. */}
       <Section tone="white" labelledBy="opportunity-title" id="opportunity" className="pb-14 pt-12 md:pb-16 md:pt-14">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">

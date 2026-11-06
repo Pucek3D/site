@@ -143,8 +143,15 @@ export const pl: PartnerCopy = {
     secondaryCta: "Poznaj ofertę szkoleń",
       imageAlt: "Dwoje współpracowników omawiających przykładowy raport reklamowy na ekranie",
     },
-    opportunity: {
-      title: "Twoja marka. Twoje możliwości na Amazonie.",
+  intro: {
+  title: "Wprowadź swoją markę na Amazon. Rozwijaj ją. Sprzedawaj więcej.",
+  paragraphs: [
+  "Masz własną markę i chcesz zwiększyć jej sprzedaż? Amazon może być idealnym miejscem, aby dotrzeć do nowych klientów, wejść na kolejne rynki i rozwinąć swój biznes.",
+  "Sprzedajesz już na Amazonie, ale wyniki nie spełniają Twoich oczekiwań? Pomożemy Ci zidentyfikować problemy, znaleźć nowe możliwości i poprawić efektywność działań reklamowych.",
+  ],
+  },
+  opportunity: {
+  title: "Twoja marka. Twoje możliwości na Amazonie.",
       paragraphs: [
         "Amazon daje dostęp do milionów klientów i otwiera możliwości rozwoju na rynkach międzynarodowych.",
         "Niezależnie od tego, czy dopiero planujesz rozpocząć sprzedaż, czy chcesz poprawić dotychczasowe wyniki, pomożemy Ci podejmować świadome decyzje i budować strategię dopasowaną do celów Twojego biznesu.",
