@@ -93,20 +93,17 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8 xl:gap-y-3">
         <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3">
-          <h2 id="autopilot" className="flex items-start gap-3 font-sans text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.12em] text-slate">
-            <span aria-hidden className="mt-[0.7em] h-px w-6 shrink-0 bg-sage" />
-            <span className="text-pretty">{copy.title}</span>
+          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.125rem]">
+            {copy.title}
           </h2>
         </div>
         {copy.paragraphs.map((p) => (
-          <p key={p} className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:pt-8 xl:text-[0.9375rem]">
+          <p key={p} className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:pt-2 xl:text-[0.9375rem]">
             {p}
           </p>
         ))}
-  <div className="relative aspect-[1672/941] overflow-hidden rounded-2xl lg:col-span-6 xl:col-span-3 xl:col-start-4">
-  <Image src="/images/parcels.png" alt="" fill sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 50vw, 100vw" className="object-cover" />
-        </div>
-        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-6">
+        {/* The takeaway closes the section on its own row, flush with the title's left edge, so it reads as the conclusion of everything above rather than a caption beside a picture. */}
+        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-12 lg:col-start-1 lg:mt-2">
           <Sentences text={copy.closingLine} breakAt="always" />
         </p>
       </Container>
