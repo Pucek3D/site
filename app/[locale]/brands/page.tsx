@@ -115,6 +115,30 @@ export default async function BrandsPage({ params }: Props) {
 
       {/* Offer A: Amazon PPC Management. The service headline lives here, not in the hero. */}
       <Section tone="porcelain" labelledBy="ppc-title" id="ppc" className="scroll-mt-24 pb-14 pt-12 md:pb-16 md:pt-14">
+        {locale === 'pl' ? (
+          /* Polish layout: pitch + CTA on the left, service scope on the right. */
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+            <div className="flex min-w-0 flex-col items-start gap-5 lg:col-span-6">
+              <Eyebrow accent="cobalt">{ppc.label}</Eyebrow>
+              <h2
+                id="ppc-title"
+                className="text-balance font-display text-xl font-semibold uppercase leading-snug tracking-wide text-cobalt md:text-2xl"
+              >
+                {ppc.title}
+              </h2>
+              <Paragraphs items={ppc.paragraphs} className="text-lg" />
+              <CtaLink href={href(locale, 'contact', '?topic=brand')} className="mt-2">
+                {ppc.cta}
+                <ArrowRight aria-hidden className="size-4" />
+              </CtaLink>
+            </div>
+            <div className="flex min-w-0 flex-col gap-5 border-t border-hairline pt-8 lg:col-span-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+              <Eyebrow accent="cobalt">{ppc.manage.title}</Eyebrow>
+              <CheckList items={ppc.manage.items} columns={1} />
+            </div>
+          </div>
+        ) : (
+          <>
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="flex min-w-0 flex-col gap-5 lg:col-span-6">
             <Eyebrow accent="cobalt">{ppc.label}</Eyebrow>
@@ -138,6 +162,8 @@ export default async function BrandsPage({ params }: Props) {
             <CheckList items={ppc.manage.items} columns={2} />
           </div>
         </div>
+          </>
+        )}
       </Section>
 
       {/* Offer B: PPC Training, sold on its own. Same block family as the For Agencies training card. */}
