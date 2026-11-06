@@ -12,7 +12,7 @@ import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 import { ctaClass } from './primitives'
 
-/** Flat navigation, no Services menu: Home, For Agencies, For Brands, Training, About, Contact. */
+/** Flat navigation, no Services menu: Home, For Agencies, For Brands, About, Contact. */
 export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Dictionary['nav']; copy: PartnerCopy }) {
   const pathname = usePathname() ?? `/${locale}`
   const page = pageFromPath(pathname)
