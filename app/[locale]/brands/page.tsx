@@ -66,7 +66,7 @@ export default async function BrandsPage({ params }: Props) {
       </section>
 
       {b.intro && (
-        <Section tone="white" labelledBy="brands-intro-title" className="pb-0 pt-12 md:pb-0 md:pt-14">
+        <Section tone="porcelain" labelledBy="brands-intro-title" className="pb-12 pt-12 md:pb-14 md:pt-14">
           <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-0">
   <div className="md:w-7/12 md:shrink-0 md:pr-12">
   <Paragraphs items={b.intro.paragraphs} className="text-lg" />
