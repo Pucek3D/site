@@ -455,44 +455,61 @@ export const en: PartnerCopy = {
 
   about: {
     hero: {
-      title: 'A more personal approach to Amazon advertising',
-      subtitle: 'We believe every brand deserves more than an autopilot approach.',
-      paragraphs: [
-        'Amazon advertising is not a one-size-fits-all exercise. Every product, market, competitive environment and business objective presents a different set of challenges.',
+      title: "Analytical Amazon advertising, run by named experts.",
+      subtitle: "We show the data, the reasoning and the next decision, so you can check every recommendation.",
+      paragraphs: [],
+    },
+    who: {
+      body: "ADelier Commerce is a Poland-based marketplace partner working with consumer brands and marketing agencies internationally. We focus on Amazon advertising, performance analysis and practical PPC training. A named expert owns each account and its recommendations.",
+    },
+    // TODO owner: confirm every statement with the founders and check employer consent before
+    // publishing; use past tense and no employer names. Toggle: SHOW_FOUNDER_EXPERIENCE in lib/config.ts.
+    experience: {
+      title: "Experience from both sides of Amazon",
+      sub: "Hands-on seller experience and agency-level advertising practice.",
+      p1: "Our approach comes from two kinds of experience: building and selling products on Amazon, and previously working in large advertising agencies on advertising campaigns.",
+      p2: "The seller side taught us how positioning, pricing, advertising cost and competition affect profit. The agency side taught us how to structure analysis, reporting and decisions.",
+      p3: "The agency work is prior professional experience, not ADelier client work.",
+      closing: "We don't just manage campaigns. We look at the business behind them.",
+    },
+    process: {
+      title: "How an account is run",
+      steps: [
+        { title: "Baseline", body: "Account structure, goals, budgets and authority limits are agreed before any change." },
+        { title: "Analysis", body: "Campaigns, search terms, targeting and spend concentration are reviewed." },
+        { title: "Priorities", body: "Targeting, bids, budgets and negatives are ranked by expected impact." },
+        { title: "Implementation", body: "Only agreed changes are made, within the agreed budget and access." },
+        { title: "Monitoring", body: "ACOS and ROAS are read with total sales, margin, inventory and promotions." },
+        { title: "Record", body: "Every material decision is logged with its owner, evidence and next check date." },
       ],
     },
-    // TODO: owner approval / specific accurate wording — experience with major brands and within
-    // large media agencies. Publish only once the founders confirm how it may be attributed.
-    paragraphs: [
-      'ADelier Commerce is a Poland-based marketplace partner working with consumer brands and marketing agencies internationally. We combine focused Amazon advertising expertise, detailed performance analysis, practical training and direct expert accountability.',
-      'We help with the problems that hold Amazon advertising back: campaigns left on autopilot, budget spent without a clear rationale, and teams that lack the time or specialist knowledge to make confident decisions.',
-      "We believe effective PPC management requires curiosity, analytical thinking, attention to detail and a genuine interest in understanding each client's business.",
-      'Our operating model is designed to deliver attentive, tailored work and competitive economics without reducing the standard of review.',
-    ],
-    pillars: {
-      title: 'What makes our model different',
+    evidence: {
+      title: "What you can check",
+      head: ["What we say", "What you receive"],
+      rows: [
+        { claim: "Data-led diagnosis", evidence: "A baseline review of structure, search terms and spend, with the source data named" },
+        { claim: "Named accountability", evidence: "A named expert lead and a decision log you can read" },
+        { claim: "Transparent reporting", evidence: "Each report states what changed, what it means, what we will test and who owns the next decision" },
+        { claim: "Honest measurement", evidence: "Results shown with baseline, period and context; no guaranteed ROAS, ACOS or sales" },
+        { claim: "Controlled access", evidence: "Work within agreed permissions and budget limits, using user permissions rather than shared logins" },
+      ],
+    },
+    dont: {
+      title: "What we do not do",
       items: [
-        {
-          title: 'Specialist expertise',
-          body: 'Deep focus on Amazon advertising and marketplace commerce, rather than a broad catalogue of unrelated services.',
-        },
-        {
-          title: 'Data-led diagnosis',
-          body: 'We look at the numbers, question assumptions and translate our findings into tailored, prioritised recommendations.',
-        },
-        {
-          title: 'Personal, accountable service',
-          body: 'Expert-led work with a named decision owner, close collaboration and straightforward communication.',
-        },
-        {
-          title: 'Competitive operating economics',
-          body: 'A highly skilled team based in Poland, giving strong value without compromising the quality of the work.',
-        },
+        "We do not guarantee results.",
+        "We do not use tactics outside Amazon's rules.",
+        "We do not change settings beyond the agreed budget and access.",
+        "We do not use client data outside the agreed workflow.",
       ],
     },
-    forBrands: 'For brands, that means an advertising partner who takes the time to understand their business.',
-    forAgencies: 'For agencies, it means a dependable extension of their team, committed to quality execution and operational efficiency.',
-    goal: 'Our goal is to help businesses make better advertising decisions, use their resources more effectively and build a stronger foundation for growth on Amazon.',
-    closing: ['Thoughtful strategy. Active management. Individual attention.', "That's how we approach Amazon advertising."],
+    operating: {
+      title: "How we work",
+      body: "A Poland-based team working in English, Polish and German with international clients. An efficient European operating model gives each account more specialist attention without large-agency overhead.",
+    },
+    cta: {
+      title: "Bring one account you want reviewed.",
+      button: "Plan a conversation",
+    },
   },
 }

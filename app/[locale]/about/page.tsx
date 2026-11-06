@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Breadcrumbs, H2, PageHero, Paragraphs, PointGrid } from '@/components/site/page-kit'
+import { Breadcrumbs, H2, PageHero, PointGrid } from '@/components/site/page-kit'
 import { CtaLink, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
+import { SHOW_FOUNDER_EXPERIENCE } from '@/lib/config'
 import { href, type Locale } from '@/lib/i18n'
 import { pageMetadata } from '@/lib/seo'
 
@@ -15,8 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params
   const d = getDictionary(locale)
-  const c = getCopy(locale)
-  const a = c.about
+  const a = getCopy(locale).about
+  // Tones alternate from what is actually rendered, so switching the experience
+  // section off never leaves two sections of the same tone stacked together.
+  const tone = (i: number) => (i % 2 === 0 ? 'white' : 'porcelain') as 'white' | 'porcelain'
+  const offset = SHOW_FOUNDER_EXPERIENCE ? 1 : 0
   return (
     <>
       <PageHero
@@ -25,34 +29,96 @@ export default async function AboutPage({ params }: Props) {
         subtitle={a.hero.subtitle}
         paragraphs={a.hero.paragraphs}
       />
-      <Section className="pb-12 md:pb-16">
-        <div className="grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <Paragraphs items={a.paragraphs} className="text-lg" />
-          </div>
-          <div className="flex flex-col gap-6 lg:col-span-5">
-            {[a.forBrands, a.forAgencies].map((t) => (
-              <p key={t} className="border-l-2 border-sage pl-5 text-pretty text-lg leading-relaxed text-ink">
-                {t}
+
+      <Section tone={tone(0)}>
+        <p className="max-w-3xl text-pretty text-lg leading-relaxed text-ink">{a.who.body}</p>
+      </Section>
+
+      {SHOW_FOUNDER_EXPERIENCE ? (
+        <Section tone={tone(1)} labelledBy="experience">
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="flex flex-col gap-4 lg:col-span-5">
+              <H2 id="experience">{a.experience.title}</H2>
+              <p className="text-pretty text-lg leading-relaxed text-slate">{a.experience.sub}</p>
+            </div>
+            <div className="flex flex-col gap-5 lg:col-span-7">
+              {[a.experience.p1, a.experience.p2].map((p) => (
+                <p key={p} className="text-pretty text-lg leading-relaxed text-ink">
+                  {p}
+                </p>
+              ))}
+              <p className="text-pretty leading-relaxed text-slate">{a.experience.p3}</p>
+              <p className="mt-2 border-l-2 border-sage pl-5 text-pretty font-serif text-2xl italic leading-snug text-ink">
+                {a.experience.closing}
               </p>
+            </div>
+          </div>
+        </Section>
+      ) : null}
+
+      <Section tone={tone(1 + offset)} labelledBy="process">
+        <H2 id="process">{a.process.title}</H2>
+        <div className="mt-12">
+          <PointGrid items={a.process.steps} numbered columns={3} />
+        </div>
+      </Section>
+
+      <Section tone={tone(2 + offset)} labelledBy="evidence">
+        <H2 id="evidence">{a.evidence.title}</H2>
+        <table className="mt-12 block w-full border-collapse overflow-hidden rounded-xl border border-hairline md:table">
+          <thead className="hidden md:table-header-group">
+            <tr className="bg-ink text-left text-white">
+              <th scope="col" className="w-2/5 px-6 py-4 font-display font-semibold">
+                {a.evidence.head[0]}
+              </th>
+              <th scope="col" className="px-6 py-4 font-display font-semibold">
+                {a.evidence.head[1]}
+              </th>
+            </tr>
+          </thead>
+          <tbody className="block md:table-row-group">
+            {a.evidence.rows.map((r) => (
+              <tr key={r.claim} className="block border-t border-hairline bg-white first:border-t-0 md:table-row md:first:border-t">
+                <th scope="row" className="block px-6 pt-5 text-left align-top font-display text-lg font-semibold text-ink md:table-cell md:py-5">
+                  {r.claim}
+                </th>
+                <td className="block px-6 pt-1 pb-5 align-top text-pretty leading-relaxed text-slate md:table-cell md:py-5">
+                  <span className="sr-only md:hidden">{a.evidence.head[1]}: </span>
+                  {r.evidence}
+                </td>
+              </tr>
             ))}
+          </tbody>
+        </table>
+      </Section>
+
+      <Section tone={tone(3 + offset)}>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div aria-labelledby="dont" role="region">
+            <H2 id="dont">{a.dont.title}</H2>
+            <ul className="mt-8 flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-ink marker:text-sage">
+              {a.dont.items.map((it) => (
+                <li key={it} className="pl-1">
+                  {it}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div aria-labelledby="operating" role="region">
+            <H2 id="operating">{a.operating.title}</H2>
+            <p className="mt-8 text-pretty text-lg leading-relaxed text-ink">{a.operating.body}</p>
           </div>
         </div>
       </Section>
-      <Section tone="porcelain" labelledBy="pillars" className="pt-12 md:pt-16">
-        <H2 id="pillars">{a.pillars.title}</H2>
-        <div className="mt-12">
-          <PointGrid items={a.pillars.items} columns={2} />
-        </div>
-      </Section>
-      <Section tone="ink">
-        <div className="flex max-w-3xl flex-col gap-6">
-          <p className="text-pretty text-lg leading-relaxed text-mist">{a.goal}</p>
-          <p className="text-balance font-display text-3xl font-semibold leading-tight text-white md:text-4xl">{a.closing[0]}</p>
-          <p className="text-lg text-white">{a.closing[1]}</p>
-          <div className="mt-2">
+
+      <Section tone="ink" labelledBy="about-cta">
+        <div className="flex max-w-3xl flex-col gap-8">
+          <H2 id="about-cta" dark>
+            {a.cta.title}
+          </H2>
+          <div>
             <CtaLink href={href(locale, 'contact')} variant="primary">
-              {c.home.hero.primaryCta}
+              {a.cta.button}
             </CtaLink>
           </div>
         </div>

@@ -452,44 +452,61 @@ export const de: PartnerCopy = {
 
   about: {
     hero: {
-      title: 'Ein persönlicherer Ansatz für Amazon-Werbung',
-      subtitle: 'Jede Marke verdient mehr als einen Autopiloten.',
-      paragraphs: [
-        'Amazon-Werbung ist keine Einheitslösung. Jedes Produkt, jeder Markt, jedes Wettbewerbsumfeld und jedes Geschäftsziel bringt eigene Herausforderungen mit sich.',
+      title: "Analytische Amazon-Werbung, geführt von benannten Experten.",
+      subtitle: "Wir zeigen Daten, Begründung und nächste Entscheidung, damit jede Empfehlung überprüfbar ist.",
+      paragraphs: [],
+    },
+    who: {
+      body: "ADelier Commerce ist ein Marketplace-Partner aus Polen, der international mit Konsumgütermarken und Marketingagenturen zusammenarbeitet. Unser Fokus liegt auf Amazon-Werbung, Performance-Analyse und praxisnahen PPC-Trainings. Für jedes Konto und seine Empfehlungen ist eine benannte fachlich verantwortliche Person zuständig.",
+    },
+    // TODO owner: confirm every statement with the founders and check employer consent before
+    // publishing; use past tense and no employer names. Toggle: SHOW_FOUNDER_EXPERIENCE in lib/config.ts.
+    experience: {
+      title: "Erfahrung von beiden Seiten von Amazon",
+      sub: "Praxis als Verkäufer und Werbeerfahrung auf Agenturniveau.",
+      p1: "Unser Ansatz beruht auf zwei Arten von Erfahrung: dem Aufbau und Verkauf von Produkten auf Amazon sowie früherer Arbeit in großen Werbeagenturen an Werbekampagnen.",
+      p2: "Die Verkäuferseite hat uns gezeigt, wie Positionierung, Preis, Werbekosten und Wettbewerb den Gewinn beeinflussen. Die Agenturseite hat uns gezeigt, wie man Analyse, Reporting und Entscheidungen strukturiert.",
+      p3: "Die Agenturarbeit ist frühere berufliche Erfahrung und keine Arbeit für ADelier-Kunden.",
+      closing: "Wir verwalten nicht nur Kampagnen. Wir betrachten das Geschäft dahinter.",
+    },
+    process: {
+      title: "So führen wir ein Konto",
+      steps: [
+        { title: "Ausgangsbasis", body: "Kontostruktur, Ziele, Budgets und Befugnisgrenzen werden vor jeder Änderung vereinbart." },
+        { title: "Analyse", body: "Kampagnen, Suchbegriffe, Targeting und Ausgabenkonzentration werden geprüft." },
+        { title: "Prioritäten", body: "Targeting, Gebote, Budgets und negative Keywords werden nach erwarteter Wirkung geordnet." },
+        { title: "Umsetzung", body: "Es werden nur vereinbarte Änderungen vorgenommen, im Rahmen des vereinbarten Budgets und Zugriffs." },
+        { title: "Monitoring", body: "ACOS und ROAS werden zusammen mit Gesamtumsatz, Marge, Verfügbarkeit und Aktionen gelesen." },
+        { title: "Dokumentation", body: "Jede wesentliche Entscheidung wird mit verantwortlicher Person, Begründung und nächstem Prüftermin protokolliert." },
       ],
     },
-    // TODO: owner approval / specific accurate wording — experience with major brands and within
-    // large media agencies. Publish only once the founders confirm how it may be attributed.
-    paragraphs: [
-      'ADelier Commerce ist ein Marketplace-Partner mit Sitz in Polen, der international mit Konsumgütermarken und Marketingagenturen arbeitet. Wir verbinden fokussierte Amazon-Werbeexpertise, detaillierte Performance-Analyse, praxisnahe Schulungen und direkte Verantwortung von Experten.',
-      'Wir helfen bei den Problemen, die Amazon-Werbung ausbremsen: Kampagnen im Autopilot, Budget ohne klare Begründung und Teams, denen Zeit oder Spezialwissen für sichere Entscheidungen fehlt.',
-      'Wir sind überzeugt: Wirksames PPC-Management erfordert Neugier, analytisches Denken, Liebe zum Detail und echtes Interesse am Geschäft jedes Kunden.',
-      'Unser Betriebsmodell ermöglicht aufmerksame, maßgeschneiderte Arbeit und eine wettbewerbsfähige Wirtschaftlichkeit, ohne den Prüfstandard zu senken.',
-    ],
-    pillars: {
-      title: 'Was unser Modell unterscheidet',
+    evidence: {
+      title: "Was Sie prüfen können",
+      head: ["Was wir sagen", "Was Sie erhalten"],
+      rows: [
+        { claim: "Datenbasierte Diagnose", evidence: "Eine Ausgangsprüfung von Struktur, Suchbegriffen und Ausgaben, mit benannter Datenquelle" },
+        { claim: "Benannte Verantwortung", evidence: "Eine benannte fachlich verantwortliche Person und ein Entscheidungsprotokoll, das Sie einsehen können" },
+        { claim: "Transparentes Reporting", evidence: "Jeder Bericht nennt, was sich geändert hat, was es bedeutet, was wir testen und wer die nächste Entscheidung verantwortet" },
+        { claim: "Ehrliche Messung", evidence: "Ergebnisse mit Ausgangswert, Zeitraum und Kontext; keine Garantie für ROAS, ACOS oder Umsatz" },
+        { claim: "Kontrollierter Zugriff", evidence: "Arbeit im Rahmen vereinbarter Berechtigungen und Budgetgrenzen, mit Benutzerzugriff statt geteilter Logins" },
+      ],
+    },
+    dont: {
+      title: "Was wir nicht tun",
       items: [
-        {
-          title: 'Spezialisierte Expertise',
-          body: 'Klarer Fokus auf Amazon-Werbung und Marketplace-Commerce statt eines breiten Katalogs unverbundener Leistungen.',
-        },
-        {
-          title: 'Datenbasierte Diagnose',
-          body: 'Wir prüfen die Zahlen, hinterfragen Annahmen und übersetzen Erkenntnisse in passgenaue, priorisierte Empfehlungen.',
-        },
-        {
-          title: 'Persönlicher, verantwortlicher Service',
-          body: 'Expertengeführte Arbeit mit einem benannten Entscheidungsverantwortlichen, enger Zusammenarbeit und klarer Kommunikation.',
-        },
-        {
-          title: 'Wettbewerbsfähige Wirtschaftlichkeit',
-          body: 'Ein hoch qualifiziertes Team in Polen, das einen starken Gegenwert ohne Abstriche bei der Qualität bietet.',
-        },
+        "Wir garantieren keine Ergebnisse.",
+        "Wir setzen keine Taktiken außerhalb der Amazon-Regeln ein.",
+        "Wir ändern nichts über das vereinbarte Budget und den vereinbarten Zugriff hinaus.",
+        "Wir nutzen Kundendaten nicht außerhalb des vereinbarten Arbeitsablaufs.",
       ],
     },
-    forBrands: 'Für Marken bedeutet das einen Werbepartner, der sich die Zeit nimmt, ihr Geschäft zu verstehen.',
-    forAgencies: 'Für Agenturen bedeutet es eine verlässliche Erweiterung ihres Teams, die sich für hochwertige Umsetzung und operative Effizienz einsetzt.',
-    goal: 'Unser Ziel ist es, Unternehmen zu besseren Werbeentscheidungen zu verhelfen, ihre Ressourcen wirksamer einzusetzen und eine stärkere Grundlage für Wachstum auf Amazon zu schaffen.',
-    closing: ['Durchdachte Strategie. Aktives Management. Individuelle Aufmerksamkeit.', 'So gehen wir Amazon-Werbung an.'],
+    operating: {
+      title: "Wie wir arbeiten",
+      body: "Ein Team aus Polen, das auf Englisch, Polnisch und Deutsch mit internationalen Kunden arbeitet. Ein effizientes europäisches Betriebsmodell schenkt jedem Konto mehr Aufmerksamkeit von Spezialisten, ohne den Overhead einer Großagentur.",
+    },
+    cta: {
+      title: "Bringen Sie ein Konto zur Prüfung mit.",
+      button: "Gespräch planen",
+    },
   },
 }

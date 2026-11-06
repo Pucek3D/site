@@ -125,8 +125,10 @@ export function SplitSection({
 
 /** Titled points in a grid. Numbered only when the source presents them as a sequence. */
 export function PointGrid({ items, numbered = false, columns = 3 }: { items: Titled[]; numbered?: boolean; columns?: 2 | 3 }) {
+  // A numbered grid is a sequence, so it is an ordered list.
+  const List = numbered ? 'ol' : 'ul'
   return (
-    <ul className={cn('grid gap-x-10 gap-y-10 sm:grid-cols-2', columns === 3 && 'lg:grid-cols-3')}>
+    <List className={cn('grid gap-x-10 gap-y-10 sm:grid-cols-2', columns === 3 && 'lg:grid-cols-3')}>
       {items.map((it, i) => (
         <li key={it.title} className="flex flex-col gap-3 border-t border-hairline pt-6">
           {numbered ? (
@@ -138,7 +140,7 @@ export function PointGrid({ items, numbered = false, columns = 3 }: { items: Tit
           <p className="text-pretty leading-relaxed text-slate">{it.body}</p>
         </li>
       ))}
-    </ul>
+    </List>
   )
 }
 

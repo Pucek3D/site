@@ -452,44 +452,61 @@ export const pl: PartnerCopy = {
 
   about: {
     hero: {
-      title: 'Bardziej osobiste podejście do reklamy na Amazonie',
-      subtitle: 'Wierzymy, że każda marka zasługuje na coś więcej niż autopilot.',
-      paragraphs: [
-        'Reklama na Amazonie nie jest zadaniem uniwersalnym. Każdy produkt, rynek, otoczenie konkurencyjne i cel biznesowy stawia inne wyzwania.',
+      title: "Analityczna reklama na Amazon, prowadzona przez wskazanych ekspertów.",
+      subtitle: "Pokazujemy dane, uzasadnienie i kolejną decyzję, aby można było sprawdzić każdą rekomendację.",
+      paragraphs: [],
+    },
+    who: {
+      body: "ADelier Commerce to partner marketplace z Polski, który współpracuje międzynarodowo z markami konsumenckimi i agencjami marketingowymi. Skupiamy się na reklamie na Amazon, analizie wyników i praktycznych szkoleniach PPC. Każde konto i jego rekomendacje mają wskazanego eksperta prowadzącego.",
+    },
+    // TODO owner: confirm every statement with the founders and check employer consent before
+    // publishing; use past tense and no employer names. Toggle: SHOW_FOUNDER_EXPERIENCE in lib/config.ts.
+    experience: {
+      title: "Doświadczenie z obu stron Amazona",
+      sub: "Praktyka sprzedawców i doświadczenie reklamowe na poziomie agencji.",
+      p1: "Nasze podejście wynika z dwóch rodzajów doświadczenia: budowania i sprzedaży produktów na Amazonie oraz wcześniejszej pracy w dużych agencjach reklamowych przy kampaniach reklamowych.",
+      p2: "Strona sprzedawcy nauczyła nas, jak pozycjonowanie, cena, koszt reklamy i konkurencja wpływają na zysk. Strona agencyjna nauczyła nas, jak porządkować analizę, raportowanie i decyzje.",
+      p3: "Praca w agencjach to wcześniejsze doświadczenie zawodowe, a nie praca dla klientów ADelier.",
+      closing: "Nie tylko prowadzimy kampanie. Patrzymy na biznes, który za nimi stoi.",
+    },
+    process: {
+      title: "Jak prowadzimy konto",
+      steps: [
+        { title: "Punkt wyjścia", body: "Struktura konta, cele, budżety i limity uprawnień są uzgadniane przed jakąkolwiek zmianą." },
+        { title: "Analiza", body: "Przeglądamy kampanie, wyszukiwane hasła, targetowanie i koncentrację wydatków." },
+        { title: "Priorytety", body: "Targetowanie, stawki, budżety i wykluczenia układamy według spodziewanego wpływu." },
+        { title: "Wdrożenie", body: "Wprowadzamy wyłącznie uzgodnione zmiany, w ramach uzgodnionego budżetu i dostępu." },
+        { title: "Monitoring", body: "ACOS i ROAS interpretujemy razem ze sprzedażą całkowitą, marżą, dostępnością i promocjami." },
+        { title: "Zapis", body: "Każda istotna decyzja trafia do dziennika z osobą odpowiedzialną, uzasadnieniem i datą kolejnego przeglądu." },
       ],
     },
-    // TODO: owner approval / specific accurate wording — experience with major brands and within
-    // large media agencies. Publish only once the founders confirm how it may be attributed.
-    paragraphs: [
-      'ADelier Commerce to partner marketplace’owy z siedzibą w Polsce, który współpracuje z markami konsumenckimi i agencjami marketingowymi na rynkach międzynarodowych. Łączymy wyspecjalizowaną wiedzę o reklamie na Amazonie, szczegółową analizę wyników, praktyczne szkolenia i bezpośrednią odpowiedzialność ekspertów.',
-      'Pomagamy rozwiązać problemy, które hamują reklamę na Amazonie: kampanie pozostawione na autopilocie, budżet wydawany bez jasnego uzasadnienia oraz zespoły, którym brakuje czasu lub specjalistycznej wiedzy, by podejmować pewne decyzje.',
-      'Wierzymy, że skuteczne zarządzanie PPC wymaga ciekawości, analitycznego myślenia, dbałości o szczegóły i szczerego zainteresowania biznesem każdego klienta.',
-      'Nasz model działania pozwala na uważną, dopasowaną pracę i konkurencyjną ekonomikę współpracy bez obniżania standardu przeglądu.',
-    ],
-    pillars: {
-      title: 'Co wyróżnia nasz model',
+    evidence: {
+      title: "Co możesz sprawdzić",
+      head: ["Co mówimy", "Co otrzymujesz"],
+      rows: [
+        { claim: "Diagnoza oparta na danych", evidence: "Przegląd punktu wyjścia: struktury, wyszukiwanych haseł i wydatków, z nazwanym źródłem danych" },
+        { claim: "Wskazana odpowiedzialność", evidence: "Wskazany ekspert prowadzący i dziennik decyzji, który możesz przeczytać" },
+        { claim: "Przejrzyste raportowanie", evidence: "Każdy raport mówi, co się zmieniło, co to oznacza, co będziemy testować i kto odpowiada za kolejną decyzję" },
+        { claim: "Uczciwy pomiar", evidence: "Wyniki z punktem odniesienia, okresem i kontekstem; bez gwarancji ROAS, ACOS ani sprzedaży" },
+        { claim: "Kontrolowany dostęp", evidence: "Praca w ramach uzgodnionych uprawnień i limitów budżetu, z dostępem użytkownika zamiast współdzielonych loginów" },
+      ],
+    },
+    dont: {
+      title: "Czego nie robimy",
       items: [
-        {
-          title: 'Specjalistyczna wiedza',
-          body: 'Skupienie na reklamie na Amazonie i handlu w marketplace’ach zamiast szerokiego katalogu niepowiązanych usług.',
-        },
-        {
-          title: 'Diagnoza oparta na danych',
-          body: 'Analizujemy liczby, kwestionujemy założenia i przekładamy wnioski na dopasowane rekomendacje z priorytetami.',
-        },
-        {
-          title: 'Osobista, odpowiedzialna obsługa',
-          body: 'Praca prowadzona przez eksperta, z konkretną osobą odpowiedzialną za decyzje, bliską współpracą i prostą komunikacją.',
-        },
-        {
-          title: 'Konkurencyjna ekonomika współpracy',
-          body: 'Wysoko wykwalifikowany zespół w Polsce, który zapewnia dobrą wartość bez kompromisów w jakości pracy.',
-        },
+        "Nie gwarantujemy wyników.",
+        "Nie stosujemy taktyk wykraczających poza zasady Amazon.",
+        "Nie zmieniamy ustawień poza uzgodnionym budżetem i dostępem.",
+        "Nie używamy danych klienta poza uzgodnionym sposobem pracy.",
       ],
     },
-    forBrands: 'Dla marek oznacza to partnera reklamowego, który poświęca czas, by zrozumieć ich biznes.',
-    forAgencies: 'Dla agencji oznacza to niezawodne przedłużenie zespołu, nastawione na jakość realizacji i efektywność operacyjną.',
-    goal: 'Naszym celem jest pomaganie firmom w podejmowaniu lepszych decyzji reklamowych, skuteczniejszym wykorzystaniu zasobów i budowaniu mocniejszych fundamentów wzrostu na Amazonie.',
-    closing: ['Przemyślana strategia. Aktywne zarządzanie. Indywidualna uwaga.', 'Tak podchodzimy do reklamy na Amazonie.'],
+    operating: {
+      title: "Jak pracujemy",
+      body: "Zespół z Polski pracujący po angielsku, polsku i niemiecku z klientami międzynarodowymi. Efektywny europejski model operacyjny daje każdemu kontu więcej uwagi specjalistów, bez narzutów dużej agencji.",
+    },
+    cta: {
+      title: "Przynieś jedno konto do przeglądu.",
+      button: "Zaplanuj rozmowę",
+    },
   },
 }

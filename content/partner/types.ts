@@ -176,12 +176,14 @@ export type PartnerCopy = {
 
   about: {
     hero: Hero
-    /** Who we are, where we are based, which problems we solve. */
-    paragraphs: string[]
-    pillars: { title: string; items: Titled[] }
-    forBrands: string
-    forAgencies: string
-    goal: string
-    closing: [string, string]
+    /** Who we are, where we are based, who owns each account. */
+    who: { body: string }
+    /** Rendered only while SHOW_FOUNDER_EXPERIENCE is true (lib/config.ts). */
+    experience: { title: string; sub: string; p1: string; p2: string; p3: string; closing: string }
+    process: { title: string; steps: Titled[] }
+    evidence: { title: string; head: [string, string]; rows: { claim: string; evidence: string }[] }
+    dont: { title: string; items: string[] }
+    operating: { title: string; body: string }
+    cta: { title: string; button: string }
   }
 }
