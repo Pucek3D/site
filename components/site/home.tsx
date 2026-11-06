@@ -93,8 +93,9 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8 xl:gap-y-3">
         <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3">
-          <h2 id="autopilot" className="max-w-[18ch] text-balance font-display text-3xl font-semibold leading-[1.12] tracking-tight text-ink md:text-[2.25rem] xl:text-[2.125rem]">
-            {copy.title}
+          <h2 id="autopilot" className="flex items-start gap-3 font-sans text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.12em] text-slate">
+            <span aria-hidden className="mt-[0.7em] h-px w-6 shrink-0 bg-sage" />
+            <span className="text-pretty">{copy.title}</span>
           </h2>
         </div>
         {copy.paragraphs.map((p) => (
