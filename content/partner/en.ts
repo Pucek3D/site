@@ -163,7 +163,10 @@ export const en: PartnerCopy = {
           label: "Amazon net sales attributed to\nthe UK (2025)",
         },
       ],
-      growth: "Growing opportunity — Polish brands can reach customers at home and abroad.",
+      growth: {
+  title: "Growing opportunity",
+  text: "Polish brands can reach customers at home and abroad.",
+  },
       footnote: "Note: Germany and UK figures are Amazon's country-attributed net sales, not marketplace sales alone. Source: Amazon.com, Inc., Form 10-K for fiscal year 2025.",
     },
     ppc: {

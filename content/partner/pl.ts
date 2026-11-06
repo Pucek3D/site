@@ -160,7 +160,10 @@ export const pl: PartnerCopy = {
           label: "Sprzedaż netto Amazon przypisana do rynku brytyjskiego w 2025 r.",
         },
       ],
-      growth: "Możliwości międzynarodowego rozwoju — szansa na dotarcie do nowych klientów w kraju i za granicą.",
+      growth: {
+  title: "Możliwości międzynarodowego rozwoju",
+  text: "Szansa na dotarcie do nowych klientów w kraju i za granicą.",
+  },
       footnote: "Uwaga: dane dla Niemiec i Wielkiej Brytanii dotyczą sprzedaży netto Amazon przypisanej do poszczególnych krajów, a nie wyłącznie sprzedaży na lokalnych marketplace’ach. Źródło: Amazon.com, Inc., formularz 10-K za rok obrotowy 2025.",
     },
     ppc: {

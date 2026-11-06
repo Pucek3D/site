@@ -95,8 +95,8 @@ export type PartnerCopy = {
       paragraphs: string[]
       lead: string
       figures: { value: string; label: string }[]
-      growth: string
-      footnote: string
+  growth: { title: string; text: string }
+  footnote: string
     }
     ppc: {
       label: string

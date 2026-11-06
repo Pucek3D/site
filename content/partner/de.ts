@@ -160,7 +160,10 @@ export const de: PartnerCopy = {
           label: "Amazon-Nettoumsatz, der dem Vereinigten Königreich zugeordnet ist (2025)",
         },
       ],
-      growth: "Wachsende Chancen – polnische Marken können Kundinnen und Kunden im In- und Ausland erreichen.",
+      growth: {
+  title: "Wachsende Chancen",
+  text: "Polnische Marken können Kundinnen und Kunden im In- und Ausland erreichen.",
+  },
       footnote: "Hinweis: Die Zahlen für Deutschland und das Vereinigte Königreich sind Amazon-Nettoumsätze nach Ländern, nicht allein Marketplace-Umsätze. Quelle: Amazon.com, Inc., Form 10-K für das Geschäftsjahr 2025.",
     },
     ppc: {

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowDown, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Breadcrumbs, FinalCta, H2, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
@@ -58,11 +58,7 @@ export default async function AgencyPage({ params }: Props) {
                 <CtaLink href={contactAgency(locale)}>
                   {a.hero.primaryCta}
                   <ArrowRight aria-hidden className="size-4" />
-                </CtaLink>
-                <CtaLink href="#ways" variant="text">
-                  {a.hero.secondaryCta}
-                  <ArrowDown aria-hidden className="size-4" />
-                </CtaLink>
+  </CtaLink>
               </div>
             </div>
           </div>
