@@ -28,8 +28,8 @@ export const en: PartnerCopy = {
       ],
       primaryCta: "Let's Talk",
       routes: {
-        agencies: "Explore agency partnerships",
-        brands: "Explore brand services",
+        agencies: "For Agencies",
+        brands: "For Brands",
         training: "Explore training",
       },
     },

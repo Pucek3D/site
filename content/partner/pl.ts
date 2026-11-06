@@ -25,8 +25,8 @@ export const pl: PartnerCopy = {
       ],
       primaryCta: "Porozmawiajmy",
       routes: {
-        agencies: "Poznaj współpracę z agencjami",
-        brands: "Poznaj usługi dla marek",
+        agencies: "Dla agencji",
+        brands: "Dla marek",
         training: "Poznaj szkolenia",
       },
     },
