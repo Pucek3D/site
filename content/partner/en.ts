@@ -149,7 +149,7 @@ export const en: PartnerCopy = {
     opportunity: {
       title: "Your brand. Your Amazon opportunity.",
       paragraphs: [
-        "Amazon offers access to millions of customers and opportunities to grow internationally.",
+        "Amazon offers access to millions of customers\nand opportunities to grow internationally.",
         "ADelier helps you launch your brand, manage your advertising or train your team to manage campaigns themselves.",
       ],
       lead: "Amazon's scale speaks for itself",
@@ -160,7 +160,7 @@ export const en: PartnerCopy = {
         },
         {
           value: "$43.2bn",
-          label: "Amazon net sales attributed to the UK (2025)",
+          label: "Amazon net sales attributed to\nthe UK (2025)",
         },
       ],
       growth: "Growing opportunity — Polish brands can reach customers at home and abroad.",

@@ -70,7 +70,7 @@ export default async function BrandsPage({ params }: Props) {
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
           <div className="flex min-w-0 flex-col gap-5 lg:col-span-5">
             <H2 id="opportunity-title">{opp.title}</H2>
-            <Paragraphs items={opp.paragraphs} className="text-lg" />
+            <Paragraphs items={opp.paragraphs} className="whitespace-pre-line text-lg" />
           </div>
           <div className="flex min-w-0 flex-col gap-4 lg:col-span-7">
             <Eyebrow accent="cobalt">{opp.lead}</Eyebrow>
@@ -80,7 +80,7 @@ export default async function BrandsPage({ params }: Props) {
                   <p className="font-display text-4xl font-semibold tabular-nums leading-none tracking-tight text-ink md:text-[2.75rem]">
                     {f.value}
                   </p>
-                  <p className="text-pretty text-[0.9375rem] leading-relaxed text-slate">{f.label}</p>
+                  <p className="whitespace-pre-line text-pretty text-[0.9375rem] leading-relaxed text-slate">{f.label}</p>
                 </div>
               ))}
               <p className="text-pretty bg-white p-6 font-medium leading-relaxed text-cobalt sm:col-span-2 md:px-7">{opp.growth}</p>
