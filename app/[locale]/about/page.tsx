@@ -25,7 +25,7 @@ export default async function AboutPage({ params }: Props) {
         subtitle={a.hero.subtitle}
         paragraphs={a.hero.paragraphs}
       />
-      <Section>
+      <Section className="pb-12 md:pb-16">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Paragraphs items={a.paragraphs} className="text-lg" />
@@ -39,7 +39,7 @@ export default async function AboutPage({ params }: Props) {
           </div>
         </div>
       </Section>
-      <Section tone="porcelain" labelledBy="pillars">
+      <Section tone="porcelain" labelledBy="pillars" className="pt-12 md:pt-16">
         <H2 id="pillars">{a.pillars.title}</H2>
         <div className="mt-12">
           <PointGrid items={a.pillars.items} columns={2} />
@@ -51,7 +51,7 @@ export default async function AboutPage({ params }: Props) {
           <p className="text-balance font-display text-3xl font-semibold leading-tight text-white md:text-4xl">{a.closing[0]}</p>
           <p className="text-lg text-white">{a.closing[1]}</p>
           <div className="mt-2">
-            <CtaLink href={href(locale, 'contact')} variant="sage">
+            <CtaLink href={href(locale, 'contact')} variant="primary">
               {c.home.hero.primaryCta}
             </CtaLink>
           </div>
