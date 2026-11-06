@@ -67,9 +67,13 @@ export default async function BrandsPage({ params }: Props) {
 
       {b.intro && (
         <Section tone="white" labelledBy="brands-intro-title" className="pb-0 pt-12 md:pb-0 md:pt-14">
-          <div className="flex max-w-3xl flex-col gap-5">
-            <H2 id="brands-intro-title">{b.intro.title}</H2>
-            <Paragraphs items={b.intro.paragraphs} className="text-lg" />
+          <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-0">
+            <H2 id="brands-intro-title" className="md:w-5/12 md:shrink-0 md:pr-12">
+              {b.intro.title}
+            </H2>
+            <div className="border-t border-border pt-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
+              <Paragraphs items={b.intro.paragraphs} className="text-lg" />
+            </div>
           </div>
         </Section>
       )}
