@@ -218,7 +218,7 @@ export const en: PartnerCopy = {
     },
     training: {
       label: "PPC Training for Brand Teams",
-      title: "Prefer to manage advertising in-house? We'll help you build the skills.",
+      title: "Prefer to manage advertising in\u2011house?\nWe'll help you build the skills.",
       paragraphs: [
         "Not every business wants to hire an agency. We train brand, e-commerce and marketing teams to manage Amazon PPC confidently and make better advertising decisions.",
         "Training is available independently or alongside our management services.",

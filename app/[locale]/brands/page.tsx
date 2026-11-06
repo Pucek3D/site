@@ -122,7 +122,7 @@ export default async function BrandsPage({ params }: Props) {
         <div className="grid gap-6 rounded-3xl border border-hairline bg-white p-3 shadow-[0_24px_60px_rgba(16,24,40,0.07),0_4px_14px_rgba(16,24,40,0.04)] md:grid-cols-[3fr_2fr] md:gap-3">
           <div className="flex min-w-0 flex-col items-start gap-4 px-4 pb-4 pt-4 md:justify-center md:px-10 md:py-9 lg:px-12">
             <Eyebrow>{training.label}</Eyebrow>
-            <h2 id="training-title" className="text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
+            <h2 id="training-title" className="whitespace-pre-line text-balance font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
               {training.title}
             </h2>
             <Paragraphs items={training.paragraphs} />
