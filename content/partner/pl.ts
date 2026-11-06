@@ -149,6 +149,8 @@ export const pl: PartnerCopy = {
   "Masz własną markę i chcesz zwiększyć jej sprzedaż? Amazon może być idealnym miejscem, aby dotrzeć do nowych klientów, wejść na kolejne rynki i rozwinąć swój biznes.",
   "Sprzedajesz już na Amazonie, ale wyniki nie spełniają Twoich oczekiwań? Pomożemy Ci zidentyfikować problemy, znaleźć nowe możliwości i poprawić efektywność działań reklamowych.",
   ],
+  closing: "Wspieramy marki na każdym etapie — od wejścia na Amazon, przez optymalizację reklam, aż po dalszy rozwój sprzedaży.",
+  cta: "Porozmawiajmy o Twojej marce",
   },
   opportunity: {
   title: "Twoja marka. Twoje możliwości na Amazonie.",

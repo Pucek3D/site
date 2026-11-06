@@ -75,6 +75,13 @@ export default async function BrandsPage({ params }: Props) {
   <H2 id="brands-intro-title">{b.intro.title}</H2>
   </div>
           </div>
+          <div className="mt-10 flex flex-col items-start gap-5 md:mt-12 md:w-7/12 md:pr-12">
+            <p className="text-pretty text-lg font-medium leading-relaxed text-ink">{b.intro.closing}</p>
+            <CtaLink href={href(locale, 'contact', '?topic=brand')}>
+              {b.intro.cta}
+              <ArrowRight aria-hidden className="size-4" />
+            </CtaLink>
+          </div>
         </Section>
       )}
 
