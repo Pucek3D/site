@@ -23,8 +23,8 @@ export const en: PartnerCopy = {
       eyebrow: "Amazon advertising, marketplace expertise and applied training",
       title: "Improve Amazon performance. Build the capability\nbehind it.",
       paragraphs: [
-        "Expert Amazon PPC management, data-driven optimisation and practical training for consumer brands and the agencies that serve them.",
-        "We turn campaign data into smarter decisions, stronger performance and skills that last.",
+        "Expert Amazon PPC management, data-driven optimisation\nand practical training for consumer brands and the agencies that\nserve them.",
+        "We turn campaign data into smarter decisions, stronger performance\nand skills that last.",
       ],
       primaryCta: "Let's Talk",
       routes: {

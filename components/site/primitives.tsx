@@ -38,6 +38,11 @@ export function Section({
 }
 
 /** Small label with a short Sage rule — Sage appears as a mark, never as body text on light. */
+/** Small uppercase labels read as tags, not sentences, so they carry no closing full stop. */
+export function labelText(text: string) {
+  return text.replace(/\.\s*$/, '')
+}
+
 export function Eyebrow({
   children,
   dark = false,
@@ -59,7 +64,7 @@ export function Eyebrow({
       )}
     >
       <span aria-hidden className={cn('h-px w-6 shrink-0', accent === 'cobalt' ? 'bg-cobalt' : 'bg-sage')} />
-      {children}
+      {typeof children === 'string' ? labelText(children) : children}
     </p>
   )
 }

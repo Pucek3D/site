@@ -6,7 +6,7 @@ import type { PartnerCopy } from '@/content/partner'
 import { href, type Locale, type PageKey } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { FinalCta } from './page-kit'
-import { Container } from './primitives'
+import { Container, labelText } from './primitives'
 import { Sentences } from './typeset'
 import { ServiceTileList, type TileLabels } from './service-tile'
 
@@ -95,7 +95,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
         <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-2">
   <h2 id="autopilot" className="flex items-start gap-3 text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.12em] text-slate">
   <span aria-hidden className="mt-[0.6875rem] h-px w-6 shrink-0 bg-sage" />
-  <span className="text-pretty">{copy.title}</span>
+  <span className="text-pretty">{labelText(copy.title)}</span>
   </h2>
         </div>
         {/* The problem and the answer to it read as one stacked argument in the second column.
@@ -157,7 +157,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
         {/* No "explore all" link: each tile already opens its own route page, and there is no services index. */}
         <h2 id="what-we-do-title" className="flex items-center gap-3 font-sans text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">
           <span aria-hidden className="h-px w-6 bg-sage" />
-          {w.title}
+          {labelText(w.title)}
         </h2>
         {/* One flat full-width tile per row; the image alternates sides so the list reads as a sequence of rows, not a grid. */}
         <ServiceTileList
