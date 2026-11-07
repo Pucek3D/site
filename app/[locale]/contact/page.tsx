@@ -32,11 +32,13 @@ export default async function ContactPage({ params, searchParams }: Props) {
 
   return (
     <>
-      <Container className="pt-14 pb-12 md:pt-20 md:pb-16">
+      <Container className="pt-14 pb-16 md:pt-20 md:pb-24">
         <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.contact} navLabel={dict.common.breadcrumbLabel} />
-        <div className="flex max-w-[760px] flex-col gap-6">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+        {/* Intro stays in view while the longer form scrolls beside it. */}
+        <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
           <Eyebrow accent="cobalt">{dict.contact.eyebrow}</Eyebrow>
-          <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.08] sm:text-[3rem] lg:text-[3.5rem]">{title}</h1>
+          <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.08] sm:text-[3rem] lg:text-[3rem]">{title}</h1>
           <Paragraphs items={dict.contact.intro} className="text-lg" />
           {/* Only a verified address is shown; an unconfirmed one is hidden rather than announced to visitors. */}
           {siteConfig.email.placeholder ? null : (
@@ -48,14 +50,11 @@ export default async function ContactPage({ params, searchParams }: Props) {
             </p>
           )}
         </div>
+        <div className="rounded-2xl border border-hairline bg-porcelain p-6 sm:p-10">
+          <ContactForm locale={locale} dict={dict} initialTopic={initialTopic} />
+        </div>
+        </div>
       </Container>
-      <section className="border-t border-hairline bg-porcelain py-12 md:py-20">
-        <Container>
-          <div className="mx-auto max-w-[820px] rounded-2xl border border-hairline bg-white p-6 sm:p-10 md:p-12">
-            <ContactForm locale={locale} dict={dict} initialTopic={initialTopic} />
-          </div>
-        </Container>
-      </section>
     </>
   )
 }
