@@ -1,6 +1,6 @@
 'use client'
 
-import { CircleCheck, TriangleAlert } from 'lucide-react'
+import { ChevronDown, CircleCheck, TriangleAlert } from 'lucide-react'
 import Link from 'next/link'
 import { useRef, useState, type FormEvent, type ReactNode } from 'react'
 import type { Dictionary } from '@/content'
@@ -27,6 +27,13 @@ export function ContactForm({
   const [topic, setTopic] = useState<Topic>(initialTopic)
   const [errors, setErrors] = useState<FieldErrors>({})
   const [status, setStatus] = useState<Status>('idle')
+  const [detailsOpen, setDetailsOpen] = useState(false)
+
+  /** An error inside the collapsed section would otherwise point at a field nobody can see. */
+  function showErrors(next: FieldErrors) {
+    setErrors(next)
+    if (next.role || next.website) setDetailsOpen(true)
+  }
   const formRef = useRef<HTMLFormElement>(null)
   const summaryRef = useRef<HTMLDivElement>(null)
   const resultRef = useRef<HTMLDivElement>(null)
@@ -46,7 +53,7 @@ export function ContactForm({
     raw.topic = topic
     const result = validateContact(raw)
     if (!result.ok) {
-      setErrors(result.errors)
+      showErrors(result.errors)
       setStatus('idle')
       requestAnimationFrame(() => summaryRef.current?.focus())
       return
@@ -61,7 +68,7 @@ export function ContactForm({
       })
       if (res.status === 422) {
         const body = (await res.json()) as { errors?: FieldErrors }
-        setErrors(body.errors ?? {})
+        showErrors(body.errors ?? {})
         setStatus('idle')
         requestAnimationFrame(() => summaryRef.current?.focus())
         return
@@ -122,6 +129,7 @@ export function ContactForm({
                   href={`#${k}`}
                   onClick={(e) => {
                     e.preventDefault()
+                    if (k === "role" || k === "website") setDetailsOpen(true)
                     const el = formRef.current?.querySelector<HTMLElement>(k === 'consent' ? 'input[name="consent"]' : `#${k}`)
                     el?.focus()
                     el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
@@ -144,7 +152,7 @@ export function ContactForm({
       ) : null}
 
       <fieldset>
-        <legend className="mb-4 font-display text-lg font-semibold">{f.topicLegend}</legend>
+        <legend className="mb-5 font-display text-lg font-semibold">{f.topicLegend}</legend>
         <div className="grid gap-3 sm:grid-cols-2">
           {topics.map((t) => (
             <label
@@ -177,9 +185,9 @@ export function ContactForm({
         </div>
       </fieldset>
 
-      <fieldset className="flex flex-col gap-5">
-        <legend className="mb-4 font-display text-lg font-semibold">{f.aboutYou}</legend>
-        <div className="grid gap-5 sm:grid-cols-2">
+      <fieldset className="border-t border-hairline pt-10">
+        <legend className="float-left mb-5 w-full font-display text-lg font-semibold">{f.aboutYou}</legend>
+        <div className="clear-both grid gap-5 sm:grid-cols-2">
           <Field id="name" label={f.name} error={err('name')}>
             <input id="name" name="name" autoComplete="name" className={inputClass} {...a11y('name', err('name'))} />
           </Field>
@@ -188,12 +196,6 @@ export function ContactForm({
           </Field>
           <Field id="company" label={f.company} error={err('company')}>
             <input id="company" name="company" autoComplete="organization" className={inputClass} {...a11y('company', err('company'))} />
-          </Field>
-          <Field id="role" label={f.role} optional={f.optional} error={err('role')}>
-            <input id="role" name="role" autoComplete="organization-title" className={inputClass} {...a11y('role', err('role'))} />
-          </Field>
-          <Field id="website" label={f.website} optional={f.optional} error={err('website')}>
-            <input id="website" name="website" type="url" inputMode="url" autoComplete="url" className={inputClass} {...a11y('website', err('website'))} />
           </Field>
           <Field id="language" label={f.language} error={err('language')}>
             <select id="language" name="language" defaultValue={locale} className={inputClass} {...a11y('language', err('language'))}>
@@ -207,9 +209,31 @@ export function ContactForm({
         </div>
       </fieldset>
 
-      <Field id="improve" label={f.improve} hint={f.improveHint} error={err('improve')}>
-        <textarea id="improve" name="improve" rows={5} className={cn(inputClass, 'min-h-36 resize-y py-3')} {...a11y('improve', err('improve'), f.improveHint)} />
-      </Field>
+      <div className="border-t border-hairline pt-10">
+        <Field id="improve" label={f.improve} hint={f.improveHint} error={err('improve')}>
+          <textarea id="improve" name="improve" rows={7} className={cn(inputClass, 'min-h-44 resize-y py-3 leading-relaxed')} {...a11y('improve', err('improve'), f.improveHint)} />
+        </Field>
+      </div>
+
+      {/* Optional fields stay in the DOM when collapsed, so FormData still submits them when filled in. */}
+      <details
+        open={detailsOpen}
+        onToggle={(e) => setDetailsOpen(e.currentTarget.open)}
+        className="group rounded-xl border border-hairline bg-porcelain/60"
+      >
+        <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-xl px-5 font-medium text-ink focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-cobalt/20 [&::-webkit-details-marker]:hidden">
+          {f.additionalDetails}
+          <ChevronDown aria-hidden className="size-5 shrink-0 text-slate transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="grid gap-5 border-t border-hairline px-5 pt-5 pb-6 sm:grid-cols-2">
+          <Field id="role" label={f.role} error={err('role')}>
+            <input id="role" name="role" autoComplete="organization-title" className={inputClass} {...a11y('role', err('role'))} />
+          </Field>
+          <Field id="website" label={f.website} error={err('website')}>
+            <input id="website" name="website" type="url" inputMode="url" autoComplete="url" className={inputClass} {...a11y('website', err('website'))} />
+          </Field>
+        </div>
+      </details>
 
       {/* Honeypot: off-screen, out of the tab order and hidden from assistive tech. */}
       <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
@@ -217,6 +241,7 @@ export function ContactForm({
         <input id="company_url" name="company_url" tabIndex={-1} autoComplete="off" />
       </div>
 
+      <div className="flex flex-col gap-6 border-t border-hairline pt-8">
       <div className="flex flex-col gap-2">
         <label className="flex items-start gap-3 text-ink">
           <input
@@ -241,8 +266,12 @@ export function ContactForm({
         ) : null}
       </div>
 
-      <div>
-        <button type="submit" disabled={status === 'submitting'} aria-busy={status === 'submitting'} className={cn(ctaClass('primary'), 'w-full disabled:opacity-60 sm:w-auto')}>
+        <button
+          type="submit"
+          disabled={status === 'submitting'}
+          aria-busy={status === 'submitting'}
+          className={cn(ctaClass('primary'), 'min-h-13 w-full px-8 text-base disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:self-start')}
+        >
           {status === 'submitting' ? f.submitting : f.submit}
         </button>
       </div>

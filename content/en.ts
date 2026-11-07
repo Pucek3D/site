@@ -89,6 +89,7 @@ export const en = {
         "general": "General inquiry"
       },
       "aboutYou": "About you",
+      "additionalDetails": "Additional details (optional)",
       "name": "Name",
       "email": "Email",
       "company": "Company",

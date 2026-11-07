@@ -91,6 +91,7 @@ export const de: Dictionary = {
         "general": "Allgemeine Anfrage"
       },
       "aboutYou": "Über Sie",
+      "additionalDetails": "Zusätzliche Angaben (optional)",
       "name": "Name",
       "email": "E-Mail",
       "company": "Unternehmen",

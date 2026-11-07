@@ -31,29 +31,31 @@ export default async function ContactPage({ params, searchParams }: Props) {
   const initialTopic = resolveTopic(topic ?? inquiry)
 
   return (
-    <Container className="py-14 md:py-20">
-      <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.contact} navLabel={dict.common.breadcrumbLabel} />
-      <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="flex flex-col gap-6 lg:col-span-5">
+    <>
+      <Container className="pt-14 pb-12 md:pt-20 md:pb-16">
+        <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.contact} navLabel={dict.common.breadcrumbLabel} />
+        <div className="flex max-w-[760px] flex-col gap-6">
           <Eyebrow accent="cobalt">{dict.contact.eyebrow}</Eyebrow>
-          <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.08] sm:text-[2.75rem]">{title}</h1>
+          <h1 className="text-balance text-[2.25rem] font-semibold leading-[1.08] sm:text-[3rem] lg:text-[3.5rem]">{title}</h1>
           <Paragraphs items={dict.contact.intro} className="text-lg" />
-          <p className="mt-2 border-t border-hairline pt-5 text-[0.9375rem] text-slate">
-            {dict.contact.emailLabel}{' '}
-            {siteConfig.email.placeholder ? (
-              // No verified address yet: show the gap instead of a mailto to a fake inbox.
-              <span className="font-medium text-ink">{dict.contact.emailPending}</span>
-            ) : (
+          {/* Only a verified address is shown; an unconfirmed one is hidden rather than announced to visitors. */}
+          {siteConfig.email.placeholder ? null : (
+            <p className="text-[0.9375rem] text-slate">
+              {dict.contact.emailLabel}{' '}
               <a href={`mailto:${siteConfig.email.value}`} className="font-semibold text-cobalt underline underline-offset-4">
                 {siteConfig.email.value}
               </a>
-            )}
-          </p>
+            </p>
+          )}
         </div>
-        <div className="lg:col-span-7">
-          <ContactForm locale={locale} dict={dict} initialTopic={initialTopic} />
-        </div>
-      </div>
-    </Container>
+      </Container>
+      <section className="border-t border-hairline bg-porcelain py-12 md:py-20">
+        <Container>
+          <div className="mx-auto max-w-[820px] rounded-2xl border border-hairline bg-white p-6 sm:p-10 md:p-12">
+            <ContactForm locale={locale} dict={dict} initialTopic={initialTopic} />
+          </div>
+        </Container>
+      </section>
+    </>
   )
 }
