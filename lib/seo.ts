@@ -14,12 +14,12 @@ type PublicPage = Exclude<PageKey, 'privacy' | 'legal'>
 const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: string }>> = {
   en: {
     home: {
-      title: 'ADelier Commerce — Marketplace Growth Partner',
+      title: 'Amazon PPC Management & Training | ADelier Commerce',
       description: 'Expert-led Amazon PPC management, white-label agency support and practical PPC training for brands and agencies.',
     },
     agencies: {
-      title: 'White-Label Amazon PPC for Agencies | ADelier Commerce',
-      description: 'Expand Amazon PPC delivery with white-label campaign management or dedicated specialist support. Your agency keeps its client relationships and agreed control.',
+      title: 'White-Label Amazon PPC Management for Agencies | ADelier',
+      description: 'White-label Amazon PPC outsourcing and dedicated PPC specialist support for agencies. Expand delivery capacity while keeping client relationships and agreed control.',
     },
     brands: {
       title: 'Amazon PPC Management for Brands | ADelier Commerce',
@@ -40,7 +40,7 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
   },
   pl: {
     home: {
-      title: 'ADelier Commerce — Marketplace Growth Partner',
+      title: 'Zarządzanie Amazon PPC i szkolenia | ADelier Commerce',
       description: 'Eksperckie zarządzanie reklamami Amazon PPC, współpraca white-label z agencjami i praktyczne szkolenia PPC dla marek oraz zespołów.',
     },
     agencies: {
@@ -66,7 +66,7 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
   },
   de: {
     home: {
-      title: 'ADelier Commerce — Marketplace Growth Partner',
+      title: 'Amazon PPC Management & Schulungen | ADelier Commerce',
       description: 'Expertengeführtes Amazon-PPC-Management, White-Label-Unterstützung für Agenturen und praxisorientierte PPC-Schulungen für Marken und Teams.',
     },
     agencies: {
@@ -110,6 +110,8 @@ export function seoText(locale: Locale, page: PageKey): { title: string; descrip
 /** Self-referencing canonical per language, reciprocal hreflang + x-default (EN). Query parameters never enter the canonical. */
 export function pageMetadata(locale: Locale, page: PageKey): Metadata {
   const meta = seoText(locale, page)
+  // Keep the previously approved branded social-preview title while the HTML title targets search intent.
+  const socialTitle = page === 'home' ? 'ADelier Commerce — Marketplace Growth Partner' : meta.title
   const canonical = `${siteConfig.url}${href(locale, page)}`
   const noIndex = seoNoIndex() || page === 'privacy' || page === 'legal'
   const image = `${siteConfig.url}/og/adelier-commerce-${locale}.png`
@@ -124,7 +126,7 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
       },
     },
     openGraph: {
-      title: meta.title,
+      title: socialTitle,
       description: meta.description,
       url: canonical,
       siteName: siteConfig.name,
@@ -133,7 +135,7 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
       type: 'website',
       images: [{ url: image, width: 1200, height: 630, alt: ogImageAlt[locale], type: 'image/png' }],
     },
-    twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] },
+    twitter: { card: 'summary_large_image', title: socialTitle, description: meta.description, images: [image] },
     robots: noIndex
       ? { index: false, follow: page === 'privacy' || page === 'legal' ? !seoNoIndex() : false }
       : {
