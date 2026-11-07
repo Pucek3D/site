@@ -17,7 +17,7 @@ export function HomePage({ locale, copy }: { locale: Locale; copy: PartnerCopy }
       <Hero locale={locale} copy={copy} />
       <Autopilot copy={h.autopilot} />
       <WhatWeDo locale={locale} copy={copy} />
-      <FinalCta id="final" title={h.final.title} paragraphs={h.final.paragraphs} cta={h.final.cta} to={href(locale, 'contact')} variant="primary" className="py-14 md:py-16" />
+      <FinalCta id="final" title={h.final.title} paragraphs={h.final.paragraphs} cta={h.final.cta} to={href(locale, 'contact')} variant="primary" className="py-14 md:py-16" titleClassName={locale === 'en' ? 'lg:whitespace-nowrap' : undefined} />
     </>
   )
 }
@@ -106,7 +106,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
               one ends on the same line as the approach paragraph beside it. Stacked on mobile, the gap separates them. */}
           <div className="flex flex-col justify-between gap-5 md:gap-0">
             {copy.paragraphs.slice(0, -1).map((p) => (
-              <p key={p} className="text-pretty text-base leading-relaxed text-slate">
+              <p key={p} className="whitespace-pre-line text-pretty text-base leading-relaxed text-slate">
                 {p}
               </p>
             ))}

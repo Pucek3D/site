@@ -36,8 +36,8 @@ export const en: PartnerCopy = {
     autopilot: {
       title: "Amazon advertising is too important to leave on autopilot.",
       paragraphs: [
-        "Competition is growing. Advertising costs are rising. Margins are under pressure.",
-        "Spending more isn't always the answer. Better decisions are.",
+        "Competition is growing. Advertising costs\nare rising. Margins are under pressure.",
+        "Spending more isn't always the answer.\nBetter decisions are.",
         "At ADelier Commerce, we look beyond individual campaign metrics to understand what drives performance, where budgets are being wasted and where new growth opportunities exist.",
       ],
       closingLine: "Every account is different. Your strategy should be, too.",

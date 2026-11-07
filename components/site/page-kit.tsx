@@ -96,9 +96,9 @@ export function Paragraphs({ items, className, dark = false }: { items: string[]
   )
 }
 
-export function H2({ id, children, dark = false }: { id?: string; children: ReactNode; dark?: boolean }) {
+export function H2({ id, children, dark = false, className }: { id?: string; children: ReactNode; dark?: boolean; className?: string }) {
   return (
-    <h2 id={id} className={cn('text-balance text-3xl font-semibold leading-[1.12] md:text-[2.5rem]', dark ? 'text-white' : 'text-ink')}>
+  <h2 id={id} className={cn('text-balance text-3xl font-semibold leading-[1.12] md:text-[2.5rem]', dark ? 'text-white' : 'text-ink', className)}>
       {children}
     </h2>
   )
@@ -188,9 +188,11 @@ export function FinalCta({
   eyebrow,
   eyebrowAccent = 'cobalt',
   className,
+  titleClassName,
 }: {
   id: string
   eyebrow?: string
+  titleClassName?: string
   /** Training uses Sage; every other page keeps the Cobalt default. */
   eyebrowAccent?: 'cobalt' | 'sage'
   title: string
@@ -217,7 +219,7 @@ export function FinalCta({
             {eyebrow}
           </p>
         ) : null}
-        <H2 id={id} dark>
+        <H2 id={id} dark className={titleClassName}>
           {title}
         </H2>
         <Paragraphs items={paragraphs} className="whitespace-pre-line text-lg" dark />
