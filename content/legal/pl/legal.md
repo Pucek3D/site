@@ -1,6 +1,6 @@
 # Informacje prawne — ADelier Commerce
 ## Podmiot prowadzący serwis
-Serwis https://deliercommerce.com jest prowadzony pod marką **ADelier Commerce** przez **Kornelię Mazurczyk-Wolską**, osobę fizyczną.
+Serwis https://adeliercommerce.com jest prowadzony pod marką **ADelier Commerce** przez **Kornelię Mazurczyk-Wolską**, osobę fizyczną.
 
 **Adres:** ul. Daniszewska 30/12, 03-230 Warszawa, Polska.
 

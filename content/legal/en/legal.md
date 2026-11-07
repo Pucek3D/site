@@ -1,6 +1,6 @@
 # Legal Notice — ADelier Commerce
 ## Website operator
-The website https://deliercommerce.com is operated under the **ADelier Commerce** brand by **Kornelia Mazurczyk-Wolska**, an individual.
+The website https://adeliercommerce.com is operated under the **ADelier Commerce** brand by **Kornelia Mazurczyk-Wolska**, an individual.
 
 **Address:** ul. Daniszewska 30/12, 03-230 Warsaw, Poland.
 

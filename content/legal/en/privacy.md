@@ -1,6 +1,6 @@
 # Privacy Notice — ADelier Commerce
 ## 1. Controller and contact details
-The controller of personal data processed in connection with https://deliercommerce.com is **Kornelia Mazurczyk-Wolska**, an individual operating the website under the **ADelier Commerce** brand, at ul. Daniszewska 30/12, 03-230 Warsaw, Poland. For privacy-related requests, please contact **contact@deliercommerce.com**.
+The controller of personal data processed in connection with https://adeliercommerce.com is **Kornelia Mazurczyk-Wolska**, an individual operating the website under the **ADelier Commerce** brand, at ul. Daniszewska 30/12, 03-230 Warsaw, Poland. For privacy-related requests, please contact **contact@deliercommerce.com**.
 
 ## 2. Data we process
 When you submit an inquiry or contact us, we may process your name, email address, company name, inquiry category, preferred language and message, as well as your role and website address if you choose to provide them. We may also receive other information you voluntarily include in correspondence.

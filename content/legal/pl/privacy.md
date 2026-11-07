@@ -1,6 +1,6 @@
 # Polityka prywatności — ADelier Commerce
 ## 1. Administrator danych i kontakt
-Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze strony https://deliercommerce.com jest **Kornelia Mazurczyk-Wolska**, osoba fizyczna prowadząca serwis pod marką **ADelier Commerce**, adres do kontaktu: ul. Daniszewska 30/12, 03-230 Warszawa, Polska. W sprawach dotyczących danych osobowych można skontaktować się pod adresem **contact@deliercommerce.com**.
+Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze strony https://adeliercommerce.com jest **Kornelia Mazurczyk-Wolska**, osoba fizyczna prowadząca serwis pod marką **ADelier Commerce**, adres do kontaktu: ul. Daniszewska 30/12, 03-230 Warszawa, Polska. W sprawach dotyczących danych osobowych można skontaktować się pod adresem **contact@deliercommerce.com**.
 
 ## 2. Jakie dane przetwarzamy
 W związku z formularzem i korespondencją możemy przetwarzać: imię i nazwisko, adres e-mail, nazwę firmy, kategorię zapytania, preferowany język, treść wiadomości oraz — jeśli podasz je dobrowolnie — stanowisko i adres strony internetowej. W korespondencji możemy otrzymać także inne dane, które samodzielnie przekażesz.

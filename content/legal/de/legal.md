@@ -1,6 +1,6 @@
 # Impressum — ADelier Commerce
 ## Websitebetreiberin
-Die Website https://deliercommerce.com wird unter der Marke **ADelier Commerce** von **Kornelia Mazurczyk-Wolska** als natürliche Person betrieben.
+Die Website https://adeliercommerce.com wird unter der Marke **ADelier Commerce** von **Kornelia Mazurczyk-Wolska** als natürliche Person betrieben.
 
 **Anschrift:** ul. Daniszewska 30/12, 03-230 Warschau, Polen.
 

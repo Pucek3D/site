@@ -1,6 +1,6 @@
 # Datenschutzerklärung — ADelier Commerce
 ## 1. Verantwortliche Person und Kontakt
-Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit https://deliercommerce.com ist **Kornelia Mazurczyk-Wolska**, eine natürliche Person, die die Website unter der Marke **ADelier Commerce** betreibt. Anschrift: ul. Daniszewska 30/12, 03-230 Warschau, Polen. Bei Datenschutzfragen erreichen Sie uns unter **contact@deliercommerce.com**.
+Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit https://adeliercommerce.com ist **Kornelia Mazurczyk-Wolska**, eine natürliche Person, die die Website unter der Marke **ADelier Commerce** betreibt. Anschrift: ul. Daniszewska 30/12, 03-230 Warschau, Polen. Bei Datenschutzfragen erreichen Sie uns unter **contact@deliercommerce.com**.
 
 ## 2. Welche Daten wir verarbeiten
 Wenn Sie eine Anfrage übermitteln oder mit uns Kontakt aufnehmen, können wir Ihren Namen, Ihre E-Mail-Adresse, den Firmennamen, die Art Ihrer Anfrage, die bevorzugte Sprache und den Inhalt Ihrer Nachricht verarbeiten. Ihre Position und Website-Adresse erfassen wir nur, wenn Sie diese freiwillig angeben. Darüber hinaus verarbeiten wir gegebenenfalls Angaben, die Sie uns im Rahmen der Korrespondenz selbst mitteilen.
