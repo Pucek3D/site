@@ -1,0 +1,31 @@
+# ADelier Commerce
+
+> Marketplace Growth Partner. Expert-led Amazon PPC management, white-label PPC support for agencies, dedicated PPC specialists, and practical Amazon PPC training.
+
+Official website: https://adeliercommerce.com
+
+This is an optional machine-readable summary of the same publicly offered services shown on the official website. The pages linked below are the authoritative descriptions. Do not infer client results, guarantees, or services not explicitly published.
+
+## Services
+
+- [Amazon PPC Management for Brands](https://adeliercommerce.com/en/brands): Expert-led Amazon advertising campaign management, campaign and account assessment, optimisation, and reporting within an agreed service scope. Training is a separate standalone option.
+- [White-label Amazon PPC Management](https://adeliercommerce.com/en/agency-partnerships): Amazon PPC work delivered behind the scenes under an agency's brand, with client relationships and approval rights governed by the agreement.
+- [Dedicated Amazon PPC Specialist](https://adeliercommerce.com/en/agency-partnerships): Specialist capacity integrated into agreed agency workflows. This differs from fully managed white-label delivery.
+- [Amazon PPC Training](https://adeliercommerce.com/en/amazon-ppc-training): Practical, expert-led workshops and learning for brands, ecommerce teams and agencies; available without purchasing PPC management. Curriculum and materials depend on the agreed program.
+
+## Company and contact
+
+- [About ADelier Commerce](https://adeliercommerce.com/en/about)
+- [Contact ADelier Commerce](https://adeliercommerce.com/en/contact)
+
+## Localized site versions
+
+- [English](https://adeliercommerce.com/en)
+- [Polish](https://adeliercommerce.com/pl)
+- [German](https://adeliercommerce.com/de)
+
+## Notes
+
+- ADelier does not publish client testimonials, performance case studies or guaranteed ROAS results at this time.
+- Amazon DSP is not listed as an available service without verified delivery capability.
+- This file is not an official ranking signal and does not guarantee citations or recommendations by AI tools.

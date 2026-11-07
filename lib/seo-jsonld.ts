@@ -1,4 +1,5 @@
 import { getDictionary } from '@/content'
+import { getCopy } from '@/content/partner'
 import { href, type Locale, type PageKey } from './i18n'
 import { seoText } from './seo'
 import { siteConfig } from './site-config'
@@ -8,9 +9,9 @@ export type PublicSeoPage = Exclude<PageKey, 'privacy' | 'legal'>
 const orgId = `${siteConfig.url}/#organization`
 const websiteId = `${siteConfig.url}/#website`
 
-function service(id: string, name: string, serviceType: string, url: string, audience: string) {
+function service(id: string, name: string, serviceType: string, url: string, audience: string, description: string) {
   return {
-    '@type': 'Service', '@id': id, name, serviceType, url,
+    '@type': 'Service', '@id': id, name, serviceType, url, description: description.replace(/\s+/g, ' ').trim(),
     provider: { '@id': orgId }, audience: { '@type': 'Audience', audienceType: audience },
   }
 }
@@ -19,6 +20,7 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
   const url = `${siteConfig.url}${href(locale, page)}`
   const meta = seoText(locale, page)
   const dict = getDictionary(locale)
+  const copy = getCopy(locale)
   const pageNames: Record<PublicSeoPage, string> = {
     home: dict.nav.items.home,
     agencies: dict.nav.items.agencies,
@@ -32,8 +34,10 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
     nodes.push({
       '@type': 'Organization', '@id': orgId, name: siteConfig.name,
       url: siteConfig.url, logo: { '@type': 'ImageObject', url: `${siteConfig.url}/og/adelier-logo-square.png`, width: 512, height: 512 },
-      description: siteConfig.descriptor,
-      // Do not add a physical address, phone, sameAs profiles, founder history or business registration data without verification.
+      description: seoText(locale, 'home').description,
+      // The website owner confirmed this mailbox. Do not invent other contact details.
+      ...(siteConfig.email.placeholder ? {} : { email: siteConfig.email.value }),
+      // Do not add a physical address, founder history or business registration data without verification.
     })
     nodes.push({
       '@type': 'WebSite', '@id': websiteId, name: siteConfig.name,
@@ -57,17 +61,17 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
     ...(page === 'home' ? {} : { breadcrumb: { '@id': `${url}#breadcrumb` } }),
   }
   if (page === 'brands') {
-    nodes.push(service(`${url}#ppc-management`, 'Amazon PPC Management', 'Amazon PPC campaign management', url, 'Consumer brands and e-commerce teams'))
-    nodes.push(service(`${url}#ppc-training`, 'Amazon PPC Training', 'Practical Amazon PPC training', url, 'Brand and e-commerce teams'))
+    nodes.push(service(`${url}#ppc-management`, 'Amazon PPC Management', 'Amazon PPC campaign management', url, 'Consumer brands and e-commerce teams', copy.brands.ppc.paragraphs.join(' ')))
+    nodes.push(service(`${url}#ppc-training`, 'Amazon PPC Training', 'Practical Amazon PPC training', url, 'Brand and e-commerce teams', copy.brands.training.paragraphs.join(' ')))
     webPage.mainEntity = [{ '@id': `${url}#ppc-management` }, { '@id': `${url}#ppc-training` }]
   }
   if (page === 'agencies') {
-    nodes.push(service(`${url}#white-label-ppc`, 'White-label PPC Management', 'White-label Amazon PPC campaign delivery', url, 'Marketing and media agencies'))
-    nodes.push(service(`${url}#dedicated-specialist`, 'Dedicated PPC Specialist', 'Dedicated Amazon PPC specialist capacity', url, 'Marketing and media agencies'))
+    nodes.push(service(`${url}#white-label-ppc`, 'White-label PPC Management', 'White-label Amazon PPC campaign delivery', url, 'Marketing and media agencies', copy.agencies.ways.models[0].paragraphs.join(' ')))
+    nodes.push(service(`${url}#dedicated-specialist`, 'Dedicated PPC Specialist', 'Dedicated Amazon PPC specialist capacity', url, 'Marketing and media agencies', copy.agencies.ways.models[1].paragraphs.join(' ')))
     webPage.mainEntity = [{ '@id': `${url}#white-label-ppc` }, { '@id': `${url}#dedicated-specialist` }]
   }
   if (page === 'training') {
-    nodes.push(service(`${url}#training`, 'Amazon PPC Training', 'Practical Amazon PPC training', url, 'Brand and agency teams'))
+    nodes.push(service(`${url}#training`, 'Amazon PPC Training', 'Practical Amazon PPC training', url, 'Brand and agency teams', [...copy.training.hero.paragraphs, copy.training.hero.standalone].join(' ')))
     webPage.mainEntity = { '@id': `${url}#training` }
   }
   nodes.push(webPage)
