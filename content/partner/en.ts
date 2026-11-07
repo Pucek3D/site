@@ -23,7 +23,7 @@ export const en: PartnerCopy = {
       eyebrow: "Amazon advertising, marketplace expertise and applied training",
       title: "Improve Amazon performance. Build the capability\nbehind it.",
       paragraphs: [
-        "Expert Amazon PPC management, data-driven optimisation\nand practical training for consumer brands and the agencies that\nserve them.",
+        "Expert Amazon PPC management, data-driven optimisation\nand practical training for consumer brands and the agencies\nthat serve them.",
         "We turn campaign data into smarter decisions, stronger\nperformance and skills that last.",
       ],
       primaryCta: "Let's talk",
@@ -223,7 +223,7 @@ export const en: PartnerCopy = {
       label: "PPC Training for Brand Teams",
       title: "Prefer to manage advertising in\u2011house?\nWe'll help you build the skills.",
       paragraphs: [
-        "Not every business wants to hire an agency. We train brand, e-commerce and marketing teams to manage Amazon PPC confidently\nand make better advertising decisions.",
+        "Not every business wants to hire an agency. We train brand, e-commerce\nand marketing teams to manage Amazon PPC confidently and make better advertising decisions.",
         "Training is available independently or alongside our management services.",
       ],
       listLabel: "Depending on your needs, it can include:",
@@ -286,7 +286,7 @@ export const en: PartnerCopy = {
           name: "Dedicated PPC specialist",
           summary: "A named specialist working within your team.",
           paragraphs: [
-            "Get dedicated Amazon PPC support from a Poland-based specialist integrated into your agency's workflows, tools\nand reporting structure.",
+            "Get dedicated Amazon PPC support from a Poland-based\nspecialist integrated into your agency's workflows, tools and reporting structure.",
             "Responsibilities, availability, task allocation, approvals and escalation processes are agreed in advance, giving you\nadditional capacity while maintaining control over delivery.",
           ],
           listLabel: "What it can give your agency:",
@@ -364,7 +364,7 @@ export const en: PartnerCopy = {
     final: {
       title: "Ready to expand your Amazon PPC capabilities?",
       paragraphs: [
-        "Whether you need white-label campaign management or a dedicated specialist, ADelier can help you scale your Amazon offering with flexibility and confidence.",
+        "Whether you need white-label campaign management or a dedicated specialist,\nADelier can help you scale your Amazon offering with flexibility and confidence.",
       ],
       cta: "Discuss an agency partnership",
       trainingLink: "Or explore PPC training for your team",
@@ -455,12 +455,12 @@ export const en: PartnerCopy = {
 
   about: {
     hero: {
-      title: "Analytical Amazon advertising, run by named experts.",
-      subtitle: "We show the data, the reasoning and the next decision, so you can check every recommendation.",
+      title: "Analytical Amazon advertising,\nrun by named experts.",
+      subtitle: "We show the data, the reasoning and the next decision,\nso you can check every recommendation.",
       paragraphs: [],
     },
     who: {
-      body: "ADelier Commerce is a Poland-based marketplace partner working with consumer brands and marketing agencies internationally. We focus on Amazon advertising, performance analysis and practical PPC training. A named expert owns each account and its recommendations.",
+      body: "ADelier Commerce is a Poland-based marketplace partner working with consumer brands and marketing agencies internationally. We focus on Amazon advertising, performance analysis and practical PPC training. A named expert owns each account\nand its recommendations.",
     },
     // TODO owner: confirm every statement with the founders and check employer consent before
     // publishing; use past tense and no employer names. Toggle: SHOW_FOUNDER_EXPERIENCE in lib/config.ts.

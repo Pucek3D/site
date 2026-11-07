@@ -55,10 +55,20 @@ export function PageHero({
         <div className={cn('grid items-center gap-12', image && 'lg:grid-cols-12')}>
           <div className={cn('flex flex-col gap-6', image ? 'lg:col-span-7' : 'max-w-3xl')}>
             {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-            <h1 className="text-balance text-[2.5rem] font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-[3.5rem]">
-              {title}
+            {/* An authored "\n" fixes the desktop lines, so each one must stay whole there. */}
+            <h1
+              className={cn(
+                'text-balance text-[2.5rem] font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-[3.5rem]',
+                title.includes('\n') && 'lg:whitespace-nowrap',
+              )}
+            >
+              <Lines text={title} />
             </h1>
-            {subtitle ? <p className="text-pretty text-xl font-medium leading-snug text-cobalt">{subtitle}</p> : null}
+            {subtitle ? (
+              <p className="text-pretty text-xl font-medium leading-snug text-cobalt">
+                <Lines text={subtitle} />
+              </p>
+            ) : null}
             <Paragraphs items={paragraphs} className="text-lg" />
             {closingLine ? <p className="text-pretty text-lg font-semibold text-ink">{closingLine}</p> : null}
             {actions ? <div className="mt-2 flex flex-wrap gap-3">{actions}</div> : null}

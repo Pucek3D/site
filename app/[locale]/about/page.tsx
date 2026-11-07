@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs, H2, PageHero, PointGrid } from '@/components/site/page-kit'
 import { CtaLink, Eyebrow, Section } from '@/components/site/primitives'
+import { Lines } from '@/components/site/typeset'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { SHOW_FOUNDER_EXPERIENCE } from '@/lib/config'
@@ -32,7 +33,9 @@ export default async function AboutPage({ params }: Props) {
       />
 
       <Section tone={tone(0)} className="py-10 md:py-12">
-        <p className="max-w-3xl text-pretty text-lg leading-relaxed text-ink">{a.who.body}</p>
+        <p className="max-w-3xl text-pretty text-lg leading-relaxed text-ink">
+          <Lines text={a.who.body} />
+        </p>
       </Section>
 
       {SHOW_FOUNDER_EXPERIENCE ? (
@@ -95,25 +98,6 @@ export default async function AboutPage({ params }: Props) {
             ))}
           </tbody>
         </table>
-      </Section>
-
-      <Section tone={tone(3 + offset)}>
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div aria-labelledby="dont" role="region">
-            <Eyebrow as="h2" id="dont" accent="cobalt">{a.dont.title}</Eyebrow>
-            <ul className="mt-6 flex list-disc flex-col gap-3 pl-5 text-lg leading-relaxed text-ink marker:text-sage">
-              {a.dont.items.map((it) => (
-                <li key={it} className="pl-1">
-                  {it}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div aria-labelledby="operating" role="region">
-            <Eyebrow as="h2" id="operating" accent="cobalt">{a.operating.title}</Eyebrow>
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-ink">{a.operating.body}</p>
-          </div>
-        </div>
       </Section>
 
       <Section tone="ink" labelledBy="about-cta">
