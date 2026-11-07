@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Lets a verification build run without overwriting the dev server's .next output.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   images: {
     unoptimized: true,
   },
@@ -24,7 +26,7 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy-Report-Only',
             value:
-              "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com",
+              "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'",
           },
         ],
       },

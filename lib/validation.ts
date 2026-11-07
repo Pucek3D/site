@@ -10,7 +10,7 @@ export type Topic = (typeof topics)[number]
 
 export const formLanguages = ['en', 'pl', 'de'] as const
 
-export type ErrorCode = 'required' | 'email' | 'url' | 'consent' | 'tooShort' | 'tooLong'
+export type ErrorCode = 'required' | 'email' | 'url' | 'tooShort' | 'tooLong'
 
 const text = (max: number) => z.string().trim().min(1, 'required').max(max, 'tooLong')
 const optionalText = (max: number) => z.string().trim().max(max, 'tooLong').optional().default('')
@@ -33,7 +33,9 @@ export const contactSchema = z
       .default(''),
     language: choice(formLanguages),
     improve: z.string().trim().min(1, 'required').min(20, 'tooShort').max(3000, 'tooLong'),
-    consent: z.literal(true, { error: 'consent' }),
+    // No consent field: answering an inquiry rests on GDPR Art. 6(1)(b)/(f), as the
+    // privacy notice states. The form shows an information notice instead of asking
+    // for a consent the processing does not depend on.
     // Honeypot: real people never see or fill this.
     company_url: z.string().max(0).optional().default(''),
 
@@ -52,7 +54,7 @@ export function validateContact(
     const key = issue.path[0] as keyof ContactInput
     if (key && !errors[key]) {
       const code = issue.message as ErrorCode
-      errors[key] = (['required', 'email', 'url', 'consent', 'tooShort', 'tooLong'] as const).includes(code)
+      errors[key] = (['required', 'email', 'url', 'tooShort', 'tooLong'] as const).includes(code)
         ? code
         : 'required'
     }

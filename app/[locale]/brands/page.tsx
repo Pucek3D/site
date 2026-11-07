@@ -11,7 +11,7 @@ import { pageMetadata } from '@/lib/seo'
 type Props = { params: Promise<{ locale: Locale }> }
 
 /** The SAME asset the homepage "What We Do → Amazon PPC Management" tile uses (components/site/home.tsx). */
-const PPC_PHOTO = { src: '/images/svc/ppc.png', focus: '50% 45%' }
+const PPC_PHOTO = { src: '/images/svc/ppc.webp', focus: '50% 45%' }
 
 /** The SAME asset + focal point as the homepage "What We Do → Training" tile. */
 const TRAINING_PHOTO = { src: '/images/svc/training-team.png', focus: '55% 40%' }

@@ -8,11 +8,11 @@ export const pl: Dictionary = {
     },
     "privacy": {
       "title": "Polityka prywatności | ADelier Commerce",
-      "description": "Jak ADelier Commerce przetwarza dane osobowe. Wersja robocza do uzupełnienia przez właściciela i weryfikacji prawnej."
+      "description": "Jak ADelier Commerce przetwarza dane osobowe przekazane przez tę stronę i e-mailem."
     },
     "legal": {
       "title": "Informacje prawne | ADelier Commerce",
-      "description": "Nota prawna i dane firmy ADelier Commerce. Wersja robocza do uzupełnienia przez właściciela."
+      "description": "Informacje o operatorze strony i dane kontaktowe ADelier Commerce."
     }
   },
   "notFound": {
@@ -106,9 +106,9 @@ export const pl: Dictionary = {
       "improve": "Opowiedz nam o swoich potrzebach",
       "improveHint": "Napisz, czego szukasz, i dodaj najważniejszy kontekst.",
       "optional": "opcjonalnie",
-      "consentBefore": "Wyrażam zgodę na wykorzystanie tych danych przez ADelier Commerce w celu odpowiedzi na moje zapytanie, zgodnie z",
-      "consentLink": "polityką prywatności",
-      "consentAfter": ".",
+      "privacyBefore": "Przekazane dane wykorzystamy wyłącznie, aby odpowiedzieć na Twoje zapytanie. Więcej informacji znajdziesz w",
+      "privacyLink": "polityce prywatności",
+      "privacyAfter": ".",
       "honeypot": "Pozostaw to pole puste",
       "submit": "Wyślij wiadomość",
       "submitting": "Wysyłanie…",
@@ -116,12 +116,11 @@ export const pl: Dictionary = {
       "successTitle": "Dziękujemy za kontakt.",
       "success": "Otrzymaliśmy Twoją wiadomość i wkrótce się odezwiemy.",
       "failureTitle": "Nie udało się wysłać wiadomości.",
-      "failure": "Spróbuj ponownie za chwilę. Jeśli problem się powtórzy, napisz do nas e-mailem.",
+      "failure": "Spróbuj ponownie. Jeśli problem się powtórzy, napisz na contact@deliercommerce.com.",
       "errors": {
         "required": "To pole jest wymagane.",
         "email": "Podaj poprawny adres e-mail.",
         "url": "Podaj poprawny adres strony, na przykład example.com.",
-        "consent": "Zaznacz zgodę, abyśmy mogli odpowiedzieć na Twoje zapytanie.",
         "tooShort": "Dodaj więcej szczegółów — minimum 20 znaków.",
         "tooLong": "Ten wpis jest za długi."
       },
@@ -132,108 +131,10 @@ export const pl: Dictionary = {
     }
   },
   "privacy": {
-    "eyebrow": "Prywatność",
-    "title": "Polityka prywatności",
-    "notice": "Wyłącznie struktura robocza. Przed publikacją stronę musi uzupełnić właściciel i zweryfikować prawnik. Pola w nawiasach to miejsca na dane, a nie stwierdzenia faktów.",
-    "sections": [
-      {
-        "heading": "Administrator danych",
-        "body": "Kto odpowiada za dane osobowe przetwarzane za pośrednictwem tej strony.",
-        "fields": [
-          "dataController",
-          "address"
-        ]
-      },
-      {
-        "heading": "Jakie dane zbieramy",
-        "body": "Dane przesłane przez formularz kontaktowy: imię i nazwisko, adres e-mail, firmę, stanowisko, stronę internetową, preferowany język i informacje, którymi zdecydujesz się podzielić.",
-        "fields": []
-      },
-      {
-        "heading": "W jakim celu",
-        "body": "Aby odpowiedzieć na zapytanie i przygotować rekomendowany kolejny krok. Podstawa prawna do potwierdzenia przez prawnika.",
-        "fields": []
-      },
-      {
-        "heading": "Okres przechowywania",
-        "body": "Jak długo przechowujemy dane z zapytań.",
-        "fields": [
-          "retention"
-        ]
-      },
-      {
-        "heading": "Podmioty przetwarzające i transfery",
-        "body": "Dostawcy usług przetwarzający dane w naszym imieniu oraz ewentualne transfery poza EOG.",
-        "fields": [
-          "processors"
-        ]
-      },
-      {
-        "heading": "Twoje prawa",
-        "body": "Dostęp, sprostowanie, usunięcie, ograniczenie, przenoszenie, sprzeciw oraz prawo do skargi do organu nadzorczego.",
-        "fields": [
-          "privacyContact"
-        ]
-      },
-      {
-        "heading": "Pliki cookie i analityka",
-        "body": "Strona nie ustawia obecnie żadnych opcjonalnych plików cookie i nie prowadzi analityki. Jeśli to się zmieni, przed aktywacją pojawi się możliwość wyrażenia zgody.",
-        "fields": []
-      }
-    ]
+    "eyebrow": "Prywatność"
   },
   "legal": {
     "eyebrow": "Informacje prawne",
-    "title": "Informacje prawne",
-    "notice": "Wyłącznie struktura robocza. Przed publikacją właściciel musi uzupełnić każde pole w nawiasie. Żadne dane firmy na tej stronie nie zostały wymyślone.",
-    "sections": [
-      {
-        "heading": "Firma",
-        "body": "Podmiot prawny prowadzący tę stronę.",
-        "fields": [
-          "companyName",
-          "address"
-        ]
-      },
-      {
-        "heading": "Rejestracja",
-        "body": "Rejestr i identyfikatory podatkowe.",
-        "fields": [
-          "registrationNumber",
-          "vatNumber"
-        ]
-      },
-      {
-        "heading": "Reprezentacja",
-        "body": "Osoba upoważniona do reprezentowania firmy.",
-        "fields": [
-          "representative"
-        ]
-      },
-      {
-        "heading": "Kontakt",
-        "body": "Jak skontaktować się z firmą.",
-        "fields": [
-          "email"
-        ]
-      },
-      {
-        "heading": "Znaki towarowe",
-        "body": "Amazon i powiązane oznaczenia są znakami towarowymi Amazon.com, Inc. lub jej podmiotów powiązanych. ADelier Commerce nie jest powiązana z Amazon ani przez niego rekomendowana.",
-        "fields": []
-      }
-    ],
-    "fieldLabels": {
-      "dataController": "Administrator danych",
-      "address": "Adres siedziby",
-      "retention": "Okres przechowywania",
-      "processors": "Lista podmiotów przetwarzających",
-      "privacyContact": "Kontakt w sprawach prywatności",
-      "companyName": "Nazwa firmy",
-      "registrationNumber": "Numer rejestrowy",
-      "vatNumber": "NIP",
-      "representative": "Osoba upoważniona",
-      "email": "E-mail"
-    }
+    "addressWithheld": "[adres ukryty do czasu zatwierdzenia publikacji]"
   }
 }

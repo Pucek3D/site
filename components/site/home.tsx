@@ -31,7 +31,7 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
       {/* Photo bleeds to the right viewport edge on desktop; the text column never sits under it. */}
       <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%]">
   <Image
-          src="/images/hero-analyst.png"
+          src="/images/hero-analyst.webp"
           alt={copy.homeImageAlts.hero}
           fill
           priority
@@ -125,10 +125,10 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
 
 /* One tile per buyer route, in the content's own order: Agencies, Brands, Training. */
 const services = [
-  { art: '/images/svc/white-label-handshake.png', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
-  { art: '/images/svc/ppc.png', alt: 'brands', to: 'brands' },
+  { art: '/images/svc/white-label-handshake.webp', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
+  { art: '/images/svc/ppc.webp', alt: 'brands', to: 'brands' },
   { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 14%', to: 'training' },
-] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; zoom?: number; to: PageKey }[]
+] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; to: PageKey }[]
 
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
 const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
@@ -177,8 +177,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               art: v.art,
               alt: copy.homeImageAlts[v.alt],
               focus: 'focus' in v ? v.focus : undefined,
-              zoom: 'zoom' in v ? v.zoom : undefined,
-              accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
+                    accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
               to: href(locale, v.to, v.to === 'brands' ? '#ppc' : ''),
               labels: TILE_LABELS[locale][i],
               imageLeft: row % 2 === 1,

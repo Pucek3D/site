@@ -49,7 +49,6 @@ export function ContactForm({
     e.preventDefault()
     const fd = new FormData(e.currentTarget)
     const raw: Record<string, unknown> = Object.fromEntries(fd.entries())
-    raw.consent = fd.get('consent') === 'on'
     raw.topic = topic
     const result = validateContact(raw)
     if (!result.ok) {
@@ -95,7 +94,6 @@ export function ContactForm({
 
   const errorKeys = Object.keys(errors) as (keyof FieldErrors)[]
   const fieldLabel = (k: keyof FieldErrors): string => {
-    if (k === 'consent') return f.consentLink
     const labels: Partial<Record<keyof FieldErrors, string>> = {
       name: f.name,
       email: f.email,
@@ -130,13 +128,13 @@ export function ContactForm({
                   onClick={(e) => {
                     e.preventDefault()
                     if (k === "role" || k === "website") setDetailsOpen(true)
-                    const el = formRef.current?.querySelector<HTMLElement>(k === 'consent' ? 'input[name="consent"]' : `#${k}`)
+                    const el = formRef.current?.querySelector<HTMLElement>(`#${k}`)
                     el?.focus()
                     el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
                   }}
                   className="text-sm font-medium text-destructive underline underline-offset-4 hover:text-ink"
                 >
-                  {fieldLabel(k)}: {k === 'consent' ? f.errors[errors.consent!] : err(k)}
+                  {fieldLabel(k)}: {err(k)}
                 </a>
               </li>
             ))}
@@ -242,29 +240,13 @@ export function ContactForm({
       </div>
 
       <div className="flex flex-col gap-6 border-t border-hairline pt-8">
-      <div className="flex flex-col gap-2">
-        <label className="flex items-start gap-3 text-ink">
-          <input
-            type="checkbox"
-            name="consent"
-            aria-invalid={errors.consent ? true : undefined}
-            aria-describedby={errors.consent ? 'consent-error' : undefined}
-            className="mt-1 size-5 shrink-0 accent-[var(--color-cobalt)]"
-          />
-          <span className="leading-relaxed">
-            {f.consentBefore}{' '}
-            <Link href={href(locale, 'privacy')} className="font-semibold text-cobalt underline underline-offset-4">
-              {f.consentLink}
-            </Link>
-            {f.consentAfter}
-          </span>
-        </label>
-        {errors.consent ? (
-          <p id="consent-error" className="text-sm font-medium text-destructive">
-            {f.errors[errors.consent]}
-          </p>
-        ) : null}
-      </div>
+        <p id="privacy-notice" className="max-w-2xl text-pretty text-sm leading-relaxed text-slate">
+          {f.privacyBefore}{' '}
+          <Link href={href(locale, 'privacy')} className="font-semibold text-cobalt underline underline-offset-4">
+            {f.privacyLink}
+          </Link>
+          {f.privacyAfter}
+        </p>
 
         <button
           type="submit"

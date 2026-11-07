@@ -15,7 +15,7 @@ type Props = { params: Promise<{ locale: Locale }> }
  * (components/site/home.tsx), at the same focal point. 1536×1024, so the frame
  * is 3:2 — never the old portrait box, which cropped the handshake out.
  */
-const AGENCY_PHOTO = { src: '/images/svc/white-label-handshake.png', width: 1536, height: 1024, focus: '58% 45%' }
+const AGENCY_PHOTO = { src: '/images/svc/white-label-handshake.webp', width: 1536, height: 1024, focus: '58% 45%' }
 
 const contactAgency = (locale: Locale) => href(locale, 'contact', '?topic=agency')
 
