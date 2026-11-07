@@ -105,10 +105,10 @@ function ServiceTile({
       className={cn(
         'service-tile group relative flex flex-col gap-3 overflow-hidden rounded-3xl p-3 ring-1 ring-[var(--tile-rule)]',
         imageLeft ? 'md:flex-row-reverse' : 'md:flex-row',
-        'md:min-h-[22rem]',
+        'md:min-h-[17rem]',
       )}
     >
-      <div className="flex min-w-0 flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-7 md:pt-8 lg:px-10">
+      <div className="flex min-w-0 flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-5 md:pt-6 lg:px-10">
         <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.08em] text-[var(--tile-body)] sm:tracking-[0.14em]">
           {number ? (
             <>
@@ -167,7 +167,7 @@ function ServiceTile({
           </div>
         ) : null}
 
-        <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-7">
+        <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-5">
           {/* Brand fills keep AA on both grounds (white on cobalt 5.0:1, ink on sage 7.1:1), so the
               primary action reads the same in every state; only the focus ring offset follows the card. */}
           {to ? (
@@ -201,7 +201,7 @@ function ServiceTile({
 
       <div
         className={cn(
-          'relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[20rem] md:flex-1',
+          'relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[15rem] md:flex-1',
           imageLeft ? 'md:rounded-tr-[10rem]' : 'md:rounded-tl-[10rem]',
         )}
       >
