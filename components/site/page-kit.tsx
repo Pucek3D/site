@@ -176,6 +176,7 @@ export function FinalCta({
   secondary,
   eyebrow,
   eyebrowAccent = 'cobalt',
+  className,
 }: {
   id: string
   eyebrow?: string
@@ -188,9 +189,11 @@ export function FinalCta({
   /** Defaults to Sage so existing pages keep their button; agency/brand pages pass 'primary' (Cobalt). */
   variant?: 'sage' | 'primary'
   secondary?: { label: string; to: string }
+  /** Overrides the band's vertical padding (the homepage uses a tighter band). */
+  className?: string
 }) {
   return (
-    <Section tone="ink" labelledBy={id}>
+    <Section tone="ink" labelledBy={id} className={className}>
       <div className="flex max-w-3xl flex-col gap-6">
         {eyebrow ? (
           <p
@@ -206,7 +209,7 @@ export function FinalCta({
         <H2 id={id} dark>
           {title}
         </H2>
-        <Paragraphs items={paragraphs} className="text-lg" dark />
+        <Paragraphs items={paragraphs} className="whitespace-pre-line text-lg" dark />
         <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
           <CtaLink href={to} variant={variant}>
             {cta}

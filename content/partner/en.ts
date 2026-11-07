@@ -127,7 +127,7 @@ export const en: PartnerCopy = {
     final: {
       title: "Ready to make more of Amazon advertising?",
       paragraphs: [
-        "Whether you're growing your brand or looking for a trusted Amazon PPC partner, let's explore how we can work together.",
+        "Whether you're growing your brand or looking for a trusted Amazon PPC partner,\nlet's explore how we can work together.",
       ],
       cta: "Let's talk",
     },
