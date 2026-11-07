@@ -40,8 +40,8 @@ export const pagePaths: Record<PageKey, string> = {
 export const mainNavKeys = ['home', 'brands', 'agencies', 'about', 'contact'] as const satisfies readonly PageKey[]
 export type MainNavKey = (typeof mainNavKeys)[number]
 
-/** The Polish site does not advertise For Brands in navigation; the /pl/brands route itself stays live. */
-const hiddenNavKeys: Partial<Record<Locale, readonly MainNavKey[]>> = { pl: ['brands'] }
+/** Per-locale exceptions to the main navigation. Empty: every locale shows every item. */
+const hiddenNavKeys: Partial<Record<Locale, readonly MainNavKey[]>> = {}
 
 export function navKeysFor(locale: Locale): MainNavKey[] {
   const hidden = hiddenNavKeys[locale] ?? []
