@@ -1,6 +1,6 @@
 # Polityka prywatności — ADelier Commerce
 ## 1. Administrator danych i kontakt
-Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze strony https://adeliercommerce.com jest **Kornelia Mazurczyk-Wolska**, osoba fizyczna prowadząca serwis pod marką **ADelier Commerce**, adres do kontaktu: ul. Daniszewska 30/12, 03-230 Warszawa, Polska. W sprawach dotyczących danych osobowych można skontaktować się pod adresem **contact@deliercommerce.com**.
+Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze strony https://adeliercommerce.com jest **Kornelia Mazurczyk-Wolska**, osoba fizyczna prowadząca serwis pod marką **ADelier Commerce**, adres do kontaktu: ul. Daniszewska 30/12, 03-230 Warszawa, Polska. W sprawach dotyczących danych osobowych można skontaktować się pod adresem **contact@adeliercommerce.com**.
 
 ## 2. Jakie dane przetwarzamy
 W związku z formularzem i korespondencją możemy przetwarzać: imię i nazwisko, adres e-mail, nazwę firmy, kategorię zapytania, preferowany język, treść wiadomości oraz — jeśli podasz je dobrowolnie — stanowisko i adres strony internetowej. W korespondencji możemy otrzymać także inne dane, które samodzielnie przekażesz.
@@ -23,12 +23,12 @@ Kopie zapasowe i dzienniki techniczne mogą mieć oddzielne cykle przechowywania
 ## 6. Odbiorcy danych i usługi techniczne
 Korzystamy z następujących dostawców usług, którzy przetwarzają dane w naszym imieniu wyłącznie w zakresie niezbędnym do świadczenia swoich usług:
 
-- **VH.PL** hostuje stronę, zgodnie z opisem w punkcie 2, oraz zapewnia skrzynkę pocztową contact@deliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
+- **VH.PL** hostuje stronę, zgodnie z opisem w punkcie 2, oraz zapewnia skrzynkę pocztową contact@adeliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
 
 Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
-Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Informacje możesz uzyskać pod adresem **contact@deliercommerce.com**.
+Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Informacje możesz uzyskać pod adresem **contact@adeliercommerce.com**.
 
 ## 8. Analityka, pliki cookies i newsletter
 Obecnie nie korzystamy z narzędzi analitycznych ani pikseli reklamowych i nie oferujemy zapisu do newslettera. Nie stosujemy plików cookies ani podobnych technologii w celach analitycznych lub marketingowych. Funkcjonowanie serwisu i jego bezpieczeństwo mogą wiązać się z przetwarzaniem informacji technicznych przez dostawcę hostingu, w tym logów serwerowych opisanych w niniejszej polityce. Przed uruchomieniem technologii wymagających uprzedniej zgody wdrożymy odpowiedni mechanizm jej uzyskania.
@@ -39,7 +39,7 @@ Newsletter nie jest obecnie dostępny. W przypadku jego uruchomienia pojawią si
 Twoje dane nie są wykorzystywane do zautomatyzowanego podejmowania decyzji ani profilowania wywołującego wobec Ciebie skutki prawne lub w podobny sposób istotnie na Ciebie wpływającego.
 
 ## 10. Prawa osoby, której dane dotyczą
-W przypadkach przewidzianych w RODO przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie. Możesz skontaktować się z administratorem pod adresem **contact@deliercommerce.com**. Masz także prawo złożenia skargi do **Prezesa Urzędu Ochrony Danych Osobowych** (www.uodo.gov.pl).
+W przypadkach przewidzianych w RODO przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie. Możesz skontaktować się z administratorem pod adresem **contact@adeliercommerce.com**. Masz także prawo złożenia skargi do **Prezesa Urzędu Ochrony Danych Osobowych** (www.uodo.gov.pl).
 
 Jeżeli przebywasz w Wielkiej Brytanii, przysługują Ci odpowiadające im prawa na podstawie UK GDPR, a także prawo złożenia skargi do **Information Commissioner's Office (ICO)** (www.ico.org.uk).
 

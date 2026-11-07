@@ -18,7 +18,7 @@ days waits for the next review, so the oldest it can get is about 52 days
 (21 days plus one month), which keeps inquiries within the published 60-day
 maximum **provided the review is done on schedule**.
 
-1. In the mailbox `contact@deliercommerce.com`, identify website inquiries that
+1. In the mailbox `contact@adeliercommerce.com`, identify website inquiries that
    did not lead to a business relationship and whose correspondence has ended.
 2. Select the closed threads whose last message is **21 days old or more**.
 3. Delete each thread, including relevant messages, attachments and your own
@@ -66,6 +66,6 @@ deleted inquiries.
 
 ### Requests from the person concerned
 
-A deletion or access request sent to `contact@deliercommerce.com` is answered
+A deletion or access request sent to `contact@adeliercommerce.com` is answered
 within one month. Delete as in steps 3-5 above unless an exception applies, and
 reply confirming what was deleted.

@@ -16,7 +16,7 @@ export const siteConfig = {
   /** The official brand descriptor. A brand identifier, so it stays in English in every locale (home title, JSON-LD). */
   descriptor: 'Marketplace Growth Partner',
   url: (process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_URL).replace(/\/$/, ''),
-  email: { value: 'contact@deliercommerce.com', placeholder: false } as Placeholder,
+  email: { value: 'contact@adeliercommerce.com', placeholder: false } as Placeholder,
   linkedin: { value: 'https://www.linkedin.com/company/adelier-commerce/', placeholder: false } as Placeholder,
   operator: {
     /** Natural person operating the site and acting as data controller. */

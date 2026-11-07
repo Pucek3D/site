@@ -26,7 +26,7 @@ const smtpReady = smtpSet.length === smtpKeys.length
 if (!smtpReady && !env.CONTACT_WEBHOOK_URL) {
   blockers.push(
     'No contact delivery method is configured (SMTP_* or CONTACT_WEBHOOK_URL): the form shows its failure state for every inquiry. ' +
-      'Configure one and confirm a real message reaches contact@deliercommerce.com.',
+      'Configure one and confirm a real message reaches contact@adeliercommerce.com.',
   )
 }
 if (!smtpReady && env.CONTACT_WEBHOOK_URL) {

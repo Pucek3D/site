@@ -4,7 +4,7 @@ Die Website https://adeliercommerce.com wird unter der Marke **ADelier Commerce*
 
 **Anschrift:** ul. Daniszewska 30/12, 03-230 Warschau, Polen.
 
-**E-Mail:** contact@deliercommerce.com.
+**E-Mail:** contact@adeliercommerce.com.
 
 ## Inhalte der Website
 Die Website informiert über Dienstleistungen im Bereich Amazon PPC, die Zusammenarbeit mit Agenturen und Schulungen. Die Informationen dienen der Darstellung der Leistungen und stellen keine Garantie bestimmter wirtschaftlicher Ergebnisse dar.
@@ -13,5 +13,5 @@ Die Website informiert über Dienstleistungen im Bereich Amazon PPC, die Zusamme
 Amazon und die damit verbundenen Kennzeichen sind Marken von Amazon.com, Inc. oder verbundenen Unternehmen. ADelier Commerce ist unabhängig, gehört nicht zu Amazon und wird von Amazon weder gesponsert noch offiziell empfohlen.
 
 ## Kontakt und Datenschutz
-Für Anfragen zur Website und zu den Leistungen: **contact@deliercommerce.com**. Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer Datenschutzerklärung.
+Für Anfragen zur Website und zu den Leistungen: **contact@adeliercommerce.com**. Informationen zur Verarbeitung personenbezogener Daten finden Sie in unserer Datenschutzerklärung.
 

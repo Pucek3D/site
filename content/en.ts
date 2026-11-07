@@ -114,7 +114,7 @@ export const en = {
       "successTitle": "Thanks for getting in touch.",
       "success": "We've received your inquiry and will be in touch.",
       "failureTitle": "Your message couldn't be sent.",
-      "failure": "Please try again. If the problem persists, email us at contact@deliercommerce.com.",
+      "failure": "Please try again. If the problem persists, email us at contact@adeliercommerce.com.",
       "errors": {
         "required": "This field is required.",
         "email": "Enter a valid email address.",

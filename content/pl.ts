@@ -116,7 +116,7 @@ export const pl: Dictionary = {
       "successTitle": "Dziękujemy za kontakt.",
       "success": "Otrzymaliśmy Twoją wiadomość i wkrótce się odezwiemy.",
       "failureTitle": "Nie udało się wysłać wiadomości.",
-      "failure": "Spróbuj ponownie. Jeśli problem się powtórzy, napisz na contact@deliercommerce.com.",
+      "failure": "Spróbuj ponownie. Jeśli problem się powtórzy, napisz na contact@adeliercommerce.com.",
       "errors": {
         "required": "To pole jest wymagane.",
         "email": "Podaj poprawny adres e-mail.",
