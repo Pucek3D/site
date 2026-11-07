@@ -40,7 +40,7 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
               <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-mist">{footer.contact}</h2>
               <ul className="flex flex-col gap-1">
                 <li>
-                  <a href={`mailto:${siteConfig.email.value}`} className="inline-flex min-h-10 items-center hover:underline">
+                  <a href={`mailto:${siteConfig.email.value}`} className="inline-flex min-h-10 max-w-full items-center [overflow-wrap:anywhere] hover:underline">
                     {siteConfig.email.value}
                   </a>
                   {siteConfig.email.placeholder ? <span className="ml-2 text-xs text-mist">({footer.placeholder})</span> : null}

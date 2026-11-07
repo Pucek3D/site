@@ -27,7 +27,7 @@ export const siteConfig = {
      * The legal pages carry the operator's private residential address. It is
      * shown in local development (the v0 preview) for review, and anywhere else
      * ONLY once LEGAL_PUBLISH_APPROVED=true is set. Until then deployed builds
-     * withhold the address and keep both pages out of search indexes.
+     * return 404 for both pages rather than publish an incomplete notice.
      */
     publishApproved: process.env.LEGAL_PUBLISH_APPROVED === 'true',
     get showAddress() {

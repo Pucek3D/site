@@ -20,7 +20,19 @@ function rateLimited(ip: string) {
   return recent.length > MAX_PER_WINDOW
 }
 
+/** Rejects cross-site posts: a browser always sends Origin on a fetch POST, and it must match this host. */
+function crossSite(request: Request) {
+  const origin = request.headers.get('origin')
+  if (!origin) return false
+  try {
+    return new URL(origin).host !== request.headers.get('host')
+  } catch {
+    return true
+  }
+}
+
 export async function POST(request: Request) {
+  if (crossSite(request)) return NextResponse.json({ error: 'forbidden' }, { status: 403 })
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
   if (rateLimited(ip)) return NextResponse.json({ error: 'rate_limited' }, { status: 429 })
 

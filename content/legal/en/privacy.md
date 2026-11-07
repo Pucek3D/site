@@ -21,15 +21,30 @@ If an inquiry does not lead to cooperation, its correspondence data will be reta
 Backups and technical logs may follow separate cycles determined by the hosting setup. Messages and attachments will be deleted from the active mailbox under the retention procedure. Any backup copies containing these data may be deleted on a separate, limited backup rotation cycle.
 
 ## 6. Recipients and service providers
-Data may be processed by technical service providers who host the website or email — notably **VH.PL** — to the extent necessary and subject to suitable contractual safeguards. If an additional email delivery or application infrastructure provider is used, its role, processing location and any international data transfers will be reflected in the updated notice.
+We use the following service providers, who process data on our behalf only to the extent necessary for their service:
 
-## 7. Analytics, cookies and newsletter
-The website currently does not use third-party analytics or offer newsletter signup. Essential server-side technical processes may still operate. If analytics is introduced, this notice will be updated in advance to describe the service, processing and any applicable consent requirements. Technologies requiring prior consent will not run before it has been obtained.
+- **Vercel Inc.** (United States) hosts the website and runs the server-side function that receives contact form submissions. It processes technical request data and the content of submitted forms. The server-side function currently runs in a data centre in the United States.
+- **VH.PL** provides the email mailbox contact@deliercommerce.com and processes the correspondence received there.
+
+The service used to forward form submissions to the mailbox will be named here before the form is put into operation.
+
+## 7. Transfers outside the European Economic Area
+Because Vercel Inc. is based in the United States and its server-side function runs there, personal data may be transferred to the United States. Such transfers take place on the basis of the EU–US Data Privacy Framework, where the recipient is certified under it, or standard contractual clauses adopted by the European Commission. You can request information about the safeguards used by contacting **contact@deliercommerce.com**.
+
+## 8. Analytics, cookies and newsletter
+The website currently does not use third-party analytics or offer newsletter signup. It does not set cookies and does not store information in your browser's local or session storage. Essential server-side technical processes may still operate. If analytics is introduced, this notice will be updated in advance to describe the service, processing and any applicable consent requirements. Technologies requiring prior consent will not run before it has been obtained.
 
 No newsletter is currently offered. Should this change, separate subscription and unsubscribe rules, along with any required notices and consents, will be provided.
 
-## 8. Your rights
+## 9. Automated decision-making
+We do not use your data for automated decision-making or profiling that produces legal or similarly significant effects for you.
+
+## 10. Your rights
 Where applicable under the GDPR, you may request access, rectification, erasure, restriction of processing or data portability, and you may object to processing based on legitimate interests. Contact **contact@deliercommerce.com** to exercise your rights. You may also lodge a complaint with the **President of the Polish Personal Data Protection Office (UODO)** (www.uodo.gov.pl).
 
-## 9. Updates
+If you are in the United Kingdom, you have corresponding rights under the UK GDPR and may also lodge a complaint with the **Information Commissioner's Office (ICO)** (www.ico.org.uk).
+
+We do not sell personal information and do not share it for cross-context behavioural advertising.
+
+## 11. Updates
 This notice will be updated if processing practices, hosting, analytics, newsletter services or the operator's legal status change. 

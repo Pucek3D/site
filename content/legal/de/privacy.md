@@ -21,15 +21,30 @@ Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechen
 Für Sicherungskopien und technische Protokolle können gesonderte, vom Hosting abhängige Aufbewahrungszyklen gelten. Nachrichten und Anhänge werden nach der festgelegten Aufbewahrungsregel aus dem aktiven Postfach gelöscht. Enthalten Sicherungskopien diese Daten, können sie innerhalb eines gesonderten, begrenzten Rotationszyklus gelöscht werden.
 
 ## 6. Empfänger und Dienstleister
-Personenbezogene Daten können von technischen Dienstleistern, insbesondere dem Hosting- und E-Mail-Anbieter **VH.PL**, verarbeitet werden, soweit dies für die Leistungserbringung notwendig ist und geeignete vertragliche Schutzmaßnahmen bestehen. Falls weitere Dienstleister für den E-Mail-Versand oder die Anwendungsinfrastruktur eingesetzt werden, werden deren Rolle, Verarbeitungsort und etwaige internationale Datenübermittlungen in dieser Erklärung berücksichtigt.
+Wir setzen folgende Dienstleister ein, die Daten in unserem Auftrag nur verarbeiten, soweit dies für ihre Leistung erforderlich ist:
 
-## 7. Webanalyse, Cookies und Newsletter
-Derzeit verwenden wir auf der Website kein externes Analysewerkzeug und bieten keine Newsletter-Anmeldung an. Technisch notwendige Vorgänge auf dem Webserver können dennoch stattfinden. Falls Webanalyse eingeführt wird, aktualisieren wir diese Erklärung zuvor um den konkreten Dienst, die Verarbeitung und gegebenenfalls erforderliche Einwilligungen. Technologien, die eine vorherige Einwilligung verlangen, werden erst nach deren Erteilung eingesetzt.
+- **Vercel Inc.** (USA) hostet die Website und betreibt die serverseitige Funktion, die Anfragen aus dem Kontaktformular entgegennimmt. Dabei werden technische Anfragedaten und der Inhalt übermittelter Formulare verarbeitet. Die serverseitige Funktion läuft derzeit in einem Rechenzentrum in den USA.
+- **VH.PL** stellt das E-Mail-Postfach contact@deliercommerce.com bereit und verarbeitet die dort eingehende Korrespondenz.
+
+Der Dienst, der Formularanfragen an das Postfach weiterleitet, wird hier vor der Inbetriebnahme des Formulars benannt.
+
+## 7. Übermittlung in Länder außerhalb des Europäischen Wirtschaftsraums
+Da die Vercel Inc. ihren Sitz in den USA hat und ihre serverseitige Funktion dort betrieben wird, können personenbezogene Daten in die USA übermittelt werden. Die Übermittlung erfolgt auf Grundlage des EU-US-Datenschutzrahmens (EU–US Data Privacy Framework), sofern der Empfänger danach zertifiziert ist, oder auf Grundlage der von der Europäischen Kommission erlassenen Standardvertragsklauseln. Informationen zu den eingesetzten Garantien erhalten Sie unter **contact@deliercommerce.com**.
+
+## 8. Webanalyse, Cookies und Newsletter
+Derzeit verwenden wir auf der Website kein externes Analysewerkzeug und bieten keine Newsletter-Anmeldung an. Die Website setzt keine Cookies und speichert keine Informationen im lokalen Speicher oder Sitzungsspeicher Ihres Browsers. Technisch notwendige Vorgänge auf dem Webserver können dennoch stattfinden. Falls Webanalyse eingeführt wird, aktualisieren wir diese Erklärung zuvor um den konkreten Dienst, die Verarbeitung und gegebenenfalls erforderliche Einwilligungen. Technologien, die eine vorherige Einwilligung verlangen, werden erst nach deren Erteilung eingesetzt.
 
 Aktuell bieten wir keinen Newsletter an. Im Falle einer späteren Einführung stellen wir gesonderte Informationen zur Anmeldung, Abmeldung sowie zu erforderlichen Einwilligungen bereit.
 
-## 8. Ihre Rechte
+## 9. Automatisierte Entscheidungsfindung
+Ihre Daten werden nicht für eine automatisierte Entscheidungsfindung oder ein Profiling verwendet, das Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt.
+
+## 10. Ihre Rechte
 Soweit die DSGVO dies vorsieht, haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Gegen Verarbeitungen auf Grundlage berechtigter Interessen können Sie Widerspruch einlegen. Wenden Sie sich dazu an **contact@deliercommerce.com**. Sie können außerdem Beschwerde bei der polnischen Datenschutzaufsichtsbehörde, dem **Präsidenten des Amtes für den Schutz personenbezogener Daten (UODO)**, einreichen (www.uodo.gov.pl).
 
-## 9. Änderungen
+Wenn Sie sich im Vereinigten Königreich befinden, stehen Ihnen entsprechende Rechte nach der UK GDPR zu, und Sie können sich zusätzlich beim **Information Commissioner's Office (ICO)** beschweren (www.ico.org.uk).
+
+Wir verkaufen keine personenbezogenen Daten und geben sie nicht für verhaltensbasierte Werbung weiter.
+
+## 11. Änderungen
 Diese Erklärung wird angepasst, wenn sich die Datenverarbeitung, der Hostinganbieter, die Webanalyse, Newsletter-Funktionen oder der rechtliche Status des Websitebetreibers ändern. 

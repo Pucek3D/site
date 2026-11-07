@@ -18,18 +18,33 @@ Podanie danych w formularzu jest dobrowolne. Wypełnienie pól oznaczonych jako 
 ## 5. Okres przechowywania
 Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne są przechowywane **nie dłużej niż 60 dni od zakończenia korespondencji**. Jeżeli dojdzie do współpracy albo pojawi się odrębna konieczność wynikająca z prawa lub uzasadnionego dochodzenia bądź obrony roszczeń, właściwy okres może być inny. Dotyczy to także dokumentów związanych z potencjalną umową i obowiązkami prawnymi.
 
-Kopie zapasowe i dzienniki techniczne mogą mieć oddzielne cykle przechowywania wynikające z konfiguracji hostingu; administrator powinien je zweryfikować i nie przechowywać danych dłużej, niż jest to konieczne. Wiadomości i załączniki będą usuwane z bieżącej skrzynki zgodnie z przyjętą procedurą przechowywania. Kopie zapasowe, jeśli zawierają te dane, mogą być usuwane w odrębnym, ograniczonym cyklu rotacji.
+Kopie zapasowe i dzienniki techniczne mogą mieć oddzielne cykle przechowywania wynikające z konfiguracji hostingu. Wiadomości i załączniki będą usuwane z bieżącej skrzynki zgodnie z przyjętą procedurą przechowywania. Kopie zapasowe, jeśli zawierają te dane, mogą być usuwane w odrębnym, ograniczonym cyklu rotacji.
 
 ## 6. Odbiorcy danych i usługi techniczne
-Dane mogą być powierzane podmiotom technicznie obsługującym serwis i pocztę — w szczególności dostawcy usług hostingowych **VH.PL** — wyłącznie w zakresie niezbędnym do świadczenia usług oraz zgodnie z odpowiednimi umowami. Jeżeli w obsłudze formularza uczestniczy dodatkowy dostawca poczty lub infrastruktury aplikacyjnej, jego udział, lokalizacja przetwarzania i ewentualne transfery danych powinny zostać odzwierciedlone w aktualnej wersji polityki.
+Korzystamy z następujących dostawców usług, którzy przetwarzają dane w naszym imieniu wyłącznie w zakresie niezbędnym do świadczenia swoich usług:
 
-## 7. Analityka, pliki cookies i newsletter
-Obecnie na stronie nie działa zewnętrzne narzędzie analityczne ani formularz zapisu do newslettera. Strona może jednak wykorzystywać niezbędne mechanizmy techniczne serwera. Jeśli zostanie włączona analityka, niniejsza polityka zostanie wcześniej zaktualizowana o zakres przetwarzania i informacje dotyczące ewentualnych zgód. Technologie wymagające uprzedniej zgody nie będą uruchamiane przed jej uzyskaniem.
+- **Vercel Inc.** (Stany Zjednoczone) utrzymuje stronę oraz uruchamia funkcję serwerową, która odbiera zgłoszenia z formularza kontaktowego. Przetwarza dane techniczne zapytań oraz treść wysłanych formularzy. Funkcja serwerowa działa obecnie w centrum danych w Stanach Zjednoczonych.
+- **VH.PL** zapewnia skrzynkę pocztową contact@deliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
+
+Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
+
+## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
+Ponieważ Vercel Inc. ma siedzibę w Stanach Zjednoczonych, a jego funkcja serwerowa działa na ich terytorium, dane osobowe mogą być przekazywane do Stanów Zjednoczonych. Przekazanie odbywa się na podstawie programu ramowego w zakresie ochrony danych UE–USA (EU–US Data Privacy Framework), jeżeli odbiorca jest nim objęty, albo standardowych klauzul umownych przyjętych przez Komisję Europejską. Informacje o stosowanych zabezpieczeniach możesz uzyskać pod adresem **contact@deliercommerce.com**.
+
+## 8. Analityka, pliki cookies i newsletter
+Obecnie na stronie nie działa zewnętrzne narzędzie analityczne ani formularz zapisu do newslettera. Strona nie zapisuje plików cookies i nie przechowuje informacji w pamięci lokalnej ani pamięci sesji przeglądarki. Strona może jednak wykorzystywać niezbędne mechanizmy techniczne serwera. Jeśli zostanie włączona analityka, niniejsza polityka zostanie wcześniej zaktualizowana o zakres przetwarzania i informacje dotyczące ewentualnych zgód. Technologie wymagające uprzedniej zgody nie będą uruchamiane przed jej uzyskaniem.
 
 Newsletter nie jest obecnie dostępny. W przypadku jego uruchomienia pojawią się odrębne zasady zapisu i rezygnacji oraz wymagane informacje i zgody.
 
-## 8. Prawa osoby, której dane dotyczą
+## 9. Zautomatyzowane podejmowanie decyzji
+Twoje dane nie są wykorzystywane do zautomatyzowanego podejmowania decyzji ani profilowania wywołującego wobec Ciebie skutki prawne lub w podobny sposób istotnie na Ciebie wpływającego.
+
+## 10. Prawa osoby, której dane dotyczą
 W przypadkach przewidzianych w RODO przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych oraz wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie. Możesz skontaktować się z administratorem pod adresem **contact@deliercommerce.com**. Masz także prawo złożenia skargi do **Prezesa Urzędu Ochrony Danych Osobowych** (www.uodo.gov.pl).
 
-## 9. Zmiany dokumentu
+Jeżeli przebywasz w Wielkiej Brytanii, przysługują Ci odpowiadające im prawa na podstawie UK GDPR, a także prawo złożenia skargi do **Information Commissioner's Office (ICO)** (www.ico.org.uk).
+
+Nie sprzedajemy danych osobowych i nie udostępniamy ich w celu reklamy behawioralnej.
+
+## 11. Zmiany dokumentu
 Polityka będzie aktualizowana w razie zmian sposobu przetwarzania danych, konfiguracji hostingu, uruchomienia analityki, newslettera lub rozpoczęcia działalności gospodarczej. 

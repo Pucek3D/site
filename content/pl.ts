@@ -46,7 +46,7 @@ export const pl: Dictionary = {
     "linkedin": "LinkedIn",
     "rights": "Wszelkie prawa zastrzeżone.",
     "placeholder": "Miejsce na dane — do uzupełnienia",
-    "disclaimer": "ADelier Commerce jest niezależną firmą i nie jest powiązana z Amazon ani przez niego rekomendowana."
+    "disclaimer": "ADelier Commerce to niezależna marka, niepowiązana z Amazon i nieposiadająca jego oficjalnej rekomendacji."
   },
   "common": {
     "home": {
@@ -134,7 +134,6 @@ export const pl: Dictionary = {
     "eyebrow": "Prywatność"
   },
   "legal": {
-    "eyebrow": "Informacje prawne",
-    "addressWithheld": "[adres ukryty do czasu zatwierdzenia publikacji]"
+    "eyebrow": "Informacje prawne"
   }
 }

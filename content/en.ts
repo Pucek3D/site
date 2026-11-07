@@ -44,7 +44,7 @@ export const en = {
     "linkedin": "LinkedIn",
     "rights": "All rights reserved.",
     "placeholder": "Placeholder — to be supplied",
-    "disclaimer": "ADelier Commerce is an independent company and is not affiliated with or endorsed by Amazon."
+    "disclaimer": "ADelier Commerce is an independent brand and is not affiliated with or officially endorsed by Amazon."
   },
   "common": {
     "home": {
@@ -132,8 +132,7 @@ export const en = {
     "eyebrow": "Privacy"
   },
   "legal": {
-    "eyebrow": "Legal",
-    "addressWithheld": "[address withheld until publication is approved]"
+    "eyebrow": "Legal"
   }
 }
 
