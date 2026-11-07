@@ -20,7 +20,7 @@ export const pl: PartnerCopy = {
       eyebrow: "Reklama na Amazonie, wiedza o marketplace’ach i praktyczne szkolenia",
       title: "Lepsze wyniki na Amazonie. Kompetencje, które za nimi stoją.",
       paragraphs: [
-        "Eksperckie zarządzanie kampaniami Amazon PPC, optymalizacja oparta na danych i praktyczne szkolenia dla marek konsumenckich oraz agencji, które je obsługują.",
+        "Eksperckie zarządzanie kampaniami Amazon PPC, optymalizacja\noparta na danych i praktyczne szkolenia dla marek konsumenckich\noraz agencji, które je obsługują.",
         "Przekładamy dane z kampanii na trafniejsze decyzje, lepsze wyniki i kompetencje, które zostają w zespole.",
       ],
       primaryCta: "Porozmawiajmy",
@@ -149,7 +149,7 @@ export const pl: PartnerCopy = {
   "Masz własną markę i chcesz zwiększyć jej sprzedaż? Amazon może być idealnym miejscem, aby dotrzeć do nowych klientów, wejść na kolejne rynki i rozwinąć swój biznes.",
   "Sprzedajesz już na Amazonie, ale wyniki nie spełniają Twoich oczekiwań? Pomożemy Ci zidentyfikować problemy, znaleźć nowe możliwości i poprawić efektywność działań reklamowych.",
   ],
-  closing: "Wspieramy marki na każdym etapie — od wejścia na Amazon, przez optymalizację reklam, aż po dalszy rozwój sprzedaży.",
+  closing: "Wspieramy marki na każdym etapie — od wejścia na Amazon,\nprzez optymalizację reklam, aż po dalszy rozwój sprzedaży.",
   cta: "Porozmawiajmy o Twojej marce",
   },
   opportunity: {

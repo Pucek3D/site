@@ -17,7 +17,7 @@ export function HomePage({ locale, copy }: { locale: Locale; copy: PartnerCopy }
       <Hero locale={locale} copy={copy} />
       <Autopilot copy={h.autopilot} />
       <WhatWeDo locale={locale} copy={copy} />
-      <FinalCta id="final" title={h.final.title} paragraphs={h.final.paragraphs} cta={h.final.cta} to={href(locale, 'contact')} variant="primary" className="py-14 md:py-16" titleClassName={locale === 'en' ? 'lg:whitespace-nowrap' : undefined} />
+      <FinalCta id="final" title={h.final.title} paragraphs={h.final.paragraphs} cta={h.final.cta} to={href(locale, 'contact')} variant="primary" className="py-14 md:py-16" />
     </>
   )
 }

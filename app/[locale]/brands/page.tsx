@@ -77,7 +77,7 @@ export default async function BrandsPage({ params }: Props) {
   </div>
           </div>
           <div className="mt-10 flex flex-col items-start gap-5 md:mt-12 md:w-7/12 md:pr-12">
-            <p className="text-pretty text-lg font-medium leading-relaxed text-ink">{b.intro.closing}</p>
+            <p className="whitespace-pre-line text-pretty text-lg font-medium leading-relaxed text-ink">{b.intro.closing}</p>
             <CtaLink href={href(locale, 'contact', '?topic=brand')}>
               {b.intro.cta}
               <ArrowRight aria-hidden className="size-4" />
@@ -203,6 +203,7 @@ export default async function BrandsPage({ params }: Props) {
         cta={b.final.cta}
         to={href(locale, 'contact', '?topic=brand')}
         variant="primary"
+        titleClassName={locale === 'pl' ? 'lg:whitespace-nowrap' : undefined}
       />
     </>
   )
