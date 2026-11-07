@@ -124,7 +124,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
 const services = [
   { art: '/images/svc/white-label-handshake.png', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
   { art: '/images/svc/ppc.png', alt: 'brands', to: 'brands' },
-  { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 40%', to: 'training' },
+  { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 14%', to: 'training' },
 ] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; to: PageKey }[]
 
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
