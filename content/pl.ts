@@ -28,7 +28,7 @@ export const pl: Dictionary = {
       "training": "Szkolenia",
       "about": "O nas",
       "contact": "Kontakt",
-      "privacy": "Prywatność",
+      "privacy": "Polityka prywatności",
       "legal": "Nota prawna / Impressum"
     },
     "primaryLabel": "Nawigacja główna",
@@ -40,7 +40,7 @@ export const pl: Dictionary = {
     "homeLink": "ADelier Commerce, strona główna"
   },
   "footer": {
-    "explore": "Odkryj",
+    "explore": "Na skróty",
     "languages": "Języki",
     "contact": "Kontakt",
     "linkedin": "LinkedIn",
@@ -62,11 +62,11 @@ export const pl: Dictionary = {
       "acos": "ACOS",
       "opportunities": "Obszary możliwości",
       "opportunityItems": [
-        "Większa widoczność na kluczowe frazy",
+        "Większa widoczność na kluczowych frazach",
         "Lepsza konwersja kluczowych ASIN-ów",
         "Optymalizacja alokacji budżetu"
       ],
-      "autopilotEyebrow": "Problem autopilota",
+      "autopilotEyebrow": "Reklama na autopilocie",
       "approachEyebrow": "Nasze podejście"
     },
     "breadcrumbLabel": "Ścieżka nawigacji",
@@ -102,25 +102,25 @@ export const pl: Dictionary = {
         "de": "Deutsch"
       },
       "improve": "Opowiedz nam o swoich potrzebach",
-      "improveHint": "Napisz, czego szukasz, i dodaj istotny kontekst.",
+      "improveHint": "Napisz, czego szukasz, i dodaj najważniejszy kontekst.",
       "optional": "opcjonalnie",
-      "consentBefore": "Zgadzam się, aby ADelier wykorzystało te dane do odpowiedzi na moje zapytanie, zgodnie z",
+      "consentBefore": "Wyrażam zgodę na wykorzystanie tych danych przez ADelier Commerce w celu odpowiedzi na moje zapytanie, zgodnie z",
       "consentLink": "polityką prywatności",
       "consentAfter": ".",
       "honeypot": "Pozostaw to pole puste",
-      "submit": "Wyślij zapytanie",
+      "submit": "Wyślij wiadomość",
       "submitting": "Wysyłanie…",
       "errorSummary": "Popraw zaznaczone pola przed wysłaniem.",
       "successTitle": "Dziękujemy za kontakt.",
-      "success": "Otrzymaliśmy Twoje zapytanie i odezwiemy się.",
+      "success": "Otrzymaliśmy Twoją wiadomość i wkrótce się odezwiemy.",
       "failureTitle": "Nie udało się wysłać wiadomości.",
-      "failure": "Spróbuj ponownie. Jeśli problem się powtarza, skorzystaj ze zweryfikowanego adresu e-mail, gdy będzie dostępny.",
+      "failure": "Spróbuj ponownie za chwilę. Jeśli problem się powtórzy, napisz do nas e-mailem.",
       "errors": {
         "required": "To pole jest wymagane.",
         "email": "Podaj poprawny adres e-mail.",
         "url": "Podaj poprawny adres strony, na przykład example.com.",
-        "consent": "Potwierdź zgodę, abyśmy mogli odpowiedzieć.",
-        "tooShort": "Dodaj trochę więcej szczegółów — co najmniej 20 znaków.",
+        "consent": "Zaznacz zgodę, abyśmy mogli odpowiedzieć na Twoje zapytanie.",
+        "tooShort": "Dodaj więcej szczegółów — minimum 20 znaków.",
         "tooLong": "Ten wpis jest za długi."
       },
       "fieldErrors": {

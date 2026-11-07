@@ -1,8 +1,8 @@
 import type { PartnerCopy } from './types'
 
-/** Translation of the English partner copy. Needs review by a native speaker before launch. */
+/** Polish partner copy, adapted from the English reference rather than translated literally. */
 export const pl: PartnerCopy = {
-  signoff: 'ADelier Commerce — Reklama na Amazon, wiedza o marketplace i praktyczne szkolenia.',
+  signoff: 'ADelier Commerce — reklama na Amazonie, wiedza o marketplace’ach i praktyczne szkolenia.',
   homeImageAlts: {
     hero: 'Specjalistka analizująca wyniki reklam przy laptopie (zdjęcie ilustracyjne)',
     agencies: 'Dwoje partnerów biznesowych podaje sobie ręce nad biurkiem z laptopem',
@@ -18,7 +18,7 @@ export const pl: PartnerCopy = {
   home: {
     hero: {
       eyebrow: "Reklama na Amazonie, wiedza o marketplace’ach i praktyczne szkolenia",
-      title: "Popraw wyniki na Amazonie. Zbuduj kompetencje, które za nimi stoją.",
+      title: "Lepsze wyniki na Amazonie. Kompetencje, które za nimi stoją.",
       paragraphs: [
         "Eksperckie zarządzanie kampaniami Amazon PPC, optymalizacja oparta na danych i praktyczne szkolenia dla marek konsumenckich oraz agencji, które je obsługują.",
         "Przekładamy dane z kampanii na trafniejsze decyzje, lepsze wyniki i kompetencje, które zostają w zespole.",
@@ -40,7 +40,7 @@ export const pl: PartnerCopy = {
       closingLine: "Każde konto jest inne. Twoja strategia też powinna być.",
     },
     whatWeDo: {
-      title: "Wiedza, która robi różnicę.",
+      title: "Ekspertyza, która robi różnicę.",
       items: [
         {
           number: "01",
@@ -70,8 +70,8 @@ export const pl: PartnerCopy = {
     },
     approach: {
       title: "Jak dane z kampanii stają się decyzjami",
-      subtitle: "Bez autopilota. Bez strategii uniwersalnych dla wszystkich.",
-      intro: "Każda rekomendacja zaczyna się od danych z Twojego konta, a kończy na konkretnym ekspercie, który odpowiada za decyzję.",
+      subtitle: "Bez autopilota. Bez gotowych schematów.",
+      intro: "Każda rekomendacja zaczyna się od danych z Twojego konta, a decyzję zawsze podejmuje konkretny ekspert, który za nią odpowiada.",
       items: [
         {
           title: "Dogłębna analiza wyników",
@@ -86,7 +86,7 @@ export const pl: PartnerCopy = {
           body: "Ustalamy, co działa słabiej i dlaczego, z uwzględnieniem kontekstu oferty i listingu, zanim zmienimy stawki czy budżety.",
         },
         {
-          title: "Dopasowane rekomendacje z priorytetami",
+          title: "Rekomendacje dopasowane do Twojego biznesu",
           body: "Rekomendacje budujemy wokół Twoich produktów, marż, konkurencji i celów, w kolejności, która pokazuje, od czego zacząć.",
         },
         {
@@ -99,7 +99,7 @@ export const pl: PartnerCopy = {
       eyebrow: "Z kim współpracujemy",
       title: [
         "Dwie ścieżki.",
-        "Jeden standard skuteczności.",
+        "Jeden standard jakości.",
       ],
       subtitle: "Eksperckie wsparcie wzrostu na Amazonie, dopasowane do tego, jak pracujesz.",
       brands: {
@@ -117,7 +117,7 @@ export const pl: PartnerCopy = {
           "Twoi klienci.",
           "Nasza ekspertyza.",
         ],
-        description: "Realizacja PPC w modelu white-label i dedykowani specjaliści — bez uszczerbku dla Twoich relacji z klientami.",
+        description: "Realizacja PPC w modelu white-label i dedykowani specjaliści — przy pełnej kontroli nad relacjami z klientami.",
         cta: "Poznaj współpracę z agencjami",
       },
     },
@@ -133,7 +133,7 @@ export const pl: PartnerCopy = {
   brands: {
     hero: {
       eyebrow: "Dla marek · Amazon PPC i szkolenia",
-      title: "Amazon PPC. Eksperckie zarządzanie reklamą lub rozwój kompetencji Twojego zespołu.",
+      title: "Amazon PPC: eksperckie zarządzanie kampaniami lub rozwój kompetencji Twojego zespołu.",
       emphasis: "Dwie drogi do celu: zarządzanie Amazon PPC lub praktyczne szkolenie PPC.",
       paragraphs: [
         "Niezależnie od tego, czy dopiero wprowadzasz markę na Amazon, czy chcesz rozwijać już istniejącą sprzedaż, pomożemy Ci wykorzystać potencjał tej platformy dzięki profesjonalnemu zarządzaniu kampaniami PPC i praktycznym szkoleniom.",
@@ -144,7 +144,7 @@ export const pl: PartnerCopy = {
       imageAlt: "Dwoje współpracowników omawiających przykładowy raport reklamowy na ekranie",
     },
   intro: {
-  title: "Wprowadź swoją markę na Amazon. Rozwijaj ją. Sprzedawaj więcej.",
+  title: "Wprowadź markę na Amazona. Rozwijaj ją. Sprzedawaj więcej.",
   paragraphs: [
   "Masz własną markę i chcesz zwiększyć jej sprzedaż? Amazon może być idealnym miejscem, aby dotrzeć do nowych klientów, wejść na kolejne rynki i rozwinąć swój biznes.",
   "Sprzedajesz już na Amazonie, ale wyniki nie spełniają Twoich oczekiwań? Pomożemy Ci zidentyfikować problemy, znaleźć nowe możliwości i poprawić efektywność działań reklamowych.",
@@ -177,7 +177,7 @@ export const pl: PartnerCopy = {
     },
     ppc: {
       label: "Zarządzanie reklamami Amazon PPC",
-      title: "Skuteczniejsze reklamy. Lepsze decyzje. Wyższe wyniki.",
+      title: "Skuteczniejsza reklama. Trafniejsze decyzje. Lepsze wyniki.",
       paragraphs: [
         "Zarządzamy kampaniami reklamowymi na Amazonie, koncentrując się na efektywności, rentowności i długofalowym wzroście sprzedaży.",
         "Analizujemy dane, identyfikujemy możliwości i podejmujemy świadome decyzje, aby poprawiać wyniki. Skuteczna reklama to coś więcej niż samo wydawanie budżetu.",
@@ -246,13 +246,13 @@ export const pl: PartnerCopy = {
       imageAlt: "Trenerka prezentująca program szkolenia PPC niewielkiej grupie",
     },
     final: {
-      eyebrow: "Porozmawiajmy o Twoich celach na Amazon",
-      title: "Gotowy na rozwój swojej marki na Amazonie?",
+      eyebrow: "Porozmawiajmy o Twoich celach na Amazonie",
+      title: "Chcesz rozwijać swoją markę na Amazonie?",
       paragraphs: [
         "Niezależnie od tego, czy potrzebujesz profesjonalnego zarządzania kampaniami, czy szkolenia własnego zespołu — pomożemy Ci wybrać rozwiązanie dopasowane do potrzeb Twojego biznesu.",
       ],
       cta: "Porozmawiajmy o Twojej marce",
-      trainingLink: "Poznaj szkolenie PPC",
+      trainingLink: "Poznaj szkolenia PPC",
     },
   },
 
@@ -262,7 +262,7 @@ export const pl: PartnerCopy = {
       title: "Rozwijaj ofertę Amazon. Zachowaj relację z klientem.",
       emphasis: "Twoi klienci. Twoja marka. Nasza wiedza.",
       paragraphs: [
-        "ADelier pomaga agencjom marketingowym i mediowym rozwijać kompetencje Amazon PPC dzięki elastycznym modelom partnerstwa. Nasi specjaliści z Polski pracują w Twoich procesach, standardach jakości i strukturze raportowania, a relacje z klientami pozostają pod Twoją kontrolą.",
+        "ADelier pomaga agencjom marketingowym i mediowym rozwijać kompetencje Amazon PPC dzięki elastycznym modelom partnerstwa. Nasi specjaliści z Polski pracują zgodnie z Twoimi procesami, standardami jakości i strukturą raportowania, a relacje z klientami pozostają pod Twoją kontrolą.",
       ],
       primaryCta: "Porozmawiajmy o współpracy z agencją",
       secondaryCta: "Poznaj modele współpracy",
@@ -300,12 +300,12 @@ export const pl: PartnerCopy = {
           listLabel: "Co może dać Twojej agencji:",
           items: [
             "Elastyczne zasoby specjalistyczne przy zmieniającym się portfelu klientów",
-            "Mniejsza potrzeba natychmiastowej rekrutacji na miejscu",
+            "Mniejsza presja na szybką rekrutację lokalną",
             "Ciągłość operacyjna na obsługiwanych kontach",
             "Współpraca w języku angielskim",
             "Planowanie zasobów i nadzór jakości po stronie ADelier",
           ],
-          note: "Odrębny model wsparcia w Twoim zespole: to nie realizacja kampanii przez ADelier ani pośrednictwo pracy.",
+          note: "To odrębny model wsparcia w ramach Twojego zespołu — nie jest to realizacja kampanii przez ADelier ani pośrednictwo pracy.",
         },
       ],
     },
@@ -317,11 +317,11 @@ export const pl: PartnerCopy = {
       ],
       items: [
         {
-          title: "Praktyczne przedłużenie Twojego zespołu",
+          title: "Naturalne rozszerzenie Twojego zespołu",
           body: "Przejmujemy pracę operacyjną, dzięki której konta reklamowe działają sprawnie, a Twoi stratedzy i opiekunowie klientów mogą skupić się na strategii, relacjach z klientami i rozwoju biznesu.",
         },
         {
-          title: "Praktyczne podejście",
+          title: "Aktywne zaangażowanie",
           body: "Nie konfigurujemy kampanii, by potem zostawić je bez opieki. Praca jest aktywnie prowadzona i weryfikowana przez ekspertów.",
         },
         {
@@ -364,7 +364,7 @@ export const pl: PartnerCopy = {
     },
     training: {
       eyebrow: "Rozwijaj kompetencje zespołu",
-      title: "Buduj kompetencje PPC wewnątrz swojej agencji.",
+      title: "Buduj kompetencje PPC w swojej agencji.",
       body: "Praktyczne szkolenia z Amazon PPC dla zespołów obsługi klienta, strategii i realizacji w agencjach. Pracuj na realnych scenariuszach kampanii, wzmacniaj rutyny optymalizacyjne i wypracuj standardy, które Twój zespół zastosuje samodzielnie, w zależności od uzgodnionego programu. Szkolenie można kupić osobno, bez współpracy w zakresie realizacji ani specjalisty.",
       cta: "Poznaj szkolenia PPC",
       imageAlt: "Trenerka prezentuje niewielkiej grupie plan programu szkolenia PPC",
@@ -383,7 +383,7 @@ export const pl: PartnerCopy = {
     hero: {
       eyebrow: "Szkolenia Amazon PPC",
       title: "Zbuduj wewnętrzne kompetencje Amazon PPC.",
-      subtitle: "Praktyczne szkolenia. Prawdziwe decyzje reklamowe. Umiejętności, które zespół zastosuje.",
+      subtitle: "Praktyczne szkolenia. Prawdziwe decyzje reklamowe. Umiejętności, które zespół wykorzysta w praktyce.",
       paragraphs: [
         "Praktyczne szkolenia Amazon PPC dla zespołów marek, e-commerce, marketingu i agencji, które chcą poszerzyć wiedzę o reklamie i podejmować decyzje z większą pewnością.",
         "Nasze sesje łączą podstawy reklamy, analizę wyników i praktyczne ćwiczenia z optymalizacji. Gdy możliwy jest odpowiedni dostęp, zespoły mogą pracować na danych własnych kampanii i od razu stosować zdobytą wiedzę w realnych wyzwaniach reklamowych.",
@@ -394,7 +394,7 @@ export const pl: PartnerCopy = {
       imageAlt: "Trenerka przedstawia małemu zespołowi plan programu PPC",
     },
     experience: {
-      eyebrow: "Jak się uczymy",
+      eyebrow: "Przebieg szkolenia",
       title: "Jak wyglądają szkolenia",
       intro: "Każdy program ustalamy z Twoim zespołem. Forma, zakres i materiały są uzgadniane indywidualnie; trzy etapy poniżej opisują nasze podejście, a nie sztywny harmonogram.",
       steps: [
@@ -435,7 +435,7 @@ export const pl: PartnerCopy = {
     },
     formats: {
       eyebrow: "Elastyczne formy szkoleń",
-      title: "Szkolenie dopasowane do Twojego zespołu.",
+      title: "Forma dopasowana do potrzeb zespołu.",
       paragraphs: [
         "Szkolenie dopasujemy do doświadczenia i celów Twojego zespołu — od sesji podstawowych dla nowych pracowników po zaawansowane warsztaty dla praktyków PPC.",
         "Naszym celem jest pomóc Twojemu zespołowi rozwinąć praktyczną wiedzę i metody pracy, które zastosuje w rzeczywistych decyzjach dotyczących reklamy na Amazonie.",
@@ -463,19 +463,19 @@ export const pl: PartnerCopy = {
 
   about: {
     hero: {
-      title: "Analityczna reklama na Amazon, prowadzona przez wskazanych ekspertów.",
+      title: "Reklama na Amazonie oparta na danych i prowadzona przez konkretnych ekspertów.",
       subtitle: "Pokazujemy dane, uzasadnienie i kolejną decyzję, aby można było sprawdzić każdą rekomendację.",
       paragraphs: [],
     },
     who: {
-      body: "ADelier Commerce to partner marketplace z Polski, który współpracuje międzynarodowo z markami konsumenckimi i agencjami marketingowymi. Skupiamy się na reklamie na Amazon, analizie wyników i praktycznych szkoleniach PPC. Każde konto i jego rekomendacje mają wskazanego eksperta prowadzącego.",
+      body: "ADelier Commerce to partner w obszarze marketplace’ów z siedzibą w Polsce, który współpracuje międzynarodowo z markami konsumenckimi i agencjami marketingowymi. Skupiamy się na reklamie na Amazonie, analizie wyników i praktycznych szkoleniach PPC. Każde konto i jego rekomendacje mają wskazanego eksperta prowadzącego.",
     },
     // TODO owner: confirm every statement with the founders and check employer consent before
     // publishing; use past tense and no employer names. Toggle: SHOW_FOUNDER_EXPERIENCE in lib/config.ts.
     experience: {
       title: "Doświadczenie z obu stron Amazona",
       sub: "Praktyka sprzedawców i doświadczenie reklamowe na poziomie agencji.",
-      p1: "Nasze podejście wynika z dwóch rodzajów doświadczenia: budowania i sprzedaży produktów na Amazonie oraz wcześniejszej pracy w dużych agencjach reklamowych przy kampaniach reklamowych.",
+      p1: "Nasze podejście wynika z dwóch rodzajów doświadczenia: budowania i sprzedaży produktów na Amazonie oraz wcześniejszej pracy przy kampaniach w dużych agencjach reklamowych.",
       p2: "Strona sprzedawcy nauczyła nas, jak pozycjonowanie, cena, koszt reklamy i konkurencja wpływają na zysk. Strona agencyjna nauczyła nas, jak porządkować analizę, raportowanie i decyzje.",
       p3: "Praca w agencjach to wcześniejsze doświadczenie zawodowe, a nie praca dla klientów ADelier.",
       closing: "Nie tylko prowadzimy kampanie. Patrzymy na biznes, który za nimi stoi.",
@@ -488,7 +488,7 @@ export const pl: PartnerCopy = {
         { title: "Priorytety", body: "Targetowanie, stawki, budżety i wykluczenia układamy według spodziewanego wpływu." },
         { title: "Wdrożenie", body: "Wprowadzamy wyłącznie uzgodnione zmiany, w ramach uzgodnionego budżetu i dostępu." },
         { title: "Monitoring", body: "ACOS i ROAS interpretujemy razem ze sprzedażą całkowitą, marżą, dostępnością i promocjami." },
-        { title: "Zapis", body: "Każda istotna decyzja trafia do dziennika z osobą odpowiedzialną, uzasadnieniem i datą kolejnego przeglądu." },
+        { title: "Dokumentacja", body: "Każda istotna decyzja trafia do dziennika z osobą odpowiedzialną, uzasadnieniem i datą kolejnego przeglądu." },
       ],
     },
     evidence: {
@@ -516,8 +516,8 @@ export const pl: PartnerCopy = {
       body: "Zespół z Polski pracujący po angielsku, polsku i niemiecku z klientami międzynarodowymi. Efektywny europejski model operacyjny daje każdemu kontu więcej uwagi specjalistów, bez narzutów dużej agencji.",
     },
     cta: {
-      title: "Przynieś jedno konto do przeglądu.",
-      button: "Zaplanuj rozmowę",
+      title: "Pokaż nam jedno konto do przeglądu.",
+      button: "Umów rozmowę",
     },
   },
 }

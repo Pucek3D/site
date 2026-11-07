@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import type { Dictionary } from '@/content'
 import type { PartnerCopy } from '@/content/partner'
-import { href, mainNavKeys, pageFromPath, type Locale } from '@/lib/i18n'
+import { href, navKeysFor, pageFromPath, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
@@ -61,7 +61,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
         {/* xl, not lg: at 1024px the PL and DE labels push the header past the viewport. */}
         <nav aria-label={nav.primaryLabel} className="hidden xl:block">
           <ul className="flex items-center gap-1">
-            {mainNavKeys.map((k) => (
+            {navKeysFor(locale).map((k) => (
               <li key={k}>
                 <Link
                   href={href(locale, k)}
@@ -123,7 +123,7 @@ export function SiteHeader({ locale, nav, copy }: { locale: Locale; nav: Diction
             </button>
           </div>
           <nav aria-label={nav.primaryLabel} className="flex-1 overflow-y-auto px-5 py-6 sm:px-8">
-            {mainNavKeys.map((k) => (
+            {navKeysFor(locale).map((k) => (
               <Link
                 key={k}
                 href={href(locale, k)}
