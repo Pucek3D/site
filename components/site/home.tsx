@@ -90,7 +90,7 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
 
 function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
   return (
-    <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
+    <section aria-labelledby="autopilot" className="border-b border-hairline bg-porcelain py-10 md:py-12">
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8 xl:gap-y-3">
         <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-2">
   <h2 id="autopilot" className="flex items-start gap-3 text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.12em] text-slate">
@@ -155,7 +155,7 @@ const DISPLAY_ORDER = [1, 0, 2] as const
 function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
   const w = copy.home.whatWeDo
   return (
-    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-porcelain pt-8 pb-14 md:pt-10 md:pb-16">
+    <section id="what-we-do" aria-labelledby="what-we-do-title" className="scroll-mt-24 bg-white pt-8 pb-14 md:pt-10 md:pb-16">
       <Container>
         {/* No "explore all" link: each tile already opens its own route page, and there is no services index. */}
         <h2 id="what-we-do-title" className="flex items-center gap-3 font-sans text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">
