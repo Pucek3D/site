@@ -5,7 +5,7 @@ Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit
 ## 2. Welche Daten wir verarbeiten
 Wenn Sie eine Anfrage übermitteln oder mit uns Kontakt aufnehmen, können wir Ihren Namen, Ihre E-Mail-Adresse, den Firmennamen, die Art Ihrer Anfrage, die bevorzugte Sprache und den Inhalt Ihrer Nachricht verarbeiten. Ihre Position und Website-Adresse erfassen wir nur, wenn Sie diese freiwillig angeben. Darüber hinaus verarbeiten wir gegebenenfalls Angaben, die Sie uns im Rahmen der Korrespondenz selbst mitteilen.
 
-Die Hosting-Infrastruktur kann technisch erforderliche Daten verarbeiten, etwa die IP-Adresse, den Zeitpunkt eines Zugriffs, die aufgerufene URL, Angaben zum Browser sowie Fehler- und Sicherheitsprotokolle. Die Aufbewahrung technischer Protokolle wird auf die Erfordernisse des Websitebetriebs und der Sicherheit begrenzt und richtet sich nach der Hosting-Konfiguration.
+Die Website wird bei VH.PL gehostet. Der Hostinganbieter stellt die für den Betrieb der Website erforderliche technische Infrastruktur bereit. Dabei können technische Daten wie IP-Adressen, Zugriffszeitpunkte und Serverprotokolle verarbeitet werden, soweit dies für den Betrieb, die Wartung und die Sicherheit der Website erforderlich ist. Die Aufbewahrung technischer Protokolle wird auf die Erfordernisse des Websitebetriebs und der Sicherheit begrenzt und richtet sich nach der Hosting-Konfiguration.
 
 ## 3. Zwecke und Rechtsgrundlagen
 Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten, mögliche Leistungen zu besprechen und die damit verbundene Korrespondenz zu führen. Soweit Sie vorvertragliche Maßnahmen anfordern, beruht die Verarbeitung auf Art. 6 Abs. 1 Buchst. b DSGVO. Für allgemeine Anfragen und die sonstige Kommunikation kann unser berechtigtes Interesse an der Bearbeitung von Nachrichten gemäß Art. 6 Abs. 1 Buchst. f DSGVO die Rechtsgrundlage bilden. Ihre Anfrage wird nicht ohne gesonderte Rechtsgrundlage und gegebenenfalls erforderliche Einwilligung für Newsletter oder Werbung genutzt.
@@ -23,13 +23,12 @@ Für Sicherungskopien und technische Protokolle können gesonderte, vom Hosting 
 ## 6. Empfänger und Dienstleister
 Wir setzen folgende Dienstleister ein, die Daten in unserem Auftrag nur verarbeiten, soweit dies für ihre Leistung erforderlich ist:
 
-- **Vercel Inc.** (USA) hostet die Website und betreibt die serverseitige Funktion, die Anfragen aus dem Kontaktformular entgegennimmt. Dabei werden technische Anfragedaten und der Inhalt übermittelter Formulare verarbeitet. Die serverseitige Funktion läuft derzeit in einem Rechenzentrum in den USA.
-- **VH.PL** stellt das E-Mail-Postfach contact@deliercommerce.com bereit und verarbeitet die dort eingehende Korrespondenz.
+- **VH.PL** hostet die Website, wie in Abschnitt 2 beschrieben, stellt das E-Mail-Postfach contact@deliercommerce.com bereit und verarbeitet die dort eingehende Korrespondenz.
 
 Der Dienst, der Formularanfragen an das Postfach weiterleitet, wird hier vor der Inbetriebnahme des Formulars benannt.
 
 ## 7. Übermittlung in Länder außerhalb des Europäischen Wirtschaftsraums
-Da die Vercel Inc. ihren Sitz in den USA hat und ihre serverseitige Funktion dort betrieben wird, können personenbezogene Daten in die USA übermittelt werden. Die Übermittlung erfolgt auf Grundlage des EU-US-Datenschutzrahmens (EU–US Data Privacy Framework), sofern der Empfänger danach zertifiziert ist, oder auf Grundlage der von der Europäischen Kommission erlassenen Standardvertragsklauseln. Informationen zu den eingesetzten Garantien erhalten Sie unter **contact@deliercommerce.com**.
+Eine Übermittlung personenbezogener Daten in Länder außerhalb des Europäischen Wirtschaftsraums ist derzeit nicht vorgesehen. Sollte ein später eingesetzter Dienstleister, etwa zur Weiterleitung von Formularanfragen, Daten außerhalb des EWR verarbeiten, ergänzen wir diesen Abschnitt vorher um den Dienstleister und die eingesetzten Garantien. Informationen erhalten Sie unter **contact@deliercommerce.com**.
 
 ## 8. Webanalyse, Cookies und Newsletter
 Derzeit verwenden wir auf der Website kein externes Analysewerkzeug und bieten keine Newsletter-Anmeldung an. Die Website setzt keine Cookies und speichert keine Informationen im lokalen Speicher oder Sitzungsspeicher Ihres Browsers. Technisch notwendige Vorgänge auf dem Webserver können dennoch stattfinden. Falls Webanalyse eingeführt wird, aktualisieren wir diese Erklärung zuvor um den konkreten Dienst, die Verarbeitung und gegebenenfalls erforderliche Einwilligungen. Technologien, die eine vorherige Einwilligung verlangen, werden erst nach deren Erteilung eingesetzt.

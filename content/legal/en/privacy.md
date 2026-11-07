@@ -5,7 +5,7 @@ The controller of personal data processed in connection with https://deliercomme
 ## 2. Data we process
 When you submit an inquiry or contact us, we may process your name, email address, company name, inquiry category, preferred language and message, as well as your role and website address if you choose to provide them. We may also receive other information you voluntarily include in correspondence.
 
-The hosting infrastructure may process technical data needed to operate the website, such as IP address, time of request, requested URL, browser identifier and diagnostic or security logs. Technical-log retention is limited to website operation and security needs and depends on the hosting configuration.
+The website is hosted by VH.PL, which provides the technical infrastructure necessary to operate the website. The hosting provider may process technical data, including IP addresses, access timestamps and server logs, for website operation, maintenance and security. Technical-log retention is limited to website operation and security needs and depends on the hosting configuration.
 
 ## 3. Purposes and legal bases
 We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use your inquiry to send newsletters or advertising without a separate applicable legal basis and any required consent.
@@ -23,13 +23,12 @@ Backups and technical logs may follow separate cycles determined by the hosting 
 ## 6. Recipients and service providers
 We use the following service providers, who process data on our behalf only to the extent necessary for their service:
 
-- **Vercel Inc.** (United States) hosts the website and runs the server-side function that receives contact form submissions. It processes technical request data and the content of submitted forms. The server-side function currently runs in a data centre in the United States.
-- **VH.PL** provides the email mailbox contact@deliercommerce.com and processes the correspondence received there.
+- **VH.PL** hosts the website, as described in section 2, and provides the email mailbox contact@deliercommerce.com, processing the correspondence received there.
 
 The service used to forward form submissions to the mailbox will be named here before the form is put into operation.
 
 ## 7. Transfers outside the European Economic Area
-Because Vercel Inc. is based in the United States and its server-side function runs there, personal data may be transferred to the United States. Such transfers take place on the basis of the EU–US Data Privacy Framework, where the recipient is certified under it, or standard contractual clauses adopted by the European Commission. You can request information about the safeguards used by contacting **contact@deliercommerce.com**.
+We do not currently plan to transfer personal data outside the European Economic Area. If a service provider engaged later, for example to forward form submissions, processes data outside the EEA, this section will be updated before that happens to name the provider and the safeguards used. You can request information by contacting **contact@deliercommerce.com**.
 
 ## 8. Analytics, cookies and newsletter
 The website currently does not use third-party analytics or offer newsletter signup. It does not set cookies and does not store information in your browser's local or session storage. Essential server-side technical processes may still operate. If analytics is introduced, this notice will be updated in advance to describe the service, processing and any applicable consent requirements. Technologies requiring prior consent will not run before it has been obtained.

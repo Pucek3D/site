@@ -5,7 +5,7 @@ Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze str
 ## 2. Jakie dane przetwarzamy
 W związku z formularzem i korespondencją możemy przetwarzać: imię i nazwisko, adres e-mail, nazwę firmy, kategorię zapytania, preferowany język, treść wiadomości oraz — jeśli podasz je dobrowolnie — stanowisko i adres strony internetowej. W korespondencji możemy otrzymać także inne dane, które samodzielnie przekażesz.
 
-Podczas korzystania z witryny serwer hostingowy może przetwarzać niezbędne dane techniczne, takie jak adres IP, data i godzina żądania, odwiedzony adres URL, identyfikator przeglądarki, komunikaty błędów i inne dane standardowych logów serwerowych. Okresy przechowywania dzienników technicznych są ograniczane do celów bezpieczeństwa i obsługi serwisu oraz zależą od właściwej konfiguracji hostingu.
+Strona internetowa jest hostowana przez VH.PL, dostawcę infrastruktury technicznej niezbędnej do jej działania. W ramach świadczenia usług hostingowych dostawca może przetwarzać dane techniczne, w tym adresy IP, daty i godziny połączeń oraz logi serwerowe, w celach związanych z utrzymaniem, obsługą i bezpieczeństwem serwisu. Okresy przechowywania dzienników technicznych są ograniczane do celów bezpieczeństwa i obsługi serwisu oraz zależą od właściwej konfiguracji hostingu.
 
 ## 3. Cele i podstawy prawne
 Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane nie będą używane do wysyłki newslettera ani reklam bez odrębnej podstawy i wymaganych zgód.
@@ -23,13 +23,12 @@ Kopie zapasowe i dzienniki techniczne mogą mieć oddzielne cykle przechowywania
 ## 6. Odbiorcy danych i usługi techniczne
 Korzystamy z następujących dostawców usług, którzy przetwarzają dane w naszym imieniu wyłącznie w zakresie niezbędnym do świadczenia swoich usług:
 
-- **Vercel Inc.** (Stany Zjednoczone) utrzymuje stronę oraz uruchamia funkcję serwerową, która odbiera zgłoszenia z formularza kontaktowego. Przetwarza dane techniczne zapytań oraz treść wysłanych formularzy. Funkcja serwerowa działa obecnie w centrum danych w Stanach Zjednoczonych.
-- **VH.PL** zapewnia skrzynkę pocztową contact@deliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
+- **VH.PL** hostuje stronę, zgodnie z opisem w punkcie 2, oraz zapewnia skrzynkę pocztową contact@deliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
 
 Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
-Ponieważ Vercel Inc. ma siedzibę w Stanach Zjednoczonych, a jego funkcja serwerowa działa na ich terytorium, dane osobowe mogą być przekazywane do Stanów Zjednoczonych. Przekazanie odbywa się na podstawie programu ramowego w zakresie ochrony danych UE–USA (EU–US Data Privacy Framework), jeżeli odbiorca jest nim objęty, albo standardowych klauzul umownych przyjętych przez Komisję Europejską. Informacje o stosowanych zabezpieczeniach możesz uzyskać pod adresem **contact@deliercommerce.com**.
+Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Informacje możesz uzyskać pod adresem **contact@deliercommerce.com**.
 
 ## 8. Analityka, pliki cookies i newsletter
 Obecnie na stronie nie działa zewnętrzne narzędzie analityczne ani formularz zapisu do newslettera. Strona nie zapisuje plików cookies i nie przechowuje informacji w pamięci lokalnej ani pamięci sesji przeglądarki. Strona może jednak wykorzystywać niezbędne mechanizmy techniczne serwera. Jeśli zostanie włączona analityka, niniejsza polityka zostanie wcześniej zaktualizowana o zakres przetwarzania i informacje dotyczące ewentualnych zgód. Technologie wymagające uprzedniej zgody nie będą uruchamiane przed jej uzyskaniem.
