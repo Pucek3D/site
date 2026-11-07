@@ -12,8 +12,9 @@ const HANGING: Partial<Record<Locale, RegExp>> = {
   // Polish typography: single-letter words (spójniki i przyimki) never end a line,
   // plus the short words the client asked to carry over (na, do, dla, które, kto).
   pl: /(?<![\p{L}\p{N}])([aiouwzAIOUWZ]|na|Na|do|Do|dla|Dla|które|Które|kto|Kto) /gu,
-  // German articles stay with their noun.
-  de: /(?<![\p{L}\p{N}])(der|die|das|Der|Die|Das) /gu,
+  // German articles stay with their noun, plus the short words the client asked
+  // to carry over (und, für, im, vor, jede/jeder, and a dash with its clause).
+  de: /(?<![\p{L}\p{N}])(der|die|das|Der|Die|Das|und|für|im|Im|vor|jede|jeder|damit|–) /gu,
 }
 
 function bindString(text: string, pattern: RegExp): string {
