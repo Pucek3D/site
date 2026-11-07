@@ -65,13 +65,14 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
           ) : null}
 
           {/* The buyer routes, in route order. Training has no page in the navigation, so it is not linked here. */}
-          <ul className="flex flex-wrap gap-3 text-sm font-semibold">
+          {/* Two equal audience routes, so equal weight; full-width on phones for an easy tap target. */}
+          <ul className="mt-1 flex flex-col gap-3 text-sm font-semibold sm:flex-row sm:flex-wrap">
             {(['brands', 'agencies'] as const).map((k) => (
               <li key={k}>
                 <Link
                   href={href(locale, k)}
                   className={cn(
-                    'inline-flex min-h-11 items-center gap-2 rounded-lg bg-cobalt px-6 py-2.5 text-white hover:bg-cobalt/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2',
+                    'inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-cobalt px-6 py-2.5 text-white transition-colors hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 sm:w-auto',
                   )}
                 >
                   {hero.routes[k]}

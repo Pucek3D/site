@@ -55,7 +55,7 @@ export default async function AgencyPage({ params }: Props) {
               <p className="text-pretty text-xl font-medium leading-snug text-cobalt">{a.hero.emphasis}</p>
               <Paragraphs items={a.hero.paragraphs} className="text-lg" />
               <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <CtaLink href={contactAgency(locale)}>
+                <CtaLink href={contactAgency(locale)} className="w-full sm:w-auto">
                   {a.hero.primaryCta}
                   <ArrowRight aria-hidden className="size-4" />
   </CtaLink>

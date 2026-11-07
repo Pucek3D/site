@@ -87,6 +87,19 @@ export function ContactForm({
   }
 
   const errorKeys = Object.keys(errors) as (keyof FieldErrors)[]
+  const fieldLabel = (k: keyof FieldErrors): string => {
+    if (k === 'consent') return f.consentLink
+    const labels: Partial<Record<keyof FieldErrors, string>> = {
+      name: f.name,
+      email: f.email,
+      company: f.company,
+      role: f.role,
+      website: f.website,
+      language: f.language,
+      improve: f.improve,
+    }
+    return labels[k] ?? f.topicLegend
+  }
 
   return (
     <form ref={formRef} onSubmit={onSubmit} noValidate className="flex flex-col gap-10">
@@ -101,6 +114,25 @@ export function ContactForm({
             <TriangleAlert aria-hidden className="size-5 text-destructive" />
             {f.errorSummary}
           </p>
+          {/* Each problem links to its field, so a keyboard or screen-reader user can jump straight to it. */}
+          <ul className="mt-3 flex flex-col gap-1.5 pl-7">
+            {errorKeys.map((k) => (
+              <li key={k}>
+                <a
+                  href={`#${k}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const el = formRef.current?.querySelector<HTMLElement>(k === 'consent' ? 'input[name="consent"]' : `#${k}`)
+                    el?.focus()
+                    el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+                  }}
+                  className="text-sm font-medium text-destructive underline underline-offset-4 hover:text-ink"
+                >
+                  {fieldLabel(k)}: {k === 'consent' ? f.errors[errors.consent!] : err(k)}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       ) : null}
 
@@ -218,9 +250,12 @@ export function ContactForm({
   )
 }
 
+const OPTIONAL_FIELDS = new Set(['role', 'website'])
+
 function a11y(id: string, error?: string, hint?: string) {
   const describedBy = [hint ? `${id}-hint` : '', error ? `${id}-error` : ''].filter(Boolean).join(' ')
   return {
+    'aria-required': OPTIONAL_FIELDS.has(id) ? undefined : (true as const),
     'aria-invalid': error ? (true as const) : undefined,
     'aria-describedby': describedBy || undefined,
   }

@@ -50,12 +50,13 @@ export default async function BrandsPage({ params }: Props) {
                 {b.hero.title}
               </h1>
               <Paragraphs items={b.hero.paragraphs} className="text-lg" />
-              <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <CtaLink href="#ppc">
+              {/* Primary is filled, secondary is outlined, so the two offers read as a first and second choice rather than two equal buttons. */}
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <CtaLink href="#ppc" className="w-full sm:w-auto">
                   {b.hero.primaryCta}
                   <ArrowDown aria-hidden className="size-4" />
                 </CtaLink>
-                <CtaLink href="#training" variant="sage">
+                <CtaLink href="#training" variant="secondary" className="w-full bg-white sm:w-auto">
                   {b.hero.secondaryCta}
                   <ArrowDown aria-hidden className="size-4" />
                 </CtaLink>
