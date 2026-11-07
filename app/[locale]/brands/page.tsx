@@ -115,8 +115,8 @@ export default async function BrandsPage({ params }: Props) {
 
       {/* Offer A: Amazon PPC Management. The service headline lives here, not in the hero. */}
       <Section tone="porcelain" labelledBy="ppc-title" id="ppc" className="scroll-mt-24 pb-14 pt-12 md:pb-16 md:pt-14">
-        {locale === 'pl' ? (
-          /* Polish layout: pitch + CTA on the left, service scope on the right. */
+        {locale === 'pl' || locale === 'en' ? (
+          /* Two-column layout: pitch + CTA on the left, service scope on the right. */
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="flex min-w-0 flex-col items-start gap-5 lg:col-span-6">
               <Eyebrow accent="cobalt">{ppc.label}</Eyebrow>
