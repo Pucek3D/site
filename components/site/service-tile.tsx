@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Lines } from './typeset'
 
 export type TileLabels = {
   /** Expands the card in place, e.g. "See how it works". */
@@ -132,7 +133,7 @@ function ServiceTile({
         </h3>
 
         <p className={cn('mt-4 max-w-md text-pretty text-[0.95rem] leading-relaxed text-[var(--tile-body)]', !open && 'line-clamp-3')}>
-          {excerpt}
+          <Lines text={excerpt} />
         </p>
 
         {hasMore ? (
@@ -144,7 +145,7 @@ function ServiceTile({
             <div className="flex flex-col gap-3">
               {rest.map((p) => (
                 <p key={p} className="text-pretty">
-                  {p}
+                  <Lines text={p} />
                 </p>
               ))}
             </div>

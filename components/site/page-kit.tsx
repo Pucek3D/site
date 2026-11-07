@@ -6,6 +6,7 @@ import type { Titled } from '@/content/partner/types'
 import { href, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { Container, CtaLink, Eyebrow, Section } from './primitives'
+import { Lines } from './typeset'
 
 /** Two crumbs only: home and the page. Every page sits one level below home. */
 export function Breadcrumbs({ locale, homeLabel, label, navLabel }: { locale: Locale; homeLabel: string; label: string; navLabel: string }) {
@@ -78,7 +79,7 @@ export function Paragraphs({ items, className, dark = false }: { items: string[]
     <div className="flex flex-col gap-4">
       {items.map((p) => (
         <p key={p} className={cn('text-pretty leading-relaxed', dark ? 'text-mist' : 'text-slate', className)}>
-          {p}
+          <Lines text={p} />
         </p>
       ))}
     </div>

@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { cn } from '@/lib/utils'
 
 /**
@@ -42,6 +43,31 @@ export function Sentences({
   : sentence}
           {i < sentences.length - 1 ? ' ' : null}
         </span>
+      ))}
+    </>
+  )
+}
+
+/**
+ * Body copy with authored line breaks. A "\n" in the copy is a break the partner
+ * chose for the desktop layout, so it applies from lg up; below that the column
+ * is too narrow for the chosen lines and it reads as an ordinary space.
+ */
+export function Lines({ text }: { text: string }) {
+  const parts = text.split('\n')
+  if (parts.length < 2) return <>{text}</>
+  return (
+    <>
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {i > 0 ? (
+            <>
+              {' '}
+              <br className="hidden lg:inline" />
+            </>
+          ) : null}
+          {part}
+        </Fragment>
       ))}
     </>
   )

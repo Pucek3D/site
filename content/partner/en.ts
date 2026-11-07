@@ -24,7 +24,7 @@ export const en: PartnerCopy = {
       title: "Improve Amazon performance. Build the capability\nbehind it.",
       paragraphs: [
         "Expert Amazon PPC management, data-driven optimisation\nand practical training for consumer brands and the agencies that\nserve them.",
-        "We turn campaign data into smarter decisions, stronger performance\nand skills that last.",
+        "We turn campaign data into smarter decisions, stronger\nperformance and skills that last.",
       ],
       primaryCta: "Let's talk",
       routes: {
@@ -140,7 +140,7 @@ export const en: PartnerCopy = {
       emphasis: "Two ways to move forward: Amazon PPC Management or practical PPC Training.",
       paragraphs: [
         "Whether you're launching a new brand or growing an established one, ADelier helps you succeed on Amazon through expert PPC management and practical team training.",
-        "Choose managed advertising, in-house training or both — tailored to your goals and data.",
+        "Choose managed advertising, in-house training or both\n— tailored to your goals and data.",
       ],
       primaryCta: "Explore PPC management",
       secondaryCta: "Explore PPC training",
@@ -173,8 +173,8 @@ export const en: PartnerCopy = {
       label: "Amazon PPC Management",
       title: "Stronger advertising. Smarter decisions. Better performance.",
       paragraphs: [
-        "We manage and optimise your Amazon campaigns with a focus on advertising efficiency and sustainable sales growth.",
-        "We analyse performance, identify opportunities and make informed decisions to improve results.",
+        "We manage and optimise your Amazon campaigns with a focus\non advertising efficiency and sustainable sales growth.",
+        "We analyse performance, identify opportunities and make\ninformed decisions to improve results.",
       ],
       cycleTitle: "How we manage your account",
       cycle: [
@@ -223,7 +223,7 @@ export const en: PartnerCopy = {
       label: "PPC Training for Brand Teams",
       title: "Prefer to manage advertising in\u2011house?\nWe'll help you build the skills.",
       paragraphs: [
-        "Not every business wants to hire an agency. We train brand, e-commerce and marketing teams to manage Amazon PPC confidently and make better advertising decisions.",
+        "Not every business wants to hire an agency. We train brand, e-commerce and marketing teams to manage Amazon PPC confidently\nand make better advertising decisions.",
         "Training is available independently or alongside our management services.",
       ],
       listLabel: "Depending on your needs, it can include:",
@@ -241,7 +241,7 @@ export const en: PartnerCopy = {
       eyebrow: "Let’s talk about your Amazon goals",
       title: "Ready to grow your brand on Amazon?",
       paragraphs: [
-        "Whether you need expert campaign management or want to develop your team's in-house capabilities, ADelier can help.",
+        "Whether you need expert campaign management or want to develop your team's\nin-house capabilities, ADelier can help.",
       ],
       cta: "Let's talk about your brand",
       trainingLink: "Explore PPC training",
@@ -254,7 +254,7 @@ export const en: PartnerCopy = {
       title: "Expand your Amazon offer. Keep the client relationship.",
       emphasis: "Your clients. Your brand. Our expertise.",
       paragraphs: [
-        "ADelier helps marketing and media agencies expand their Amazon PPC capabilities through flexible partnership models. Our Poland-based specialists work within your workflows, quality standards and reporting structure, while you retain control of your client relationships.",
+        "ADelier helps marketing and media agencies expand\ntheir Amazon PPC capabilities through flexible partnership models.\nOur Poland-based specialists work within your workflows, quality standards and reporting structure, while you retain control\nof your client relationships.",
       ],
       primaryCta: "Discuss an agency partnership",
       secondaryCta: "Explore partnership models",
@@ -286,8 +286,8 @@ export const en: PartnerCopy = {
           name: "Dedicated PPC specialist",
           summary: "A named specialist working within your team.",
           paragraphs: [
-            "Get dedicated Amazon PPC support from a Poland-based specialist integrated into your agency's workflows, tools and reporting structure.",
-            "Responsibilities, availability, task allocation, approvals and escalation processes are agreed in advance, giving you additional capacity while maintaining control over delivery.",
+            "Get dedicated Amazon PPC support from a Poland-based specialist integrated into your agency's workflows, tools\nand reporting structure.",
+            "Responsibilities, availability, task allocation, approvals and escalation processes are agreed in advance, giving you\nadditional capacity while maintaining control over delivery.",
           ],
           listLabel: "What it can give your agency:",
           items: [
