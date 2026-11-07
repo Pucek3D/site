@@ -9,7 +9,7 @@
 type Placeholder = { value: string; placeholder: boolean }
 
 /** The canonical origin (no `www`). Overridable per environment, never an example domain. */
-const CANONICAL_URL = 'https://deliercommerce.com'
+const CANONICAL_URL = 'https://adeliercommerce.com'
 
 export const siteConfig = {
   name: 'ADelier Commerce',

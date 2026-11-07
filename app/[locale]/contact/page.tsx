@@ -5,6 +5,7 @@ import { Container, Eyebrow } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import type { Locale } from '@/lib/i18n'
+import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { pageMetadata } from '@/lib/seo'
 import { siteConfig } from '@/lib/site-config'
 import { topics, type Topic } from '@/lib/validation'
@@ -32,6 +33,7 @@ export default async function ContactPage({ params, searchParams }: Props) {
 
   return (
     <>
+      <SeoStructuredData locale={locale} page="contact" />
       <Container className="pt-14 pb-16 md:pt-20 md:pb-24">
         <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.contact} navLabel={dict.common.breadcrumbLabel} />
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">

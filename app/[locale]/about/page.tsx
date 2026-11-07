@@ -6,6 +6,7 @@ import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { SHOW_FOUNDER_EXPERIENCE } from '@/lib/config'
 import { href, type Locale } from '@/lib/i18n'
+import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { pageMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: Locale }> }
@@ -24,6 +25,7 @@ export default async function AboutPage({ params }: Props) {
   const offset = SHOW_FOUNDER_EXPERIENCE ? 1 : 0
   return (
     <>
+      <SeoStructuredData locale={locale} page="about" />
       <PageHero
         crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.about} navLabel={d.common.breadcrumbLabel} />}
         title={a.hero.title}

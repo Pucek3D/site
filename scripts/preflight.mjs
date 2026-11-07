@@ -44,10 +44,11 @@ if (env.LEGAL_REVIEW_TOKEN && env.LEGAL_REVIEW_TOKEN.length < 24) {
   warnings.push('LEGAL_REVIEW_TOKEN is shorter than 24 characters and is ignored.')
 }
 
-const siteUrl = env.NEXT_PUBLIC_SITE_URL || 'https://deliercommerce.com'
-if (siteUrl.replace(/\/$/, '') !== 'https://deliercommerce.com') {
-  warnings.push(`NEXT_PUBLIC_SITE_URL is "${siteUrl}", not the canonical https://deliercommerce.com.`)
+const siteUrl = env.NEXT_PUBLIC_SITE_URL || 'https://adeliercommerce.com'
+if (siteUrl.replace(/\/$/, '') !== 'https://adeliercommerce.com') {
+  blockers.push(`NEXT_PUBLIC_SITE_URL is "${siteUrl}", not the owner-confirmed canonical https://adeliercommerce.com.`)
 }
+if (env.SEO_NOINDEX === 'true') blockers.push('SEO_NOINDEX is true: the production site would be hidden from search engines.')
 
 if (env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true') {
   blockers.push('NEXT_PUBLIC_ANALYTICS_ENABLED is true, but no provider or consent mechanism is documented.')

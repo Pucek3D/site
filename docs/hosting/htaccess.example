@@ -15,7 +15,7 @@ RewriteEngine On
 # 1. HTTPS, and www -> non-www, in one 301 hop.
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteRule ^ https://deliercommerce.com%{REQUEST_URI} [L,R=301]
+RewriteRule ^ https://adeliercommerce.com%{REQUEST_URI} [L,R=301]
 
 # 2. Language root: / -> /en/ (the app negotiates Accept-Language; static
 #    hosting cannot, so English is the default).

@@ -6,6 +6,7 @@ import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitiv
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { href, type Locale } from '@/lib/i18n'
+import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { pageMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: Locale }> }
@@ -27,6 +28,7 @@ export default async function TrainingPage({ params }: Props) {
 
   return (
     <>
+      <SeoStructuredData locale={locale} page="training" />
       {/* Same composition as For Agencies / For Brands: photo bleeds right and fades into white on desktop. */}
       <section className="relative flex flex-col-reverse overflow-hidden border-b border-hairline bg-white lg:block">
         <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[50%]">

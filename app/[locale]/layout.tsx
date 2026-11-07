@@ -7,7 +7,6 @@ import { SiteHeader } from '@/components/site/site-header'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { isLocale, locales } from '@/lib/i18n'
-import { organizationJsonLd } from '@/lib/seo'
 import { siteConfig } from '@/lib/site-config'
 import '../globals.css'
 
@@ -30,6 +29,11 @@ export const dynamicParams = false
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  // Emitted only when the real tokens are supplied; never invented.
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : {}),
+    ...(process.env.BING_SITE_VERIFICATION ? { other: { 'msvalidate.01': process.env.BING_SITE_VERIFICATION } } : {}),
+  },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }, { url: '/favicon.ico', sizes: 'any' }],
     apple: '/apple-touch-icon.png',
@@ -57,11 +61,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} bg-background`}>
       <body className="flex min-h-dvh flex-col">
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger -- static, server-built JSON
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
-        />
         <SiteHeader locale={locale} nav={dict.nav} copy={copy} />
         <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
           {children}

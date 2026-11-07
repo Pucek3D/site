@@ -6,6 +6,7 @@ import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitiv
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
 import { href, type Locale } from '@/lib/i18n'
+import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { pageMetadata } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: Locale }> }
@@ -30,6 +31,7 @@ export default async function AgencyPage({ params }: Props) {
 
   return (
     <>
+      <SeoStructuredData locale={locale} page="agencies" />
       {/* Same composition as the Home hero: the photo bleeds to the right viewport edge and fades into
           the white ground on desktop; below lg it sits full-width under the text. */}
       <section className="relative flex flex-col-reverse overflow-hidden border-b border-hairline bg-white lg:block">

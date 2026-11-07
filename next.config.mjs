@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+// Mirrors lib/seo-runtime.ts (next.config cannot import TS).
+const noIndex = process.env.SEO_NOINDEX === 'true' || process.env.VERCEL_ENV === 'preview'
+
 const nextConfig = {
   // Lets a verification build run without overwriting the dev server's .next output.
   distDir: process.env.NEXT_DIST_DIR || '.next',
@@ -15,6 +18,7 @@ const nextConfig = {
   },
   async headers() {
     return [
+      ...(noIndex ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' }] }] : []),
       {
         source: '/:path*',
         headers: [
