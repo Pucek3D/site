@@ -9,8 +9,9 @@ const NBSP = '\u00a0'
  * that one whitespace character.
  */
 const HANGING: Partial<Record<Locale, RegExp>> = {
-  // Polish typography: single-letter words (spójniki i przyimki) never end a line.
-  pl: /(?<![\p{L}\p{N}])([aiouwzAIOUWZ]) /gu,
+  // Polish typography: single-letter words (spójniki i przyimki) never end a line,
+  // plus the short words the client asked to carry over (na, do, dla, które, kto).
+  pl: /(?<![\p{L}\p{N}])([aiouwzAIOUWZ]|na|Na|do|Do|dla|Dla|które|Które|kto|Kto) /gu,
   // German articles stay with their noun.
   de: /(?<![\p{L}\p{N}])(der|die|das|Der|Die|Das) /gu,
 }
