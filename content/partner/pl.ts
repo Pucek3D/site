@@ -235,7 +235,8 @@ export const pl: PartnerCopy = {
       ],
       listLabel: "Szkolenia mogą obejmować:",
       items: [
-        "Strukturę i konfigurację kampanii, słowa kluczowe i targetowanie",
+        "Strukturę i konfigurację kampanii",
+        "Strategię słów kluczowych i targetowanie",
         "Zarządzanie budżetem i optymalizację wydatków",
         "Analizę ACOS, ROAS i wyników kampanii",
         "Praktyczne ćwiczenia na danych z Twoich kampanii, jeśli są dostępne",
