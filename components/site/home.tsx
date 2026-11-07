@@ -102,7 +102,9 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
             below them; three from 1200px, where each column is wide enough not to compress the longer PL/DE strings. */}
         {/* The tablet rule is capped at 1199px: an `md:` rule sorts after `min-[1200px]:` and would otherwise win at desktop. */}
         <div className="grid gap-7 md:gap-x-10 md:max-[1199px]:grid-cols-2 min-[1200px]:grid-cols-[31fr_38fr_31fr]">
-          <div className="flex flex-col gap-5">
+          {/* Side by side, the column has no fixed gap: it stretches to the grid row and spreads its paragraphs, so the last
+              one ends on the same line as the approach paragraph beside it. Stacked on mobile, the gap separates them. */}
+          <div className="flex flex-col justify-between gap-5 md:gap-0">
             {copy.paragraphs.slice(0, -1).map((p) => (
               <p key={p} className="text-pretty text-base leading-relaxed text-slate">
                 {p}
