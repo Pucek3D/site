@@ -43,9 +43,18 @@ justified later. Without a recorded reason, the 50-day rule applies.
 ### Backups
 
 VH.PL mailbox backups follow the host's own rotation cycle. Confirm the cycle
-length with VH.PL and record it here: `____ days`. A deleted message disappears
-from backups only when that cycle rotates; do not restore backups selectively
-to recover deleted inquiries.
+length with VH.PL in writing for server vh20324 and record it here:
+`____ days` (NOT VERIFIED).
+
+VH.PL's public package listing advertises backups twice a day kept for 31 days.
+That is marketing material, not a confirmation for this account, so it is not
+entered above and must not be quoted in the privacy notices until confirmed.
+
+Backup retention is separate from active mailbox retention: the weekly review
+deletes inquiries from the mailbox after 50 days, but copies can remain in the
+host's backups until the backup cycle rotates. Nothing deletes them earlier, and
+no automatic deletion exists. Do not restore backups selectively to recover
+deleted inquiries.
 
 ### Requests from the person concerned
 

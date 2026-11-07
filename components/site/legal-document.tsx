@@ -2,19 +2,26 @@ import { notFound } from 'next/navigation'
 import type { ReactNode } from 'react'
 import type { Dictionary } from '@/content'
 import type { Locale } from '@/lib/i18n'
+import { legalAccess } from '@/lib/legal-access'
 import { loadLegalDoc } from '@/lib/legal-docs'
-import { siteConfig } from '@/lib/site-config'
 import { Container, Eyebrow } from './primitives'
 import { Breadcrumbs } from './page-kit'
 
 /**
  * Renders an owner-supplied legal draft as the public page will look.
  *
- * The drafts carry the operator's private residential address, so a deployed
- * build without LEGAL_PUBLISH_APPROVED=true does not render them at all (404).
- * Swapping the address for a "[withheld]" marker would publish a notice that
- * reads as final while missing a mandatory detail, which is worse than none.
+ * The drafts carry the operator's private residential address, so without
+ * LEGAL_PUBLISH_APPROVED=true they are not rendered at all (404), except as a
+ * private review copy behind LEGAL_REVIEW_TOKEN. Swapping the address for a
+ * "[withheld]" marker would publish a notice that reads as final while missing
+ * a mandatory detail, which is worse than none.
  */
+
+const REVIEW_NOTICE: Record<Locale, string> = {
+  en: 'Private review copy. Not published: this page returns 404 for everyone else until publication is approved.',
+  pl: 'Prywatna kopia do przeglądu. Nieopublikowana: dla innych osób ta strona zwraca 404 do czasu zatwierdzenia publikacji.',
+  de: 'Private Prüfkopie. Nicht veröffentlicht: Für alle anderen liefert diese Seite 404, bis die Veröffentlichung freigegeben ist.',
+}
 
 const LINKABLE = /(\b[\w.+-]+@[\w-]+(?:\.[\w-]+)+\b|https?:\/\/[^\s)]+|\bwww\.[\w-]+(?:\.[\w-]+)+\b)/g
 
@@ -40,16 +47,24 @@ export function LegalDocument({
   locale,
   dict,
   page,
+  review,
 }: {
   locale: Locale
   dict: Dictionary
   page: 'privacy' | 'legal'
+  review: string | string[] | undefined
 }) {
-  if (!siteConfig.legal.showAddress) notFound()
+  const access = legalAccess(review)
+  if (access === 'denied') notFound()
   const doc = loadLegalDoc(locale, page)
   return (
     <Container className="py-14 md:py-20">
       <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items[page]} navLabel={dict.common.breadcrumbLabel} />
+      {access === 'review' ? (
+        <p role="note" className="mb-8 max-w-3xl rounded-lg border border-hairline bg-sage-tint px-4 py-3 text-sm font-medium text-ink">
+          {REVIEW_NOTICE[locale]}
+        </p>
+      ) : null}
       <article className="max-w-3xl">
         <Eyebrow>{dict[page].eyebrow}</Eyebrow>
         <h1 className="mt-5 text-balance text-4xl font-semibold md:text-5xl">{doc.title}</h1>

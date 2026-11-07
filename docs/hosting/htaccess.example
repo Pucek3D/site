@@ -1,11 +1,14 @@
-# ADelier Commerce — Apache configuration for a STATIC deployment on VH.PL.
+# ADelier Commerce — Apache/LiteSpeed rules for VH.PL. NOT INSTALLED, NOT TESTED.
 #
-# Only relevant if the site is served as static files (Apache/cPanel). In that
-# setup next.config.mjs redirects/headers and proxy.ts DO NOT run, so the
-# equivalent rules must live here. Not tested on the VH.PL server yet: upload
-# as `.htaccess`, then verify each rule with `curl -I`.
+# Deployment type is not confirmed yet:
+# - Node.js app (cPanel "Setup Node.js App"): Next.js serves its own redirects
+#   and headers. Only section 1 (HTTPS, www) and section 5 (body limit) are
+#   still needed in front of the app. Sections 2-4 would duplicate the app.
+# - Static files only: next.config.mjs and proxy.ts DO NOT run, so sections
+#   1-4 are required, and /api/contact does not exist at all.
+# Upload as `.htaccess`, then verify each rule with `curl -I`.
 #
-# Requires mod_rewrite and mod_headers (check with VH.PL).
+# Requires mod_rewrite and mod_headers (check with VH.PL; LiteSpeed reads them).
 
 RewriteEngine On
 
@@ -32,6 +35,13 @@ RewriteRule ^(amazon-ppc-management|amazon-market-validation-audits|services)/?$
   Header always set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'"
 </IfModule>
 
-# NOTE: a static export cannot run app/api/contact. A form endpoint for this
-# setup (e.g. PHP with authenticated SMTP) does not exist yet and must not be
+# 5. Request size limit for the contact endpoint, enforced before the app
+#    (the app also rejects anything over 16 KB). <If> needs Apache 2.4; confirm
+#    LiteSpeed on VH.PL honours it, otherwise ask VH.PL for the equivalent.
+<If "%{REQUEST_URI} =~ m#^/api/contact#">
+  LimitRequestBody 16384
+</If>
+
+# NOTE: a static export cannot run app/api/contact. A form endpoint for that
+# setup (e.g. PHP with authenticated SMTP) does not exist and must not be
 # referenced until it is built and tested.

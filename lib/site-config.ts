@@ -24,14 +24,11 @@ export const siteConfig = {
   },
   legal: {
     /**
-     * The legal pages carry the operator's private residential address. It is
-     * shown in local development (the v0 preview) for review, and anywhere else
-     * ONLY once LEGAL_PUBLISH_APPROVED=true is set. Until then deployed builds
-     * return 404 for both pages rather than publish an incomplete notice.
+     * The legal pages carry the operator's private residential address. They
+     * are public ONLY once LEGAL_PUBLISH_APPROVED=true is set by the owner, in
+     * any environment. Before that they return 404, except for a private review
+     * copy behind LEGAL_REVIEW_TOKEN (see lib/legal-access.ts).
      */
     publishApproved: process.env.LEGAL_PUBLISH_APPROVED === 'true',
-    get showAddress() {
-      return this.publishApproved || process.env.NODE_ENV === 'development'
-    },
   },
 } as const
