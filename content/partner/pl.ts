@@ -249,7 +249,7 @@ export const pl: PartnerCopy = {
       eyebrow: "Porozmawiajmy o Twoich celach na Amazonie",
       title: "Chcesz rozwijać swoją markę na Amazonie?",
       paragraphs: [
-        "Niezależnie od tego, czy potrzebujesz profesjonalnego zarządzania kampaniami, czy szkolenia własnego zespołu — pomożemy Ci wybrać rozwiązanie dopasowane do potrzeb Twojego biznesu.",
+        "Niezależnie od tego, czy\u00a0potrzebujesz profesjonalnego zarządzania kampaniami, czy\u00a0szkolenia własnego zespołu — pomożemy Ci wybrać rozwiązanie dopasowane do\u00a0potrzeb Twojego biznesu.",
       ],
       cta: "Porozmawiajmy o Twojej marce",
       trainingLink: "Poznaj szkolenia PPC",
