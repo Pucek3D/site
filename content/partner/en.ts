@@ -286,8 +286,8 @@ export const en: PartnerCopy = {
           name: "Dedicated PPC specialist",
           summary: "A named specialist working within your team.",
           paragraphs: [
-            "Get dedicated Amazon PPC support from a Poland-based\nspecialist integrated into your agency's workflows, tools and reporting structure.",
-            "Responsibilities, availability, task allocation, approvals and escalation processes are agreed in advance, giving you\nadditional capacity while maintaining control over delivery.",
+            "Get dedicated Amazon PPC support from a Poland-based\nspecialist integrated into your agency's workflows, tools\nand reporting structure.",
+            "Responsibilities, availability, task allocation, approvals\nand escalation processes are agreed in advance, giving\nyou additional capacity while maintaining control over delivery.",
           ],
           listLabel: "What it can give your agency:",
           items: [
@@ -489,7 +489,7 @@ export const en: PartnerCopy = {
       rows: [
         { claim: "Data-led diagnosis", evidence: "A baseline review of structure, search terms and spend, with the source data named" },
         { claim: "Named accountability", evidence: "A named expert lead and a decision log you can read" },
-        { claim: "Transparent reporting", evidence: "Each report states what changed, what it means, what we will test and who owns the next decision" },
+        { claim: "Transparent reporting", evidence: "Each report states what changed, what it means, what we will test and who owns\nthe next decision" },
         { claim: "Honest measurement", evidence: "Results shown with baseline, period and context; no guaranteed ROAS, ACOS or sales" },
         { claim: "Controlled access", evidence: "Work within agreed permissions and budget limits, using user permissions rather than shared logins" },
       ],

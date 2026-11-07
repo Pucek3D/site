@@ -90,7 +90,7 @@ export default async function AboutPage({ params }: Props) {
                 <th scope="row" className="block px-6 pt-5 text-left align-top font-display text-lg font-semibold text-ink md:table-cell md:py-5">
                   {r.claim}
                 </th>
-                <td className="block px-6 pt-1 pb-5 align-top text-pretty leading-relaxed text-slate md:table-cell md:py-5">
+                <td className="block px-6 pt-1 pb-5 align-top whitespace-pre-line text-pretty leading-relaxed text-slate md:table-cell md:py-5">
                   <span className="sr-only md:hidden">{a.evidence.head[1]}: </span>
                   {r.evidence}
                 </td>
