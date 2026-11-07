@@ -40,7 +40,7 @@ export const pl: PartnerCopy = {
       closingLine: "Każde konto jest inne. Twoja strategia też powinna być.",
     },
     whatWeDo: {
-      title: "Ekspertyza, która robi różnicę.",
+      title: "Specjalizacja, która ma znaczenie.",
       items: [
         {
           number: "01",
@@ -259,12 +259,12 @@ export const pl: PartnerCopy = {
   agencies: {
     hero: {
       eyebrow: "Dla agencji · Partnerstwa Amazon PPC",
-      title: "Rozwijaj ofertę Amazon. Zachowaj relację z klientem.",
+      title: "Rozszerz swoją ofertę Amazon PPC. Zachowaj relacje z klientami.",
       emphasis: "Twoi klienci. Twoja marka. Nasza wiedza.",
       paragraphs: [
         "ADelier pomaga agencjom marketingowym i mediowym rozwijać kompetencje Amazon PPC dzięki elastycznym modelom partnerstwa. Nasi specjaliści z Polski pracują zgodnie z Twoimi procesami, standardami jakości i strukturą raportowania, a relacje z klientami pozostają pod Twoją kontrolą.",
       ],
-      primaryCta: "Porozmawiajmy o współpracy z agencją",
+      primaryCta: "Porozmawiajmy o współpracy",
       secondaryCta: "Poznaj modele współpracy",
       imageAlt: "Dwoje partnerów biznesowych podaje sobie ręce nad biurkiem z laptopem",
     },
@@ -374,7 +374,7 @@ export const pl: PartnerCopy = {
       paragraphs: [
         "Niezależnie od tego, czy potrzebujesz zarządzania kampaniami w modelu white-label, czy dedykowanego specjalisty, ADelier pomoże Ci elastycznie i pewnie skalować ofertę Amazon.",
       ],
-      cta: "Porozmawiajmy o współpracy z agencją",
+      cta: "Porozmawiajmy o współpracy",
       trainingLink: "Albo poznaj szkolenia PPC dla swojego zespołu",
     },
   },

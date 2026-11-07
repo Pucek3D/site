@@ -11,7 +11,7 @@ export const pl: Dictionary = {
       "description": "Jak ADelier Commerce przetwarza dane osobowe. Wersja robocza do uzupełnienia przez właściciela i weryfikacji prawnej."
     },
     "legal": {
-      "title": "Nota prawna / Impressum | ADelier Commerce",
+      "title": "Informacje prawne | ADelier Commerce",
       "description": "Nota prawna i dane firmy ADelier Commerce. Wersja robocza do uzupełnienia przez właściciela."
     }
   },
@@ -29,7 +29,7 @@ export const pl: Dictionary = {
       "about": "O nas",
       "contact": "Kontakt",
       "privacy": "Polityka prywatności",
-      "legal": "Nota prawna / Impressum"
+      "legal": "Informacje prawne"
     },
     "primaryLabel": "Nawigacja główna",
     "openMenu": "Otwórz menu",
@@ -75,9 +75,10 @@ export const pl: Dictionary = {
   },
   "contact": {
     "eyebrow": "Porozmawiajmy",
+    "pageTitle": "Porozmawiajmy o Twoich potrzebach związanych z Amazon PPC.",
     "intro": [
       "Niezależnie od tego, czy potrzebujesz lepszych wyników reklamowych, dodatkowych zasobów Amazon PPC, czy praktycznego szkolenia dla zespołu, chcemy zrozumieć Twoje cele.",
-      "Opowiedz nam, gdzie jesteś dziś i co chcesz osiągnąć. Omówimy, jaka forma wsparcia może najlepiej pasować do Twojej firmy."
+      "Opisz swoją obecną sytuację i to, co chcesz osiągnąć. Wspólnie ustalimy, jaka forma wsparcia może najlepiej odpowiadać potrzebom Twojej firmy."
     ],
     "emailLabel": "Wolisz e-mail?",
     "emailPending": "Adres e-mail do potwierdzenia",
@@ -182,7 +183,7 @@ export const pl: Dictionary = {
   },
   "legal": {
     "eyebrow": "Informacje prawne",
-    "title": "Nota prawna / Impressum",
+    "title": "Informacje prawne",
     "notice": "Wyłącznie struktura robocza. Przed publikacją właściciel musi uzupełnić każde pole w nawiasie. Żadne dane firmy na tej stronie nie zostały wymyślone.",
     "sections": [
       {

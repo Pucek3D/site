@@ -69,12 +69,13 @@ export const de: Dictionary = {
       "autopilotEyebrow": "Das Problem mit dem Autopiloten",
       "approachEyebrow": "Unser Ansatz"
     },
-    "breadcrumbLabel": "Brotkrümelnavigation",
+    "breadcrumbLabel": "Navigationspfad",
     "showMore": "Mehr erfahren",
     "showLess": "Weniger anzeigen"
   },
   "contact": {
     "eyebrow": "Kontakt aufnehmen",
+    "pageTitle": "Sprechen wir über Ihre Amazon PPC-Anforderungen.",
     "intro": [
       "Ob Sie die Kampagnenperformance verbessern, zusätzliche Amazon PPC-Kapazitäten gewinnen oder Ihr Team gezielt schulen möchten – wir möchten zunächst Ihre Ziele verstehen.",
       "Schildern Sie uns Ihre aktuelle Situation und was Sie erreichen möchten. Gemeinsam klären wir, welche Form der Unterstützung am besten zu Ihrem Unternehmen passt."

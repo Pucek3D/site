@@ -92,28 +92,21 @@ function Hero({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
 function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
   return (
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
-      <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-8 lg:gap-y-8 xl:gap-y-3">
-        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-2">
-  <h2 id="autopilot" className="text-balance font-display text-xl font-semibold uppercase leading-snug tracking-wide text-cobalt md:text-2xl xl:text-lg">
-  {labelText(copy.title)}
-  </h2>
-        </div>
-        {/* The problem and the answer to it read as one stacked argument in the second column.
-            On xl the paragraph gap closes so its last line ends level with the approach column beside it. */}
-        <div className="flex flex-col gap-4 lg:col-span-6 xl:col-span-3 xl:gap-0">
-          {copy.paragraphs.slice(0, -1).map((p) => (
-            <p key={p} className="text-pretty text-base leading-relaxed text-slate xl:text-[0.9375rem]">
+      {/* Two areas from lg: the heading on the left (5 cols), the argument and its takeaway on the right (7 cols). One column below. */}
+      <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-12">
+        <h2 id="autopilot" className="text-balance font-display text-xl font-semibold uppercase leading-snug tracking-wide text-cobalt md:text-2xl lg:col-span-5">
+          {labelText(copy.title)}
+        </h2>
+        <div className="flex max-w-2xl flex-col gap-4 lg:col-span-7">
+          {copy.paragraphs.map((p) => (
+            <p key={p} className="text-pretty text-base leading-relaxed text-slate">
               {p}
             </p>
           ))}
+          <p className="mt-4 border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem]">
+            <Sentences text={copy.closingLine} breakAt="always" />
+          </p>
         </div>
-        <p className="text-pretty text-base leading-relaxed text-slate lg:col-span-6 xl:col-span-3 xl:text-[0.9375rem]">
-          {copy.paragraphs.at(-1)}
-        </p>
-        {/* The takeaway ends the row in the last column, so the section reads left to right: claim, problem, approach, conclusion. */}
-        <p className="self-start border-l-2 border-sage pl-5 font-display text-2xl font-semibold leading-snug tracking-tight text-ink md:text-[1.75rem] lg:col-span-6 xl:col-span-4 xl:-mt-0.5 xl:text-[1.5rem]">
-          <Sentences text={copy.closingLine} breakAt="always" />
-        </p>
       </Container>
     </section>
   )
@@ -131,19 +124,19 @@ const services = [
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
 const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
   en: [
-    { expand: 'See how it works', collapse: 'Show less', explore: 'Explore' },
-    { expand: 'See what\u2019s included', collapse: 'Show less', explore: 'Explore' },
-    { expand: 'See the program', collapse: 'Show less', explore: 'Explore' },
+    { expand: 'See how it works', collapse: 'Show less', explore: 'Explore agency partnerships' },
+    { expand: 'See what\u2019s included', collapse: 'Show less', explore: 'Explore PPC management' },
+    { expand: 'See the program', collapse: 'Show less', explore: 'Explore PPC training' },
   ],
   pl: [
-    { expand: 'Zobacz, jak to działa', collapse: 'Zwiń opis', explore: 'Poznaj' },
-    { expand: 'Zobacz zakres usługi', collapse: 'Zwiń opis', explore: 'Poznaj' },
-    { expand: 'Zobacz program', collapse: 'Zwiń opis', explore: 'Poznaj' },
+    { expand: 'Zobacz, jak to działa', collapse: 'Zwiń opis', explore: 'Poznaj współpracę z agencjami' },
+    { expand: 'Zobacz zakres usługi', collapse: 'Zwiń opis', explore: 'Poznaj zarządzanie Amazon PPC' },
+    { expand: 'Zobacz program', collapse: 'Zwiń opis', explore: 'Poznaj szkolenia Amazon PPC' },
   ],
   de: [
-    { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
-    { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
-    { expand: 'Programm ansehen', collapse: 'Weniger anzeigen', explore: 'Entdecken' },
+    { expand: 'So funktioniert es', collapse: 'Weniger anzeigen', explore: 'Agenturpartnerschaften entdecken' },
+    { expand: 'Leistungsumfang ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Kampagnenmanagement entdecken' },
+    { expand: 'Programm ansehen', collapse: 'Weniger anzeigen', explore: 'PPC-Schulungen entdecken' },
   ],
 }
 
@@ -176,7 +169,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               alt: copy.homeImageAlts[v.alt],
               focus: 'focus' in v ? v.focus : undefined,
               accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
-              to: v.to === 'training' ? undefined : href(locale, v.to),
+              to: href(locale, v.to, v.to === 'brands' ? '#ppc' : ''),
               labels: TILE_LABELS[locale][i],
               imageLeft: row % 2 === 1,
             }

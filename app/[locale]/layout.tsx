@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Manrope, Source_Serif_4 } from 'next/font/google'
 import { notFound } from 'next/navigation'
@@ -68,7 +67,6 @@ export default async function LocaleLayout({
           {children}
         </main>
         <SiteFooter locale={locale} dict={dict} copy={copy} />
-        <Analytics />
       </body>
     </html>
   )

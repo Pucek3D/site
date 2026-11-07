@@ -33,11 +33,27 @@ const de = { ...bundle.de, page: bundle.pde }
 
 const errors = []
 
+/*
+ * Approved Polish-only extensions of the For Brands page. These, and only these, may differ from EN.
+ * Each is checked to still be present, so a stale entry can't silently widen the exemption.
+ */
+const ALLOWED = {
+  pl: {
+    extraKeys: ['.page.brands.intro'],
+    lengths: { '.page.brands.training.paragraphs': 3, '.page.brands.training.items': 6 },
+  },
+}
+const used = new Set()
+
 /** Walk `ref` and compare shape against `other`; ids must match position by position. */
 function compare(ref, other, lang, path = '') {
   if (Array.isArray(ref)) {
     if (!Array.isArray(other)) return errors.push(`${lang}${path}: expected array`)
-    if (ref.length !== other.length) errors.push(`${lang}${path}: ${other.length} items, en has ${ref.length}`)
+    const allowedLen = ALLOWED[lang]?.lengths[path]
+    if (allowedLen !== undefined) {
+      used.add(`${lang}${path}`)
+      if (other.length !== allowedLen) errors.push(`${lang}${path}: ${other.length} items, approved extension has ${allowedLen}`)
+    } else if (ref.length !== other.length) errors.push(`${lang}${path}: ${other.length} items, en has ${ref.length}`)
     ref.forEach((item, i) => {
       if (item && typeof item === 'object' && 'id' in item && other[i]?.id !== item.id)
         errors.push(`${lang}${path}[${i}].id: "${other[i]?.id}", en has "${item.id}"`)
@@ -50,16 +66,25 @@ function compare(ref, other, lang, path = '') {
     const a = Object.keys(ref).sort()
     const b = Object.keys(other).sort()
     for (const k of a) if (!b.includes(k)) errors.push(`${lang}${path}.${k}: missing`)
-    for (const k of b) if (!a.includes(k)) errors.push(`${lang}${path}.${k}: not in en`)
+    for (const k of b) {
+      if (a.includes(k)) continue
+      if (ALLOWED[lang]?.extraKeys.includes(`${path}.${k}`)) used.add(`${lang}${path}.${k}`)
+      else errors.push(`${lang}${path}.${k}: not in en`)
+    }
     for (const k of a) if (k in other) compare(ref[k], other[k], lang, `${path}.${k}`)
     return
   }
   if (typeof ref !== typeof other) errors.push(`${lang}${path}: ${typeof other}, en has ${typeof ref}`)
 }
 
-compare(pl, en, 'en↔pl') // reverse pass is covered by "not in en"
+// One pass per language: missing keys report as "missing", extra keys as "not in en".
 compare(en, pl, 'pl')
 compare(en, de, 'de')
+
+for (const [lang, a] of Object.entries(ALLOWED)) {
+  for (const p of [...a.extraKeys, ...Object.keys(a.lengths)])
+    if (!used.has(`${lang}${p}`)) errors.push(`${lang}${p}: approved extension no longer present — remove it from ALLOWED`)
+}
 
 // Explicit counts the brief names, printed so a pass is visibly not vacuous.
 const counts = (d) => ({

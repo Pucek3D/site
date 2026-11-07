@@ -18,10 +18,10 @@ export const de: PartnerCopy = {
   home: {
     hero: {
       eyebrow: "Amazon-Werbung, Marketplace-Expertise und praxisnahe Schulungen",
-      title: "Bessere Ergebnisse auf Amazon. Mit dem Know-how, das dahintersteht.",
+      title: "Verbessern Sie Ihre Amazon-Performance. Stärken Sie das Know-how in Ihrem Team.",
       paragraphs: [
         "Amazon PPC-Kampagnenmanagement durch erfahrene Spezialisten, datenbasierte Optimierung und praxisnahe Schulungen für Konsumgütermarken und die Agenturen, die sie betreuen.",
-        "Wir machen aus Kampagnendaten fundierte Entscheidungen, messbar bessere Ergebnisse und Kompetenzen, die in Ihrem Team bleiben.",
+        "Wir nutzen Kampagnendaten für fundiertere Entscheidungen, bessere Ergebnisse und Kompetenzen, die Ihrem Team langfristig erhalten bleiben.",
       ],
       primaryCta: "Lassen Sie uns sprechen",
       routes: {
@@ -133,7 +133,7 @@ export const de: PartnerCopy = {
   brands: {
     hero: {
       eyebrow: "Für Marken · Amazon PPC & Schulungen",
-      title: "Amazon PPC-Expertise. Von uns betreut oder in Ihrem Team aufgebaut.",
+      title: "Amazon PPC-Kampagnen professionell betreuen lassen oder Know-how im eigenen Team aufbauen.",
       emphasis: "Zwei Möglichkeiten: Amazon PPC-Kampagnenmanagement oder praxisnahe PPC-Schulungen.",
       paragraphs: [
         "Ob Sie eine neue Marke einführen oder eine etablierte Marke weiterentwickeln: ADelier unterstützt Ihren Erfolg auf Amazon mit professionellem PPC-Kampagnenmanagement und praxisnahen Schulungen für Ihr Team.",
@@ -153,11 +153,11 @@ export const de: PartnerCopy = {
       figures: [
         {
           value: "45,9 Mrd. USD",
-          label: "Amazon-Nettoumsatz in Deutschland (2025)",
+          label: "Amazon-Nettoumsatz, Deutschland zugerechnet (2025)",
         },
         {
           value: "43,2 Mrd. USD",
-          label: "Amazon-Nettoumsatz im Vereinigten Königreich (2025)",
+          label: "Amazon-Nettoumsatz, dem Vereinigten Königreich zugerechnet (2025)",
         },
       ],
       growth: {
@@ -240,7 +240,7 @@ export const de: PartnerCopy = {
       paragraphs: [
         "Ob Sie professionelles Kampagnenmanagement benötigen oder das Know-how Ihres Teams ausbauen möchten – ADelier unterstützt Sie dabei.",
       ],
-      cta: "Gespräch vereinbaren",
+      cta: "Kontakt aufnehmen",
       trainingLink: "Schulungen entdecken",
     },
   },

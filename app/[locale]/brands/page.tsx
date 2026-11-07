@@ -178,6 +178,10 @@ export default async function BrandsPage({ params }: Props) {
             <Paragraphs items={training.paragraphs} />
             <ListLabel>{training.listLabel}</ListLabel>
             <CheckList items={training.items} />
+            <CtaLink href={href(locale, 'contact', '?topic=training')} className="mt-2 w-full sm:w-auto">
+              {training.cta}
+              <ArrowRight aria-hidden className="size-4" />
+            </CtaLink>
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[22rem] md:rounded-tl-[8rem]">
             <Image

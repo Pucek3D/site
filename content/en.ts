@@ -73,6 +73,7 @@ export const en = {
   },
   "contact": {
     "eyebrow": "Let's talk",
+    "pageTitle": "Let's talk about your Amazon PPC needs.",
     "intro": [
       "Whether you need better advertising performance, additional Amazon PPC capacity or practical training for your team, we'd like to understand your goals.",
       "Tell us where you are today and what you're looking to achieve. We'll discuss which form of support may be most suitable for your business."

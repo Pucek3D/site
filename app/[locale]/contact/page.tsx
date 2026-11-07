@@ -27,7 +27,7 @@ export default async function ContactPage({ params, searchParams }: Props) {
   const { locale } = await params
   const { topic, inquiry } = await searchParams
   const dict = getDictionary(locale)
-  const title = getCopy(locale).home.final.title
+  const title = dict.contact.pageTitle
   const initialTopic = resolveTopic(topic ?? inquiry)
 
   return (
