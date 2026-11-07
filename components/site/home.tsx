@@ -94,8 +94,8 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
     <section aria-labelledby="autopilot" className="border-b border-hairline bg-white py-10 md:py-12">
       {/* Two areas from lg: the heading on the left (5 cols), the argument and its takeaway on the right (7 cols). One column below. */}
       <Container className="grid gap-6 lg:grid-cols-12 lg:gap-x-12">
-        <h2 id="autopilot" className="text-balance font-display text-xl font-semibold uppercase leading-snug tracking-wide text-cobalt md:text-2xl lg:col-span-5">
-          {labelText(copy.title)}
+        <h2 id="autopilot" className="max-w-[460px] text-balance font-display text-2xl font-semibold leading-[1.22] tracking-[-0.01em] text-ink md:text-[1.75rem] lg:col-span-5 lg:text-[2rem]">
+          {copy.title}
         </h2>
         <div className="flex max-w-2xl flex-col gap-4 lg:col-span-7">
           {copy.paragraphs.map((p) => (
@@ -118,8 +118,9 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
 const services = [
   { art: '/images/svc/white-label-handshake.png', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
   { art: '/images/svc/ppc.png', alt: 'brands', to: 'brands' },
-  { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 14%', to: 'training' },
-] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; to: PageKey }[]
+  /* The source photo already cuts the whiteboard's labels at its right edge, so a light zoom anchored left keeps the whole scene and shows only the board's step numbers, not half-words. */
+  { art: '/images/svc/training-team.png', alt: 'training', focus: '0% 40%', zoom: 1.25, to: 'training' },
+] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; zoom?: number; to: PageKey }[]
 
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
 const TILE_LABELS: Record<Locale, readonly TileLabels[]> = {
@@ -168,6 +169,7 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               art: v.art,
               alt: copy.homeImageAlts[v.alt],
               focus: 'focus' in v ? v.focus : undefined,
+              zoom: 'zoom' in v ? v.zoom : undefined,
               accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
               to: href(locale, v.to, v.to === 'brands' ? '#ppc' : ''),
               labels: TILE_LABELS[locale][i],

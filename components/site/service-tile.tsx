@@ -174,10 +174,8 @@ function ServiceTile({
           <Link
             href={to}
             className={cn(
-              'inline-flex max-w-full items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold hyphens-auto [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]',
-              accent === 'sage'
-                ? 'bg-sage text-ink hover:bg-sage/85 focus-visible:ring-[var(--tile-sage)]'
-                : 'bg-cobalt text-white hover:bg-cobalt/90 focus-visible:ring-[var(--tile-cobalt)]',
+              /* One cobalt action across all three cards; sage stays a secondary accent (eyebrow number, bullets, headline). */
+              'inline-flex max-w-full items-center gap-2 rounded-full bg-cobalt px-5 py-2.5 text-sm font-semibold text-white hyphens-auto [overflow-wrap:anywhere] hover:bg-cobalt/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tile-cobalt)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]',
             )}
           >
             {labels.explore}
