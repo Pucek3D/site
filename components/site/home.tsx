@@ -118,8 +118,7 @@ function Autopilot({ copy }: { copy: PartnerCopy['home']['autopilot'] }) {
 const services = [
   { art: '/images/svc/white-label-handshake.png', alt: 'agencies', focus: '58% 45%', to: 'agencies' },
   { art: '/images/svc/ppc.png', alt: 'brands', to: 'brands' },
-  /* The source photo already cuts the whiteboard's labels at its right edge, so a light zoom anchored left keeps the whole scene and shows only the board's step numbers, not half-words. */
-  { art: '/images/svc/training-team.png', alt: 'training', focus: '0% 40%', zoom: 1.25, to: 'training' },
+  { art: '/images/svc/training-team.png', alt: 'training', focus: '55% 14%', to: 'training' },
 ] as const satisfies readonly { art: string; alt: keyof PartnerCopy['homeImageAlts']; focus?: string; zoom?: number; to: PageKey }[]
 
 /* One label set per tile, in the same order as `services`: Agencies, PPC management, Training. */
