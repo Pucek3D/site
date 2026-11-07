@@ -31,7 +31,7 @@ The service used to forward form submissions to the mailbox will be named here b
 We do not currently plan to transfer personal data outside the European Economic Area. If a service provider engaged later, for example to forward form submissions, processes data outside the EEA, this section will be updated before that happens to name the provider and the safeguards used. You can request information by contacting **contact@deliercommerce.com**.
 
 ## 8. Analytics, cookies and newsletter
-The website currently does not use third-party analytics or offer newsletter signup. It does not set cookies and does not store information in your browser's local or session storage. Essential server-side technical processes may still operate. If analytics is introduced, this notice will be updated in advance to describe the service, processing and any applicable consent requirements. Technologies requiring prior consent will not run before it has been obtained.
+We currently do not use analytics tools or advertising pixels and do not offer newsletter subscriptions. We do not use cookies or similar technologies for analytics or advertising purposes. Website operation and security may involve technical information processed by our hosting provider, including the server logs described in this notice. Before introducing any technology that requires prior consent, we will implement an appropriate consent mechanism.
 
 No newsletter is currently offered. Should this change, separate subscription and unsubscribe rules, along with any required notices and consents, will be provided.
 

@@ -10,18 +10,30 @@ application deletes data automatically: the website does not store inquiries at
 all (the API forwards them and keeps nothing), so the only copies live in the
 mailbox and whatever the form-delivery service retains. Deletion is manual.
 
-### Monthly (first working day of each month)
+### Weekly review (fixed day, e.g. every Monday)
+
+A monthly sweep is NOT enough: a thread closed the day after a sweep would sit
+for up to ~90 days. Review weekly and delete at **50 days**, leaving a margin
+of at least 10 days before the published 60-day maximum even if one review is
+missed.
 
 1. In the mailbox `contact@deliercommerce.com`, search for website inquiries
-   (subject prefix used by the delivery service) whose last message is older
-   than 60 days and that did not lead to cooperation.
+   (subject prefix used by the delivery service) whose last message is
+   **50 days old or more** and that did not lead to cooperation.
 2. Delete each thread, including attachments and your own replies in *Sent*.
 3. Empty *Trash* / *Deleted items* so the messages leave the active mailbox.
 4. If the form-delivery service keeps a copy (webhook log, submission history),
    delete the same submissions there.
-5. Note the date of the sweep (a calendar entry is enough).
+5. Record only the date the review was done (a calendar entry is enough). Do
+   not keep a list of names or addresses of what was deleted.
+
+Deletion is manual. No automatic deletion is implemented or tested; do not
+describe it as automatic anywhere.
 
 ### Exceptions — do not delete
+
+Record each exception separately (what is kept, why, until when) so it can be
+justified later. Without a recorded reason, the 50-day rule applies.
 
 - Correspondence that led to an offer, contract or cooperation (retained under
   the contract and accounting rules that apply to it).

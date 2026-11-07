@@ -1,0 +1,37 @@
+# ADelier Commerce — Apache configuration for a STATIC deployment on VH.PL.
+#
+# Only relevant if the site is served as static files (Apache/cPanel). In that
+# setup next.config.mjs redirects/headers and proxy.ts DO NOT run, so the
+# equivalent rules must live here. Not tested on the VH.PL server yet: upload
+# as `.htaccess`, then verify each rule with `curl -I`.
+#
+# Requires mod_rewrite and mod_headers (check with VH.PL).
+
+RewriteEngine On
+
+# 1. HTTPS, and www -> non-www, in one 301 hop.
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://deliercommerce.com%{REQUEST_URI} [L,R=301]
+
+# 2. Language root: / -> /en/ (the app negotiates Accept-Language; static
+#    hosting cannot, so English is the default).
+RewriteRule ^$ /en/ [L,R=302]
+
+# 3. Retired routes (mirror of next.config.mjs redirects()).
+RewriteRule ^(en|pl|de)/(amazon-ppc-management|amazon-market-validation-audits|services)/?$ /$1/brands [L,R=301]
+RewriteRule ^(amazon-ppc-management|amazon-market-validation-audits|services)/?$ /en/brands [L,R=301]
+
+# 4. Security headers (mirror of next.config.mjs headers()).
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Strict-Transport-Security "max-age=63072000"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self'"
+</IfModule>
+
+# NOTE: a static export cannot run app/api/contact. A form endpoint for this
+# setup (e.g. PHP with authenticated SMTP) does not exist yet and must not be
+# referenced until it is built and tested.

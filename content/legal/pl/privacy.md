@@ -31,7 +31,7 @@ Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu
 Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Informacje możesz uzyskać pod adresem **contact@deliercommerce.com**.
 
 ## 8. Analityka, pliki cookies i newsletter
-Obecnie na stronie nie działa zewnętrzne narzędzie analityczne ani formularz zapisu do newslettera. Strona nie zapisuje plików cookies i nie przechowuje informacji w pamięci lokalnej ani pamięci sesji przeglądarki. Strona może jednak wykorzystywać niezbędne mechanizmy techniczne serwera. Jeśli zostanie włączona analityka, niniejsza polityka zostanie wcześniej zaktualizowana o zakres przetwarzania i informacje dotyczące ewentualnych zgód. Technologie wymagające uprzedniej zgody nie będą uruchamiane przed jej uzyskaniem.
+Obecnie nie korzystamy z narzędzi analitycznych ani pikseli reklamowych i nie oferujemy zapisu do newslettera. Nie stosujemy plików cookies ani podobnych technologii w celach analitycznych lub marketingowych. Funkcjonowanie serwisu i jego bezpieczeństwo mogą wiązać się z przetwarzaniem informacji technicznych przez dostawcę hostingu, w tym logów serwerowych opisanych w niniejszej polityce. Przed uruchomieniem technologii wymagających uprzedniej zgody wdrożymy odpowiedni mechanizm jej uzyskania.
 
 Newsletter nie jest obecnie dostępny. W przypadku jego uruchomienia pojawią się odrębne zasady zapisu i rezygnacji oraz wymagane informacje i zgody.
 
