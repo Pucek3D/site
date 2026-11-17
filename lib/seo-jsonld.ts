@@ -30,6 +30,7 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
     blog: dict.nav.items.blog,
     about: dict.nav.items.about,
     contact: dict.nav.items.contact,
+    subscribe: dict.nav.items.subscribe,
   }
   const nodes: Record<string, unknown>[] = []
   if (page === 'home') {

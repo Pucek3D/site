@@ -3,6 +3,7 @@ import type { Dictionary } from '@/content'
 import type { PartnerCopy } from '@/content/partner'
 import { href, navKeysFor, type Locale } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
+import { subscribeEnabled } from '@/lib/subscribe-config'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 import { Container } from './primitives'
@@ -75,6 +76,13 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
                 {nav.items.legal}
               </Link>
             </li>
+            {subscribeEnabled() ? (
+              <li>
+                <Link href={href(locale, 'subscribe')} className="inline-flex min-h-10 items-center hover:text-white hover:underline">
+                  {nav.items.subscribe}
+                </Link>
+              </li>
+            ) : null}
           </ul>
         </div>
       </Container>

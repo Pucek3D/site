@@ -1,6 +1,18 @@
 import { createHash } from 'node:crypto'
-import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import {
+  createRateLimiter,
+  DELIVERY_TIMEOUT_MS,
+  errorKind,
+  honeypotTripped,
+  oneLine,
+  originAllowed,
+  readJsonObject,
+  reply,
+  smtpSettings,
+  trustedClientIp,
+  withTimeout,
+} from '@/lib/api-guard'
 import { validateContact, type ContactInput } from '@/lib/validation'
 import { siteConfig } from '@/lib/site-config'
 
@@ -10,95 +22,16 @@ import { siteConfig } from '@/lib/site-config'
  *   2. CONTACT_WEBHOOK_URL, else
  *   3. refuses with 503. A "thank you" for a dropped inquiry is the worst failure here.
  *
- * Security notes:
- * - Rate limiting is in memory, so it is per process. That is valid for a single
- *   Node.js process (one cPanel/Passenger app). Several instances would need a
- *   shared store; none is assumed.
- * - Client IP headers are trusted ONLY when CONTACT_TRUSTED_IP_HEADER names the
- *   header the hosting proxy itself sets. Otherwise no IP is used: requests are
- *   limited per submitted email address plus a site-wide flood brake, so visitors
- *   without an IP never share a single bucket.
- * - Origin must match a configured trusted origin, never the request's own Host.
- * - Submissions are never logged; only status codes and error kinds are.
+ * Origin, rate-limit, IP and body-size rules live in lib/api-guard.ts (shared with
+ * the subscribe routes). This route keeps its own limiter, so its limits are unchanged.
+ * Submissions are never logged; only status codes and error kinds are.
  */
 export const runtime = 'nodejs'
 
-const WINDOW_MS = 10 * 60 * 1000
 const MAX_PER_KEY = 5
 const GLOBAL_MAX = 60
-const MAX_KEYS = 5000
 const MAX_BODY_BYTES = 16 * 1024
-const DELIVERY_TIMEOUT_MS = 8000
-const hits = new Map<string, number[]>()
-
-const NO_STORE = { 'Cache-Control': 'no-store' }
-const reply = (body: unknown, status = 200) => NextResponse.json(body, { status, headers: NO_STORE })
-
-function rateLimited(key: string, max: number) {
-  const now = Date.now()
-  if (hits.size > MAX_KEYS) {
-    for (const [k, times] of hits) if (times.every((t) => now - t >= WINDOW_MS)) hits.delete(k)
-    if (hits.size > MAX_KEYS) hits.clear()
-  }
-  const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS)
-  recent.push(now)
-  hits.set(key, recent)
-  return recent.length > max
-}
-
-/** The client IP, read only from the header the hosting proxy is configured to set. */
-function trustedClientIp(request: Request): string | null {
-  const header = process.env.CONTACT_TRUSTED_IP_HEADER?.trim().toLowerCase()
-  if (!header) return null
-  const value = request.headers.get(header)
-  if (!value) return null
-  const entries = value.split(',').map((s) => s.trim()).filter(Boolean)
-  // A trusted proxy APPENDS to X-Forwarded-For, so the last entry is the one it saw;
-  // anything to its left is client-supplied.
-  const ip = header === 'x-forwarded-for' ? entries.at(-1) : entries[0]
-  return ip && /^[0-9a-f:.]{3,45}$/i.test(ip) ? ip : null
-}
-
-function trustedOrigins(request: Request) {
-  const origins = new Set<string>()
-  const canonical = new URL(siteConfig.url)
-  origins.add(canonical.origin)
-  origins.add(`${canonical.protocol}//www.${canonical.host}`)
-  for (const entry of (process.env.CONTACT_ALLOWED_ORIGINS ?? '').split(',')) {
-    try {
-      if (entry.trim()) origins.add(new URL(entry.trim()).origin)
-    } catch {
-      // ignore malformed entries
-    }
-  }
-  // Development only: the preview runs on a host nobody can configure in advance.
-  if (process.env.NODE_ENV === 'development') {
-    const host = request.headers.get('host')
-    if (host) origins.add(`https://${host}`).add(`http://${host}`)
-  }
-  return origins
-}
-
-function originAllowed(request: Request) {
-  const origin = request.headers.get('origin')
-  // Browsers always send Origin on a POST from fetch(); a missing one is not a visitor.
-  if (!origin) return process.env.NODE_ENV === 'development'
-  try {
-    return trustedOrigins(request).has(new URL(origin).origin)
-  } catch {
-    return false
-  }
-}
-
-function smtpSettings() {
-  const { SMTP_HOST, SMTP_USER, SMTP_PASS, SMTP_FROM } = process.env
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !SMTP_FROM) return null
-  const port = Number(process.env.SMTP_PORT || 465)
-  const secure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : port === 465
-  return { host: SMTP_HOST, port, secure, user: SMTP_USER, pass: SMTP_PASS, from: SMTP_FROM }
-}
-
-const oneLine = (s: string) => s.replace(/[\r\n]+/g, ' ').trim()
+const rateLimited = createRateLimiter()
 
 function renderInquiry(d: Omit<ContactInput, 'company_url'>, siteLocale: string | null, receivedAt: string) {
   const subject = oneLine(`Website inquiry (${d.topic}): ${d.name}, ${d.company}`).slice(0, 180)
@@ -118,18 +51,6 @@ function renderInquiry(d: Omit<ContactInput, 'company_url'>, siteLocale: string 
   return { subject, text }
 }
 
-async function withTimeout<T>(promise: Promise<T>) {
-  let timer: ReturnType<typeof setTimeout> | undefined
-  const timeout = new Promise<never>((_, reject) => {
-    timer = setTimeout(() => reject(Object.assign(new Error('delivery timeout'), { name: 'TimeoutError' })), DELIVERY_TIMEOUT_MS)
-  })
-  try {
-    return await Promise.race([promise, timeout])
-  } finally {
-    clearTimeout(timer)
-  }
-}
-
 export async function POST(request: Request) {
   if (!originAllowed(request)) return reply({ error: 'forbidden' }, 403)
   if (rateLimited('global', GLOBAL_MAX)) return reply({ error: 'rate_limited' }, 429)
@@ -137,24 +58,12 @@ export async function POST(request: Request) {
   const ip = trustedClientIp(request)
   if (ip && rateLimited(`ip:${ip}`, MAX_PER_KEY)) return reply({ error: 'rate_limited' }, 429)
 
-  const declared = Number(request.headers.get('content-length') ?? 0)
-  if (declared > MAX_BODY_BYTES) return reply({ error: 'too_large' }, 413)
-
-  let raw: Record<string, unknown>
-  try {
-    const text = await request.text()
-    if (new TextEncoder().encode(text).length > MAX_BODY_BYTES) return reply({ error: 'too_large' }, 413)
-    const parsed: unknown = JSON.parse(text)
-    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error('not an object')
-    raw = parsed as Record<string, unknown>
-  } catch {
-    return reply({ error: 'invalid_json' }, 400)
-  }
+  const body = await readJsonObject(request, MAX_BODY_BYTES)
+  if ('response' in body) return body.response
+  const { raw } = body
 
   // Honeypot filled: accept silently so bots learn nothing.
-  if (typeof raw.company_url === 'string' && raw.company_url.length > 0) {
-    return reply({ ok: true })
-  }
+  if (honeypotTripped(raw)) return reply({ ok: true })
 
   const result = validateContact(raw)
   if (!result.ok) return reply({ errors: result.errors }, 422)
@@ -210,9 +119,7 @@ export async function POST(request: Request) {
       if (!res.ok) throw Object.assign(new Error('webhook rejected'), { code: `HTTP_${res.status}` })
     }
   } catch (error) {
-    // Error kind only: SMTP server responses can echo addresses or content.
-    const e = error as { name?: string; code?: string }
-    console.error('[contact] delivery failed', e?.code ?? e?.name ?? 'unknown')
+    console.error('[contact] delivery failed', errorKind(error))
     return reply({ error: 'delivery_failed' }, 502)
   }
 

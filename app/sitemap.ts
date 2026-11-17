@@ -3,11 +3,15 @@ import { allPosts } from '@/lib/blog'
 import { href, localesFor, pageKeys } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
 import { seoNoIndex } from '@/lib/seo-runtime'
+import { subscribeEnabled } from '@/lib/subscribe-config'
 
 /** Only canonical, public, indexable URLs. No lastModified: no real per-page date exists. */
 export default function sitemap(): MetadataRoute.Sitemap {
   if (seoNoIndex()) return []
-  const publicPages = pageKeys.filter((page) => page !== 'privacy' && page !== 'legal')
+  // Subscribe is listed only while the feature flag is on; otherwise it returns 404.
+  const publicPages = pageKeys.filter(
+    (page) => page !== 'privacy' && page !== 'legal' && (page !== 'subscribe' || subscribeEnabled()),
+  )
   const pages = publicPages.flatMap((page) =>
     localesFor(page).map((locale) => ({
       url: `${siteConfig.url}${href(locale, page)}`,

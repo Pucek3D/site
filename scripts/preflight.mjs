@@ -54,6 +54,33 @@ if (env.NEXT_PUBLIC_ANALYTICS_ENABLED === 'true') {
   blockers.push('NEXT_PUBLIC_ANALYTICS_ENABLED is true, but no provider or consent mechanism is documented.')
 }
 
+if (env.SUBSCRIBE_ENABLED === 'true') {
+  if (!env.CONSENT_TOKEN_SECRET || env.CONSENT_TOKEN_SECRET.length < 32) {
+    blockers.push('SUBSCRIBE_ENABLED is true but CONSENT_TOKEN_SECRET is missing or shorter than 32 characters.')
+  }
+  if (!env.CONSENT_WEBHOOK_URL && !smtpReady) {
+    blockers.push(
+      'SUBSCRIBE_ENABLED is true but no consent register is configured (CONSENT_WEBHOOK_URL or SMTP_*): every sign-up would fail.',
+    )
+  }
+  if (env.LEGAL_PUBLISH_APPROVED !== 'true') {
+    blockers.push('SUBSCRIBE_ENABLED is true but LEGAL_PUBLISH_APPROVED is not "true": the sign-up form links to an unpublished Privacy Notice.')
+  }
+  const { readFileSync } = await import('node:fs')
+  for (const locale of ['en', 'pl', 'de']) {
+    const path = `content/legal/${locale}/privacy.md`
+    let text = ''
+    try {
+      text = readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')
+    } catch {
+      blockers.push(`SUBSCRIBE_ENABLED is true but ${path} could not be read.`)
+      continue
+    }
+    const count = (text.match(/TODO-CONFIRM/g) || []).length
+    if (count) blockers.push(`SUBSCRIBE_ENABLED is true but ${path} still contains ${count} TODO-CONFIRM marker(s).`)
+  }
+}
+
 for (const w of warnings) console.log(`WARN    ${w}`)
 for (const b of blockers) console.log(`BLOCKER ${b}`)
 if (blockers.length) {

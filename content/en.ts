@@ -28,7 +28,8 @@ export const en = {
       "about": "About",
       "contact": "Contact",
       "privacy": "Privacy",
-      "legal": "Legal / Imprint"
+      "legal": "Legal / Imprint",
+      "subscribe": "Updates by e-mail"
     },
     "primaryLabel": "Main navigation",
     "openMenu": "Open menu",
@@ -126,6 +127,100 @@ export const en = {
         "name": "Please enter your name.",
         "improve": "Please tell us a little about your inquiry."
       }
+    }
+  },
+  "subscribe": {
+    "eyebrow": "Updates",
+    "pageTitle": "Receive offers and updates from ADelier Commerce.",
+    "intro": [
+      "Choose how we may contact you with offers about Amazon PPC services and training. Each channel needs its own consent, and you can withdraw it at any time.",
+      "After you submit the form, we send a confirmation link to your e-mail address. Nothing is active until you confirm."
+    ],
+    "magnetEyebrow": "Material",
+    "magnetIntro": "Enter your e-mail address and we will send you the material after you confirm it. Agreeing to receive offers is optional.",
+    "form": {
+      "aboutYou": "Your details",
+      "email": "E-mail",
+      "name": "Name",
+      "company": "Company",
+      "optional": "optional",
+      "consentLegend": "How we may contact you",
+      "consentEmailLabel": "Offers by e-mail",
+      "consentPhoneLabel": "Offers by phone",
+      "consentRequiredHint": "Required to receive updates by e-mail.",
+      "consentOptionalHint": "Optional. The material is sent either way.",
+      "phone": "Phone number",
+      "phoneHint": "Used only for the phone contact you agreed to above.",
+      "honeypot": "Leave this field empty",
+      "submit": "Send confirmation link",
+      "submitting": "Sending…",
+      "errorSummary": "Please correct the highlighted fields before sending.",
+      "noticeTitle": "Information about your data",
+      "notice": "The controller of your data is {controller}. We use your details only for the contact you agree to above and to keep a record that you agreed. You can withdraw each consent at any time on the unsubscribe page or by writing to contact@adeliercommerce.com. Withdrawal does not affect contact that took place before it. More information is in our",
+      "noticePrivacyLink": "privacy notice",
+      "noticeUnsubscribeLink": "Unsubscribe page",
+      "checkTitle": "Please check your inbox.",
+      "check": "We have sent a confirmation link to {email}. Nothing is active until you open the link and confirm. The link is valid for 48 hours. If the message does not arrive, check your spam folder.",
+      "failureTitle": "Your request could not be sent.",
+      "failure": "Nothing has been saved. Please try again later. If the problem persists, write to contact@adeliercommerce.com.",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid e-mail address.",
+        "phone": "Enter a valid phone number, for example +48 600 000 000.",
+        "tooLong": "This entry is too long.",
+        "consentRequired": "Tick this box to receive updates by e-mail."
+      }
+    },
+    "confirm": {
+      "eyebrow": "Confirmation",
+      "title": "Confirm your e-mail address",
+      "intro": "Press the button below to confirm your sign-up. Your consent becomes active only after this step.",
+      "button": "Confirm",
+      "submitting": "Confirming…",
+      "missingTitle": "This link is incomplete.",
+      "missing": "Open the link from the confirmation e-mail in full, or sign up again.",
+      "expiredTitle": "This link has expired.",
+      "expired": "Confirmation links are valid for 48 hours. Please sign up again to receive a new one.",
+      "invalidTitle": "This link is not valid.",
+      "invalid": "The link may have been changed or copied incompletely. Please sign up again.",
+      "successTitle": "Thank you. Your e-mail address is confirmed.",
+      "success": "Your consent is now recorded. You can withdraw it at any time on the unsubscribe page.",
+      "successMagnet": "We have sent the material to your e-mail address.",
+      "successNoConsent": "No consent to receive offers was given, so we will not send you offers.",
+      "failureTitle": "The confirmation could not be saved.",
+      "failure": "Your consent is not active yet. Please try again later using the same link.",
+      "signUpAgain": "Sign up again"
+    },
+    "unsubscribe": {
+      "eyebrow": "Unsubscribe",
+      "title": "Withdraw your consent",
+      "intro": "Enter your e-mail address to withdraw all consents to receive offers from ADelier Commerce, by e-mail and by phone.",
+      "email": "E-mail",
+      "button": "Withdraw consent",
+      "submitting": "Sending…",
+      "errorSummary": "Please correct the highlighted field.",
+      "successTitle": "Your withdrawal has been recorded.",
+      "success": "We will stop contacting {email} with offers. Messages already in preparation may still arrive for a short time.",
+      "failureTitle": "Your withdrawal could not be recorded.",
+      "failure": "Please try again later, or write to contact@adeliercommerce.com and we will record it for you.",
+      "errors": {
+        "required": "This field is required.",
+        "email": "Enter a valid e-mail address.",
+        "phone": "Enter a valid phone number.",
+        "tooLong": "This entry is too long.",
+        "consentRequired": "This field is required."
+      }
+    },
+    "emails": {
+      "confirmSubject": "Confirm your e-mail address",
+      "greeting": "Hello,",
+      "confirmIntro": "Someone, probably you, asked to receive messages from ADelier Commerce at this address. To confirm, open this link and press Confirm:",
+      "confirmValidity": "The link is valid for 48 hours. Until you confirm, no consent is active.",
+      "notYou": "If this was not you, ignore this message.",
+      "privacy": "Privacy notice:",
+      "magnetSubject": "Your material from ADelier Commerce",
+      "magnetIntro": "Thank you for confirming your e-mail address. Here is the material you requested:",
+      "signoff": "ADelier Commerce"
     }
   },
   "privacy": {

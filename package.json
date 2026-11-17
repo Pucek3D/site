@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "check:i18n": "node scripts/check-i18n-parity.mjs",
+    "check:consent": "node scripts/check-consent.mjs",
     "preflight": "node --env-file-if-exists=.env.production scripts/preflight.mjs",
     "check:seo": "node --env-file-if-exists=.env.production scripts/check-seo.mjs",
     "release": "pnpm check:i18n && SEO_STRICT_PRODUCTION=true pnpm check:seo && pnpm preflight && pnpm build"

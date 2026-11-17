@@ -21,7 +21,7 @@ export const ogLocale: Record<Locale, string> = {
   de: 'de_DE',
 }
 
-export const pageKeys = ['home', 'agencies', 'brands', 'training', 'blog', 'about', 'contact', 'privacy', 'legal'] as const
+export const pageKeys = ['home', 'agencies', 'brands', 'training', 'blog', 'about', 'contact', 'subscribe', 'privacy', 'legal'] as const
 export type PageKey = (typeof pageKeys)[number]
 
 export const pagePaths: Record<PageKey, string> = {
@@ -32,6 +32,7 @@ export const pagePaths: Record<PageKey, string> = {
   training: '/amazon-ppc-training',
   about: '/about',
   contact: '/contact',
+  subscribe: '/subscribe',
   privacy: '/privacy',
   legal: '/legal',
 }
@@ -46,7 +47,7 @@ export type MainNavKey = (typeof mainNavKeys)[number]
 /** Per-locale exceptions to the main navigation. The blog exists in English and Polish only. */
 const hiddenNavKeys: Partial<Record<Locale, readonly MainNavKey[]>> = { de: ['blog'] }
 
-/** Languages a page exists in. Pages not listed exist in every language. */
+/** Languages a page exists in. Pages not listed (including subscribe) exist in every language. */
 export function localesFor(page: PageKey): Locale[] {
   return page === 'blog' ? locales.filter(hasBlog) : [...locales]
 }

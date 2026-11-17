@@ -69,3 +69,40 @@ deleted inquiries.
 A deletion or access request sent to `contact@adeliercommerce.com` is answered
 within one month. Delete as in steps 3-5 above unless an exception applies, and
 reply confirming what was deleted.
+
+## Consent register and withdrawals
+
+The sign-up flow (`/subscribe`) is off unless `SUBSCRIBE_ENABLED=true`. When on,
+each confirmed sign-up and each withdrawal arrives as one record (JSON to
+`CONSENT_WEBHOOK_URL` and/or plain text to `CONSENT_LOG_EMAIL`). There is no
+database: the register you keep from these records is the only proof of consent.
+
+### Weekly review (every Monday)
+
+1. Collect every record with `status: "withdrawn"` received since the last review.
+   Withdrawals also arrive by e-mail to `contact@adeliercommerce.com`; treat those
+   the same.
+2. Suppress each address in the mailing tool, so it cannot be mailed again by
+   any campaign or import. Do this within 24 hours of receipt, and never later
+   than 10 business days.
+3. A withdrawal covers e-mail and phone for that address. Remove the phone
+   number from any call list as well.
+4. Never delete a withdrawal record to "clean up": it is the proof that the
+   address must not be contacted.
+
+### Every commercial e-mail must have
+
+- a `List-Unsubscribe` header (with `List-Unsubscribe-Post: List-Unsubscribe=One-Click`);
+- a working one-step unsubscribe link in the body, pointing to `/unsubscribe`;
+- the sender's identity and postal address, as in the site's legal notice.
+
+Send only to addresses with a confirmed `email` consent and no later withdrawal.
+Phone offers only to numbers with a confirmed `phone` consent.
+
+### Retention of proof
+
+Keep each consent record, and its withdrawal, for `____` (TODO-CONFIRM, the
+same period as in section 12 of the privacy notices) after withdrawal or after
+mailing to that address stops. Then delete it from the register, the mailbox
+and the webhook destination. Duplicates share an `idempotencyKey` and may be
+discarded.

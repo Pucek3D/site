@@ -61,3 +61,74 @@ export function validateContact(
   }
   return { ok: false, errors }
 }
+
+/* ------------------------------------------------------------------------- */
+/* Consent sign-up and withdrawal (/subscribe, /unsubscribe)                  */
+/* ------------------------------------------------------------------------- */
+
+export type SubscribeErrorCode = 'required' | 'email' | 'phone' | 'tooLong' | 'consentRequired'
+const subscribeCodes: readonly SubscribeErrorCode[] = ['required', 'email', 'phone', 'tooLong', 'consentRequired']
+
+const emailField = z.string().trim().min(1, 'required').max(200, 'tooLong').pipe(z.email('email'))
+// International or national format: digits, spaces, dashes, dots, brackets, one leading +. 7 to 15 digits.
+const PHONE_RE = /^\+?[0-9 ()./-]{7,24}$/
+const phoneDigits = (v: string) => v.replace(/\D/g, '').length
+
+export const subscribeSchema = z
+  .object({
+    email: emailField,
+    name: optionalText(120),
+    company: optionalText(160),
+    consentEmail: z.boolean().optional().default(false),
+    consentPhone: z.boolean().optional().default(false),
+    phone: z.string().trim().max(40, 'tooLong').optional().default(''),
+    /** Set only in lead-magnet mode. Whether it names a real magnet is checked by the caller. */
+    magnet: z.string().trim().max(80, 'tooLong').optional().default(''),
+    company_url: z.string().max(0).optional().default(''),
+  })
+  .superRefine((d, ctx) => {
+    // Updates mode exists only to send marketing e-mail, so it needs that consent.
+    // Lead-magnet mode delivers the material either way; consent stays optional there.
+    if (!d.magnet && !d.consentEmail) ctx.addIssue({ code: 'custom', path: ['consentEmail'], message: 'consentRequired' })
+    if (d.consentPhone) {
+      if (!d.phone) ctx.addIssue({ code: 'custom', path: ['phone'], message: 'required' })
+      else if (!PHONE_RE.test(d.phone) || phoneDigits(d.phone) < 7 || phoneDigits(d.phone) > 15)
+        ctx.addIssue({ code: 'custom', path: ['phone'], message: 'phone' })
+    }
+  })
+  // Without phone consent the number is neither kept nor passed on, even if one was typed.
+  .transform((d) => ({ ...d, phone: d.consentPhone ? d.phone : '' }))
+
+export type SubscribeInput = z.infer<typeof subscribeSchema>
+export type SubscribeFieldErrors = Partial<Record<'email' | 'name' | 'company' | 'consentEmail' | 'phone' | 'magnet', SubscribeErrorCode>>
+
+export const unsubscribeSchema = z.object({
+  email: emailField,
+  company_url: z.string().max(0).optional().default(''),
+})
+export type UnsubscribeFieldErrors = Partial<Record<'email', SubscribeErrorCode>>
+
+function collect<E extends Record<string, SubscribeErrorCode | undefined>>(issues: z.core.$ZodIssue[]): E {
+  const errors: Record<string, SubscribeErrorCode> = {}
+  for (const issue of issues) {
+    const key = issue.path[0]
+    if (typeof key !== 'string' || key === 'company_url' || errors[key]) continue
+    const code = issue.message as SubscribeErrorCode
+    errors[key] = subscribeCodes.includes(code) ? code : 'required'
+  }
+  return errors as E
+}
+
+export function validateSubscribe(
+  raw: unknown,
+): { ok: true; data: SubscribeInput } | { ok: false; errors: SubscribeFieldErrors } {
+  const result = subscribeSchema.safeParse(raw)
+  return result.success ? { ok: true, data: result.data } : { ok: false, errors: collect<SubscribeFieldErrors>(result.error.issues) }
+}
+
+export function validateUnsubscribe(
+  raw: unknown,
+): { ok: true; data: z.infer<typeof unsubscribeSchema> } | { ok: false; errors: UnsubscribeFieldErrors } {
+  const result = unsubscribeSchema.safeParse(raw)
+  return result.success ? { ok: true, data: result.data } : { ok: false, errors: collect<UnsubscribeFieldErrors>(result.error.issues) }
+}

@@ -21,6 +21,7 @@ const routes = {
   training: 'app/[locale]/amazon-ppc-training/page.tsx',
   about: 'app/[locale]/about/page.tsx',
   contact: 'app/[locale]/contact/page.tsx',
+  subscribe: 'app/[locale]/subscribe/page.tsx',
 }
 for (const [page, file] of Object.entries(routes)) {
   if (!exists(file)) { errors.push(`Missing public route: ${file}`); continue }

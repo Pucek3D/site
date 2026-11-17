@@ -43,6 +43,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
       title: 'Contact ADelier Commerce | Amazon PPC & Training',
       description: 'Discuss Amazon PPC management, agency partnerships, dedicated specialist support or practical PPC training with ADelier Commerce.',
     },
+    subscribe: {
+      title: 'Updates by E-mail | ADelier Commerce',
+      description: 'Choose whether ADelier Commerce may contact you by e-mail or phone with offers about Amazon PPC services and training. Each consent is separate and can be withdrawn.',
+    },
   },
   pl: {
     home: {
@@ -73,6 +77,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
       title: 'Kontakt | ADelier Commerce — Amazon PPC',
       description: 'Porozmawiaj z ADelier Commerce o zarządzaniu Amazon PPC, współpracy agencyjnej, dedykowanych specjalistach lub szkoleniach.',
     },
+    subscribe: {
+      title: 'Informacje e-mailem | ADelier Commerce',
+      description: 'Zdecyduj, czy ADelier Commerce może kontaktować się z Tobą e-mailem lub telefonicznie w sprawie ofert dotyczących Amazon PPC i szkoleń. Każda zgoda jest osobna i można ją wycofać.',
+    },
   },
   de: {
     home: {
@@ -102,6 +110,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
     contact: {
       title: 'Kontakt | ADelier Commerce — Amazon PPC',
       description: 'Sprechen Sie mit ADelier Commerce über Amazon-PPC-Management, Agenturpartnerschaften, dedizierte Spezialisten oder praxisorientierte Trainings.',
+    },
+    subscribe: {
+      title: 'Informationen per E-Mail | ADelier Commerce',
+      description: 'Entscheiden Sie, ob ADelier Commerce Sie per E-Mail oder Telefon zu Angeboten rund um Amazon PPC und Schulungen kontaktieren darf. Jede Einwilligung ist separat und widerrufbar.',
     },
   },
 }

@@ -30,7 +30,8 @@ export const pl: Dictionary = {
       "about": "O nas",
       "contact": "Kontakt",
       "privacy": "Polityka prywatności",
-      "legal": "Informacje prawne"
+      "legal": "Informacje prawne",
+      "subscribe": "Informacje e-mailem"
     },
     "primaryLabel": "Nawigacja główna",
     "openMenu": "Otwórz menu",
@@ -128,6 +129,100 @@ export const pl: Dictionary = {
         "name": "Podaj swoje imię i nazwisko.",
         "improve": "Napisz nam kilka słów o swoim zapytaniu."
       }
+    }
+  },
+  "subscribe": {
+    "eyebrow": "Informacje",
+    "pageTitle": "Otrzymuj oferty i informacje od ADelier Commerce.",
+    "intro": [
+      "Wybierz, w jaki sposób możemy kontaktować się z Tobą w sprawie ofert dotyczących usług Amazon PPC i szkoleń. Każdy kanał wymaga osobnej zgody, którą możesz wycofać w dowolnym momencie.",
+      "Po wysłaniu formularza wyślemy link potwierdzający na Twój adres e-mail. Nic nie zacznie obowiązywać, dopóki go nie potwierdzisz."
+    ],
+    "magnetEyebrow": "Materiał",
+    "magnetIntro": "Podaj adres e-mail, a po jego potwierdzeniu wyślemy Ci materiał. Zgoda na otrzymywanie ofert jest dobrowolna.",
+    "form": {
+      "aboutYou": "Twoje dane",
+      "email": "E-mail",
+      "name": "Imię i nazwisko",
+      "company": "Firma",
+      "optional": "opcjonalnie",
+      "consentLegend": "Jak możemy się z Tobą kontaktować",
+      "consentEmailLabel": "Oferty e-mailem",
+      "consentPhoneLabel": "Oferty telefonicznie",
+      "consentRequiredHint": "Wymagane, aby otrzymywać informacje e-mailem.",
+      "consentOptionalHint": "Opcjonalnie. Materiał wyślemy w każdym przypadku.",
+      "phone": "Numer telefonu",
+      "phoneHint": "Używany wyłącznie do kontaktu telefonicznego, na który wyrażasz zgodę powyżej.",
+      "honeypot": "Pozostaw to pole puste",
+      "submit": "Wyślij link potwierdzający",
+      "submitting": "Wysyłanie…",
+      "errorSummary": "Popraw zaznaczone pola przed wysłaniem.",
+      "noticeTitle": "Informacja o Twoich danych",
+      "notice": "Administratorem Twoich danych jest {controller}. Używamy ich wyłącznie do kontaktu, na który wyrażasz zgodę powyżej, oraz do przechowywania dowodu udzielenia zgody. Każdą zgodę możesz wycofać w dowolnym momencie na stronie rezygnacji lub pisząc na contact@adeliercommerce.com. Wycofanie zgody nie wpływa na kontakt, który nastąpił wcześniej. Więcej informacji znajdziesz w naszej",
+      "noticePrivacyLink": "polityce prywatności",
+      "noticeUnsubscribeLink": "Strona rezygnacji",
+      "checkTitle": "Sprawdź swoją skrzynkę.",
+      "check": "Wysłaliśmy link potwierdzający na adres {email}. Nic nie zacznie obowiązywać, dopóki nie otworzysz linku i nie potwierdzisz. Link jest ważny 48 godzin. Jeśli wiadomość nie dotrze, sprawdź folder spam.",
+      "failureTitle": "Nie udało się wysłać zgłoszenia.",
+      "failure": "Nic nie zostało zapisane. Spróbuj ponownie później. Jeśli problem się powtarza, napisz na contact@adeliercommerce.com.",
+      "errors": {
+        "required": "To pole jest wymagane.",
+        "email": "Podaj prawidłowy adres e-mail.",
+        "phone": "Podaj prawidłowy numer telefonu, na przykład +48 600 000 000.",
+        "tooLong": "Ten wpis jest zbyt długi.",
+        "consentRequired": "Zaznacz to pole, aby otrzymywać informacje e-mailem."
+      }
+    },
+    "confirm": {
+      "eyebrow": "Potwierdzenie",
+      "title": "Potwierdź swój adres e-mail",
+      "intro": "Naciśnij przycisk poniżej, aby potwierdzić zapis. Zgoda zacznie obowiązywać dopiero po tym kroku.",
+      "button": "Potwierdzam",
+      "submitting": "Potwierdzanie…",
+      "missingTitle": "Ten link jest niepełny.",
+      "missing": "Otwórz pełny link z wiadomości potwierdzającej albo zapisz się ponownie.",
+      "expiredTitle": "Ten link wygasł.",
+      "expired": "Linki potwierdzające są ważne 48 godzin. Zapisz się ponownie, aby otrzymać nowy.",
+      "invalidTitle": "Ten link jest nieprawidłowy.",
+      "invalid": "Link mógł zostać zmieniony lub skopiowany niekompletnie. Zapisz się ponownie.",
+      "successTitle": "Dziękujemy. Twój adres e-mail jest potwierdzony.",
+      "success": "Twoja zgoda została zapisana. Możesz ją wycofać w dowolnym momencie na stronie rezygnacji.",
+      "successMagnet": "Wysłaliśmy materiał na Twój adres e-mail.",
+      "successNoConsent": "Nie wyrażono zgody na otrzymywanie ofert, więc nie będziemy ich wysyłać.",
+      "failureTitle": "Nie udało się zapisać potwierdzenia.",
+      "failure": "Twoja zgoda jeszcze nie obowiązuje. Spróbuj ponownie później, korzystając z tego samego linku.",
+      "signUpAgain": "Zapisz się ponownie"
+    },
+    "unsubscribe": {
+      "eyebrow": "Rezygnacja",
+      "title": "Wycofaj zgodę",
+      "intro": "Podaj adres e-mail, aby wycofać wszystkie zgody na otrzymywanie ofert od ADelier Commerce, e-mailem i telefonicznie.",
+      "email": "E-mail",
+      "button": "Wycofaj zgodę",
+      "submitting": "Wysyłanie…",
+      "errorSummary": "Popraw zaznaczone pole.",
+      "successTitle": "Wycofanie zgody zostało zapisane.",
+      "success": "Przestaniemy kontaktować się z adresem {email} w sprawie ofert. Wiadomości już przygotowane mogą jeszcze przez krótki czas docierać.",
+      "failureTitle": "Nie udało się zapisać wycofania zgody.",
+      "failure": "Spróbuj ponownie później albo napisz na contact@adeliercommerce.com, a zapiszemy je za Ciebie.",
+      "errors": {
+        "required": "To pole jest wymagane.",
+        "email": "Podaj prawidłowy adres e-mail.",
+        "phone": "Podaj prawidłowy numer telefonu.",
+        "tooLong": "Ten wpis jest zbyt długi.",
+        "consentRequired": "To pole jest wymagane."
+      }
+    },
+    "emails": {
+      "confirmSubject": "Potwierdź swój adres e-mail",
+      "greeting": "Dzień dobry,",
+      "confirmIntro": "Ktoś, prawdopodobnie Ty, poprosił o otrzymywanie wiadomości od ADelier Commerce na ten adres. Aby potwierdzić, otwórz ten link i naciśnij Potwierdzam:",
+      "confirmValidity": "Link jest ważny 48 godzin. Dopóki nie potwierdzisz, żadna zgoda nie obowiązuje.",
+      "notYou": "Jeśli to nie Ty, zignoruj tę wiadomość.",
+      "privacy": "Polityka prywatności:",
+      "magnetSubject": "Twój materiał od ADelier Commerce",
+      "magnetIntro": "Dziękujemy za potwierdzenie adresu e-mail. Oto materiał, o który prosiłeś lub prosiłaś:",
+      "signoff": "ADelier Commerce"
     }
   },
   "privacy": {
