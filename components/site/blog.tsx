@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { anchorFor, excerptOf, formatDate, readingMinutes, type Block, type Post, type blogUi } from '@/lib/blog'
 import { href } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
+import { TocLinks } from './toc-links'
 
 type Ui = (typeof blogUi)['en']
 
@@ -100,18 +101,7 @@ export function TableOfContents({ post, label }: { post: Post; label: string }) 
       <p id="toc-label" className="text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">
         {label}
       </p>
-      <ol className="flex flex-col border-l border-hairline">
-        {headings.map((h) => (
-          <li key={h}>
-            <a
-              href={`#${anchorFor(h)}`}
-              className="-ml-px block border-l border-transparent py-1.5 pl-4 text-sm leading-snug text-slate transition-colors hover:border-cobalt hover:text-ink"
-            >
-              {h}
-            </a>
-          </li>
-        ))}
-      </ol>
+      <TocLinks items={headings.map((h) => ({ id: anchorFor(h), text: h }))} />
     </nav>
   )
 }
