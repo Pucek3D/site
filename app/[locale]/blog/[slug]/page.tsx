@@ -40,12 +40,12 @@ export default async function ArticlePage({ params }: Props) {
       <article aria-labelledby="article-title">
         <header className="bg-porcelain">
           <Container className="pt-12 pb-28 md:pt-16 md:pb-40">
-            <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+            <div className="mx-auto flex max-w-5xl flex-col items-start gap-5 text-left">
               <CategoryTag>{post.category}</CategoryTag>
-              <h1 id="article-title" className="text-balance text-[2.5rem] font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-[3.75rem]">
+              <h1 id="article-title" className="text-balance text-3xl font-semibold leading-[1.1] text-ink sm:text-4xl lg:text-[2.75rem]">
                 {post.title}
               </h1>
-              <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
                 <span className="flex items-center gap-2 font-semibold text-ink">
                   <Image src="/brand/icon-fullcolor.svg" alt="" width={24} height={24} className="size-6" />
                   {ui.by}
