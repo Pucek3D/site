@@ -154,18 +154,17 @@ function ServiceTile({
         ) : null}
 
         <div className="mt-auto flex flex-wrap items-center gap-x-6 gap-y-3 pt-5">
-          {/* Brand fills keep AA on both grounds (white on cobalt 5.0:1, ink on sage 7.1:1), so the
-              primary action reads the same in every state; only the focus ring offset follows the card. */}
+          {/* A cobalt text link rather than a filled pill; only the focus ring offset follows the card. */}
           {to ? (
           <Link
             href={to}
             className={cn(
               /* One cobalt action across all three cards; sage stays a secondary accent (eyebrow number, bullets, headline). */
-              'inline-flex max-w-full items-center gap-2 rounded-full bg-cobalt px-5 py-2.5 text-sm font-semibold text-white hyphens-auto [overflow-wrap:anywhere] hover:bg-cobalt/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tile-cobalt)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]',
+              'group inline-flex max-w-full items-center gap-2 rounded-sm py-2.5 text-sm font-semibold text-cobalt hyphens-auto [overflow-wrap:anywhere] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--tile-cobalt)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--tile-bg)]',
             )}
           >
             {labels.explore}
-            <ArrowRight aria-hidden className="size-4" />
+            <ArrowRight aria-hidden className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
           </Link>
           ) : null}
           {hasMore ? (
