@@ -1,34 +1,12 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { ArrowRight, Check } from 'lucide-react'
 import type { ReactNode } from 'react'
 import type { Titled } from '@/content/partner/types'
-import { href, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { Container, CtaLink, Eyebrow, Section } from './primitives'
 import { Lines } from './typeset'
 
-/** Two crumbs only: home and the page. Every page sits one level below home. */
-export function Breadcrumbs({ locale, homeLabel, label, navLabel }: { locale: Locale; homeLabel: string; label: string; navLabel: string }) {
-  return (
-    <nav aria-label={navLabel} className="mb-8">
-      <ol className="flex flex-wrap items-center gap-2 text-sm text-slate">
-        <li>
-          <Link href={href(locale, 'home')} className="hover:text-ink hover:underline">
-            {homeLabel}
-          </Link>
-        </li>
-        <li aria-hidden>/</li>
-        <li aria-current="page" className="text-ink">
-          {label}
-        </li>
-      </ol>
-    </nav>
-  )
-}
-
 export function PageHero({
-  crumbs,
   eyebrow,
   title,
   subtitle,
@@ -39,7 +17,6 @@ export function PageHero({
   compact,
 }: {
   compact?: boolean
-  crumbs?: ReactNode
   eyebrow?: string
   title: string
   subtitle?: string
@@ -51,7 +28,6 @@ export function PageHero({
   return (
     <section className="border-b border-hairline">
       <Container className={compact ? 'pt-14 pb-10 md:pt-20 md:pb-12' : 'py-14 md:py-20'}>
-        {crumbs}
         <div className={cn('grid items-center gap-12', image && 'lg:grid-cols-12')}>
           <div className={cn('flex flex-col gap-6', image ? 'lg:col-span-7' : 'max-w-3xl')}>
             {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}

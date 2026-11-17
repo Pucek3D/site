@@ -40,25 +40,6 @@ export default async function ArticlePage({ params }: Props) {
       <article aria-labelledby="article-title">
         <header className="bg-porcelain">
           <Container className="pt-12 pb-28 md:pt-16 md:pb-40">
-            <nav aria-label={d.common.breadcrumbLabel} className="mb-10">
-              <ol className="flex flex-wrap items-center gap-2 text-sm text-slate">
-                <li>
-                  <Link href={href(locale, 'home')} className="hover:text-ink hover:underline">
-                    {d.nav.items.home}
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li>
-                  <Link href={href(locale, 'blog')} className="hover:text-ink hover:underline">
-                    {d.nav.items.blog}
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li aria-current="page" className="line-clamp-1 text-ink">
-                  {post.title}
-                </li>
-              </ol>
-            </nav>
             <div className="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
               <CategoryTag>{post.category}</CategoryTag>
               <h1 id="article-title" className="text-balance text-[2.5rem] font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-[3.75rem]">

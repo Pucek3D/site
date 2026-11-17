@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/site/contact-form'
-import { Breadcrumbs, Paragraphs } from '@/components/site/page-kit'
+import { Paragraphs } from '@/components/site/page-kit'
 import { Container, Eyebrow } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -35,7 +35,6 @@ export default async function ContactPage({ params, searchParams }: Props) {
     <>
       <SeoStructuredData locale={locale} page="contact" />
       <Container className="pt-14 pb-16 md:pt-20 md:pb-24">
-        <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.contact} navLabel={dict.common.breadcrumbLabel} />
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         {/* Intro stays in view while the longer form scrolls beside it. */}
         <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">

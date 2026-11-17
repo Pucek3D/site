@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Breadcrumbs, Paragraphs } from '@/components/site/page-kit'
+import { Paragraphs } from '@/components/site/page-kit'
 import { Container, Eyebrow } from '@/components/site/primitives'
 import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { SubscribeForm } from '@/components/site/subscribe-form'
@@ -32,7 +32,6 @@ export default async function SubscribePage({ params, searchParams }: Props) {
     <>
       <SeoStructuredData locale={locale} page="subscribe" />
       <Container className="pt-14 pb-16 md:pt-20 md:pb-24">
-        <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items.subscribe} navLabel={dict.common.breadcrumbLabel} />
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
           <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:self-start">
             <Eyebrow accent="cobalt">{magnet ? s.magnetEyebrow : s.eyebrow}</Eyebrow>

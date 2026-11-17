@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowDown, ArrowRight } from 'lucide-react'
-import { Breadcrumbs, CheckList, FinalCta, H2, ListLabel, Paragraphs } from '@/components/site/page-kit'
+import { CheckList, FinalCta, H2, ListLabel, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -45,7 +45,6 @@ export default async function BrandsPage({ params }: Props) {
           />
         </div>
         <Container className="relative pb-14 pt-8 md:pb-20 md:pt-10">
-          <Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.brands} navLabel={d.common.breadcrumbLabel} />
           <div className="lg:flex lg:min-h-[520px] lg:items-center">
             <div className="flex min-w-0 flex-col gap-6 lg:w-[48%] lg:pr-3">
               <h1 className="text-balance text-[2rem] font-semibold leading-[1.08] text-ink [hyphens:auto] min-[400px]:text-[2.25rem] sm:text-5xl xl:text-[3.5rem]">

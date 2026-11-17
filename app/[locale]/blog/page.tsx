@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { PostCard } from '@/components/site/blog'
-import { Breadcrumbs } from '@/components/site/page-kit'
 import { Container, CtaLink } from '@/components/site/primitives'
 import { SeoStructuredData } from '@/components/site/seo-structured-data'
 import { getDictionary } from '@/content'
@@ -28,26 +27,14 @@ export default async function BlogPage({ params }: Props) {
   return (
     <>
       <SeoStructuredData locale={locale} page="blog" />
-      <section className="border-b border-hairline bg-porcelain">
-        <Container className="pt-14 pb-12 md:pt-20 md:pb-16">
-          <Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.blog} navLabel={d.common.breadcrumbLabel} />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <h1 className="text-[2.5rem] font-semibold leading-[1.05] text-ink sm:text-5xl lg:text-[3.5rem]">{ui.title}</h1>
-            <p className="text-pretty text-xl leading-relaxed text-slate">{ui.subtitle}</p>
-          </div>
-        </Container>
-      </section>
-
-      <section aria-labelledby="latest" className="py-16 md:py-20">
+      <section aria-labelledby="blog-title" className="py-12 md:py-16">
+        <h1 id="blog-title" className="sr-only">
+          {ui.title}
+        </h1>
         <Container>
           {featured ? (
             <div className="flex flex-col gap-16">
-              <div className="flex flex-col gap-6">
-                <h2 id="latest" className="text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-slate">
-                  {ui.latest}
-                </h2>
-                <PostCard post={featured} ui={ui} featured priority />
-              </div>
+              <PostCard post={featured} ui={ui} featured priority />
               {rest.length > 0 ? (
                 <div className="flex flex-col gap-6 border-t border-hairline pt-12">
                   <h2 className="font-display text-2xl font-semibold text-ink">{ui.more}</h2>
@@ -63,7 +50,7 @@ export default async function BlogPage({ params }: Props) {
             </div>
           ) : (
             <div className="flex max-w-2xl flex-col items-start gap-4 rounded-xl border border-dashed border-input p-8 md:p-10">
-              <h2 id="latest" className="font-display text-2xl font-semibold text-ink">
+              <h2 className="font-display text-2xl font-semibold text-ink">
                 {ui.empty.title}
               </h2>
               <p className="text-pretty text-lg leading-relaxed text-slate">{ui.empty.body}</p>

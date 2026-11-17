@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Breadcrumbs, H2, PageHero, PointGrid } from '@/components/site/page-kit'
+import { H2, PageHero, PointGrid } from '@/components/site/page-kit'
 import { CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { Lines } from '@/components/site/typeset'
 import { getDictionary } from '@/content'
@@ -27,7 +27,6 @@ export default async function AboutPage({ params }: Props) {
     <>
       <SeoStructuredData locale={locale} page="about" />
       <PageHero
-        crumbs={<Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.about} navLabel={d.common.breadcrumbLabel} />}
         title={a.hero.title}
         subtitle={a.hero.subtitle}
         paragraphs={a.hero.paragraphs}

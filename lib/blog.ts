@@ -77,8 +77,7 @@ const posts: Post[] = [
     sections: [
       {
         blocks: [
-          p('Amazon jest jednym z największych marketplace’ów na świecie i dla wielu marek może być bardzo atrakcyjnym kanałem sprzedaży. Ale czy każda marka powinna sprzedawać na Amazonie?'),
-          lead('Nie.'),
+          p('Amazon jest jednym z największych marketplace’ów na świecie i dla wielu marek może być bardzo atrakcyjnym kanałem sprzedaży. Ale czy każda marka powinna sprzedawać na Amazonie? Nie.'),
           p('Amazon może otworzyć przed firmą dostęp do milionów klientów i nowych rynków, ale jednocześnie wiąże się z dużą konkurencją, kosztami, koniecznością inwestowania w reklamę oraz ciągłą optymalizacją.'),
           p('Dlatego zanim zdecydujesz się na wejście na Amazon, warto odpowiedzieć sobie na kilka podstawowych pytań:'),
           questions('Czy moi klienci są na Amazonie? Czy mój produkt ma tam potencjał sprzedażowy? Czy sprzedaż będzie rentowna? I czy Amazon może być dla mojej marki kanałem długoterminowego wzrostu?'),

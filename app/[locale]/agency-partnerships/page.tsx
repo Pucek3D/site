@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { Breadcrumbs, FinalCta, H2, Paragraphs } from '@/components/site/page-kit'
+import { FinalCta, H2, Paragraphs } from '@/components/site/page-kit'
 import { Container, CtaLink, Eyebrow, Section } from '@/components/site/primitives'
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
@@ -47,7 +47,6 @@ export default async function AgencyPage({ params }: Props) {
           />
         </div>
         <Container className="relative pb-14 pt-8 md:pb-20 md:pt-10">
-          <Breadcrumbs locale={locale} homeLabel={d.nav.items.home} label={d.nav.items.agencies} navLabel={d.common.breadcrumbLabel} />
           <div className="lg:flex lg:min-h-[520px] lg:items-center">
             <div className="flex min-w-0 flex-col gap-6 lg:w-[48%] lg:pr-3">
               <Eyebrow>{a.hero.eyebrow}</Eyebrow>

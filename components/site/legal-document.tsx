@@ -5,7 +5,6 @@ import type { Locale } from '@/lib/i18n'
 import { legalAccess } from '@/lib/legal-access'
 import { loadLegalDoc } from '@/lib/legal-docs'
 import { Container, Eyebrow } from './primitives'
-import { Breadcrumbs } from './page-kit'
 
 /**
  * Renders an owner-supplied legal draft as the public page will look.
@@ -59,7 +58,6 @@ export function LegalDocument({
   const doc = loadLegalDoc(locale, page)
   return (
     <Container className="py-14 md:py-20">
-      <Breadcrumbs locale={locale} homeLabel={dict.nav.items.home} label={dict.nav.items[page]} navLabel={dict.common.breadcrumbLabel} />
       {access === 'review' ? (
         <p role="note" className="mb-8 max-w-3xl rounded-lg border border-hairline bg-sage-tint px-4 py-3 text-sm font-medium text-ink">
           {REVIEW_NOTICE[locale]}
