@@ -77,7 +77,6 @@ export function SiteFooter({ locale, dict, copy }: { locale: Locale; dict: Dicti
             </li>
           </ul>
         </div>
-        <p className="mt-4 text-xs leading-relaxed text-mist">{footer.disclaimer}</p>
       </Container>
     </footer>
   )

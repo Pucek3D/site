@@ -46,8 +46,7 @@ export const pl: Dictionary = {
     "contact": "Kontakt",
     "linkedin": "LinkedIn",
     "rights": "Wszelkie prawa zastrzeżone.",
-    "placeholder": "Miejsce na dane — do uzupełnienia",
-    "disclaimer": "ADelier Commerce to niezależna marka, niepowiązana z Amazon i nieposiadająca jego oficjalnej rekomendacji."
+    "placeholder": "Miejsce na dane — do uzupełnienia"
   },
   "common": {
     "home": {
