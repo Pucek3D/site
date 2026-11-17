@@ -12,7 +12,7 @@ The hosting provider supplies the infrastructure used to operate the website and
 The retention periods applicable to technical logs depend on the hosting service configuration and will be confirmed with the provider.
 
 ## 3. Purposes and legal bases
-We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use your inquiry to send offers or advertising. Commercial information by e-mail or phone is sent only to people who have separately given and confirmed their consent on the sign-up page, as described in section 12.
+We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use contact inquiries to send unsolicited marketing communications. Where you request information about our services or a commercial proposal, we may respond directly to that request. Commercial information by e-mail or phone is sent only to people who have separately given and confirmed their consent on the sign-up page, as described in section 12.
 
 Technical data may be processed where necessary to operate, protect and troubleshoot the website, on the basis of our legitimate interest under Article 6(1)(f) GDPR, subject to applicable law.
 
@@ -20,9 +20,9 @@ Technical data may be processed where necessary to operate, protect and troubles
 Providing information is voluntary. However, the form's required fields are necessary to submit an inquiry and allow us to respond. Additional fields are optional. Please do not include sensitive personal information unless it is genuinely needed for your inquiry.
 
 ## 5. Retention
-If an inquiry does not lead to cooperation, its correspondence data will be retained **for no longer than 60 days after the correspondence ends**. Different periods may apply where cooperation begins or a separate legal obligation or a justified need to establish, pursue or defend legal claims applies.
+If an inquiry does not lead to cooperation, its correspondence data will be retained **for no longer than 60 days from the date the inquiry is closed**, meaning the date of the last message in the correspondence, whether ours or yours. We review the mailbox monthly and delete closed inquiries so that this period is not exceeded. Different periods may apply where cooperation begins or a separate legal obligation or a justified need to establish, pursue or defend legal claims applies.
 
-Website and email data may also be included in backup copies maintained as part of the hosting service. Backup retention periods, storage locations and deletion cycles depend on the hosting configuration and have not yet been individually confirmed for this website.
+Website and email data may also be included in backup copies maintained as part of the hosting service. Data deleted from the mailbox or the website may remain in these backup copies until they are overwritten in the hosting provider's regular backup cycle.
 
 Messages and attachments are deleted from the active mailbox according to the retention periods described in this notice. Copies contained in backups may remain until the relevant backup rotation cycle is completed.
 
@@ -33,14 +33,14 @@ We use the following service providers, who process data on our behalf only to t
 
 - **Hosting and email provider:** VH.PL, operated by Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Poland. VH.PL provides the hosting infrastructure for adeliercommerce.com and the email service used for contact@adeliercommerce.com. As part of these services, the provider may process personal data contained in website submissions, email correspondence and technical server records, to the extent necessary to provide and maintain the services. The applicable data processing agreement and any relevant subprocessors are subject to confirmation.
 
-The service used to forward form submissions to the mailbox will be named here before the form is put into operation.
+Submissions from the contact form are sent by our website directly to the mailbox contact@adeliercommerce.com through the VH.PL mail server. No separate form or forwarding service is used.
 
 - **Consent register and e-mail:** consent records are stored as e-mail messages in a dedicated folder of the mailbox provided by VH.PL (Poland). The same mailbox is used to send confirmation e-mails, requested materials and, with your consent, commercial e-mails. If we start using a separate mailing tool, we will name it here before using it.
 
 ## 7. Transfers outside the European Economic Area
 Our hosting provider, VH.PL, states that its data centre infrastructure is located in Gdańsk and Gdynia, Poland, within the European Economic Area.
 
-The specific storage locations applicable to our hosting account, email services and backup copies, as well as any access to personal data from outside the EEA, have not yet been individually confirmed.
+The hosting, email and consent register described in this notice are provided by VH.PL. We do not use any other service provider to process the personal data described here.
 
 We do not intentionally disclose personal data to recipients outside the EEA through our own contact or marketing processes. If personal data is transferred outside the EEA, we will ensure that an applicable transfer mechanism and safeguards are in place, as required by the GDPR, and provide the relevant information in this notice.
 

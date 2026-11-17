@@ -18,9 +18,10 @@ import { siteConfig } from '@/lib/site-config'
 
 /**
  * Validates with the SAME schema as the browser, then delivers by:
- *   1. authenticated SMTP (SMTP_HOST/USER/PASS/FROM all set), else
- *   2. CONTACT_WEBHOOK_URL, else
- *   3. refuses with 503. A "thank you" for a dropped inquiry is the worst failure here.
+ *   authenticated SMTP through the VH.PL mailbox (SMTP_HOST/USER/PASS/FROM all set), else
+ *   refuses with 503. A "thank you" for a dropped inquiry is the worst failure here.
+ * There is deliberately no webhook or third-party fallback: the privacy notice states that
+ * no separate form or forwarding service is used, and this route must keep that true.
  *
  * Origin, rate-limit, IP and body-size rules live in lib/api-guard.ts (shared with
  * the subscribe routes). This route keeps its own limiter, so its limits are unchanged.
@@ -78,15 +79,14 @@ export async function POST(request: Request) {
   const siteLocale = typeof raw.locale === 'string' ? raw.locale.slice(0, 5) : null
   const receivedAt = new Date().toISOString()
   const smtp = smtpSettings()
-  const webhook = process.env.CONTACT_WEBHOOK_URL
 
-  if (!smtp && !webhook) {
+  if (!smtp) {
     console.error('[contact] no delivery method configured; inquiry not delivered')
     return reply({ error: 'not_configured' }, 503)
   }
 
   try {
-    if (smtp) {
+    {
       const { subject, text } = renderInquiry(inquiry, siteLocale, receivedAt)
       const transport = nodemailer.createTransport({
         host: smtp.host,
@@ -107,22 +107,12 @@ export async function POST(request: Request) {
           text,
         }),
       )
-    } else if (webhook) {
-      const headers: Record<string, string> = { 'content-type': 'application/json' }
-      if (process.env.CONTACT_WEBHOOK_SECRET) headers.authorization = `Bearer ${process.env.CONTACT_WEBHOOK_SECRET}`
-      const res = await fetch(webhook, {
-        method: 'POST',
-        headers,
-        signal: AbortSignal.timeout(DELIVERY_TIMEOUT_MS),
-        body: JSON.stringify({ ...inquiry, to, siteLocale, receivedAt }),
-      })
-      if (!res.ok) throw Object.assign(new Error('webhook rejected'), { code: `HTTP_${res.status}` })
     }
   } catch (error) {
     console.error('[contact] delivery failed', errorKind(error))
     return reply({ error: 'delivery_failed' }, 502)
   }
 
-  // Accepted by the SMTP server or webhook. That is NOT proof of mailbox delivery; verify with a real test.
+  // Accepted by the SMTP server. That is NOT proof of mailbox delivery; verify with a real test.
   return reply({ ok: true })
 }

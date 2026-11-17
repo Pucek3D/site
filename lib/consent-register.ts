@@ -133,7 +133,11 @@ export async function registerConsent(record: ConsentRecord): Promise<RegisterRe
   }
 }
 
-/** "[CONSENT] confirmed …" / "[CONSENT] withdrawn …": the prefix a mailbox rule files on. */
-export function consentSubject(record: Pick<ConsentRecord, 'status' | 'idempotencyKey'>) {
-  return `[CONSENT] ${record.status} (${record.idempotencyKey.slice(0, 12)})`
+/**
+ * "[CONSENT] confirmed <address> …" / "[CONSENT] withdrawn <address> …": the prefix a mailbox
+ * rule files on, plus the address so a mailbox search finds every record for one person
+ * (to prove a consent, honour a withdrawal, or delete records once retention ends).
+ */
+export function consentSubject(record: Pick<ConsentRecord, 'status' | 'idempotencyKey' | 'email'>) {
+  return `[CONSENT] ${record.status} ${record.email.replace(/[\r\n]/g, '')} (${record.idempotencyKey.slice(0, 12)})`
 }

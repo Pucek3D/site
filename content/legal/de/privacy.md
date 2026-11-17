@@ -12,7 +12,7 @@ Der Hostinganbieter stellt die Infrastruktur für den Betrieb der Website und de
 Die Aufbewahrungsfristen für technische Protokolle hängen von der Konfiguration des Hostingdienstes ab und werden mit dem Anbieter abgestimmt.
 
 ## 3. Zwecke und Rechtsgrundlagen
-Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten, mögliche Leistungen zu besprechen und die damit verbundene Korrespondenz zu führen. Soweit Sie vorvertragliche Maßnahmen anfordern, beruht die Verarbeitung auf Art. 6 Abs. 1 Buchst. b DSGVO. Für allgemeine Anfragen und die sonstige Kommunikation kann unser berechtigtes Interesse an der Bearbeitung von Nachrichten gemäß Art. 6 Abs. 1 Buchst. f DSGVO die Rechtsgrundlage bilden. Ihre Anfrage wird nicht für Angebote oder Werbung genutzt. Werbliche Informationen per E-Mail oder Telefon erhalten nur Personen, die auf der Anmeldeseite gesondert eingewilligt und die Einwilligung bestätigt haben, wie in Abschnitt 12 beschrieben.
+Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten, mögliche Leistungen zu besprechen und die damit verbundene Korrespondenz zu führen. Soweit Sie vorvertragliche Maßnahmen anfordern, beruht die Verarbeitung auf Art. 6 Abs. 1 Buchst. b DSGVO. Für allgemeine Anfragen und die sonstige Kommunikation kann unser berechtigtes Interesse an der Bearbeitung von Nachrichten gemäß Art. 6 Abs. 1 Buchst. f DSGVO die Rechtsgrundlage bilden. Kontaktanfragen nutzen wir nicht für unaufgeforderte Werbung. Wenn Sie Informationen zu unseren Leistungen oder ein Angebot anfordern, können wir direkt auf diese Anfrage antworten. Werbliche Informationen per E-Mail oder Telefon erhalten nur Personen, die auf der Anmeldeseite gesondert eingewilligt und die Einwilligung bestätigt haben, wie in Abschnitt 12 beschrieben.
 
 Technische Daten können zum Betrieb, zur Sicherheit und zur Fehlerbehebung der Website auf Grundlage unseres berechtigten Interesses gemäß Art. 6 Abs. 1 Buchst. f DSGVO verarbeitet werden, soweit dies gesetzlich zulässig ist.
 
@@ -20,9 +20,9 @@ Technische Daten können zum Betrieb, zur Sicherheit und zur Fehlerbehebung der 
 Die Angabe personenbezogener Daten ist freiwillig. Die als Pflichtfelder gekennzeichneten Formularangaben benötigen wir jedoch, damit Sie eine Anfrage senden können und wir diese bearbeiten können. Weitere Angaben sind optional. Bitte übermitteln Sie keine besonderen Kategorien personenbezogener Daten, sofern dies für Ihr Anliegen nicht notwendig ist.
 
 ## 5. Speicherdauer
-Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden Korrespondenzdaten **höchstens 60 Tage nach Abschluss der Korrespondenz**. Andere Fristen können gelten, wenn eine Zusammenarbeit zustande kommt oder gesetzliche Pflichten beziehungsweise die berechtigte Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen eine längere Speicherung erfordern.
+Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden Korrespondenzdaten **höchstens 60 Tage ab dem Tag, an dem die Anfrage abgeschlossen ist**, also ab dem Datum der letzten Nachricht in der Korrespondenz, ob von uns oder von Ihnen. Wir prüfen das Postfach monatlich und löschen abgeschlossene Anfragen, damit diese Frist nicht überschritten wird. Andere Fristen können gelten, wenn eine Zusammenarbeit zustande kommt oder gesetzliche Pflichten beziehungsweise die berechtigte Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen eine längere Speicherung erfordern.
 
-Website- und E-Mail-Daten können auch in Sicherungskopien enthalten sein, die im Rahmen des Hostingdienstes erstellt werden. Aufbewahrungsfristen, Speicherorte und Löschzyklen der Sicherungskopien hängen von der Hosting-Konfiguration ab und wurden für diese Website noch nicht im Einzelnen bestätigt.
+Website- und E-Mail-Daten können auch in Sicherungskopien enthalten sein, die im Rahmen des Hostingdienstes erstellt werden. Aus dem Postfach oder von der Website gelöschte Daten können in diesen Sicherungskopien verbleiben, bis sie im regelmäßigen Sicherungszyklus des Hostinganbieters überschrieben werden.
 
 Nachrichten und Anhänge werden gemäß den in dieser Erklärung beschriebenen Aufbewahrungsfristen aus dem aktiven Postfach gelöscht. In Sicherungskopien enthaltene Kopien können bis zum Abschluss des jeweiligen Rotationszyklus bestehen bleiben.
 
@@ -33,14 +33,14 @@ Wir setzen folgende Dienstleister ein, die Daten in unserem Auftrag nur verarbei
 
 - **Hosting- und E-Mail-Anbieter:** VH.PL, betrieben von der Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Polen. VH.PL stellt die Hosting-Infrastruktur für adeliercommerce.com sowie den E-Mail-Dienst für contact@adeliercommerce.com bereit. Im Rahmen dieser Dienste kann der Anbieter personenbezogene Daten aus Website-Übermittlungen, E-Mail-Korrespondenz und technischen Serveraufzeichnungen verarbeiten, soweit dies zur Erbringung und Aufrechterhaltung der Dienste erforderlich ist. Der maßgebliche Auftragsverarbeitungsvertrag und etwaige Unterauftragsverarbeiter stehen unter dem Vorbehalt der Bestätigung.
 
-Der Dienst, der Formularanfragen an das Postfach weiterleitet, wird hier vor der Inbetriebnahme des Formulars benannt.
+Anfragen über das Kontaktformular sendet unsere Website direkt über den Mailserver von VH.PL an das Postfach contact@adeliercommerce.com. Ein gesonderter Formular- oder Weiterleitungsdienst wird nicht verwendet.
 
 - **Einwilligungsregister und E-Mail:** Einwilligungsnachweise werden als E-Mail-Nachrichten in einem eigenen Ordner des von VH.PL (Polen) bereitgestellten Postfachs gespeichert. Über dasselbe Postfach versenden wir Bestätigungs-E-Mails, angeforderte Materialien und, mit Ihrer Einwilligung, Werbe-E-Mails. Sollten wir ein separates Versandtool einsetzen, nennen wir es hier, bevor wir es verwenden.
 
 ## 7. Übermittlung in Länder außerhalb des Europäischen Wirtschaftsraums
 Unser Hostinganbieter VH.PL gibt an, dass sich seine Rechenzentrumsinfrastruktur in Danzig (Gdańsk) und Gdingen (Gdynia), Polen, und damit innerhalb des Europäischen Wirtschaftsraums befindet.
 
-Die konkreten Speicherorte für unser Hostingkonto, unsere E-Mail-Dienste und die Sicherungskopien sowie ein etwaiger Zugriff auf personenbezogene Daten von außerhalb des EWR wurden noch nicht im Einzelnen bestätigt.
+Hosting, E-Mail und das in dieser Erklärung beschriebene Einwilligungsregister werden von VH.PL bereitgestellt. Für die Verarbeitung der hier beschriebenen personenbezogenen Daten setzen wir keine weiteren Dienstleister ein.
 
 Im Rahmen unserer eigenen Kontakt- und Marketingprozesse geben wir personenbezogene Daten nicht bewusst an Empfänger außerhalb des EWR weiter. Werden personenbezogene Daten in Länder außerhalb des EWR übermittelt, stellen wir sicher, dass ein geeigneter Übermittlungsmechanismus und Garantien gemäß der DSGVO bestehen, und ergänzen diese Erklärung um die entsprechenden Informationen.
 

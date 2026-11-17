@@ -23,14 +23,14 @@ if (smtpSet.length > 0 && smtpSet.length < smtpKeys.length) {
   blockers.push(`SMTP is partly configured; missing: ${smtpKeys.filter((k) => !env[k]).join(', ')}.`)
 }
 const smtpReady = smtpSet.length === smtpKeys.length
-if (!smtpReady && !env.CONTACT_WEBHOOK_URL) {
+if (!smtpReady) {
   blockers.push(
-    'No contact delivery method is configured (SMTP_* or CONTACT_WEBHOOK_URL): the form shows its failure state for every inquiry. ' +
-      'Configure one and confirm a real message reaches contact@adeliercommerce.com.',
+    'Contact delivery is not configured (SMTP_*): the form shows its failure state for every inquiry. ' +
+      'Configure the VH.PL mailbox and confirm a real message reaches contact@adeliercommerce.com.',
   )
 }
-if (!smtpReady && env.CONTACT_WEBHOOK_URL) {
-  warnings.push('Delivery uses CONTACT_WEBHOOK_URL. A webhook accepting the request does not prove the mailbox received it.')
+if (env.CONTACT_WEBHOOK_URL) {
+  warnings.push('CONTACT_WEBHOOK_URL is set but ignored: the form delivers only through SMTP, as the privacy notice states.')
 }
 
 if (!env.CONTACT_TRUSTED_IP_HEADER) {

@@ -12,7 +12,7 @@ Dostawca hostingu zapewnia infrastrukturę wykorzystywaną do działania strony 
 Okresy przechowywania logów technicznych zależą od konfiguracji usługi hostingowej i zostaną potwierdzone z dostawcą.
 
 ## 3. Cele i podstawy prawne
-Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane z zapytania nie są używane do wysyłki ofert ani reklam. Informacje handlowe e-mailem lub telefonicznie otrzymują wyłącznie osoby, które odrębnie wyraziły i potwierdziły zgodę na stronie zapisu, zgodnie z punktem 12.
+Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane z zapytań nie są używane do wysyłki niezamówionych informacji handlowych. Jeżeli prosisz o informacje o naszych usługach lub o ofertę, możemy odpowiedzieć bezpośrednio na tę prośbę. Informacje handlowe e-mailem lub telefonicznie otrzymują wyłącznie osoby, które odrębnie wyraziły i potwierdziły zgodę na stronie zapisu, zgodnie z punktem 12.
 
 Dane techniczne przetwarzane są, gdy jest to niezbędne do działania, utrzymania i zabezpieczenia serwisu oraz diagnozowania błędów, na podstawie prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO), w zakresie zgodnym z obowiązującymi przepisami.
 
@@ -20,9 +20,9 @@ Dane techniczne przetwarzane są, gdy jest to niezbędne do działania, utrzyman
 Podanie danych w formularzu jest dobrowolne. Wypełnienie pól oznaczonych jako wymagane jest jednak potrzebne, aby przesłać zapytanie i umożliwić jego rozpatrzenie. Pola dodatkowe są opcjonalne. Nie należy przesyłać danych szczególnie wrażliwych, jeżeli nie są konieczne do zapytania.
 
 ## 5. Okres przechowywania
-Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne są przechowywane **nie dłużej niż 60 dni od zakończenia korespondencji**. Jeżeli dojdzie do współpracy albo pojawi się odrębna konieczność wynikająca z prawa lub uzasadnionego dochodzenia bądź obrony roszczeń, właściwy okres może być inny. Dotyczy to także dokumentów związanych z potencjalną umową i obowiązkami prawnymi.
+Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne są przechowywane **nie dłużej niż 60 dni od dnia zamknięcia zapytania**, czyli od daty ostatniej wiadomości w korespondencji, naszej lub Twojej. Raz w miesiącu przeglądamy skrzynkę i usuwamy zamknięte zapytania, tak aby ten okres nie został przekroczony. Jeżeli dojdzie do współpracy albo pojawi się odrębna konieczność wynikająca z prawa lub uzasadnionego dochodzenia bądź obrony roszczeń, właściwy okres może być inny. Dotyczy to także dokumentów związanych z potencjalną umową i obowiązkami prawnymi.
 
-Dane ze strony internetowej i poczty e-mail mogą być także zawarte w kopiach zapasowych tworzonych w ramach usługi hostingowej. Okresy przechowywania kopii zapasowych, miejsca ich przechowywania oraz cykle ich usuwania zależą od konfiguracji hostingu i nie zostały jeszcze indywidualnie potwierdzone dla tej strony.
+Dane ze strony internetowej i poczty e-mail mogą być także zawarte w kopiach zapasowych tworzonych w ramach usługi hostingowej. Dane usunięte ze skrzynki lub ze strony mogą pozostawać w tych kopiach do czasu ich nadpisania w ramach regularnego cyklu kopii zapasowych dostawcy hostingu.
 
 Wiadomości i załączniki są usuwane z bieżącej skrzynki pocztowej zgodnie z okresami przechowywania opisanymi w niniejszej polityce. Kopie znajdujące się w kopiach zapasowych mogą pozostać do czasu zakończenia właściwego cyklu ich rotacji.
 
@@ -33,14 +33,14 @@ Korzystamy z następujących dostawców usług, którzy przetwarzają dane w nas
 
 - **Dostawca hostingu i poczty e-mail:** VH.PL, prowadzone przez Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Polska. VH.PL zapewnia infrastrukturę hostingową dla adeliercommerce.com oraz usługę poczty e-mail wykorzystywaną dla adresu contact@adeliercommerce.com. W ramach tych usług dostawca może przetwarzać dane osobowe zawarte w zgłoszeniach ze strony, korespondencji e-mail i technicznych zapisach serwera, w zakresie niezbędnym do świadczenia i utrzymania usług. Właściwa umowa powierzenia przetwarzania danych oraz ewentualni podwykonawcy wymagają potwierdzenia.
 
-Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
+Zgłoszenia z formularza kontaktowego są wysyłane przez naszą stronę bezpośrednio do skrzynki contact@adeliercommerce.com za pośrednictwem serwera poczty VH.PL. Nie korzystamy z odrębnej usługi formularzy ani przekazywania wiadomości.
 
 - **Rejestr zgód i poczta:** zapisy zgód przechowujemy w postaci wiadomości e-mail w wydzielonym folderze skrzynki pocztowej zapewnianej przez VH.PL (Polska). Z tej samej skrzynki wysyłamy wiadomości potwierdzające, zamówione materiały oraz, za Twoją zgodą, wiadomości handlowe. Jeśli zaczniemy korzystać z osobnego narzędzia do wysyłki, wskażemy je tutaj przed rozpoczęciem korzystania.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
 Nasz dostawca hostingu, VH.PL, deklaruje, że jego infrastruktura centrów danych znajduje się w Gdańsku i Gdyni, w Polsce, na terenie Europejskiego Obszaru Gospodarczego.
 
-Konkretne miejsca przechowywania danych właściwe dla naszego konta hostingowego, usług poczty e-mail i kopii zapasowych, a także ewentualny dostęp do danych osobowych spoza EOG, nie zostały jeszcze indywidualnie potwierdzone.
+Hosting, poczta e-mail i rejestr zgód opisane w tej polityce są zapewniane przez VH.PL. Nie korzystamy z innych dostawców do przetwarzania opisanych tu danych osobowych.
 
 W ramach naszych własnych procesów kontaktowych i marketingowych nie udostępniamy celowo danych osobowych odbiorcom spoza EOG. Jeżeli dane osobowe zostaną przekazane poza EOG, zapewnimy stosowanie właściwego mechanizmu przekazania i zabezpieczeń wymaganych przez RODO oraz podamy odpowiednie informacje w niniejszej polityce.
 

@@ -194,7 +194,7 @@ export const pl: Dictionary = {
     "unsubscribe": {
       "eyebrow": "Rezygnacja",
       "title": "Wycofaj zgodę",
-      "intro": "Podaj adres e-mail, aby wycofać wszystkie zgody na otrzymywanie ofert od ADelier Commerce, e-mailem i telefonicznie.",
+      "intro": "Podaj adres e-mail, aby wycofać wszystkie zgody na otrzymywanie ofert od ADelier Commerce, e-mailem i telefonicznie. Ten formularz wycofuje oba kanały jednocześnie. Aby zrezygnować tylko z kontaktu e-mailowego albo tylko telefonicznego, napisz na contact@adeliercommerce.com.",
       "email": "E-mail",
       "button": "Wycofaj zgodę",
       "submitting": "Wysyłanie…",

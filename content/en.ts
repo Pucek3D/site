@@ -192,7 +192,7 @@ export const en = {
     "unsubscribe": {
       "eyebrow": "Unsubscribe",
       "title": "Withdraw your consent",
-      "intro": "Enter your e-mail address to withdraw all consents to receive offers from ADelier Commerce, by e-mail and by phone.",
+      "intro": "Enter your e-mail address to withdraw all consents to receive offers from ADelier Commerce, by e-mail and by phone. This form withdraws both channels at once. To stop only e-mail or only phone contact, write to contact@adeliercommerce.com.",
       "email": "E-mail",
       "button": "Withdraw consent",
       "submitting": "Sending…",

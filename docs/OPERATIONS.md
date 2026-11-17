@@ -80,7 +80,10 @@ The sign-up flow (`/subscribe`) is off unless `SUBSCRIBE_ENABLED=true`. When on,
 each confirmed sign-up and each withdrawal arrives as one plain-text e-mail to
 `CONSENT_LOG_EMAIL`, a dedicated address in the VH.PL mailbox (never
 `contact@`). The subject starts with `[CONSENT] confirmed` or
-`[CONSENT] withdrawn`; a mailbox rule files these into the consent folder.
+`[CONSENT] withdrawn`, followed by the e-mail address; a mailbox rule files these
+into the consent folder. To find every record for one person (to prove a consent,
+honour a withdrawal or delete records after retention), search the consent folder
+for their address.
 There is no database, no webhook and no external mailing tool
 (`CONSENT_WEBHOOK_URL` is ignored): the consent folder is the only proof of
 consent.

@@ -194,7 +194,7 @@ export const de: Dictionary = {
     "unsubscribe": {
       "eyebrow": "Abmeldung",
       "title": "Einwilligung widerrufen",
-      "intro": "Geben Sie Ihre E-Mail-Adresse ein, um alle Einwilligungen in Angebote von ADelier Commerce per E-Mail und per Telefon zu widerrufen.",
+      "intro": "Geben Sie Ihre E-Mail-Adresse ein, um alle Einwilligungen in Angebote von ADelier Commerce per E-Mail und per Telefon zu widerrufen. Dieses Formular widerruft beide Kanäle zugleich. Möchten Sie nur den Kontakt per E-Mail oder nur per Telefon beenden, schreiben Sie an contact@adeliercommerce.com.",
       "email": "E-Mail",
       "button": "Einwilligung widerrufen",
       "submitting": "Wird gesendet…",
