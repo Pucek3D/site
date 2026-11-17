@@ -74,7 +74,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </figure>
 
-          <div className="mx-auto grid max-w-6xl gap-12 py-16 md:py-20 lg:grid-cols-12">
+          <div className="mx-auto grid max-w-5xl gap-12 py-16 md:py-20 lg:grid-cols-12">
             <aside className="hidden lg:col-span-3 lg:block">
               <div className="sticky top-28">
                 <TableOfContents post={post} label={ui.toc} />
