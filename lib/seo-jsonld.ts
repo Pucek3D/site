@@ -98,8 +98,11 @@ export function articleJsonLd(post: Post) {
       },
       {
         '@type': 'BlogPosting', '@id': `${url}#article`, mainEntityOfPage: url, url,
-        headline: post.title, description: excerptOf(post), inLanguage: post.locale,
-        datePublished: post.published, image: `${siteConfig.url}${post.cover.src}`,
+        headline: post.title, description: post.seo?.description ?? excerptOf(post),
+        inLanguage: { pl: 'pl-PL', en: 'en-GB', de: 'de-DE' }[post.locale as string] ?? post.locale,
+        datePublished: post.published, dateModified: post.modified,
+        keywords: post.seo?.keywords.join(', '),
+        image: { '@type': 'ImageObject', url: `${siteConfig.url}${post.cover.src}`, width: post.cover.width, height: post.cover.height, caption: post.cover.alt },
         author: { '@type': 'Organization', '@id': orgId, name: siteConfig.name },
         publisher: { '@id': orgId }, isPartOf: { '@type': 'Blog', '@id': `${blogUrl}#blog`, url: blogUrl },
         breadcrumb: { '@id': `${url}#breadcrumb` },

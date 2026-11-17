@@ -59,8 +59,20 @@ export function PostCard({ post, ui, featured = false, priority = false }: { pos
 
 export function ArticleBlock({ block }: { block: Block }) {
   switch (block.type) {
-    case 'p':
-      return <p className="text-pretty text-lg leading-[1.75] text-ink/85">{block.text}</p>
+    case 'p': {
+      const at = block.link ? block.text.indexOf(block.link.phrase) : -1
+      if (!block.link || at < 0) return <p className="text-pretty text-lg leading-[1.75] text-ink/85">{block.text}</p>
+      const end = at + block.link.phrase.length
+      return (
+        <p className="text-pretty text-lg leading-[1.75] text-ink/85">
+          {block.text.slice(0, at)}
+          <Link href={block.link.to} className="font-medium text-cobalt underline underline-offset-4 hover:text-ink">
+            {block.link.phrase}
+          </Link>
+          {block.text.slice(end)}
+        </p>
+      )
+    }
     case 'lead':
       return (
         <p className="border-l-2 border-sage pl-5 text-pretty font-display text-2xl font-semibold leading-snug text-ink">{block.text}</p>

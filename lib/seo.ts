@@ -163,27 +163,31 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
 /** One article in one language: canonical to itself, hreflang only for languages it is actually published in. */
 export function articleMetadata(post: Post): Metadata {
   const canonical = `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`
-  const description = clean(excerptOf(post))
-  const title = `${post.title} | ADelier Commerce`
+  const description = post.seo?.description ?? clean(excerptOf(post))
+  const ogDescription = post.seo?.ogDescription ?? description
+  const title = post.seo?.title ?? `${post.title} | ADelier Commerce`
   const image = `${siteConfig.url}${post.cover.src}`
   const langs = Object.fromEntries(
     locales.filter((l) => postAvailableIn(post.slug, l)).map((l) => [l, `${siteConfig.url}${href(l, 'blog', `/${post.slug}`)}`]),
   )
   return {
-    title,
+    title: { absolute: title },
     description,
+    keywords: post.seo?.keywords,
     alternates: { canonical, languages: langs },
     openGraph: {
-      title: post.title,
-      description,
+      title,
+      description: ogDescription,
       url: canonical,
       siteName: siteConfig.name,
       locale: ogLocale[post.locale],
       type: 'article',
       publishedTime: post.published,
+      modifiedTime: post.modified,
+      authors: [siteConfig.name],
       images: [{ url: image, width: post.cover.width, height: post.cover.height, alt: post.cover.alt }],
     },
-    twitter: { card: 'summary_large_image', title: post.title, description, images: [image] },
+    twitter: { card: 'summary_large_image', title, description: ogDescription, images: [{ url: image, alt: post.cover.alt }] },
     robots: seoNoIndex() ? { index: false, follow: false } : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

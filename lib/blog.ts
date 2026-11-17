@@ -1,4 +1,4 @@
-import type { Locale } from './i18n'
+import { href, type Locale } from './i18n'
 import { blogPostLocales } from './blog-registry'
 
 /**
@@ -11,7 +11,8 @@ import { blogPostLocales } from './blog-registry'
  *  - h3:        sub-heading inside a section
  */
 export type Block =
-  | { type: 'p'; text: string }
+  /** `link` wraps an exact phrase already in `text` in an internal link; the wording never changes. */
+  | { type: 'p'; text: string; link?: { phrase: string; to: string } }
   | { type: 'lead'; text: string }
   | { type: 'questions'; text: string }
   | { type: 'quote'; text: string }
@@ -26,6 +27,10 @@ export type Post = {
   category: string
   /** ISO date. */
   published: string
+  /** ISO date of the last content change; equals `published` until the article is edited. */
+  modified: string
+  /** Search and social copy. Falls back to the title and first paragraph when absent. */
+  seo?: { title: string; description: string; ogDescription: string; keywords: string[] }
   cover: { src: string; alt: string; width: number; height: number }
   sections: ArticleSection[]
   /** Rendered as a panel at the end of the article. */
@@ -45,9 +50,27 @@ const posts: Post[] = [
     title: 'Czy warto sprzedawać na Amazonie?',
     category: 'Strategia sprzedaży',
     published: '2026-11-17',
+    modified: '2026-11-17',
+    seo: {
+      title: 'Czy warto sprzedawać na Amazonie? | ADelier Commerce',
+      description: 'Czy sprzedaż na Amazonie się opłaca? Sprawdź koszty, potencjał produktu, konkurencję i dowiedz się, kiedy Amazon może pomóc rozwinąć Twoją markę.',
+      ogDescription: 'Amazon może pomóc Twojej marce zwiększyć sprzedaż i wejść na nowe rynki. Dowiedz się, kiedy warto zainwestować w ten kanał i jak ocenić jego rentowność.',
+      keywords: [
+        'czy warto sprzedawać na Amazonie',
+        'sprzedaż na Amazonie',
+        'czy Amazon się opłaca',
+        'koszty sprzedaży na Amazonie',
+        'jak sprzedawać na Amazonie',
+        'rentowność sprzedaży na Amazonie',
+        'Amazon dla marek',
+        'ekspansja zagraniczna Amazon',
+        'Amazon Ads',
+        'strategia sprzedaży na Amazonie',
+      ],
+    },
     cover: {
       src: '/images/blog/czy-warto-sprzedawac-na-amazonie.png',
-      alt: 'Laptop z otwartą stroną produktu na Amazonie i wykresem wzrostu sprzedaży obok hasła „Czy warto sprzedawać na Amazonie? Jak wykorzystać Amazon do skalowania sprzedaży marki”.',
+      alt: 'Sprzedaż na Amazonie – analiza potencjału i skalowania sprzedaży marki | ADelier Commerce',
       width: 1672,
       height: 941,
     },
@@ -67,11 +90,7 @@ const posts: Post[] = [
           p('Jedną z największych zalet Amazon jest dostęp do ogromnej liczby konsumentów, którzy już korzystają z platformy w celach zakupowych.'),
           p('Klient nie musi najpierw poznać Twojej marki. Może znaleźć Twój produkt, porównać go z konkurencją i dokonać zakupu bezpośrednio na platformie. Dla marki oznacza to możliwość dotarcia do nowych klientów bez konieczności budowania całego ruchu samodzielnie.'),
           p('To szczególnie istotne w przypadku marek, które chcą zwiększyć sprzedaż, ale również tych, które planują ekspansję zagraniczną.'),
-        ],
-      },
-      {
-        heading: 'Amazon jako narzędzie ekspansji',
-        blocks: [
+          h3('Amazon jako narzędzie ekspansji'),
           p('Amazon może być bardzo ciekawym sposobem na wejście na kolejne rynki. Marka może rozwijać sprzedaż na marketplace’ach w Niemczech, Wielkiej Brytanii, Francji, Włoszech czy USA, korzystając z infrastruktury i zasięgu platformy.'),
           p('Nie oznacza to jednak, że wystarczy przetłumaczyć istniejący listing i rozpocząć sprzedaż.'),
           p('Każdy rynek ma swoją konkurencję, poziom cen, zachowania konsumentów i specyfikę wyszukiwania produktów. Dlatego decyzję o wejściu na konkretny marketplace warto poprzedzić analizą potencjału.'),
@@ -143,7 +162,7 @@ const posts: Post[] = [
         ],
       },
       {
-        heading: 'Czy warto sprzedawać na Amazonie?',
+        heading: 'Czy warto sprzedawać na Amazonie? – podsumowanie',
         blocks: [
           p('W wielu przypadkach – zdecydowanie tak.'),
           p('Ale właściwe pytanie nie brzmi:'),
@@ -161,7 +180,7 @@ const posts: Post[] = [
       heading: 'ADelier Commerce',
       blocks: [
         p('W ADelier Commerce pomagamy markom odpowiedzieć właśnie na to pytanie.'),
-        p('Analizujemy potencjał produktu, rynek, konkurencję, ceny, słowa kluczowe i możliwości sprzedaży, a następnie pomagamy przełożyć te dane na konkretną strategię działania.'),
+        { type: 'p', text: ('Analizujemy potencjał produktu, rynek, konkurencję, ceny, słowa kluczowe i możliwości sprzedaży, a następnie pomagamy przełożyć te dane na konkretną strategię działania.'), link: { phrase: 'konkretną strategię działania', to: href('pl', 'brands') } },
         p('Jeżeli marka już sprzedaje na Amazonie, analizujemy również jej listingi, kampanie reklamowe i wyniki sprzedaży, aby znaleźć obszary wymagające poprawy.'),
         p('Nie chodzi tylko o to, żeby sprzedawać na Amazonie.'),
         lead('Chodzi o to, żeby wiedzieć, czy warto tam być – i jak wykorzystać ten kanał do rozwoju marki.'),
