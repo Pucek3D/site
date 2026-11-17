@@ -95,7 +95,7 @@ const posts: Post[] = [
           p('Przed wejściem na marketplace warto sprawdzić, czy istnieje wystarczający popyt, jak wygląda konkurencja i czy produkt ma możliwość osiągnięcia odpowiedniej marży.'),
           p('Warto również przyjrzeć się konkurencyjnym ofertom. Jakie mają ceny? Ile mają opinii? Jak wyglądają ich zdjęcia i opisy? Czy oferują coś, czego nie oferuje Twój produkt?'),
           p('I przede wszystkim:'),
-          h3('Dlaczego klient miałby wybrać właśnie Twój produkt?'),
+          questions('Dlaczego klient miałby wybrać właśnie Twój produkt?'),
           p('To pytanie jest szczególnie ważne w konkurencyjnych kategoriach. Jeżeli na Amazonie znajduje się już kilkadziesiąt podobnych produktów, sama obecność na platformie nie wystarczy.'),
           p('Potrzebna jest wyraźna przewaga – może nią być produkt, jakość, cena, marka, komunikacja, design, funkcjonalność albo doświadczenie zakupowe.'),
         ],
