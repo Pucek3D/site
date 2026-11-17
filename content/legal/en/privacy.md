@@ -5,7 +5,7 @@ The controller of personal data processed in connection with https://adeliercomm
 ## 2. Data we process
 When you submit an inquiry or contact us, we may process your name, email address, company name, inquiry category, preferred language and message, as well as your role and website address if you choose to provide them. We may also receive other information you voluntarily include in correspondence.
 
-The website and its associated email services are hosted by VH.PL, operated by Prociv Sp. z o.o., with its registered office in Wrocław, Poland.
+The website and its related email services are hosted by VH.PL, operated by Prociv Sp. z o.o., with its registered office in Wrocław, Poland.
 
 The hosting provider supplies the infrastructure used to operate the website and email accounts. In connection with these services, technical information such as IP addresses, access timestamps, server requests and security logs may be processed for operational, maintenance and security purposes.
 
@@ -16,11 +16,11 @@ We use inquiry data to respond, discuss potential services and manage related co
 
 Technical data may be processed where necessary to operate, protect and troubleshoot the website, on the basis of our legitimate interest under Article 6(1)(f) GDPR, subject to applicable law.
 
-## 4. Providing information
+## 4. Voluntary provision of data
 Providing information is voluntary. However, the form's required fields are necessary to submit an inquiry and allow us to respond. Additional fields are optional. Please do not include sensitive personal information unless it is genuinely needed for your inquiry.
 
 ## 5. Retention
-If an inquiry does not lead to cooperation, we retain its correspondence data **for no longer than 60 days from the day we finish handling the inquiry**. Once a month we review the correspondence and delete data whose retention period has expired, subject to exceptions arising from applicable law or the need to establish, exercise or defend legal claims.
+If an inquiry does not lead to cooperation, we retain the personal data contained in the correspondence **for no longer than 60 days from the day we finish handling the inquiry**. Once a month we review the correspondence and delete data whose retention period has expired, subject to exceptions arising from applicable law or the need to establish, exercise or defend legal claims.
 
 Website and email data may also be included in backup copies maintained as part of the hosting service. Data deleted from the mailbox or the website may remain in these backup copies until they are overwritten in the hosting provider's regular backup cycle.
 
@@ -69,7 +69,7 @@ Consent takes effect only after you open the link we send to your address and pr
 
 When you confirm your subscription, we retain a record of your email address, the name, company and phone number you voluntarily provided, the specific consents you granted, the exact wording and version of each consent, the language and page used, and the timestamps of registration and confirmation. We do not intentionally collect or store IP addresses in our marketing consent register. The legal basis for sending commercial information is your consent (Article 6(1)(a) GDPR, together with the national rules on direct marketing: Article 398 of the Polish Electronic Communications Law, Section 7 of the German Act against Unfair Competition (UWG) and, for recipients in the United Kingdom, the Privacy and Electronic Communications Regulations (PECR)). The legal basis for keeping the record is our legitimate interest in being able to demonstrate that consent was given (Article 6(1)(f) GDPR and Article 7(1) GDPR).
 
-The record is received by the operator and by the provider of the consent register and mailing tool named in section 6. It is not shared with anyone else.
+The record is received by the operator and by the service provider responsible for storing consent records and sending emails, named in section 6. It is not shared with anyone else.
 
 You can withdraw consent at any time, as easily as you gave it: use the link in any message we send or the unsubscribe page at /unsubscribe, which needs only your e-mail address. Withdrawal applies to every consent given for that address.
 
