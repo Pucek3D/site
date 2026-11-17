@@ -11,11 +11,33 @@ import type { Locale } from '@/lib/i18n'
  *
  * Changing ANY character here is a new version: update CONSENT_TEXT_VERSION too.
  */
-export const CONSENT_TEXT_VERSION = 'consent-2026-11'
+export const CONSENT_TEXT_VERSION = 'consent-2026-11-2'
 
-/** The data controller as named in every consent text. One constant, used everywhere. */
-export const CONSENT_CONTROLLER = 'ADelier Commerce (Kornelia Mazurczyk-Wolska)'
+/** The brand named in every consent text. The controller (a natural person) is named in the notice instead. */
+export const CONSENT_CONTROLLER = 'ADelier Commerce'
 const CONTACT = 'contact@adeliercommerce.com'
+
+/**
+ * The information notice shown under the submit button. `controller` must come from
+ * siteConfig.operator.name; it is a parameter (not an import) so this module stays
+ * dependency-free and the check script can load it in plain Node.
+ */
+const NOTICE_TEMPLATES: Record<Locale, string> = {
+  en: `Data controller: {controller}, contact: ${CONTACT}. Details are in the privacy notice.`,
+  pl: `Administrator danych: {controller}, kontakt: ${CONTACT}. Szczegóły w polityce prywatności.`,
+  de: `Verantwortlicher: {controller}, Kontakt: ${CONTACT}. Details in der Datenschutzerklärung.`,
+}
+
+/** The words inside the notice that are rendered as the privacy-notice link. Always a substring of the notice. */
+export const NOTICE_LINK_PHRASE: Record<Locale, string> = {
+  en: 'privacy notice',
+  pl: 'polityce prywatności',
+  de: 'Datenschutzerklärung',
+}
+
+export function consentNotice(locale: Locale, controller: string): string {
+  return NOTICE_TEMPLATES[locale].replace('{controller}', controller)
+}
 
 export type ConsentChannel = 'email' | 'phone'
 

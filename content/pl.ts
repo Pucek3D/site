@@ -158,8 +158,6 @@ export const pl: Dictionary = {
       "submitting": "Wysyłanie…",
       "errorSummary": "Popraw zaznaczone pola przed wysłaniem.",
       "noticeTitle": "Informacja o Twoich danych",
-      "notice": "Administratorem Twoich danych jest {controller}. Używamy ich wyłącznie do kontaktu, na który wyrażasz zgodę powyżej, oraz do przechowywania dowodu udzielenia zgody. Każdą zgodę możesz wycofać w dowolnym momencie na stronie rezygnacji lub pisząc na contact@adeliercommerce.com. Wycofanie zgody nie wpływa na kontakt, który nastąpił wcześniej. Więcej informacji znajdziesz w naszej",
-      "noticePrivacyLink": "polityce prywatności",
       "noticeUnsubscribeLink": "Strona rezygnacji",
       "checkTitle": "Sprawdź swoją skrzynkę.",
       "check": "Wysłaliśmy link potwierdzający na adres {email}. Nic nie zacznie obowiązywać, dopóki nie otworzysz linku i nie potwierdzisz. Link jest ważny 48 godzin. Jeśli wiadomość nie dotrze, sprawdź folder spam.",

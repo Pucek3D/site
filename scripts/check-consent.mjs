@@ -8,7 +8,8 @@ import { randomBytes } from 'node:crypto'
 process.env.CONSENT_TOKEN_SECRET = randomBytes(32).toString('hex')
 
 const { sealToken, openToken, SIGNUP_TOKEN_TTL_MS } = await import('../lib/consent-token.ts')
-const { consentTexts, CONSENT_TEXT_VERSION, CONSENT_CONTROLLER } = await import('../content/consent.ts')
+const { consentTexts, CONSENT_TEXT_VERSION, CONSENT_CONTROLLER, consentNotice, NOTICE_LINK_PHRASE } = await import('../content/consent.ts')
+const { siteConfig } = await import('../lib/site-config.ts')
 
 let failures = 0
 const check = (ok, label) => {
@@ -46,13 +47,20 @@ process.env.CONSENT_TOKEN_SECRET = 'short'
 const noSecret = openToken('signup', token, { now })
 check(!noSecret.ok && noSecret.reason === 'no_secret', 'secret shorter than 32 characters is refused')
 
-check(CONSENT_TEXT_VERSION === 'consent-2026-11', 'text version is consent-2026-11')
+check(CONSENT_TEXT_VERSION === 'consent-2026-11-2', 'text version is consent-2026-11-2')
+const operator = siteConfig.operator.name
+check(CONSENT_CONTROLLER === 'ADelier Commerce', 'consent texts name only "ADelier Commerce"')
 for (const locale of ['en', 'pl', 'de']) {
   for (const channel of ['email', 'phone']) {
     const text = consentTexts?.[locale]?.[channel]
     check(typeof text === 'string' && text.length > 40, `${locale} ${channel} consent text exists`)
-    check(typeof text === 'string' && text.includes(CONSENT_CONTROLLER), `${locale} ${channel} text names the controller`)
+    check(typeof text === 'string' && text.includes(CONSENT_CONTROLLER), `${locale} ${channel} text names the brand`)
+    check(typeof text === 'string' && !text.includes(operator) && !text.includes('('), `${locale} ${channel} text carries no personal name`)
   }
+  const notice = consentNotice(locale, operator)
+  check(notice.includes(operator) && !notice.includes('{controller}'), `${locale} notice names the controller from siteConfig`)
+  check(notice.includes('contact@adeliercommerce.com'), `${locale} notice names the contact e-mail`)
+  check(notice.includes(NOTICE_LINK_PHRASE[locale]), `${locale} notice contains its privacy link phrase`)
 }
 
 if (failures) {

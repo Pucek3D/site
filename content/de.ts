@@ -158,8 +158,6 @@ export const de: Dictionary = {
       "submitting": "Wird gesendet…",
       "errorSummary": "Bitte korrigieren Sie die markierten Felder vor dem Absenden.",
       "noticeTitle": "Informationen zu Ihren Daten",
-      "notice": "Verantwortlich für Ihre Daten ist {controller}. Wir verwenden Ihre Angaben nur für die oben gewählte Kontaktaufnahme und um Ihre Einwilligung nachweisen zu können. Sie können jede Einwilligung jederzeit auf der Abmeldeseite oder per E-Mail an contact@adeliercommerce.com widerrufen. Der Widerruf berührt nicht die Kontaktaufnahmen vor dem Widerruf. Weitere Informationen finden Sie in unserer",
-      "noticePrivacyLink": "Datenschutzerklärung",
       "noticeUnsubscribeLink": "Abmeldeseite",
       "checkTitle": "Bitte prüfen Sie Ihr Postfach.",
       "check": "Wir haben einen Bestätigungslink an {email} gesendet. Erst wenn Sie den Link öffnen und bestätigen, wird etwas wirksam. Der Link ist 48 Stunden gültig. Falls die Nachricht nicht ankommt, prüfen Sie bitte Ihren Spam-Ordner.",

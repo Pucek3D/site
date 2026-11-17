@@ -3,7 +3,8 @@ import { createRateLimiter, errorKind, linkOrigin, originAllowed, readJsonObject
 import { sendMagnet } from '@/lib/consent-mail'
 import { registerConsent, type ConsentRecord } from '@/lib/consent-register'
 import { idempotencyKeyFor, openToken, sealToken } from '@/lib/consent-token'
-import { CONSENT_TEXT_VERSION, consentTexts } from '@/content/consent'
+import { CONSENT_TEXT_VERSION, consentNotice, consentTexts } from '@/content/consent'
+import { siteConfig } from '@/lib/site-config'
 import { findLeadMagnet } from '@/content/lead-magnets'
 import { subscribeEnabled } from '@/lib/subscribe-config'
 import type { SignupPayload } from '../route'
@@ -59,6 +60,7 @@ export async function POST(request: Request) {
       consentTexts: {
         ...(p.consents.email ? { email: texts.email } : {}),
         ...(p.consents.phone ? { phone: texts.phone } : {}),
+        notice: consentNotice(p.locale, siteConfig.operator.name),
       },
       ...(p.magnetId ? { magnetId: p.magnetId } : {}),
       sourcePath: p.sourcePath,

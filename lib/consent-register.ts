@@ -26,8 +26,8 @@ export type ConsentRecord = {
   /** Present only when phone consent was given. */
   phone?: string
   consents: { email: boolean; phone: boolean }
-  /** The exact wording shown for each consent that was given. */
-  consentTexts: { email?: string; phone?: string }
+  /** The exact wording shown for each consent that was given, plus the information notice shown with them. */
+  consentTexts: { email?: string; phone?: string; notice?: string }
   magnetId?: string
   sourcePath: string
   submittedAt: string
@@ -89,6 +89,7 @@ function renderRecord(r: ConsentRecord) {
   const body = lines.filter(([, v]) => v !== undefined && v !== '').map(([k, v]) => `${k}: ${v}`)
   if (r.consentTexts.email) body.push('', 'Consent text shown (e-mail):', r.consentTexts.email)
   if (r.consentTexts.phone) body.push('', 'Consent text shown (phone):', r.consentTexts.phone)
+  if (r.consentTexts.notice) body.push('', 'Information notice shown:', r.consentTexts.notice)
   body.push('', 'Machine-readable record:', JSON.stringify(r))
   return body.join('\n')
 }

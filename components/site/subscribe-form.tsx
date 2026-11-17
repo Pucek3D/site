@@ -4,8 +4,9 @@ import { MailCheck } from 'lucide-react'
 import Link from 'next/link'
 import { useRef, useState, type FormEvent } from 'react'
 import type { Dictionary } from '@/content'
-import { CONSENT_CONTROLLER, consentTexts, type ConsentChannel } from '@/content/consent'
+import { NOTICE_LINK_PHRASE, consentNotice, consentTexts, type ConsentChannel } from '@/content/consent'
 import { href, type Locale } from '@/lib/i18n'
+import { siteConfig } from '@/lib/site-config'
 import { cn } from '@/lib/utils'
 import { validateSubscribe, type SubscribeFieldErrors } from '@/lib/validation'
 import { ErrorSummary, Field, Honeypot, ResultPanel, a11y, inputClass } from './consent-form-kit'
@@ -31,6 +32,11 @@ export function SubscribeForm({
 }) {
   const f = dict.subscribe.form
   const texts = consentTexts[locale]
+  const notice = consentNotice(locale, siteConfig.operator.name)
+  const linkPhrase = NOTICE_LINK_PHRASE[locale]
+  const linkAt = notice.lastIndexOf(linkPhrase)
+  const noticeBefore = notice.slice(0, linkAt)
+  const noticeAfter = notice.slice(linkAt + linkPhrase.length)
   const [consent, setConsent] = useState<Record<ConsentChannel, boolean>>({ email: false, phone: false })
   const [errors, setErrors] = useState<SubscribeFieldErrors>({})
   const [status, setStatus] = useState<Status>('idle')
@@ -200,12 +206,15 @@ export function SubscribeForm({
           <h2 id="subscribe-notice-title" className="text-sm font-semibold text-ink">
             {f.noticeTitle}
           </h2>
+          {/* Rendered from the same string that is stored as consentTexts.notice; the link only wraps a substring of it. */}
           <p className="mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-slate">
-            {f.notice.replace('{controller}', CONSENT_CONTROLLER)}{' '}
+            {noticeBefore}
             <Link href={href(locale, 'privacy')} className="font-semibold text-cobalt underline underline-offset-4">
-              {f.noticePrivacyLink}
+              {linkPhrase}
             </Link>
-            .{' '}
+            {noticeAfter}
+          </p>
+          <p className="mt-2 text-sm">
             <Link href={`/${locale}/unsubscribe`} className="font-semibold text-cobalt underline underline-offset-4">
               {f.noticeUnsubscribeLink}
             </Link>

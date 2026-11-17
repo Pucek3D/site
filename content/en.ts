@@ -156,8 +156,6 @@ export const en = {
       "submitting": "Sending…",
       "errorSummary": "Please correct the highlighted fields before sending.",
       "noticeTitle": "Information about your data",
-      "notice": "The controller of your data is {controller}. We use your details only for the contact you agree to above and to keep a record that you agreed. You can withdraw each consent at any time on the unsubscribe page or by writing to contact@adeliercommerce.com. Withdrawal does not affect contact that took place before it. More information is in our",
-      "noticePrivacyLink": "privacy notice",
       "noticeUnsubscribeLink": "Unsubscribe page",
       "checkTitle": "Please check your inbox.",
       "check": "We have sent a confirmation link to {email}. Nothing is active until you open the link and confirm. The link is valid for 48 hours. If the message does not arrive, check your spam folder.",
