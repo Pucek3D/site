@@ -42,7 +42,6 @@ export async function POST(request: Request) {
   const magnet = p.magnetId ? findLeadMagnet(p.magnetId, p.locale) : null
   const hasConsent = p.consents.email || p.consents.phone
   const now = new Date().toISOString()
-  const ua = request.headers.get('user-agent')?.slice(0, 300)
 
   // Lead magnet without consent: deliver the material only, no marketing record.
   if (hasConsent) {
@@ -65,11 +64,7 @@ export async function POST(request: Request) {
       ...(p.magnetId ? { magnetId: p.magnetId } : {}),
       sourcePath: p.sourcePath,
       submittedAt: p.submittedAt,
-      ...(p.submitIp ? { submitIp: p.submitIp } : {}),
-      ...(p.submitUserAgent ? { submitUserAgent: p.submitUserAgent } : {}),
       confirmedAt: now,
-      ...(ip ? { confirmIp: ip } : {}),
-      ...(ip && ua ? { confirmUserAgent: ua } : {}),
       status: 'confirmed',
     }
     const registered = await registerConsent(record)

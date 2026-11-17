@@ -30,8 +30,6 @@ export type SignupPayload = {
   magnetId?: string
   sourcePath: string
   submittedAt: string
-  submitIp?: string
-  submitUserAgent?: string
 }
 
 export async function POST(request: Request) {
@@ -67,7 +65,6 @@ export async function POST(request: Request) {
   }
 
   const sourcePath = typeof raw.sourcePath === 'string' && raw.sourcePath.startsWith('/') ? raw.sourcePath.slice(0, 200) : `/${locale}/subscribe`
-  const ua = request.headers.get('user-agent')?.slice(0, 300)
   const payload: SignupPayload = {
     locale,
     email: d.email,
@@ -78,8 +75,6 @@ export async function POST(request: Request) {
     ...(magnet ? { magnetId: magnet.id } : {}),
     sourcePath,
     submittedAt: new Date().toISOString(),
-    ...(ip ? { submitIp: ip } : {}),
-    ...(ip && ua ? { submitUserAgent: ua } : {}),
   }
 
   try {

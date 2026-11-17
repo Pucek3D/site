@@ -109,7 +109,28 @@ Phone offers only to numbers with a confirmed `phone` consent.
 
 ### Retention of proof
 
-Keep each consent record, and its withdrawal, for `____` (TODO-CONFIRM, the
-same period as in section 12 of the privacy notices) after withdrawal or after
-mailing to that address stops. Then delete it from the consent folder. Duplicates
-share an `idempotencyKey` and may be discarded.
+Records hold no IP address and no browser identifier (the code does not write
+them). An unconfirmed sign-up is never stored: it exists only inside the sealed
+confirmation link, which expires after 48 hours.
+
+- Active consent: keep the record for as long as the consent stands.
+- Withdrawn consent, or mailing to that address stopped: keep the record for
+  **3 years** (`CONSENT_PROOF_RETENTION_YEARS` in `lib/consent-register.ts`).
+  Every `[CONSENT] withdrawn` record states its own `Retain until` date. When
+  mailing stops without a withdrawal, write the stop date and its `Retain until`
+  date (+3 years) into the suppression list.
+
+**Deletion is manual.** The app can only send records to the mailbox (SMTP); it
+has no access to read or delete them, and the hosting runs no scheduled job, so
+nothing deletes them automatically. Each month, in the consent folder:
+
+1. Find records whose `Retain until` date has passed (and the confirmed records
+   of the same address).
+2. Unless a recorded legal hold applies (claim, request from an authority; note
+   what, why and until when), delete them.
+3. Keep only a minimal suppression entry for that address in the suppression
+   list (e-mail address and withdrawal date), so it is never mailed again.
+
+Duplicates share an `idempotencyKey` and may be discarded at any time. Copies in
+VH.PL backups remain until the backup cycle rotates (see "Backups"). VH.PL's own
+technical security logs are outside this procedure and are not touched.

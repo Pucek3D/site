@@ -5,7 +5,11 @@ The controller of personal data processed in connection with https://adeliercomm
 ## 2. Data we process
 When you submit an inquiry or contact us, we may process your name, email address, company name, inquiry category, preferred language and message, as well as your role and website address if you choose to provide them. We may also receive other information you voluntarily include in correspondence.
 
-The website is hosted by VH.PL, which provides the technical infrastructure necessary to operate the website. The hosting provider may process technical data, including IP addresses, access timestamps and server logs, for website operation, maintenance and security. Technical-log retention is limited to website operation and security needs and depends on the hosting configuration.
+The website and its associated email services are hosted by VH.PL, operated by Prociv Sp. z o.o., with its registered office in Wrocław, Poland.
+
+The hosting provider supplies the infrastructure used to operate the website and email accounts. In connection with these services, technical information such as IP addresses, access timestamps, server requests and security logs may be processed for operational, maintenance and security purposes.
+
+The retention periods applicable to technical logs depend on the hosting service configuration and will be confirmed with the provider.
 
 ## 3. Purposes and legal bases
 We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use your inquiry to send offers or advertising. Commercial information by e-mail or phone is sent only to people who have separately given and confirmed their consent on the sign-up page, as described in section 12.
@@ -18,21 +22,27 @@ Providing information is voluntary. However, the form's required fields are nece
 ## 5. Retention
 If an inquiry does not lead to cooperation, its correspondence data will be retained **for no longer than 60 days after the correspondence ends**. Different periods may apply where cooperation begins or a separate legal obligation or a justified need to establish, pursue or defend legal claims applies.
 
-Backups and technical logs may follow separate cycles determined by the hosting setup. Messages and attachments will be deleted from the active mailbox under the retention procedure. Any backup copies containing these data may be deleted on a separate, limited backup rotation cycle.
+Website and email data may also be included in backup copies maintained as part of the hosting service. Backup retention periods, storage locations and deletion cycles depend on the hosting configuration and have not yet been individually confirmed for this website.
+
+Messages and attachments are deleted from the active mailbox according to the retention periods described in this notice. Copies contained in backups may remain until the relevant backup rotation cycle is completed.
 
 Consent records and records of withdrawal are retained as described in section 12. A sign-up that is never confirmed is not stored by us: it exists only inside the confirmation link, which stops working after 48 hours.
 
 ## 6. Recipients and service providers
 We use the following service providers, who process data on our behalf only to the extent necessary for their service:
 
-- **VH.PL** hosts the website, as described in section 2, and provides the email mailbox contact@adeliercommerce.com, processing the correspondence received there.
+- **Hosting and email provider:** VH.PL, operated by Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Poland. VH.PL provides the hosting infrastructure for adeliercommerce.com and the email service used for contact@adeliercommerce.com. As part of these services, the provider may process personal data contained in website submissions, email correspondence and technical server records, to the extent necessary to provide and maintain the services. The applicable data processing agreement and any relevant subprocessors are subject to confirmation.
 
 The service used to forward form submissions to the mailbox will be named here before the form is put into operation.
 
 - **Consent register and e-mail:** consent records are stored as e-mail messages in a dedicated folder of the mailbox provided by VH.PL (Poland). The same mailbox is used to send confirmation e-mails, requested materials and, with your consent, commercial e-mails. If we start using a separate mailing tool, we will name it here before using it.
 
 ## 7. Transfers outside the European Economic Area
-We do not currently plan to transfer personal data outside the European Economic Area. If a service provider engaged later, for example to forward form submissions, processes data outside the EEA, this section will be updated before that happens to name the provider and the safeguards used. The consent register and e-mail named in section 6 are provided by VH.PL in Poland, within the EEA. You can request information by contacting **contact@adeliercommerce.com**.
+Our hosting provider, VH.PL, states that its data centre infrastructure is located in Gdańsk and Gdynia, Poland, within the European Economic Area.
+
+The specific storage locations applicable to our hosting account, email services and backup copies, as well as any access to personal data from outside the EEA, have not yet been individually confirmed.
+
+We do not intentionally disclose personal data to recipients outside the EEA through our own contact or marketing processes. If personal data is transferred outside the EEA, we will ensure that an applicable transfer mechanism and safeguards are in place, as required by the GDPR, and provide the relevant information in this notice.
 
 ## 8. Analytics, cookies and newsletter
 We currently do not use analytics tools or advertising pixels. We do not use cookies or similar technologies for analytics or advertising purposes. Website operation and security may involve technical information processed by our hosting provider, including the server logs described in this notice. Before introducing any technology that requires prior consent, we will implement an appropriate consent mechanism.
@@ -57,10 +67,12 @@ On the sign-up page you can separately agree to receive commercial information b
 
 Consent takes effect only after you open the link we send to your address and press the confirmation button (double opt-in). The link stops working after 48 hours; a sign-up that is not confirmed is not recorded.
 
-When you confirm, we keep a record of: your e-mail address, the name, company and phone number you chose to give, which consents you gave and the exact wording shown to you with its version, the language and page used, the time of sign-up and of confirmation, and the browser identifier used at each step. Whether the IP address is also stored: TODO-CONFIRM. The legal basis for sending commercial information is your consent (Article 6(1)(a) GDPR, together with the national rules on direct marketing: Article 398 of the Polish Electronic Communications Law, Section 7 of the German Act against Unfair Competition (UWG) and, for recipients in the United Kingdom, the Privacy and Electronic Communications Regulations (PECR)). The legal basis for keeping the record is our legitimate interest in being able to demonstrate that consent was given (Article 6(1)(f) GDPR and Article 7(1) GDPR).
+When you confirm your subscription, we retain a record of your email address, the name, company and phone number you voluntarily provided, the specific consents you granted, the exact wording and version of each consent, the language and page used, and the timestamps of registration and confirmation. We do not intentionally collect or store IP addresses in our marketing consent register. The legal basis for sending commercial information is your consent (Article 6(1)(a) GDPR, together with the national rules on direct marketing: Article 398 of the Polish Electronic Communications Law, Section 7 of the German Act against Unfair Competition (UWG) and, for recipients in the United Kingdom, the Privacy and Electronic Communications Regulations (PECR)). The legal basis for keeping the record is our legitimate interest in being able to demonstrate that consent was given (Article 6(1)(f) GDPR and Article 7(1) GDPR).
 
 The record is received by the operator and by the provider of the consent register and mailing tool named in section 6. It is not shared with anyone else.
 
-You can withdraw consent at any time, as easily as you gave it: use the link in any message we send or the unsubscribe page at /unsubscribe, which needs only your e-mail address. Withdrawal applies to every consent given for that address. We keep the record of a consent and of its withdrawal for TODO-CONFIRM (period agreed by the owner) after withdrawal or after we stop sending, so that we can demonstrate the consent and honour the withdrawal; after that it is deleted.
+You can withdraw consent at any time, as easily as you gave it: use the link in any message we send or the unsubscribe page at /unsubscribe, which needs only your e-mail address. Withdrawal applies to every consent given for that address.
+
+Consent records are retained for the duration of the consent and for three years after withdrawal or the end of the relevant marketing communications, for the purpose of demonstrating compliance with applicable consent requirements and handling potential legal claims. After this retention period, consent records are deleted, unless a longer period is required by applicable law or necessary for the establishment, exercise or defence of legal claims. Where consent is withdrawn, we may retain the minimum information necessary to ensure that no further marketing communications are sent to the relevant address.
 
 You may lodge a complaint with the President of the Personal Data Protection Office (UODO) in Poland, with the supervisory authority in the EU or EEA country where you live or work, or, in the United Kingdom, with the Information Commissioner's Office (ICO). 

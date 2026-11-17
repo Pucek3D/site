@@ -5,7 +5,11 @@ Administratorem danych osobowych przetwarzanych w związku z korzystaniem ze str
 ## 2. Jakie dane przetwarzamy
 W związku z formularzem i korespondencją możemy przetwarzać: imię i nazwisko, adres e-mail, nazwę firmy, kategorię zapytania, preferowany język, treść wiadomości oraz — jeśli podasz je dobrowolnie — stanowisko i adres strony internetowej. W korespondencji możemy otrzymać także inne dane, które samodzielnie przekażesz.
 
-Strona internetowa jest hostowana przez VH.PL, dostawcę infrastruktury technicznej niezbędnej do jej działania. W ramach świadczenia usług hostingowych dostawca może przetwarzać dane techniczne, w tym adresy IP, daty i godziny połączeń oraz logi serwerowe, w celach związanych z utrzymaniem, obsługą i bezpieczeństwem serwisu. Okresy przechowywania dzienników technicznych są ograniczane do celów bezpieczeństwa i obsługi serwisu oraz zależą od właściwej konfiguracji hostingu.
+Strona internetowa i powiązane z nią usługi poczty e-mail są hostowane przez VH.PL, prowadzone przez Prociv Sp. z o.o. z siedzibą we Wrocławiu, Polska.
+
+Dostawca hostingu zapewnia infrastrukturę wykorzystywaną do działania strony internetowej i kont pocztowych. W związku z tymi usługami mogą być przetwarzane informacje techniczne, takie jak adresy IP, daty i godziny dostępu, żądania kierowane do serwera oraz logi bezpieczeństwa, w celach operacyjnych, serwisowych i związanych z bezpieczeństwem.
+
+Okresy przechowywania logów technicznych zależą od konfiguracji usługi hostingowej i zostaną potwierdzone z dostawcą.
 
 ## 3. Cele i podstawy prawne
 Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane z zapytania nie są używane do wysyłki ofert ani reklam. Informacje handlowe e-mailem lub telefonicznie otrzymują wyłącznie osoby, które odrębnie wyraziły i potwierdziły zgodę na stronie zapisu, zgodnie z punktem 12.
@@ -18,21 +22,27 @@ Podanie danych w formularzu jest dobrowolne. Wypełnienie pól oznaczonych jako 
 ## 5. Okres przechowywania
 Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne są przechowywane **nie dłużej niż 60 dni od zakończenia korespondencji**. Jeżeli dojdzie do współpracy albo pojawi się odrębna konieczność wynikająca z prawa lub uzasadnionego dochodzenia bądź obrony roszczeń, właściwy okres może być inny. Dotyczy to także dokumentów związanych z potencjalną umową i obowiązkami prawnymi.
 
-Kopie zapasowe i dzienniki techniczne mogą mieć oddzielne cykle przechowywania wynikające z konfiguracji hostingu. Wiadomości i załączniki będą usuwane z bieżącej skrzynki zgodnie z przyjętą procedurą przechowywania. Kopie zapasowe, jeśli zawierają te dane, mogą być usuwane w odrębnym, ograniczonym cyklu rotacji.
+Dane ze strony internetowej i poczty e-mail mogą być także zawarte w kopiach zapasowych tworzonych w ramach usługi hostingowej. Okresy przechowywania kopii zapasowych, miejsca ich przechowywania oraz cykle ich usuwania zależą od konfiguracji hostingu i nie zostały jeszcze indywidualnie potwierdzone dla tej strony.
+
+Wiadomości i załączniki są usuwane z bieżącej skrzynki pocztowej zgodnie z okresami przechowywania opisanymi w niniejszej polityce. Kopie znajdujące się w kopiach zapasowych mogą pozostać do czasu zakończenia właściwego cyklu ich rotacji.
 
 Rejestry zgód i ich wycofania przechowujemy zgodnie z punktem 12. Niepotwierdzony zapis nie jest przez nas zapisywany: istnieje wyłącznie w linku potwierdzającym, który przestaje działać po 48 godzinach.
 
 ## 6. Odbiorcy danych i usługi techniczne
 Korzystamy z następujących dostawców usług, którzy przetwarzają dane w naszym imieniu wyłącznie w zakresie niezbędnym do świadczenia swoich usług:
 
-- **VH.PL** hostuje stronę, zgodnie z opisem w punkcie 2, oraz zapewnia skrzynkę pocztową contact@adeliercommerce.com i przetwarza otrzymywaną na nią korespondencję.
+- **Dostawca hostingu i poczty e-mail:** VH.PL, prowadzone przez Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Polska. VH.PL zapewnia infrastrukturę hostingową dla adeliercommerce.com oraz usługę poczty e-mail wykorzystywaną dla adresu contact@adeliercommerce.com. W ramach tych usług dostawca może przetwarzać dane osobowe zawarte w zgłoszeniach ze strony, korespondencji e-mail i technicznych zapisach serwera, w zakresie niezbędnym do świadczenia i utrzymania usług. Właściwa umowa powierzenia przetwarzania danych oraz ewentualni podwykonawcy wymagają potwierdzenia.
 
 Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
 
 - **Rejestr zgód i poczta:** zapisy zgód przechowujemy w postaci wiadomości e-mail w wydzielonym folderze skrzynki pocztowej zapewnianej przez VH.PL (Polska). Z tej samej skrzynki wysyłamy wiadomości potwierdzające, zamówione materiały oraz, za Twoją zgodą, wiadomości handlowe. Jeśli zaczniemy korzystać z osobnego narzędzia do wysyłki, wskażemy je tutaj przed rozpoczęciem korzystania.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
-Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Rejestr zgód i pocztę wskazane w punkcie 6 zapewnia VH.PL w Polsce, na terenie EOG. Informacje możesz uzyskać pod adresem **contact@adeliercommerce.com**.
+Nasz dostawca hostingu, VH.PL, deklaruje, że jego infrastruktura centrów danych znajduje się w Gdańsku i Gdyni, w Polsce, na terenie Europejskiego Obszaru Gospodarczego.
+
+Konkretne miejsca przechowywania danych właściwe dla naszego konta hostingowego, usług poczty e-mail i kopii zapasowych, a także ewentualny dostęp do danych osobowych spoza EOG, nie zostały jeszcze indywidualnie potwierdzone.
+
+W ramach naszych własnych procesów kontaktowych i marketingowych nie udostępniamy celowo danych osobowych odbiorcom spoza EOG. Jeżeli dane osobowe zostaną przekazane poza EOG, zapewnimy stosowanie właściwego mechanizmu przekazania i zabezpieczeń wymaganych przez RODO oraz podamy odpowiednie informacje w niniejszej polityce.
 
 ## 8. Analityka, pliki cookies i newsletter
 Obecnie nie korzystamy z narzędzi analitycznych ani pikseli reklamowych. Nie stosujemy plików cookies ani podobnych technologii w celach analitycznych lub marketingowych. Funkcjonowanie serwisu i jego bezpieczeństwo mogą wiązać się z przetwarzaniem informacji technicznych przez dostawcę hostingu, w tym logów serwerowych opisanych w niniejszej polityce. Przed uruchomieniem technologii wymagających uprzedniej zgody wdrożymy odpowiedni mechanizm jej uzyskania.
@@ -57,9 +67,11 @@ Na stronie zapisu możesz odrębnie wyrazić zgodę na otrzymywanie informacji h
 
 Zgoda zaczyna obowiązywać dopiero po otwarciu linku wysłanego na Twój adres i naciśnięciu przycisku potwierdzenia (double opt-in). Link przestaje działać po 48 godzinach; niepotwierdzony zapis nie jest rejestrowany.
 
-Po potwierdzeniu zapisujemy: adres e-mail, podane przez Ciebie imię, firmę i numer telefonu, wyrażone zgody wraz z dokładną treścią i wersją, którą widziałeś, język i stronę zapisu, czas zapisu i potwierdzenia oraz identyfikator przeglądarki z każdego kroku. Czy zapisujemy także adres IP: TODO-CONFIRM. Podstawą wysyłki informacji handlowych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO w związku z krajowymi przepisami o marketingu bezpośrednim: art. 398 ustawy Prawo komunikacji elektronicznej, § 7 niemieckiej ustawy o zwalczaniu nieuczciwej konkurencji (UWG) oraz, w przypadku odbiorców w Wielkiej Brytanii, Privacy and Electronic Communications Regulations (PECR)). Podstawą przechowywania rejestru jest nasz prawnie uzasadniony interes w wykazaniu, że zgoda została udzielona (art. 6 ust. 1 lit. f oraz art. 7 ust. 1 RODO).
+Po potwierdzeniu zapisu przechowujemy rejestr obejmujący Twój adres e-mail, dobrowolnie podane imię, nazwę firmy i numer telefonu, konkretne udzielone zgody, dokładną treść i wersję każdej zgody, język i stronę zapisu oraz daty i godziny rejestracji i potwierdzenia. Nie zbieramy ani nie przechowujemy celowo adresów IP w naszym rejestrze zgód marketingowych. Podstawą wysyłki informacji handlowych jest Twoja zgoda (art. 6 ust. 1 lit. a RODO w związku z krajowymi przepisami o marketingu bezpośrednim: art. 398 ustawy Prawo komunikacji elektronicznej, § 7 niemieckiej ustawy o zwalczaniu nieuczciwej konkurencji (UWG) oraz, w przypadku odbiorców w Wielkiej Brytanii, Privacy and Electronic Communications Regulations (PECR)). Podstawą przechowywania rejestru jest nasz prawnie uzasadniony interes w wykazaniu, że zgoda została udzielona (art. 6 ust. 1 lit. f oraz art. 7 ust. 1 RODO).
 
-Zgodę możesz wycofać w każdej chwili, równie łatwo, jak ją wyraziłeś: przez link w każdej naszej wiadomości albo na stronie /unsubscribe, gdzie wystarczy adres e-mail. Wycofanie dotyczy wszystkich zgód udzielonych dla tego adresu. Rejestr zgody i jej wycofania przechowujemy przez TODO-CONFIRM (okres ustalony przez właściciela) od wycofania lub zakończenia wysyłki, aby móc wykazać zgodę i respektować jej wycofanie; następnie jest usuwany.
+Zgodę możesz wycofać w każdej chwili, równie łatwo, jak ją wyraziłeś: przez link w każdej naszej wiadomości albo na stronie /unsubscribe, gdzie wystarczy adres e-mail. Wycofanie dotyczy wszystkich zgód udzielonych dla tego adresu.
+
+Rejestry zgód przechowujemy przez okres obowiązywania zgody oraz przez trzy lata od jej wycofania lub zakończenia danej komunikacji marketingowej, w celu wykazania spełnienia obowiązujących wymogów dotyczących zgód oraz obsługi ewentualnych roszczeń. Po upływie tego okresu rejestry zgód są usuwane, chyba że dłuższy okres wynika z obowiązujących przepisów lub jest niezbędny do ustalenia, dochodzenia lub obrony roszczeń. W przypadku wycofania zgody możemy zachować minimalne informacje niezbędne do zapewnienia, że na dany adres nie będą wysyłane dalsze informacje handlowe.
 
 Odbiorcą rejestru jest administrator oraz dostawca rejestru zgód i narzędzia do wysyłki wskazany w punkcie 6. Rejestr nie jest udostępniany innym podmiotom.
 

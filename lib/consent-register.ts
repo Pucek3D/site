@@ -31,14 +31,23 @@ export type ConsentRecord = {
   consentTexts: { email?: string; phone?: string; notice?: string }
   magnetId?: string
   sourcePath: string
+  // No IP address and no browser identifier: the register deliberately holds neither.
+  // Request IPs are used only, in memory, for rate limiting.
   submittedAt: string
-  submitIp?: string
-  submitUserAgent?: string
   confirmedAt?: string
-  confirmIp?: string
-  confirmUserAgent?: string
   status: 'confirmed' | 'withdrawn'
   withdrawnAt?: string
+  /** Withdrawals only: the date after which the record must be reduced to a suppression entry. */
+  retainUntil?: string
+}
+
+/** Proof of consent and withdrawal is kept this long after withdrawal or the end of sending. */
+export const CONSENT_PROOF_RETENTION_YEARS = 3
+
+export function retainUntilFrom(iso: string) {
+  const d = new Date(iso)
+  d.setUTCFullYear(d.getUTCFullYear() + CONSENT_PROOF_RETENTION_YEARS)
+  return d.toISOString().slice(0, 10)
 }
 
 export type RegisterResult = { ok: true } | { ok: false; reason: 'not_configured' | 'delivery_failed' }
@@ -88,12 +97,9 @@ function renderRecord(r: ConsentRecord) {
     ['Lead magnet', r.magnetId],
     ['Source path', r.sourcePath],
     ['Submitted at', r.submittedAt],
-    ['Submit IP', r.submitIp],
-    ['Submit user agent', r.submitUserAgent],
     ['Confirmed at', r.confirmedAt],
-    ['Confirm IP', r.confirmIp],
-    ['Confirm user agent', r.confirmUserAgent],
     ['Withdrawn at', r.withdrawnAt],
+    ['Retain until', r.retainUntil],
   ]
   const body = lines.filter(([, v]) => v !== undefined && v !== '').map(([k, v]) => `${k}: ${v}`)
   if (r.consentTexts.email) body.push('', 'Consent text shown (e-mail):', r.consentTexts.email)

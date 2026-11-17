@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto'
 import { createRateLimiter, honeypotTripped, originAllowed, readJsonObject, reply, trustedClientIp } from '@/lib/api-guard'
-import { registerConsent } from '@/lib/consent-register'
+import { registerConsent, retainUntilFrom } from '@/lib/consent-register'
 import { openToken } from '@/lib/consent-token'
 import { CONSENT_TEXT_VERSION } from '@/content/consent'
 import { isLocale } from '@/lib/i18n'
@@ -43,7 +43,6 @@ export async function POST(request: Request) {
   const email = result.data.email
   const locale = typeof raw.locale === 'string' && isLocale(raw.locale) ? raw.locale : 'en'
   const now = new Date().toISOString()
-  const ua = request.headers.get('user-agent')?.slice(0, 300)
 
   const registered = await registerConsent({
     id: randomUUID(),
@@ -56,10 +55,9 @@ export async function POST(request: Request) {
     consentTexts: {},
     sourcePath: `/${locale}/unsubscribe`,
     submittedAt: now,
-    ...(ip ? { submitIp: ip } : {}),
-    ...(ip && ua ? { submitUserAgent: ua } : {}),
     status: 'withdrawn',
     withdrawnAt: now,
+    retainUntil: retainUntilFrom(now),
   })
   if (!registered.ok) return reply({ error: registered.reason }, registered.reason === 'not_configured' ? 503 : 502)
   return reply({ ok: true })
