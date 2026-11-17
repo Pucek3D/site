@@ -20,7 +20,7 @@ Technische Daten können zum Betrieb, zur Sicherheit und zur Fehlerbehebung der 
 Die Angabe personenbezogener Daten ist freiwillig. Die als Pflichtfelder gekennzeichneten Formularangaben benötigen wir jedoch, damit Sie eine Anfrage senden können und wir diese bearbeiten können. Weitere Angaben sind optional. Bitte übermitteln Sie keine besonderen Kategorien personenbezogener Daten, sofern dies für Ihr Anliegen nicht notwendig ist.
 
 ## 5. Speicherdauer
-Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden Korrespondenzdaten **höchstens 60 Tage ab dem Tag, an dem die Anfrage abgeschlossen ist**, also ab dem Datum der letzten Nachricht in der Korrespondenz, ob von uns oder von Ihnen. Wir prüfen das Postfach monatlich und löschen abgeschlossene Anfragen, damit diese Frist nicht überschritten wird. Andere Fristen können gelten, wenn eine Zusammenarbeit zustande kommt oder gesetzliche Pflichten beziehungsweise die berechtigte Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen eine längere Speicherung erfordern.
+Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden Korrespondenzdaten **höchstens 60 Tage ab dem Tag, an dem die Bearbeitung der Anfrage abgeschlossen ist**. Einmal im Monat prüfen wir die Korrespondenz und löschen Daten, deren Speicherfrist abgelaufen ist, vorbehaltlich der Ausnahmen, die sich aus geltendem Recht oder aus der Notwendigkeit der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen ergeben.
 
 Website- und E-Mail-Daten können auch in Sicherungskopien enthalten sein, die im Rahmen des Hostingdienstes erstellt werden. Aus dem Postfach oder von der Website gelöschte Daten können in diesen Sicherungskopien verbleiben, bis sie im regelmäßigen Sicherungszyklus des Hostinganbieters überschrieben werden.
 
@@ -40,7 +40,7 @@ Anfragen über das Kontaktformular sendet unsere Website direkt über den Mailse
 ## 7. Übermittlung in Länder außerhalb des Europäischen Wirtschaftsraums
 Unser Hostinganbieter VH.PL gibt an, dass sich seine Rechenzentrumsinfrastruktur in Danzig (Gdańsk) und Gdingen (Gdynia), Polen, und damit innerhalb des Europäischen Wirtschaftsraums befindet.
 
-Hosting, E-Mail und das in dieser Erklärung beschriebene Einwilligungsregister werden von VH.PL bereitgestellt. Für die Verarbeitung der hier beschriebenen personenbezogenen Daten setzen wir keine weiteren Dienstleister ein.
+Für das Kontaktformular, die E-Mail-Kommunikation und das Einwilligungsregister nutzen wir die Infrastruktur von VH.PL. Eine etwaige Einbindung von Unterauftragnehmern des Hostinganbieters richtet sich nach den Bedingungen der von ihm erbrachten Dienste.
 
 Im Rahmen unserer eigenen Kontakt- und Marketingprozesse geben wir personenbezogene Daten nicht bewusst an Empfänger außerhalb des EWR weiter. Werden personenbezogene Daten in Länder außerhalb des EWR übermittelt, stellen wir sicher, dass ein geeigneter Übermittlungsmechanismus und Garantien gemäß der DSGVO bestehen, und ergänzen diese Erklärung um die entsprechenden Informationen.
 
@@ -60,7 +60,7 @@ Wenn Sie sich im Vereinigten Königreich befinden, stehen Ihnen entsprechende Re
 Wir verkaufen keine personenbezogenen Daten und geben sie nicht für verhaltensbasierte Werbung weiter.
 
 ## 11. Änderungen
-Diese Erklärung wird angepasst, wenn sich die Datenverarbeitung, der Hostinganbieter, die Webanalyse, Newsletter-Funktionen oder der rechtliche Status des Websitebetreibers ändern.
+Diese Erklärung wird angepasst, wenn sich unsere Datenverarbeitung, die Hosting-Konfiguration, die eingesetzten Dienste oder der rechtliche Status des Betreibers von ADelier Commerce ändern.
 
 ## 12. Werbliche Informationen und Einwilligungsnachweise
 Auf der Anmeldeseite können Sie gesondert in den Erhalt werblicher Informationen per E-Mail und, optional, per Telefon einwilligen. Keines der Felder ist vorausgewählt, und Sie können eine Einwilligung ohne die andere erteilen. Für den Download kostenloser Materialien ist keine der beiden erforderlich: Wir senden sie einmalig an die angegebene Adresse.

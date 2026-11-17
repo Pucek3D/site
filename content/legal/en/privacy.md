@@ -20,7 +20,7 @@ Technical data may be processed where necessary to operate, protect and troubles
 Providing information is voluntary. However, the form's required fields are necessary to submit an inquiry and allow us to respond. Additional fields are optional. Please do not include sensitive personal information unless it is genuinely needed for your inquiry.
 
 ## 5. Retention
-If an inquiry does not lead to cooperation, its correspondence data will be retained **for no longer than 60 days from the date the inquiry is closed**, meaning the date of the last message in the correspondence, whether ours or yours. We review the mailbox monthly and delete closed inquiries so that this period is not exceeded. Different periods may apply where cooperation begins or a separate legal obligation or a justified need to establish, pursue or defend legal claims applies.
+If an inquiry does not lead to cooperation, we retain its correspondence data **for no longer than 60 days from the day we finish handling the inquiry**. Once a month we review the correspondence and delete data whose retention period has expired, subject to exceptions arising from applicable law or the need to establish, exercise or defend legal claims.
 
 Website and email data may also be included in backup copies maintained as part of the hosting service. Data deleted from the mailbox or the website may remain in these backup copies until they are overwritten in the hosting provider's regular backup cycle.
 
@@ -40,7 +40,7 @@ Submissions from the contact form are sent by our website directly to the mailbo
 ## 7. Transfers outside the European Economic Area
 Our hosting provider, VH.PL, states that its data centre infrastructure is located in Gdańsk and Gdynia, Poland, within the European Economic Area.
 
-The hosting, email and consent register described in this notice are provided by VH.PL. We do not use any other service provider to process the personal data described here.
+For the contact form, email and the consent register we use VH.PL's infrastructure. Any involvement of the hosting provider's subcontractors is governed by the terms of the services it provides.
 
 We do not intentionally disclose personal data to recipients outside the EEA through our own contact or marketing processes. If personal data is transferred outside the EEA, we will ensure that an applicable transfer mechanism and safeguards are in place, as required by the GDPR, and provide the relevant information in this notice.
 
@@ -60,7 +60,7 @@ If you are in the United Kingdom, you have corresponding rights under the UK GDP
 We do not sell personal information and do not share it for cross-context behavioural advertising.
 
 ## 11. Updates
-This notice will be updated if processing practices, hosting, analytics, newsletter services or the operator's legal status change.
+This notice will be updated if our data processing practices, hosting configuration, service providers or the legal status of the ADelier Commerce operator change.
 
 ## 12. Marketing communications and consent records
 On the sign-up page you can separately agree to receive commercial information by e-mail and, optionally, by phone. Neither box is ticked in advance, and you may give one consent without the other. Downloading free material requires neither: it is delivered once to the address you give.

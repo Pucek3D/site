@@ -12,15 +12,21 @@ mailbox and whatever the form-delivery service retains. Deletion is manual.
 
 ### Monthly review (first calendar day of each month)
 
-Review once a month, on the **1st**, and delete closed inquiry threads that are
-**at least 21 days old** at the time of the review. A thread younger than 21
-days waits for the next review, so the oldest it can get is about 52 days
+The 60-day period runs from the day **handling of the inquiry ended**, not from
+the date of the last message (a thread can stay open long after its last
+message). When you finish handling an inquiry that did not lead to cooperation,
+mark the thread as closed with that date (for example, move it to a *Closed*
+folder or flag it), so the review can see when handling ended.
+
+Review once a month, on the **1st**, and delete closed inquiry threads whose
+handling ended **at least 21 days earlier**. A thread closed less than 21 days
+ago waits for the next review, so the oldest it can get is about 52 days
 (21 days plus one month), which keeps inquiries within the published 60-day
 maximum **provided the review is done on schedule**.
 
 1. In the mailbox `contact@adeliercommerce.com`, identify website inquiries that
-   did not lead to a business relationship and whose correspondence has ended.
-2. Select the closed threads whose last message is **21 days old or more**.
+   did not lead to a business relationship and whose handling has ended.
+2. Select the closed threads whose handling ended **21 days ago or more**.
 3. Delete each thread, including relevant messages, attachments and your own
    replies in *Sent*.
 4. Empty *Trash* / *Deleted items* so the messages leave the active mailbox.
@@ -31,7 +37,7 @@ maximum **provided the review is done on schedule**.
 
 **Missed review.** If the review on the 1st is missed, perform the cleanup as
 soon as possible. Any inquiry that has by then been held longer than 60 days
-after the correspondence ended is a breach of the published retention limit:
+after its handling ended is a breach of the published retention limit:
 delete it immediately and note the date and cause of the delay.
 
 Deletion is manual. No automatic deletion is implemented or tested; do not

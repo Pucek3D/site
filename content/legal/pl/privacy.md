@@ -20,7 +20,7 @@ Dane techniczne przetwarzane są, gdy jest to niezbędne do działania, utrzyman
 Podanie danych w formularzu jest dobrowolne. Wypełnienie pól oznaczonych jako wymagane jest jednak potrzebne, aby przesłać zapytanie i umożliwić jego rozpatrzenie. Pola dodatkowe są opcjonalne. Nie należy przesyłać danych szczególnie wrażliwych, jeżeli nie są konieczne do zapytania.
 
 ## 5. Okres przechowywania
-Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne są przechowywane **nie dłużej niż 60 dni od dnia zamknięcia zapytania**, czyli od daty ostatniej wiadomości w korespondencji, naszej lub Twojej. Raz w miesiącu przeglądamy skrzynkę i usuwamy zamknięte zapytania, tak aby ten okres nie został przekroczony. Jeżeli dojdzie do współpracy albo pojawi się odrębna konieczność wynikająca z prawa lub uzasadnionego dochodzenia bądź obrony roszczeń, właściwy okres może być inny. Dotyczy to także dokumentów związanych z potencjalną umową i obowiązkami prawnymi.
+Jeżeli zapytanie nie doprowadzi do współpracy, dane korespondencyjne przechowujemy **nie dłużej niż 60 dni od dnia zakończenia obsługi zapytania**. Raz w miesiącu przeglądamy korespondencję i usuwamy dane, których okres przechowywania upłynął, z zastrzeżeniem wyjątków wynikających z obowiązujących przepisów lub konieczności dochodzenia bądź obrony roszczeń.
 
 Dane ze strony internetowej i poczty e-mail mogą być także zawarte w kopiach zapasowych tworzonych w ramach usługi hostingowej. Dane usunięte ze skrzynki lub ze strony mogą pozostawać w tych kopiach do czasu ich nadpisania w ramach regularnego cyklu kopii zapasowych dostawcy hostingu.
 
@@ -40,7 +40,7 @@ Zgłoszenia z formularza kontaktowego są wysyłane przez naszą stronę bezpoś
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
 Nasz dostawca hostingu, VH.PL, deklaruje, że jego infrastruktura centrów danych znajduje się w Gdańsku i Gdyni, w Polsce, na terenie Europejskiego Obszaru Gospodarczego.
 
-Hosting, poczta e-mail i rejestr zgód opisane w tej polityce są zapewniane przez VH.PL. Nie korzystamy z innych dostawców do przetwarzania opisanych tu danych osobowych.
+W zakresie obsługi formularza kontaktowego, poczty e-mail i rejestru zgód korzystamy z infrastruktury VH.PL. Ewentualny udział podwykonawców dostawcy hostingu podlega warunkom świadczonych przez niego usług.
 
 W ramach naszych własnych procesów kontaktowych i marketingowych nie udostępniamy celowo danych osobowych odbiorcom spoza EOG. Jeżeli dane osobowe zostaną przekazane poza EOG, zapewnimy stosowanie właściwego mechanizmu przekazania i zabezpieczeń wymaganych przez RODO oraz podamy odpowiednie informacje w niniejszej polityce.
 
@@ -60,7 +60,7 @@ Jeżeli przebywasz w Wielkiej Brytanii, przysługują Ci odpowiadające im prawa
 Nie sprzedajemy danych osobowych i nie udostępniamy ich w celu reklamy behawioralnej.
 
 ## 11. Zmiany dokumentu
-Polityka będzie aktualizowana w razie zmian sposobu przetwarzania danych, konfiguracji hostingu, uruchomienia analityki, newslettera lub rozpoczęcia działalności gospodarczej.
+Polityka będzie aktualizowana w razie zmian sposobu przetwarzania danych, konfiguracji hostingu, wykorzystywanych usług lub statusu prawnego podmiotu prowadzącego ADelier Commerce.
 
 ## 12. Informacje handlowe i rejestr zgód
 Na stronie zapisu możesz odrębnie wyrazić zgodę na otrzymywanie informacji handlowych e-mailem oraz, opcjonalnie, telefonicznie. Żadne pole nie jest zaznaczone z góry i możesz wyrazić jedną zgodę bez drugiej. Pobranie bezpłatnego materiału nie wymaga żadnej z nich: wysyłamy go jednorazowo na podany adres.
