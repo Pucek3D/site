@@ -1,3 +1,5 @@
+import { hasBlog, postAvailableIn } from './blog-registry'
+
 export const locales = ['en', 'pl', 'de'] as const
 export type Locale = (typeof locales)[number]
 export const defaultLocale: Locale = 'en'
@@ -19,12 +21,13 @@ export const ogLocale: Record<Locale, string> = {
   de: 'de_DE',
 }
 
-export const pageKeys = ['home', 'agencies', 'brands', 'training', 'about', 'contact', 'privacy', 'legal'] as const
+export const pageKeys = ['home', 'agencies', 'brands', 'training', 'blog', 'about', 'contact', 'privacy', 'legal'] as const
 export type PageKey = (typeof pageKeys)[number]
 
 export const pagePaths: Record<PageKey, string> = {
   home: '',
   agencies: '/agency-partnerships',
+  blog: '/blog',
   brands: '/brands',
   training: '/amazon-ppc-training',
   about: '/about',
@@ -37,11 +40,16 @@ export const pagePaths: Record<PageKey, string> = {
 // redirect permanently to For Brands; see redirects() in next.config.mjs.
 
 /** Main navigation, in order. Header, mobile menu and footer all read this one list. */
-export const mainNavKeys = ['home', 'brands', 'agencies', 'about', 'contact'] as const satisfies readonly PageKey[]
+export const mainNavKeys = ['home', 'brands', 'agencies', 'blog', 'about', 'contact'] as const satisfies readonly PageKey[]
 export type MainNavKey = (typeof mainNavKeys)[number]
 
-/** Per-locale exceptions to the main navigation. Empty: every locale shows every item. */
-const hiddenNavKeys: Partial<Record<Locale, readonly MainNavKey[]>> = {}
+/** Per-locale exceptions to the main navigation. The blog exists in English and Polish only. */
+const hiddenNavKeys: Partial<Record<Locale, readonly MainNavKey[]>> = { de: ['blog'] }
+
+/** Languages a page exists in. Pages not listed exist in every language. */
+export function localesFor(page: PageKey): Locale[] {
+  return page === 'blog' ? locales.filter(hasBlog) : [...locales]
+}
 
 export function navKeysFor(locale: Locale): MainNavKey[] {
   const hidden = hiddenNavKeys[locale] ?? []
@@ -71,6 +79,13 @@ const contactTopics = ['agency', 'brand', 'training', 'general'] as const
 export function switchLocalePath(pathname: string, target: Locale, search?: URLSearchParams | null): string {
   const rest = pathname.replace(/^\/(en|pl|de)(?=\/|$)/, '')
   const base = `/${target}${rest}`
+  // Blog: a language without a blog goes to its home page; an article not
+  // translated into the target language goes to that language's blog index.
+  if (pageFromPath(pathname) === 'blog') {
+    if (!hasBlog(target)) return `/${target}`
+    const slug = rest.match(/^\/blog\/([^/?#]+)/)?.[1]
+    return slug && !postAvailableIn(slug, target) ? `/${target}/blog` : base
+  }
   if (!search || pageFromPath(pathname) !== 'contact') return base
   const topic = search.get('topic') ?? search.get('inquiry')
   return topic && (contactTopics as readonly string[]).includes(topic) ? `${base}?topic=${topic}` : base

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { getDictionary } from '@/content'
-import { href, locales, ogLocale, type Locale, type PageKey } from './i18n'
+import { href, locales, localesFor, ogLocale, type Locale, type PageKey } from './i18n'
 import { siteConfig } from './site-config'
 import { seoNoIndex } from './seo-runtime'
+import { excerptOf, type Post } from './blog'
+import { postAvailableIn } from './blog-registry'
 
 type PublicPage = Exclude<PageKey, 'privacy' | 'legal'>
 
@@ -28,6 +30,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
     training: {
       title: 'Amazon PPC Training for Teams | ADelier Commerce',
       description: 'Practical Amazon PPC training for brand and agency teams. Build skills in campaign analysis, targeting and optimisation with a tailored standalone programme.',
+    },
+    blog: {
+      title: 'Blog | Amazon Advertising & Marketplace Growth | ADelier',
+      description: 'Practical articles on Amazon advertising, marketplace growth and profitable sales for brands and agencies.',
     },
     about: {
       title: 'About ADelier Commerce | Amazon PPC Expertise',
@@ -55,6 +61,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
       title: 'Szkolenia Amazon PPC dla zespołów | ADelier Commerce',
       description: 'Praktyczne szkolenia Amazon PPC dla marek i agencji. Analiza kampanii, targetowanie i optymalizacja w programie dopasowanym do zespołu.',
     },
+    blog: {
+      title: 'Blog o sprzedaży i reklamie na Amazonie | ADelier Commerce',
+      description: 'Praktyczne artykuły o reklamie Amazon, sprzedaży na marketplace’ach i rentownym rozwoju marek.',
+    },
     about: {
       title: 'O ADelier Commerce | Eksperckie Amazon PPC',
       description: 'Poznaj ADelier Commerce i nasze podejście do zarządzania kampaniami Amazon PPC, współpracy z agencjami oraz praktycznych szkoleń.',
@@ -80,6 +90,10 @@ const seoCopy: Record<Locale, Record<PublicPage, { title: string; description: s
     training: {
       title: 'Amazon-PPC-Schulungen für Teams | ADelier Commerce',
       description: 'Praxisorientierte Amazon-PPC-Schulungen für Marken und Agenturen. Kampagnenanalyse, Targeting und Optimierung in einem individuell abgestimmten Programm.',
+    },
+    blog: {
+      title: 'Blog | ADelier Commerce',
+      description: 'Artikel über Amazon-Werbung und Marktplatzwachstum.',
     },
     about: {
       title: 'Über ADelier Commerce | Amazon-PPC-Expertise',
@@ -121,7 +135,7 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
     alternates: {
       canonical,
       languages: {
-        ...Object.fromEntries(locales.map((l) => [l, `${siteConfig.url}${href(l, page)}`])),
+        ...Object.fromEntries(localesFor(page).map((l) => [l, `${siteConfig.url}${href(l, page)}`])),
         'x-default': `${siteConfig.url}${href('en', page)}`,
       },
     },
@@ -131,7 +145,7 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
       url: canonical,
       siteName: siteConfig.name,
       locale: ogLocale[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
+      alternateLocale: localesFor(page).filter((l) => l !== locale).map((l) => ogLocale[l]),
       type: 'website',
       images: [{ url: image, width: 1200, height: 630, alt: ogImageAlt[locale], type: 'image/png' }],
     },
@@ -143,5 +157,33 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
           follow: true,
           googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
         },
+  }
+}
+
+/** One article in one language: canonical to itself, hreflang only for languages it is actually published in. */
+export function articleMetadata(post: Post): Metadata {
+  const canonical = `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`
+  const description = clean(excerptOf(post))
+  const title = `${post.title} | ADelier Commerce`
+  const image = `${siteConfig.url}${post.cover.src}`
+  const langs = Object.fromEntries(
+    locales.filter((l) => postAvailableIn(post.slug, l)).map((l) => [l, `${siteConfig.url}${href(l, 'blog', `/${post.slug}`)}`]),
+  )
+  return {
+    title,
+    description,
+    alternates: { canonical, languages: langs },
+    openGraph: {
+      title: post.title,
+      description,
+      url: canonical,
+      siteName: siteConfig.name,
+      locale: ogLocale[post.locale],
+      type: 'article',
+      publishedTime: post.published,
+      images: [{ url: image, width: post.cover.width, height: post.cover.height, alt: post.cover.alt }],
+    },
+    twitter: { card: 'summary_large_image', title: post.title, description, images: [image] },
+    robots: seoNoIndex() ? { index: false, follow: false } : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

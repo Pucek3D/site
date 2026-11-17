@@ -24,6 +24,7 @@ export const en = {
       "agencies": "For Agencies",
       "brands": "For Brands",
       "training": "Training",
+      "blog": "Blog",
       "about": "About",
       "contact": "Contact",
       "privacy": "Privacy",

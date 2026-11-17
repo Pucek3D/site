@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { href, locales, pageKeys } from '@/lib/i18n'
+import { allPosts } from '@/lib/blog'
+import { href, localesFor, pageKeys } from '@/lib/i18n'
 import { siteConfig } from '@/lib/site-config'
 import { seoNoIndex } from '@/lib/seo-runtime'
 
@@ -7,15 +8,21 @@ import { seoNoIndex } from '@/lib/seo-runtime'
 export default function sitemap(): MetadataRoute.Sitemap {
   if (seoNoIndex()) return []
   const publicPages = pageKeys.filter((page) => page !== 'privacy' && page !== 'legal')
-  return publicPages.flatMap((page) =>
-    locales.map((locale) => ({
+  const pages = publicPages.flatMap((page) =>
+    localesFor(page).map((locale) => ({
       url: `${siteConfig.url}${href(locale, page)}`,
       alternates: {
         languages: {
-          ...Object.fromEntries(locales.map((l) => [l, `${siteConfig.url}${href(l, page)}`])),
+          ...Object.fromEntries(localesFor(page).map((l) => [l, `${siteConfig.url}${href(l, page)}`])),
           'x-default': `${siteConfig.url}${href('en', page)}`,
         },
       },
     })),
   )
+  // Articles carry a real publication date, so they state it.
+  const articles = allPosts().map((post) => ({
+    url: `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`,
+    lastModified: post.published,
+  }))
+  return [...pages, ...articles]
 }

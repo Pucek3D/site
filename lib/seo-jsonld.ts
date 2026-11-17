@@ -1,5 +1,6 @@
 import { getDictionary } from '@/content'
 import { getCopy } from '@/content/partner'
+import { excerptOf, type Post } from './blog'
 import { href, type Locale, type PageKey } from './i18n'
 import { seoText } from './seo'
 import { siteConfig } from './site-config'
@@ -26,6 +27,7 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
     agencies: dict.nav.items.agencies,
     brands: dict.nav.items.brands,
     training: dict.nav.items.training,
+    blog: dict.nav.items.blog,
     about: dict.nav.items.about,
     contact: dict.nav.items.contact,
   }
@@ -55,7 +57,7 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
     })
   }
   const webPage: Record<string, unknown> = {
-    '@type': page === 'contact' ? 'ContactPage' : page === 'about' ? 'AboutPage' : 'WebPage',
+    '@type': page === 'contact' ? 'ContactPage' : page === 'about' ? 'AboutPage' : page === 'blog' ? 'CollectionPage' : 'WebPage',
     '@id': `${url}#webpage`, url, name: meta.title, description: meta.description,
     inLanguage: locale, isPartOf: { '@id': websiteId }, about: { '@id': orgId },
     ...(page === 'home' ? {} : { breadcrumb: { '@id': `${url}#breadcrumb` } }),
@@ -76,4 +78,32 @@ export function seoJsonLd(locale: Locale, page: PublicSeoPage) {
   }
   nodes.push(webPage)
   return { '@context': 'https://schema.org', '@graph': nodes }
+}
+
+/** BlogPosting for one article. Author and publisher are the company; no person is named because none is published. */
+export function articleJsonLd(post: Post) {
+  const dict = getDictionary(post.locale)
+  const url = `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`
+  const blogUrl = `${siteConfig.url}${href(post.locale, 'blog')}`
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: dict.nav.items.home, item: `${siteConfig.url}${href(post.locale, 'home')}` },
+          { '@type': 'ListItem', position: 2, name: dict.nav.items.blog, item: blogUrl },
+          { '@type': 'ListItem', position: 3, name: post.title, item: url },
+        ],
+      },
+      {
+        '@type': 'BlogPosting', '@id': `${url}#article`, mainEntityOfPage: url, url,
+        headline: post.title, description: excerptOf(post), inLanguage: post.locale,
+        datePublished: post.published, image: `${siteConfig.url}${post.cover.src}`,
+        author: { '@type': 'Organization', '@id': orgId, name: siteConfig.name },
+        publisher: { '@id': orgId }, isPartOf: { '@type': 'Blog', '@id': `${blogUrl}#blog`, url: blogUrl },
+        breadcrumb: { '@id': `${url}#breadcrumb` },
+      },
+    ],
+  }
 }

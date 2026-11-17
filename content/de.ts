@@ -26,6 +26,7 @@ export const de: Dictionary = {
       "agencies": "Für Agenturen",
       "brands": "Für Marken",
       "training": "Schulungen",
+      "blog": "Blog",
       "about": "Über uns",
       "contact": "Kontakt",
       "privacy": "Datenschutzerklärung",
