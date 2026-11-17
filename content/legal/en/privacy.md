@@ -12,7 +12,7 @@ The hosting provider supplies the infrastructure used to operate the website and
 The retention periods applicable to technical logs depend on the hosting service configuration and will be confirmed with the provider.
 
 ## 3. Purposes and legal bases
-We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use contact inquiries to send unsolicited marketing communications. Where you request information about our services or a commercial proposal, we may respond directly to that request. Unsolicited commercial communications by e-mail or phone are sent only to people who have separately given and confirmed their consent on the sign-up page, as described in section 12.
+We use inquiry data to respond, discuss potential services and manage related correspondence. Where you request steps prior to entering into a contract, the legal basis is Article 6(1)(b) GDPR. For general inquiries and routine correspondence, the legal basis may be our legitimate interest in managing communications under Article 6(1)(f) GDPR. We do not use contact inquiries to send unsolicited marketing communications. Where you request information about our services or a commercial proposal, we may respond directly to that request. The required box in the contact form only confirms that you want a reply to your inquiry, including a proposal relevant to it; it is not consent to marketing and is not the legal basis for processing your inquiry. Unsolicited commercial communications by e-mail or phone are sent only to people who have separately given and confirmed their consent, on the sign-up page or through the optional boxes in the contact form, as described in section 12.
 
 Technical data may be processed where necessary to operate, protect and troubleshoot the website, on the basis of our legitimate interest under Article 6(1)(f) GDPR, subject to applicable law.
 
@@ -63,7 +63,7 @@ We do not sell personal information and do not share it for cross-context behavi
 This notice will be updated if our data processing practices, hosting configuration, service providers or the legal status of the ADelier Commerce operator change.
 
 ## 12. Marketing communications and consent records
-On the sign-up page you can separately agree to receive commercial information by e-mail and, optionally, by phone. Neither box is ticked in advance, and you may give one consent without the other. Downloading free material requires neither: it is delivered once to the address you give.
+On the sign-up page, and through the optional boxes at the end of the contact form, you can separately agree to receive commercial information by e-mail and, optionally, by phone. Neither box is ticked in advance, and you may give one consent without the other. Downloading free material requires neither: it is delivered once to the address you give.
 
 Consent takes effect only after you open the link we send to your address and press the confirmation button (double opt-in). The link stops working after 48 hours; a sign-up that is not confirmed is not recorded.
 

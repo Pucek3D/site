@@ -110,6 +110,14 @@ export const pl: Dictionary = {
       "privacyBefore": "Przekazane dane wykorzystamy wyłącznie, aby odpowiedzieć na Twoje zapytanie. Więcej informacji znajdziesz w",
       "privacyLink": "polityce prywatności",
       "privacyAfter": ".",
+      "inquiryConfirmLegend": "Twoje zapytanie",
+      "requiredTag": "Wymagane",
+      "optionalTag": "Opcjonalne",
+      "marketingLegend": "Pozostańmy w kontakcie (opcjonalnie)",
+      "phone": "Numer telefonu",
+      "phoneHint": "Wykorzystamy go wyłącznie do kontaktu telefonicznego, na który wyrażasz zgodę powyżej.",
+      "successMarketingPending": "Wysłaliśmy też osobną wiadomość e-mail z prośbą o potwierdzenie zgody marketingowej. Zgoda zacznie obowiązywać dopiero po jej potwierdzeniu w ciągu 48 godzin.",
+      "successMarketingUnavailable": "Nie udało się wysłać wiadomości z prośbą o potwierdzenie zgody marketingowej, więc żadna zgoda marketingowa nie została zapisana. Nie ma to wpływu na Twoje zapytanie.",
       "honeypot": "Pozostaw to pole puste",
       "submit": "Wyślij wiadomość",
       "submitting": "Wysyłanie…",
@@ -123,11 +131,13 @@ export const pl: Dictionary = {
         "email": "Podaj poprawny adres e-mail.",
         "url": "Podaj poprawny adres strony, na przykład example.com.",
         "tooShort": "Dodaj więcej szczegółów — minimum 20 znaków.",
-        "tooLong": "Ten wpis jest za długi."
+        "tooLong": "Ten wpis jest za długi.",
+        "phone": "Podaj poprawny numer telefonu, na przykład +48 600 000 000."
       },
       "fieldErrors": {
         "name": "Podaj swoje imię i nazwisko.",
-        "improve": "Napisz nam kilka słów o swoim zapytaniu."
+        "improve": "Napisz nam kilka słów o swoim zapytaniu.",
+        "inquiryConfirm": "Potwierdź, że chcesz otrzymać odpowiedź na swoje zapytanie."
       }
     }
   },
@@ -216,6 +226,9 @@ export const pl: Dictionary = {
       "greeting": "Dzień dobry,",
       "confirmIntro": "Ktoś, prawdopodobnie Ty, poprosił o otrzymywanie wiadomości od ADelier Commerce na ten adres. Aby potwierdzić, otwórz ten link i naciśnij Potwierdzam:",
       "confirmValidity": "Link jest ważny 48 godzin. Dopóki nie potwierdzisz, żadna zgoda nie obowiązuje.",
+      "categoriesIntro": "Potwierdzenie linku zapisze zgodę wyłącznie na to, co zaznaczyłeś:",
+      "categoryEmail": "Informacje marketingowe drogą e-mailową",
+      "categoryPhone": "Kontakt telefoniczny w celach marketingowych",
       "notYou": "Jeśli to nie Ty, zignoruj tę wiadomość.",
       "privacy": "Polityka prywatności:",
       "magnetSubject": "Twój materiał od ADelier Commerce",

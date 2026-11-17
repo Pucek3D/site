@@ -110,6 +110,14 @@ export const de: Dictionary = {
       "privacyBefore": "Wir verwenden Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage. Weitere Informationen finden Sie in unserer",
       "privacyLink": "Datenschutzerklärung",
       "privacyAfter": ".",
+      "inquiryConfirmLegend": "Ihre Anfrage",
+      "requiredTag": "Erforderlich",
+      "optionalTag": "Optional",
+      "marketingLegend": "Bleiben wir in Kontakt (optional)",
+      "phone": "Telefonnummer",
+      "phoneHint": "Wird ausschließlich für die oben eingewilligten Werbeanrufe verwendet.",
+      "successMarketingPending": "Wir haben Ihnen außerdem eine gesonderte E-Mail zur Bestätigung Ihrer Marketing-Einwilligung gesendet. Die Einwilligung wird erst wirksam, wenn Sie sie innerhalb von 48 Stunden bestätigen.",
+      "successMarketingUnavailable": "Die E-Mail zur Bestätigung Ihrer Marketing-Einwilligung konnte nicht gesendet werden, daher wurde keine Marketing-Einwilligung gespeichert. Ihre Anfrage ist davon nicht betroffen.",
       "honeypot": "Dieses Feld bitte leer lassen",
       "submit": "Nachricht senden",
       "submitting": "Wird gesendet …",
@@ -123,11 +131,13 @@ export const de: Dictionary = {
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         "url": "Bitte geben Sie eine gültige Website-Adresse ein, zum Beispiel example.com.",
         "tooShort": "Bitte geben Sie etwas mehr Details an (mindestens 20 Zeichen).",
-        "tooLong": "Ihre Eingabe ist zu lang."
+        "tooLong": "Ihre Eingabe ist zu lang.",
+        "phone": "Bitte geben Sie eine gültige Telefonnummer ein, zum Beispiel +49 30 1234567."
       },
       "fieldErrors": {
         "name": "Bitte geben Sie Ihren Namen ein.",
-        "improve": "Bitte beschreiben Sie kurz Ihr Anliegen."
+        "improve": "Bitte beschreiben Sie kurz Ihr Anliegen.",
+        "inquiryConfirm": "Bitte bestätigen Sie, dass Sie eine Antwort auf Ihre Anfrage erhalten möchten."
       }
     }
   },
@@ -216,6 +226,9 @@ export const de: Dictionary = {
       "greeting": "Guten Tag,",
       "confirmIntro": "Jemand, vermutlich Sie, hat darum gebeten, unter dieser Adresse Nachrichten von ADelier Commerce zu erhalten. Zur Bestätigung öffnen Sie bitte diesen Link und drücken Sie Bestätigen:",
       "confirmValidity": "Der Link ist 48 Stunden gültig. Bis zu Ihrer Bestätigung ist keine Einwilligung wirksam.",
+      "categoriesIntro": "Mit der Bestätigung wird nur die Einwilligung für Ihre Auswahl gespeichert:",
+      "categoryEmail": "Marketinginformationen per E-Mail",
+      "categoryPhone": "Werbeanrufe per Telefon",
       "notYou": "Wenn Sie das nicht waren, ignorieren Sie diese Nachricht.",
       "privacy": "Datenschutzerklärung:",
       "magnetSubject": "Ihr Material von ADelier Commerce",

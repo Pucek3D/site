@@ -16,6 +16,8 @@ import type { Locale } from './i18n'
  * Records are never logged. Failures log the error kind only.
  */
 
+export type ConsentSource = 'contact_form' | 'subscription_page'
+
 export type ConsentRecord = {
   id: string
   idempotencyKey: string
@@ -30,6 +32,8 @@ export type ConsentRecord = {
   /** The exact wording shown for each consent that was given, plus the information notice shown with them. */
   consentTexts: { email?: string; phone?: string; notice?: string }
   magnetId?: string
+  /** Where the consent was given. Absent on withdrawals and on records written before this field existed. */
+  source?: ConsentSource
   sourcePath: string
   // No IP address and no browser identifier: the register deliberately holds neither.
   // Request IPs are used only, in memory, for rate limiting.
@@ -95,6 +99,7 @@ function renderRecord(r: ConsentRecord) {
     ['Consent: e-mail', String(r.consents.email)],
     ['Consent: phone', String(r.consents.phone)],
     ['Lead magnet', r.magnetId],
+    ['Source', r.source],
     ['Source path', r.sourcePath],
     ['Submitted at', r.submittedAt],
     ['Confirmed at', r.confirmedAt],

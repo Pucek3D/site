@@ -28,6 +28,8 @@ export type SignupPayload = {
   phone?: string
   consents: { email: boolean; phone: boolean }
   magnetId?: string
+  /** Which form the consent came from; decides which wording is recorded. Absent = sign-up page. */
+  source?: 'contact_form' | 'subscription_page'
   sourcePath: string
   submittedAt: string
 }
@@ -73,13 +75,21 @@ export async function POST(request: Request) {
     ...(d.consentPhone ? { phone: d.phone } : {}),
     consents: { email: d.consentEmail, phone: d.consentPhone },
     ...(magnet ? { magnetId: magnet.id } : {}),
+    source: 'subscription_page',
     sourcePath,
     submittedAt: new Date().toISOString(),
   }
 
   try {
     const token = sealToken('signup', payload)
-    const sent = await sendConfirmation({ to: d.email, locale, origin: linkOrigin(request), token })
+    const sent = await sendConfirmation({
+      to: d.email,
+      locale,
+      origin: linkOrigin(request),
+      token,
+      consents: payload.consents,
+      ...(payload.phone ? { phone: payload.phone } : {}),
+    })
     if (!sent) return reply({ error: 'not_configured' }, 503)
     return reply({ ok: true })
   } catch (error) {

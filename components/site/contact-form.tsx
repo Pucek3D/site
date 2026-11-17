@@ -4,6 +4,12 @@ import { ChevronDown, CircleCheck, TriangleAlert } from 'lucide-react'
 import Link from 'next/link'
 import { useRef, useState, type FormEvent, type ReactNode } from 'react'
 import type { Dictionary } from '@/content'
+import {
+  CONTACT_NOTICE_LINK_PHRASE,
+  contactConsentNotice,
+  contactConsentTexts,
+  inquiryConfirmationText,
+} from '@/content/consent'
 import { href, type Locale } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 import { formLanguages, topics, validateContact, type FieldErrors, type Topic } from '@/lib/validation'
@@ -28,6 +34,11 @@ export function ContactForm({
   const [errors, setErrors] = useState<FieldErrors>({})
   const [status, setStatus] = useState<Status>('idle')
   const [detailsOpen, setDetailsOpen] = useState(false)
+  // All three start unticked. The first is required; the two marketing boxes are independent.
+  const [inquiryConfirm, setInquiryConfirm] = useState(false)
+  const [consentEmail, setConsentEmail] = useState(false)
+  const [consentPhone, setConsentPhone] = useState(false)
+  const [marketing, setMarketing] = useState<'none' | 'pending' | 'unavailable'>('none')
 
   /** An error inside the collapsed section would otherwise point at a field nobody can see. */
   function showErrors(next: FieldErrors) {
@@ -41,7 +52,7 @@ export function ContactForm({
   const err = (k: keyof FieldErrors) => {
     const code = errors[k]
     if (!code) return undefined
-    if (code === 'required' && (k === 'name' || k === 'improve')) return f.fieldErrors[k]
+    if (code === 'required' && (k === 'name' || k === 'improve' || k === 'inquiryConfirm')) return f.fieldErrors[k]
     return f.errors[code]
   }
 
@@ -50,6 +61,10 @@ export function ContactForm({
     const fd = new FormData(e.currentTarget)
     const raw: Record<string, unknown> = Object.fromEntries(fd.entries())
     raw.topic = topic
+    // Sent as real booleans so the shared schema reads them identically in the browser and on the server.
+    raw.inquiryConfirm = inquiryConfirm
+    raw.consentEmail = consentEmail
+    raw.consentPhone = consentPhone
     const result = validateContact(raw)
     if (!result.ok) {
       showErrors(result.errors)
@@ -73,8 +88,13 @@ export function ContactForm({
         return
       }
       if (!res.ok) throw new Error(String(res.status))
+      const body = (await res.json().catch(() => ({}))) as { marketing?: 'none' | 'pending' | 'unavailable' }
+      setMarketing(body.marketing ?? 'none')
       setStatus('success')
       formRef.current?.reset()
+      setInquiryConfirm(false)
+      setConsentEmail(false)
+      setConsentPhone(false)
       requestAnimationFrame(() => resultRef.current?.focus())
     } catch {
       setStatus('failure')
@@ -88,6 +108,9 @@ export function ContactForm({
         <CircleCheck aria-hidden className="size-7 text-ink" />
         <h2 className="mt-4 text-2xl font-semibold">{f.successTitle}</h2>
         <p className="mt-3 max-w-xl leading-relaxed text-ink">{f.success}</p>
+        {/* The inquiry outcome above is final; marketing is a separate, secondary outcome. */}
+        {marketing === 'pending' ? <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink">{f.successMarketingPending}</p> : null}
+        {marketing === 'unavailable' ? <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink">{f.successMarketingUnavailable}</p> : null}
       </div>
     )
   }
@@ -102,6 +125,8 @@ export function ContactForm({
       website: f.website,
       language: f.language,
       improve: f.improve,
+      inquiryConfirm: f.inquiryConfirmLegend,
+      phone: f.phone,
     }
     return labels[k] ?? f.topicLegend
   }
@@ -233,6 +258,63 @@ export function ContactForm({
         </div>
       </details>
 
+      {/* Neutral styling on purpose: this section applies to every audience. */}
+      <div className="flex flex-col gap-6 border-t border-hairline pt-8">
+        <fieldset>
+          <legend className="sr-only">{f.inquiryConfirmLegend}</legend>
+          <CheckRow
+            id="inquiryConfirm"
+            tag={f.requiredTag}
+            text={inquiryConfirmationText[locale]}
+            checked={inquiryConfirm}
+            required
+            error={err('inquiryConfirm')}
+            onChange={(v) => {
+              setInquiryConfirm(v)
+              if (v) setErrors(({ inquiryConfirm: _c, ...rest }) => rest)
+            }}
+          />
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-3">
+          <legend className="mb-3 font-display text-base font-semibold">{f.marketingLegend}</legend>
+          <CheckRow
+            id="consentEmail"
+            tag={f.optionalTag}
+            text={contactConsentTexts[locale].email}
+            checked={consentEmail}
+            onChange={setConsentEmail}
+          />
+          <CheckRow
+            id="consentPhone"
+            tag={f.optionalTag}
+            text={contactConsentTexts[locale].phone}
+            checked={consentPhone}
+            onChange={(v) => {
+              setConsentPhone(v)
+              if (!v) setErrors(({ phone: _p, ...rest }) => rest)
+            }}
+          >
+            {consentPhone ? (
+              <div className="mt-3 sm:max-w-sm">
+                <Field id="phone" label={f.phone} hint={f.phoneHint} error={err('phone')}>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    className={inputClass}
+                    {...a11y('phone', err('phone'), f.phoneHint)}
+                  />
+                </Field>
+              </div>
+            ) : null}
+          </CheckRow>
+          <ConsentNotice locale={locale} />
+        </fieldset>
+      </div>
+
       {/* Honeypot: off-screen, out of the tab order and hidden from assistive tech. */}
       <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label htmlFor="company_url">{f.honeypot}</label>
@@ -258,6 +340,78 @@ export function ContactForm({
         </button>
       </div>
     </form>
+  )
+}
+
+/** One compact checkbox row. The full wording is the label itself, never hidden behind a tooltip. */
+function CheckRow({
+  id,
+  tag,
+  text,
+  checked,
+  required,
+  error,
+  onChange,
+  children,
+}: {
+  id: string
+  tag: string
+  text: string
+  checked: boolean
+  required?: boolean
+  error?: string
+  onChange: (v: boolean) => void
+  children?: ReactNode
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="flex min-h-11 cursor-pointer items-start gap-3">
+        <span className="flex size-11 shrink-0 items-center justify-center">
+          <input
+            id={id}
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => onChange(e.target.checked)}
+            required={required}
+            aria-required={required || undefined}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={error ? `${id}-error` : undefined}
+            className="size-5 cursor-pointer rounded accent-[var(--color-ink)] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-cobalt/30 focus-visible:ring-offset-2"
+          />
+        </span>
+        <span className="text-pretty pt-2.5 text-[0.9375rem] leading-relaxed text-ink">
+          <strong className="font-semibold">{tag}:</strong> {text}
+        </span>
+      </label>
+      {error ? (
+        <p id={`${id}-error`} className="mt-1 pl-14 text-sm font-medium text-destructive">
+          {error}
+        </p>
+      ) : null}
+      {children ? <div className="pl-14">{children}</div> : null}
+    </div>
+  )
+}
+
+/** Rendered from the verbatim notice string; the link only wraps a substring of it. */
+function ConsentNotice({ locale }: { locale: Locale }) {
+  const notice = contactConsentNotice[locale]
+  const phrase = CONTACT_NOTICE_LINK_PHRASE[locale]
+  const at = notice.indexOf(phrase)
+  return (
+    <p className="mt-1 max-w-2xl text-pretty text-sm leading-relaxed text-slate">
+      {at < 0 ? (
+        notice
+      ) : (
+        <>
+          {notice.slice(0, at)}
+          <Link href={href(locale, 'privacy')} className="font-semibold text-cobalt underline underline-offset-4">
+            {phrase}
+          </Link>
+          {notice.slice(at + phrase.length)}
+        </>
+      )}
+    </p>
   )
 }
 

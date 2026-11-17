@@ -5,6 +5,7 @@ import {
   DELIVERY_TIMEOUT_MS,
   errorKind,
   honeypotTripped,
+  linkOrigin,
   oneLine,
   originAllowed,
   readJsonObject,
@@ -15,6 +16,13 @@ import {
 } from '@/lib/api-guard'
 import { validateContact, type ContactInput } from '@/lib/validation'
 import { siteConfig } from '@/lib/site-config'
+import { sendConfirmation } from '@/lib/consent-mail'
+import { registerConfigured } from '@/lib/consent-register'
+import { sealToken, tokenSecretConfigured } from '@/lib/consent-token'
+import { isLocale } from '@/lib/i18n'
+import { INQUIRY_CONFIRMATION_TEXT_VERSION } from '@/content/consent'
+import { subscribeEnabled } from '@/lib/subscribe-config'
+import type { SignupPayload } from '../subscribe/route'
 
 /**
  * Validates with the SAME schema as the browser, then delivers by:
@@ -44,6 +52,10 @@ function renderInquiry(d: Omit<ContactInput, 'company_url'>, siteLocale: string 
     `Role: ${d.role || '-'}`,
     `Website: ${d.website || '-'}`,
     `Preferred language: ${d.language}`,
+    // A request for a reply, not a consent: it goes in the inquiry e-mail only, never the register.
+    `Reply requested (confirmation ${INQUIRY_CONFIRMATION_TEXT_VERSION}, not marketing consent): ${d.inquiryConfirm ? 'yes' : 'no'}`,
+    // Selected, not confirmed: a consent exists only once the person confirms the separate e-mail.
+    `Marketing consent selected (pending confirmation): e-mail ${d.consentEmail ? 'yes' : 'no'}, phone ${d.consentPhone ? 'yes' : 'no'}`,
     `Site language: ${siteLocale ?? '-'}`,
     `Received: ${receivedAt}`,
     '',
@@ -114,5 +126,54 @@ export async function POST(request: Request) {
   }
 
   // Accepted by the SMTP server. That is NOT proof of mailbox delivery; verify with a real test.
-  return reply({ ok: true })
+  // The inquiry has succeeded; nothing below may turn it into a failure.
+  const marketing = await startMarketingOptIn(request, inquiry, siteLocale)
+  return reply({ ok: true, marketing })
+}
+
+type MarketingOutcome = 'none' | 'pending' | 'unavailable'
+
+/**
+ * Optional marketing consents start the SAME double opt-in as the sign-up page: an encrypted
+ * 48-hour token in a confirmation e-mail, and nothing recorded until the person confirms.
+ * 'unavailable' means the confirmation e-mail could not be sent (flag off, register or token
+ * secret missing, or SMTP failure). No consent is recorded in that case either.
+ */
+async function startMarketingOptIn(
+  request: Request,
+  d: Omit<ContactInput, 'company_url'>,
+  siteLocale: string | null,
+): Promise<MarketingOutcome> {
+  if (!d.consentEmail && !d.consentPhone) return 'none'
+  if (!subscribeEnabled() || !tokenSecretConfigured() || !registerConfigured()) {
+    console.error('[contact] marketing opt-in not configured; inquiry delivered, no confirmation sent')
+    return 'unavailable'
+  }
+  const locale = siteLocale && isLocale(siteLocale) ? siteLocale : 'en'
+  const payload: SignupPayload = {
+    locale,
+    email: d.email,
+    name: d.name,
+    company: d.company,
+    ...(d.consentPhone ? { phone: d.phone } : {}),
+    consents: { email: d.consentEmail, phone: d.consentPhone },
+    source: 'contact_form',
+    sourcePath: `/${locale}/contact`,
+    submittedAt: new Date().toISOString(),
+  }
+  try {
+    const token = sealToken('signup', payload)
+    const sent = await sendConfirmation({
+      to: d.email,
+      locale,
+      origin: linkOrigin(request),
+      token,
+      consents: payload.consents,
+      ...(payload.phone ? { phone: payload.phone } : {}),
+    })
+    return sent ? 'pending' : 'unavailable'
+  } catch (error) {
+    console.error('[contact] marketing confirmation not sent', errorKind(error))
+    return 'unavailable'
+  }
 }

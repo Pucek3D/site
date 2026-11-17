@@ -108,6 +108,14 @@ export const en = {
       "privacyBefore": "We use the details you submit only to respond to your inquiry. More information is available in our",
       "privacyLink": "privacy notice",
       "privacyAfter": ".",
+      "inquiryConfirmLegend": "Your inquiry",
+      "requiredTag": "Required",
+      "optionalTag": "Optional",
+      "marketingLegend": "Stay in touch (optional)",
+      "phone": "Phone number",
+      "phoneHint": "Used only for the marketing calls you agreed to above.",
+      "successMarketingPending": "We have also sent a separate e-mail to confirm your marketing consent. It takes effect only once you confirm it, within 48 hours.",
+      "successMarketingUnavailable": "We couldn't send the e-mail to confirm your marketing consent, so no marketing consent has been recorded. Your inquiry is not affected.",
       "honeypot": "Leave this field empty",
       "submit": "Send inquiry",
       "submitting": "Sending…",
@@ -121,11 +129,13 @@ export const en = {
         "email": "Enter a valid email address.",
         "url": "Enter a valid website address, for example example.com.",
         "tooShort": "Please add a little more detail — at least 20 characters.",
-        "tooLong": "This entry is too long."
+        "tooLong": "This entry is too long.",
+        "phone": "Enter a valid phone number, for example +48 600 000 000."
       },
       "fieldErrors": {
         "name": "Please enter your name.",
-        "improve": "Please tell us a little about your inquiry."
+        "improve": "Please tell us a little about your inquiry.",
+        "inquiryConfirm": "Please confirm that you would like us to respond to your inquiry."
       }
     }
   },
@@ -214,6 +224,9 @@ export const en = {
       "greeting": "Hello,",
       "confirmIntro": "Someone, probably you, asked to receive messages from ADelier Commerce at this address. To confirm, open this link and press Confirm:",
       "confirmValidity": "The link is valid for 48 hours. Until you confirm, no consent is active.",
+      "categoriesIntro": "Confirming the link records consent only for what you selected:",
+      "categoryEmail": "Marketing information by e-mail",
+      "categoryPhone": "Marketing contact by phone",
       "notYou": "If this was not you, ignore this message.",
       "privacy": "Privacy notice:",
       "magnetSubject": "Your material from ADelier Commerce",

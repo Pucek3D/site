@@ -3,7 +3,14 @@ import { createRateLimiter, errorKind, linkOrigin, originAllowed, readJsonObject
 import { sendMagnet } from '@/lib/consent-mail'
 import { registerConsent, type ConsentRecord } from '@/lib/consent-register'
 import { idempotencyKeyFor, openToken, sealToken } from '@/lib/consent-token'
-import { CONSENT_TEXT_VERSION, consentNotice, consentTexts } from '@/content/consent'
+import {
+  CONSENT_TEXT_VERSION,
+  CONTACT_CONSENT_TEXT_VERSION,
+  consentNotice,
+  consentTexts,
+  contactConsentNotice,
+  contactConsentTexts,
+} from '@/content/consent'
 import { siteConfig } from '@/lib/site-config'
 import { findLeadMagnet } from '@/content/lead-magnets'
 import { subscribeEnabled } from '@/lib/subscribe-config'
@@ -45,11 +52,14 @@ export async function POST(request: Request) {
 
   // Lead magnet without consent: deliver the material only, no marketing record.
   if (hasConsent) {
-    const texts = consentTexts[p.locale]
+    // Record the wording of the form the person actually used.
+    const fromContact = p.source === 'contact_form'
+    const texts = fromContact ? contactConsentTexts[p.locale] : consentTexts[p.locale]
+    const notice = fromContact ? contactConsentNotice[p.locale] : consentNotice(p.locale, siteConfig.operator.name)
     const record: ConsentRecord = {
       id: randomUUID(),
       idempotencyKey,
-      textVersion: CONSENT_TEXT_VERSION,
+      textVersion: fromContact ? CONTACT_CONSENT_TEXT_VERSION : CONSENT_TEXT_VERSION,
       locale: p.locale,
       email: p.email,
       ...(p.name ? { name: p.name } : {}),
@@ -59,9 +69,10 @@ export async function POST(request: Request) {
       consentTexts: {
         ...(p.consents.email ? { email: texts.email } : {}),
         ...(p.consents.phone ? { phone: texts.phone } : {}),
-        notice: consentNotice(p.locale, siteConfig.operator.name),
+        notice,
       },
       ...(p.magnetId ? { magnetId: p.magnetId } : {}),
+      source: p.source ?? 'subscription_page',
       sourcePath: p.sourcePath,
       submittedAt: p.submittedAt,
       confirmedAt: now,

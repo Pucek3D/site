@@ -12,7 +12,7 @@ Dostawca hostingu zapewnia infrastrukturę wykorzystywaną do działania strony 
 Okresy przechowywania logów technicznych zależą od konfiguracji usługi hostingowej i zostaną potwierdzone z dostawcą.
 
 ## 3. Cele i podstawy prawne
-Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane z zapytań nie są używane do wysyłki niezamówionych informacji handlowych. Jeżeli prosisz o informacje o naszych usługach lub o ofertę, możemy odpowiedzieć bezpośrednio na tę prośbę. Niezamówione informacje handlowe e-mailem lub telefonicznie otrzymują wyłącznie osoby, które odrębnie wyraziły i potwierdziły zgodę na stronie zapisu, zgodnie z punktem 12.
+Dane z formularza służą do odpowiedzi na zapytanie, uzgodnienia zakresu ewentualnej współpracy i prowadzenia korespondencji. Gdy zapytanie dotyczy podjęcia działań przed zawarciem umowy na Twoje żądanie, podstawą jest art. 6 ust. 1 lit. b RODO. W przypadku ogólnych zapytań i zwykłej korespondencji podstawą może być prawnie uzasadniony interes administratora polegający na obsłudze komunikacji (art. 6 ust. 1 lit. f RODO). Dane z zapytań nie są używane do wysyłki niezamówionych informacji handlowych. Jeżeli prosisz o informacje o naszych usługach lub o ofertę, możemy odpowiedzieć bezpośrednio na tę prośbę. Obowiązkowe pole w formularzu kontaktowym jest jedynie potwierdzeniem, że chcesz otrzymać odpowiedź na zapytanie, w tym ofertę jego dotyczącą; nie jest zgodą marketingową ani podstawą przetwarzania danych z zapytania. Niezamówione informacje handlowe e-mailem lub telefonicznie otrzymują wyłącznie osoby, które odrębnie wyraziły i potwierdziły zgodę na stronie zapisu lub w opcjonalnych polach formularza kontaktowego, zgodnie z punktem 12.
 
 Dane techniczne przetwarzane są, gdy jest to niezbędne do działania, utrzymania i zabezpieczenia serwisu oraz diagnozowania błędów, na podstawie prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO), w zakresie zgodnym z obowiązującymi przepisami.
 
@@ -63,7 +63,7 @@ Nie sprzedajemy danych osobowych i nie udostępniamy ich w celu reklamy behawior
 Polityka będzie aktualizowana w razie zmian sposobu przetwarzania danych, konfiguracji hostingu, wykorzystywanych usług lub statusu prawnego podmiotu prowadzącego ADelier Commerce.
 
 ## 12. Informacje handlowe i rejestr zgód
-Na stronie zapisu możesz odrębnie wyrazić zgodę na otrzymywanie informacji handlowych e-mailem oraz, opcjonalnie, telefonicznie. Żadne pole nie jest zaznaczone z góry i możesz wyrazić jedną zgodę bez drugiej. Pobranie bezpłatnego materiału nie wymaga żadnej z nich: wysyłamy go jednorazowo na podany adres.
+Na stronie zapisu oraz w opcjonalnych polach na końcu formularza kontaktowego możesz odrębnie wyrazić zgodę na otrzymywanie informacji handlowych e-mailem oraz, opcjonalnie, telefonicznie. Żadne pole nie jest zaznaczone z góry i możesz wyrazić jedną zgodę bez drugiej. Pobranie bezpłatnego materiału nie wymaga żadnej z nich: wysyłamy go jednorazowo na podany adres.
 
 Zgoda zaczyna obowiązywać dopiero po otwarciu linku wysłanego na Twój adres i naciśnięciu przycisku potwierdzenia (double opt-in). Link przestaje działać po 48 godzinach; niepotwierdzony zapis nie jest rejestrowany.
 

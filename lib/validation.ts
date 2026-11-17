@@ -10,7 +10,12 @@ export type Topic = (typeof topics)[number]
 
 export const formLanguages = ['en', 'pl', 'de'] as const
 
-export type ErrorCode = 'required' | 'email' | 'url' | 'tooShort' | 'tooLong'
+export type ErrorCode = 'required' | 'email' | 'url' | 'tooShort' | 'tooLong' | 'phone'
+
+// International or national format: digits, spaces, dashes, dots, brackets, one leading +. 7 to 15 digits.
+const PHONE_RE = /^\+?[0-9 ()./-]{7,24}$/
+const phoneDigits = (v: string) => v.replace(/\D/g, '').length
+const phoneValid = (v: string) => PHONE_RE.test(v) && phoneDigits(v) >= 7 && phoneDigits(v) <= 15
 
 const text = (max: number) => z.string().trim().min(1, 'required').max(max, 'tooLong')
 const optionalText = (max: number) => z.string().trim().max(max, 'tooLong').optional().default('')
@@ -33,13 +38,26 @@ export const contactSchema = z
       .default(''),
     language: choice(formLanguages),
     improve: z.string().trim().min(1, 'required').min(20, 'tooShort').max(3000, 'tooLong'),
-    // No consent field: answering an inquiry rests on GDPR Art. 6(1)(b)/(f), as the
-    // privacy notice states. The form shows an information notice instead of asking
-    // for a consent the processing does not depend on.
+    // Required confirmation that the person wants a reply (which may include an offer about this
+    // inquiry). It is NOT consent under Art. 6(1)(a) and NOT marketing: answering still rests on
+    // Art. 6(1)(b)/(f), it is never sent to the consent register and never starts a double opt-in.
+    inquiryConfirm: z.literal(true, { error: 'required' }),
+    // The two marketing consents below are optional, independent and never gate the inquiry;
+    // they only start a separate double opt-in.
+    consentEmail: z.boolean().optional().default(false),
+    consentPhone: z.boolean().optional().default(false),
+    phone: z.string().trim().max(40, 'tooLong').optional().default(''),
     // Honeypot: real people never see or fill this.
     company_url: z.string().max(0).optional().default(''),
-
   })
+  .superRefine((d, ctx) => {
+    // The number is required only for the phone consent it serves.
+    if (!d.consentPhone) return
+    if (!d.phone) ctx.addIssue({ code: 'custom', path: ['phone'], message: 'required' })
+    else if (!phoneValid(d.phone)) ctx.addIssue({ code: 'custom', path: ['phone'], message: 'phone' })
+  })
+  // Without phone consent the number is neither kept nor passed on, even if one was typed.
+  .transform((d) => ({ ...d, phone: d.consentPhone ? d.phone : '' }))
 
 export type ContactInput = z.infer<typeof contactSchema>
 export type FieldErrors = Partial<Record<keyof ContactInput, ErrorCode>>
@@ -54,7 +72,7 @@ export function validateContact(
     const key = issue.path[0] as keyof ContactInput
     if (key && !errors[key]) {
       const code = issue.message as ErrorCode
-      errors[key] = (['required', 'email', 'url', 'tooShort', 'tooLong'] as const).includes(code)
+      errors[key] = (['required', 'email', 'url', 'tooShort', 'tooLong', 'phone'] as const).includes(code)
         ? code
         : 'required'
     }
@@ -70,9 +88,6 @@ export type SubscribeErrorCode = 'required' | 'email' | 'phone' | 'tooLong' | 'c
 const subscribeCodes: readonly SubscribeErrorCode[] = ['required', 'email', 'phone', 'tooLong', 'consentRequired']
 
 const emailField = z.string().trim().min(1, 'required').max(200, 'tooLong').pipe(z.email('email'))
-// International or national format: digits, spaces, dashes, dots, brackets, one leading +. 7 to 15 digits.
-const PHONE_RE = /^\+?[0-9 ()./-]{7,24}$/
-const phoneDigits = (v: string) => v.replace(/\D/g, '').length
 
 export const subscribeSchema = z
   .object({
@@ -92,7 +107,7 @@ export const subscribeSchema = z
     if (!d.magnet && !d.consentEmail) ctx.addIssue({ code: 'custom', path: ['consentEmail'], message: 'consentRequired' })
     if (d.consentPhone) {
       if (!d.phone) ctx.addIssue({ code: 'custom', path: ['phone'], message: 'required' })
-      else if (!PHONE_RE.test(d.phone) || phoneDigits(d.phone) < 7 || phoneDigits(d.phone) > 15)
+      else if (!phoneValid(d.phone))
         ctx.addIssue({ code: 'custom', path: ['phone'], message: 'phone' })
     }
   })

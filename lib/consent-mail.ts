@@ -16,13 +16,26 @@ function sender(from: string) {
   return `"${siteConfig.name}" <${address}>`
 }
 
-export async function sendConfirmation(opts: { to: string; locale: Locale; origin: string; token: string }) {
+export async function sendConfirmation(opts: {
+  to: string
+  locale: Locale
+  origin: string
+  token: string
+  consents: { email: boolean; phone: boolean }
+  phone?: string
+}) {
   const mail = createTransport()
   if (!mail) return false
   const e = getDictionary(opts.locale).subscribe.emails
   const confirmUrl = `${opts.origin}${href(opts.locale, 'subscribe', '/confirm')}#t=${opts.token}`
   const privacyUrl = `${opts.origin}${href(opts.locale, 'privacy')}`
-  const text = [e.greeting, '', e.confirmIntro, '', confirmUrl, '', e.confirmValidity, '', e.notYou, '', `${e.privacy} ${privacyUrl}`, '', e.signoff].join('\n')
+  // State exactly what the link confirms, so nobody confirms a channel they did not choose.
+  const selected = [
+    ...(opts.consents.email ? [`- ${e.categoryEmail}`] : []),
+    ...(opts.consents.phone ? [`- ${e.categoryPhone}${opts.phone ? ` (${opts.phone})` : ''}`] : []),
+  ]
+  const categories = selected.length ? [e.categoriesIntro, ...selected, ''] : []
+  const text = [e.greeting, '', e.confirmIntro, '', confirmUrl, '', ...categories, e.confirmValidity, '', e.notYou, '', `${e.privacy} ${privacyUrl}`, '', e.signoff].join('\n')
   await withTimeout(mail.transport.sendMail({ from: sender(mail.from), to: opts.to, subject: e.confirmSubject, text }))
   return true
 }

@@ -55,3 +55,53 @@ export const consentTexts: Record<Locale, Record<ConsentChannel, string>> = {
     phone: `Ich willige ein, dass ${CONSENT_CONTROLLER} mich unter der angegebenen Telefonnummer telefonisch kontaktiert, um mir Angebote zu Amazon-PPC-Dienstleistungen und Schulungen vorzustellen. Ich kann diese Einwilligung jederzeit widerrufen: per E-Mail an ${CONTACT}.`,
   },
 }
+
+/**
+ * The optional consents offered on the CONTACT FORM. Different wording from the sign-up
+ * page, so a separate version: a record states which wording the person actually saw.
+ * Same rules as above: verbatim, and any change is a new CONTACT_CONSENT_TEXT_VERSION.
+ */
+export const CONTACT_CONSENT_TEXT_VERSION = 'contact-consent-2026-11-1'
+
+export const contactConsentTexts: Record<Locale, Record<ConsentChannel, string>> = {
+  en: {
+    email: `I agree to receive information about ${CONSENT_CONTROLLER} services, collaboration offers and expert resources by email.`,
+    phone: `I agree to receive marketing calls from ${CONSENT_CONTROLLER}, including calls presenting its services and offers.`,
+  },
+  pl: {
+    email: `Wyrażam zgodę na otrzymywanie od ${CONSENT_CONTROLLER} informacji o usługach, ofertach współpracy i materiałach eksperckich drogą e-mailową.`,
+    phone: `Wyrażam zgodę na kontakt telefoniczny ze strony ${CONSENT_CONTROLLER} w celach marketingowych, w tym w celu przedstawiania ofert usług.`,
+  },
+  de: {
+    email: `Ich willige ein, per E-Mail Informationen über die Dienstleistungen von ${CONSENT_CONTROLLER}, Angebote zur Zusammenarbeit und Fachmaterialien zu erhalten.`,
+    phone: `Ich willige ein, von ${CONSENT_CONTROLLER} zu Marketingzwecken telefonisch kontaktiert zu werden, einschließlich zur Vorstellung von Dienstleistungen und Angeboten.`,
+  },
+}
+
+/**
+ * The REQUIRED contact-form confirmation that the person wants a reply to their inquiry.
+ * Deliberately NOT a ConsentChannel: it is not marketing consent, not Art. 6(1)(a) GDPR, never
+ * written to the consent register and never starts a double opt-in. It lives here only so the
+ * exact wording is versioned next to the texts it must never be confused with.
+ */
+export const INQUIRY_CONFIRMATION_TEXT_VERSION = 'inquiry-confirmation-2026-11-1'
+
+export const inquiryConfirmationText: Record<Locale, string> = {
+  en: `I confirm that I would like ${CONSENT_CONTROLLER} to respond to my inquiry, including with a proposal relevant to my request.`,
+  pl: `Potwierdzam, że chcę otrzymać odpowiedź od ${CONSENT_CONTROLLER} na przesłane zapytanie, w tym ofertę dotyczącą mojego zapytania.`,
+  de: `Ich bestätige, dass ich eine Antwort von ${CONSENT_CONTROLLER} auf meine Anfrage erhalten möchte, einschließlich eines auf meine Anfrage bezogenen Angebots.`,
+}
+
+/** The note shown under the contact-form consents, stored verbatim with the record. */
+export const contactConsentNotice: Record<Locale, string> = {
+  en: 'Marketing consent is optional and is not required to submit an inquiry. You can withdraw your consent at any time. See our Privacy Notice for details.',
+  pl: 'Zgody są dobrowolne i nie są wymagane do wysłania zapytania. Możesz je wycofać w dowolnym momencie. Szczegóły znajdziesz w Polityce prywatności.',
+  de: 'Die Einwilligungen sind freiwillig und für das Absenden einer Anfrage nicht erforderlich. Sie können Ihre Einwilligung jederzeit widerrufen. Weitere Informationen finden Sie in unserer Datenschutzerklärung.',
+}
+
+/** The words inside contactConsentNotice rendered as the privacy link. Always a substring of it. */
+export const CONTACT_NOTICE_LINK_PHRASE: Record<Locale, string> = {
+  en: 'Privacy Notice',
+  pl: 'Polityce prywatności',
+  de: 'Datenschutzerklärung',
+}
