@@ -1,11 +1,11 @@
 # Datenschutzerklärung — ADelier Commerce
-## 1. Verantwortliche Person und Kontakt
+## 1. Verantwortlicher und Kontaktdaten
 Verantwortlich für die Verarbeitung personenbezogener Daten im Zusammenhang mit https://adeliercommerce.com ist **Kornelia Mazurczyk-Wolska**, eine natürliche Person, die die Website unter der Marke **ADelier Commerce** betreibt. Anschrift: ul. Daniszewska 30/12, 03-230 Warschau, Polen. Bei Datenschutzfragen erreichen Sie uns unter **contact@adeliercommerce.com**.
 
 ## 2. Welche Daten wir verarbeiten
 Wenn Sie eine Anfrage übermitteln oder mit uns Kontakt aufnehmen, können wir Ihren Namen, Ihre E-Mail-Adresse, den Firmennamen, die Art Ihrer Anfrage, die bevorzugte Sprache und den Inhalt Ihrer Nachricht verarbeiten. Ihre Position und Website-Adresse erfassen wir nur, wenn Sie diese freiwillig angeben. Darüber hinaus verarbeiten wir gegebenenfalls Angaben, die Sie uns im Rahmen der Korrespondenz selbst mitteilen.
 
-Die Website und die zugehörigen E-Mail-Dienste werden von VH.PL gehostet, betrieben von der Prociv Sp. z o.o. mit Sitz in Breslau (Wrocław), Polen.
+Die Website und die zugehörigen E-Mail-Dienste werden von VH.PL gehostet, deren Betreiber die Prociv Sp. z o.o. mit Sitz in Breslau (Wrocław), Polen.
 
 Der Hostinganbieter stellt die Infrastruktur für den Betrieb der Website und der E-Mail-Konten bereit. Im Zusammenhang mit diesen Diensten können technische Informationen wie IP-Adressen, Zugriffszeitpunkte, Serveranfragen und Sicherheitsprotokolle zu Betriebs-, Wartungs- und Sicherheitszwecken verarbeitet werden.
 
@@ -17,28 +17,28 @@ Wir verwenden Ihre Angaben, um Ihre Anfrage zu beantworten, mögliche Leistungen
 Technische Daten können zum Betrieb, zur Sicherheit und zur Fehlerbehebung der Website auf Grundlage unseres berechtigten Interesses gemäß Art. 6 Abs. 1 Buchst. f DSGVO verarbeitet werden, soweit dies gesetzlich zulässig ist.
 
 ## 4. Freiwilligkeit der Angaben
-Die Angabe personenbezogener Daten ist freiwillig. Die als Pflichtfelder gekennzeichneten Formularangaben benötigen wir jedoch, damit Sie eine Anfrage senden können und wir diese bearbeiten können. Weitere Angaben sind optional. Bitte übermitteln Sie keine besonderen Kategorien personenbezogener Daten, sofern dies für Ihr Anliegen nicht notwendig ist.
+Die Angabe personenbezogener Daten ist freiwillig. Die als Pflichtfelder gekennzeichneten Formularangaben benötigen wir jedoch, damit Sie eine Anfrage übermitteln und wir diese bearbeiten können. Weitere Angaben sind optional. Bitte übermitteln Sie keine besonderen Kategorien personenbezogener Daten, sofern dies für Ihr Anliegen nicht notwendig ist.
 
 ## 5. Speicherdauer
-Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden Korrespondenzdaten **höchstens 60 Tage ab dem Tag, an dem die Bearbeitung der Anfrage abgeschlossen ist**. Einmal im Monat prüfen wir die Korrespondenz und löschen Daten, deren Speicherfrist abgelaufen ist, vorbehaltlich der Ausnahmen, die sich aus geltendem Recht oder aus der Notwendigkeit der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen ergeben.
+Führt eine Anfrage nicht zu einer Zusammenarbeit, speichern wir die entsprechenden personenbezogenen Daten aus der Korrespondenz **höchstens 60 Tage ab dem Tag, an dem die Bearbeitung der Anfrage abgeschlossen ist**. Einmal im Monat prüfen wir die Korrespondenz und löschen Daten, deren Speicherfrist abgelaufen ist, vorbehaltlich der Ausnahmen, die sich aus geltendem Recht oder aus der Notwendigkeit der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen ergeben.
 
 Website- und E-Mail-Daten können auch in Sicherungskopien enthalten sein, die im Rahmen des Hostingdienstes erstellt werden. Aus dem Postfach oder von der Website gelöschte Daten können in diesen Sicherungskopien verbleiben, bis sie im regelmäßigen Sicherungszyklus des Hostinganbieters überschrieben werden.
 
-Nachrichten und Anhänge werden gemäß den in dieser Erklärung beschriebenen Aufbewahrungsfristen aus dem aktiven Postfach gelöscht. In Sicherungskopien enthaltene Kopien können bis zum Abschluss des jeweiligen Rotationszyklus bestehen bleiben.
+Nachrichten und Anhänge werden gemäß den in dieser Erklärung beschriebenen Aufbewahrungsfristen aus dem aktiven Postfach gelöscht. In Sicherungskopien gespeicherte Daten können bis zum Abschluss des jeweiligen Rotationszyklus bestehen bleiben.
 
 Nachweise über Einwilligungen und deren Widerruf bewahren wir wie in Abschnitt 12 beschrieben auf. Eine nicht bestätigte Anmeldung speichern wir nicht: Sie existiert nur im Bestätigungslink, der nach 48 Stunden ungültig wird.
 
 ## 6. Empfänger und Dienstleister
 Wir setzen folgende Dienstleister ein, die Daten in unserem Auftrag nur verarbeiten, soweit dies für ihre Leistung erforderlich ist:
 
-- **Hosting- und E-Mail-Anbieter:** VH.PL, betrieben von der Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Polen. VH.PL stellt die Hosting-Infrastruktur für adeliercommerce.com sowie den E-Mail-Dienst für contact@adeliercommerce.com bereit. Im Rahmen dieser Dienste kann der Anbieter personenbezogene Daten aus Website-Übermittlungen, E-Mail-Korrespondenz und technischen Serveraufzeichnungen verarbeiten, soweit dies zur Erbringung und Aufrechterhaltung der Dienste erforderlich ist. Der maßgebliche Auftragsverarbeitungsvertrag und etwaige Unterauftragsverarbeiter stehen unter dem Vorbehalt der Bestätigung.
+- **Hosting- und E-Mail-Anbieter:** VH.PL, betrieben von der Prociv Sp. z o.o., ul. Czerniawska 2A/27, 50-576 Wrocław, Polen. VH.PL stellt die Hosting-Infrastruktur für adeliercommerce.com sowie den E-Mail-Dienst für contact@adeliercommerce.com bereit. Im Rahmen dieser Dienste kann der Anbieter personenbezogene Daten aus Kontaktformularanfragen, E-Mail-Korrespondenz und technischen Serveraufzeichnungen verarbeiten, soweit dies zur Erbringung und Aufrechterhaltung der Dienste erforderlich ist. Der maßgebliche Auftragsverarbeitungsvertrag und etwaige Unterauftragsverarbeiter müssen noch bestätigt werden.
 
 Anfragen über das Kontaktformular sendet unsere Website direkt über den Mailserver von VH.PL an das Postfach contact@adeliercommerce.com. Ein gesonderter Formular- oder Weiterleitungsdienst wird nicht verwendet.
 
 - **Einwilligungsregister und E-Mail:** Einwilligungsnachweise werden als E-Mail-Nachrichten in einem eigenen Ordner des von VH.PL (Polen) bereitgestellten Postfachs gespeichert. Über dasselbe Postfach versenden wir Bestätigungs-E-Mails, angeforderte Materialien und, mit Ihrer Einwilligung, Werbe-E-Mails. Sollten wir ein separates Versandtool einsetzen, nennen wir es hier, bevor wir es verwenden.
 
 ## 7. Übermittlung in Länder außerhalb des Europäischen Wirtschaftsraums
-Unser Hostinganbieter VH.PL gibt an, dass sich seine Rechenzentrumsinfrastruktur in Danzig (Gdańsk) und Gdingen (Gdynia), Polen, und damit innerhalb des Europäischen Wirtschaftsraums befindet.
+Unser Hostinganbieter VH.PL gibt an, dass sich seine Rechenzentren in Gdańsk und Gdynia (Polen) und damit innerhalb des Europäischen Wirtschaftsraums befinden.
 
 Für das Kontaktformular, die E-Mail-Kommunikation und das Einwilligungsregister nutzen wir die Infrastruktur von VH.PL. Eine etwaige Einbindung von Unterauftragnehmern des Hostinganbieters richtet sich nach den Bedingungen der von ihm erbrachten Dienste.
 
@@ -47,13 +47,13 @@ Im Rahmen unserer eigenen Kontakt- und Marketingprozesse geben wir personenbezog
 ## 8. Webanalyse, Cookies und Newsletter
 Derzeit verwenden wir keine Webanalyse-Tools oder Werbepixel. Wir setzen keine Cookies oder vergleichbare Technologien zu Analyse- oder Werbezwecken ein. Der Betrieb und die Sicherheit der Website können mit der Verarbeitung technischer Informationen durch unseren Hostinganbieter verbunden sein, einschließlich der in dieser Datenschutzerklärung beschriebenen Serverprotokolle. Bevor wir Technologien einsetzen, die eine vorherige Einwilligung erfordern, führen wir einen entsprechenden Einwilligungsmechanismus ein.
 
-Sie können sich für Angebote und Neuigkeiten per E-Mail und, gesondert, per Telefon anmelden. Die Anmelde- und Abmeldeseiten verwenden keine Cookies und keinen Browserspeicher. Wie die Einwilligung erteilt, nachgewiesen und widerrufen wird, beschreibt Abschnitt 12.
+Sie können sich für Angebote und Neuigkeiten per E-Mail sowie gesondert für telefonische Mitteilungen anmelden. Die Anmelde- und Abmeldeseiten verwenden keine Cookies und keinen Browserspeicher. Wie die Einwilligung erteilt, nachgewiesen und widerrufen wird, beschreibt Abschnitt 12.
 
 ## 9. Automatisierte Entscheidungsfindung
 Ihre Daten werden nicht für eine automatisierte Entscheidungsfindung oder ein Profiling verwendet, das Ihnen gegenüber rechtliche Wirkung entfaltet oder Sie in ähnlicher Weise erheblich beeinträchtigt.
 
 ## 10. Ihre Rechte
-Soweit die DSGVO dies vorsieht, haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Gegen Verarbeitungen auf Grundlage berechtigter Interessen können Sie Widerspruch einlegen. Beruht eine Verarbeitung auf Ihrer Einwilligung, können Sie diese jederzeit widerrufen; die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt unberührt. Ihre Einwilligung in werbliche Informationen widerrufen Sie auf der Abmeldeseite /unsubscribe. Wenden Sie sich dazu an **contact@adeliercommerce.com**. Sie können außerdem Beschwerde bei der polnischen Datenschutzaufsichtsbehörde, dem **Präsidenten des Amtes für den Schutz personenbezogener Daten (UODO)**, einreichen (www.uodo.gov.pl).
+Soweit die DSGVO dies vorsieht, haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit. Gegen Verarbeitungen auf Grundlage berechtigter Interessen können Sie Widerspruch einlegen. Beruht eine Verarbeitung auf Ihrer Einwilligung, können Sie diese jederzeit widerrufen; die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt unberührt. Ihre Einwilligung in werbliche Informationen widerrufen Sie auf der Abmeldeseite /unsubscribe. Wenden Sie sich dazu an **contact@adeliercommerce.com**. Sie können außerdem Beschwerde beim **Präsidenten der polnischen Datenschutzbehörde (Prezes Urzędu Ochrony Danych Osobowych, UODO)** einreichen (www.uodo.gov.pl).
 
 Wenn Sie sich im Vereinigten Königreich befinden, stehen Ihnen entsprechende Rechte nach der UK GDPR zu, und Sie können sich zusätzlich beim **Information Commissioner's Office (ICO)** beschweren (www.ico.org.uk).
 
@@ -65,9 +65,9 @@ Diese Erklärung wird angepasst, wenn sich unsere Datenverarbeitung, die Hosting
 ## 12. Werbliche Informationen und Einwilligungsnachweise
 Auf der Anmeldeseite können Sie gesondert in den Erhalt werblicher Informationen per E-Mail und, optional, per Telefon einwilligen. Keines der Felder ist vorausgewählt, und Sie können eine Einwilligung ohne die andere erteilen. Für den Download kostenloser Materialien ist keine der beiden erforderlich: Wir senden sie einmalig an die angegebene Adresse.
 
-Die Einwilligung wird erst wirksam, wenn Sie den an Ihre Adresse gesendeten Link öffnen und die Bestätigung drücken (Double-Opt-in). Der Link ist 48 Stunden gültig; eine nicht bestätigte Anmeldung wird nicht gespeichert.
+Die Einwilligung wird erst wirksam, wenn Sie den an Ihre Adresse gesendeten Link öffnen und auf die Schaltfläche zur Bestätigung klicken (Double-Opt-in). Der Link ist 48 Stunden gültig; eine nicht bestätigte Anmeldung wird nicht gespeichert.
 
-Wenn Sie Ihre Anmeldung bestätigen, bewahren wir einen Nachweis auf über Ihre E-Mail-Adresse, den Namen, das Unternehmen und die Telefonnummer, die Sie freiwillig angegeben haben, die konkret erteilten Einwilligungen, den genauen Wortlaut und die Version jeder Einwilligung, die verwendete Sprache und Seite sowie die Zeitpunkte der Anmeldung und der Bestätigung. In unserem Register für Marketing-Einwilligungen erheben oder speichern wir IP-Adressen nicht bewusst. Rechtsgrundlage für den Versand werblicher Informationen ist Ihre Einwilligung (Art. 6 Abs. 1 Buchst. a DSGVO in Verbindung mit den nationalen Vorschriften zur Direktwerbung: Art. 398 des polnischen Gesetzes über elektronische Kommunikation, § 7 UWG und, für Empfänger im Vereinigten Königreich, die Privacy and Electronic Communications Regulations (PECR)). Rechtsgrundlage für die Aufbewahrung des Nachweises ist unser berechtigtes Interesse, die Einwilligung nachweisen zu können (Art. 6 Abs. 1 Buchst. f und Art. 7 Abs. 1 DSGVO).
+Wenn Sie Ihre Anmeldung bestätigen, speichern wir einen Nachweis über die erteilten Einwilligungen. Dieser umfasst Ihre E-Mail-Adresse, die von Ihnen freiwillig angegebenen Angaben zu Ihrem Namen, Ihrem Unternehmen und Ihrer Telefonnummer, die konkret erteilten Einwilligungen, deren genauen Wortlaut und jeweilige Version, die verwendete Sprache, die Anmeldeseite sowie Datum und Uhrzeit der Anmeldung und Bestätigung. In unserem Register für Marketing-Einwilligungen erheben oder speichern wir IP-Adressen nicht gezielt. Rechtsgrundlage für den Versand werblicher Informationen ist Ihre Einwilligung (Art. 6 Abs. 1 Buchst. a DSGVO in Verbindung mit den nationalen Vorschriften zur Direktwerbung: Art. 398 des polnischen Gesetzes über elektronische Kommunikation, § 7 UWG und, für Empfänger im Vereinigten Königreich, die Privacy and Electronic Communications Regulations (PECR)). Rechtsgrundlage für die Aufbewahrung des Nachweises ist unser berechtigtes Interesse, die Einwilligung nachweisen zu können (Art. 6 Abs. 1 Buchst. f und Art. 7 Abs. 1 DSGVO).
 
 Sie können Ihre Einwilligung jederzeit so einfach widerrufen, wie Sie sie erteilt haben: über den Link in jeder unserer Nachrichten oder auf der Abmeldeseite /unsubscribe, auf der nur Ihre E-Mail-Adresse benötigt wird. Der Widerruf gilt für alle zu dieser Adresse erteilten Einwilligungen.
 
