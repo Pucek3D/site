@@ -29,10 +29,10 @@ We use the following service providers, who process data on our behalf only to t
 
 The service used to forward form submissions to the mailbox will be named here before the form is put into operation.
 
-- **Consent register and mailing tool:** TODO-CONFIRM (name and location of the provider that stores consent records and sends commercial e-mail). Confirmation and delivery e-mails are sent from the mailbox contact@adeliercommerce.com provided by VH.PL.
+- **Consent register and e-mail:** consent records are stored as e-mail messages in a dedicated folder of the mailbox provided by VH.PL (Poland). The same mailbox is used to send confirmation e-mails, requested materials and, with your consent, commercial e-mails. If we start using a separate mailing tool, we will name it here before using it.
 
 ## 7. Transfers outside the European Economic Area
-We do not currently plan to transfer personal data outside the European Economic Area. If a service provider engaged later, for example to forward form submissions, processes data outside the EEA, this section will be updated before that happens to name the provider and the safeguards used. Whether the consent register or mailing tool named in section 6 processes data outside the EEA, and which safeguards apply: TODO-CONFIRM. You can request information by contacting **contact@adeliercommerce.com**.
+We do not currently plan to transfer personal data outside the European Economic Area. If a service provider engaged later, for example to forward form submissions, processes data outside the EEA, this section will be updated before that happens to name the provider and the safeguards used. The consent register and e-mail named in section 6 are provided by VH.PL in Poland, within the EEA. You can request information by contacting **contact@adeliercommerce.com**.
 
 ## 8. Analytics, cookies and newsletter
 We currently do not use analytics tools or advertising pixels. We do not use cookies or similar technologies for analytics or advertising purposes. Website operation and security may involve technical information processed by our hosting provider, including the server logs described in this notice. Before introducing any technology that requires prior consent, we will implement an appropriate consent mechanism.

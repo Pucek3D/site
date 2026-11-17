@@ -29,10 +29,10 @@ Korzystamy z następujących dostawców usług, którzy przetwarzają dane w nas
 
 Usługa przekazująca zgłoszenia z formularza do skrzynki pocztowej zostanie tu wskazana przed uruchomieniem formularza.
 
-- **Rejestr zgód i narzędzie do wysyłki:** TODO-CONFIRM (nazwa i lokalizacja dostawcy przechowującego rejestr zgód i wysyłającego informacje handlowe). Wiadomości potwierdzające i z materiałami wysyłamy ze skrzynki contact@adeliercommerce.com zapewnianej przez VH.PL.
+- **Rejestr zgód i poczta:** zapisy zgód przechowujemy w postaci wiadomości e-mail w wydzielonym folderze skrzynki pocztowej zapewnianej przez VH.PL (Polska). Z tej samej skrzynki wysyłamy wiadomości potwierdzające, zamówione materiały oraz, za Twoją zgodą, wiadomości handlowe. Jeśli zaczniemy korzystać z osobnego narzędzia do wysyłki, wskażemy je tutaj przed rozpoczęciem korzystania.
 
 ## 7. Przekazywanie danych poza Europejski Obszar Gospodarczy
-Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Czy rejestr zgód lub narzędzie do wysyłki wskazane w punkcie 6 przetwarza dane poza EOG i jakie stosuje zabezpieczenia: TODO-CONFIRM. Informacje możesz uzyskać pod adresem **contact@adeliercommerce.com**.
+Obecnie nie planujemy przekazywania danych osobowych poza Europejski Obszar Gospodarczy. Jeżeli dostawca usług zaangażowany w przyszłości, na przykład do przekazywania zgłoszeń z formularza, będzie przetwarzał dane poza EOG, przed rozpoczęciem takiego przetwarzania uzupełnimy ten punkt o nazwę dostawcy i stosowane zabezpieczenia. Rejestr zgód i pocztę wskazane w punkcie 6 zapewnia VH.PL w Polsce, na terenie EOG. Informacje możesz uzyskać pod adresem **contact@adeliercommerce.com**.
 
 ## 8. Analityka, pliki cookies i newsletter
 Obecnie nie korzystamy z narzędzi analitycznych ani pikseli reklamowych. Nie stosujemy plików cookies ani podobnych technologii w celach analitycznych lub marketingowych. Funkcjonowanie serwisu i jego bezpieczeństwo mogą wiązać się z przetwarzaniem informacji technicznych przez dostawcę hostingu, w tym logów serwerowych opisanych w niniejszej polityce. Przed uruchomieniem technologii wymagających uprzedniej zgody wdrożymy odpowiedni mechanizm jej uzyskania.

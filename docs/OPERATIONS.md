@@ -46,6 +46,10 @@ justified later. Without a recorded reason, the monthly review applies.
   the contract and accounting rules that apply to it).
 - Correspondence needed to establish, pursue or defend a legal claim, until
   that need ends.
+- The consent folder in the `CONSENT_LOG_EMAIL` mailbox (every message whose
+  subject starts with `[CONSENT]`). It is the consent register, i.e. the only
+  proof that consent was given or withdrawn. The monthly inquiry cleanup never
+  deletes from it; it is deleted only under "Retention of proof" below.
 
 ### Backups
 
@@ -73,18 +77,22 @@ reply confirming what was deleted.
 ## Consent register and withdrawals
 
 The sign-up flow (`/subscribe`) is off unless `SUBSCRIBE_ENABLED=true`. When on,
-each confirmed sign-up and each withdrawal arrives as one record (JSON to
-`CONSENT_WEBHOOK_URL` and/or plain text to `CONSENT_LOG_EMAIL`). There is no
-database: the register you keep from these records is the only proof of consent.
+each confirmed sign-up and each withdrawal arrives as one plain-text e-mail to
+`CONSENT_LOG_EMAIL`, a dedicated address in the VH.PL mailbox (never
+`contact@`). The subject starts with `[CONSENT] confirmed` or
+`[CONSENT] withdrawn`; a mailbox rule files these into the consent folder.
+There is no database, no webhook and no external mailing tool
+(`CONSENT_WEBHOOK_URL` is ignored): the consent folder is the only proof of
+consent.
 
 ### Weekly review (every Monday)
 
-1. Collect every record with `status: "withdrawn"` received since the last review.
+1. Collect every `[CONSENT] withdrawn` record received since the last review.
    Withdrawals also arrive by e-mail to `contact@adeliercommerce.com`; treat those
-   the same.
-2. Suppress each address in the mailing tool, so it cannot be mailed again by
-   any campaign or import. Do this within 24 hours of receipt, and never later
-   than 10 business days.
+   the same and move a copy into the consent folder.
+2. Add each address to the suppression list kept in the consent folder and
+   remove it from every send list, so it cannot be mailed again. Do this within
+   24 hours of receipt, and never later than 10 business days.
 3. A withdrawal covers e-mail and phone for that address. Remove the phone
    number from any call list as well.
 4. Never delete a withdrawal record to "clean up": it is the proof that the
@@ -103,6 +111,5 @@ Phone offers only to numbers with a confirmed `phone` consent.
 
 Keep each consent record, and its withdrawal, for `____` (TODO-CONFIRM, the
 same period as in section 12 of the privacy notices) after withdrawal or after
-mailing to that address stops. Then delete it from the register, the mailbox
-and the webhook destination. Duplicates share an `idempotencyKey` and may be
-discarded.
+mailing to that address stops. Then delete it from the consent folder. Duplicates
+share an `idempotencyKey` and may be discarded.

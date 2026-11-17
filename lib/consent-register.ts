@@ -4,13 +4,14 @@ import { siteConfig } from './site-config'
 import type { Locale } from './i18n'
 
 /**
- * The consent register adapter. There is no database: every confirmed consent and
- * every withdrawal is delivered as one record to
- *   - CONSENT_WEBHOOK_URL as JSON (Authorization: Bearer CONSENT_WEBHOOK_SECRET if set), and/or
- *   - CONSENT_LOG_EMAIL (default CONTACT_TO_EMAIL) as a plain-text e-mail via the site's SMTP.
- * Both are attempted when configured; the record counts as delivered when at least one
- * accepted it. `idempotencyKey` lets the register ignore duplicates (for example a
- * double click on "Confirm").
+ * The consent register adapter. There is no database and no webhook: the register
+ * is the VH.PL mailbox. Every confirmed consent and every withdrawal is e-mailed as
+ * one plain-text record, via the site's SMTP, to CONSENT_LOG_EMAIL, a dedicated
+ * address that must differ from the inquiry mailbox so the monthly inquiry cleanup
+ * never touches it. Each subject starts with "[CONSENT] confirmed" or
+ * "[CONSENT] withdrawn" so a mailbox rule can file it into the consent folder.
+ * CONSENT_WEBHOOK_URL is deliberately not read. `idempotencyKey` lets duplicates
+ * (for example a double click on "Confirm") be recognised and discarded.
  *
  * Records are never logged. Failures log the error kind only.
  */
@@ -42,8 +43,16 @@ export type ConsentRecord = {
 
 export type RegisterResult = { ok: true } | { ok: false; reason: 'not_configured' | 'delivery_failed' }
 
+/** The dedicated register address, or null when missing or shared with the inquiry mailbox. */
+export function consentLogAddress(): string | null {
+  const to = process.env.CONSENT_LOG_EMAIL?.trim().toLowerCase()
+  if (!to) return null
+  const inquiry = [process.env.CONTACT_TO_EMAIL, siteConfig.email.value].map((a) => a?.trim().toLowerCase())
+  return inquiry.includes(to) ? null : to
+}
+
 export function registerConfigured() {
-  return Boolean(process.env.CONSENT_WEBHOOK_URL) || Boolean(smtpSettings())
+  return Boolean(smtpSettings()) && consentLogAddress() !== null
 }
 
 export function createTransport() {
@@ -95,44 +104,30 @@ function renderRecord(r: ConsentRecord) {
 }
 
 export async function registerConsent(record: ConsentRecord): Promise<RegisterResult> {
-  const webhook = process.env.CONSENT_WEBHOOK_URL
   const mail = createTransport()
-  if (!webhook && !mail) {
+  const to = consentLogAddress()
+  if (!mail || !to) {
     console.error('[consent] no register configured; record not delivered')
     return { ok: false, reason: 'not_configured' }
   }
 
-  const attempts: Promise<void>[] = []
-  if (webhook) {
-    attempts.push(
-      (async () => {
-        const headers: Record<string, string> = { 'content-type': 'application/json', 'idempotency-key': record.idempotencyKey }
-        if (process.env.CONSENT_WEBHOOK_SECRET) headers.authorization = `Bearer ${process.env.CONSENT_WEBHOOK_SECRET}`
-        const res = await fetch(webhook, {
-          method: 'POST',
-          headers,
-          signal: AbortSignal.timeout(DELIVERY_TIMEOUT_MS),
-          body: JSON.stringify(record),
-        })
-        if (!res.ok) throw Object.assign(new Error('webhook rejected'), { code: `HTTP_${res.status}` })
-      })(),
+  try {
+    await withTimeout(
+      mail.transport.sendMail({
+        from: mail.from,
+        to,
+        subject: consentSubject(record),
+        text: renderRecord(record),
+      }),
     )
+    return { ok: true }
+  } catch (err) {
+    console.error('[consent] register delivery failed', errorKind(err))
+    return { ok: false, reason: 'delivery_failed' }
   }
-  if (mail) {
-    const to = process.env.CONSENT_LOG_EMAIL || process.env.CONTACT_TO_EMAIL || siteConfig.email.value
-    attempts.push(
-      withTimeout(
-        mail.transport.sendMail({
-          from: mail.from,
-          to,
-          subject: `Consent register: ${record.status} (${record.idempotencyKey.slice(0, 12)})`,
-          text: renderRecord(record),
-        }),
-      ).then(() => undefined),
-    )
-  }
+}
 
-  const results = await Promise.allSettled(attempts)
-  for (const r of results) if (r.status === 'rejected') console.error('[consent] register delivery failed', errorKind(r.reason))
-  return results.some((r) => r.status === 'fulfilled') ? { ok: true } : { ok: false, reason: 'delivery_failed' }
+/** "[CONSENT] confirmed …" / "[CONSENT] withdrawn …": the prefix a mailbox rule files on. */
+export function consentSubject(record: Pick<ConsentRecord, 'status' | 'idempotencyKey'>) {
+  return `[CONSENT] ${record.status} (${record.idempotencyKey.slice(0, 12)})`
 }

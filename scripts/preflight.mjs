@@ -58,10 +58,18 @@ if (env.SUBSCRIBE_ENABLED === 'true') {
   if (!env.CONSENT_TOKEN_SECRET || env.CONSENT_TOKEN_SECRET.length < 32) {
     blockers.push('SUBSCRIBE_ENABLED is true but CONSENT_TOKEN_SECRET is missing or shorter than 32 characters.')
   }
-  if (!env.CONSENT_WEBHOOK_URL && !smtpReady) {
-    blockers.push(
-      'SUBSCRIBE_ENABLED is true but no consent register is configured (CONSENT_WEBHOOK_URL or SMTP_*): every sign-up would fail.',
-    )
+  if (!smtpReady) {
+    blockers.push('SUBSCRIBE_ENABLED is true but SMTP_* is not configured: consent records cannot reach the register and every sign-up would fail.')
+  }
+  const consentLog = env.CONSENT_LOG_EMAIL?.trim().toLowerCase()
+  const inquiry = [env.CONTACT_TO_EMAIL, 'contact@adeliercommerce.com'].map((a) => a?.trim().toLowerCase())
+  if (!consentLog) {
+    blockers.push('SUBSCRIBE_ENABLED is true but CONSENT_LOG_EMAIL is empty: the consent register needs its own dedicated address.')
+  } else if (inquiry.includes(consentLog)) {
+    blockers.push('CONSENT_LOG_EMAIL must be a dedicated address, not the inquiry mailbox: the monthly inquiry cleanup would delete proof of consent.')
+  }
+  if (env.CONSENT_WEBHOOK_URL) {
+    warnings.push('CONSENT_WEBHOOK_URL is set but unused: the register is the CONSENT_LOG_EMAIL mailbox only.')
   }
   if (env.LEGAL_PUBLISH_APPROVED !== 'true') {
     blockers.push('SUBSCRIBE_ENABLED is true but LEGAL_PUBLISH_APPROVED is not "true": the sign-up form links to an unpublished Privacy Notice.')
