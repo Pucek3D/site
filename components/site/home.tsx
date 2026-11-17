@@ -164,9 +164,9 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
           <span aria-hidden className="h-px w-6 bg-sage" />
           {labelText(w.title)}
         </h2>
-        {/* One flat full-width tile per row; the image alternates sides so the list reads as a sequence of rows, not a grid. */}
+        {/* Three text-only tiles side by side in one row (stacked on mobile). */}
         <ServiceTileList
-          tiles={DISPLAY_ORDER.map((i, row) => {
+          tiles={DISPLAY_ORDER.map((i) => {
             const s = w.items[i]
             const v = services[i]
             return {
@@ -174,13 +174,9 @@ function WhatWeDo({ locale, copy }: { locale: Locale; copy: PartnerCopy }) {
               name: s.name,
               paragraphs: s.paragraphs,
               bullets: s.bullets,
-              art: v.art,
-              alt: copy.homeImageAlts[v.alt],
-              focus: 'focus' in v ? v.focus : undefined,
-                    accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
+              accent: i === TRAINING_INDEX ? 'sage' : 'cobalt',
               to: href(locale, v.to, v.to === 'brands' ? '#ppc' : ''),
               labels: TILE_LABELS[locale][i],
-              imageLeft: row % 2 === 1,
             }
           })}
         />

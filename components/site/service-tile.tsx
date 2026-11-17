@@ -1,7 +1,6 @@
 'use client'
 
 import { useId, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -24,18 +23,11 @@ export type ServiceTileData = {
   tagline?: string
   paragraphs: string[]
   bullets?: string[]
-  art: string
-  alt: string
-  /** CSS object-position for the photo, when its subject is off-centre (e.g. "50% 20%"). */
-  focus?: string
-  zoom?: number
   /** Cobalt for the audience routes (Agencies, Brands), sage for Training. */
   accent: 'cobalt' | 'sage'
   /** Omitted when the service has no page of its own, so the tile renders no explore link. */
   to?: string
   labels: TileLabels
-  /** Every tile is a full-width row; this puts the image on the left instead of the right. */
-  imageLeft?: boolean
 }
 
 /**
@@ -45,7 +37,7 @@ export type ServiceTileData = {
 export function ServiceTileList({ tiles }: { tiles: ServiceTileData[] }) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null)
   return (
-    <ul className="mt-7 flex flex-col gap-5">
+    <ul className="mt-7 grid gap-5 md:grid-cols-3">
       {tiles.map((t) => (
         <ServiceTile
           key={t.id}
@@ -82,14 +74,9 @@ function ServiceTile({
   tagline,
   paragraphs,
   bullets,
-  art,
-  alt,
-  focus,
-  zoom,
   accent,
   to,
   labels,
-  imageLeft,
   open,
   onToggle,
 }: ServiceTileData & { open: boolean; onToggle: () => void }) {
@@ -104,12 +91,10 @@ function ServiceTile({
     <li
       data-active={open}
       className={cn(
-        'service-tile group relative flex flex-col gap-3 overflow-hidden rounded-3xl p-3 ring-1 ring-[var(--tile-rule)]',
-        imageLeft ? 'md:flex-row-reverse' : 'md:flex-row',
-        'md:min-h-[17rem]',
+        'service-tile group relative flex flex-col overflow-hidden rounded-3xl p-3 ring-1 ring-[var(--tile-rule)]',
       )}
     >
-      <div className="flex min-w-0 flex-col px-4 pb-4 pt-5 md:w-1/2 md:px-8 md:pb-5 md:pt-6 lg:px-10">
+      <div className="flex min-w-0 flex-1 flex-col px-4 pb-4 pt-5 md:px-5 md:pb-5 md:pt-6 lg:px-7">
         <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.08em] text-[var(--tile-body)] sm:tracking-[0.14em]">
           {number ? (
             <>
@@ -121,7 +106,7 @@ function ServiceTile({
         </div>
 
         {/* With no tagline, the service name itself is the tile heading. */}
-        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-[var(--tile-head)] [hyphens:auto] md:text-[2rem] lg:text-[2.375rem]">
+        <h3 className="mt-5 text-balance font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-[var(--tile-head)] [hyphens:auto] md:text-[1.5rem] lg:text-[1.875rem]">
           {headline ? (
             <>
               {headline.lead ? <span className="block">{headline.lead}</span> : null}
@@ -195,30 +180,6 @@ function ServiceTile({
               <Chevron aria-hidden className="size-4" />
             </button>
           ) : null}
-        </div>
-      </div>
-
-      <div
-        className={cn(
-          'relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-auto md:min-h-[15rem] md:flex-1',
-          imageLeft ? 'md:rounded-tr-[10rem]' : 'md:rounded-tl-[10rem]',
-        )}
-      >
-        {/* The photo's aspect ratio is close to the frame's, so object-position has
-            almost no slack to move. A zoom anchored on the focus point is what can
-            actually bring an off-centre subject into the middle. */}
-        <div
-          className="absolute inset-0"
-          style={zoom ? { transform: `scale(${zoom})`, transformOrigin: focus ?? 'center' } : undefined}
-        >
-          <Image
-            src={art}
-            alt={alt}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            style={focus ? { objectPosition: focus } : undefined}
-            className="object-cover object-center"
-          />
         </div>
       </div>
     </li>
