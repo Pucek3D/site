@@ -173,36 +173,52 @@ export function pageMetadata(locale: Locale, page: PageKey): Metadata {
 }
 
 /** One article in one language: canonical to itself, hreflang only for languages it is actually published in. */
-export function articleMetadata(post: Post): Metadata {
-  const canonical = `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`
-  const description = post.seo?.description ?? clean(excerptOf(post))
-  const ogDescription = post.seo?.ogDescription ?? description
-  const title = post.seo?.title ?? `${post.title} | ADelier Commerce`
-  const image = `${siteConfig.url}${post.cover.src}`
-  const langs = Object.fromEntries(
+/**
+ * Reciprocal hreflang for one article: every language it is genuinely published in,
+ * plus x-default on the English version when one exists. Shared by the page
+ * metadata and the sitemap so the two cannot disagree.
+ */
+export function articleLanguages(post: Post): Record<string, string> {
+  const langs: Record<string, string> = Object.fromEntries(
     locales.flatMap((l) => {
       const slug = translatedSlug(post.slug, post.locale, l)
       return slug ? [[l, `${siteConfig.url}${href(l, 'blog', `/${slug}`)}`]] : []
     }),
   )
+  if (langs.en) langs['x-default'] = langs.en
+  return langs
+}
+
+export function articleMetadata(post: Post): Metadata {
+  const canonical = `${siteConfig.url}${href(post.locale, 'blog', `/${post.slug}`)}`
+  const description = post.seo?.description ?? clean(excerptOf(post))
+  const ogDescription = post.seo?.ogDescription ?? description
+  const title = post.seo?.title ?? `${post.title} | ADelier Commerce`
+  const ogTitle = post.seo?.ogTitle ?? title
+  const image = `${siteConfig.url}${post.cover.src}`
+  const langs = articleLanguages(post)
+  const alternateLocales = Object.keys(langs)
+    .filter((l) => l !== 'x-default' && l !== post.locale)
+    .map((l) => ogLocale[l as Locale])
+  // No `keywords`: Google ignores the meta keywords tag. They are kept for BlogPosting.keywords only.
   return {
     title: { absolute: title },
     description,
-    keywords: post.seo?.keywords,
     alternates: { canonical, languages: langs },
     openGraph: {
-      title,
+      title: ogTitle,
       description: ogDescription,
       url: canonical,
       siteName: siteConfig.name,
       locale: ogLocale[post.locale],
+      alternateLocale: alternateLocales,
       type: 'article',
       publishedTime: post.published,
       modifiedTime: post.modified,
       authors: [siteConfig.name],
       images: [{ url: image, width: post.cover.width, height: post.cover.height, alt: post.cover.alt }],
     },
-    twitter: { card: 'summary_large_image', title, description: ogDescription, images: [{ url: image, alt: post.cover.alt }] },
+    twitter: { card: 'summary_large_image', title: ogTitle, description: ogDescription, images: [{ url: image, alt: post.cover.alt }] },
     robots: seoNoIndex() ? { index: false, follow: false } : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

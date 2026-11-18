@@ -30,7 +30,7 @@ export type Post = {
   /** ISO date of the last content change; equals `published` until the article is edited. */
   modified: string
   /** Search and social copy. Falls back to the title and first paragraph when absent. */
-  seo?: { title: string; description: string; ogDescription: string; keywords: string[] }
+  seo?: { title: string; description: string; ogTitle: string; ogDescription: string; keywords: string[] }
   cover: { src: string; alt: string; width: number; height: number }
   sections: ArticleSection[]
   /** Rendered as a panel at the end of the article. */
@@ -52,25 +52,24 @@ const posts: Post[] = [
     published: '2026-11-17',
     modified: '2026-11-17',
     seo: {
-      title: 'Czy warto sprzedawać na Amazonie? | ADelier Commerce',
-      description: 'Czy sprzedaż na Amazonie się opłaca? Sprawdź koszty, potencjał produktu, konkurencję i dowiedz się, kiedy Amazon może pomóc rozwinąć Twoją markę.',
+      title: 'Czy warto sprzedawać na Amazonie? Koszty i zysk | ADelier',
+      description: 'Czy warto sprzedawać na Amazonie? Poznaj koszty, konkurencję, reklamę i czynniki wpływające na rentowność sprzedaży oraz rozwój marki.',
+      ogTitle: 'Czy warto sprzedawać na Amazonie? | ADelier Commerce',
       ogDescription: 'Amazon może pomóc Twojej marce zwiększyć sprzedaż i wejść na nowe rynki. Dowiedz się, kiedy warto zainwestować w ten kanał i jak ocenić jego rentowność.',
       keywords: [
         'czy warto sprzedawać na Amazonie',
-        'sprzedaż na Amazonie',
-        'czy Amazon się opłaca',
-        'koszty sprzedaży na Amazonie',
-        'jak sprzedawać na Amazonie',
-        'rentowność sprzedaży na Amazonie',
-        'Amazon dla marek',
-        'ekspansja zagraniczna Amazon',
-        'Amazon Ads',
-        'strategia sprzedaży na Amazonie',
+        'sprzedaż na Amazon',
+        'czy sprzedaż na Amazon się opłaca',
+        'koszty sprzedaży na Amazon',
+        'jak zacząć sprzedawać na Amazon',
+        'opłacalność sprzedaży na Amazon',
+        'wejście na Amazon',
+        'Amazon dla polskich marek',
       ],
     },
     cover: {
       src: '/images/blog/czy-warto-sprzedawac-na-amazonie.png',
-      alt: 'Sprzedaż na Amazonie – analiza potencjału i skalowania sprzedaży marki | ADelier Commerce',
+      alt: 'Grafika ADelier Commerce dotycząca sprzedaży na Amazonie, przedstawiająca ofertę produktu i analizę sprzedaży.',
       width: 1672,
       height: 941,
     },
@@ -193,25 +192,24 @@ const posts: Post[] = [
     published: '2026-11-17',
     modified: '2026-11-17',
     seo: {
-      title: 'Is It Worth Selling on Amazon? | ADelier Commerce',
-      description: 'Is selling on Amazon profitable? Learn about the costs, product potential and competition, and find out when Amazon can help grow your brand.',
-      ogDescription: 'Amazon can help your brand grow sales and enter new markets. Find out when it is worth investing in this channel and how to assess its profitability.',
+      title: 'Is Selling on Amazon Worth It? Costs & Profitability | ADelier',
+      description: 'Is selling on Amazon worth it for your brand? Explore costs, competition, advertising, profit margins and growth opportunities before you launch.',
+      ogTitle: 'Is It Worth Selling on Amazon? | ADelier Commerce',
+      ogDescription: 'Thinking about selling on Amazon? Explore the costs, competition and growth opportunities that determine whether the marketplace is right for your brand.',
       keywords: [
-        'is it worth selling on Amazon',
-        'selling on Amazon',
-        'is Amazon profitable',
-        'cost of selling on Amazon',
-        'how to sell on Amazon',
-        'Amazon sales profitability',
-        'Amazon for brands',
-        'Amazon international expansion',
-        'Amazon Ads',
-        'Amazon sales strategy',
+        'is selling on Amazon worth it',
+        'should I sell on Amazon',
+        'is selling on Amazon profitable',
+        'costs of selling on Amazon',
+        'benefits of selling on Amazon',
+        'selling on Amazon for brands',
+        'Amazon selling profitability',
+        'Amazon marketplace expansion',
       ],
     },
     cover: {
       src: '/images/blog/is-it-worth-selling-on-amazon.png',
-      alt: 'Selling on Amazon – assessing the potential and scaling a brand’s sales | ADelier Commerce',
+      alt: 'ADelier Commerce illustration about selling on Amazon, featuring a marketplace product listing and sales analytics.',
       width: 1672,
       height: 941,
     },
