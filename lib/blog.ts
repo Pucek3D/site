@@ -218,7 +218,7 @@ const posts: Post[] = [
     sections: [
       {
         blocks: [
-          p('Amazon is one of the world’s largest online marketplaces and can be a highly attractive sales channel for many brands. But should every brand sell on Amazon? Not necessarily.'),
+          p('Amazon is one of the world’s largest online marketplaces and can be a valuable sales channel for brands. But is selling on Amazon the right move for every business? Not necessarily.'),
           p('Amazon can give businesses access to millions of potential customers and new markets. At the same time, it comes with intense competition, significant costs, the need to invest in advertising, and the ongoing challenge of optimisation.'),
           p('Before deciding to launch on Amazon, it is therefore worth asking yourself a few fundamental questions:'),
           questions('Are my customers shopping on Amazon? Does my product have sales potential on the platform? Can I sell profitably? And could Amazon become a sustainable, long-term growth channel for my brand?'),
