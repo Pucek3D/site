@@ -1,4 +1,4 @@
-import { hasBlog, postAvailableIn } from './blog-registry'
+import { hasBlog, translatedSlug } from './blog-registry'
 
 export const locales = ['en', 'pl', 'de'] as const
 export type Locale = (typeof locales)[number]
@@ -85,7 +85,10 @@ export function switchLocalePath(pathname: string, target: Locale, search?: URLS
   if (pageFromPath(pathname) === 'blog') {
     if (!hasBlog(target)) return `/${target}`
     const slug = rest.match(/^\/blog\/([^/?#]+)/)?.[1]
-    return slug && !postAvailableIn(slug, target) ? `/${target}/blog` : base
+    if (!slug) return base
+    const from = pathname.match(/^\/(en|pl|de)(?=\/|$)/)?.[1] as Locale | undefined
+    const translated = from ? translatedSlug(slug, from, target) : undefined
+    return translated ? `/${target}/blog/${translated}` : `/${target}/blog`
   }
   if (!search || pageFromPath(pathname) !== 'contact') return base
   const topic = search.get('topic') ?? search.get('inquiry')

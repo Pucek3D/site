@@ -4,7 +4,7 @@ import { href, locales, localesFor, ogLocale, type Locale, type PageKey } from '
 import { siteConfig } from './site-config'
 import { seoNoIndex } from './seo-runtime'
 import { excerptOf, type Post } from './blog'
-import { postAvailableIn } from './blog-registry'
+import { translatedSlug } from './blog-registry'
 
 type PublicPage = Exclude<PageKey, 'privacy' | 'legal'>
 
@@ -180,7 +180,10 @@ export function articleMetadata(post: Post): Metadata {
   const title = post.seo?.title ?? `${post.title} | ADelier Commerce`
   const image = `${siteConfig.url}${post.cover.src}`
   const langs = Object.fromEntries(
-    locales.filter((l) => postAvailableIn(post.slug, l)).map((l) => [l, `${siteConfig.url}${href(l, 'blog', `/${post.slug}`)}`]),
+    locales.flatMap((l) => {
+      const slug = translatedSlug(post.slug, post.locale, l)
+      return slug ? [[l, `${siteConfig.url}${href(l, 'blog', `/${slug}`)}`]] : []
+    }),
   )
   return {
     title: { absolute: title },

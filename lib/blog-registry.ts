@@ -8,14 +8,20 @@ import type { Locale } from './i18n'
  */
 export const blogLocales = ['en', 'pl'] as const satisfies readonly Locale[]
 
-export const blogPostLocales: Record<string, readonly Locale[]> = {
-  'czy-warto-sprzedawac-na-amazonie': ['pl'],
-}
+/**
+ * One entry per article: its slug in every language it is published in.
+ * Translations carry their own slug (an English URL in English), so languages
+ * are paired here rather than by sharing a slug.
+ */
+export const blogTranslations: readonly Partial<Record<Locale, string>>[] = [
+  { pl: 'czy-warto-sprzedawac-na-amazonie', en: 'is-it-worth-selling-on-amazon' },
+]
 
 export function hasBlog(locale: Locale): boolean {
   return (blogLocales as readonly Locale[]).includes(locale)
 }
 
-export function postAvailableIn(slug: string, locale: Locale): boolean {
-  return blogPostLocales[slug]?.includes(locale) ?? false
+/** The slug of `slug` (published in `from`) in the `target` language, or undefined when it isn't translated. */
+export function translatedSlug(slug: string, from: Locale, target: Locale): string | undefined {
+  return blogTranslations.find((t) => t[from] === slug)?.[target]
 }
