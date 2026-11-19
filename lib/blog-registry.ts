@@ -15,6 +15,7 @@ export const blogLocales = ['en', 'pl'] as const satisfies readonly Locale[]
  */
 export const blogTranslations: readonly Partial<Record<Locale, string>>[] = [
   { pl: 'czy-warto-sprzedawac-na-amazonie', en: 'is-it-worth-selling-on-amazon' },
+  { en: 'stoveshelf-from-50-units-to-10-million-on-amazon' },
 ]
 
 export function hasBlog(locale: Locale): boolean {

@@ -324,6 +324,80 @@ const posts: Post[] = [
       ],
     },
   },
+  {
+    slug: 'stoveshelf-from-50-units-to-10-million-on-amazon',
+    locale: 'en',
+    title: 'StoveShelf: From 50 Units to a $10 Million Amazon Business',
+    category: 'Case study',
+    published: '2026-11-19',
+    modified: '2026-11-19',
+    cover: {
+      src: '/images/blog/stoveshelf-from-50-units-to-10-million-on-amazon.png',
+      alt: 'A StoveShelf magnetic shelf holding spices, oils and a basil plant above a kitchen stove, next to an Amazon box and a rising sales chart.',
+      width: 1672,
+      height: 941,
+    },
+    sections: [
+      {
+        blocks: [
+          p('Sometimes the biggest business opportunities start with a very simple idea.'),
+          p('Scott Fleming, a Wisconsin woodworker, wanted more storage space in his kitchen. He created a simple prototype by attaching magnets to a piece of wood so it could sit on the backsplash behind his stove.'),
+          p('He searched online to see if someone had already created something similar.'),
+          p('He couldn’t find one.'),
+          p('So he decided to turn the idea into a business.'),
+        ],
+      },
+      {
+        heading: 'From 50 units to almost no sales',
+        blocks: [
+          p('Fleming refined the product, eventually replacing the wood with metal, registered the StoveShelf domain and produced his first 50 units.'),
+          p('But there was a problem.'),
+          p('The product didn’t sell.'),
+          p('He had expected word of mouth to take off, but most of his initial sales came from friends and family. The product seemed to work — but customers weren’t finding it.'),
+          p('That was the turning point.'),
+          lead('The problem wasn’t necessarily the product. It was visibility.'),
+        ],
+      },
+      {
+        heading: 'Amazon changed the trajectory',
+        blocks: [
+          p('In 2017, Fleming launched StoveShelf on Amazon.'),
+          p('The difference was immediate. Within the first year, the business generated around $50,000 in sales. By 2020, annual sales had reached approximately $3 million.'),
+          p('The company also invested in improving its Amazon presence.'),
+          p('The original listing had basic photography. Over time, StoveShelf introduced higher-quality images, video and A+ Content.'),
+          p('And the results kept improving.'),
+          p('Eventually, the product started attracting attention outside Amazon too, including influencers and major publications. Amazon reports that StoveShelf has grown into a multimillion-dollar business with around $10 million in sales.'),
+        ],
+      },
+      {
+        heading: 'The lesson for brands',
+        blocks: [
+          p('The StoveShelf story highlights something important about selling on Amazon:'),
+          lead('A good product is not enough.'),
+          p('Customers need to be able to find it — and once they find it, the product page needs to convince them to buy.'),
+          p('That means success on Amazon depends on much more than simply launching a product.'),
+          p('It requires:'),
+          p('Visibility — getting in front of the right customers.'),
+          p('Strong listings — high-quality images, compelling copy and content that converts.'),
+          p('Advertising — using PPC to generate relevant traffic and support growth.'),
+          p('Data — understanding what customers are searching for and which campaigns and keywords are actually driving sales.'),
+          p('Optimisation — continuously improving the listing and advertising strategy based on performance.'),
+          p('StoveShelf also eventually turned to Fulfillment by Amazon (FBA) as order volumes grew. For Fleming, this removed much of the day-to-day burden of storing, packing and shipping orders and allowed him to focus on growing the business.'),
+        ],
+      },
+      {
+        heading: 'From a simple idea to a scalable business',
+        blocks: [
+          p('The most interesting part of the StoveShelf story isn’t simply the $10 million in sales.'),
+          p('It’s the journey.'),
+          p('A simple product. 50 first units. Almost no sales outside friends and family. A move to Amazon. Better listings and content. Growing visibility. PPC and Amazon tools. And eventually, a multimillion-dollar brand.'),
+          p('Amazon didn’t invent the product.'),
+          p('It provided the infrastructure and access to customers that allowed a simple idea to scale.'),
+          lead('And that is one of the biggest opportunities Amazon offers brands today.'),
+        ],
+      },
+    ],
+  },
 ]
 
 // The switcher reads lib/blog-registry.ts; it must describe exactly these articles.
