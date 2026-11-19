@@ -14,7 +14,7 @@ export const blogLocales = ['en', 'pl'] as const satisfies readonly Locale[]
  * are paired here rather than by sharing a slug.
  */
 export const blogTranslations: readonly Partial<Record<Locale, string>>[] = [
-  { pl: 'czy-warto-sprzedawac-na-amazonie', en: 'is-it-worth-selling-on-amazon' },
+  { pl: 'czy-warto-sprzedawac-na-amazonie' },
   { en: 'stoveshelf-from-50-units-to-10-million-on-amazon' },
 ]
 
