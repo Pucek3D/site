@@ -191,6 +191,21 @@ const posts: Post[] = [
     category: 'Case study',
     published: '2026-11-19',
     modified: '2026-11-19',
+    seo: {
+      title: 'StoveShelf Amazon Success Story: From 50 Units to $10M',
+      description: 'Discover how StoveShelf grew from 50 units into a multimillion-dollar Amazon business, with lessons in product visibility, A+ Content and FBA.',
+      ogTitle: 'StoveShelf: From 50 Units to a $10 Million Amazon Business',
+      ogDescription: 'From 50 initial units to a multimillion-dollar Amazon business. Discover the StoveShelf story and the lessons brands can learn about visibility, listings and scalable fulfilment.',
+      keywords: [
+        'StoveShelf Amazon success story',
+        'StoveShelf Amazon business',
+        'how StoveShelf grew on Amazon',
+        'Amazon seller success story',
+        'Amazon product visibility',
+        'Amazon A+ Content',
+        'Fulfillment by Amazon',
+      ],
+    },
     cover: {
       src: '/images/blog/stoveshelf-from-50-units-to-10-million-on-amazon.png',
       alt: 'A StoveShelf magnetic shelf holding spices, oils and a basil plant above a kitchen stove, next to an Amazon box and a rising sales chart.',
