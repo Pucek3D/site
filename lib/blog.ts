@@ -17,6 +17,8 @@ export type Block =
   | { type: 'questions'; text: string }
   | { type: 'quote'; text: string }
   | { type: 'h3'; text: string }
+  /** Bulleted list; items are kept exactly as written, punctuation included. */
+  | { type: 'list'; items: string[] }
 
 export type ArticleSection = { heading?: string; blocks: Block[] }
 
@@ -42,8 +44,143 @@ const lead = (text: string): Block => ({ type: 'lead', text })
 const questions = (text: string): Block => ({ type: 'questions', text })
 const quote = (text: string): Block => ({ type: 'quote', text })
 const h3 = (text: string): Block => ({ type: 'h3', text })
+const list = (...items: string[]): Block => ({ type: 'list', items })
 
 const posts: Post[] = [
+  {
+    slug: 'czy-reklama-na-amazonie-to-koniecznosc',
+    locale: 'pl',
+    title: 'Czy reklama na Amazonie to konieczność?',
+    category: 'Amazon PPC',
+    published: '2026-11-27',
+    modified: '2026-11-27',
+    seo: {
+      title: 'Czy reklama na Amazonie to konieczność? Amazon PPC | ADelier',
+      description: 'Czy można sprzedawać na Amazonie bez reklamy? Sprawdź, jaką rolę pełni Amazon PPC przy launchu, budżecie i budowaniu sprzedaży organicznej.',
+      ogTitle: 'Czy reklama na Amazonie to konieczność? | ADelier Commerce',
+      ogDescription: 'Reklama na Amazonie nie jest obowiązkiem, ale w wielu kategoriach jest niezbędna do skalowania sprzedaży. Dowiedz się, jaką rolę powinna pełnić w Twojej strategii.',
+      keywords: [
+        'reklama Amazon',
+        'Amazon PPC',
+        'reklamy Amazon Ads',
+        'sprzedaż na Amazon',
+        'Sponsored Products',
+        'budżet reklamowy Amazon',
+      ],
+    },
+    cover: {
+      src: '/images/blog/czy-reklama-na-amazonie-to-koniecznosc.png',
+      alt: 'Laptop na biurku z panelem wyników reklamowych i rosnącym wykresem sprzedaży, obok paczka i kawa.',
+      width: 1376,
+      height: 768,
+    },
+    sections: [
+      {
+        blocks: [
+          p('Czy można sprzedawać na Amazonie bez reklamy? Oczywiście. Pytanie brzmi jednak: czy można w ten sposób skutecznie rosnąć?'),
+          p('Amazon różni się od tradycyjnego sklepu internetowego. Klient przychodzi na platformę z konkretną intencją zakupową, ale jednocześnie ma do wyboru tysiące podobnych produktów. Dlatego nawet bardzo dobry produkt może pozostać niewidoczny, jeśli nie pojawi się przed właściwym klientem we właściwym momencie.'),
+          lead('I właśnie tutaj zaczyna się rola reklamy.'),
+        ],
+      },
+      {
+        heading: 'Nowy produkt bez reklamy ma trudniej',
+        blocks: [
+          p('Wyobraźmy sobie, że wprowadzamy na Amazon nowy produkt. Mamy dobrą jakość, atrakcyjną cenę, profesjonalne zdjęcia i dobrze przygotowaną ofertę.'),
+          p('Problem?'),
+          lead('Amazon jeszcze o tym produkcie „nie wie”.'),
+          p('Produkt nie ma historii sprzedaży, niewiele recenzji, nie ma wysokiej pozycji organicznej i nie posiada jeszcze wystarczającej ilości danych, które pozwoliłyby algorytmowi ocenić jego potencjał.'),
+          p('Reklama pozwala skrócić tę drogę.'),
+          p('Dzięki Amazon PPC możemy kupić widoczność i zacząć generować ruch oraz sprzedaż, a jednocześnie zbierać dane dotyczące:'),
+          list('słów kluczowych,', 'zainteresowania klientów,', 'konwersji,', 'poziomu sprzedaży,', 'konkurencyjności cenowej,', 'skuteczności poszczególnych kampanii.'),
+          p('Dlatego w przypadku nowych produktów reklama jest często jednym z najważniejszych elementów launchu.'),
+        ],
+      },
+      {
+        heading: 'Ale reklama nie powinna być „kołem ratunkowym”',
+        blocks: [
+          p('To bardzo ważne.'),
+          p('Jeżeli produkt nie sprzedaje się bez reklamy, nie zawsze oznacza to, że trzeba zwiększyć budżet.'),
+          p('Problem może znajdować się gdzie indziej.'),
+          p('Na przykład:'),
+          questions('produkt → oferta → cena → listing → reklama → sprzedaż'),
+          p('Jeżeli listing ma słabą konwersję, reklama tylko doprowadzi więcej osób do strony, która nie przekonuje ich do zakupu.'),
+          p('Jeżeli cena jest niekonkurencyjna, zwiększenie budżetu reklamowego również może niewiele zmienić.'),
+          p('Jeżeli produkt nie odpowiada na rzeczywistą potrzebę rynku, nawet najlepsza kampania PPC nie rozwiąże problemu.'),
+          p('Dlatego Amazon PPC powinno być częścią szerszej strategii sprzedaży, a nie próbą „kupienia” sprzedaży za wszelką cenę.'),
+        ],
+      },
+      {
+        heading: 'A co z organiczną sprzedażą?',
+        blocks: [
+          p('Długoterminowo właśnie ona powinna być jednym z celów reklamy.'),
+          p('Amazon analizuje wiele sygnałów związanych ze sprzedażą i zachowaniem klientów. Skuteczna kampania może pomóc zwiększyć widoczność produktu, wygenerować sprzedaż i zdobyć dane, które później wspierają rozwój organiczny.'),
+          p('Dlatego dobrze zarządzana reklama powinna działać jak akcelerator, a nie jak stała podpórka.'),
+          p('Celem nie jest:'),
+          quote('„Musimy cały czas płacić za każdą sprzedaż.”'),
+          p('Celem jest:'),
+          quote('„Wykorzystujemy reklamę, żeby zwiększać sprzedaż i jednocześnie budować silniejszą pozycję produktu.”'),
+        ],
+      },
+      {
+        heading: 'Czy każdy produkt potrzebuje dużego budżetu?',
+        blocks: [
+          p('Nie.'),
+          p('I tutaj często pojawia się największe nieporozumienie.'),
+          p('Reklama na Amazonie nie oznacza automatycznie ogromnego budżetu.'),
+          p('Budżet powinien zależeć między innymi od:'),
+          list('kategorii,', 'konkurencji,', 'ceny produktu,', 'marży,', 'celów sprzedażowych,', 'etapu rozwoju produktu,', 'liczby konkurentów walczących o te same słowa kluczowe.'),
+          p('Innego podejścia wymaga nowy produkt w bardzo konkurencyjnej kategorii, a innego produkt, który od lat generuje sprzedaż i posiada silną pozycję organiczną.'),
+        ],
+      },
+      {
+        heading: 'Kiedy można ograniczyć reklamę?',
+        blocks: [
+          p('Istnieją sytuacje, w których marka może zmniejszyć udział PPC w sprzedaży.'),
+          p('Jeżeli produkt ma:'),
+          list('dużą liczbę opinii,', 'wysoką konwersję,', 'silną pozycję organiczną,', 'rozpoznawalność marki,', 'stabilną sprzedaż organiczną,'),
+          p('można bardziej selektywnie podchodzić do reklamowania.'),
+          p('Nie oznacza to jednak, że PPC przestaje być potrzebne.'),
+          p('Reklama może nadal służyć do: obrony brandu, zdobywania nowych klientów, promocji nowych produktów, zwiększania udziału w kategorii czy reagowania na działania konkurencji.'),
+        ],
+      },
+      {
+        heading: 'Amazon PPC to nie tylko Sponsored Products',
+        blocks: [
+          p('Reklama na Amazonie daje dziś znacznie więcej możliwości niż podstawowe kampanie produktowe.'),
+          p('W zależności od strategii marka może korzystać między innymi z:'),
+          list(
+            'Sponsored Products – promocji konkretnych produktów w wynikach wyszukiwania i na stronach produktów.',
+            'Sponsored Brands – budowania widoczności marki i kierowania ruchu do Brand Store lub określonych produktów.',
+            'Sponsored Display – docierania do klientów na podstawie ich zachowań zakupowych i zainteresowań.',
+            'Amazon DSP – bardziej zaawansowanego rozwiązania pozwalającego budować kampanie skierowane do określonych grup odbiorców na Amazonie i poza nim.',
+          ),
+          p('Właściwe wykorzystanie tych narzędzi zależy od etapu rozwoju marki i jej celów biznesowych.'),
+        ],
+      },
+      {
+        heading: 'Najważniejsze pytanie nie brzmi: „Czy reklamować?”',
+        blocks: [
+          p('Lepsze pytanie brzmi:'),
+          questions('„Jaką rolę reklama powinna pełnić w naszej strategii Amazon?”'),
+          p('Dla jednej marki będzie to przede wszystkim launch nowych produktów.'),
+          p('Dla innej – obrona najważniejszych słów brandowych.'),
+          p('Dla kolejnej – zwiększenie udziału w kategorii.'),
+          p('Jeszcze inna marka będzie wykorzystywać PPC przede wszystkim do generowania nowych klientów i zwiększania sprzedaży.'),
+          p('Dlatego nie ma jednej odpowiedzi dotyczącej idealnego poziomu wydatków reklamowych.'),
+          p('Reklama na Amazonie nie jest obowiązkiem.'),
+          p('Ale w wielu kategoriach jest niezbędnym narzędziem do osiągnięcia widoczności i skalowania sprzedaży.'),
+          p('Kluczem nie jest więc samo wydawanie pieniędzy na reklamy.'),
+          lead('Kluczem jest wydawanie ich tam, gdzie mogą realnie przyczynić się do wzrostu marki.'),
+        ],
+      },
+    ],
+    closing: {
+      heading: 'ADelier Commerce',
+      blocks: [
+        { type: 'p', text: 'W ADelier Commerce pomagamy markom nie tylko zarządzać kampaniami Amazon PPC, ale przede wszystkim zrozumieć, gdzie reklama może przynieść największą wartość i jak połączyć ją z szerszą strategią sprzedaży na Amazonie.', link: { phrase: 'zarządzać kampaniami Amazon PPC', to: href('pl', 'brands') } },
+      ],
+    },
+  },
   {
     slug: 'czy-warto-sprzedawac-na-amazonie',
     locale: 'pl',
@@ -313,7 +450,7 @@ export function anchorFor(text: string): string {
 
 function postText(post: Post): string {
   const all = [...post.sections, ...(post.closing ? [post.closing] : [])]
-  return all.flatMap((s) => [s.heading ?? '', ...s.blocks.map((b) => b.text)]).join(' ')
+  return all.flatMap((s) => [s.heading ?? '', ...s.blocks.map((b) => (b.type === 'list' ? b.items.join(' ') : b.text))]).join(' ')
 }
 
 /** Rounded up at 200 words a minute. */

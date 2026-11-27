@@ -90,6 +90,14 @@ export function ArticleBlock({ block }: { block: Block }) {
       )
     case 'h3':
       return <h3 className="mt-4 text-balance font-display text-2xl font-semibold leading-snug text-ink">{block.text}</h3>
+    case 'list':
+      return (
+        <ul className="flex list-disc flex-col gap-2 pl-6 text-lg leading-[1.75] text-ink/85 marker:text-cobalt">
+          {block.items.map((item) => (
+            <li key={item} className="text-pretty pl-1">{item}</li>
+          ))}
+        </ul>
+      )
   }
 }
 
