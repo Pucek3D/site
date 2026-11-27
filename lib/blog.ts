@@ -69,7 +69,7 @@ const posts: Post[] = [
       ],
     },
     cover: {
-      src: '/images/blog/czy-reklama-na-amazonie-to-koniecznosc.png',
+      src: '/images/blog/czy-reklama-na-amazonie-to-koniecznosc-16x9.png',
       alt: 'Grafika ADelier Commerce „Czy reklama na Amazonie to konieczność?” – laptop z wynikami Amazon, na których wyróżniony jest produkt oznaczony jako Sponsored, oraz rosnący wykres słupkowy.',
   width: 1672,
   height: 941,
